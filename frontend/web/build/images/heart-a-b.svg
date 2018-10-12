@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="14px" viewBox="0 0 15 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>heart-a</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Bets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="LMbet_Bets" transform="translate(-113.000000, -2327.000000)" fill="#6B5C90" fill-rule="nonzero">
+            <g id="l4" transform="translate(70.000000, 1951.000000)">
+                <g id="bet-1" transform="translate(0.000000, 100.000000)">
+                    <g id="like" transform="translate(30.000000, 262.000000)">
+                        <path d="M18.6383426,16.1587508 C18.6383426,13.8538073 20.5068685,11.9852814 22.811812,11.9852814 C25.1167555,11.9852814 26.9852814,13.8538073 26.9852814,16.1587508 L26.9852814,24.9852814 L18.1587508,24.9852814 C15.8538073,24.9852814 13.9852814,23.1167555 13.9852814,20.811812 C13.9852814,18.5068685 15.8538073,16.6383426 18.1587508,16.6383426 L18.6383426,16.6383426 L18.6383426,16.1587508 Z" id="heart-a" transform="translate(20.485281, 18.485281) rotate(-315.000000) translate(-20.485281, -18.485281) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

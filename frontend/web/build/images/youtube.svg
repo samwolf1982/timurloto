@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="13px" viewBox="0 0 18 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>youtube</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="LMbet_Home-1" transform="translate(-66.000000, -889.000000)" fill="#FFFFFF">
+            <g id="content" transform="translate(50.000000, 25.000000)">
+                <g id="sn" transform="translate(0.000000, 845.000000)">
+                    <g id="fb">
+                        <path d="M34,28.5077619 L34,22.0922381 C34,22.0922381 34,19 30.898048,19 L19.1008937,19 C19.1008937,19 16,19 16,22.0922381 L16,28.5077619 C16,28.5077619 16,31.6 19.1008937,31.6 L30.898048,31.6 C30.898048,31.6 34,31.6 34,28.5077619 M28.6,25.3005504 L22.3,28.9 L22.3,21.7 L28.6,25.3005504" id="youtube"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

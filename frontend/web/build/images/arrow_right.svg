@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="6px" height="16px" viewBox="0 0 6 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow_right</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="LMbet_Home-3" transform="translate(-184.000000, -325.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="content" transform="translate(50.000000, 25.000000)">
+                <g id="txt" transform="translate(105.000000, 167.000000)">
+                    <polygon id="arrow_right" transform="translate(32.000000, 141.141754) rotate(-90.000000) translate(-32.000000, -141.141754) " points="38.5038611 138.131757 39.4961389 139.868243 32 144.151751 24.5038611 139.868243 25.4961389 138.131757 32 141.848249"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

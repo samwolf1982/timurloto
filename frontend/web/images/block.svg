@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="13px" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>ban</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Authorization" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="LMbet_Message-Hover" transform="translate(-535.000000, -629.000000)" fill="#B5B5B8">
+            <g id="left-side" transform="translate(119.000000, 61.000000)">
+                <g id="messages">
+                    <g id="Последние" transform="translate(0.000000, 331.000000)">
+                        <g id="3" transform="translate(0.000000, 216.000000)">
+                            <g id="ban" transform="translate(416.000000, 21.000000)">
+                                <path d="M6.5,12.5 C3.1862915,12.5 0.5,9.8137085 0.5,6.5 C0.5,3.1862915 3.1862915,0.5 6.5,0.5 C9.8137085,0.5 12.5,3.1862915 12.5,6.5 C12.5,9.8137085 9.8137085,12.5 6.5,12.5 Z M6.5,11.5769231 C9.30390719,11.5769231 11.5769231,9.30390719 11.5769231,6.5 C11.5769231,3.69609281 9.30390719,1.42307692 6.5,1.42307692 C3.69609281,1.42307692 1.42307692,3.69609281 1.42307692,6.5 C1.42307692,9.30390719 3.69609281,11.5769231 6.5,11.5769231 Z" id="Oval" fill-rule="nonzero"></path>
+                                <rect id="Rectangle-2" transform="translate(6.500000, 6.500000) rotate(-315.000000) translate(-6.500000, -6.500000) " x="6" y="1" width="1" height="11"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

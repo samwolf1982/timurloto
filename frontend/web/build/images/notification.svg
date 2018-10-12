@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="20px" viewBox="0 0 16 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>notification</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Bets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="LMbet_Bets" transform="translate(-1208.000000, -40.000000)" fill="#FFFFFF">
+            <g id="header" transform="translate(0.000000, 25.000000)">
+                <g id="notification" transform="translate(1208.000000, 13.000000)">
+                    <path d="M8,21.5 C9.1,21.5 10,20.6 10,19.5 L6,19.5 C6,20.6 6.9,21.5 8,21.5 L8,21.5 Z M14,15.5 L14,10.5 C14,7.43 12.37,4.86 9.5,4.18 L9.5,3.5 C9.5,2.67 8.83,2 8,2 C7.17,2 6.5,2.67 6.5,3.5 L6.5,4.18 C3.64,4.86 2,7.42 2,10.5 L2,15.5 L0,17.5 L0,18.5 L16,18.5 L16,17.5 L14,15.5 L14,15.5 Z M12,16.5 L4,16.5 L4,10.5 C4,8.02 5.51,6 8,6 C10.49,6 12,8.02 12,10.5 L12,16.5 L12,16.5 Z"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

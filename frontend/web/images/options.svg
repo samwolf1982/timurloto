@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="3px" height="15px" viewBox="0 0 3 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>options</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Bet" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="v2_LMbet_My_Account" transform="translate(-457.000000, -1251.000000)" fill="#6B5C90">
+            <g id="Мои-Ставки" transform="translate(70.000000, 1121.000000)">
+                <g id="bet-1" transform="translate(0.000000, 100.000000)">
+                    <path d="M388.5,33 C387.671573,33 387,32.3284271 387,31.5 C387,30.6715729 387.671573,30 388.5,30 C389.328427,30 390,30.6715729 390,31.5 C390,32.3284271 389.328427,33 388.5,33 Z M388.5,39 C387.671573,39 387,38.3284271 387,37.5 C387,36.6715729 387.671573,36 388.5,36 C389.328427,36 390,36.6715729 390,37.5 C390,38.3284271 389.328427,39 388.5,39 Z M388.5,45 C387.671573,45 387,44.3284271 387,43.5 C387,42.6715729 387.671573,42 388.5,42 C389.328427,42 390,42.6715729 390,43.5 C390,44.3284271 389.328427,45 388.5,45 Z" id="options"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

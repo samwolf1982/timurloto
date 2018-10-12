@@ -1,0 +1,117 @@
+<?php
+namespace app\modules\statistic\models;
+use app\models\WagerSearch;
+use common\models\DTO\WagerInfoFront;
+use common\models\DTO\WagerInfoFrontSingle;
+use common\models\DTO\WagerInfoStringResult;
+use common\models\services\UserInfo;
+use common\models\Wager;
+use yii;
+use yii\data\Pagination;
+use yii\helpers\ArrayHelper;
+
+class WagerStatisticManager
+{
+  private $user_id;
+  private $queryParams;
+
+  private $wagerInfoFrontSingle;  // инициализируется в getAllWagers !! важно
+
+    private $paginationPages;
+
+  public function __construct($user_id,$queryParams)
+  {
+          $this->user_id=$user_id;
+          $this->queryParams=$queryParams;
+  }
+
+
+
+
+    public function getAllWagers(){
+
+        $searchModelWager = new WagerSearch();
+        // $dataProviderWagers = $searchModelWager->search($this->queryParams);
+        $dataProviderWagers = $searchModelWager->searchWithPagination($this->queryParams);
+      //  $pages = new Pagination(['totalCount' => $dataProviderWagers->getTotalCount()]);
+        $result=$this->prepareWagers($dataProviderWagers);
+
+        $this->paginationPages = $searchModelWager->getPages();
+
+        return $result;
+
+    }
+
+
+
+
+
+   private function prepareWagers($modelsWagers){
+       $result_all=[];
+//       var_dump ( get_class( $modelsWagers[0] )); die();
+       /** @var Wager $wager */
+       foreach ($modelsWagers as $wager) {
+           $wagerelements=$wager->wagerelements;
+             $type=$this->getTypeWager($wagerelements);
+             $prepare_elements=$this->prepareWager($wagerelements);
+             $frontElement=new WagerInfoFrontSingle($wager->id,$type,$prepare_elements,$wager->coef,$wager->total,$wager->created_at);
+             $userInfo = new UserInfo($wager->user_id);
+            // $result_all[]=['elements'=>$prepare_elements,'front_element'=>$frontElement,'model'=>$wager];
+             $result_all[]=['elements'=>$prepare_elements,'front_element'=>$frontElement,'model'=>$wager,'userInfo'=>$userInfo];
+            }
+            return $result_all;
+  }
+
+
+    private function prepareWager($wagerelements){
+      $res=[];
+        foreach ($wagerelements as $wagerelement) { // var_dump($wagerelement); die();
+            $wagerInfoStringResult=new WagerInfoStringResult($wagerelement->info_main_cat_name,$wagerelement->info_cat_name,$wagerelement->info_name);
+            $res[]=  new WagerInfoFront($wagerelement->id,$wagerelement->coef,$wagerelement->created_at,'nameTeam',$wagerelement->sport_name,$wagerelement->category_name,$wagerelement->name, 'status',$wagerInfoStringResult);
+      }
+      return $res;
+    }
+
+
+    private function getTypeWager($wagerelements){
+        if(count($wagerelements)>1) return  'Экспресс';
+        return  'Ординар';
+    }
+
+    private function setFrontWagerSingle($wagerList){
+               if(empty($wagerList)) $this->wagerInfoFrontSingle= [];
+
+
+
+    }
+
+
+    /**
+     * @return mixed
+     */
+    public function getPaginationPages()
+    {
+        return $this->paginationPages;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getWagerInfoFrontSingle()
+    {
+        return $this->wagerInfoFrontSingle;
+    }
+    public function getInfoAboutWagers(){
+
+    }
+
+    public function getCountAllElements(){
+      return  Wager::find()->where(['user_id'=>$this->user_id])->count();
+    }
+
+
+
+
+
+
+}

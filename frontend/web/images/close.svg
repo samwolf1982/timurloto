@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>close</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.25">
+        <g id="LMbet_Home-5" transform="translate(-187.000000, -617.000000)" fill="#FFFFFF">
+            <g id="content" transform="translate(50.000000, -169.000000)">
+                <g id="txt" transform="translate(107.000000, 734.000000)">
+                    <path d="M42.59,58 L40,60.59 L37.41,58 L36,59.41 L38.59,62 L36,64.59 L37.41,66 L40,63.41 L42.59,66 L44,64.59 L41.41,62 L44,59.41 L42.59,58 L42.59,58 Z M40,52 C34.47,52 30,56.47 30,62 C30,67.53 34.47,72 40,72 C45.53,72 50,67.53 50,62 C50,56.47 45.53,52 40,52 L40,52 Z M40,70 C35.59,70 32,66.41 32,62 C32,57.59 35.59,54 40,54 C44.41,54 48,57.59 48,62 C48,66.41 44.41,70 40,70 L40,70 Z" id="close"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

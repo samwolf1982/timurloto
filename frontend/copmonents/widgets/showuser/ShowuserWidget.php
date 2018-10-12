@@ -1,0 +1,40 @@
+<?php
+namespace app\copmonents\widgets\showuser;
+/**
+ * Created by PhpStorm.
+ * User: Sam
+ * Date: 25.07.2018
+ * Time: 20:35
+ */
+
+use Yii;
+use yii\base\Widget;
+
+class ShowuserWidget extends Widget
+{
+    public $userdata;// array параметров, по ситуации буду добавлять
+    public $view;// вюшка для главной index для других other
+    // возвращаем результат
+    public function run(){
+        $username=Yii::$app->user->identity->username;
+        $useremail=Yii::$app->user->identity->email;
+        $userimage='/images/avatar-placeholder.svg';
+        $userimage='https://avatars0.githubusercontent.com/u/8706421?s=40&v=40';
+
+        if(empty($username)) $username='Anonim';
+
+//var_dump(        $username=Yii::$app->user->identity); die();
+
+//var_dump($this->view); die();
+        return       $this->render($this->view, ['username' => $username,'userimage'=>$userimage,'isGuest'=>Yii::$app->user->isGuest,'useremail'=>$useremail]);
+      //  return       $this->render('index', array('username' => $username,'userimage'=>$userimage));
+    }
+    public function init(){
+        parent::init();
+    }
+
+    private function getUserImage(){
+
+    }
+
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>search</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Bets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="LMbet_Bets" transform="translate(-282.000000, -41.000000)" fill="#FFFFFF">
+            <g id="header" transform="translate(0.000000, 25.000000)">
+                <path d="M294.5,27 L293.71,27 L293.43,26.73 C294.41,25.59 295,24.11 295,22.5 C295,18.91 292.09,16 288.5,16 C284.91,16 282,18.91 282,22.5 C282,26.09 284.91,29 288.5,29 C290.11,29 291.59,28.41 292.73,27.43 L293,27.71 L293,28.5 L298,33.49 L299.49,32 L294.5,27 L294.5,27 Z M288.5,27 C286.01,27 284,24.99 284,22.5 C284,20.01 286.01,18 288.5,18 C290.99,18 293,20.01 293,22.5 C293,24.99 290.99,27 288.5,27 L288.5,27 Z" id="search"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="10px" viewBox="0 0 8 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>Triangle</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="LMbet_Home-3" transform="translate(-280.000000, -45.000000)" fill="#9679BE">
+            <g id="content" transform="translate(50.000000, 25.000000)">
+                <g id="header">
+                    <g id="menu" transform="translate(230.000000, 17.000000)">
+                        <polygon id="Triangle" transform="translate(4.025000, 8.281004) rotate(-270.000000) translate(-4.025000, -8.281004) " points="4.02496055 4.45171797 8.58271622 11.5620071 -0.53279512 11.5620071"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

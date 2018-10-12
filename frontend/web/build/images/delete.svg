@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="13px" viewBox="0 0 12 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>delete</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Authorization" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="LMbet_Message-Hover" transform="translate(-563.000000, -629.000000)" fill="#B5B5B8" fill-rule="nonzero">
+            <g id="left-side" transform="translate(119.000000, 61.000000)">
+                <g id="messages">
+                    <g id="Последние" transform="translate(0.000000, 331.000000)">
+                        <g id="3" transform="translate(0.000000, 216.000000)">
+                            <g id="delete" transform="translate(444.000000, 21.000000)">
+                                <polygon id="Shape" points="8.44955649 4.43161506 7.44341423 4.3947113 7.22528033 10.3516318 8.23142259 10.3883849"></polygon>
+                                <rect id="Rectangle-path" x="5.49660251" y="4.41316318" width="1.00679498" height="5.95694561"></rect>
+                                <polygon id="Shape" points="4.77454393 10.3514812 4.55641004 4.39453556 3.55026778 4.43146444 3.76842678 10.3883849"></polygon>
+                                <path d="M0.00951464435,1.92971548 L0.00951464435,2.93651046 L1.05861088,2.93651046 L1.89087866,12.3942929 C1.91369874,12.6542008 2.13135565,12.8535565 2.39226778,12.8535565 L9.59076151,12.8535565 C9.85169874,12.8535565 10.0695063,12.6540502 10.0921506,12.3941172 L10.9244435,2.93651046 L11.9904854,2.93651046 L11.9904854,1.92971548 L0.00951464435,1.92971548 Z M9.12966527,11.8467615 L2.85323849,11.8467615 L2.06927197,2.93651046 L9.91380753,2.93651046 L9.12966527,11.8467615 Z" id="Shape"></path>
+                                <path d="M7.64445188,0 L4.35554812,0 C3.8929205,0 3.5165523,0.376368201 3.5165523,0.838995816 L3.5165523,2.43311297 L4.52334728,2.43311297 L4.52334728,1.00679498 L7.47665272,1.00679498 L7.47665272,2.43311297 L8.4834477,2.43311297 L8.4834477,0.838995816 C8.4834477,0.376368201 8.1070795,0 7.64445188,0 Z" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
