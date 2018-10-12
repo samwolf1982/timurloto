@@ -582,6 +582,8 @@ use frontend\assets\DashboardAsset;
 
 
 
+
+
                             <!--   центральная часть -->
                             <?= DashboardcenterWidget::widget(['userdata' => []]) ?>
 
@@ -599,8 +601,6 @@ use frontend\assets\DashboardAsset;
                         <?= DashboardcartWidget::widget(['userdata' => []]) ?>
 
                     </div>
-
-
 
                 </div>
             </div>
