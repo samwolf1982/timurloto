@@ -52,9 +52,11 @@ class DefaultController extends \yii\web\Controller
     
     private function _cartJson($json=[])
     {
+        /** @var Cart $cartModel */
         if ($cartModel = yii::$app->cart) {
-
+//            var_dump($cartModel);
             $json['count'] = $cartModel->getCount();
+            $json['elements'] = $cartModel->getElements();
             $json['price'] = $cartModel->getCostFormatted();
 
             //$json['elementsHTML'] = \dvizh\cart\widgets\ElementsList::widget();
