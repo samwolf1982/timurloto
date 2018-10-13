@@ -28,7 +28,8 @@ class AddbetWidget extends Widget
 
         $cart = yii::$app->cart;
 
-        $block_bets= ElementController::generateHtml([]);
+//        $block_bets= ElementController::generateHtml([]);
+        $block_bets='asdf derf';
 
         if(Yii::$app->user->isGuest){
             $playlists= [];// PlaylistManager::getAllPlaylistsByUserId();

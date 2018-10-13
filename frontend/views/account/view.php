@@ -1435,7 +1435,10 @@ AccountAsset::register($this);
 
 
 <!-- modad add bet -->
+<?php if(0){ ?>
 <?= AddbetWidget ::widget([]); ?>
+<?php  ?>
+
 
 <div class="modal-wrapper bet-modal modal-640" id="modal-complaint">
     <div class="modal-inner">

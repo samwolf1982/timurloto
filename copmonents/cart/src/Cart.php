@@ -60,6 +60,8 @@ class Cart extends Component
             $elementModel->setOptions($options);
             $elementModel->setComment($comment);
 
+            $elementModel->parent_id= $this->element->event_id;
+
             $elementEvent = new CartElementEvent(['element' => $elementModel]);
             $this->trigger(self::EVENT_CART_PUT, $elementEvent);
 

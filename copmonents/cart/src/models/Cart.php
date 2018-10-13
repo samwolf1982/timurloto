@@ -24,6 +24,8 @@ class Cart extends \yii\db\ActiveRecord implements CartInterface
       //  $elementModel->hash = self::_generateHash($elementModel->model, $elementModel->price, $elementModel->getOptions());
         $elementModel->hash = self::_generateHash($elementModel->model, $elementModel->price);
 
+//yii::error($elementModel->model);
+//        $elementModel->parent_id= $this->element->event_id;
         $elementModel->link('cart', $this->my());
 
         if ($elementModel->validate() && $elementModel->save()) {

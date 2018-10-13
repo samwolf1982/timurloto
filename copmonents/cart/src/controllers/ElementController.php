@@ -52,6 +52,7 @@ class ElementController extends \yii\web\Controller
             $productModel = new $model();
             $productModel = $productModel::findOne($postData['CartElement']['item_id']);
 
+
             $options = [];
             if(isset($postData['CartElement']['options'])) {
                 $options = $postData['CartElement']['options'];
@@ -60,6 +61,7 @@ class ElementController extends \yii\web\Controller
             if($postData['CartElement']['price'] && $postData['CartElement']['price'] != 'false') {
                 $elementModel = $cart->putWithPrice($productModel, $postData['CartElement']['price'], $postData['CartElement']['count'], $options);
             } else {
+
                 $elementModel = $cart->put($productModel, $postData['CartElement']['count'], $options);
             }
 

@@ -29,6 +29,7 @@ var SmartCart={
         data.CartElement.item_id = $(el).data("id");
         data.CartElement.cat_id = $(el).data("cat");
         data.CartElement.players_id = $(el).data("players");
+        data.CartElement.parent_id= $(el).data("parent");
         data.CartElement.count = 1;
         data.CartElement.price = 0;
         data.CartElement.options = $(el).data("options");
@@ -39,6 +40,7 @@ var SmartCart={
             data: data,
             dataType: "json",
             success: function (json) {
+                console.log(json);
                 if (json.elementsHTML) {
 
                     SmartCart.render(el,json);
@@ -51,27 +53,6 @@ var SmartCart={
             }
 
         });
-    },
-
-    sendData_DEL: function (el,data, link) {
-        if (!link) {
-            link = '/cart/element/create';
-        }
-        data[this.csrf_param] = this.csrf;
-        jQuery.post(link, data,
-            function (json) {
-                if (json.result === 'fail') {
-                    console.log(json.error);
-                }
-                else {
-                    console.log(json);
-                   // SmartCart.render(el,json);
-                }
-
-                SmartCart.render(el,json);
-
-            }, "json");
-        return false;
     },
 
     render:function (el,json) {
@@ -185,7 +166,7 @@ var SmartCart={
 
     renderAdd: function (id_for_bets,data_parent,name_competition,name_bet,coefficient_bet) {
 
-         $('li[data-child="'+data_parent+'"]').remove();
+        $('li[data-child="'+data_parent+'"]').remove();
         $('.bet-coup-list').append('<li class="'+id_for_bets+'" data-child="'+data_parent+'">' +
             '<div class="bet-coup-info">' +
             '<div class="bet-coup-icon">' +
@@ -214,8 +195,14 @@ var SmartCart={
             dataType: "json",
             success: function (json) {
                 if (json) {
-                    console.log(json);
-                    SmartCart.renderAdd(el,json);
+
+                    $.each(json.elements, function( index, value ) {
+                        console.log([value.item_id,value.parent_id]);
+                        SmartCart.renderAdd(value.item_id,value.parent_id);
+                    });
+
+
+
                     // console.log(data.elementsHTML);
                     // $("#cartBet .cartElements").html(data.elementsHTML);
 

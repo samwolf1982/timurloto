@@ -58,6 +58,7 @@ class DefaultController extends \yii\web\Controller
             $json['count'] = $cartModel->getCount();
             $json['elements'] = $cartModel->getElements();
             $json['price'] = $cartModel->getCostFormatted();
+            $json['parent_id'] = $cartModel->parent_id;
 
             //$json['elementsHTML'] = \dvizh\cart\widgets\ElementsList::widget();
 

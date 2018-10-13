@@ -103,6 +103,8 @@ class CartElement extends \yii\db\ActiveRecord implements Element
         return $this->save();
     }
 
+
+
     public function getPrice($withTriggers = true)
     {
         $price = $this->price;
