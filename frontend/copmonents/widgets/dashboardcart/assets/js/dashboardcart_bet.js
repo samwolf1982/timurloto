@@ -1,6 +1,7 @@
 var tottal_coeficient=0;
 $(document).ready(function () {
     SmartCart.init();
+    SmartCart.getFromCart(); // update cart
 });
 
 var SmartCart={
@@ -22,7 +23,6 @@ var SmartCart={
         console.log('Init SmartCart');
     },
     addToCart: function (el) {
-
         var data = {};
         data.CartElement = {};
         data.CartElement.model = 'common\\models\\Bets';
@@ -84,23 +84,23 @@ var SmartCart={
         var coeficient = parseFloat($(el).find('.value-bet').text());
         if(!$(el).hasClass('selected')){
             tottal_coeficient = tottal_coeficient + coeficient;
-
             // $('#total-coeficient').text(tottal_coeficient);
-            $('li[data-child="'+data_parent+'"]').remove();
-            $('.bet-coup-list').append('<li class="'+id_for_bets+'" data-child="'+data_parent+'">' +
-                '<div class="bet-coup-info">' +
-                '<div class="bet-coup-icon">' +
-                ' <input type="checkbox" id="'+id_for_bets+'" checked="checked">' +
-                ' <label for="'+id_for_bets+'"></label>' +
-                '</div>' +
-                '<div class="bet-coup-text">'+name_competition+'</div>' +
-                '<button class="delete-item"><span class="icon-close2"></span></button>' +
-                '</div>' +
-                '<div class="bet-calc-row">' +
-                '<div class="title-bet-calc">'+name_bet+'</div>' +
-                '<div class="percent-bet-calc">x <span class="perc-for-calc">'+coefficient_bet+'</span></div>' +
-                '</div>' +
-                '</li>');
+
+            SmartCart.renderAdd(id_for_bets,data_parent,name_competition,name_bet,coefficient_bet)
+            // $('.bet-coup-list').append('<li class="'+id_for_bets+'" data-child="'+data_parent+'">' +
+            //     '<div class="bet-coup-info">' +
+            //     '<div class="bet-coup-icon">' +
+            //     ' <input type="checkbox" id="'+id_for_bets+'" checked="checked">' +
+            //     ' <label for="'+id_for_bets+'"></label>' +
+            //     '</div>' +
+            //     '<div class="bet-coup-text">'+name_competition+'</div>' +
+            //     '<button class="delete-item"><span class="icon-close2"></span></button>' +
+            //     '</div>' +
+            //     '<div class="bet-calc-row">' +
+            //     '<div class="title-bet-calc">'+name_bet+'</div>' +
+            //     '<div class="percent-bet-calc">x <span class="perc-for-calc">'+coefficient_bet+'</span></div>' +
+            //     '</div>' +
+            //     '</li>');
         }
         var count_items = $('.bet-coup-list li').length;
         if(count_items >= 1){
@@ -180,6 +180,49 @@ var SmartCart={
         // $(this).parents('.row-collapse').find('.bet-parent-val').removeClass('selected');
         // $(this).toggleClass('selected');
 
+    },
+
+    renderAdd: function (id_for_bets,data_parent,name_competition,name_bet,coefficient_bet) {
+         $('li[data-child="'+data_parent+'"]').remove();
+        $('.bet-coup-list').append('<li class="'+id_for_bets+'" data-child="'+data_parent+'">' +
+            '<div class="bet-coup-info">' +
+            '<div class="bet-coup-icon">' +
+            ' <input type="checkbox" id="'+id_for_bets+'" checked="checked">' +
+            ' <label for="'+id_for_bets+'"></label>' +
+            '</div>' +
+            '<div class="bet-coup-text">'+name_competition+'</div>' +
+            '<button class="delete-item"><span class="icon-close2"></span></button>' +
+            '</div>' +
+            '<div class="bet-calc-row">' +
+            '<div class="title-bet-calc">'+name_bet+'</div>' +
+            '<div class="percent-bet-calc">x <span class="perc-for-calc">'+coefficient_bet+'</span></div>' +
+            '</div>' +
+            '</li>');
+    },
+
+    getFromCart:function () {
+        // /cart/default/info
+        var data = {};
+        data.CartElement = {};
+        data[this.csrf_param] = this.csrf;
+        $.ajax({
+            url: "/cart/default/info",
+            type: "POST",
+            data: data,
+            dataType: "json",
+            success: function (json) {
+                if (json.elementsHTML) {
+
+                    SmartCart.render(el,json);
+                    // console.log(data.elementsHTML);
+                    // $("#cartBet .cartElements").html(data.elementsHTML);
+
+                } else {
+                    console.log(json);
+                }
+            }
+
+        });
     },
     test:function () {
         console.log(this.csrf)

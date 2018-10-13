@@ -48,13 +48,19 @@ class DefaultController extends \yii\web\Controller
     public function actionInfo() {
         return $this->_cartJson();
     }
+
     
-    private function _cartJson($json)
+    private function _cartJson($json=[])
     {
         if ($cartModel = yii::$app->cart) {
-            $json['elementsHTML'] = \dvizh\cart\widgets\ElementsList::widget();
+
             $json['count'] = $cartModel->getCount();
             $json['price'] = $cartModel->getCostFormatted();
+
+            //$json['elementsHTML'] = \dvizh\cart\widgets\ElementsList::widget();
+
+
+
         } else {
             $json['count'] = 0;
             $json['price'] = 0;
