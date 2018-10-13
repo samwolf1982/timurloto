@@ -16,7 +16,7 @@ class m270920_094737_add_default_value_to_cart_table extends Migration
         $this->alterColumn('{{%cart_element}}', 'parent_id', $this->integer(55)->defaultValue(0));
     }
 
-    /** C:\OSPanel\domains\atimur\loto\lotoproduction\copmonents\cart\src\migrations
+    /**
      * @inheritdoc
      */
     public function safeDown()
@@ -25,14 +25,12 @@ class m270920_094737_add_default_value_to_cart_table extends Migration
         $this->alterColumn('{{%cart_element}}', 'parent_id', $this->integer(55));
     }
 
-
     /*
     // Use up()/down() to run migration code without a transaction.
     public function up()
     {
 
     }
-*/
 
     public function down()
     {
@@ -40,5 +38,5 @@ class m270920_094737_add_default_value_to_cart_table extends Migration
 
         return false;
     }
-
+    */
 }

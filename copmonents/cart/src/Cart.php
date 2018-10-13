@@ -33,17 +33,13 @@ class Cart extends Component
     public $currencyPosition = 'after';
     public $priceFormat = [2, '.', ''];
 
-//    public function __construct(interfaces\Cart $Cart, interfaces\Element $Element, $config = [])
-  //  public function __construct(interfaces\Cart $Cart, interfaces\Element $Element, $config = [])
-    public function __construct(\dvizh\cart\interfaces\Cart $Cart, \dvizh\cart\interfaces\Element $Element, $config = [])
+    public function __construct(interfaces\Cart $Cart, interfaces\Element $Element, $config = [])
     {
-
         $this->cart = $Cart;
         $this->element = $Element;
 
         parent::__construct($config);
     }
-//
 
     public function init()
     {
@@ -53,12 +49,9 @@ class Cart extends Component
         return $this;
     }
 
-    public function put(\dvizh\cart\interfaces\CartElement $model, $count = 1, $options = [], $comment = null)  //$model - Wagercart
+    public function put(\dvizh\cart\interfaces\CartElement $model, $count = 1, $options = [], $comment = null)
     {
-                                                    // $model   Wagercart
-        if (!$elementModel = $this->cart->getElement($model, $options)) { // первый раз  ($elementModel = dvizh\cart\Cart)
-            //yii::error(get_class($elementModel));
-
+        if (!$elementModel = $this->cart->getElement($model, $options)) {
             $elementModel = new $this->element;
             $elementModel->setCount((int)$count);
             $elementModel->setPrice($model->getCartPrice());
@@ -66,17 +59,6 @@ class Cart extends Component
             $elementModel->setModel(get_class($model));
             $elementModel->setOptions($options);
             $elementModel->setComment($comment);
-
-            $elementModel->setCategory($model->mainCatId);
-            $elementModel->setCategoryName($model->catName);
-            $elementModel->setSubCategoryName($model->subCatname);
-            $elementModel->setName($model->name);
-            $elementModel->setCoef($model->coef);
-            $elementModel->setNameFull($model->name_full);
-
-
-        //    $elementModel->setPositionId($model->position_id);
-            $elementModel->setStatus(1);
 
             $elementEvent = new CartElementEvent(['element' => $elementModel]);
             $this->trigger(self::EVENT_CART_PUT, $elementEvent);
@@ -88,16 +70,7 @@ class Cart extends Component
                     throw new \yii\base\Exception(current($e->getMessage()));
                 }
             }
-        } else {      // если есть в корзине сверить ид категорий и остальные удалить
-
-            $elementModel->setItemId($model->getCartId());
-            $elementModel->setCategory($model->mainCatId);
-            $elementModel->setCategoryName($model->catName);
-            $elementModel->setSubCategoryName($model->subCatname);
-            $elementModel->setName($model->name);
-            $elementModel->setCoef($model->coef);
-            $elementModel->setNameFull($model->name_full);
-            // save update here
+        } else {
             $elementModel->countIncrement($count);
         }
 
@@ -116,7 +89,6 @@ class Cart extends Component
     public function putWithPrice(\dvizh\cart\interfaces\CartElement $model, $price = 0, $count = 1, $options = [], $comment = null)
     {
         if (!$elementModel = $this->cart->getElement($model, $options, $price)) {
-
             $elementModel = $this->element;
             $elementModel->setCount((int)$count);
             $elementModel->setPrice($price);
@@ -274,12 +246,9 @@ class Cart extends Component
 
     private function update()
     {
-
         $this->cart = $this->cart->my();
         $this->cost = $this->cart->getCost();
 
         return true;
     }
-
-
 }

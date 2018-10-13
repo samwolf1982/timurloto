@@ -37,36 +37,8 @@ class CartElement extends \yii\db\ActiveRecord implements Element
         return $this->comment;
     }
 
-
     public function getModel($withCartElementModel = true)
     {
-        //   return $this->model; // fix here
-        if(!$withCartElementModel) {
-            return $this->model;
-        }
-        $model = '\\'.$this->model;
-        if(is_string($this->model) && class_exists($this->model)) {
-//            yii::error( $this);
-            $productModel = new $model(1,2); //app\models\Wagercart
-           // yii::error()
-            $model = $productModel;
-//            if ($productModel = $productModel::findOne($this->item_id)) {
-//                $model = $productModel;
-//            } else {
-//                yii::$app->cart->truncate();
-//                throw new \yii\base\Exception('Element model not found');
-//            }
-        } else {
-            throw new \yii\base\Exception('Unknow element model');
-        }
-
-        return $model;
-    }
-
-
-    public function getModelDEL($withCartElementModel = true)
-    {
-     //   return $this->model; // fix here
         if(!$withCartElementModel) {
             return $this->model;
         }
@@ -160,69 +132,6 @@ class CartElement extends \yii\db\ActiveRecord implements Element
         $this->model = $model;
     }
 
-
-
-
-    public function setCategory($cat_id)
-    {
-        $this->category_id = $cat_id;
-    }
-
-    public function setCategoryName($catName)
-    {
-        $this->main_cat_name = $catName;
-    }
-    public function setSubCategoryName($subCatname)
-    {
-        $this->cat_name = $subCatname;
-    }
-
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-    /**
-     * @param $name кто с кем играет
-     */
-    public function setNameFull($name_full)
-    {
-        $this->name_full = $name_full;
-    }
-
-    public function setCoef($coef)
-    {
-        $this->coof = $coef;
-    }
-
-
-    public function setStatus($status,$andSave = false)
-    {
-        $this->status = $status;
-        if($andSave) {
-            $this->save();
-        }
-    }
-
-    /**
-     * @param $position_id   ид в базе чтобы не дергать каждый раз
-     */
-    public function setPositionId($position_id)
-    {
-        $this->position_id = $position_id;
-    }
-
-
-//
-//    public function getCategory()
-//    {
-//       return $this->category_id;
-//    }
-//    public function getStatus()
-//    {
-//      return    $this->status;
-//    }
-
-
     public function setOptions($options, $andSave = false)
     {
         if(is_array($options)) {
@@ -244,7 +153,6 @@ class CartElement extends \yii\db\ActiveRecord implements Element
             $this->save();
         }
     }
-
 
     public static function tableName()
     {
@@ -285,10 +193,10 @@ class CartElement extends \yii\db\ActiveRecord implements Element
     {
         return [
             [['cart_id', 'model', 'item_id'], 'required'],
-           // [['model'], 'validateModel'],
-            [['hash', 'options', 'comment','main_cat_name','cat_name','name','name_full'], 'string'],
-            [['price','coof'], 'double'],
-            [['item_id', 'count', 'parent_id' , 'category_id','status','position_id',], 'integer'],
+            [['model'], 'validateModel'],
+            [['hash', 'options', 'comment'], 'string'],
+            [['price'], 'double'],
+            [['item_id', 'count', 'parent_id'], 'integer'],
         ];
     }
 
@@ -317,8 +225,6 @@ class CartElement extends \yii\db\ActiveRecord implements Element
             'item_id' => yii::t('cart', 'Item ID'),
             'count' => yii::t('cart', 'Count'),
             'comment' => yii::t('cart', 'Comment'),
-            'category_id' => 'category_id',
-            'status' => 'status',
         ];
     }
 

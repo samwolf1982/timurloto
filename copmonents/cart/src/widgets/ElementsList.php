@@ -4,7 +4,7 @@ namespace dvizh\cart\widgets;
 use dvizh\cart\widgets\DeleteButton;
 use dvizh\cart\widgets\TruncateButton;
 use dvizh\cart\widgets\ChangeCount;
-use dvizh\cart\widgets\StatisticInformer;
+use dvizh\cart\widgets\CartInformer;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii;

@@ -39,11 +39,8 @@ class Cart extends \yii\db\ActiveRecord implements CartInterface
     
     public function getElement(\dvizh\cart\interfaces\CartElement $model, $options = [], $price = null)
     {
-//        $price = empty($price) ? $model->getCartPrice() : $price;
-//        return $this->getElements()->where(['hash' => $this->_generateHash(get_class($model), $price, $options), 'item_id' => $model->getCartId()])->one();
         $price = empty($price) ? $model->getCartPrice() : $price;
-       // return $this->getElements()->where(['hash' => $this->_generateHash(get_class($model), $price, $options), 'item_id' => $model->getCartId(),'category_id'=>$model->mainCatId])->one();
-        return $this->getElements()->where(['hash' => $this->_generateHash(get_class($model), $price, $options),'category_id'=>$model->mainCatId])->one();
+        return $this->getElements()->where(['hash' => $this->_generateHash(get_class($model), $price, $options), 'item_id' => $model->getCartId()])->one();
     }
     
     public function getElementsByModel(\dvizh\cart\interfaces\CartElement $model)
@@ -88,8 +85,6 @@ class Cart extends \yii\db\ActiveRecord implements CartInterface
     {
         return [
             'id' => yii::t('cart', 'ID'),
-//            'category_id' => 'category_id',
-//            'status' => 'status',
             'user_id' => yii::t('cart', 'User ID'),
             'tmp_user_id' => yii::t('cart', 'Tmp user ID'),
             'created_time' => yii::t('cart', 'Created Time'),

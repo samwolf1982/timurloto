@@ -2,7 +2,7 @@
 use dvizh\cart\widgets\DeleteButton;
 use dvizh\cart\widgets\TruncateButton;
 use dvizh\cart\widgets\ChangeCount;
-use dvizh\cart\widgets\StatisticInformer;
+use dvizh\cart\widgets\CartInformer;
 use dvizh\cart\widgets\ChangeOptions;
 
 $this->title = yii::t('cart', 'Cart');
@@ -25,6 +25,6 @@ $this->title = yii::t('cart', 'Cart');
         </div>
     <?php } ?>
     <div class="total">
-        <?=StatisticInformer::widget(['htmlTag' => 'h3']); ?>
+        <?=CartInformer::widget(['htmlTag' => 'h3']); ?>
     </div>
 </div>
