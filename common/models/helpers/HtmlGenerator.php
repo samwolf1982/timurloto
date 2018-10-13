@@ -104,10 +104,11 @@ class HtmlGenerator
 
 //            'data-options' => json_encode($this->options),
 //            'data-description' => $this->description,
-
+//                $outcomes0=$json_outcames[0];
             if(!empty($json_outcames[0])){  //$json_outcames[0]['outcome_id']
+
                 $res .= '<div class="team">
-                                <button class="bet-parent-val" data-id="'.$ishods[0]->id.'" data-options="'.$ishods[0]->outcomes.'" data-players="'.$ishods[0]->id.'"  data-cat="'.$ishods[0]->market_id.'"    data-text="'.$json_outcames[0]['outcome_name'].'">
+                                <button class="bet-parent-val" data-id="'.$ishods[0]->id.'" data-options=\''. json_encode( $json_outcames[0]).'\'  data-players="'.$ishods[0]->id.'"  data-cat="'.$ishods[0]->market_id.'"    data-text="'.$json_outcames[0]['outcome_name'].'">
                                     <div class="title-bet">'.$json_outcames[0]['outcome_name'].'</div>
                                     <div class="value-bet">'.$json_outcames[0]['outcome_coef'].'</div>
                                 </button>
@@ -119,7 +120,7 @@ class HtmlGenerator
 
             if(!empty($json_outcames[1])) {
                 $res .= ' <div class="bet-points">
-                                <button class="bet-parent-val" data-id="'.$ishods[0]->id.'" data-players="'.$ishods[0]->id.'"  data-cat="'.$ishods[0]->market_id.'"   data-text="'.$json_outcames[1]['outcome_name'].'">
+                                <button class="bet-parent-val" data-id="'.$ishods[0]->id.'"   data-options=\''. json_encode( $json_outcames[1]).'\'  data-players="'.$ishods[0]->id.'"  data-cat="'.$ishods[0]->market_id.'"   data-text="'.$json_outcames[1]['outcome_name'].'">
                                     <div class="title-bet">'.$json_outcames[1]['outcome_name'].'</div>
                                     <div class="value-bet">'.$json_outcames[1]['outcome_coef'].'</div>
                                 </button>
@@ -129,7 +130,7 @@ class HtmlGenerator
             }
             if(!empty($json_outcames[2])) {
                 $res .= '<div class="team">
-                                <button class="bet-parent-val" data-id="'.$ishods[0]->id.'"  data-players="'.$ishods[0]->id.'"  data-cat="'.$ishods[0]->market_id.'"  data-text="'.$json_outcames[2]['outcome_name'].'">
+                                <button class="bet-parent-val" data-id="'.$ishods[0]->id.'" data-options=\''. json_encode( $json_outcames[2]).'\'  data-players="'.$ishods[0]->id.'"  data-cat="'.$ishods[0]->market_id.'"  data-text="'.$json_outcames[2]['outcome_name'].'">
                                     <div class="title-bet">'.$json_outcames[2]['outcome_name'].'</div>
                                     <div class="value-bet">'.$json_outcames[2]['outcome_coef'].'</div>
                                 </button>

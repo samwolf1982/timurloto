@@ -31,7 +31,7 @@ var SmartCart={
         data.CartElement.players_id = $(el).data("players");
         data.CartElement.count = 1;
         data.CartElement.price = 0;
-        data.CartElement.options = "{}";
+        data.CartElement.options = $(el).data("options");
         data[this.csrf_param] = this.csrf;
         $.ajax({
             url: "/cart/element/create",
@@ -73,6 +73,7 @@ var SmartCart={
             }, "json");
         return false;
     },
+
     render:function (el,json) {
 
         var id_for_bets = $(el).attr('data-id');
@@ -183,6 +184,7 @@ var SmartCart={
     },
 
     renderAdd: function (id_for_bets,data_parent,name_competition,name_bet,coefficient_bet) {
+
          $('li[data-child="'+data_parent+'"]').remove();
         $('.bet-coup-list').append('<li class="'+id_for_bets+'" data-child="'+data_parent+'">' +
             '<div class="bet-coup-info">' +
@@ -211,9 +213,9 @@ var SmartCart={
             data: data,
             dataType: "json",
             success: function (json) {
-                if (json.elementsHTML) {
-
-                    SmartCart.render(el,json);
+                if (json) {
+                    console.log(json);
+                    SmartCart.renderAdd(el,json);
                     // console.log(data.elementsHTML);
                     // $("#cartBet .cartElements").html(data.elementsHTML);
 
