@@ -62,7 +62,7 @@ class ElementController extends \yii\web\Controller
                 $elementModel = $cart->putWithPrice($productModel, $postData['CartElement']['price'], $postData['CartElement']['count'], $options);
             } else {
 
-                $elementModel = $cart->put($productModel, $postData['CartElement']['count'], $options,null,$postData['CartElement']['current_outcome_id']);
+                $elementModel = $cart->put($productModel, $postData['CartElement']['count'], $options,null);
             }
 
             $json['elementId'] = $elementModel->getId();

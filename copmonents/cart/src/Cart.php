@@ -49,7 +49,7 @@ class Cart extends Component
         return $this;
     }
 
-    public function put(\dvizh\cart\interfaces\CartElement $model, $count = 1, $options = [], $comment = null,$currentOutcomeId)
+    public function put(\dvizh\cart\interfaces\CartElement $model, $count = 1, $options = [], $comment = null)
     {
         if (!$elementModel = $this->cart->getElement($model, $options)) {
             $elementModel = new $this->element;
@@ -61,7 +61,11 @@ class Cart extends Component
             $elementModel->setComment($comment);
 
             $elementModel->parent_id= $model->event_id;
-            $elementModel->setCurrentOutcomeId($currentOutcomeId);
+            $elementModel->current_market_name= $model->market_name;
+            $elementModel->result_type_name= $model->result_type_name;
+
+           // $elementModel->setCurrentOutcomeId($currentOutcomeId);
+//            $elementModel->setCurrentOutcomeId($currentOutcomeId);
 
             $elementEvent = new CartElementEvent(['element' => $elementModel]);
             $this->trigger(self::EVENT_CART_PUT, $elementEvent);
@@ -254,4 +258,18 @@ class Cart extends Component
 
         return true;
     }
+
+    /** @var Cart $cartModel */
+
+//    public function getMarketName(){
+////        yii::error($this->cart->element->current_market_name);
+//        yii::error($this->cart->element);
+//        return $this->element->cart_id;
+//        return 'asdfg';
+//        return $this->element->current_market_name;
+//
+//    }
+
+
+
 }

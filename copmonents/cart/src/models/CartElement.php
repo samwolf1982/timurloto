@@ -198,11 +198,11 @@ class CartElement extends \yii\db\ActiveRecord implements Element
     public function rules()
     {
         return [
-            [['cart_id', 'model', 'item_id','current_outcome_id'], 'required'],
+            [['cart_id', 'model', 'item_id','result_type_name'], 'required'],
             [['model'], 'validateModel'],
-            [['hash', 'options', 'comment'], 'string'],
+            [['hash', 'options', 'comment','current_market_name','result_type_name'], 'string'],
             [['price'], 'double'],
-            [['item_id', 'count', 'parent_id','current_outcome_id'], 'integer'],
+            [['item_id', 'count', 'parent_id'], 'integer'],
         ];
     }
 
@@ -231,9 +231,11 @@ class CartElement extends \yii\db\ActiveRecord implements Element
             'item_id' => yii::t('cart', 'Item ID'),
             'count' => yii::t('cart', 'Count'),
             'comment' => yii::t('cart', 'Comment'),
-            'current_outcome_id' => 'current outcome id from json',
+            'current_market_name' => 'current_market_name from json',
+            'result_type_name' => 'result type name ',
         ];
     }
+
 
     public function beforeSave($insert)
     {

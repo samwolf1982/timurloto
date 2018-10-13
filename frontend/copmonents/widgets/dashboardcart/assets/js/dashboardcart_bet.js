@@ -238,9 +238,8 @@ var SmartCart={
                         //     //             curent_coef=value_out.outcome_coef;
                         //     //         }
                         // });
-
                         //outcome.outcome_name
-                        SmartCart.renderAdd(value.item_id,value.parent_id,json.m_name,'sss',outcome.outcome_coef);
+                        SmartCart.renderAdd(value.item_id,value.parent_id,value.current_market_name+' '+value.result_type_name+' '+outcome.outcome_name,'asdf',outcome.outcome_coef);
                         SmartCart.reloadDom();
                     });
 
