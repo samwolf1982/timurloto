@@ -3,6 +3,7 @@
 namespace common\models\helpers;
 
 
+use common\models\Eventsnames;
 use common\models\wraps\EventsnamesExt;
 use common\models\wraps\SportcategoryExt;
 use common\models\wraps\TournamentsnamesExt;
@@ -69,8 +70,14 @@ class HtmlGenerator
                 <div class="tab-collapse-content active">
                     <div class="tab-collapse-content-inner">';
 
+
+        /** @var Eventsnames $el */
         foreach ($data as $el) {
+
+            /**@var Bets $ishods */
             $ishods=$el->ishods;
+
+            Yii::error($ishods[0]);
 //            $count_ishods = count($ishods);
 //           $total_sum_events = array_sum( array_map(function ($js){
 //               yii::error(json_decode($js->outcomes, true));
@@ -95,9 +102,9 @@ class HtmlGenerator
                                 </a>';
 
 
-            if(!empty($json_outcames[0])){
+            if(!empty($json_outcames[0])){  //$json_outcames[0]['outcome_id']
                 $res .= '<div class="team">
-                                <button class="bet-parent-val" data-players="'.$ishods[0]->id.'"  data-cat="'.$ishods[0]->market_id.'"  data-id="'.$json_outcames[0]['outcome_id'].'"  data-text="'.$json_outcames[0]['outcome_name'].'">
+                                <button class="bet-parent-val" data-players="'.$ishods[0]->id.'"  data-cat="'.$ishods[0]->market_id.'"  data-id="'.$ishods[0]->id.'"  data-text="'.$json_outcames[0]['outcome_name'].'">
                                     <div class="title-bet">'.$json_outcames[0]['outcome_name'].'</div>
                                     <div class="value-bet">'.$json_outcames[0]['outcome_coef'].'</div>
                                 </button>
@@ -107,7 +114,7 @@ class HtmlGenerator
             }
             if(!empty($json_outcames[1])) {
                 $res .= ' <div class="bet-points">
-                                <button class="bet-parent-val" data-players="'.$ishods[0]->id.'"  data-cat="'.$ishods[0]->market_id.'"  data-id="'.$json_outcames[1]['outcome_id'].'" data-text="'.$json_outcames[1]['outcome_name'].'">
+                                <button class="bet-parent-val" data-players="'.$ishods[0]->id.'"  data-cat="'.$ishods[0]->market_id.'"  data-id="'.$ishods[0]->id.'" data-text="'.$json_outcames[1]['outcome_name'].'">
                                     <div class="title-bet">'.$json_outcames[1]['outcome_name'].'</div>
                                     <div class="value-bet">'.$json_outcames[1]['outcome_coef'].'</div>
                                 </button>
@@ -117,7 +124,7 @@ class HtmlGenerator
             }
             if(!empty($json_outcames[2])) {
                 $res .= '<div class="team">
-                                <button class="bet-parent-val" data-players="'.$ishods[0]->id.'"  data-cat="'.$ishods[0]->market_id.'"  data-id="'.$json_outcames[0]['outcome_id'].'" data-text="'.$json_outcames[2]['outcome_name'].'">
+                                <button class="bet-parent-val" data-players="'.$ishods[0]->id.'"  data-cat="'.$ishods[0]->market_id.'"  data-id="'.$ishods[0]->id.'" data-text="'.$json_outcames[2]['outcome_name'].'">
                                     <div class="title-bet">'.$json_outcames[2]['outcome_name'].'</div>
                                     <div class="value-bet">'.$json_outcames[2]['outcome_coef'].'</div>
                                 </button>
