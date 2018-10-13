@@ -9,7 +9,7 @@ use Yii;
 use yii\base\Model;
 
 /**
- * This is the model class for table "team".
+ * псевдомодель для корзины
  *
  * @property int $id
  * @property string $name Название команды
@@ -38,16 +38,22 @@ class Wagercart extends Model  implements \dvizh\cart\interfaces\CartElement
     public $name_full;
     public $coef;
 
+    public $betId;
+
 
     /**
      * Wagercart constructor.
-     * @param $catId категория собития  в таблице бет.
+     * @param $betId ид в таблице бет (уже свое не с парсера)
      * @param $eventId  ид события
      * @param $eventsNameId  кто играет ид по нему берется имя и закидывается в корзину
      */
-    function __construct($catId, $eventId, $eventsNameId) {
+    function __construct($betId, $eventId, $eventsNameId) {
         parent::__construct();
-        $bets= Bets::find()->where(['market_id'=>$catId])->one();
+      //  $bets= Bets::find()->where(['market_id'=>$catId])->one();
+        $bets= Bets::find()->where(['id'=>$betId])->one();
+
+//        $this->catId=$catId;
+
         $this->catId=$catId;
         $this->eventId=$eventId;
         //SELECT * FROM `eventsnames` WHERE `event_id` =15536181;

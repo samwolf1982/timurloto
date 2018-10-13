@@ -3,6 +3,11 @@ localhost36-- парсер
 
 php yii migrate/up --migrationPath=@yii/rbac/migrations
 
+корзина  
+php yii migrate/up --migrationPath=copmonents/cart/src/migrations
+
+
+
 
 php yii migrate/up --migrationPath=@vendor/dektrium/yii2-user/migrations
 
