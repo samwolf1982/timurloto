@@ -225,9 +225,22 @@ var SmartCart={
                 if (json) {
 
                     $.each(json.elements, function( index, value ) {
-                        console.log([value.item_id,value.parent_id]);
+//                        console.log([value.item_id,value.parent_id,value]);
+                    outcome=    JSON.parse(value.options);
+                        console.log(value);
+                        console.log(outcome);
 
-                        SmartCart.renderAdd(value.item_id,value.parent_id,'asd','sss',7878);
+
+                        // $.each(JSON.parse(value.options), function( index_out, value_out ) {
+                        //     // console.log([index_out, value_out]);
+                        //     //         if(value.current_outcome_id === value_out.outcome_id ){
+                        //     //             console.log('OKI');
+                        //     //             curent_coef=value_out.outcome_coef;
+                        //     //         }
+                        // });
+
+                        //outcome.outcome_name
+                        SmartCart.renderAdd(value.item_id,value.parent_id,json.m_name,'sss',outcome.outcome_coef);
                         SmartCart.reloadDom();
                     });
 

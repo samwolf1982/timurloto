@@ -58,9 +58,8 @@ class DefaultController extends \yii\web\Controller
             $json['count'] = $cartModel->getCount();
             $json['elements'] = $cartModel->getElements();
             $json['price'] = $cartModel->getCostFormatted();
-            $json['coef'] = $this->getCurrentCooef($cartModel);
-
-
+//            $json['coef'] = $this->getCurrentCooef($cartModel);
+            $json['m_name'] = $this->getMarketName($cartModel);
             //$json['elementsHTML'] = \dvizh\cart\widgets\ElementsList::widget();
 
         } else {
@@ -69,6 +68,12 @@ class DefaultController extends \yii\web\Controller
         }
         return Json::encode($json);
     }
+
+    /** @var Cart $cartModel */
+    private function getMarketName($cartModel){
+        return $cartModel->market_name;
+    }
+
 
     /** @var Cart $cartModel */
     private function getCurrentCooef($cartModel){
