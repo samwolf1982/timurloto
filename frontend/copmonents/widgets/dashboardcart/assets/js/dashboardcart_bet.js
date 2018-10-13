@@ -25,7 +25,7 @@ var SmartCart={
 
         var data = {};
         data.CartElement = {};
-        data.CartElement.model = 'app\\models\\Wagercart';
+        data.CartElement.model = 'common\\models\\Bets';
         data.CartElement.item_id = $(el).data("id");
         data.CartElement.cat_id = $(el).data("cat");
         data.CartElement.players_id = $(el).data("players");

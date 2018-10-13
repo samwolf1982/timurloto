@@ -27,7 +27,7 @@ use Yii;
  * @property int $sort sort 0 1 2 3..
  * @property int $is_updated обновлять ли категорию из парсера,следить 1-yes 0-no
  */
-class Bets extends \yii\db\ActiveRecord
+class Bets extends \yii\db\ActiveRecord implements \dvizh\cart\interfaces\CartElement
 {
     /**
      * @inheritdoc
@@ -76,6 +76,40 @@ class Bets extends \yii\db\ActiveRecord
             'status' => '1 активная 0 не активная',
             'sort' => 'sort 0 1 2 3..',
             'is_updated' => 'обновлять ли категорию из парсера,следить 1-yes 0-no',
+        ];
+    }
+
+    public function getCartId()
+    {
+        // TODO: Implement getCartId() method.
+        return $this->id;
+
+    }
+
+    public function getCartName()
+    {
+        // TODO: Implement getCartName() method.
+        return 'Some name';
+    }
+
+    public function getCartPrice()
+    {
+        // TODO: Implement getCartPrice() method.
+        return 999;
+    }
+
+    public function getCartOptions()
+    {
+        // TODO: Implement getCartOptions() method.
+        return [
+            '1' => [
+                'name' => 'Цвет',
+                'variants' => ['1' => 'Красный', '2' => 'Белый', '3' => 'Синий'],
+            ],
+            '2' => [
+                'name' => 'Размер',
+                'variants' => ['4' => 'XL', '5' => 'XS', '6' => 'XXL'],
+            ]
         ];
     }
 }

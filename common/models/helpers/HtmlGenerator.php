@@ -56,6 +56,7 @@ class HtmlGenerator
     {
 
 
+
         $res ='
 <div class="tab-blocks" id="dashboard_center_block_tab_blocks">
     <div class="tab-block active" id="tabOne">
