@@ -13,6 +13,7 @@ class m270920_074737_add_column_comment_to_cart_element_table extends Migration
     public function safeUp()
     {
         $this->addColumn('{{%cart_element}}', 'comment', $this->string(255)->null());
+        $this->addColumn('{{%cart_element}}', 'current_outcome_id', $this->integer()->notNull());
 
     }
 
@@ -22,6 +23,7 @@ class m270920_074737_add_column_comment_to_cart_element_table extends Migration
     public function safeDown()
     {
         $this->dropColumn('{{%cart_element}}', 'comment');
+        $this->dropColumn('{{%cart_element}}', 'current_outcome_id');
     }
 
     /*

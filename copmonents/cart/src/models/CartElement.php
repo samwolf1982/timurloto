@@ -124,6 +124,10 @@ class CartElement extends \yii\db\ActiveRecord implements Element
         return $price;
     }
 
+    public function setCurrentOutcomeId($outcome_id)
+    {
+        $this->current_outcome_id = $outcome_id;
+    }
     public function setPrice($price)
     {
         $this->price = $price;
@@ -194,11 +198,11 @@ class CartElement extends \yii\db\ActiveRecord implements Element
     public function rules()
     {
         return [
-            [['cart_id', 'model', 'item_id'], 'required'],
+            [['cart_id', 'model', 'item_id','current_outcome_id'], 'required'],
             [['model'], 'validateModel'],
             [['hash', 'options', 'comment'], 'string'],
             [['price'], 'double'],
-            [['item_id', 'count', 'parent_id'], 'integer'],
+            [['item_id', 'count', 'parent_id','current_outcome_id'], 'integer'],
         ];
     }
 
@@ -227,6 +231,7 @@ class CartElement extends \yii\db\ActiveRecord implements Element
             'item_id' => yii::t('cart', 'Item ID'),
             'count' => yii::t('cart', 'Count'),
             'comment' => yii::t('cart', 'Comment'),
+            'current_outcome_id' => 'current outcome id from json',
         ];
     }
 

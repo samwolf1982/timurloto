@@ -58,16 +58,21 @@ class DefaultController extends \yii\web\Controller
             $json['count'] = $cartModel->getCount();
             $json['elements'] = $cartModel->getElements();
             $json['price'] = $cartModel->getCostFormatted();
-            $json['parent_id'] = $cartModel->parent_id;
+            $json['coef'] = $this->getCurrentCooef($cartModel);
+
 
             //$json['elementsHTML'] = \dvizh\cart\widgets\ElementsList::widget();
-
-
 
         } else {
             $json['count'] = 0;
             $json['price'] = 0;
         }
         return Json::encode($json);
+    }
+
+    /** @var Cart $cartModel */
+    private function getCurrentCooef($cartModel){
+
+        return 777777;
     }
 }

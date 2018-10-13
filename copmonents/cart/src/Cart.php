@@ -49,7 +49,7 @@ class Cart extends Component
         return $this;
     }
 
-    public function put(\dvizh\cart\interfaces\CartElement $model, $count = 1, $options = [], $comment = null)
+    public function put(\dvizh\cart\interfaces\CartElement $model, $count = 1, $options = [], $comment = null,$currentOutcomeId)
     {
         if (!$elementModel = $this->cart->getElement($model, $options)) {
             $elementModel = new $this->element;
@@ -60,7 +60,8 @@ class Cart extends Component
             $elementModel->setOptions($options);
             $elementModel->setComment($comment);
 
-            $elementModel->parent_id= $this->element->event_id;
+            $elementModel->parent_id= $model->event_id;
+            $elementModel->setCurrentOutcomeId($currentOutcomeId);
 
             $elementEvent = new CartElementEvent(['element' => $elementModel]);
             $this->trigger(self::EVENT_CART_PUT, $elementEvent);
