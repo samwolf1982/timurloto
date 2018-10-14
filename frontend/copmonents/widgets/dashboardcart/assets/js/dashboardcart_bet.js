@@ -1,4 +1,4 @@
-var tottal_coeficient=0;
+var tottal_coeficient=1;
 $(document).ready(function () {
     SmartCart.init();
     SmartCart.getFromCart(); // update cart
@@ -41,13 +41,8 @@ var SmartCart={
             data: data,
             dataType: "json",
             success: function (json) {
-                console.log(json);
                 if (json) {
-
-                    // SmartCart.render(el,json);
                     SmartCart.getFromCart(); // update cart
-                    // console.log(data.elementsHTML);
-                    // $("#cartBet .cartElements").html(data.elementsHTML);
 
                 } else {
                     console.log(json);
@@ -223,6 +218,7 @@ var SmartCart={
             data: data,
             dataType: "json",
             success: function (json) {
+                tottal_coeficient=1;
                 if (json) {
 
                     $.each(json.elements, function( index, value ) {
@@ -240,8 +236,11 @@ var SmartCart={
                         //     //         }
                         // });
                         //outcome.outcome_name
-                        SmartCart.renderAdd(value.item_id,value.parent_id,value.current_market_name+' '+value.result_type_name+' '+outcome.outcome_name,value.gamers_name,outcome.outcome_coef);
-                        SmartCart.reloadDom();
+    tottal_coeficient *= outcome.outcome_coef;
+    SmartCart.renderAdd(value.item_id,value.parent_id,value.current_market_name+' '+value.result_type_name+' '+outcome.outcome_name,value.gamers_name,outcome.outcome_coef);
+    SmartCart.reloadDom();
+    $('#total-coeficient').html( Math.round10(tottal_coeficient, -2));
+
                     });
 
 
@@ -262,3 +261,52 @@ var SmartCart={
     }
 };
 
+
+// Замыкание
+(function() {
+    /**
+     * Корректировка округления десятичных дробей.
+     *
+     * @param {String}  type  Тип корректировки.
+     * @param {Number}  value Число.
+     * @param {Integer} exp   Показатель степени (десятичный логарифм основания корректировки).
+     * @returns {Number} Скорректированное значение.
+     */
+    function decimalAdjust(type, value, exp) {
+        // Если степень не определена, либо равна нулю...
+        if (typeof exp === 'undefined' || +exp === 0) {
+            return Math[type](value);
+        }
+        value = +value;
+        exp = +exp;
+        // Если значение не является числом, либо степень не является целым числом...
+        if (isNaN(value) || !(typeof exp === 'number' && exp % 1 === 0)) {
+            return NaN;
+        }
+        // Сдвиг разрядов
+        value = value.toString().split('e');
+        value = Math[type](+(value[0] + 'e' + (value[1] ? (+value[1] - exp) : -exp)));
+        // Обратный сдвиг
+        value = value.toString().split('e');
+        return +(value[0] + 'e' + (value[1] ? (+value[1] + exp) : exp));
+    }
+
+    // Десятичное округление к ближайшему
+    if (!Math.round10) {
+        Math.round10 = function(value, exp) {
+            return decimalAdjust('round', value, exp);
+        };
+    }
+    // Десятичное округление вниз
+    if (!Math.floor10) {
+        Math.floor10 = function(value, exp) {
+            return decimalAdjust('floor', value, exp);
+        };
+    }
+    // Десятичное округление вверх
+    if (!Math.ceil10) {
+        Math.ceil10 = function(value, exp) {
+            return decimalAdjust('ceil', value, exp);
+        };
+    }
+})();
