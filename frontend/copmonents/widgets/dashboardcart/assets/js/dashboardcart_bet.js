@@ -11,11 +11,14 @@ var SmartCart={
         this.csrf = jQuery('meta[name=csrf-token]').attr("content");
         this.csrf_param = jQuery('meta[name=csrf-param]').attr("content");
         $(document).on("click", ".bet-parent-val", function(e) {
-            //  DashboardCategoryGroup.sendData(this,$(this).data());
-            // $(this).parent().toggleClass('active_coll').find('.sub-collapse').stop().slideToggle(400);
-
             SmartCart.addToCart(this);
-
+            e.preventDefault();
+            return false;
+        });
+        // delete
+       // $('.bet-coup-list').on('click','.delete-item',function () {
+        $(document).on('click','.delete-item',function (e) {
+            SmartCart.deleteSingle(this);
             e.preventDefault();
             return false;
         });
@@ -171,7 +174,7 @@ var SmartCart={
             ' <label for="'+id_for_bets+'"></label>' +
             '</div>' +
             '<div class="bet-coup-text">'+name_competition+'</div>' +
-            '<button class="delete-item"><span class="icon-close2"></span></button>' +
+            '<button class="delete-item" ><span class="icon-close2"></span></button>' +
             '</div>' +
             '<div class="bet-calc-row">' +
             '<div class="title-bet-calc">'+name_bet+'</div>' +
@@ -255,11 +258,82 @@ var SmartCart={
 
         });
     },
+
+    deleteSingle:function (el) {
+
+
+
+        var id_bet = $(el).parents('li').attr('class');
+
+        var data = {};
+        data['elementId']=id_bet;
+        // data.CartElement = {};
+        // data.CartElement.model = 'common\\models\\Bets';
+        // data.CartElement.item_id = $(el).data("id");
+        // data.CartElement.cat_id = $(el).data("cat");
+        // data.CartElement.players_id = $(el).data("players");
+        // data.CartElement.parent_id= $(el).data("parent");
+        // data.CartElement.count = 1;
+        // data.CartElement.price = 0;
+        // data.CartElement.options = $(el).data("options");
+        // data.CartElement.current_outcome_id = $(el).data("current_outcome_id");
+        data[this.csrf_param] = this.csrf;
+        $.ajax({
+            url: "/cart/element/delete",
+            type: "POST",
+            data: data,
+            dataType: "json",
+            success: function (json) {
+                if (json) {
+                    SmartCart.getFromCart(); // update cart
+
+                } else {
+                    console.log(json);
+                }
+            }
+
+        });
+
+
+
+
+        console.log(id_bet)
+        var count_items = $('.bet-coup-list li').length-1;
+        if(count_items >= 1){
+            $('.no-bet-selected-text').fadeOut(200);
+            setTimeout(function () {
+                $('.coupon-tabs-wrapper-inner').fadeIn(400);
+            },210);
+        } else {
+            $('.coupon-tabs-wrapper-inner').fadeOut(200);
+            setTimeout(function () {
+                $('.no-bet-selected-text').fadeIn(400);
+            },210);
+        }
+        if(count_items >= 2){
+            $('.ordinator').removeClass('active');
+            $('.express').addClass('active');
+            $('.all-coeficient,.delete-block').slideDown(400);
+        } else {
+            $('.ordinator').addClass('active');
+            $('.express').removeClass('active');
+            $('.all-coeficient,.delete-block').slideUp(400);
+        }
+        $('.open-coupon .count-coup').text(count_items);
+        $('.bets-val[data-id="'+id_bet+'"]').removeClass('selected');
+        $('.bet-parent-val[data-id="'+id_bet+'"]').removeClass('selected');
+        $(el).parents('li').remove();
+
+
+    },
     test:function () {
         console.log(this.csrf)
         console.log(this.csrf_param)
     }
 };
+
+
+
 
 
 // Замыкание

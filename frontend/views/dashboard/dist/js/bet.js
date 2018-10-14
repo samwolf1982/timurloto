@@ -229,35 +229,11 @@ $(document).ready(function () {
         $(this).toggleClass('selected');
         return false;
     });
-    $('.bet-coup-list').on('click','.delete-item',function () {
-        var id_bet = $(this).parents('li').attr('class');
-        var count_items = $('.bet-coup-list li').length-1;
-        if(count_items >= 1){
-            $('.no-bet-selected-text').fadeOut(200);
-            setTimeout(function () {
-                $('.coupon-tabs-wrapper-inner').fadeIn(400);
-            },210);
-        } else {
-            $('.coupon-tabs-wrapper-inner').fadeOut(200);
-            setTimeout(function () {
-                $('.no-bet-selected-text').fadeIn(400);
-            },210);
-        }
-        if(count_items >= 2){
-            $('.ordinator').removeClass('active');
-            $('.express').addClass('active');
-            $('.all-coeficient,.delete-block').slideDown(400);
-        } else {
-            $('.ordinator').addClass('active');
-            $('.express').removeClass('active');
-            $('.all-coeficient,.delete-block').slideUp(400);
-        }
-        $('.open-coupon .count-coup').text(count_items);
-        $('.bets-val[data-id="'+id_bet+'"]').removeClass('selected');
-        $('.bet-parent-val[data-id="'+id_bet+'"]').removeClass('selected');
-        $(this).parents('li').remove();
-        return false;
-    });
+
+
+
+
+
     $('.plus-minus-block .plus').on('click',function () {
         var val_perc = $('.plus-minus-block input').attr('data-val');
         var new_perc_val = parseInt(val_perc) + 1;

@@ -23,19 +23,23 @@ class ElementController extends \yii\web\Controller
     public function actionDelete()
     {
         $json = ['result' => 'undefined', 'error' => false];
-        $elementId = yii::$app->request->post('elementId');
+        $elementItemId = yii::$app->request->post('elementId');
 
         $cart = yii::$app->cart;
+        $elementId= $this->findIdByItemId($elementItemId);
 
-        $elementModel = $cart->getElementById($elementId);
-
+        if(!is_null($elementId))  {
+            $elementModel = $cart->getElementById($elementId);
+        }else{
+            $json['result'] = 'fail';
+            $json['info'] = 'id is null';
+        }
         if($cart->deleteElement($elementModel)) {
             $json['result'] = 'success';
         }
         else {
             $json['result'] = 'fail';
         }
-
         return $this->_cartJson($json);
     }
 
@@ -117,6 +121,26 @@ class ElementController extends \yii\web\Controller
             $json['clear_price'] = 0;
         }
         return Json::encode($json);
+    }
+
+    private function findIdByItemId($item_id){
+
+        if ($cartModel = yii::$app->cart) {
+                   foreach ($cartModel->getElements() as $cartElement) {
+                       if ($cartElement->item_id==$item_id) return $cartElement->id;
+                   }
+        }
+        return null;
+            //$json['elementsHTML'] = \dvizh\cart\widgets\ElementsList::widget($elementsListWidgetParams);
+//            $json['elements'] = $cartModel->getElements();
+//            $json['count'] = $cartModel->getCount();
+//            $json['clear_price'] = $cartModel->getCost(false);
+//            $json['price'] = $cartModel->getCostFormatted();
+//        foreach ($cartElements as $cartElement) {
+//                    if ($cartElement->item_id==$item_id) return $cartElement->id;
+//                }
+//                return null;
+
     }
 
 }
