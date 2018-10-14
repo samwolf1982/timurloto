@@ -70,11 +70,4 @@ class DefaultController extends \yii\web\Controller
         return Json::encode($json);
     }
 
-
-
-    /** @var Cart $cartModel */
-    private function getCurrentCooef($cartModel){
-
-        return 777777;
-    }
 }

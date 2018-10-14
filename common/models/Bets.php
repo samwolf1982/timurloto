@@ -101,7 +101,8 @@ class Bets extends \yii\db\ActiveRecord implements \dvizh\cart\interfaces\CartEl
     public function getPlayerfullname()
     {
 
-        return $this->hasOne(Eventsnames::className(), ['event_id' => 'market_id']);
+        return $this->hasOne(Eventsnames::className(), ['event_id' => 'event_id']);
+
     }
 
 

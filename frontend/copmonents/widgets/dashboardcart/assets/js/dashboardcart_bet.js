@@ -42,9 +42,10 @@ var SmartCart={
             dataType: "json",
             success: function (json) {
                 console.log(json);
-                if (json.elementsHTML) {
+                if (json) {
 
-                    SmartCart.render(el,json);
+                    // SmartCart.render(el,json);
+                    SmartCart.getFromCart(); // update cart
                     // console.log(data.elementsHTML);
                     // $("#cartBet .cartElements").html(data.elementsHTML);
 

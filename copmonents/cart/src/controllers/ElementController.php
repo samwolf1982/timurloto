@@ -106,7 +106,8 @@ class ElementController extends \yii\web\Controller
                 $elementsListWidgetParams = [];
             }
 
-            $json['elementsHTML'] = \dvizh\cart\widgets\ElementsList::widget($elementsListWidgetParams);
+            //$json['elementsHTML'] = \dvizh\cart\widgets\ElementsList::widget($elementsListWidgetParams);
+            $json['elements'] = $cartModel->getElements();
             $json['count'] = $cartModel->getCount();
             $json['clear_price'] = $cartModel->getCost(false);
             $json['price'] = $cartModel->getCostFormatted();

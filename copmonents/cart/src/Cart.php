@@ -65,12 +65,8 @@ class Cart extends Component
             $elementModel->result_type_name= $model->result_type_name;
 
 
-            yii::error($model->playerfullname);
-            //$el->event_name
+//            yii::error($model->playerfullname);
             $elementModel->gamers_name=$model->playerfullname->event_name;
-
-           // $elementModel->setCurrentOutcomeId($currentOutcomeId);
-//            $elementModel->setCurrentOutcomeId($currentOutcomeId);
 
             $elementEvent = new CartElementEvent(['element' => $elementModel]);
             $this->trigger(self::EVENT_CART_PUT, $elementEvent);
