@@ -64,6 +64,11 @@ class Cart extends Component
             $elementModel->current_market_name= $model->market_name;
             $elementModel->result_type_name= $model->result_type_name;
 
+
+            yii::error($model->playerfullname);
+            //$el->event_name
+            $elementModel->gamers_name=$model->playerfullname->event_name;
+
            // $elementModel->setCurrentOutcomeId($currentOutcomeId);
 //            $elementModel->setCurrentOutcomeId($currentOutcomeId);
 

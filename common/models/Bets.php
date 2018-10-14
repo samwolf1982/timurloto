@@ -98,6 +98,13 @@ class Bets extends \yii\db\ActiveRecord implements \dvizh\cart\interfaces\CartEl
         return 999;
     }
 
+    public function getPlayerfullname()
+    {
+
+        return $this->hasOne(Eventsnames::className(), ['event_id' => 'market_id']);
+    }
+
+
     public function getCartOptions()
     {
         // TODO: Implement getCartOptions() method.
