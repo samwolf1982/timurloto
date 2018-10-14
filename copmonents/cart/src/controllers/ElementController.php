@@ -1,6 +1,7 @@
 <?php
 namespace dvizh\cart\controllers;
 
+use dvizh\cart\Cart;
 use yii\helpers\Json;
 use yii\filters\VerbFilter;
 use yii;
@@ -47,6 +48,7 @@ class ElementController extends \yii\web\Controller
     {
         $json = ['result' => 'undefined', 'error' => false];
 
+        /**@var Cart $cart*/
         $cart = yii::$app->cart;
 
         $postData = yii::$app->request->post();
@@ -63,8 +65,10 @@ class ElementController extends \yii\web\Controller
             }
 
             if($postData['CartElement']['price'] && $postData['CartElement']['price'] != 'false') {
+                yii::error('price');
                 $elementModel = $cart->putWithPrice($productModel, $postData['CartElement']['price'], $postData['CartElement']['count'], $options);
             } else {
+                yii::error(get_class($cart));
 
                 $elementModel = $cart->put($productModel, $postData['CartElement']['count'], $options,null);
             }

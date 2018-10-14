@@ -1,6 +1,7 @@
 <?php
 namespace dvizh\cart;
 
+use dvizh\cart\models\CartElement;
 use yii\base\Component;
 use yii\helpers\ArrayHelper;
 use dvizh\cart\events\Cart as CartEvent;
@@ -51,6 +52,8 @@ class Cart extends Component
 
     public function put(\dvizh\cart\interfaces\CartElement $model, $count = 1, $options = [], $comment = null)
     {
+
+        /**@var  CartElement $elementModel */
         if (!$elementModel = $this->cart->getElement($model, $options)) {
             $elementModel = new $this->element;
             $elementModel->setCount((int)$count);
@@ -79,7 +82,22 @@ class Cart extends Component
                 }
             }
         } else {
+            // + обновление полей
+            yii::error(get_class($elementModel));
+
+//            $elementModel->updateInfoFields();
+//            $elementModel->parent_id= $model->event_id;
+//            $elementModel->current_market_name= $model->market_name;
+//            $elementModel->result_type_name= $model->result_type_name;
+////            yii::error($model->playerfullname);
+//            $elementModel->gamers_name=$model->playerfullname->event_name;
+
             $elementModel->countIncrement($count);
+
+            $elementModel->setComment( (string) rand(),true);
+//            $elementModel->updateInfoFields();
+
+
         }
 
         // TODO DRY
