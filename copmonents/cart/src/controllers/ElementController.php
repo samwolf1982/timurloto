@@ -51,8 +51,13 @@ class ElementController extends \yii\web\Controller
 
         /**@var Cart $cart*/
         $cart = yii::$app->cart;
-
         $postData = yii::$app->request->post();
+
+        $current_cart=$cart->getCart()->my();
+        $current_cart->current_coefficient=$postData['CartElement']['currentCooeficientDrop'];
+        $current_cart->save();
+
+
 
         $model = $postData['CartElement']['model'];
         if($model) {
@@ -122,6 +127,8 @@ class ElementController extends \yii\web\Controller
             $json['count'] = $cartModel->getCount();
             $json['clear_price'] = $cartModel->getCost(false);
             $json['price'] = $cartModel->getCostFormatted();
+//            $json['currentCooeficientDrop'] = 777;
+
 
         } else {
             $json['count'] = 0;

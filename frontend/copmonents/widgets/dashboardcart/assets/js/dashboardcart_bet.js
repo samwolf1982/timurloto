@@ -55,6 +55,7 @@ var SmartCart={
         data.CartElement.price = 0;
         data.CartElement.options = $(el).data("options");
         data.CartElement.current_outcome_id = $(el).data("current_outcome_id");
+        data.CartElement.currentCooeficientDrop = SmartCart.currentCooeficientDrop;
         data[this.csrf_param] = this.csrf;
         $.ajax({
             url: "/cart/element/create",
@@ -254,6 +255,7 @@ var SmartCart={
                     });
         SmartCart.tottal_coeficient=local_tottal_coeficient;
         SmartCart.currentBalance=json.currentBalance;
+        SmartCart.currentCooeficientDrop=json.currentCooeficientDrop;
         SmartCart.recalculateSumBet();
         SmartCart.recalculateMaybeWin();
         SmartCart.renderCalculate();

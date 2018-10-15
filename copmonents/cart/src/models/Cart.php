@@ -27,7 +27,6 @@ class Cart extends \yii\db\ActiveRecord implements CartInterface
 //yii::error($elementModel->model);
 //        $elementModel->parent_id= $this->element->event_id;
         $one=$this->my();
-        $one->current_coefficient=3;
         $elementModel->link('cart', $one);
 
 
