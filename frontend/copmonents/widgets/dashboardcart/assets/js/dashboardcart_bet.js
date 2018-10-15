@@ -7,13 +7,19 @@ $(document).ready(function () {
 
 
 
-    //--------ставка
-    // todo
-    $('input[type=radio][name=playlistPercent]').change(function() {
-              console.log('percent change val: '+this.value);
-              SmartCart.currentCooeficientDrop=this.value.replace("%", "");
-        SmartCart.getFromCart();
+
+
+    //-------- cтатус
+    $('.type-list').on('click',function () {
+       $(this).find('span').toggleClass('show');
+        if($(this).find("span.show > .icon-open").length){
+            SmartCart.updateStatus('public');
+        }else {
+            SmartCart.updateStatus('private');
+        }
+        return false;
     });
+
 
 });
 
@@ -40,6 +46,15 @@ var SmartCart={
             e.preventDefault();
             return false;
         });
+
+        //--------ставка
+        $('input[type=radio][name=playlistPercent]').change(function() {
+            console.log('percent change val: '+this.value);
+            SmartCart.currentCooeficientDrop=this.value.replace("%", "");
+            SmartCart.updateCoefficient(SmartCart.currentCooeficientDrop);
+            // SmartCart.getFromCart();
+        });
+
 
         console.log('Init SmartCart');
     },
@@ -71,6 +86,48 @@ var SmartCart={
                 }
             }
 
+        });
+    },
+
+    updateStatus: function (status) {
+        var data = {};
+        data.CartElement = {};
+        data.CartElement.status = status;
+        data[this.csrf_param] = this.csrf;
+        $.ajax({
+            url: "/cart/element/update-status",
+            type: "POST",
+            data: data,
+            dataType: "json",
+            success: function (json) {
+                if (json) {
+                    SmartCart.getFromCart(); // update cart
+
+                } else {
+                    console.log(json);
+                }
+            }
+        });
+    },
+
+    updateCoefficient: function (coefficient) {
+        var data = {};
+        data.CartElement = {};
+        data.CartElement.currentCooeficientDrop = SmartCart.currentCooeficientDrop;
+        data[this.csrf_param] = this.csrf;
+        $.ajax({
+            url: "/cart/element/update-coefficient",
+            type: "POST",
+            data: data,
+            dataType: "json",
+            success: function (json) {
+                if (json) {
+                    SmartCart.getFromCart(); // update cart
+
+                } else {
+                    console.log(json);
+                }
+            }
         });
     },
 

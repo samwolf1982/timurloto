@@ -1,6 +1,7 @@
 <?php
 namespace dvizh\cart\controllers;
 
+use common\models\helpers\ConstantsHelper;
 use dvizh\cart\Cart;
 use komer45\balance\models\Score;
 use yii\helpers\Json;
@@ -55,8 +56,10 @@ class ElementController extends \yii\web\Controller
 
         $current_cart=$cart->getCart()->my();
         $current_cart->current_coefficient=$postData['CartElement']['currentCooeficientDrop'];
-        $current_cart->save();
+        $current_cart->playlist_id=$postData['CartElement']['playlist_id'];
 
+        $current_cart->status= $this->setStatusBet( $postData['CartElement']['status']);
+        $current_cart->save();
 
 
         $model = $postData['CartElement']['model'];
@@ -113,6 +116,44 @@ class ElementController extends \yii\web\Controller
         return $this->_cartJson($json);
     }
 
+    public function actionUpdateCoefficient()
+    {
+        $json = ['result' => 'undefined', 'error' => false];
+        /**@var Cart $cart*/
+        $cart = yii::$app->cart;
+        $postData = yii::$app->request->post();
+        $current_cart=$cart->getCart()->my();
+        $current_cart->current_coefficient=$postData['CartElement']['currentCooeficientDrop'];
+
+       if($current_cart->validate() && $current_cart->save()){
+           $json['result'] = 'success';
+       }else{
+           $json['result'] = 'actionUpdateCoefficient has error';
+       }
+
+        return $this->_cartJson($json);
+    }
+
+    public function actionUpdateStatus()
+    {
+        $json = ['result' => 'undefined', 'error' => false];
+        /**@var Cart $cart*/
+        $cart = yii::$app->cart;
+        $postData = yii::$app->request->post();
+        $current_cart=$cart->getCart()->my();
+
+        $current_cart->status= $this->setStatusBet( $postData['CartElement']['status']);
+
+        if($current_cart->validate() && $current_cart->save()){
+            $json['result'] = 'success';
+        }else{
+            $json['result'] = 'actionUpdateStatus has error';
+        }
+
+        return $this->_cartJson($json);
+    }
+
+
     private function _cartJson($json)
     {
 
@@ -164,4 +205,17 @@ class ElementController extends \yii\web\Controller
 
     }
 
+
+    private function setStatusBet($status)
+    {
+        yii::error($status);
+        if($status == 'public'){
+            return ConstantsHelper::STATUS_PUBLIC_BET;
+        }else if($status == 'private'){
+            return ConstantsHelper::STATUS_PRIVATE_BET;
+        }else{
+
+            return ConstantsHelper::STATUS_PUBLIC_BET;
+        }
+    }
 }

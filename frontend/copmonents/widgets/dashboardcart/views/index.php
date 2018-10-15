@@ -2,6 +2,7 @@
 
    use app\copmonents\widgets\dashboardcart\DashboardcartAsset;
    use app\copmonents\widgets\dashboardgategory\DashboardgategoryAsset;
+   use common\models\helpers\ConstantsHelper;
    use common\models\Sportcategorynames;
    use common\models\wraps\EventsnamesExt;
    use common\models\wraps\SportcategoryExt;
@@ -45,6 +46,7 @@
                            <div class="delete-block">
                                <a href="" class="delete-all-bets"><span class="icon-close2"></span> Удалить все события</a>
                            </div>
+
                            <div class="bet-info-calc">
                                <div class="bet-calc-row calculator-bet">
                                    <div class="calculator-bet-inner">
@@ -55,84 +57,25 @@
                                            <div class="custom-dropdown">
                                                <div class="custom-dropdown-inner">
                                                    <div class="val-drop">
-                                                       <button class="val-drop-btn">1%</button>
+                                                       <button class="val-drop-btn"><?=$currentCooeficientDrop?>%</button>
                                                    </div>
                                                    <div class="dropdown-list">
                                                        <div class="play-list">
-
                                                            <?php foreach (range(1,10) as $keyItem) { ?>
                                                                <div class="drop-item">
                                                                    <div class="check-drop">
-                                                                       <input name="playlistPercent" type="radio" id="playlistPercent_<?=$keyItem?>" checked="checked" value="<?=$keyItem?>%">
-                                                                       <label for="playlistPercent_<?=$keyItem?>"><?=$keyItem?>%</label>
+                                                                       <?php if($keyItem==$currentCooeficientDrop){ ?>
+                                                                           <input name="playlistPercent" type="radio" id="playlistPercent_<?=$keyItem?>" checked="checked" value="<?=$keyItem?>%">
+                                                                           <label for="playlistPercent_<?=$keyItem?>"><?=$keyItem?>%</label>
+                                                                       <?php }else{ ?>
+                                                                           <input name="playlistPercent" type="radio" id="playlistPercent_<?=$keyItem?>"  value="<?=$keyItem?>%">
+                                                                           <label for="playlistPercent_<?=$keyItem?>"><?=$keyItem?>%</label>
+                                                                      <?php  } ?>
+
+
                                                                    </div>
                                                                </div>
                                                            <?php  } ?>
-
-                                                           <?php if(0){ ?>
-                                                               <div class="drop-item">
-                                                                   <div class="check-drop">
-                                                                       <input name="playlist" type="radio" id="playlist14521" checked="checked" value="1%">
-                                                                       <label for="playlist14521">1%</label>
-                                                                   </div>
-                                                               </div>
-                                                               <div class="drop-item">
-                                                                   <div class="check-drop">
-                                                                       <input name="playlist" type="radio" id="playlist14532" checked="checked" value="2%">
-                                                                       <label for="playlist14532">2%</label>
-                                                                   </div>
-                                                               </div>
-                                                               <div class="drop-item">
-                                                                   <div class="check-drop">
-                                                                       <input name="playlist" type="radio" id="playlist24543" value="3%">
-                                                                       <label for="playlist24543">3%</label>
-                                                                   </div>
-                                                               </div>
-                                                               <div class="drop-item">
-                                                                   <div class="check-drop">
-                                                                       <input name="playlist" type="radio" id="playlist34554" value="4%">
-                                                                       <label for="playlist34554">4%</label>
-                                                                   </div>
-                                                               </div>
-                                                               <div class="drop-item">
-                                                                   <div class="check-drop">
-                                                                       <input name="playlist" type="radio" id="playlist34565" value="5%">
-                                                                       <label for="playlist34565">5%</label>
-                                                                   </div>
-                                                               </div>
-                                                               <div class="drop-item">
-                                                                   <div class="check-drop">
-                                                                       <input name="playlist" type="radio" id="playlist34576" value="6%">
-                                                                       <label for="playlist34576">6%</label>
-                                                                   </div>
-                                                               </div>
-                                                               <div class="drop-item">
-                                                                   <div class="check-drop">
-                                                                       <input name="playlist" type="radio" id="playlist34587" value="7%">
-                                                                       <label for="playlist34587">7%</label>
-                                                                   </div>
-                                                               </div>
-                                                               <div class="drop-item">
-                                                                   <div class="check-drop">
-                                                                       <input name="playlist" type="radio" id="playlist34598" value="8%">
-                                                                       <label for="playlist34598">8%</label>
-                                                                   </div>
-                                                               </div>
-                                                               <div class="drop-item">
-                                                                   <div class="check-drop">
-                                                                       <input name="playlist" type="radio" id="playlist345202" value="9%">
-                                                                       <label for="playlist345202">9%</label>
-                                                                   </div>
-                                                               </div>
-                                                               <div class="drop-item">
-                                                                   <div class="check-drop">
-                                                                       <input name="playlist" type="radio" id="playlist345301" value="10%">
-                                                                       <label for="playlist345301">10%</label>
-                                                                   </div>
-                                                               </div>
-                                                           <?php } ?>
-
-
                                                        </div>
                                                    </div>
                                                </div>
@@ -189,14 +132,17 @@
                                        </div>
                                    </div>
                                </div>
+
+
                                <button class="type-list">
-                                                        <span class="show">
-                                                            <i class="icon-open"></i> Открытый
-                                                        </span>
-                                   <span class="">
-                                                            <i class="icon-lock"></i> Закрытый
-                                                        </span>
+                                                         <?php if($currentStatus==ConstantsHelper::STATUS_PUBLIC_BET){   ?>
+                                                         <span class="show"><i class="icon-open"></i> Открытый</span>
+                                                         <span class=""><i class="icon-lock"></i> Закрытый</span>
+                                                         <?php }else{
+
+                                                         }  ?>
                                </button>
+
                                <button data-target="#modal-success-bet" type="submit" class="btn btn-primary send-bets" data-toggle="modal">Сделать Ставку</button>
                                <p>Баланс: <span id="currentBalance"><?=$total_balance; ?> </span> <span> betcoins</span></p>
                                <p class="hidden">Сумма ставки: <span id="betSum">0</span> <span> betcoins</span></p>

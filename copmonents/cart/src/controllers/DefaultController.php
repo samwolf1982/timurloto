@@ -59,6 +59,7 @@ class DefaultController extends \yii\web\Controller
             $json['count'] = $cartModel->getCount();
             $json['elements'] = $cartModel->getElements();
             $json['price'] = $cartModel->getCostFormatted();
+
             $current_cart=$cartModel->getCart()->my();
             $json['currentCooeficientDrop'] = $current_cart->current_coefficient;
 //            $json['full_name_shod'] = $cartModel->current_market_name;
@@ -75,7 +76,7 @@ class DefaultController extends \yii\web\Controller
         $b= Score::find()->where(['user_id' => Yii::$app->user->id])->one()->balance;
 //        $balance  = number_format($b, 0, '', ',');
         $json['currentBalance'] =  $b;
-        $json['currentCooeficientDrop'] = 1;
+
 
         return Json::encode($json);
     }

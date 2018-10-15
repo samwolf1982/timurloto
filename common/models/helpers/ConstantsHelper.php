@@ -16,6 +16,10 @@ class ConstantsHelper
         const STATUS_UN_ACTIVE=0;
 
 
+        const STATUS_PUBLIC_BET=0;
+        const STATUS_PRIVATE_BET=1;
+
+
 }
 
 

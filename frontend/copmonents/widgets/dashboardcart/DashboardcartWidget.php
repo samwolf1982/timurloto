@@ -23,8 +23,14 @@ class DashboardcartWidget extends Widget
 
         $b= Score::find()->where(['user_id' => Yii::$app->user->id])->one()->balance;
         $total_balance  = number_format($b, 0, '', ',');
+        $cart = yii::$app->cart;
+        $current_cart=$cart->getCart()->my();
+        $currentCooeficientDrop= $current_cart->current_coefficient;
+        $currentStatus= $current_cart->status;
 
-        return       $this->render('index', ['total_balance'=>$total_balance]);
+
+
+        return       $this->render('index', ['total_balance'=>$total_balance,'currentCooeficientDrop'=>$currentCooeficientDrop,'currentStatus'=>$currentStatus]);
     }
     public function init(){
         parent::init();

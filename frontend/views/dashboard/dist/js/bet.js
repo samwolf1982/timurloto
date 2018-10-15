@@ -1,10 +1,10 @@
 /* eslint-disable no-empty-label */
 $(document).ready(function () {
 
-    $('.type-list').on('click',function () {
-        $(this).find('span').toggleClass('show');
-        return false;
-    });
+    // $('.type-list').on('click',function () {
+    //     $(this).find('span').toggleClass('show');
+    //     return false;
+    // });
 
 
     // $('.trigger-sub-collapse').on('click',function () {

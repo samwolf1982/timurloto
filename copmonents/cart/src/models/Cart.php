@@ -83,9 +83,9 @@ class Cart extends \yii\db\ActiveRecord implements CartInterface
     public function rules()
     {
         return [
-            [['created_time', 'user_id','current_coefficient'], 'required', 'on' => 'create'],
+            [['created_time', 'user_id','current_coefficient','status'], 'required', 'on' => 'create'],
             [['tmp_user_id'], 'string'],
-            [['updated_time', 'created_time','current_coefficient'], 'integer'],
+            [['updated_time', 'created_time','current_coefficient','playlist_id','status'], 'integer'],
         ];
     }
 
@@ -98,6 +98,8 @@ class Cart extends \yii\db\ActiveRecord implements CartInterface
             'created_time' => yii::t('cart', 'Created Time'),
             'updated_time' => yii::t('cart', 'Updated Time'),
             'current_coefficient' => 'current coefficient',
+            'playlist_id' => 'current playlist_id',
+            'status' => 'status',
         ];
     }
     
