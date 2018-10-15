@@ -83,19 +83,12 @@ class Cart extends Component
             }
         } else {
             // + обновление полей
-            yii::error(get_class($elementModel));
-
-//            $elementModel->updateInfoFields();
-//            $elementModel->parent_id= $model->event_id;
-//            $elementModel->current_market_name= $model->market_name;
-//            $elementModel->result_type_name= $model->result_type_name;
-////            yii::error($model->playerfullname);
-//            $elementModel->gamers_name=$model->playerfullname->event_name;
-
+            $elementModel->setOptions($options);
+            $elementModel->current_market_name= $model->market_name;
+            $elementModel->result_type_name= $model->result_type_name;
+            $elementModel->gamers_name=$model->playerfullname->event_name;
             $elementModel->countIncrement($count);
 
-            $elementModel->setComment( (string) rand(),true);
-//            $elementModel->updateInfoFields();
 
 
         }

@@ -2,6 +2,15 @@ var tottal_coeficient=1;
 $(document).ready(function () {
     SmartCart.init();
     SmartCart.getFromCart(); // update cart
+
+
+
+
+    //--------ставка
+    $('input[type=radio][name=playlistPercent]').change(function() {
+              console.log('percent change val: '+this.value )
+    });
+
 });
 
 var SmartCart={

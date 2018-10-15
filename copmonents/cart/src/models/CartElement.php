@@ -102,21 +102,7 @@ class CartElement extends \yii\db\ActiveRecord implements Element
         return $this->save();
     }
 
-    /**
-     * USING POST
-     * @return bool
-     */
-    public function updateInfoFields()
-    {
-        $postData = yii::$app->request->post();
-        $this->item_id =$postData['CartElement']['item_id'];
-        $this->setComment('fghj',true);
-//        $this->count = $this->count+$count;
-        return $this->save();
 
-
-
-    }
 
 
 

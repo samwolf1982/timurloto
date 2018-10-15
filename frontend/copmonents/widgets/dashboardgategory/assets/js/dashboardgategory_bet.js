@@ -125,17 +125,6 @@ var DashboardCategoryFinlink={
             }, "json");
         return false;
     },
-    render_DEL: function (el,json) {
-        // console.log($(el).data());
-
-        // $('#child_sub_colapse_'+$(el).data('id')).html(json.html);
-         $('#dashboard_center_block_tab_blocks').html(json.html);
-
-
-        //$(this).parent().toggleClass('active_coll').find('.sub-collapse').stop().slideToggle(400);
-       // $(el).parent().toggleClass('active_coll').find('.sub-collapse').stop().slideToggle(400);
-        // $(el).parents('.collapsed-type').toggleClass('active_coll_main').find('.collapse-block').stop().slideToggle(400);
-    },
     render_nav:function (el,json) {
 
     },

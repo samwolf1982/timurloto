@@ -233,20 +233,25 @@ $(document).ready(function () {
 
 
 
-
+     // console.log('sdfghjk')
     $('.plus-minus-block .plus').on('click',function () {
         var val_perc = $('.plus-minus-block input').attr('data-val');
         var new_perc_val = parseInt(val_perc) + 1;
         var max_val = 10;
         if(new_perc_val <= max_val){
             $('.plus-minus-block input').attr('data-val',new_perc_val).val(new_perc_val+'%');
+            console.log('plus-minus-block .plus <=')
         }
         if(new_perc_val == max_val) {
             $('.notification-calculate').stop().fadeIn(300).addClass('active_notification');
+            console.log('plus-minus-block .plus =')
         }
+
+        console.log('plus-minus-block .plus default')
         return false;
     });
     $('.plus-minus-block .minus').on('click',function () {
+        console.log('plus-minus-block .plus default2')
         var val_perc = $('.plus-minus-block input').attr('data-val');
         var new_perc_val = parseInt(val_perc) - 1;
         var max_val = 10;
@@ -259,6 +264,9 @@ $(document).ready(function () {
         }
         return false;
     });
+
+
+
     $('.delete-all-bets').on('click',function () {
         $('.bet-coup-list li').remove();
         $('.bet-parent-val,.bets-val').removeClass('selected');
