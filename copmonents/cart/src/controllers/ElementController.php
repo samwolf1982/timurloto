@@ -58,7 +58,8 @@ class ElementController extends \yii\web\Controller
         $current_cart->current_coefficient=$postData['CartElement']['currentCooeficientDrop'];
         $current_cart->playlist_id=$postData['CartElement']['playlist_id'];
 
-        $current_cart->status= $this->setStatusBet( $postData['CartElement']['status']);
+       // $current_cart->status= $this->setStatusBet( $postData['CartElement']['status']);
+
         $current_cart->save();
 
 

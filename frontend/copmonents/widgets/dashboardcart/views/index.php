@@ -138,9 +138,10 @@
                                                          <?php if($currentStatus==ConstantsHelper::STATUS_PUBLIC_BET){   ?>
                                                          <span class="show"><i class="icon-open"></i> Открытый</span>
                                                          <span class=""><i class="icon-lock"></i> Закрытый</span>
-                                                         <?php }else{
-
-                                                         }  ?>
+                                                         <?php }else{ ?>
+                                                             <span class=""><i class="icon-open"></i> Открытый</span>
+                                                             <span class="show"><i class="icon-lock"></i> Закрытый</span>
+                                                         <?      }  ?>
                                </button>
 
                                <button data-target="#modal-success-bet" type="submit" class="btn btn-primary send-bets" data-toggle="modal">Сделать Ставку</button>
