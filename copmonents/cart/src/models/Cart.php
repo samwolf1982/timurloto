@@ -26,7 +26,11 @@ class Cart extends \yii\db\ActiveRecord implements CartInterface
 
 //yii::error($elementModel->model);
 //        $elementModel->parent_id= $this->element->event_id;
-        $elementModel->link('cart', $this->my());
+        $one=$this->my();
+        $one->current_coefficient=3;
+        $elementModel->link('cart', $one);
+
+
 
         if ($elementModel->validate() && $elementModel->save()) {
             return $elementModel;
@@ -80,9 +84,9 @@ class Cart extends \yii\db\ActiveRecord implements CartInterface
     public function rules()
     {
         return [
-            [['created_time', 'user_id'], 'required', 'on' => 'create'],
+            [['created_time', 'user_id','current_coefficient'], 'required', 'on' => 'create'],
             [['tmp_user_id'], 'string'],
-            [['updated_time', 'created_time'], 'integer'],
+            [['updated_time', 'created_time','current_coefficient'], 'integer'],
         ];
     }
 
@@ -94,6 +98,7 @@ class Cart extends \yii\db\ActiveRecord implements CartInterface
             'tmp_user_id' => yii::t('cart', 'Tmp user ID'),
             'created_time' => yii::t('cart', 'Created Time'),
             'updated_time' => yii::t('cart', 'Updated Time'),
+            'current_coefficient' => 'current coefficient',
         ];
     }
     
