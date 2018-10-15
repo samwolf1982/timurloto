@@ -1,4 +1,5 @@
 var tottal_coeficient=1;
+
 $(document).ready(function () {
     SmartCart.init();
     SmartCart.getFromCart(); // update cart
@@ -7,6 +8,7 @@ $(document).ready(function () {
 
 
     //--------ставка
+    // todo
     $('input[type=radio][name=playlistPercent]').change(function() {
               console.log('percent change val: '+this.value )
     });
@@ -14,6 +16,11 @@ $(document).ready(function () {
 });
 
 var SmartCart={
+    currentCooeficientDrop:1,
+    currentBalance:0,
+    tottal_coeficient:0,
+    sumBet:0,
+    maybeWin:0,
     csrf:null,
     csrf_param:null,
     init:function () {
@@ -230,7 +237,7 @@ var SmartCart={
             data: data,
             dataType: "json",
             success: function (json) {
-                tottal_coeficient=1;
+                local_tottal_coeficient=1;
                 if (json) {
 
                     $.each(json.elements, function( index, value ) {
@@ -238,8 +245,6 @@ var SmartCart={
                     outcome=    JSON.parse(value.options);
                         console.log(value);
                         console.log(outcome);
-
-
                         // $.each(JSON.parse(value.options), function( index_out, value_out ) {
                         //     // console.log([index_out, value_out]);
                         //     //         if(value.current_outcome_id === value_out.outcome_id ){
@@ -247,18 +252,16 @@ var SmartCart={
                         //     //             curent_coef=value_out.outcome_coef;
                         //     //         }
                         // });
-                        //outcome.outcome_name
-    tottal_coeficient *= outcome.outcome_coef;
+                       // outcome.outcome_namelocal_tottal_coeficient *= outcome.outcome_coef;
+    local_tottal_coeficient*=outcome.outcome_coef;
     SmartCart.renderAdd(value.item_id,value.parent_id,value.current_market_name+' '+value.result_type_name+' '+outcome.outcome_name,value.gamers_name,outcome.outcome_coef);
     SmartCart.reloadDom();
-    $('#total-coeficient').html( Math.round10(tottal_coeficient, -2));
-
+    $('#total-coeficient').html( Math.round10(local_tottal_coeficient, -2));
                     });
-
-
-
-                    // console.log(data.elementsHTML);
-                    // $("#cartBet .cartElements").html(data.elementsHTML);
+        SmartCart.tottal_coeficient=local_tottal_coeficient;
+        SmartCart.currentBalance=json.currentBalance;
+        SmartCart.recalculateSumBet();
+        SmartCart.renderCalculate();
 
                 } else {
                     console.log(json);
@@ -267,7 +270,15 @@ var SmartCart={
 
         });
     },
+    recalculateSumBet: function () {
+        SmartCart.sumBet=  SmartCart.currentBalance * SmartCart.currentCooeficientDrop / 100;
+    },
+    renderCalculate: function () {
+        $('#currentBalance').html(SmartCart.currentBalance);
+        $('#betSum').html(SmartCart.sumBet);
+        $('#betSum').parent().removeClass('hidden');
 
+    },
     deleteSingle:function (el) {
 
 
@@ -340,6 +351,7 @@ var SmartCart={
         console.log(this.csrf_param)
     }
 };
+
 
 
 

@@ -2,6 +2,7 @@
 namespace dvizh\cart\controllers;
 
 use dvizh\cart\Cart;
+use komer45\balance\models\Score;
 use yii\helpers\Json;
 use yii\filters\VerbFilter;
 use yii;
@@ -109,6 +110,8 @@ class ElementController extends \yii\web\Controller
 
     private function _cartJson($json)
     {
+
+
         if ($cartModel = yii::$app->cart) {
             if(!$elementsListWidgetParams = yii::$app->request->post('elementsListWidgetParams')) {
                 $elementsListWidgetParams = [];
@@ -119,11 +122,18 @@ class ElementController extends \yii\web\Controller
             $json['count'] = $cartModel->getCount();
             $json['clear_price'] = $cartModel->getCost(false);
             $json['price'] = $cartModel->getCostFormatted();
+
         } else {
             $json['count'] = 0;
             $json['price'] = 0;
             $json['clear_price'] = 0;
         }
+
+        $b= Score::find()->where(['user_id' => Yii::$app->user->id])->one()->balance;
+        $balance  = number_format($b, 0, '', ',');
+        $json['currentBalance'] = $balance;
+
+
         return Json::encode($json);
     }
 

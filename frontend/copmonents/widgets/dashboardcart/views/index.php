@@ -198,7 +198,8 @@
                                                         </span>
                                </button>
                                <button data-target="#modal-success-bet" type="submit" class="btn btn-primary send-bets" data-toggle="modal">Сделать Ставку</button>
-                               <p>Баланс: <span><?=$total_balance; ?> </span> <span> betcoins</span></p>
+                               <p>Баланс: <span id="currentBalance"><?=$total_balance; ?> </span> <span> betcoins</span></p>
+                               <p class="hidden">Сумма ставки: <span id="betSum">0</span> <span> betcoins</span></p>
                            </div>
                        </div>
                    </div>
