@@ -141,7 +141,7 @@
                                        </div>
                                        <div class="result-block">
                                            <div class="placeholder-text">Выигрыш</div>
-                                           <div class="value-text"><span class="icon-betcoin-logo"></span>335.00</div>
+                                           <div class="value-text"><span class="icon-betcoin-logo"></span>  <span id="maybeWin"> 335.00 </span></div>
                                        </div>
                                    </div>
                                </div>

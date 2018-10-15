@@ -10,7 +10,9 @@ $(document).ready(function () {
     //--------ставка
     // todo
     $('input[type=radio][name=playlistPercent]').change(function() {
-              console.log('percent change val: '+this.value )
+              console.log('percent change val: '+this.value);
+              SmartCart.currentCooeficientDrop=this.value.replace("%", "");
+        SmartCart.getFromCart();
     });
 
 });
@@ -245,14 +247,6 @@ var SmartCart={
                     outcome=    JSON.parse(value.options);
                         console.log(value);
                         console.log(outcome);
-                        // $.each(JSON.parse(value.options), function( index_out, value_out ) {
-                        //     // console.log([index_out, value_out]);
-                        //     //         if(value.current_outcome_id === value_out.outcome_id ){
-                        //     //             console.log('OKI');
-                        //     //             curent_coef=value_out.outcome_coef;
-                        //     //         }
-                        // });
-                       // outcome.outcome_namelocal_tottal_coeficient *= outcome.outcome_coef;
     local_tottal_coeficient*=outcome.outcome_coef;
     SmartCart.renderAdd(value.item_id,value.parent_id,value.current_market_name+' '+value.result_type_name+' '+outcome.outcome_name,value.gamers_name,outcome.outcome_coef);
     SmartCart.reloadDom();
@@ -261,6 +255,7 @@ var SmartCart={
         SmartCart.tottal_coeficient=local_tottal_coeficient;
         SmartCart.currentBalance=json.currentBalance;
         SmartCart.recalculateSumBet();
+        SmartCart.recalculateMaybeWin();
         SmartCart.renderCalculate();
 
                 } else {
@@ -271,12 +266,19 @@ var SmartCart={
         });
     },
     recalculateSumBet: function () {
-        SmartCart.sumBet=  SmartCart.currentBalance * SmartCart.currentCooeficientDrop / 100;
+        SmartCart.sumBet=    Math.round10((SmartCart.currentBalance * SmartCart.currentCooeficientDrop / 100), -2)  ;
+    },
+    recalculateMaybeWin: function () {
+        SmartCart.maybeWin=    Math.round10((SmartCart.sumBet * SmartCart.tottal_coeficient), -2)  ;
     },
     renderCalculate: function () {
         $('#currentBalance').html(SmartCart.currentBalance);
         $('#betSum').html(SmartCart.sumBet);
         $('#betSum').parent().removeClass('hidden');
+
+        $('#maybeWin').html(SmartCart.maybeWin);
+
+
 
     },
     deleteSingle:function (el) {

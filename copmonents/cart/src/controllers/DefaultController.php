@@ -2,6 +2,7 @@
 namespace dvizh\cart\controllers;
 
 use dvizh\cart\models\Cart;
+use komer45\balance\models\Score;
 use yii\filters\VerbFilter;
 use yii\helpers\Json;
 use yii;
@@ -67,6 +68,12 @@ class DefaultController extends \yii\web\Controller
             $json['count'] = 0;
             $json['price'] = 0;
         }
+
+
+        $b= Score::find()->where(['user_id' => Yii::$app->user->id])->one()->balance;
+//        $balance  = number_format($b, 0, '', ',');
+        $json['currentBalance'] =  $b;
+
         return Json::encode($json);
     }
 
