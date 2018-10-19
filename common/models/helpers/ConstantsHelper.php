@@ -31,6 +31,7 @@ class ConstantsHelper
         const DEFAULT_COEFFICIENT=1;
 
 
+        const MAX_DROP_COEFFICIENT=10;
 
 
 }

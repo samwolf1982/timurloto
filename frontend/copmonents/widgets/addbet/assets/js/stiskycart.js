@@ -106,12 +106,10 @@ $(document).on("change",".form-check-input:checkbox", function(e) {
 
 
 $("#cartBet").submit(function(e){
-
   //  var formData=$(this).serialize();
 //   send
      var data = $(this).serializeArray();
      data[jQuery("meta[name=csrf-param]").attr("content")]=jQuery("meta[name=csrf-token]").attr("content");
-//     data[jQuery("meta[name=csrf-param]").attr("content")] = jQuery("meta[name=csrf-token]").attr("content");
    console.log(data);
 
     $.ajax({
@@ -145,8 +143,6 @@ $("#cartBet").submit(function(e){
 
 
 //   console.log(formData);
-
-
 
    //      stop bulk
     if (event.preventDefault) {

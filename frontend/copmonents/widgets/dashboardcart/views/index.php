@@ -36,7 +36,10 @@
                    </li>
                </ul>
                <div class="coupon-tabs-body">
+
                    <div class="coupon-tab-item active" id="ordinator">
+
+
                        <div class="coupon-tab-content">
                            <ul class="bet-coup-list"></ul>
                            <div class="all-coeficient">
@@ -57,11 +60,11 @@
                                            <div class="custom-dropdown">
                                                <div class="custom-dropdown-inner">
                                                    <div class="val-drop">
-                                                       <button class="val-drop-btn"><?=$currentCooeficientDrop?>%</button>
+                                                       <button class="val-drop-btn currentCooeficientDrop"><?=$currentCooeficientDrop?>%</button>
                                                    </div>
                                                    <div class="dropdown-list">
-                                                       <div class="play-list">
-                                                           <?php foreach (range(1,10) as $keyItem) { ?>
+                                                       <div class="play-list" id="currentCooeficientDropList">
+                                                           <?php foreach (range(1,$max_coeficientDrop) as $keyItem) { ?>
                                                                <div class="drop-item">
                                                                    <div class="check-drop">
                                                                        <?php if($keyItem==$currentCooeficientDrop){ ?>
@@ -185,14 +188,41 @@
 
                                </div>
 
+                               <?php if(0) { ?>
+                                   <button id="smartCartButton" data-target="#modal-success-bet" type="submit" class="btn btn-primary send-bets" data-toggle="modal">Сделать Ставку</button>
+                               <?php  } ?>
 
-                               <button data-target="#modal-success-bet" type="submit" class="btn btn-primary send-bets" data-toggle="modal">Сделать Ставку</button>
+                               <?php     if (Yii::$app->user->isGuest) { ?>
+                                   <style>
+                                       .user-btn.w100,.send-bets{
+                                           width: 100%;
+                                       }
+                                       .calculator-bet-inner .custom-dropdown .dropdown-list{
+                                           height: auto !important;
+                                       }
+                                   </style>
+                                   <div class="user-btn w100">
+                                       <a href="#" class="btn btn-primary send-bets"  data-toggle="modal" data-target="#modal-auth"><i class="icon-user"></i> <span>ВОЙТИ</span></a>
+                                   </div>
+                               <?php }else{ ?>
+                                   <style>
+                                       .calculator-bet-inner .custom-dropdown .dropdown-list{
+                                           height: auto;
+                                       }
+                                   </style>
+                                   <button id="smartCartButton"  class="btn btn-primary send-bets" onclick="SmartCart.createBet(this);" >Сделать Ставку</button>
+                               <?php } ?>
+
+
+
                                <p>Баланс: <span id="currentBalance"><?=$total_balance; ?> </span> <span> betcoins</span></p>
                                <p class="hidden">Сумма ставки: <span id="betSum">0</span> <span> betcoins</span></p>
 
 
                            </div>
                        </div>
+
+
                    </div>
                </div>
            </div>

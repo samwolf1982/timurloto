@@ -4,27 +4,6 @@ $(document).ready(function () {
     SmartCart.init();
     SmartCart.getFromCart(); // update cart
 
-    // playlist
-    $('input[type=radio][name=playlistUser]').change(function() {
-        console.log('playlistUser change val: '+$(this).data('value'));
-        SmartCart.updatePlaylist($(this).data('value'));
-    });
-    $(document).on('change','.bet-coup-info input[type=checkbox]',function (e) {
-        console.log('change '+ $(this).attr('id'));
-        if ($(this).prop('checked')) {
-            SmartCart.updateCheckboxStatus($(this).attr('id'),1);
-        }
-        else {
-            SmartCart.updateCheckboxStatus($(this).attr('id'),0);
-        }
-
-        // e.preventDefault();
-        return false;
-    });
-
-
-
-
 
 });
 
@@ -34,6 +13,7 @@ var SmartCart={
     tottal_coeficient:0,
     sumBet:0,
     maybeWin:0,
+    max_coeficientDrop:10,
     csrf:null,
     csrf_param:null,
     init:function () {
@@ -78,6 +58,24 @@ var SmartCart={
             console.log('playlistUser change val: '+$(this).data('value'));
             SmartCart.updatePlaylist($(this).data('value'));
         });
+
+        // playlist
+        // $('input[type=radio][name=playlistUser]').change(function() {
+        //     console.log('playlistUser change val: '+$(this).data('value'));
+        //     SmartCart.updatePlaylist($(this).data('value'));
+        // });
+        $(document).on('change','.bet-coup-info input[type=checkbox]',function (e) {
+            console.log('change '+ $(this).attr('id'));
+            if ($(this).prop('checked')) {
+                SmartCart.updateCheckboxStatus($(this).attr('id'),1);
+            }
+            else {
+                SmartCart.updateCheckboxStatus($(this).attr('id'),0);
+            }
+            // e.preventDefault();
+            return false;
+        });
+
 
 
         console.log('Init SmartCart');
@@ -149,13 +147,7 @@ var SmartCart={
             data: data,
             dataType: "json",
             success: function (json) {
-                console.log(json);
-                // if (json) {
-                //     SmartCart.getFromCart(); // update cart
-                //
-                // } else {
-                //     console.log(json);
-                // }
+                    SmartCart.getFromCart(); // update cart
             }
         });
     },
@@ -381,17 +373,27 @@ var SmartCart={
                     outcome=    JSON.parse(value.options);
                         console.log(value);
                         console.log(outcome);
-    local_tottal_coeficient*=outcome.outcome_coef;
+                        if(!value.status){
+                            local_tottal_coeficient*=outcome.outcome_coef;
+                        }
+
     SmartCart.renderAdd(value.item_id,value.parent_id,value.current_market_name+' '+value.result_type_name+' '+outcome.outcome_name,value.gamers_name,outcome.outcome_coef,value.status);
     SmartCart.reloadDom();
+
     $('#total-coeficient').html( Math.round10(local_tottal_coeficient, -2));
                     });
+
+
         SmartCart.tottal_coeficient=local_tottal_coeficient;
         SmartCart.currentBalance=json.currentBalance;
         SmartCart.currentCooeficientDrop=json.currentCooeficientDrop;
+        SmartCart.max_coeficientDrop=json.max_coeficientDrop;
         SmartCart.recalculateSumBet();
         SmartCart.recalculateMaybeWin();
         SmartCart.renderCalculate();
+
+
+
 
                 } else {
                     console.log(json);
@@ -410,8 +412,20 @@ var SmartCart={
         $('#currentBalance').html(SmartCart.currentBalance);
         $('#betSum').html(SmartCart.sumBet);
         $('#betSum').parent().removeClass('hidden');
-
         $('#maybeWin').html(SmartCart.maybeWin);
+        $('.currentCooeficientDrop').html(SmartCart.currentCooeficientDrop+'%');
+
+        for (var i = 1; i <= SmartCart.max_coeficientDrop; i++) {
+            if (i === 1) { $('#currentCooeficientDropList').html('');}
+                $("#currentCooeficientDropList").append('<div class="drop-item">\n' +
+                    '<div class="check-drop">\n' +
+                    '<input name="playlistPercent" type="radio" id="playlistPercent_' + i + '" value="' + i + '%">\n' +
+                    '<label for="playlistPercent_' + i + '">' + i + '%</label>\n' +
+                    '</div>\n' +
+                    '</div>');
+
+            }
+        addEventForNewDrop();
 
 
 
@@ -483,6 +497,46 @@ var SmartCart={
 
 
     },
+
+
+
+    createBet:function (el) {
+        console.log('createBet');
+        var data = {};
+        data[jQuery("meta[name=csrf-param]").attr("content")]=jQuery("meta[name=csrf-token]").attr("content");
+        console.log(data);
+        $.ajax({
+            url: "/wager/default/add",
+            type: "post",
+            data:data,
+            // data: $(this).serialize()+"&"+jQuery("meta[name=csrf-param]").attr("content")+'='+jQuery("meta[name=csrf-token]").attr("content"),
+            //   data: $("."+parentWrap+' input[type=\'text\'], .'+parentWrap+' input[type=\'password\'], .'+parentWrap+' input[type=\'tel\'], .'+parentWrap+' input[type=\'radio\']:checked, .'+parentWrap+' input[type=\'checkbox\']:checked, .'+parentWrap+'  select '),
+            dataType: "json",
+            beforeSend: function () {
+                $('#ajax-button-confirm').addClass('preloader');
+
+            },
+            complete: function () {
+                $('#ajax-button-confirm').removeClass('preloader');
+
+            },
+            success: function (json) {
+                console.log(json);
+            }
+        });
+
+
+        //      stop bulk
+        if (event.preventDefault) {
+            event.preventDefault();
+        } else {
+            event.returnValue = false;
+        }
+        event.stopImmediatePropagation();
+        event.preventDefault();
+
+    },
+
     test:function () {
         console.log(this.csrf)
         console.log(this.csrf_param)
@@ -490,6 +544,20 @@ var SmartCart={
 };
 
 
+function  addEventForNewDrop() {
+    $('.custom-dropdown input[type="radio"]').on('change',function () {
+        var this_val_text = $(this).val();
+        $(this).parents('.custom-dropdown').find('.val-drop-btn').text(this_val_text);
+        $('.custom-dropdown').find('.dropdown-list').stop().fadeOut(400);
+        $('.custom-dropdown').removeClass('active-drop');
+    });
+    $('input[type=radio][name=playlistPercent]').change(function() {
+        console.log('percent change val: '+this.value);
+        SmartCart.currentCooeficientDrop=this.value.replace("%", "");
+        SmartCart.updateCoefficient(SmartCart.currentCooeficientDrop);
+        // SmartCart.getFromCart();
+    });
+}
 
 
 

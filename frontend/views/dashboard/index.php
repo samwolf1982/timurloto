@@ -40,6 +40,7 @@ use frontend\assets\DashboardAsset;
         <?php // ShowuserWidget::widget(['userdata' => [],'view'=>'other']) ?>
         <?= ShowuserWidget::widget(['userdata' => [],'view'=>'dashboard']) ?>
 
+
     </div>
 
 

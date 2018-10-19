@@ -62,6 +62,7 @@ class DefaultController extends Controller
 
     public function actionAdd()
     {
+        // todo переделать под новый запросы
         $result=[];
         if(WagerManager::preValidate(Yii::$app->cart,Yii::$app->user->identity->getId())){
             $tdo_Wager_user_info=new WagerInfo(Yii::$app->user->identity->getId(),Yii::$app->request->post('playlist'),Yii::$app->request->post('comment'),10,12);
