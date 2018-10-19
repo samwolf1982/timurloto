@@ -1,5 +1,6 @@
 <?php
 namespace app\modules\statistic\models;
+use common\models\helpers\ConstantsHelper;
 use common\models\Playlist;
 use yii;
 use yii\helpers\ArrayHelper;
@@ -12,7 +13,8 @@ class PlaylistManager
         return true;
     }
 
-    static public function addElement($user_id,$name){
+    static public function addElement($user_id,$name,$is_default=false){
+
         if( $playlist = Playlist::find()->where(['user_id'=>$user_id, 'name'=>$name])->one()){
             $result=['status'=>'errors', 'error'=>"is oresent", 'id'=>$playlist->id];
         }else{
@@ -21,11 +23,19 @@ class PlaylistManager
             $playlist->name=$name;
             $playlist->sort=0;
             $playlist->status=Playlist::STATUS_ON;
-            $playlist->created_at=date('Y-m-d H:i:s');;
+            $playlist->created_at=date('Y-m-d H:i:s');
+
+
+            $playlist->is_default=ConstantsHelper::STATUS_PlAYLIST_OTHER;
+            if($is_default){
+                $playlist->is_default=ConstantsHelper::STATUS_PlAYLIST_DEFAULT;
+            }
+
+
 
             if($playlist->validate()){
                 $playlist->save();
-                $result=['status'=>'save', 'id'=>$playlist->id];
+                $result=['status'=>'save', 'id'=>$playlist->id,'playlist'=>$playlist];
             }else{
                 $result=['status'=>'errors', 'error'=>$playlist->errors];
             }

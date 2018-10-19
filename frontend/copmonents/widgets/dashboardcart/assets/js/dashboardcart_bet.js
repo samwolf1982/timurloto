@@ -4,21 +4,26 @@ $(document).ready(function () {
     SmartCart.init();
     SmartCart.getFromCart(); // update cart
 
-
-
-
-
-
-    //-------- cтатус
-    $('.type-list').on('click',function () {
-       $(this).find('span').toggleClass('show');
-        if($(this).find("span.show > .icon-open").length){
-            SmartCart.updateStatus('public');
-        }else {
-            SmartCart.updateStatus('private');
+    // playlist
+    $('input[type=radio][name=playlistUser]').change(function() {
+        console.log('playlistUser change val: '+$(this).data('value'));
+        SmartCart.updatePlaylist($(this).data('value'));
+    });
+    $(document).on('change','.bet-coup-info input[type=checkbox]',function (e) {
+        console.log('change '+ $(this).attr('id'));
+        if ($(this).prop('checked')) {
+            SmartCart.updateCheckboxStatus($(this).attr('id'),1);
         }
+        else {
+            SmartCart.updateCheckboxStatus($(this).attr('id'),0);
+        }
+
+        // e.preventDefault();
         return false;
     });
+
+
+
 
 
 });
@@ -56,8 +61,28 @@ var SmartCart={
         });
 
 
+        //-------- cтатус
+        $('.type-list').on('click',function () {
+            $(this).find('span').toggleClass('show');
+            if($(this).find("span.show > .icon-open").length){
+                SmartCart.updateStatus('public');
+            }else {
+                SmartCart.updateStatus('private');
+            }
+            return false;
+        });
+
+
+        // playlist
+        $('input[type=radio][name=playlistUser]').change(function() {
+            console.log('playlistUser change val: '+$(this).data('value'));
+            SmartCart.updatePlaylist($(this).data('value'));
+        });
+
+
         console.log('Init SmartCart');
     },
+
     addToCart: function (el) {
         var data = {};
         data.CartElement = {};
@@ -112,6 +137,29 @@ var SmartCart={
         });
     },
 
+    updateCheckboxStatus: function (id,status) {
+        var data = {};
+        data.CartElement = {};
+        data.CartElement.id = id;
+        data.CartElement.status = status;
+        data[this.csrf_param] = this.csrf;
+        $.ajax({
+            url: "/cart/element/update-bet-status",
+            type: "POST",
+            data: data,
+            dataType: "json",
+            success: function (json) {
+                console.log(json);
+                // if (json) {
+                //     SmartCart.getFromCart(); // update cart
+                //
+                // } else {
+                //     console.log(json);
+                // }
+            }
+        });
+    },
+
     updateCoefficient: function (coefficient) {
         var data = {};
         data.CartElement = {};
@@ -126,6 +174,27 @@ var SmartCart={
                 if (json) {
                     SmartCart.getFromCart(); // update cart
 
+                } else {
+                    console.log(json);
+                }
+            }
+        });
+    },
+    updatePlaylist: function (playlist) {
+        var data = {};
+        data.CartElement = {};
+      //  data.CartElement.currentCooeficientDrop = SmartCart.currentCooeficientDrop;
+        data.CartElement.playlist = playlist;
+        data[this.csrf_param] = this.csrf;
+        $.ajax({
+            url: "/cart/element/update-playlist",
+            type: "POST",
+            data: data,
+            dataType: "json",
+            success: function (json) {
+                if (json) {
+                    SmartCart.getFromCart(); // update cart
+                    console.log(json);
                 } else {
                     console.log(json);
                 }
@@ -242,13 +311,18 @@ var SmartCart={
 
     },
 
-    renderAdd: function (id_for_bets,data_parent,name_competition,name_bet,coefficient_bet) {
+    renderAdd: function (id_for_bets,data_parent,name_competition,name_bet,coefficient_bet,status_select_bet) {
 
         $('li[data-child="'+data_parent+'"]').remove();
+        is_checked= '';
+        if(!status_select_bet){
+            is_checked= 'checked="checked"';
+        }
+
         $('.bet-coup-list').append('<li class="'+id_for_bets+'" data-child="'+data_parent+'">' +
             '<div class="bet-coup-info">' +
             '<div class="bet-coup-icon">' +
-            ' <input type="checkbox" id="'+id_for_bets+'" checked="checked">' +
+            ' <input type="checkbox" id="'+id_for_bets+'" '+is_checked+'>' +
             ' <label for="'+id_for_bets+'"></label>' +
             '</div>' +
             '<div class="bet-coup-text">'+name_competition+'</div>' +
@@ -308,7 +382,7 @@ var SmartCart={
                         console.log(value);
                         console.log(outcome);
     local_tottal_coeficient*=outcome.outcome_coef;
-    SmartCart.renderAdd(value.item_id,value.parent_id,value.current_market_name+' '+value.result_type_name+' '+outcome.outcome_name,value.gamers_name,outcome.outcome_coef);
+    SmartCart.renderAdd(value.item_id,value.parent_id,value.current_market_name+' '+value.result_type_name+' '+outcome.outcome_name,value.gamers_name,outcome.outcome_coef,value.status);
     SmartCart.reloadDom();
     $('#total-coeficient').html( Math.round10(local_tottal_coeficient, -2));
                     });

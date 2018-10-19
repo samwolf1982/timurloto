@@ -11,12 +11,14 @@ use common\models\services\FiltertCountryBySport;
 use dektrium\user\filters\AccessRule;
 //use dvizh\cart\Cart;
 use dvizh\cart\Cart;
+
 use komer45\balance\models\Score;
 use Yii;
 use yii\base\DynamicModel;
 use yii\base\InvalidParamException;
 use yii\filters\AccessControl;
 use yii\helpers\Json;
+use yii\helpers\Url;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -36,6 +38,10 @@ class DashboardController extends Controller
 
     public function actionIndex()
     {
+
+
+        Yii::$app->user->setReturnUrl(Yii::$app->request->url); // url для переадресации на текушую страничку для логина чекрез соц сети.
+
         return $this->render('index',[]);
 
     }

@@ -24,6 +24,7 @@ use yii\helpers\Html;
 
 
                     <div class="play-list-drop  play-list-drop-statistic">
+
                         <div class="custom-dropdown">
                             <div class="custom-dropdown-inner">
                                 <div class="val-drop">
@@ -32,6 +33,7 @@ use yii\helpers\Html;
                                 <div class="dropdown-list">
                                     <div class="play-list">
 
+
                                         <?php foreach ($playlists as $playlist) {  ?>
                                             <div class="drop-item">
                                                 <div class="check-drop">
@@ -39,7 +41,8 @@ use yii\helpers\Html;
                                                     <label for="playlist_statistic_<?=$playlist->id?>"><?=$playlist->name?></label>
                                                 </div>
                                             </div>
-                                        <?php  }  ?>
+                                        <?php }  ?>
+
 
                                     </div>
                                     <div class="drop-item">

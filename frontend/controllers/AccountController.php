@@ -47,7 +47,6 @@ class AccountController extends Controller
         ];
     }
 
-
     /**
      * Displays homepage OWN.
      *

@@ -121,4 +121,23 @@ class Cart extends \yii\db\ActiveRecord implements CartInterface
     {
         return md5($modelName.$price.serialize($options));
     }
+
+    public function fromTmpToCurrentCart()
+    {
+        $session = yii::$app->session;
+        $userIdSession = $session->get('tmp_user_id');
+        if(yii::$app->user->id) {
+            $cart_current =   Cart::find()->where(['user_id' => yii::$app->user->id])->one();
+            $cart_tmp =   Cart::find()->where(['tmp_user_id' => $userIdSession])->one();
+            if($cart_current && $cart_tmp){
+                $cart_tmp->user_id=$cart_current->user_id;
+                $cart_tmp->save(false);
+                $cart_current->delete();
+            }
+
+
+        }
+
+    }
+
 }

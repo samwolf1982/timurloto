@@ -2,6 +2,7 @@
 namespace dvizh\cart\controllers;
 
 use common\models\helpers\ConstantsHelper;
+use common\models\services\UserPlaylists;
 use dvizh\cart\Cart;
 use komer45\balance\models\Score;
 use yii\helpers\Json;
@@ -49,19 +50,18 @@ class ElementController extends \yii\web\Controller
     public function actionCreate()
     {
         $json = ['result' => 'undefined', 'error' => false];
-
         /**@var Cart $cart*/
         $cart = yii::$app->cart;
         $postData = yii::$app->request->post();
-
         $current_cart=$cart->getCart()->my();
+
         $current_cart->current_coefficient=$postData['CartElement']['currentCooeficientDrop'];
+        if(empty($postData['CartElement']['currentCooeficientDrop'])){  $current_cart->current_coefficient = ConstantsHelper::DEFAULT_COEFFICIENT; }
+
         $current_cart->playlist_id=$postData['CartElement']['playlist_id'];
 
        // $current_cart->status= $this->setStatusBet( $postData['CartElement']['status']);
-
         $current_cart->save();
-
 
         $model = $postData['CartElement']['model'];
         if($model) {
@@ -110,7 +110,7 @@ class ElementController extends \yii\web\Controller
         if(isset($postData['CartElement']['options'])) {
             $elementModel->setOptions($postData['CartElement']['options'], true);
         }
-        
+
         $json['elementId'] = $elementModel->getId();
         $json['result'] = 'success';
 
@@ -134,6 +134,73 @@ class ElementController extends \yii\web\Controller
 
         return $this->_cartJson($json);
     }
+
+    public function actionUpdatePlaylist()
+    {
+        $json = ['result' => 'undefined', 'error' => false];
+        /**@var Cart $cart*/
+        $cart = yii::$app->cart;
+        $postData = yii::$app->request->post();
+        $current_cart=$cart->getCart()->my();
+        $userPlaylist =new UserPlaylists(Yii::$app->user->id,$postData['CartElement']['playlist'],$current_cart);
+        $userPlaylist->changePlaylist();
+
+        if($userPlaylist->changePlaylist()){
+            $json['result'] = 'success';
+        }else{
+            $json['result'] = 'actionUpdatePlaylist has error';
+        }
+
+        return $this->_cartJson($json);
+    }
+
+
+    /**
+     * обновить чекбокс в корзине
+     * @return string
+     */
+    public function actionUpdateBetStatus()
+    {
+        $json = ['result' => 'undefined', 'error' => false];
+
+        $cart = yii::$app->cart;
+
+        $postData = yii::$app->request->post();
+        $elementModel=null;
+        if(isset($postData['CartElement']['status'])) {
+
+            foreach ($cart->elements as $element) {
+                if($element->item_id==$postData['CartElement']['id']){
+                    if($postData['CartElement']['status'] > 0){
+                        $element->status= ConstantsHelper::STATUS_CHECKBOX_BET_ACTIVE ;
+
+                    }else{
+                        $element->status=ConstantsHelper::STATUS_CHECKBOX_BET_UN_ACTIVE;
+                    }
+
+                    if($element->validate() && $element->save()){
+                        $elementModel=$element;
+                    }else{
+                        yii::error($element->errors);
+                    }
+                }
+            }
+//          die(  var_dump( get_class($elementModel)));
+//            $elementModel->setStatuscheckbox($postData['CartElement']['status'], true);
+        }
+
+        if(is_null($elementModel)){
+            $json['result'] = 'some error in actionUpdateBetStatus';
+        }else{
+            $json['elementId'] = $elementModel;
+            $json['result'] = 'success';
+        }
+
+
+
+        return $this->_cartJson($json);
+    }
+
 
     public function actionUpdateStatus()
     {

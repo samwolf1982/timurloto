@@ -91,62 +91,106 @@
                                <div class="notification-calculate">Максимальный процент на этот коэфициент 10</div>
                            </div>
                            <div class="more-bets-info">
-                               <div class="playlist">
-                                   <div class="custom-dropdown">
-                                       <div class="custom-dropdown-inner">
-                                           <div class="val-drop">
-                                               <button class="val-drop-btn">Плейлист #A</button>
-                                           </div>
-                                           <div class="dropdown-list">
-                                               <div class="play-list">
-                                                   <div class="drop-item">
-                                                       <div class="check-drop">
-                                                           <input name="playlist" type="radio" id="playlist145" checked="checked" value="Плейлист #A">
-                                                           <label for="playlist145">Плейлист #A</label>
-                                                       </div>
-                                                   </div>
-                                                   <div class="drop-item">
-                                                       <div class="check-drop">
-                                                           <input name="playlist" type="radio" id="playlist245" value="Лига Чемпионов">
-                                                           <label for="playlist245">Лига Чемпионов</label>
-                                                       </div>
-                                                   </div>
-                                                   <div class="drop-item">
-                                                       <div class="check-drop">
-                                                           <input name="playlist" type="radio" id="playlist345" value="НБА">
-                                                           <label for="playlist345">НБА</label>
-                                                       </div>
-                                                   </div>
+
+                               <style>
+                                   .wrap_buttons{
+                                       display: flex;
+                                   }
+                                   .wrap_buttons > .playlist{
+                                       min-width: 149px;
+                                   }
+                               </style>
+
+
+
+                               <div class="wrap_buttons">
+
+
+
+
+                                   <div class="playlist">
+                                       <div class="custom-dropdown">
+                                           <div class="custom-dropdown-inner">
+
+
+                                               <div class="val-drop">
+                                                   <button class="val-drop-btn"><?=$curent_playlist->name?></button>
                                                </div>
-                                               <div class="drop-item">
-                                                   <div class="create-playlist">
-                                                       <div class="input-create">
-                                                           <input type="text" placeholder="Новый плейлист">
+                                               <div class="dropdown-list">
+
+                                                   <?php if(0){  ?>
+                                                   <div class="play-list">
+                                                       <div class="drop-item">
+                                                           <div class="check-drop">
+                                                               <input name="playlist" type="radio" id="playlist145" checked="checked" value="Плейлист #A">
+                                                               <label for="playlist145">Плейлист #A</label>
+                                                           </div>
                                                        </div>
-                                                       <div class="btn-create">
-                                                           <button class="btn-primary btn btn-hover create-btn">Создать</button>
+                                                       <div class="drop-item">
+                                                           <div class="check-drop">
+                                                               <input name="playlist" type="radio" id="playlist245" value="Лига Чемпионов">
+                                                               <label for="playlist245">Лига Чемпионов</label>
+                                                           </div>
+                                                       </div>
+                                                       <div class="drop-item">
+                                                           <div class="check-drop">
+                                                               <input name="playlist" type="radio" id="playlist345" value="НБА">
+                                                               <label for="playlist345">НБА</label>
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                                   <?php } ?>
+
+
+                                                   <div class="play-list">
+                                                       <?php foreach ($playlists as $playlist) {  ?>
+                                                           <div class="drop-item">
+                                                               <div class="check-drop">
+                                                                    <?php if($curent_playlist->id==$playlist->id){  ?>
+                                                                   <input name="playlistUser" data-type="statistic" type="radio" id="playlist_statistic_<?=$playlist->id?>" <?='checked="checked"'?>  data-value="<?=$playlist->id?>" value="<?=$playlist->name?>">
+                                                                   <?php }else{ ?>
+                                                                        <input name="playlistUser" data-type="statistic" type="radio" id="playlist_statistic_<?=$playlist->id?>"  data-value="<?=$playlist->id?>" value="<?=$playlist->name?>">
+                                                                  <?php } ?>
+                                                                   <label for="playlist_statistic_<?=$playlist->id?>"><?=$playlist->name?></label>
+                                                               </div>
+                                                           </div>
+                                                       <?php  }  ?>
+                                                   </div>
+
+
+                                                   <div class="drop-item">
+                                                       <div class="create-playlist">
+                                                           <div class="input-create">
+                                                               <input type="text" placeholder="Новый плейлист">
+                                                           </div>
+                                                           <div class="btn-create">
+                                                               <button class="btn-primary btn btn-hover create-btn">Создать</button>
+                                                           </div>
                                                        </div>
                                                    </div>
                                                </div>
                                            </div>
                                        </div>
                                    </div>
+
+                                   <button class="type-list">
+                                       <?php if($currentStatus==ConstantsHelper::STATUS_PUBLIC_BET){   ?>
+                                           <span class="show"><i class="icon-open"></i> Открытый</span>
+                                           <span class=""><i class="icon-lock"></i> Закрытый</span>
+                                       <?php }else{ ?>
+                                           <span class=""><i class="icon-open"></i> Открытый</span>
+                                           <span class="show"><i class="icon-lock"></i> Закрытый</span>
+                                       <?      }  ?>
+                                   </button>
+
                                </div>
 
-
-                               <button class="type-list">
-                                                         <?php if($currentStatus==ConstantsHelper::STATUS_PUBLIC_BET){   ?>
-                                                         <span class="show"><i class="icon-open"></i> Открытый</span>
-                                                         <span class=""><i class="icon-lock"></i> Закрытый</span>
-                                                         <?php }else{ ?>
-                                                             <span class=""><i class="icon-open"></i> Открытый</span>
-                                                             <span class="show"><i class="icon-lock"></i> Закрытый</span>
-                                                         <?      }  ?>
-                               </button>
 
                                <button data-target="#modal-success-bet" type="submit" class="btn btn-primary send-bets" data-toggle="modal">Сделать Ставку</button>
                                <p>Баланс: <span id="currentBalance"><?=$total_balance; ?> </span> <span> betcoins</span></p>
                                <p class="hidden">Сумма ставки: <span id="betSum">0</span> <span> betcoins</span></p>
+
+
                            </div>
                        </div>
                    </div>
@@ -154,7 +198,6 @@
            </div>
        </div>
    </div>
-
 
 
    <?php  if(0){ ?>
@@ -178,6 +221,7 @@
                        <li>
                            <a href="" class="coupon-trigger express">Экспресс</a>
                        </li>
+
                    </ul>
                    <div class="coupon-tabs-body">
                        <div class="coupon-tab-item active" id="ordinator">

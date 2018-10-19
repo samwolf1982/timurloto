@@ -36,7 +36,7 @@ class Playlist extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'sort', 'status'], 'integer'],
+            [['user_id', 'sort', 'status','is_default'], 'integer'],
             [['created_at'], 'safe'],
             [['name'], 'string', 'max' => 255],
         ];
@@ -53,6 +53,7 @@ class Playlist extends \yii\db\ActiveRecord
             'name' => 'название плейлиста',
             'sort' => 'sort',
             'status' => 'cтатус 1 включено(давать по умолнчани) 0 отключено',
+            'is_default' => 'плейлист по умолняанию',
             'created_at' => 'время создания',
         ];
     }

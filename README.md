@@ -50,7 +50,6 @@ php yii migrate --migrationPath=vendor/komer45/yii2-balance/migrations
 
 
 
-
 изменненные из gii !!
 Playlist
 

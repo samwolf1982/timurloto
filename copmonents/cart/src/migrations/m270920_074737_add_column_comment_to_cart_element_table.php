@@ -15,9 +15,8 @@ class m270920_074737_add_column_comment_to_cart_element_table extends Migration
         $this->addColumn('{{%cart_element}}', 'comment', $this->string(255)->null());
         $this->addColumn('{{%cart_element}}', 'current_market_name', $this->string(255)->null());
         $this->addColumn('{{%cart_element}}', 'result_type_name', $this->string(255)->null());
-        $this->addColumn('{{%cart_element}}', 'gamers_name', $this->string(255)->null()); //кто играет название
-
-
+        $this->addColumn('{{%cart_element}}', 'gamers_name', $this->string(255)->null()->comment('кто играет название')); //
+        $this->addColumn('{{%cart_element}}', 'status', $this->integer()->notNull()->comment('cтатус чексбокса')); //
     }
 
     /**
@@ -29,6 +28,7 @@ class m270920_074737_add_column_comment_to_cart_element_table extends Migration
         $this->dropColumn('{{%cart_element}}', 'current_market_name');
         $this->dropColumn('{{%cart_element}}', 'result_type_name');
         $this->dropColumn('{{%cart_element}}', 'gamers_name');
+        $this->dropColumn('{{%cart_element}}', 'status');
     }
 
 

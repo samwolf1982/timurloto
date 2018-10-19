@@ -3,7 +3,7 @@ var t_i = 1; //??
 jQuery(document).on("click", "#createPlaylist", function (event) {
     currentButton = $(this);
     parentWrap = "play-list-drop-statistic";
-    console.log("dfghj") ;
+    console.log("createPlaylist log") ;
     betStatistic.csrf = jQuery("meta[name=csrf-token]").attr("content");
     betStatistic.csrf_param = jQuery("meta[name=csrf-param]").attr("content");
 //   send
@@ -35,7 +35,6 @@ jQuery(document).on("click", "#createPlaylist", function (event) {
             }
             t_i++;
         }
-
     }
     });
 });
@@ -45,7 +44,6 @@ if (typeof betStatistic === "undefined" || !betStatistic) {
 }
 ReloaderBets = {
     init:function () {
-
     },
     reupdate: function (element) {
         var id_playlist=$(element).data('value');
@@ -55,8 +53,6 @@ ReloaderBets = {
         }else if($(element).data('type') === "game"){
             ReloaderBets.uploadBets(id_playlist);
         }
-
-
     },
     uploadBets:function (id_playlist) {
         console.log('uploadBets');
@@ -100,9 +96,6 @@ ReloaderBets = {
                 }
             });
         }
-
-
-
     },
     uploadStatistic:function (id_playlist) {
         console.log('uploadStatistic');
@@ -170,12 +163,12 @@ ReloaderBets = {
 },
 
     replacePlaylistId:function (url,playlistid) {
-        let href = new URL(url);
-        href.searchParams.set('playlist', playlistid);
-        href.hash='';//  replace('#','')
+        href_let = new URL(url);
+        href_let.searchParams.set('playlist', playlistid);
+        href_let.hash='';//  replace('#','')
         // console.log(href.toString());
         // console.log(href.hash);
-        return href;
+        return href_let;
     }
 
 

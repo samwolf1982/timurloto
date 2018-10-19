@@ -20,6 +20,19 @@ class ConstantsHelper
         const STATUS_PRIVATE_BET=1;
 
 
+        const STATUS_CHECKBOX_BET_ACTIVE=0;
+        const STATUS_CHECKBOX_BET_UN_ACTIVE=1;
+
+
+        const STATUS_PlAYLIST_DEFAULT=1;
+        const STATUS_PlAYLIST_OTHER=0;
+
+        //коофициент для корзины по умолчанию если первый раз создается
+        const DEFAULT_COEFFICIENT=1;
+
+
+
+
 }
 
 

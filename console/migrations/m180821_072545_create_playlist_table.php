@@ -18,6 +18,7 @@ class m180821_072545_create_playlist_table extends Migration
             'name'=>$this->string(255)->comment('название плейлиста'),
             'sort'=>$this->integer()->comment('sort'),
             'status'=>$this->integer()->comment('cтатус 1 включено(давать по умолнчани) 0 отключено'),
+            'is_default'=>$this->integer()->comment('плейлист по умолчанию 1 - 0 '),
             'created_at'=>$this->dateTime()->comment('время создания'),
         ]);
     }

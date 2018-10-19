@@ -161,6 +161,15 @@ class CartElement extends \yii\db\ActiveRecord implements Element
         }
     }
 
+    public function setStatuscheckbox($status_post, $andSave = false)
+    {
+        $this->status = 99;
+
+        if($andSave) {
+            $this->save();
+        }
+    }
+
     public static function tableName()
     {
         return '{{%cart_element}}';
@@ -203,7 +212,7 @@ class CartElement extends \yii\db\ActiveRecord implements Element
             [['model'], 'validateModel'],
             [['hash', 'options', 'comment','current_market_name','result_type_name','gamers_name'], 'string'],
             [['price'], 'double'],
-            [['item_id', 'count', 'parent_id'], 'integer'],
+            [['item_id', 'count', 'parent_id','status'], 'integer'],
         ];
     }
 
@@ -235,6 +244,7 @@ class CartElement extends \yii\db\ActiveRecord implements Element
             'current_market_name' => 'current_market_name from json',
             'result_type_name' => 'result type name ',
             'gamers_name' => 'gamers name',
+            'status' => 'status состояние чекбокса 0 да 1 нет ',
         ];
     }
 

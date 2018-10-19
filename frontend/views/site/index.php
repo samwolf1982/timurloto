@@ -32,7 +32,7 @@ MainAsset::register($this);
                     </li>
 
                     <li data-menuanchor="reviewScreen">
-                        <a href="<?=Url::to('/bet')?>">Дать прогноз</a>
+                        <a href="<?=Url::to('/dashboard')?>">Дать прогноз</a>
                     </li>
 
 
@@ -615,7 +615,8 @@ MainAsset::register($this);
 
 <div class="hidden">
     <?= Connect::widget([
-        'baseAuthUrl' => ['/user/security/auth'],
+        'baseAuthUrl' => ['/user/security/auth', 'success' => 'type1'],
+
     ]) ?>
 </div>
 
