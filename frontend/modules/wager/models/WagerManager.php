@@ -3,6 +3,7 @@ namespace app\modules\wager\models;
 use app\modules\statistic\models\PlaylistManager;
 use common\models\DTO\WagerInfo;
 use common\models\Eventsnames;
+use common\models\helpers\OutcomeParser;
 use common\models\Playlist;
 use common\models\Sportcategorynames;
 use common\models\Tournamentsnames;
@@ -48,7 +49,7 @@ class WagerManager
 
     public function add(){
       //  $elements = yii::$app->cart->elements;
-        yii::error($this);
+//        yii::error($this);
 
         $wager=new Wager();
         $wager->user_id=$this->user_id;
@@ -77,9 +78,12 @@ class WagerManager
     private function addWagerElements(){
         $total_coef=1;
         foreach ($this->cart->elements as $element) {
-            if($element->coof<=1) continue;
+            $outcomeCoefficient=OutcomeParser::getCoefficient($element);
+            //json_decode($element->options);
+//            $total_coef *= $element->coof;
+          if(empty($outcomeCoefficient) ||  $outcomeCoefficient<=1)continue;
+            $total_coef *= $outcomeCoefficient;
             $this->addWagerElement($element);
-            $total_coef *= $element->coof;
          }
          return $total_coef;
     }
@@ -87,15 +91,32 @@ class WagerManager
     private function addWagerElement($element){
             $wagerelement= new Wagerelements();
             $wagerelement->wager_id=$this->wager_id;
-            $wagerelement->event_id=  (string) $element->item_id;
-            $wagerelement->coef= $element->coof;
+            $wagerelement->event_id=  (string) OutcomeParser::getId($element);
+            $wagerelement->outcome_id= (string) $element->item_id;
+//            $wagerelement->coef= $element->coof;
+            $wagerelement->coef= OutcomeParser::getCoefficient($element);
             $wagerelement->status=Wager::STATUS_NEW;
-            $wagerelement->name=$element->name_full;
-            $wagerelement->sub_category_id=(string)$element->category_id;
-            $wagerelement->info_main_cat_name=$element->main_cat_name;
-            $wagerelement->info_name=$element->name;
-            $wagerelement->info_name_full=$element->name_full;
-            $wagerelement->info_cat_name=$element->cat_name;
+//            $wagerelement->name=$element->name_full;
+            //$wagerelement->name=sprintf('%s %s %s',$element->current_market_name,$element->result_type_name,$element->gamers_name);
+            $wagerelement->name=OutcomeParser::getName($element);
+
+            $wagerelement->sub_category_id=(string)$element->parent_id;
+//            $wagerelement->sub_category_id=(string)$element->category_id;
+            $wagerelement->info_main_cat_name=$element->current_market_name;
+
+//        'current_market_name' => 'current_market_name from json',
+//            'result_type_name' => 'result type name ',
+//            'gamers_name' => 'gamers name',
+// todo сверитьт с предыдущейй верстисее
+            //$wagerelement->info_name=   $element->name;
+            $wagerelement->info_name=   $element->result_type_name;
+//            $wagerelement->info_name_full=sprintf('%s %s %s',$element->current_market_name,$element->result_type_name,$element->gamers_name);
+            $wagerelement->info_name_full=$element->gamers_name;
+
+
+//            $wagerelement->info_cat_name=$element->cat_name;
+//            $wagerelement->info_cat_name= $element->result_type_name;
+            $wagerelement->info_cat_name=OutcomeParser::getName($element);;
             $wagerelement->created_at=date('Y-m-d H:i:s');
 //        main_cat_name
 //name
@@ -126,7 +147,8 @@ class WagerManager
 
     private function searchSportNameCategoryName($element){
 
-        $eventsnames=Eventsnames::find()->where(['event_id'=>$element->category_id])->one();
+       // $eventsnames=Eventsnames::find()->where(['event_id'=>$element->category_id])->one();
+        $eventsnames=Eventsnames::find()->where(['event_id'=>$element->parent_id])->one();
         $tournamentsnames=Tournamentsnames::find()->where(['tournament_id'=>$eventsnames->tournament_id])->one();
         $sportcategory= Sportcategorynames::find()->where(['sport_id'=>$tournamentsnames->sport_id])->one();
 

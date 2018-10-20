@@ -30,91 +30,204 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Подтвердить', ['confirm'], ['class' => 'btn btn-success']) ?>
     </p>
 
+    <?php if(0){// показать все поля  ?>
+        <?= GridView::widget([
+            'dataProvider' => $dataProvider,
+            'filterModel' => $searchModel,
+            'columns' => [
+                ['class' => 'yii\grid\SerialColumn'],
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-           // 'id',
-           // 'wager_id',
+                // 'id',
+                // 'wager_id',
 //            'count',
-            [
+                [
 
-                'attribute' => 'countevents',
-                'format'=>'raw',
-                'value'=>function($model){
-                    return $model->countevents;
-                }
-            ],
-            'coef',
-            'event_id',
-           // 'event_id',
-//            'outcome_id',
+                    'attribute' => 'countevents',
+                    'format'=>'raw',
+                    'value'=>function($model){
+                        return $model->countevents;
+                    }
+                ],
+                'coef',
+                'event_id',
 
-        //    'sport_id',
-            'sport_name',
+                //------ coment
+                'outcome_id',
+                'sport_id',
+                //------ coment
 
+                'sport_name',
 
-            //'country_id',
-            'country_name',
+                //------ coment
+                'country_id',
+                //------ coment
+                'country_name',
 
-           // 'category_id',
-            'category_name',
+                //------ coment
+                'category_id',
+                //------ coment
+                'category_name',
 
-          //  'sub_category_id',
-            'sub_category_name',
+                //------ coment
+                'sub_category_id',
+                //------ coment
+                'sub_category_name',
+                //------ coment
+                'name',
+                //------ coment
+                [
 
-//            'name',
-            [
-
-                'attribute' => 'infoName',
-                'format'=>'raw',
-                'value'=>function($model){
-                    return      Html::tag('p',$model->info_main_cat_name). Html::tag('p',$model->info_name). Html::tag('p',$model->info_cat_name);
+                    'attribute' => 'infoName',
+                    'format'=>'raw',
+                    'value'=>function($model){
+                        return      Html::tag('p',$model->info_main_cat_name). Html::tag('p',$model->info_name). Html::tag('p',$model->info_cat_name);
 //                    return      sprintf('$s | $s | $s') $model->countevents;
-                }
-            ],
+                    }
+                ],
 
+                //------ coment
+                'info_main_cat_name',
+                'info_name',
+                'info_name_full',
+                'info_cat_name',
 
-//            'info_main_cat_name',
-//            'info_name',
-//            'info_name_full',
-//            'info_cat_name',
+                'status',
+                //------ coment
 
-         //   'status',
-            [
-                'class' => EditableColumn::className(),
-                'attribute' => 'status',
-                'url' => ['change-status'],
-                'type' => 'select',
-                'editableOptions' => function ($model) {
-                    return [
+                [
+                    'class' => EditableColumn::className(),
+                    'attribute' => 'status',
+                    'url' => ['change-status'],
+                    'type' => 'select',
+                    'editableOptions' => function ($model) {
+                        return [
 //                    'source' => [1 => 'Active', 2 => 'Deleted'],
 //                        'source' => Wager::getStatusNames(),
-                        'source' => Wager::getStatusNamesIshod(),
-                        'value' =>  $model->status,
+                            'source' => Wager::getStatusNamesIshod(),
+                            'value' =>  $model->status,
 
-                    ];
-                },
-                'format'=>'raw',
-                'value'=>function($model){
-                    if($model->status==Wager::STATUS_NEW){
-                        return Html::tag('p',   Wager::getStatusName($model->status),['class'=>'text-danger']);
-                    }
+                        ];
+                    },
+                    'format'=>'raw',
+                    'value'=>function($model){
+                        if($model->status==Wager::STATUS_NEW){
+                            return Html::tag('p',   Wager::getStatusName($model->status),['class'=>'text-danger']);
+                        }
                         return Html::tag('p',   Wager::getStatusName($model->status),[]);
 
 
 
-                }
+                    }
 
+                ],
+                'created_at',
+
+                //['class' => 'yii\grid\ActionColumn'],
             ],
-            //'created_at',
+        ]); ?>
+    <?php }else{  // только для продашн ?>
+        <?= GridView::widget([
+            'dataProvider' => $dataProvider,
+            'filterModel' => $searchModel,
+            'columns' => [
+                ['class' => 'yii\grid\SerialColumn'],
 
-            //['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+                // 'id',
+                // 'wager_id',
+//            'count',
+                [
+
+                    'attribute' => 'countevents',
+                    'format'=>'raw',
+                    'value'=>function($model){
+                        return $model->countevents;
+                    }
+                ],
+                'coef',
+                'event_id',
+
+                //------ coment
+                'outcome_id',
+//                'sport_id',
+                //------ coment
+
+                'sport_name',
+
+                //------ coment
+//                'country_id',
+                //------ coment
+
+                'country_name',
+
+                //------ coment
+//                'category_id',
+                //------ coment
+
+                'category_name',
+
+                //------ coment
+//                'sub_category_id',
+                //------ coment
+
+                'sub_category_name',
+
+                //------ coment
+             //   'name',
+                //------ coment
+                [
+
+                    'attribute' => 'infoName',
+                    'format'=>'raw',
+                    'value'=>function($model){
+                        return      Html::tag('p',$model->info_main_cat_name). Html::tag('p',$model->info_name). Html::tag('p',$model->info_cat_name);
+//                    return      sprintf('$s | $s | $s') $model->countevents;
+                    }
+                ],
+
+                //------ coment
+//                'info_main_cat_name',
+//                'info_name',
+//                'info_name_full',
+//                'info_cat_name',
+//
+//                'status',
+                //------ coment
+
+                [
+                    'class' => EditableColumn::className(),
+                    'attribute' => 'status',
+                    'url' => ['change-status'],
+                    'type' => 'select',
+                    'editableOptions' => function ($model) {
+                        return [
+//                    'source' => [1 => 'Active', 2 => 'Deleted'],
+//                        'source' => Wager::getStatusNames(),
+                            'source' => Wager::getStatusNamesIshod(),
+                            'value' =>  $model->status,
+
+                        ];
+                    },
+                    'format'=>'raw',
+                    'value'=>function($model){
+                        if($model->status==Wager::STATUS_NEW){
+                            return Html::tag('p',   Wager::getStatusName($model->status),['class'=>'text-danger']);
+                        }
+                        return Html::tag('p',   Wager::getStatusName($model->status),[]);
+
+
+
+                    }
+
+                ],
+               // 'created_at',
+
+                //['class' => 'yii\grid\ActionColumn'],
+            ],
+        ]); ?>
+    <?php } ?>
+
+
+
 </div>
 
 <script>
