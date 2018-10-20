@@ -37,7 +37,14 @@ class DashboardcartWidget extends Widget
             $curent_playlist=Playlist::find()->where(['user_id'=>Yii::$app->user->id,'is_default'=>ConstantsHelper::STATUS_PlAYLIST_DEFAULT])->one();
             if(!$curent_playlist){
                 $curent_playlist = PlaylistManager::addElement(Yii::$app->user->id,'Плейлист по умолчанию',true)['playlist'];
+
             }
+        }
+
+
+        if(empty($cart->playlist_id)){
+            $current_cart->playlist_id=$curent_playlist->id;
+            $current_cart->save(false);
         }
 
         if(empty($currentCooeficientDrop)){ $currentCooeficientDrop =1; }

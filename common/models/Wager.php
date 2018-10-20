@@ -93,7 +93,7 @@ class Wager extends \yii\db\ActiveRecord
     {
         return [
             [['user_id', 'total', 'coef', 'status','select_coef'], 'required'],
-            [['user_id', 'playlist_id', 'status'], 'integer'],
+            [['user_id', 'playlist_id', 'status','is_private'], 'integer'],
             [['total', 'coef','select_coef'], 'number'],
             [['comment'], 'string'],
             [['created_at'], 'safe'],
@@ -116,6 +116,7 @@ class Wager extends \yii\db\ActiveRecord
             'comment' => 'Коментарий пользователя',
             'status' => '(общее) Только что создана пустая -1 Статут 0 - закрыто, 1-открыто, 2-истекла 3-блокировано, 4-зайшла 5 не зайшла',
             'created_at' => 'Created At',
+            'is_private' => 'is_private 0 нет 1 да',
         ];
     }
 

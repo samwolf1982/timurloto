@@ -70,6 +70,15 @@ class Cart extends \yii\db\ActiveRecord implements CartInterface
     {
         return $cost = $this->getElements()->sum('price*count');
     }
+
+    public function getCoefficient()
+    {
+        return $this->current_coefficient;
+    }
+    public function getPlaylistid()
+    {
+        return $this->playlist_id;
+    }
     
     public function truncate()
     {

@@ -64,13 +64,18 @@ class DefaultController extends Controller
     {
         // todo переделать под новый запросы
         $result=[];
-        if(WagerManager::preValidate(Yii::$app->cart,Yii::$app->user->identity->getId())){
-            $tdo_Wager_user_info=new WagerInfo(Yii::$app->user->identity->getId(),Yii::$app->request->post('playlist'),Yii::$app->request->post('comment'),10,12);
+        $errorLocalLog=[]; // LOg ошыбок
+        if(WagerManager::preValidate(Yii::$app->cart,Yii::$app->user->identity->getId(),$errorLocalLog)){
+            $current_cart=Yii::$app->cart->getCart()->my();
+            $total_sum =  WagerManager::calculateTotalSum(Yii::$app->cart,Yii::$app->user->identity->getId(),$current_cart->coefficient,false); // ручнную сумму еще нужно доделать
+            $tdo_Wager_user_info=new WagerInfo(Yii::$app->user->identity->getId(),$current_cart->playlist_id,Yii::$app->request->post('comment'),$total_sum,$current_cart->coefficient,$current_cart->status);
             $vagerManager=new WagerManager(Yii::$app->cart,$tdo_Wager_user_info);
             $vagerManager->add();
+
         }else{
-            $result=['status'=>'not prevalidate'];
+            $result=['status'=>'error','message'=>$errorLocalLog];
         }
+        yii::error($errorLocalLog);
        return $result;
     }
 

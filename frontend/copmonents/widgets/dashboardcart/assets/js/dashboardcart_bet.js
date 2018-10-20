@@ -95,7 +95,6 @@ var SmartCart={
         data.CartElement.current_outcome_id = $(el).data("current_outcome_id");
         data.CartElement.currentCooeficientDrop = SmartCart.currentCooeficientDrop;
 
-
         data[this.csrf_param] = this.csrf;
         $.ajax({
             url: "/cart/element/create",
@@ -509,8 +508,6 @@ var SmartCart={
             url: "/wager/default/add",
             type: "post",
             data:data,
-            // data: $(this).serialize()+"&"+jQuery("meta[name=csrf-param]").attr("content")+'='+jQuery("meta[name=csrf-token]").attr("content"),
-            //   data: $("."+parentWrap+' input[type=\'text\'], .'+parentWrap+' input[type=\'password\'], .'+parentWrap+' input[type=\'tel\'], .'+parentWrap+' input[type=\'radio\']:checked, .'+parentWrap+' input[type=\'checkbox\']:checked, .'+parentWrap+'  select '),
             dataType: "json",
             beforeSend: function () {
                 $('#ajax-button-confirm').addClass('preloader');
@@ -522,6 +519,12 @@ var SmartCart={
             },
             success: function (json) {
                 console.log(json);
+                if(json.message) showNotification(json.message);
+                if(json.status !== 'error'){
+                    // showPOPap
+                   // showNotification(json.message);
+                }
+
             }
         });
 
@@ -542,6 +545,15 @@ var SmartCart={
         console.log(this.csrf_param)
     }
 };
+
+function showNotification(message) {
+
+    $('.notification-calculate').html(message);
+    $('.notification-calculate').fadeIn(400);
+    setTimeout(function () {
+        $('.notification-calculate').fadeOut(400);
+    },2000);
+}
 
 
 function  addEventForNewDrop() {

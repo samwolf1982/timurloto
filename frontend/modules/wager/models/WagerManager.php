@@ -10,6 +10,7 @@ use common\models\Tournamentsnames;
 use common\models\Wager;
 use common\models\Wagerelements;
 use dvizh\cart\Cart;
+use komer45\balance\models\Score;
 use yii;
 use yii\helpers\ArrayHelper;
 
@@ -23,7 +24,7 @@ class WagerManager
     private $wager_id;
     private $sum;
     private $select_coef;
-
+    private $is_private;
 
     public function __construct(  $cart, WagerInfo  $wagerInfo)
     {
@@ -31,6 +32,7 @@ class WagerManager
         $this->user_id=$wagerInfo->getUserId();
         $this->comment=$wagerInfo->getComment();
         $this->sum=$wagerInfo->getSum();
+        $this->is_private=$wagerInfo->getisPrivate();
         $this->select_coef=$wagerInfo->getSelectCoef();
         $curentPlaylist = PlaylistManager::getPlaylistByUserIdAndId($this->user_id,$wagerInfo->getPlaylistId());
         //Плейлист по умолчанию всегда должен быть.
@@ -59,6 +61,7 @@ class WagerManager
         $wager->comment= $this->comment;
         $wager->created_at=date('Y-m-d H:i:s');
         $wager->coef=0;
+        $wager->is_private=$this->is_private;
         $wager->select_coef=$this->select_coef;
 
         if($wager->validate()){
@@ -71,7 +74,10 @@ class WagerManager
         $total_coef=   $this->addWagerElements();
         // обновить коофи и статус и ставка готова
         $wager->coef=$total_coef;
-        $wager->status=Wager::STATUS_OPEN; $wager->save();
+        $wager->status=Wager::STATUS_OPEN;
+
+
+        $wager->save();
     }
 
     // проход по корзине и добавить елементы.
@@ -81,9 +87,12 @@ class WagerManager
             $outcomeCoefficient=OutcomeParser::getCoefficient($element);
             //json_decode($element->options);
 //            $total_coef *= $element->coof;
+//            yii::error($element->status);
+          if($element->status)   continue;
           if(empty($outcomeCoefficient) ||  $outcomeCoefficient<=1)continue;
             $total_coef *= $outcomeCoefficient;
             $this->addWagerElement($element);
+         //   $element->delete();
          }
          return $total_coef;
     }
@@ -123,7 +132,7 @@ class WagerManager
 //name_full
 //cat_name
             $info_about_turnire=$this->searchSportNameCategoryName($element);
-            yii::error($info_about_turnire);
+//            yii::error($info_about_turnire);
 
 
 //        ['sport_name' => 'Футбол', 'tournament_name' => 'Премьер Лига', 'category_name' => 'Украина', 'event_name' => 'Олимпик Донецк - ФК Львов',]
@@ -178,14 +187,33 @@ class WagerManager
     }
 
 
+    static public function preValidate(Cart $cart,$user_id,&$errorLocalLog){
+        // криттические проверки, необычные действия
+        $current_cart=$cart->getCart()->my();
+            if($cart->getCount()==0 ) { $e='попытка дать ставку на пустую корзину'; $errorLocalLog[]=$e; yii::error([$e]); return false; };
+            if(empty( $current_cart->playlist_id)){  $e='попытка дать ставку без плейлиста'; $errorLocalLog[]=$e; yii::error([$e]); return false; };
+            if(empty( $current_cart->coefficient)) { $e='попытка дать ставку без коофициента в корзине'; $errorLocalLog[]=$e; yii::error([$e]); return false; };
+        if(!empty( $current_cart->coefficient) && $current_cart->coefficient < 1 ) { $e='попытка дать ставку  с коофициентом меньше 1'; $errorLocalLog[]=$e; yii::error([$e]); return false; };
+        if(!empty( $current_cart->current_coefficient) && $current_cart->coefficient > 10 ) { $e='попытка дать ставку  с коофициентом больше 10'; $errorLocalLog[]=$e; yii::error([$e]); return false; };
+        $b= Score::find()->where(['user_id' => $user_id])->one()->balance;
+        if(empty( $b)) { $e='у пользователя нету баланса'; $errorLocalLog[]=$e; yii::error([]); return false; };
+        $curent_playlist=Playlist::find()->where(['id'=>$current_cart->playlist_id])->one();
+        if(empty( $curent_playlist)) { $e='у пользователя нету плейлиста'; $errorLocalLog[]=$e; yii::error([$e]); return false; };
 
 
+        // польльзователшьские проверки
+        // достаточно ли на балансе?
+        $total_sum =  WagerManager::calculateTotalSum($cart,$user_id,$current_cart->coefficient,false); // ручнную сумму еще нужно доделать
+        if($b < $total_sum ) { $e='у пользователя недостаточно на балансе '+$total_sum .' | '.$b; $errorLocalLog[]=$e; return false;}
+        $total_balance  = number_format($b, 0, '', ',');
 
 
-
-    static public function preValidate(Cart $cart,$user_id){
-            if($cart->getCount()==0 ) return false;
         // проход по ставкам и если еще доступные тогда +
+        $gate=true;
+        foreach ($cart->elements as $element) {
+            if(!$element->status){ $gate=false; break; }
+        }
+        if($gate){  $e='пустая ставка'; $errorLocalLog[]=$e; return false;  }
 
 
 
@@ -194,6 +222,30 @@ class WagerManager
 //        if(Playlist::find()->where(['user_id'=>$user_id,])->count() >= Playlist::LIMIT ) return false;
 //        return true;
     }
+
+
+    /**
+     * @param Cart $cart
+     * @param $user_id
+     * @param $coefficient
+     * @param bool $manualSum   еще доделать  если нужно будет
+     * @return int
+     */
+    static public function calculateTotalSum(Cart $cart, $user_id, $coefficient, $manualSum=false){
+        if(!$manualSum){
+            $totalSum=0;
+            $current_cart=$cart->getCart()->my();
+            $b= Score::find()->where(['user_id' => $user_id])->one()->balance;
+            $percentSum =    $b*$coefficient/100;
+            $totalSum  = number_format($percentSum, 0, '', ',');
+        }else{
+            $totalSum=0;
+        }
+
+
+        return $totalSum;
+    }
+
 
     static public function getWagersByUser($user_id,$play_list_limit=8,$page=0){
 

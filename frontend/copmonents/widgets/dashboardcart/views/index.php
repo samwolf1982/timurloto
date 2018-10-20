@@ -356,7 +356,7 @@
                                            </div>
                                        </div>
                                    </div>
-                                   <div class="notification-calculate">Максимальный процент на этот коэфициент 10</div>
+                                   <div class="notification-calculate">---</div>
                                </div>
                                <div class="more-bets-info">
                                    <div class="playlist">

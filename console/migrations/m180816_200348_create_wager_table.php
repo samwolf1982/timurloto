@@ -13,22 +13,17 @@ class m180816_200348_create_wager_table extends Migration
     public function safeUp()
     {
 
-
         // cтавка
-
         $this->createTable('wager',[
             'id' => $this->primaryKey(),
             'user_id' => $this->integer()->notNull()->comment("user id "),
             'playlist_id' => $this->integer()->null()->comment("playlist id  может и не быть плейслисты создвются в кабинете или в форме"),
-
-
             'total' => $this->money()->notNull()->comment("сумма общая"),
             'coef' => $this->float()->notNull()->comment("Коофициент общий  висчитивать из wagerelements - coef+coef+coef..."),
-
             'select_coef' => $this->float()->notNull()->comment("Коофищиент выбраный из дропа"),
-
             'comment' => $this->text()->null()->comment("Коментарий пользователя"),
             'status' => $this->integer()->notNull()->comment("(общее) Только что создана пустая -1 Статут 0 - закрыто, 1-открыто, 2-истекла 3-блокировано, 4-зайшла 5 не зайшла"),
+            'is_private'=>$this->integer()->notNull()->comment('это приватная ставка? 0-1'),
            // 'status_result' => $this->integer()->notNull()->comment(" 2-истекла 3-блокировано, 4-зайшла 5 не зайшла"),
             'created_at'=>$this->dateTime(),
         ]);
@@ -73,7 +68,6 @@ class m180816_200348_create_wager_table extends Migration
             'category_id' => $this->string()->null()->comment("ид категории"),
             'category_name' => $this->string()->null()->comment("Категории имя из парсере"),
 
-
             'sub_category_id' => $this->string()->null()->comment("ID ПодКатегория"),
             'sub_category_name' => $this->string()->null()->comment("ПодКатегория имя из парсере"),
             'name' => $this->string()->null()->comment("Имя outcome"),
@@ -85,14 +79,14 @@ class m180816_200348_create_wager_table extends Migration
 
             'status' => $this->integer()->notNull()->comment("-1 Етап создания  0 Новая  1 Закрыта 2 Новая  3 Подтверждена 4 Прострочена  5 Заблокинована 6 Прошла 7 Не прошл 8 Возврат"),
            // 'status_end' => $this->integer()->notNull()->comment("Статут 1- открыта   2- закрыта"),
+//            'is_private'=>$this->integer()->notNull()->comment('это приватная ставка? 0-1'),
+
+
             'created_at'=>$this->dateTime(),
         ]);
 
-
-
         // cвязь   wagerelements принадлежыт  wager // может удалить каскадом или спрятать (уточнить)
         $this->addForeignKey('wagerelements_wager_id__wager_id_fk', '{{%wagerelements}}', 'wager_id', '{{%wager}}', 'id', 'NO ACTION', 'CASCADE');
-
 
 
 //        $this->createTable('wager',[
