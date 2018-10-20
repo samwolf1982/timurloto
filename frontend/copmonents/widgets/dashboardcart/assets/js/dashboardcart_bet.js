@@ -527,8 +527,6 @@ var SmartCart={
 
             }
         });
-
-
         //      stop bulk
         if (event.preventDefault) {
             event.preventDefault();
