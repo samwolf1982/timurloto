@@ -102,6 +102,7 @@
                                    .wrap_buttons > .playlist{
                                        min-width: 149px;
                                    }
+
                                </style>
 
 
@@ -199,6 +200,7 @@
                                        }
                                        .calculator-bet-inner .custom-dropdown .dropdown-list{
                                            height: auto !important;
+                                           max-height: 240px;
                                        }
                                    </style>
                                    <div class="user-btn w100">
@@ -208,6 +210,7 @@
                                    <style>
                                        .calculator-bet-inner .custom-dropdown .dropdown-list{
                                            height: auto;
+                                           max-height: 240px;
                                        }
                                    </style>
                                    <button id="smartCartButton"  class="btn btn-primary send-bets" onclick="SmartCart.createBet(this);" >Сделать Ставку</button>
