@@ -21,6 +21,7 @@ class SmartCartTest extends \PHPUnit\Framework\TestCase
     public function testCalculateCoefficient()
     {
 
+
         $arr[]=new PseudoElementCart(['outcome_coef'=>1.2]);
         //1.2
         $this->assertEquals(10,$this->addCartElementAndReturnCoefficient($arr));
