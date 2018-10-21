@@ -1,7 +1,9 @@
 
 
 <div class="tab-blocks" id="dashboard_center_block_tab_blocks">
+
     <div class="tab-block active" id="tabOne">
+
         <div class="tab-block-inner">
             <div class="tab-collapse">
                 <div class="tab-collapse-head">
@@ -771,8 +773,8 @@
                 </div>
             </div>
         </div>
-    </div>
 
+    </div>
     <div class="tab-block" id="tabTwo">
         <div class="tab-block-inner">
             <div class="tab-collapse">
@@ -1837,6 +1839,7 @@
             </div>
         </div>
     </div>
+
 </div>
 
 

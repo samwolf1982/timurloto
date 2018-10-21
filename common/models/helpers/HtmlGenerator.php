@@ -56,8 +56,6 @@ class HtmlGenerator
     public static function dashboardCountryByGroupFinBlock($data)
     {
 
-
-
         $res ='
 <div class="tab-blocks" id="dashboard_center_block_tab_blocks">
     <div class="tab-block active" id="tabOne">
@@ -138,9 +136,8 @@ class HtmlGenerator
             }else{
                 $res .= '<div class="team"></div>';
             }
-            $res .=     '<a href="bet-dashboard-open.html" class="total show-all-bets">'.$el->total_count_outcomes.'</a>
+            $res .=     '<a href="bet-dashboard-open.html" class="total show-all-bets do_open_line" data-id="'.$el->id.'" >'.$el->total_count_outcomes.'</a>
                             </div>
-
                         </div>';
         }
         $res .='   </div>

@@ -90,6 +90,21 @@ class DashboardController extends Controller
         return ['fail'];
     }
 
+    /**
+     *      получить линию
+     * @return array
+     */
+    public function actionGetLine(){
+
+        if(Yii::$app->request->post('id')){
+            $filter= new  FiltertCountryBySport(null,null,Yii::$app->request->post('id'));
+            $resultFilter=$filter->getTurniresByCountryFin();
+            $html_block=HtmlGenerator::dashboardCountryByGroupFinBlock($resultFilter);
+            return ['array'=>$resultFilter,'html_block'=>$html_block ];
+        }
+        return ['fail'];
+    }
+
 
 
 
@@ -109,7 +124,7 @@ class DashboardController extends Controller
 //                    ],
                     [
                         'verbs' => ['POST','GET'],
-                        'actions' => ['get-by-country','get-by-country-group','get-by-country-group-fin'],
+                        'actions' => ['get-by-country','get-by-country-group','get-by-country-group-fin','get-line'],
                         'allow' => true,
 //                        'roles' => ['?', '@', 'admin'],
 //                        'roles' => [ 'simpleuser'],
@@ -142,7 +157,7 @@ class DashboardController extends Controller
 
     public function beforeAction($action)
     {
-        $json_action_list=['get-by-country','get-by-country-group','get-by-country-group-fin'];
+        $json_action_list=['get-by-country','get-by-country-group','get-by-country-group-fin','get-line'];
          if(in_array($action->id,$json_action_list)){\Yii::$app->response->format = Response::FORMAT_JSON;}
         return parent::beforeAction($action);
     }

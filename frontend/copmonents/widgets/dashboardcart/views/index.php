@@ -233,6 +233,7 @@
    </div>
 
 
+
    <?php  if(0){ ?>
        <div class="overlay-sidebar-right"></div>
        <button class="right-sidebar-close"><span class="icon-close2"></span></button>

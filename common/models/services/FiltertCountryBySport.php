@@ -41,7 +41,7 @@ class FiltertCountryBySport
 
     public function getTurniresByCountryFin()
     {
-        $models=     EventsnamesExt::find()->select(['event_id','category_id','event_name','tournament_name','total_count_outcomes'])->where(['tournament_id'=>$this->tournament_id ,'status'=>ConstantsHelper::STATUS_ACTIVE])->all(); //common\models\wraps\EventsnamesExt
+        $models=     EventsnamesExt::find()->select(['id','event_id','category_id','event_name','tournament_name','total_count_outcomes'])->where(['tournament_id'=>$this->tournament_id ,'status'=>ConstantsHelper::STATUS_ACTIVE])->all(); //common\models\wraps\EventsnamesExt
         return  $models;
     }
 
