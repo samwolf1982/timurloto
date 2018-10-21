@@ -3,7 +3,9 @@
 namespace common\models\helpers;
 
 
+use common\models\Bets;
 use common\models\Eventsnames;
+use common\models\services\EventLine;
 use common\models\wraps\EventsnamesExt;
 use common\models\wraps\SportcategoryExt;
 use common\models\wraps\TournamentsnamesExt;
@@ -51,6 +53,7 @@ class HtmlGenerator
         }
         return $res;
     }
+
 
 
     public static function dashboardCountryByGroupFinBlock($data)
@@ -136,7 +139,7 @@ class HtmlGenerator
             }else{
                 $res .= '<div class="team"></div>';
             }
-            $res .=     '<a href="bet-dashboard-open.html" class="total show-all-bets do_open_line" data-id="'.$el->id.'" >'.$el->total_count_outcomes.'</a>
+            $res .=     '<a href="bet-dashboard-open.html" class="total show-all-bets do_open_line" data-id="'.$el->event_id.'" >'.$el->total_count_outcomes.'</a>
                             </div>
                         </div>';
         }
@@ -150,118 +153,97 @@ class HtmlGenerator
         return $res;
 
     }
-    public static function dashboardCountryByGroupFinBlock_DEL($data)
+
+
+    /**
+     * @param $data
+     * @param EventLine $eventLine
+     * @return string
+     */
+    public static function dashboardLine($data, $eventLine)
     {
+        $res ='';
+        $res .= '<a href="bet-dashboard.html" class="head-pink">
+                                    <h3>' . $eventLine->getTournamentName() . '</h3>
+                                </a>
+                                <div class="content-bg pb-5">
+                                    <div class="open-bet-wrapper">
+                                        <div class="open-bet-wrapper-inner" data-parents="'.$eventLine->getEventId().'">
+                                            <div class="head-open-bet">
+                                                <div class="icon-open-bet">
+                                                    <span class="icon-football"></span>
+                                                </div>
+                                                <div class="title-open-bet">
+                                                    <h3>' . $eventLine->getEventName() . '</h3>
+                                                </div>
+                                                <div class="date-open-icon">17 сентября 19:30</div>
+                                                <a href="bet-dashboard.html" class="total show-all-bets closeLine">93</a>
+                                            </div>
+                                            
+                                            
+                                            <div class="body-open-bets">
+                                                <div class="body-open-bets-inner">
+                                                    <div class="search-bets-block">
+                                                        <div class="search-bets-block-inner">
+                                                            <form action="#">
+                                                                <input type="text" placeholder="Поиск по событию">
+                                                                <button id="search-bets" type="submit"><span class="icon-search"></span></button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    
+                                                    <div class="open-collapsed-wrapper">';
 
-        $res='<div class="tab-block active" id="tabOne">';
-        /**  @var 	EventsnamesExt 	  $el */
-        foreach ($data as $el) {
+        /**
+         * @var  $k
+         * @var Bets $item
+         */
+        foreach ($data as $k => $item_line) {
+            $res .= '                <div class="collapse-open-bet">
+                                                            <div class="collapse-open-bet-head">
+                                                                <button class="collapse-open-bet-trigger active">'.$k.'</button>
+                                                            </div>
+                                                            <div class="collapse-open-bet-content">';
+                                                  foreach ($item_line as $z => $item_line_2) {
+                                                      $res .= '   <div class="collapse-open-bet-item">
+                                                                   <h4>'.$z.'</h4>
+                                                                    <div class="row-bets-stats"> ';
 
-//            yii::error($el->ishods);
+                                                      $j = json_decode($item_line_2->outcomes);
+                                                      foreach ($j as $x => $outcomes){
+                                                          $res .= '   <div class="column4">
+                                                                            <button class="bets-val" data-id="'.$item_line_2->id.'" data-parent="'.$item_line_2->event_id.'"  data-options=\''. json_encode( $outcomes).'\'  data-current_outcome_id="'.$outcomes->outcome_id.'" data-players="'.$item_line_2->id.'" data-cat="'.$item_line_2->market_id.'" data-text="'.$outcomes->outcome_name.'" >
+                                                                                <span class="mobile-name">'.$outcomes->outcome_name.'</span>
+                                                                                <span class="name-b">'.$outcomes->outcome_name.'</span>
+                                                                                <span class="coefficient-b">'.$outcomes->outcome_coef.'</span>
+                                                                            </button>
+                                                                        
+                                                                        </div> ';
+                                                      }
+//
 
-            $ishods=$el->ishods;
-            if (count($ishods)>0) {
-                $res .= '    <div class="tab-block-inner">
-        <div class="tab-collapse">
-            <div class="tab-collapse-head">
-                <button class="trigger-tab-collapse active">' . $el->event_name . '</button>
-            </div>
-            <div class="tab-collapse-content active">
-                <div class="tab-collapse-content-inner"> ';
-
-                // групировка по market_name
-                $resultArray = [];
-                array_walk($ishods, function ($item, $key) use (&$resultArray) {
-                    $resultArray[$item->market_name][] = $item;
-                });
-
-                foreach ($resultArray as $keyName => $ishod) {
-
-                    $json_outcames = json_decode($ishod[0]->outcomes, true);
-                    $count_ishods = count($json_outcames);
-
-                    $res .= '<div class="row-collapse">
-                        <div class="row-collapse-inner" data-parents="'.$el->event_id.'">
-                            <div class="icon-bet">
-                                <span class="icon-football"></span>
-                            </div>
-
-                            <a class="info-bet" href="bet-dashboard-open.html">
-                                <div class="title-bet">17 Сентября 19:30</div>
-                                <div class="value-bet">' . $keyName . '</div>
-                            </a>';
-
-                    // data-id="id2" старая ид сейчас числовая
-                    if(!empty($json_outcames[0])){
-                        $res .= '<div class="team">
-                                <button class="bet-parent-val" data-id="'.$json_outcames[0]['outcome_id'].'"  data-text="'.$json_outcames[0]['outcome_name'].'">
-                                    <div class="title-bet">'.$json_outcames[0]['outcome_name'].'</div>
-                                    <div class="value-bet">'.$json_outcames[0]['outcome_coef'].'</div>
-                                </button>
-                            </div>';
-                    }else{
-                        $res .= '<div class="team"></div>';
-                    }
-
-                    if(!empty($json_outcames[1])) {
-                        $res .= ' <div class="bet-points">
-                                <button class="bet-parent-val" data-id="'.$json_outcames[1]['outcome_id'].'" data-text="'.$json_outcames[1]['outcome_name'].'">
-                                    <div class="title-bet">'.$json_outcames[1]['outcome_name'].'</div>
-                                    <div class="value-bet">'.$json_outcames[1]['outcome_coef'].'</div>
-                                </button>
-                            </div>';
-                    }else{
-                        $res .= '<div class="team"></div>';
-                    }
-                        if(!empty($json_outcames[2])) {
-                            $res .= '<div class="team">
-                                <button class="bet-parent-val" data-id="'.$json_outcames[0]['outcome_id'].'" data-text="'.$json_outcames[2]['outcome_name'].'">
-                                    <div class="title-bet">'.$json_outcames[2]['outcome_name'].'</div>
-                                    <div class="value-bet">'.$json_outcames[2]['outcome_coef'].'</div>
-                                </button>
-                            </div>';
-                        }else{
-                            $res .= '<div class="team"></div>';
-                        }
-
-                    $res .= '    <a href="bet-dashboard-open.html" class="total show-all-bets">' . $count_ishods . '</a> ';
-                    $res .= '  </div>
-                    </div>';
-                }
-
-
-                $res.=' </div>
-            </div>
-        </div>
-    </div>';
-            }else{      // Ничего не найдено
-                $res.='    <div class="tab-block-inner">
-        <div class="tab-collapse">
-            <div class="tab-collapse-head">
-                <button class="trigger-tab-collapse active">Ничего не найдено</button>
-            </div>
-            <div class="tab-collapse-content active">
-                <div class="tab-collapse-content-inner">
-                    <div class="row-collapse">
-                        <div class="row-collapse-inner" data-parents="betsId1">
-                          Ничего не найдено
-                        </div>
-
-                    </div>
-                  
-                </div>
-            </div>
-        </div>
-    </div>';
-            }
-
+                                                      $res .= '      </div>
+                                                                </div>';
+                                                  }
+                            $res .= '                       </div>
+                                                        </div>';
         }
 
-        $res.= '</div>';
 
-
+            $res .= '                               </div>
+                                                    
+                                                    
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                </div>';
 
         return $res;
+
     }
 
 

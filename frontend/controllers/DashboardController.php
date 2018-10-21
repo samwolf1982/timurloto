@@ -7,6 +7,7 @@ use app\models\Turnirename;
 use app\models\Typegame;
 use app\models\Typegamename;
 use common\models\helpers\HtmlGenerator;
+use common\models\services\EventLine;
 use common\models\services\FiltertCountryBySport;
 use dektrium\user\filters\AccessRule;
 //use dvizh\cart\Cart;
@@ -90,6 +91,7 @@ class DashboardController extends Controller
         return ['fail'];
     }
 
+
     /**
      *      получить линию
      * @return array
@@ -97,15 +99,13 @@ class DashboardController extends Controller
     public function actionGetLine(){
 
         if(Yii::$app->request->post('id')){
-            $filter= new  FiltertCountryBySport(null,null,Yii::$app->request->post('id'));
-            $resultFilter=$filter->getTurniresByCountryFin();
-            $html_block=HtmlGenerator::dashboardCountryByGroupFinBlock($resultFilter);
+            $eventLine= new  EventLine(Yii::$app->request->post('id'));
+            $resultFilter=$eventLine->getLine();
+            $html_block=HtmlGenerator::dashboardLine($resultFilter,$eventLine);
             return ['array'=>$resultFilter,'html_block'=>$html_block ];
         }
         return ['fail'];
     }
-
-
 
 
     public function behaviors()

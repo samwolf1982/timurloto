@@ -2,6 +2,7 @@
 
 
 use dektrium\user\controllers\SecurityController;
+use dvizh\cart\Cart;
 use yii\base\Event;
 
 
@@ -33,3 +34,9 @@ Event::on('dektrium\user\controllers\SecurityController', SecurityController::EV
     // after saving all user attributes will be stored under account model
     // Yii::$app->identity->user->accounts['facebook']->decodedData
 });
+
+Event::on('dvizh\cart\Cart', Cart::EVENT_CART_PUT, function ($e) {
+          Yii::error(['PUT',$e]);
+});
+
+

@@ -79,7 +79,6 @@ class ElementController extends \yii\web\Controller
                 $elementModel = $cart->putWithPrice($productModel, $postData['CartElement']['price'], $postData['CartElement']['count'], $options);
             } else {
                 yii::error(get_class($cart));
-
                 $elementModel = $cart->put($productModel, $postData['CartElement']['count'], $options,null);
             }
 

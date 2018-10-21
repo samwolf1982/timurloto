@@ -25,6 +25,15 @@ var SmartCart={
             e.preventDefault();
             return false;
         });
+
+        $(document).on("click", ".bets-val", function(e) {
+            SmartCart.addToCart(this);
+            e.preventDefault();
+            return false;
+        });
+
+
+
         // delete
        // $('.bet-coup-list').on('click','.delete-item',function () {
         $(document).on('click','.delete-item',function (e) {
@@ -89,7 +98,6 @@ var SmartCart={
             e.preventDefault();
             return false;
         });
-
         console.log('Init SmartCart');
     },
 
@@ -512,7 +520,8 @@ var SmartCart={
     getLine:function (el) {
         console.log('getLine');
         var data = {};
-        data.CartElement = {};
+        data = {};
+        data.id = $(el).data('id');
         data[this.csrf_param] = this.csrf;
         $.ajax({
             url: "/dashboard/get-line",
@@ -520,49 +529,17 @@ var SmartCart={
             data: data,
             dataType: "json",
             success: function (json) {
-                SmartCart.showLine();
-//                 local_tottal_coeficient=1;
-//                 if (json) {
-//
-//                     $.each(json.elements, function( index, value ) {
-// //                        console.log([value.item_id,value.parent_id,value]);
-//                         outcome=    JSON.parse(value.options);
-//                         console.log(value);
-//                         console.log(outcome);
-//                         if(!value.status){
-//                             local_tottal_coeficient*=outcome.outcome_coef;
-//                         }
-//
-//                         SmartCart.renderAdd(value.item_id,value.parent_id,value.current_market_name+' '+value.result_type_name+' '+outcome.outcome_name,value.gamers_name,outcome.outcome_coef,value.status);
-//                         SmartCart.reloadDom();
-//
-//                         $('#total-coeficient').html( Math.round10(local_tottal_coeficient, -2));
-//                     });
-//
-//
-//                     SmartCart.tottal_coeficient=local_tottal_coeficient;
-//                     SmartCart.currentBalance=json.currentBalance;
-//                     SmartCart.currentCooeficientDrop=json.currentCooeficientDrop;
-//                     SmartCart.max_coeficientDrop=json.max_coeficientDrop;
-//                     SmartCart.recalculateSumBet();
-//                     SmartCart.recalculateMaybeWin();
-//                     SmartCart.renderCalculate();
-//
-//
-//
-//
-//                 } else {
-//                     console.log(json);
-//                 }
-            }
 
+                if(json.html_block){
+                    SmartCart.showLine(json.html_block);
+                }
+            }
         });
 
-
-
     },
-    showLine:function () {
+    showLine:function (html) {
         $('.main_center_block').fadeOut(400);
+        $('.open_line_center_block').html(html);
        $('.open_line_center_block').fadeIn(400);
     },
     hideLine:function () {

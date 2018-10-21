@@ -46,6 +46,7 @@ class Cart extends \yii\db\ActiveRecord implements CartInterface
     public function getElement(\dvizh\cart\interfaces\CartElement $model, $options = [], $price = null)
     {
         $price = empty($price) ? $model->getCartPrice() : $price;
+        yii::error([$model->getCartId()]);
         return $this->getElements()->where(['hash' => $this->_generateHash(get_class($model), $price), 'item_id' => $model->getCartId()])->one();
        // return $this->getElements()->where(['hash' => $this->_generateHash(get_class($model), $price, $options), 'item_id' => $model->getCartId()])->one();
     }

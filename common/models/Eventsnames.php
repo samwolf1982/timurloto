@@ -84,6 +84,19 @@ class Eventsnames extends \yii\db\ActiveRecord
 
     }
 
+    public function d_getIshodsall(){
+
+//        yii::error($this->event_id);
+//        var_dump($this->event_id);
+        //return Bets::find()->where(['event_id'=>$this->event_id,'status'=>ConstantsHelper::STATUS_ACTIVE])->limit(5)->all(); // TournamentsnamesExt::findAll();
+        return Bets::find()->select(['id','event_id','market_id','outcomes','market_name','result_type_id','market_template_id','result_type_name'])->where(['event_id'=>$this->event_id,'status'=>ConstantsHelper::STATUS_ACTIVE])->all(); // TournamentsnamesExt::findAll();
+
+//        $modelsTmp=     $this->tFilter::find()->select(['id','event_id','market_id','outcomes','market_name','result_type_id','market_template_id','result_type_name'])->where(['event_id'=>$sportId,'status'=>1])->all(); // TournamentsnamesExt::findAll();
+        //   return $this->hasMany(Bets::className(), ['event_id' => 'event_id'])->all();
+        //  return $this->hasMany(BetsExt::className(), ['event_id' => 'tournament_id'])->andWhere(['status'=>ConstantsHelper::STATUS_ACTIVE])->count();
+
+    }
+
 
     public function getCountoutcomes(){
 
