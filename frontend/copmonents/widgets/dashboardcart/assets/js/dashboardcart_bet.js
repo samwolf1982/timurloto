@@ -337,6 +337,7 @@ var SmartCart={
             '</li>');
     },
 
+
     reloadDom:function (el){
         var count_items = $('.bet-coup-list li').length;
         if(count_items >= 1){
