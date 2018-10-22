@@ -3,8 +3,8 @@
 
 use dektrium\user\controllers\SecurityController;
 use dvizh\cart\Cart;
+use dvizh\cart\models\CartElement;
 use yii\base\Event;
-
 
 //Event::on(SecurityController::class, SecurityController::EVENT_AFTER_AUTHENTICATE, function (AuthEvent $e) {
 //Event::on('SecurityController', SecurityController::EVENT_AFTER_AUTHENTICATE, function (AuthEvent $e) {
@@ -35,8 +35,19 @@ Event::on('dektrium\user\controllers\SecurityController', SecurityController::EV
     // Yii::$app->identity->user->accounts['facebook']->decodedData
 });
 
-Event::on('dvizh\cart\Cart', Cart::EVENT_CART_PUT, function ($e) {
-          Yii::error(['PUT',$e]);
-});
+
+//Event::on('dvizh\cart\Cart', Cart::EVENT_CART_PUT, function ($e) {
+//                 /**@var  CartElement $element */
+//          $element=   $e->element;
+//   //['id' => 'cart_id']);
+//          Yii::error(['PUT',$element->parent_id]);
+////          $cart=$element->getCart();
+//    Yii::error(['PUT',$element->cart]);
+////    foreach ($element->getCart() as $item) {
+////        Yii::error(['PUT',$item]);
+////          }
+//
+//
+//});
 
 

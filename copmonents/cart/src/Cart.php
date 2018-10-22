@@ -72,11 +72,23 @@ class Cart extends Component
             $elementModel->gamers_name=$model->playerfullname->event_name;
 
             $elementEvent = new CartElementEvent(['element' => $elementModel]);
-            $this->trigger(self::EVENT_CART_PUT, $elementEvent);
+            $this->trigger(self::EVENT_CART_PUT, $elementEvent);  //в собитие не возможно передать родительский елемент Cart
 
             if(!$elementEvent->stop) {
                 try {
                     $this->cart->put($elementModel);
+                    // чистка дубликатов по группе parent_id
+                    $parent_id=$elementModel->parent_id;
+                    foreach (    $this->cart->elements as $el) {
+                        if($elementModel->id != $el->id){
+                            if($parent_id == $el->parent_id){
+                                $el->delete();
+                            }
+                        }
+                       // Yii::error([$elementModel->id,$el->id,$parent_id,$el->parent_id]);
+
+                    }
+
                 } catch (Exception $e) {
                     throw new \yii\base\Exception(current($e->getMessage()));
                 }
