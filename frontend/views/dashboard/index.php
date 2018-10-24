@@ -4,7 +4,7 @@ use app\copmonents\widgets\addbet\AddbetWidget;
 use app\copmonents\widgets\dashboardcart\DashboardcartWidget;
 use app\copmonents\widgets\dashboardcenter\DashboardcenterWidget;
 use app\copmonents\widgets\dashboardgategory\DashboardgategoryWidget;
-use app\copmonents\widgets\Dashboardpopular\DashboardpopularWidget;
+use app\copmonents\widgets\dashboardpopular\DashboardpopularWidget;
 use app\copmonents\widgets\dashboardtopmatch\DashboardtopmatchWidget;
 use app\copmonents\widgets\showuser\ShowuserWidget;
 use dektrium\user\widgets\Connect;

@@ -7,6 +7,7 @@ namespace app\modules\wager;
  */
 class Module extends \yii\base\Module
 {
+
     /**
      * {@inheritdoc}
      */

@@ -98,6 +98,15 @@ var SmartCart={
             e.preventDefault();
             return false;
         });
+
+
+// закрытие модального для корзины
+        $('#modal-success-bet .close').on('click', function (e) {
+            console.log('Close modal');
+            $('.dashboard-row .dash-right-col').hide();
+            location.reload(true);
+        });
+
         console.log('Init SmartCart');
     },
 
@@ -569,14 +578,23 @@ var SmartCart={
             },
             success: function (json) {
                 console.log(json);
-                if(json.message) showNotification(json.message);
+                if(json.message){
+                    showNotification(json.message);
+                }else{   // showPOPap
+                          // не работает делаю тригер для невидимой кнопки LIfeHac(^-^)  #smartCartButtonModal
+                     // $('#modal-success-bet').modal('show');
+                    //$('#modal-success-bet').modal();
+                    $('#smartCartButtonModal').trigger('click');
+
+                }
                 if(json.status !== 'error'){
-                    // showPOPap
+
                    // showNotification(json.message);
                 }
 
             }
         });
+
         //      stop bulk
         if (event.preventDefault) {
             event.preventDefault();
@@ -587,7 +605,6 @@ var SmartCart={
         event.preventDefault();
 
     },
-
     test:function () {
         console.log(this.csrf)
         console.log(this.csrf_param)

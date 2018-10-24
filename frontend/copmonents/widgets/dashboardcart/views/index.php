@@ -214,9 +214,8 @@
                                        }
                                    </style>
                                    <button id="smartCartButton"  class="btn btn-primary send-bets" onclick="SmartCart.createBet(this);" >Сделать Ставку</button>
+                                   <button hidden   id="smartCartButtonModal"  class="btn btn-primary send-bets hidden" data-toggle="modal" data-target="#modal-success-bet">Сделать Ставку Модальное</button>
                                <?php } ?>
-
-
 
                                <p>Баланс: <span id="currentBalance"><?=$total_balance; ?> </span> <span> betcoins</span></p>
                                <p class="hidden">Сумма ставки: <span id="betSum">0</span> <span> betcoins</span></p>

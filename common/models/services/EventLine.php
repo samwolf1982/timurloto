@@ -9,6 +9,7 @@ use common\models\wraps\EventsnamesExt;
 use common\models\wraps\SportcategoryExt;
 use common\models\wraps\TournamentsnamesExt;
 use dektrium\user\models\User;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 
 class EventLine
@@ -73,6 +74,13 @@ class EventLine
             $this->eventName=$this->eventNameObj->event_name;
             $this->tournamentName=$this->eventNameObj->tournament_name;
         }
+//
+//        $array = [
+//            ['id' => '123', 'data' => 'abc'],
+//            ['id' => '345', 'data' => 'def'],
+//        ];
+//        $ids = ArrayHelper::getColumn($array, 'id');
+
     }
 
 

@@ -92,7 +92,10 @@ class WagerManager
           if(empty($outcomeCoefficient) ||  $outcomeCoefficient<=1)continue;
             $total_coef *= $outcomeCoefficient;
             $this->addWagerElement($element);
-         //   $element->delete();
+             if(CLEAR_CART){
+                 $element->delete();
+             }
+             // $element->delete();
          }
          return $total_coef;
     }
