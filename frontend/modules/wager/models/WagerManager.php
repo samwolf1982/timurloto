@@ -52,7 +52,6 @@ class WagerManager
     public function add(){
       //  $elements = yii::$app->cart->elements;
 //        yii::error($this);
-
         $wager=new Wager();
         $wager->user_id=$this->user_id;
         $wager->playlist_id=$this->playlist_id;
@@ -85,9 +84,6 @@ class WagerManager
         $total_coef=1;
         foreach ($this->cart->elements as $element) {
             $outcomeCoefficient=OutcomeParser::getCoefficient($element);
-            //json_decode($element->options);
-//            $total_coef *= $element->coof;
-//            yii::error($element->status);
           if($element->status)   continue;
           if(empty($outcomeCoefficient) ||  $outcomeCoefficient<=1)continue;
             $total_coef *= $outcomeCoefficient;
@@ -240,7 +236,8 @@ class WagerManager
             $current_cart=$cart->getCart()->my();
             $b= Score::find()->where(['user_id' => $user_id])->one()->balance;
             $percentSum =    $b*$coefficient/100;
-            $totalSum  = number_format($percentSum, 0, '', ',');
+            //$totalSum  = number_format($percentSum, 0, '', ',');
+            $totalSum  = $percentSum;
         }else{
             $totalSum=0;
         }

@@ -123,38 +123,42 @@ return [
     'modules' => [
         'user' => [
             'class' => 'dektrium\user\Module',
-            'controllerMap' => [
-                'registration' => [
-                    'class' => \dektrium\user\controllers\RegistrationController::className(),
-                    'on ' . \dektrium\user\controllers\RegistrationController::EVENT_AFTER_REGISTER => function ($e) {
-//    yii::error(['go gfo']);
-//    die();
 
-                        $auth = Yii::$app->authManager;
-                        $role = $auth->getRole('simpeuser');
-                        // dont work for social
-                        $auth->assign($role, $e->id);
-                        $findUser = Score::find()->where(['user_id' => $e->id])->one();
-                        if (!$findUser){
-                            $userBalance = new Score;
-                            $userBalance->user_id = $e->id;
-                            $userBalance->balance = 100000;
+//            'controllerMap' => [
+//                'registration' => [
+//                    'class' => \dektrium\user\controllers\RegistrationController::className(),
+//                    'on ' . \dektrium\user\controllers\RegistrationController::EVENT_AFTER_REGISTER => function ($e) {
+////    yii::error(['go gfo']);
+////    die();
+//
+////                        $auth = Yii::$app->authManager;
+////                        $role = $auth->getRole('simpeuser');
+////                        // dont work for social
+////                        $auth->assign($role, $e->id);
+////                        $findUser = Score::find()->where(['user_id' => $e->id])->one();
+////                        if (!$findUser){
+////                            $userBalance = new Score;
+////                            $userBalance->user_id = $e->id;
+////                            $userBalance->balance = 100000;
+////
+////                            if($userBalance->validate()){
+////                                return $userBalance->save();
+////                            } else die('Uh-oh, somethings went wrong!');
+////                        }
+////
+//
+//                        // add balance
+////                        Yii::$app->balance->increase($e->id, 500);
+////                      //  Yii::$app->response->redirect(array('/user/security/login'))->send();
+////                        Yii::$app->response->redirect(array('/bet'))->send();
+////                        Yii::$app->end();
+//
+//
+//                    },
+//
+//                ],
+//            ],
 
-                            if($userBalance->validate()){
-                                return $userBalance->save();
-                            } else die('Uh-oh, somethings went wrong!');
-                        }
-                        // add balance
-//                        Yii::$app->balance->increase($e->id, 500);
-//                      //  Yii::$app->response->redirect(array('/user/security/login'))->send();
-//                        Yii::$app->response->redirect(array('/bet'))->send();
-//                        Yii::$app->end();
-
-
-                    },
-
-                ],
-            ],
             'enableUnconfirmedLogin' => true,
             'confirmWithin' => 21600,
             'cost' => 12,

@@ -33,7 +33,6 @@ var SmartCart={
         });
 
 
-
         // delete
        // $('.bet-coup-list').on('click','.delete-item',function () {
         $(document).on('click','.delete-item',function (e) {
@@ -85,7 +84,6 @@ var SmartCart={
             // e.preventDefault();
             return false;
         });
-
         // open line
         $(document).on('click','.total.show-all-bets.do_open_line',function (e) {
             SmartCart.getLine(this);
@@ -99,14 +97,12 @@ var SmartCart={
             return false;
         });
 
-
 // закрытие модального для корзины
         $('#modal-success-bet .close').on('click', function (e) {
             console.log('Close modal');
             $('.dashboard-row .dash-right-col').hide();
             location.reload(true);
         });
-
         console.log('Init SmartCart');
     },
 
@@ -582,8 +578,10 @@ var SmartCart={
                     showNotification(json.message);
                 }else{   // showPOPap
                           // не работает делаю тригер для невидимой кнопки LIfeHac(^-^)  #smartCartButtonModal
+                     // $('#modal-success-bet').modal({'show'});
                      // $('#modal-success-bet').modal('show');
-                    //$('#modal-success-bet').modal();
+                     //$('#modal-success-bet').modal();
+
                     $('#smartCartButtonModal').trigger('click');
 
                 }

@@ -7,6 +7,7 @@
 
 use common\models\Wagerelements;
 use yii\helpers\Html;
+use yii\helpers\Url;
 
 $bundle = yiister\gentelella\assets\Asset::register($this);
 
@@ -87,6 +88,18 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                                         ],
                                     ],
 
+
+                                    [
+                                       // "label" => "Баланс пользователей",
+                                        "label" => "Баланс пользователя",
+                                        "icon" => "usd",
+                                        "url" => "#",
+                                        "items" => [
+                                            ["label" => "Кошельки", "url" => ["/balance/score"]],
+                                            ["label" => "Транзакции", "url" => [Url::to(['/balance/transaction/index','sort'=>'-id'])]],
+                                            ["label" => "DEV", "url" => ["/balance"]],
+                                        ],
+                                    ],
 
 
                                     ["label" => "Layout", "url" => ["site/layout"], "icon" => "files-o"],

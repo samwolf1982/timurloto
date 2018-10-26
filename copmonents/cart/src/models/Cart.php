@@ -37,7 +37,8 @@ class Cart extends \yii\db\ActiveRecord implements CartInterface
             throw new \Exception(current($elementModel->getFirstErrors()));
         }
     }
-    
+
+
     public function getElements()
     {
         return $this->hasMany($this->element, ['cart_id' => 'id']);
@@ -50,7 +51,6 @@ class Cart extends \yii\db\ActiveRecord implements CartInterface
         return $this->getElements()->where(['hash' => $this->_generateHash(get_class($model), $price), 'item_id' => $model->getCartId()])->one();
        // return $this->getElements()->where(['hash' => $this->_generateHash(get_class($model), $price, $options), 'item_id' => $model->getCartId()])->one();
     }
-
 
     public function getElementsByModel(\dvizh\cart\interfaces\CartElement $model)
     {

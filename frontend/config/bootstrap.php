@@ -1,7 +1,12 @@
 <?php
+
+use common\models\helpers\ConstantsHelper;
+use dektrium\user\controllers\RegistrationController;
 use dektrium\user\controllers\SecurityController;
 use dvizh\cart\Cart;
 use dvizh\cart\models\CartElement;
+use komer45\balance\models\Score;
+use komer45\balance\models\Transaction;
 use yii\base\Event;
 
 //Event::on(SecurityController::class, SecurityController::EVENT_AFTER_AUTHENTICATE, function (AuthEvent $e) {
@@ -34,6 +39,62 @@ Event::on('dektrium\user\controllers\SecurityController', SecurityController::EV
     // after saving all user attributes will be stored under account model
     // Yii::$app->identity->user->accounts['facebook']->decodedData
 });
+
+
+
+// регистрация + создание кошелька
+Event::on('dektrium\user\controllers\SecurityController', SecurityController::EVENT_AFTER_AUTHENTICATE, function (\dektrium\user\events\AuthEvent $e) {
+
+    if(0){ // гугл не пускать  он идет через форму
+        var_dump([$e->client,$e->account]); die();
+        var_dump([$e->account,$e->account->user->id,$e->account->user]);
+        $findUser = Score::find()->where(['user_id' => $e->account->user->id])->one();
+        if (!$findUser){
+            $userBalance = new Score;
+            $userBalance->user_id = $e->account->user->id;
+            $userBalance->balance = ConstantsHelper::DEFAULT_USER_CREATE_BALANCE;
+            if($userBalance->validate()){
+                $userBalance->save();
+            } else{
+                var_dump($userBalance->errors);
+                die('Uh-oh, somethings went wrong!');
+            }
+        }
+    }
+
+});
+// регистрация + создание кошелька  для гугла или формы
+Event::on('dektrium\user\controllers\RegistrationController', RegistrationController::EVENT_AFTER_CONNECT, function (dektrium\user\events\ConnectEvent $e) {
+        $findUser = Score::find()->where(['user_id' => $e->user->id])->one();
+        if (!$findUser){
+            $userBalance = new Score;
+            $userBalance->user_id = $e->user->id;
+          //  $userBalance->balance = ConstantsHelper::DEFAULT_USER_CREATE_BALANCE;
+            $userBalance->balance = 0;
+            if($userBalance->validate()){
+                $userBalance->save();
+                // ставка добавлена  снятие баланса
+                $modelTransaction = new Transaction();
+//            'balance_id' => $this->integer(11)->notNull(), 'date' => $this->datetime()->null()->defaultValue(null), 'type' => "ENUM('in', 'out') NOT NULL", 'amount' => $this->decimal(12, 2)->notNull(), 'balance' => $this->decimal(12, 2)->notNull(), 'user_id'=> $this->integer(11)->notNull(), 'refill_type' => $this->string(255)->notNull(), 'canceled' => $this->datetime()->null()->defaultValue(null), 'comment' => $this->string(255)->null()->defaultValue(null),
+                $param=['type'=>'in','amount'=>ConstantsHelper::DEFAULT_USER_CREATE_BALANCE,'balance_id'=>$userBalance->id,'refill_type'=>'first transaction, add default'];
+                $modelTransaction->attributes=$param;
+                if($modelTransaction->validate()){
+                    $addTransaction = Yii::$app->balance->addTransaction($modelTransaction->balance_id, $modelTransaction->type, $modelTransaction->amount, $modelTransaction->refill_type);
+                }else{
+                    yii::error($modelTransaction->errors);
+                }
+
+            } else{
+                var_dump($userBalance->errors);
+                die('Uh-oh, somethings went wrong!');
+            }
+        }
+
+
+});
+
+
+
 
 
 

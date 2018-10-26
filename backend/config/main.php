@@ -58,6 +58,9 @@ return [
         'authManager' => [
             'class' => 'dektrium\rbac\components\DbManager',
         ],
+        'balance' => [
+            'class' => 'komer45\balance\Balance'
+        ],
 
     ],
 
@@ -68,6 +71,12 @@ return [
             'confirmWithin' => 21600,
             'cost' => 12,
             'admins' => ['admin']
+        ],
+        'balance' => [
+            'class' => 'komer45\balance\Module',
+            'adminRoles' => ['admin'],
+            'otherRoles' => ['simpleuser'],
+            'currencyName' => 'баллов'
         ],
         'rbac' => 'dektrium\rbac\RbacWebModule',
 

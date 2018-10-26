@@ -34,6 +34,11 @@ class ConstantsHelper
         const MAX_DROP_COEFFICIENT=10;
 
 
+
+        // баланс для новосозданных
+        const DEFAULT_USER_CREATE_BALANCE=100000;
+
+
 }
 
 

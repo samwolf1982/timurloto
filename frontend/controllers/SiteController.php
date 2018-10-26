@@ -76,17 +76,17 @@ class SiteController extends Controller
 
 
         // cоздать кошелек для пользователя. пока что здесь
-        if (!Yii::$app->user->isGuest ){
-            $findUser = Score::find()->where(['user_id' => Yii::$app->user->id])->one();
-            if (!$findUser){
-                $userBalance = new Score;
-                $userBalance->user_id = Yii::$app->user->id;
-                $userBalance->balance = 5000;
-                if($userBalance->validate()){
-                    $userBalance->save();
-                } else die('Uh-oh, somethings went wrong!');
-            }
-        }
+//        if (!Yii::$app->user->isGuest ){
+//            $findUser = Score::find()->where(['user_id' => Yii::$app->user->id])->one();
+//            if (!$findUser){
+//                $userBalance = new Score;
+//                $userBalance->user_id = Yii::$app->user->id;
+//                $userBalance->balance = 5000;
+//                if($userBalance->validate()){
+//                    $userBalance->save();
+//                } else die('Uh-oh, somethings went wrong!');
+//            }
+//        }
 
         $test=123;
         return $this->render('index',compact('test') );
