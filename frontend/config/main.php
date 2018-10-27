@@ -45,7 +45,10 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'account/'=>'account/index'
+                'account/'=>'account/index',
+                '/'=>'dashboard/index',
+//                'site/index' =>   'dashboard',
+
             ],
         ],
 

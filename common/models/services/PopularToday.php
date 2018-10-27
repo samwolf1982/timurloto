@@ -36,7 +36,7 @@ class PopularToday
     public static function getDropSportForCountry()
     {
         $res=[];
-        foreach (Popularsport::find()->where(['status'=>ConstantsHelper::STATUS_ACTIVE])->all() as $item) {
+        foreach (Popularsport::find()->where(['status'=>ConstantsHelper::STATUS_ACTIVE])->orderBy(['sort'=>SORT_ASC])->all() as $item) {
             $name=$item->name;
             if(empty($name)){
                 $searchResult=Sportcategorynames::find()->where(['sport_id'=>$item->sport_id])->one();
