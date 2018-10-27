@@ -11,7 +11,6 @@ use yii\helpers\Url;
 
 class FiltertCountryBySport
 {
-
     private $sport_id;
     private $category_id;
     private $tournament_id;
@@ -26,15 +25,25 @@ class FiltertCountryBySport
         $this->tournament_id = $tournament_id;
     }
 
-    public function getTurnires()
+    public function getTurnires($tag=null)
     {
+        if($tag){
+                $models=     SportcategoryExt::find()->select(['category_id','category_name'])->where(['sport_id'=>$this->sport_id,'status'=>ConstantsHelper::STATUS_ACTIVE])->andWhere(['like','category_name',$tag])->all(); // Sportcategory::findAll();
+
+        }else{
             $models=     SportcategoryExt::find()->select(['category_id','category_name'])->where(['sport_id'=>$this->sport_id,'status'=>ConstantsHelper::STATUS_ACTIVE])->all(); // Sportcategory::findAll();
-            return  $models;
+
+        }
+             return  $models;
     }
 
-    public function getTurniresByCountry()
+    public function getTurniresByCountry($tag=null)
     {
-        $models=     TournamentsnamesExt::find()->select(['tournament_id','category_id','tournament_name'])->where(['category_id'=>$this->category_id,'status'=>ConstantsHelper::STATUS_ACTIVE])->all();
+        if($tag){
+        $models=     TournamentsnamesExt::find()->select(['tournament_id','category_id','tournament_name'])->where(['category_id'=>$this->category_id,'status'=>ConstantsHelper::STATUS_ACTIVE])->andWhere(['like','tournament_name',$tag])->all();
+        }else{
+            $models=     TournamentsnamesExt::find()->select(['tournament_id','category_id','tournament_name'])->where(['category_id'=>$this->category_id,'status'=>ConstantsHelper::STATUS_ACTIVE])->all();
+        }
         return  $models;
     }
 

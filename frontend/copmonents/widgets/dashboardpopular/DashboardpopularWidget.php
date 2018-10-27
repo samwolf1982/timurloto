@@ -18,12 +18,14 @@ class DashboardpopularWidget extends Widget
     // возвращаем результат
     public function run(){
 
+
+//        $tabs=[];
+
 //        if(Yii::$app->user->isGuest){
 //            $playlists= [];// PlaylistManager::getAllPlaylistsByUserId();
 //        }else{
 //            $playlists=  PlaylistManager::getAllPlaylistsByUserId(Yii::$app->user->identity->getId());
 //        }
-
         return       $this->render('index', array());
     }
     public function init(){

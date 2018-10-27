@@ -14,11 +14,13 @@
    ?>
 
    <div class="inner-sidebar">
+
+
        <div class="head-pink">
            <h3>Популярное</h3>
        </div>
-       <div class="top-list-rated">
 
+       <div class="top-list-rated">
            <ul class="top-list">
                <li>
                    <a href="#" class="top-link-block">

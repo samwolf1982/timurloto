@@ -1,3 +1,4 @@
+  "kl83/yii2-autocomplete-dropdown-widget": "~1.0.0"
 The Yii framework is free software. It is released under the terms of
 the following BSD License.
 

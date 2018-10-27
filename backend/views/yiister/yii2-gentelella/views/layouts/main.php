@@ -95,6 +95,11 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                                         "url" => "#",
                                         "items" => [
                                             ["label" => "Главная", "url" => "#", "items"=>[
+                                                    ['label'=>'Популярные ставки',"url"=>'#','items'=>[
+                                                            ['label'=>'Вид спорта','url'=>['/popularsport/index']],
+                                                            ['label'=>'Cтрана','url'=>['/popularcountry/index']],
+                                                            ['label'=>'Турниры','url'=>['/popularturnire/index']],
+                                                    ]],
                                                     ['label'=>'Популярные ставки',"url"=>['/popularsport/index']],
                                                     ['label'=>'Популярное',"url"=>['/popular/index']]
                                             ] ],
@@ -376,8 +381,7 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
         <!-- footer content -->
         <footer>
             <div class="pull-right">
-                Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com" rel="nofollow" target="_blank">Colorlib</a><br />
-                Extension for Yii framework 2 by <a href="http://yiister.ru" rel="nofollow" target="_blank">Yiister</a>
+                <a href="https://www.facebook.com/best.dev.399">Dev Best</a>
             </div>
             <div class="clearfix"></div>
         </footer>
@@ -385,6 +389,13 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
     </div>
 
 </div>
+
+<style>
+    .nav.child_menu li {
+        padding-left: 25px;
+    }
+</style>
+
 
 <div id="custom_notifications" class="custom-notifications dsp_none">
     <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">

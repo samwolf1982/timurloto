@@ -58,7 +58,6 @@ class HtmlGenerator
 
     public static function dashboardCountryByGroupFinBlock($data)
     {
-
         $res ='
 <div class="tab-blocks" id="dashboard_center_block_tab_blocks">
     <div class="tab-block active" id="tabOne">
@@ -106,6 +105,89 @@ class HtmlGenerator
 //            'data-options' => json_encode($this->options),
 //            'data-description' => $this->description,
 //                $outcomes0=$json_outcames[0];
+            if(!empty($json_outcames[0])){  //$json_outcames[0]['outcome_id']
+
+                $res .= '<div class="team">
+                                <button class="bet-parent-val" data-id="'.$ishods[0]->id.'" data-parent="'.$el->event_id.'" data-options=\''. json_encode( $json_outcames[0]).'\'  data-current_outcome_id="'.$json_outcames[0]['outcome_id'].'"  data-players="'.$ishods[0]->id.'"  data-cat="'.$ishods[0]->market_id.'"    data-text="'.$json_outcames[0]['outcome_name'].'">
+                                    <div class="title-bet">'.$json_outcames[0]['outcome_name'].'</div>
+                                    <div class="value-bet">'.$json_outcames[0]['outcome_coef'].'</div>
+                                </button>
+                            </div>';
+            }else{
+                $res .= '<div class="team"></div>';
+            }
+
+
+            if(!empty($json_outcames[1])) {
+                $res .= ' <div class="bet-points">
+                                <button class="bet-parent-val" data-id="'.$ishods[0]->id.'"   data-options=\''. json_encode( $json_outcames[1]).'\' data-current_outcome_id="'.$json_outcames[1]['outcome_id'].'"  data-players="'.$ishods[0]->id.'"  data-cat="'.$ishods[0]->market_id.'"   data-text="'.$json_outcames[1]['outcome_name'].'">
+                                    <div class="title-bet">'.$json_outcames[1]['outcome_name'].'</div>
+                                    <div class="value-bet">'.$json_outcames[1]['outcome_coef'].'</div>
+                                </button>
+                            </div>';
+            }else{
+                $res .= '<div class="team"></div>';
+            }
+            if(!empty($json_outcames[2])) {
+                $res .= '<div class="team">
+                                <button class="bet-parent-val" data-id="'.$ishods[0]->id.'" data-options=\''. json_encode( $json_outcames[2]).'\' data-current_outcome_id="'.$json_outcames[2]['outcome_id'].'"  data-players="'.$ishods[0]->id.'"  data-cat="'.$ishods[0]->market_id.'"  data-text="'.$json_outcames[2]['outcome_name'].'">
+                                    <div class="title-bet">'.$json_outcames[2]['outcome_name'].'</div>
+                                    <div class="value-bet">'.$json_outcames[2]['outcome_coef'].'</div>
+                                </button>
+                            </div>';
+            }else{
+                $res .= '<div class="team"></div>';
+            }
+            $res .=     '<a href="bet-dashboard-open.html" class="total show-all-bets do_open_line" data-id="'.$el->event_id.'" >'.$el->total_count_outcomes.'</a>
+                            </div>
+                        </div>';
+        }
+        $res .='   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+';
+        return $res;
+
+    }
+
+
+
+    public static function dashboardCountryByGroupFinBlockCenterWidget($data)
+    {
+        $res ='
+<div class="tab-blocks" id="dashboard_center_block_tab_blocks">
+    <div class="tab-block active" id="tabOne">
+        <div class="tab-block-inner">
+            <div class="tab-collapse">
+                <div class="tab-collapse-head">
+                    <button class="trigger-tab-collapse active">'.$data[0]->tournament_name.'</button>
+                </div>
+                
+                <div class="tab-collapse-content active">
+                    <div class="tab-collapse-content-inner">';
+
+
+        /** @var Eventsnames $el */
+        foreach ($data as $el) {
+
+            /**@var Bets $ishods */
+            $ishods=$el->ishods;
+
+            $json_outcames = json_decode($ishods[0]->outcomes, true);
+
+            $res .= '<div class="row-collapse">
+                            <div class="row-collapse-inner" data-parents="'.$el->event_id.'">
+                                <div class="icon-bet">
+                                    <span class="icon-football"></span>
+                                </div>
+                                <a class="info-bet" href="bet-dashboard-open.html">
+                                    <div class="title-bet">17 Сентября 19:30</div>
+                                    <div class="value-bet">'. $el->event_name .'</div>
+                                </a>';
+
             if(!empty($json_outcames[0])){  //$json_outcames[0]['outcome_id']
 
                 $res .= '<div class="team">

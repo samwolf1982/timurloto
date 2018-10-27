@@ -12,6 +12,7 @@
 
 
    DashboardcenterAsset::register($this);
+
    ?>
 
 
@@ -23,10 +24,9 @@
        <div class="content-bg pb-5">
            <div class="tab-parent">
 
-               <?=  $this->render('tabs/tabs_navigation',[]) ?>
+               <?=  $this->render('tabs/tabs_navigation',['tabs'=>$tabs,'activeIdtab'=>$activeIdtab]); ?>
 
-
-               <?=  $this->render('tabs/tabs_blocks',[]) ?>
+               <?=  $this->render('tabs/tabs_blocks',['listTurnire'=>$listTurnire]) ?>
 
 
            </div>

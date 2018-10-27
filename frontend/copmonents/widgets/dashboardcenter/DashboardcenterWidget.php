@@ -8,6 +8,8 @@ namespace app\copmonents\widgets\dashboardcenter;
  */
 
 use app\modules\statistic\models\PlaylistManager;
+use common\models\Popularturnire;
+use common\models\services\PopularToday;
 use common\models\wraps\SportcategorynamesExt;
 use dvizh\cart\controllers\ElementController;
 use Yii;
@@ -16,18 +18,14 @@ use yii\base\Widget;
 class DashboardcenterWidget extends Widget
 {
     public $userdata;// array параметров, по ситуации буду добавлять
-    // возвращаем результат
-    public function run(){
-                $sport_categories =   SportcategorynamesExt::getAll();
-// var_dump($sport_categories); die();
-//        yii::error($sport_categories);
-//        if(Yii::$app->user->isGuest){
-//            $playlists= [];// PlaylistManager::getAllPlaylistsByUserId();
-//        }else{
-//            $playlists=  PlaylistManager::getAllPlaylistsByUserId(Yii::$app->user->identity->getId());
-//        }
 
-        return       $this->render('index', ['sport_categories'=>$sport_categories]);
+    public function run(){
+        $tabs=PopularToday::getDropSportForCountry();
+        $activeIdtab_sport_id=key($tabs);
+
+        $popular=new PopularToday(Yii::$app->user->identity->getId());
+        $listTurnire=  $popular->listTurnireBySportId($activeIdtab_sport_id);
+        return       $this->render('index', ['tabs'=>$tabs,'activeIdtab'=>$activeIdtab_sport_id,'listTurnire'=>$listTurnire]);
     }
     public function init(){
         parent::init();
