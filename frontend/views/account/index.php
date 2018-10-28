@@ -335,7 +335,7 @@ AccountIndexAsset::register($this);
 
 
 
-            <?=StatisticInformer::widget(['user_id'=>yii::$app->user->identity->getId()]) ?>
+            <?=StatisticInformer::widget(['user_id'=>yii::$app->user->identity->id]); ?>
 
 
 
@@ -426,6 +426,9 @@ AccountIndexAsset::register($this);
         </div>
     </div>
 </footer>
+
+
+
 <div class="modal-wrapper user-modal" id="modal-auth">
     <div class="modal-inner">
         <div class="modal-content">
@@ -7650,7 +7653,7 @@ AccountIndexAsset::register($this);
 </div>
 
 
-<!-- modad add bet -->
+<!-- modad add bet  наверно нужно удалить ?? -->
 <?= AddbetWidget ::widget([]); ?>
 
 <div class="modal-wrapper bet-modal modal-640" id="modal-complaint">
@@ -8827,5 +8830,19 @@ AccountIndexAsset::register($this);
         </div>
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script src="js/script.min.js"></script>
 </body>

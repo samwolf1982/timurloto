@@ -39,6 +39,29 @@ class ConstantsHelper
         const DEFAULT_USER_CREATE_BALANCE=100000;
 
 
+
+        // типы ставок  для фронта
+        const BET_TYPE_FREE_EXPRESS=1;
+        const BET_TYPE_FREE_ORDINAR=2;
+
+        const BET_TYPE_PRIVATE_EXPRESS=3; //
+        const BET_TYPE_PRIVATE_ORDINAR=4; //
+
+    // пока что не используются
+//        const BET_TYPE_OPEN_EXPRESS=5;  // cтавка уже кому тo открыта, раньше была или PRIVAT    или FREE
+//        const BET_TYPE_OPEN_ORDINAR=6;// cтавка уже кому тo открыта, раньше была или PRIVAT      или FREE
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 

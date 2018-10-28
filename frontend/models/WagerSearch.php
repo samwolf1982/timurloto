@@ -75,6 +75,9 @@ class WagerSearch extends Wager
         if (!empty($params['playlist'])) {
             $this->playlist_id=(integer)$params['playlist'];
         }
+        if (!empty($params['user_id'])) {
+            $this->user_id=(integer)$params['user_id'];
+        }
 
 
         if (!$this->validate()) {

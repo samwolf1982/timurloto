@@ -32,10 +32,12 @@ class WagerStatisticManager
 
         $searchModelWager = new WagerSearch();
         // $dataProviderWagers = $searchModelWager->search($this->queryParams);
+
+        $own_query=['user_id'=>$this->user_id];
+        $this->queryParams= array_merge($this->queryParams,$own_query);
         $dataProviderWagers = $searchModelWager->searchWithPagination($this->queryParams);
       //  $pages = new Pagination(['totalCount' => $dataProviderWagers->getTotalCount()]);
         $result=$this->prepareWagers($dataProviderWagers);
-
         $this->paginationPages = $searchModelWager->getPages();
 
         return $result;
@@ -50,18 +52,19 @@ class WagerStatisticManager
        $result_all=[];
 //       var_dump ( get_class( $modelsWagers[0] )); die();
        /** @var Wager $wager */
-       foreach ($modelsWagers as $wager) {
+       foreach ($modelsWagers as $wager){
+
            $wagerelements=$wager->wagerelements;
              $type=$this->getTypeWager($wagerelements);
              $prepare_elements=$this->prepareWager($wagerelements);
-             $frontElement=new WagerInfoFrontSingle($wager->id,$type,$prepare_elements,$wager->coef,$wager->total,$wager->created_at);
+//             var_dump(get_class($wager)); die();
+             $frontElement=new WagerInfoFrontSingle($wager->id,$type,$prepare_elements,$wager->coef,$wager->total,$wager->created_at,$wager->fronttypebet);
              $userInfo = new UserInfo($wager->user_id);
             // $result_all[]=['elements'=>$prepare_elements,'front_element'=>$frontElement,'model'=>$wager];
              $result_all[]=['elements'=>$prepare_elements,'front_element'=>$frontElement,'model'=>$wager,'userInfo'=>$userInfo];
             }
             return $result_all;
   }
-
 
     private function prepareWager($wagerelements){
       $res=[];

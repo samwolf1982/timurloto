@@ -4,6 +4,7 @@ namespace common\models\DTO;
 
 class WagerInfoFrontSingle
 {
+
     private $id;
     private $type; // ordinar Expres
     private $wager;
@@ -12,9 +13,10 @@ class WagerInfoFrontSingle
     private $created_at;
     private $sport_name;
     private $turnire_name;
+    private $type_extend;  //   ConstantHelper  const BET_TYPE_...
 
 
-  public function __construct($id,$type, $prepare_elements,$percent,$sum,$created_at)
+  public function __construct($id,$type, $prepare_elements,$percent,$sum,$created_at,$type_extend)
   {
       $this->id=$id;
       $this->type=$type;
@@ -31,6 +33,8 @@ class WagerInfoFrontSingle
       $this->turnire_name= $this->wager->getNameTurnire();
       $date=date_create($created_at);
       $this->created_at=  date_format($date,"d-m-Y") ;
+      $this->type_extend=$type_extend;
+
   }
 
     /**
@@ -87,6 +91,14 @@ class WagerInfoFrontSingle
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    /**
+     * @return mixed    ConstantsHelper
+     */
+    public function getTypeExtend()
+    {
+        return $this->type_extend;
     }
 
 }

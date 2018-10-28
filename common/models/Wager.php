@@ -3,6 +3,7 @@
 namespace common\models;
 
 use common\models\DTO\WagerInfoStringResult;
+use common\models\helpers\ConstantsHelper;
 use Yii;
 
 /**
@@ -129,6 +130,8 @@ class Wager extends \yii\db\ActiveRecord
     }
 
 
+
+
     public function getTypeWager(){
         if(count($this->wagerelements)>1) return  'Экспресс';
         return  'Ординар';
@@ -190,5 +193,45 @@ class Wager extends \yii\db\ActiveRecord
             }
         }
     }
+
+
+    // возврат констант для фронта тип ставки  ConstantsHelper::BET_TYPE_...
+    public function getFronttypebet()
+    {
+        $count =   $this->getWagerelements()->count();  // >1 тогда експресс
+
+//        $count_opened =   $this->getOpenedbet()->count();  // >0 тогда Open
+//        if($count_opened >0){ // комуто открыто -> открытый ординар или експресс
+//                     if($count>1){
+//                         return ConstantsHelper::BET_TYPE_OPEN_EXPRESS;
+//                     }else{
+//                         return ConstantsHelper::BET_TYPE_OPEN_ORDINAR;
+//                     }
+//        }
+
+
+        if($this->is_private){ // приватная
+            if($count>1){
+                return ConstantsHelper::BET_TYPE_PRIVATE_EXPRESS;
+            }else{
+                return ConstantsHelper::BET_TYPE_PRIVATE_ORDINAR;
+            }
+        }else{
+            if($count>1){
+                return ConstantsHelper::BET_TYPE_FREE_EXPRESS;
+            }else{
+                return ConstantsHelper::BET_TYPE_FREE_ORDINAR;
+            }
+
+        }
+        Yii::error('Wager some error getFronttypebet не попал в if');
+
+    }
+
+    public function getOpenedbet(){
+        return $this->hasMany(Openedbet::className(), ['bet_id' => 'id']);
+    }
+
+
 
 }

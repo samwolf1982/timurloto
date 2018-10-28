@@ -23,7 +23,8 @@ class DashboardcenterWidget extends Widget
         $tabs=PopularToday::getDropSportForCountry();
         $activeIdtab_sport_id=key($tabs);
 
-        $popular=new PopularToday(Yii::$app->user->identity->getId());
+//        $popular=new PopularToday(Yii::$app->user->identity->getId());
+        $popular=new PopularToday(Yii::$app->user->identity->id);
         $listTurnire=  $popular->listTurnireBySportId($activeIdtab_sport_id);
         return       $this->render('index', ['tabs'=>$tabs,'activeIdtab'=>$activeIdtab_sport_id,'listTurnire'=>$listTurnire]);
     }

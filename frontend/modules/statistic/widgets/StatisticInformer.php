@@ -42,6 +42,7 @@ class StatisticInformer extends \yii\base\Widget
 
         $playlists=Playlist::find()->where(['user_id'=>$this->user_id, 'status'=>Playlist::STATUS_ON])->all();
         $search=new   BalancestatisticsSearch();
+//        yii::error($this->user_id);
         $search_result= $search->searchCount($this->user_id);
 
         return $this->render('statisticInformer/index',['playlists'=>$playlists,'search_result'=>$search_result] );

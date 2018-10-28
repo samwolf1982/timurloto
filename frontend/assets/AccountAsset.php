@@ -17,7 +17,8 @@ class AccountAsset extends AssetBundle
 
     public $css = [
         // 'dist/css/style.css',
-         'dist/libs/gridder-master/gridder-master/dist/css/jquery.gridder.min.css',
+        'dist/css/fixaccount.css',
+//         'dist/libs/gridder-master/gridder-master/dist/css/jquery.gridder.min.css',
     ];
 
     public $js = [
