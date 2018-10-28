@@ -24,7 +24,7 @@ $config = yii\helpers\ArrayHelper::merge(
 );
 
 
-define('USER_TEST_ID',31);// нужно брать ид существующего пользователя.
+define('USER_TEST_ID',42);// нужно брать ид существующего пользователя.
 
 $application=new yii\web\Application($config);
 //(new yii\web\Application($config))->run();

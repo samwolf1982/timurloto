@@ -60,9 +60,10 @@ class PopularWidgetTest extends \PHPUnit\Framework\TestCase
     {
 
 
-        $this->assertEquals(1, count( PopularToday::getDropCountryFromSport())>0,'запись должна быть обязательно присутсвовать в базе иначе тест не проходит');
+        //$this->assertEquals(1, count( PopularToday::getDropCountryFromSport())>0,'запись должна быть обязательно присутсвовать в базе иначе тест не проходит');
+        $this->assertEquals(1, count( PopularToday::getDropSportForCountry())>0,'запись должна быть обязательно присутсвовать в базе иначе тест не проходит');
         /**@var Popularsport $pop **/
-        foreach (PopularToday::getDropCountryFromSport() as $k=>$pop) {
+        foreach (PopularToday::getDropSportForCountry() as $k=>$pop) {
            // $searchResult=Sportcategorynames::find()->where(['sport_id'=>$pop['id']])->one();
             $searchResult=Sportcategorynames::find()->where(['sport_id'=>$k])->one();
             $this->assertInstanceOf("common\models\Sportcategorynames",$searchResult);

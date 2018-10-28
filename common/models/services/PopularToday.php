@@ -21,7 +21,6 @@ class PopularToday
 //    private $user_name;
 //    private $user_image;
 //    private  $user;
-
     public function __construct($user_id)
   {
       $this->user_id=$user_id;
