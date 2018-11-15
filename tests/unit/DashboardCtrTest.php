@@ -30,6 +30,7 @@ use app\modules\statistic\models\WagerStatisticManager;
 
 class DashboardCtrTest extends TestCase
 {
+
     private $modelCollection=[];
     protected function tearDown(){
 

@@ -28,7 +28,7 @@ use yii\widgets\LinkPager;
                         <img src="images/soccer-ball.svg" alt="">
                     </div>
                     <div class="left-head-text">
-                        <span class="text-head">Мои Ставки <sup><?=$wagerManager->getCountAllElements()?></sup></span>
+                        <span class="text-head"><?=$text?> <sup><?=$wagerManager->getCountAllElements()?></sup></span>
                     </div>
                     <div class="play-list-drop">
                         <!--<button class="drop-trig-lay">Плейлист #A</button>-->
@@ -184,18 +184,52 @@ use yii\widgets\LinkPager;
                                                         <div class="rate-c">
                                                             <div class="title_rate_c"> <?=$front_element->getType() ;?></div>
                                                             <div class="value_rate_c">  <?=$front_element->getSumAndPercent() ?> </div>
+                                                            <div class="value_rate_c">  <?=$front_element->getUserPercent() ?> </div>
                                                         </div>
                                                         <div class="rate-c">
 
                                                             <div class="title_rate_c"><?=$front_element->getCreatedAt() ?></div>
-                                                            <div class="value_rate_c" id="FormantedNameAndPercent"> <?=$front_element->getFormantedNameAndPercent()  ?></div>
+
+
+                                                            <?php if(0){ // еще не понянтно ?>
+                                                                <!--                                                                                            может смотреть здесь-->
+                                                                <?php if($isSubscriber || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_ORDINAR || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS  ){ ?>
+                                                                    <div class="value_rate_c" id="FormantedNameAndPercent"> <?=$front_element->getFormantedNameAndPercent()  ?></div>
+                                                                <?php }else{  ?>
+                                                                    <div class="value_rate_c" id="FormantedNameAndPercent">Экспресс LP</div>
+                                                                <?php  } ?>
+
+                                                            <?php    }else{  ?>
+
+                                                            <!--                                                                                            может смотреть здесь-->
+                                                            <?php if($isSubscriber || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_ORDINAR || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS  ){ ?>
+
+                                                                    <?php if($front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS){ ?>
+                                                                        <div class="value_rate_c" id="FormantedNameAndPercent">Экспресс LP#</div>
+                                                                    <?php }else{ ?>
+                                                                        <div class="value_rate_c" id="FormantedNameAndPercent"> <?=$front_element->getFormantedNameAndPercent()  ?></div>
+                                                                    <?php } ?>
+                                                            <?php }else{  ?>
+                                                                <div class="value_rate_c" id="FormantedNameAndPercent">Экспресс LP</div>
+                                                            <?php  } ?>
+
+                                                            <?php } ?>
+
+
+
+
 
                                                         </div>
                                                     </div>
                                                     <div class="rate-c__item">
                                                         <div class="rate-c">
                                                             <div class="title_rate_c" > <?=$front_element->getSportAndTurnire()  ?> </div>
-                                                            <div class="value_rate_c"> <?=$front_element->getNameTeams()  ?>  </div>
+
+                                                            <?php if($front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS  || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_PRIVATE_EXPRESS ){  ?>
+                                                            <div class="value_rate_c"> <?=$front_element->getInfoNameFull()  ?> ... +<?=$front_element->getTotalCount()?>  </div>
+                                                            <?php }else{ ?>
+                                                                <div class="value_rate_c"> <?=$front_element->getInfoNameFull()  ?>  </div>
+                                                            <?php }?>
                                                         </div>
                                                     </div>
                                                     <div class="rate-c__footer">
@@ -227,11 +261,36 @@ use yii\widgets\LinkPager;
                                                             </div>
                                                         </div>
 
-                                                        <?php if($front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_PRIVATE_EXPRESS    ){ ?>
+
+                                                        <?php if($isSubscriber || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_ORDINAR || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS  ){ ?>
+
+                                                        <?php if($isSubscriber || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_ORDINAR ){ ?>
+
+                                                                <?php if($front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_PRIVATE_EXPRESS ||   $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS ){ ?>
+                                                                    <div class="link-rate">
+                                                                        <a href="#"  class="modaleAjax"  data-target="<?=Url::to(['/wager/default/viewdetail','id'=>$front_element->getId() ])?>">+  Показать Экспресс</a>
+                                                                    </div>
+                                                               <?php  }else{  ?>
+                                                                    <div class="link-rate">
+                                                                        <a href="#"  class="modaleAjax"  data-target="<?=Url::to(['/wager/default/viewdetail','id'=>$front_element->getId() ])?>">+  Показать Ординар</a>
+                                                                    </div>
+                                                                <?php } ?>
+
+
+
+                                                        <?php }else{  ?>
                                                             <div class="link-rate">
                                                                 <a href="#"  class="modaleAjax"  data-target="<?=Url::to(['/wager/default/viewdetail','id'=>$front_element->getId() ])?>">+  Показать Экспресс</a>
                                                             </div>
                                                         <?php } ?>
+
+                                                        <?php }else{  ?>
+                                                            <div class="link-rate">
+                                                                <a href="#"  class="modaleAjax">Узнать прогноз</a>
+                                                            </div>
+                                                        <?php  } ?>
+
+
 
 
                                                     </div>

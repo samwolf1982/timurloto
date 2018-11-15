@@ -3,6 +3,7 @@
 use app\copmonents\widgets\addbet\AddbetWidget;
 use app\copmonents\widgets\showuser\ShowuserWidget;
 use app\modules\statistic\widgets\StatisticInformer;
+use app\modules\statistic\widgets\UserBlockInformer;
 use app\modules\statistic\widgets\WagersInformer;
 use dektrium\user\widgets\Connect;
 use frontend\assets\AccountAsset;
@@ -11,12 +12,8 @@ use frontend\assets\MainAsset;
 use yii\helpers\Url;
 
 $this->title='LOOK MY BET';
-
 AccountAsset::register($this);
 AccountIndexAsset::register($this);
-
-
-
 
 ?>
 
@@ -41,14 +38,9 @@ AccountIndexAsset::register($this);
         </div>
 
 
-
         <!--   вход выход  пользователя   -->
         <?= ShowuserWidget::widget(['userdata' => [],'view'=>'other']) ?>
-        
-      
-        
-        
-        
+
     </div>
 </header>
 <div class="account-statistic">
@@ -61,6 +53,7 @@ AccountIndexAsset::register($this);
         </ul>
     </div>
 </div>
+
 <div class="main-background">
     <div id="scene">
         <div data-depth="0.2" class="background-image" style="background-image: url(images/back-body.jpg)"></div>
@@ -73,67 +66,10 @@ AccountIndexAsset::register($this);
         <div class="content-container">
             <div class="row table-row">
                 <div class="column-4">
-                    <div class="table-wrapper transparent-bg">
-                        <div class="table-inner">
-                            <div class="table-body">
-                                <div class="user-block-acc">
-                                    <div class="level-row">
-                                        <!--
-                                             green label ->  class="level-info"
-                                             yellow label -> class="level-info medium-level"
-                                             pink label -> class="level-info low-level"
-                                               -->
-                                        <div class="level-info level16">
-                                            <div class="label-level">16</div>
-                                            <span>уровень</span>
-                                        </div>
-                                        <div class="user-money">
-                                    <p  class="user-money numberOnly">
-                                        <?=$balance?>
-                                    </p>
-                                            <span class="currency">betcoins</span>
-                                        </div>
-                                    </div>
-                                    <div class="big-user-avatar">
-                                        <div class="big-rate-avatar">
-                                            <!--
-                                                data-ptc - percentage of occupancy
-                                                -->
-                                            <div class="big-circle-wrapper" data-ptc="16">
-                                                <div class="big-circle"><canvas width="160" height="160"></canvas></div>
-                                            </div>
-                                            <div class="big-avatar-user">
-                                                <img src="images/avatar-placeholder.svg" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="user-acc-name">
-                                        <h3><span>Konstantin</span> <span class="label-user-pro">pro</span></h3>
-                                        <div class="user-nik-name">john.baklan</div>
-                                    </div>
-                                    <div class="user-acc-text">
-                                        <p>The complexity of mining crypto currency is growing
-                                            rapidly, and many crypto-currencies initially use POS
-                                            or plan to switch to POW instead.</p>
-                                    </div>
-                                    <div class="book-user">
-                                        <img src="/images/1b.png" alt="">
-                                        <img src="/images/2b.png" alt="">
-                                        <img src="/images/3b.png" alt="">
-                                        <a href="#" class="select-btn-plus" data-toggle="modal" data-target="#modal-choose-bet">
-                                            <span class="icon-add-plus"></span>
-                                        </a>
-                                    </div>
-                                    <div class="user-acc-btn mt-0">
-                                        <a href="settings.html" class="btn btn-hover btn-default settings-btn">
-                                            <i class="icon-setting"></i> НАСТРОЙКИ
-                                            <span></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                    <?=UserBlockInformer::widget(['user_id'=>yii::$app->user->identity->id]) ?>
+
+
                 </div>
                 <div class="column-8">
                     <div class="table-wrapper stats-table" id="stat-block">
@@ -341,7 +277,7 @@ AccountIndexAsset::register($this);
 
 
 
-            <?=WagersInformer::widget() ?>
+            <?=WagersInformer::widget(['is_own'=>true]) ?>
 
 
 

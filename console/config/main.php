@@ -41,6 +41,10 @@ return [
         'user' => [
             'class' => 'dektrium\user\Module',
         ],
+        // подписчики
+        'subscribers' => [
+            'class' => 'frontend\modules\subscribers\SubscriberModule',
+        ],
         'rbac' => 'dektrium\rbac\RbacConsoleModule',
     ],
     'params' => $params,

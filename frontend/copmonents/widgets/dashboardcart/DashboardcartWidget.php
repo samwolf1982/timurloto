@@ -17,11 +17,14 @@ use komer45\balance\models\Score;
 use Yii;
 use yii\base\Widget;
 
+
 class DashboardcartWidget extends Widget
 {
+
     public $userdata;// array параметров, по ситуации буду добавлять
     // возвращаем результат
     public function run(){
+
 //                $sport_categories =   SportcategorynamesExt::getAll();
         $b= Score::find()->where(['user_id' => Yii::$app->user->id])->one()->balance;
         $total_balance  = number_format($b, 0, '', ',');

@@ -8,7 +8,7 @@ class WagerInfoFront
     private $id;
     private $percent;
     private $date;
-    private $nameTeam;
+    private $nameTeams;
     private $nameSport;
     private $nameTurnire;
     private $nameEventName;
@@ -16,12 +16,12 @@ class WagerInfoFront
     private $status_name;
    // private $wagerInfoFront;
     private $wagerInfoStringResult;
-  public function __construct($id,$percent,$date,$nameTeam,$nameSport,$nameTurnire,$nameEventName, $status,WagerInfoStringResult $wagerInfoStringResult)
+  public function __construct($id,$percent,$date,$nameTeams,$nameSport,$nameTurnire,$nameEventName, $status,WagerInfoStringResult $wagerInfoStringResult)
   {
       $this->id=$id;
       $this->percent=$percent;
       $this->date=$date;
-      $this->nameTeam=$nameTeam;
+      $this->nameTeams=$nameTeams;
       $this->nameSport=$nameSport;
       $this->nameTurnire=$nameTurnire;
       $this->nameEventName=$nameEventName;
@@ -96,9 +96,9 @@ class WagerInfoFront
     /**
      * @return mixed
      */
-    public function getNameTeam()
+    public function getNameTeams()
     {
-        return $this->nameTeam;
+        return $this->nameTeams;
     }
 
     /**

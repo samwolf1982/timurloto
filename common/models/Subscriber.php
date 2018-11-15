@@ -49,4 +49,8 @@ class Subscriber extends \yii\db\ActiveRecord
             'created_at' => 'создан',
         ];
     }
+
+    public function isSubscriber(){
+
+    }
 }

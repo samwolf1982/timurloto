@@ -54,6 +54,48 @@ class ConstantsHelper
 
 
 
+// доступ к привату
+    const ACCESS_TO_PRIVATE_DAY='llll'; //
+
+
+    const ACCESS_TO_DAY='1 day'; //
+    const ACCESS_TO_TWO_DAYS='2 day'; //
+    const ACCESS_TO_THREE_DAYS='3 day'; //
+    const ACCESS_TO_WEEK='1 week'; //
+    const ACCESS_TO_TWO_WEEKS='2 week'; //
+    const ACCESS_TO_MONTH='1 month'; //
+    const ACCESS_TO_THREE_MONTHS='3 months'; //
+    const ACCESS_TO_25_YEARS='25 year'; //
+
+
+
+
+
+//<div class="list-item">
+//<button class="trig-val" data-value="day">день</button>
+//</div>
+//<div class="list-item">
+//<button class="trig-val" data-value="two days">2 дня</button>
+//</div>
+//<div class="list-item">
+//<button class="trig-val" data-value="three days">3 дня</button>
+//</div>
+//<div class="list-item">
+//<button class="trig-val" data-value="week">Неделя</button>
+//</div>
+//<div class="list-item">
+//<button class="trig-val" data-value="two weeks">2 недели</button>
+//</div>
+//<div class="list-item">
+//<button class="trig-val" data-value="month">Месяц</button>
+//</div>
+//<div class="list-item">
+//<button class="trig-val" data-value="three months"> 3 месяца</button>
+//</div>
+//<div class="list-item">
+//<button class="trig-val" data-value="forever">Навсегда</button>
+//</div>
+
 
 
 

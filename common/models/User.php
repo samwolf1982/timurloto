@@ -200,4 +200,30 @@ class User extends ActiveRecord implements IdentityInterface
             } else die('Uh-oh, somethings went wrong!');
         }
     }
+
+    public function getUserbalance()
+    {
+        return $this->hasOne(Score::className(), ['user_id' =>'id']);
+    }
+
+    public function isSubscriber(){
+
+           if(Subscriber::find()->where(['user_own_id'=>Yii::$app->user->id,'user_sub_id'=>$this->id])->one()){
+               return true;
+           }
+               return false;
+
+    }
+
+
+
+//    public function getSubscribers()
+//    {
+//        return $this->hasMany(Subscriber::className(), ['user_own_id' => 'id']);
+//    }
+
+
+
+
+
 }

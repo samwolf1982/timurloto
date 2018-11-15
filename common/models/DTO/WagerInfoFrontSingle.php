@@ -2,8 +2,17 @@
 
 namespace common\models\DTO;
 
+use Yii;
+
 class WagerInfoFrontSingle
 {
+    /**
+     * @return string
+     */
+    public function getInfoNameFull()
+    {
+        return $this->info_name_full;
+    }
 
     private $id;
     private $type; // ordinar Expres
@@ -14,9 +23,15 @@ class WagerInfoFrontSingle
     private $sport_name;
     private $turnire_name;
     private $type_extend;  //   ConstantHelper  const BET_TYPE_...
+    private $bank_percent;  //   ConstantHelper  const BET_TYPE_...
+
+    private $info_name_full;
+    private $totalCount;
 
 
-  public function __construct($id,$type, $prepare_elements,$percent,$sum,$created_at,$type_extend)
+
+
+  public function __construct($id,$type, $prepare_elements,$percent,$sum,$created_at,$type_extend,$bank_percent)
   {
       $this->id=$id;
       $this->type=$type;
@@ -26,6 +41,8 @@ class WagerInfoFrontSingle
       }else{
           $this->wager=null;
       }
+
+      $this->totalCount=count($prepare_elements);
 //      var_dump($this->wager); die();
       $this->percent=$percent;
       $this->sum=$sum;
@@ -34,6 +51,12 @@ class WagerInfoFrontSingle
       $date=date_create($created_at);
       $this->created_at=  date_format($date,"d-m-Y") ;
       $this->type_extend=$type_extend;
+      $this->bank_percent=$bank_percent;
+
+//      yii::error($this->wager);
+      $this->info_name_full=$this->wager->getNameTeams();
+//      $this->info_name_full='ssss';
+
 
   }
 
@@ -45,9 +68,14 @@ class WagerInfoFrontSingle
         return $this->id;
     }
    public  function getSumAndPercent(){
-      return  sprintf("%d ₽ - %0.2F%%",$this->sum,$this->percent) ;  //7,200 ₽ - 37%
+//      return  sprintf("%d ₽ - %0.2F%%",$this->sum,$this->bank_percent) ;  //7,200 ₽ - 1-10%
+      return  sprintf("%d ₽ - %d%%",$this->sum,$this->bank_percent) ;  //7,200 ₽ - 1-10%
    }
 
+    public  function getUserPercent(){
+        return  sprintf("x - %0.2F",$this->percent) ;  //7,200 ₽ - 37%
+//        return  sprintf("x - %0.2F%%",$this->percent) ;  //7,200 ₽ - 37%
+    }
     public  function getOwnPercent(){
         return  sprintf("Тотал Больше 3.5 - x %0.2F",$this->percent) ;  //7,200 ₽ - 37%
     }
@@ -55,7 +83,8 @@ class WagerInfoFrontSingle
     public  function getFormantedNameAndPercent(){
 //    /  var_dump($this->wager); die();
 
-        return  sprintf("%s - x %0.2F",  $this->wager->getFormatedString(), $this->percent) ;  //7,200 ₽ - 37%
+        return  sprintf("%s",  $this->wager->getFormatedString()) ;  //7,200 ₽ - 37%
+      //  return  sprintf("%s - x %0.2F",  $this->wager->getFormatedString(), $this->percent) ;  //7,200 ₽ - 37%
     }
 
     public  function getNameTeams(){
@@ -100,5 +129,20 @@ class WagerInfoFrontSingle
     {
         return $this->type_extend;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getBankPercent()
+    {
+        return $this->bank_percent;
+    }
+
+
+    public function getTotalCount()
+    {
+        return ($this->totalCount -1);
+    }
+
 
 }

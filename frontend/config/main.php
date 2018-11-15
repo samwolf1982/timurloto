@@ -46,7 +46,10 @@ return [
             'showScriptName' => false,
             'rules' => [
                 'account/'=>'account/index',
+
+                'account/<id:\d+>' => 'account/view',
                 '/'=>'dashboard/index',
+
 //                'site/index' =>   'dashboard',
 
             ],
@@ -184,6 +187,11 @@ return [
         'wager' => [
             'class' => 'app\modules\wager\Module',
 //            'clear_cart'=>true,
+        ],
+
+        // подписчики
+        'subscribers' => [
+            'class' => 'frontend\modules\subscribers\SubscriberModule',
         ],
 
     ],

@@ -58,7 +58,7 @@ class WagerStatisticManager
              $type=$this->getTypeWager($wagerelements);
              $prepare_elements=$this->prepareWager($wagerelements);
 //             var_dump(get_class($wager)); die();
-             $frontElement=new WagerInfoFrontSingle($wager->id,$type,$prepare_elements,$wager->coef,$wager->total,$wager->created_at,$wager->fronttypebet);
+             $frontElement=new WagerInfoFrontSingle($wager->id,$type,$prepare_elements,$wager->coef,$wager->total,$wager->created_at,$wager->fronttypebet,$wager->select_coef);
              $userInfo = new UserInfo($wager->user_id);
             // $result_all[]=['elements'=>$prepare_elements,'front_element'=>$frontElement,'model'=>$wager];
              $result_all[]=['elements'=>$prepare_elements,'front_element'=>$frontElement,'model'=>$wager,'userInfo'=>$userInfo];
@@ -70,7 +70,8 @@ class WagerStatisticManager
       $res=[];
         foreach ($wagerelements as $wagerelement) { // var_dump($wagerelement); die();
             $wagerInfoStringResult=new WagerInfoStringResult($wagerelement->info_main_cat_name,$wagerelement->info_cat_name,$wagerelement->info_name);
-            $res[]=  new WagerInfoFront($wagerelement->id,$wagerelement->coef,$wagerelement->created_at,'nameTeam',$wagerelement->sport_name,$wagerelement->category_name,$wagerelement->name, 'status',$wagerInfoStringResult);
+
+            $res[]=  new WagerInfoFront($wagerelement->id,$wagerelement->coef,$wagerelement->created_at,$wagerelement->info_name_full,$wagerelement->sport_name,$wagerelement->category_name,$wagerelement->name, 'status',$wagerInfoStringResult);
       }
       return $res;
     }
