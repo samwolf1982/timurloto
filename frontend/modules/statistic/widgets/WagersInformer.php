@@ -59,6 +59,8 @@ class WagersInformer extends \yii\base\Widget
         $moduleSubscribers = \Yii::$app->getModule('subscribers');
 
         if(!$this->is_own){
+
+
             $isSubscriber = $moduleSubscribers->isSubscriber($this->user_id,Yii::$app->user->id);
         }else{
             $isSubscriber= true;

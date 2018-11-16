@@ -207,11 +207,30 @@ class User extends ActiveRecord implements IdentityInterface
     }
 
     public function isSubscriber(){
-
-           if(Subscriber::find()->where(['user_own_id'=>Yii::$app->user->id,'user_sub_id'=>$this->id])->one()){
+       // 'asd', 42, 44,
+        yii::error(['asd',Yii::$app->user->id,$this->id]);
+       // $u=Subscriber::find()->where(['user_own_id'=>Yii::$app->user->id,'user_sub_id'=>$this->id])->one();
+        $u=Subscriber::find()->where(['user_own_id'=>$this->id,'user_sub_id'=>Yii::$app->user->id])->one();
+          if($u){
+//              die();
+           //if(Subscriber::find()->where(['user_own_id'=>$this->id,'user_sub_id'=>Yii::$app->user->id])->one()){
                return true;
            }
                return false;
+
+    }
+
+    public function isSubscriberfront(){
+        // 'asd', 42, 44,
+        yii::error(['asd',Yii::$app->user->id,$this->id]);
+         $u=Subscriber::find()->where(['user_own_id'=>Yii::$app->user->id,'user_sub_id'=>$this->id])->one();
+       // $u=Subscriber::find()->where(['user_own_id'=>$this->id,'user_sub_id'=>Yii::$app->user->id])->one();
+        if($u){
+//              die();
+            //if(Subscriber::find()->where(['user_own_id'=>$this->id,'user_sub_id'=>Yii::$app->user->id])->one()){
+            return true;
+        }
+        return false;
 
     }
 

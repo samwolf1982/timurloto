@@ -80,11 +80,11 @@ $userInfoAccount;
                 <!-- Добавлена ссылка и класс j-center -->
                 <div class="link-acc j-center">
                     <a href="#" data-toggle="modal" data-target="#modal-complaint">Пожаловаться</a>
-                    <div class="drop-open-block  <?= $user->isSubscriber()?'locked-bet':'' ?> ">
+                    <div class="drop-open-block  <?= $user->isSubscriberfront()?'locked-bet':'' ?> ">
                         <a href="#" class="trigg-op-block ">
 
 
-                            <?php if($user->isSubscriber()){ ?>
+                            <?php if($user->isSubscriberfront()){ ?>
                                 <span class="shown-text">Открыть Доступ</span>
                                 <span class="hidden-text" >Закрыть Доступ</span>
                             <?php }else{ ?>

@@ -4,6 +4,7 @@ use app\copmonents\widgets\addbet\AddbetWidget;
 use app\copmonents\widgets\showuser\ShowuserWidget;
 use app\modules\statistic\widgets\StatisticInformer;
 use app\modules\statistic\widgets\UserBlockInformer;
+use app\modules\statistic\widgets\UserChartInformer;
 use app\modules\statistic\widgets\WagersInformer;
 use dektrium\user\widgets\Connect;
 use frontend\assets\AccountAsset;
@@ -72,47 +73,14 @@ AccountViewAsset::register($this);
                     <?=UserBlockInformer::widget(['user_id'=>yii::$app->request->get('id'),'view'=>'userBlockInformer/view']) ?>
 
                 </div>
+
                 <div class="column-8">
-                    <div class="table-wrapper stats-table" id="stat-block">
-                        <div class="table-inner">
-                            <div class="table-head head-with-tabs">
-                                <div class="tbl-icon">
-                                    <img src="/images/stats.svg" alt="">
-                                </div>
-                                <div class="left-head-text">
-                                    <span class="text-head">Доходность</span>
-                                </div>
-                                <div class="right-head-tab">
-                                    <div class="for-mobile-drop">
-                                        <a href="#" class="trig-filter">За месяц</a>
-                                        <ul class="head-tabs">
-                                            <li>
-                                                <a href="#">Неделя</a>
-                                            </li>
-                                            <li class="active">
-                                                <a href="#">За месяц</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">3 месяца</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Год</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">За все время</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="table-body">
-                                <div class="chart-wrapper">
-                                    <img src="/images/charts.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                    <?=UserChartInformer::widget(['user_id'=>yii::$app->request->get('id')]) ?>
+
+
                 </div>
+
             </div>
 
 
