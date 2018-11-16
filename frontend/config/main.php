@@ -85,8 +85,14 @@ return [
                 ],
                 'google' => [
                     'class'        => 'dektrium\user\clients\Google',
-                    'clientId'     => '1011370333812-pb8qcuc01ves6bavav1hciafk6g60cnk.apps.googleusercontent.com',
-                    'clientSecret' => 'Lsx7FJfrnPeKqBDltaALWBSS',
+
+                  //own //  'clientId'     => '1011370333812-pb8qcuc01ves6bavav1hciafk6g60cnk.apps.googleusercontent.com',
+                    'clientId'     => '602134147548-udkk32mg3v5rvjgtnbla1a1e0u9gve37.apps.googleusercontent.com',
+                 //own //    'clientSecret' => 'Lsx7FJfrnPeKqBDltaALWBSS',
+                    'clientSecret' => 'zEb1M5ojCOmR2D8sF5CGHvZX',
+
+
+
 //                    'returnUrl' => 'https://bet.domashka.in.ua/user/auth?authclient=google',
                     'returnUrl' => 'https://bet.domashka.in.ua/user/security/auth?authclient=google',
                 ],

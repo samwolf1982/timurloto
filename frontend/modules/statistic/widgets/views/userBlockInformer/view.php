@@ -98,7 +98,6 @@ $userInfoAccount;
 
                         <div class="drop-list">
 
-
                             <div class="drop-list-inner" id="period_parent" data-parent-id="<?=$userInfoAccount->getUserId();?>">
                                 <div class="list-item">
                                     <button class="trig-val" data-value="<?=ConstantsHelper::ACCESS_TO_DAY?>">день</button>
