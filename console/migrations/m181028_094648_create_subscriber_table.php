@@ -31,3 +31,5 @@ class m181028_094648_create_subscriber_table extends Migration
         $this->dropTable('subscriber');
     }
 }
+
+

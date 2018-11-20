@@ -72,11 +72,13 @@ return [
                     'clientSecret' => ISLOCAL ? '7e5b6ab5b8eeab5261b7edde23cbe3b0a4be276b' :  'b1420391d72fd5d50f38a5611c8c72729a4b3426',
                 ],
 
+
 //                'github' => [
 //                    'class'        => 'dektrium\user\clients\GitHub',
 //                    'clientId'     => ISLOCAL ? '2035d003b9cdf93aeeca' :  '3d5c6c9d7aefac8e63a4',
 //                    'clientSecret' => ISLOCAL ? '7e5b6ab5b8eeab5261b7edde23cbe3b0a4be276b' :  '6ce246227883fd55b212cf76ab94b809eec178a7',
 //                ],
+
 
                 'facebook' => [
                     'class'        => 'dektrium\user\clients\Facebook',
@@ -111,12 +113,11 @@ return [
 
             ],
         ],
+
         'authManager' => [
             'class' => 'dektrium\rbac\components\DbManager',
             'defaultRoles' => ['simpleuser'], // your define roles
         ],
-
-
 
         'balance' => [
             'class' => 'komer45\balance\Balance'
