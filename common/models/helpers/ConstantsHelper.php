@@ -69,7 +69,8 @@ class ConstantsHelper
 
 
 
-
+// длина текста в кометах в открытых пользователях число
+ const LENGTH_COMMENT_ACCESS_USER=160; //
 
 //<div class="list-item">
 //<button class="trig-val" data-value="day">день</button>

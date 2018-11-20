@@ -7,6 +7,8 @@ use yii\helpers\Html;
 
 /**@var  UserInfoAccount $userInfoAccount **/
 $userInfoAccount;
+
+
 ?>
 
 <div class="table-wrapper transparent-bg">
@@ -71,61 +73,75 @@ $userInfoAccount;
                         <i class="icon-mail"></i>Сообщение
                         <span></span>
                     </a>
-                    <a href="#" class="btn btn-hover btn-default event-subscribe-btn">
-                        <i class="text-hide">Отписаться</i>
-                        <i class="text-show">Подписаться</i>
-                        <span></span>
-                    </a>
+
+
+
+                    <?php if(!Yii::$app->user->isGuest){ ?>
+
+                        <a href="#" class="btn btn-hover btn-default event-subscribe-btn " id="subscriberMail">
+                        <?php if($user->isSubscriberMailfront()){ ?>
+                            <i class="text-show  unSubscribeMail">Отписаться</i>
+                        <?php }else{ ?>
+                            <i class="text-show subscribeMail">Подписаться</i>
+                       <?php  } ?>
+
+                            <span></span>
+                        </a>
+
+                    <?php } ?>
+
                 </div>
                 <!-- Добавлена ссылка и класс j-center -->
                 <div class="link-acc j-center">
                     <a href="#" data-toggle="modal" data-target="#modal-complaint">Пожаловаться</a>
-                    <div class="drop-open-block  <?= $user->isSubscriberfront()?'locked-bet':'' ?> ">
-                        <a href="#" class="trigg-op-block ">
+
+                    <?php if(!Yii::$app->user->isGuest){ ?>
+                        <div class="drop-open-block  <?= $user->isSubscriberfront()?'locked-bet':'' ?> ">
+                            <a href="#" class="trigg-op-block ">
+                                <?php if($user->isSubscriberfront()){ ?>
+                                    <span class="shown-text">Открыть Доступ</span>
+                                    <span class="hidden-text" >Закрыть Доступ</span>
+                                <?php }else{ ?>
+                                    <span class="shown-text">Открыть Доступ</span>
+                                    <span class="hidden-text" >Закрыть Доступ</span>
+                                <?php } ?>
+                            </a>
 
 
-                            <?php if($user->isSubscriberfront()){ ?>
-                                <span class="shown-text">Открыть Доступ</span>
-                                <span class="hidden-text" >Закрыть Доступ</span>
-                            <?php }else{ ?>
-                                <span class="shown-text">Открыть Доступ</span>
-                                <span class="hidden-text" >Закрыть Доступ</span>
-                           <?php } ?>
+                            <div class="drop-list">
 
-
-                        </a>
-
-
-                        <div class="drop-list">
-
-                            <div class="drop-list-inner" id="period_parent" data-parent-id="<?=$userInfoAccount->getUserId();?>">
-                                <div class="list-item">
-                                    <button class="trig-val" data-value="<?=ConstantsHelper::ACCESS_TO_DAY?>">день</button>
-                                </div>
-                                <div class="list-item">
-                                    <button class="trig-val" data-value="<?=ConstantsHelper::ACCESS_TO_TWO_DAYS?>">2 дня</button>
-                                </div>
-                                <div class="list-item">
-                                    <button class="trig-val" data-value="<?=ConstantsHelper::ACCESS_TO_THREE_DAYS?>">3 дня</button>
-                                </div>
-                                <div class="list-item">
-                                    <button class="trig-val" data-value="<?=ConstantsHelper::ACCESS_TO_WEEK?>">Неделя</button>
-                                </div>
-                                <div class="list-item">
-                                    <button class="trig-val" data-value="<?=ConstantsHelper::ACCESS_TO_TWO_WEEKS?>">2 недели</button>
-                                </div>
-                                <div class="list-item">
-                                    <button class="trig-val" data-value="<?=ConstantsHelper::ACCESS_TO_MONTH?>">Месяц</button>
-                                </div>
-                                <div class="list-item">
-                                    <button class="trig-val" data-value="<?=ConstantsHelper::ACCESS_TO_THREE_MONTHS?>"> 3 месяца</button>
-                                </div>
-                                <div class="list-item">
-                                    <button class="trig-val" data-value="<?=ConstantsHelper::ACCESS_TO_25_YEARS?>">Навсегда</button>
+                                <div class="drop-list-inner" id="period_parent" data-parent-id="<?=$userInfoAccount->getUserId();?>">
+                                    <div class="list-item">
+                                        <button class="trig-val" data-value="<?=ConstantsHelper::ACCESS_TO_DAY?>">день</button>
+                                    </div>
+                                    <div class="list-item">
+                                        <button class="trig-val" data-value="<?=ConstantsHelper::ACCESS_TO_TWO_DAYS?>">2 дня</button>
+                                    </div>
+                                    <div class="list-item">
+                                        <button class="trig-val" data-value="<?=ConstantsHelper::ACCESS_TO_THREE_DAYS?>">3 дня</button>
+                                    </div>
+                                    <div class="list-item">
+                                        <button class="trig-val" data-value="<?=ConstantsHelper::ACCESS_TO_WEEK?>">Неделя</button>
+                                    </div>
+                                    <div class="list-item">
+                                        <button class="trig-val" data-value="<?=ConstantsHelper::ACCESS_TO_TWO_WEEKS?>">2 недели</button>
+                                    </div>
+                                    <div class="list-item">
+                                        <button class="trig-val" data-value="<?=ConstantsHelper::ACCESS_TO_MONTH?>">Месяц</button>
+                                    </div>
+                                    <div class="list-item">
+                                        <button class="trig-val" data-value="<?=ConstantsHelper::ACCESS_TO_THREE_MONTHS?>"> 3 месяца</button>
+                                    </div>
+                                    <div class="list-item">
+                                        <button class="trig-val" data-value="<?=ConstantsHelper::ACCESS_TO_25_YEARS?>">Навсегда</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    <?php } ?>
+
+
+
                 </div>
             </div>
         </div>

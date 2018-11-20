@@ -7320,7 +7320,6 @@ AppAsset::register($this);
 
 
 
-
 <!-- Новые модалки -->
 <div class="modal-wrapper bet-modal modal-640" id="edit_bet">
     <div class="modal-inner">
@@ -7597,7 +7596,30 @@ AppAsset::register($this);
         </div>
     </div>
 </div>
+
+
+
+
 <div class="modal-wrapper bet-modal modal-edit-subscriber modal-960" id="edit_subscriber">
+    <div class="modal-inner">
+        <div class="modal-content">
+            <div class="modal-content-inner">
+                <div class="header-modal">
+                    <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
+                </div>
+                <div class="body-modal">
+<!--load ajax...-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="modal-wrapper bet-modal modal-edit-subscriber modal-960" id="edit_subscriberDEL_OR">
     <div class="modal-inner">
         <div class="modal-content">
             <div class="modal-content-inner">

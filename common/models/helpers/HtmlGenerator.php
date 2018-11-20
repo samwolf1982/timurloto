@@ -16,6 +16,21 @@ use yii\helpers\Url;
 class HtmlGenerator
 {
 
+
+    /**
+     *$a = 21;
+     *echo $a.' отзыв'.NumberEnd($a, array('','а','ов'));  Бывает “1 отзыв”, “2 отзыва” и “12 отзывов”.
+     * https://vexell.ru/%D1%81%D0%BA%D0%BB%D0%BE%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D1%87%D0%B8%D1%81%D0%B5%D0%BB-%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%BD%D0%B0-php/
+     * @param $number
+     * @param $titles
+     * @return mixed
+     *
+     */
+    public static function NumberEnd($number, $titles) {
+        $cases = array (2, 0, 1, 1, 1, 2);
+        return $titles[ ($number%100>4 && $number%100<20)? 2 : $cases[min($number%10, 5)] ];
+    }
+
     public static function dashboardCountry($data)
     {
         $res='';

@@ -3,6 +3,7 @@
 namespace frontend\modules\subscribers;
 use common\models\helpers\ConstantsHelper;
 use common\models\Subscriber;
+use common\models\SubscriberMail;
 use common\models\User;
 use Yii;
 use yii\base\ErrorException;
@@ -86,6 +87,37 @@ class SubscriberModule extends \yii\base\Module
     }
 
 
+    public function addMailSubscriber($user_sub_id,$period)
+    {
+//         'user_own_id', 'user_sub_id'
+        $subscriber=SubscriberMail::find()->where(['user_own_id'=>Yii::$app->user->id,'user_sub_id'=>$user_sub_id])->one();
+        if(!$subscriber){
+            $subscriber=  new SubscriberMail();
+            $subscriber->created_at=date('Y-m-d H:i:s');
+        }
+
+//            'user_own_id' => 'ид пользователя',
+//            'user_sub_id' => 'ид подписчика',
+//            'expired_at' => 'время окончания',
+//            'status' => 'статус блокирован активен прострочено время ...',
+//            'created_at' => 'создан',
+
+
+        $expired_at=  $new_time = date("Y-m-d H:i:s", strtotime("+".$period));
+        $parar=['user_own_id'=>Yii::$app->user->id,'user_sub_id'=>$user_sub_id,'status'=>1,'expired_at'=>$expired_at];
+        $subscriber->attributes=$parar;
+        if($subscriber->validate()){
+            $subscriber->save();
+            return true;
+        }else{
+            //  throw new  ErrorException(print_r($subscriber->errors,true));
+            Yii::error($subscriber->errors);
+        }
+
+        return true;
+    }
+
+
 
     public function removeSubscriber($user_sub_id)
     {
@@ -94,6 +126,23 @@ class SubscriberModule extends \yii\base\Module
         if($subscriber){
             if($subscriber->delete()){
      //    можно еще что-то делать тима уведомления и тд..
+                return true;
+            }else{
+                throw new ErrorException('Errorr delete Subscriber');
+            }
+
+        }
+
+    }
+
+
+    public function removeMailSubscriber($user_sub_id)
+    {
+//         'user_own_id', 'user_sub_id'
+        $subscriber=SubscriberMail::find()->where(['user_own_id'=>Yii::$app->user->id,'user_sub_id'=>$user_sub_id])->one();
+        if($subscriber){
+            if($subscriber->delete()){
+                //    можно еще что-то делать тима уведомления и тд..
                 return true;
             }else{
                 throw new ErrorException('Errorr delete Subscriber');
@@ -120,6 +169,20 @@ class SubscriberModule extends \yii\base\Module
         }
         return false;
     }
+
+
+    // набор валидаций для добавления подписчика почта
+    public function prevalidateMail()
+    {
+        if(empty(Yii::$app->request->post("Subscriber")['id'])) $this->errorList[]=['empty Subscriber id'];
+        if(empty(Yii::$app->user->id))                                 $this->errorList[]=['empty Current user id'];
+
+        if(empty($this->errorList)){
+            return true;
+        }
+        return false;
+    }
+
 
 
     // набор валидаций для удаления подписчика

@@ -1,3 +1,11 @@
 #FormantedNameAndPercent {
   white-space: pre-wrap;
 }
+#subscriberMail i {
+  color: white;
+  opacity: 1;
+}
+.user-access-item .name-block .right-name-b textarea {
+  background-color: #E5E5E5;
+  min-height: 66px;
+}

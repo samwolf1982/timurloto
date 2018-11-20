@@ -2,8 +2,12 @@
 namespace frontend\controllers;
 
 use app\models\WagerSearch;
+use common\models\helpers\ConstantsHelper;
 use common\models\Playlist;
+use common\models\search\BalancestatisticsSearch;
+use common\models\services\AccessInfo;
 use common\models\Subscriber;
+use common\models\User;
 use frontend\modules\subscribers\SubscriberModule;
 use komer45\balance\models\Score;
 use Yii;
@@ -25,8 +29,7 @@ use yii\web\Response;
 class AccountController extends Controller
 {
 
-    private  $actionJsonList=['addsubscriber','remove-subscriber'];
-
+    private  $actionJsonList=['addsubscriber','remove-subscriber','chart','add-mail-subscriber','remove-mail-subscriber','autocomplete-comment'];
     public function behaviors()
     {
         // index  -- only user
@@ -35,21 +38,27 @@ class AccountController extends Controller
          return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['index','addsubscriber', 'view','messages'],
+                'only' => ['index','addsubscriber', 'view','messages','chart','add-mail-subscriber','remove-mail-subscriber','open-access','autocomplete-comment'],
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['view'],
+                        'actions' => ['view','chart'],
                         'roles' => ['?','@'],
                     ],
+//                    [
+//                        'allow' => true,
+//                        'actions' => ['open-access'],
+//                        'roles' => ['?'],
+//                    ],
+
                     [
                         'allow' => true,
-                        'actions' => ['index','messages'],
+                        'actions' => ['index','messages','open-access','autocomplete-comment'],
                         'roles' => ['@'],
                     ],
                     [
                         'allow' => true,
-                        'actions' => ['addsubscriber','remove-subscriber'],
+                        'actions' => ['addsubscriber','remove-subscriber','add-mail-subscriber','remove-mail-subscriber'],
                         'roles' => ['@'],
                         'verbs'=>['post']
                     ],
@@ -65,17 +74,17 @@ class AccountController extends Controller
      */
     public function actionIndex()
     {
-
-//      Yii::$app->user->id;
-//        $playlists=Playlist::find()->where(['user_id'=>Yii::$app->user->id, 'status'=>Playlist::STATUS_ON])->asArray()->all();
-
-        //$statistic = \Yii::$app->getModule('statistic');
-//       var_dump($statistic);
-
-
         $b= Score::find()->where(['user_id' => Yii::$app->user->id])->one()->balance;
         $balance  = number_format($b, 0, '', ',');
-        return $this->render('index',['balance'=>$balance] );
+
+
+        $accessInfo=new  AccessInfo(Yii::$app->user->id);
+
+        $accessInfoAccount=$accessInfo->getData();
+
+
+
+        return $this->render('index',['balance'=>$balance,'accessInfoAccount'=>$accessInfoAccount] );
     }
 
 
@@ -86,6 +95,7 @@ class AccountController extends Controller
      */
     public function actionView($id)
     {
+
         $b= Score::find()->where(['user_id' => $id])->one()->balance;
         $balance  = number_format($b, 0, '', ',');
         return $this->render('view',['balance'=>$balance]);
@@ -105,16 +115,35 @@ class AccountController extends Controller
 
       }
       return ['status'=>'error','errors'=>$moduleSubscribers->getErrorList()];
-
     }
+
 
     public function actionRemoveSubscriber()
     {
         /** @var SubscriberModule $moduleSubscribers */
         $moduleSubscribers = \Yii::$app->getModule('subscribers');
         if(  $moduleSubscribers->prevalidateRemoveSubscriber()){
-
             if($moduleSubscribers->removeSubscriber(Yii::$app->request->post("Subscriber")['id'])){
+                $user=  User::find()->where(['id'=>Yii::$app->user->identity->getId()])->one();
+                $countOpenMe=0;
+                if($user){
+                    $countOpenMe =   $user->getCountOpenMe($user->id);
+                }
+                return ['status'=>'o2k','id'=>Yii::$app->request->post("Subscriber")['id'],'countOpenMe'=>$countOpenMe];
+            }
+        }
+        return ['status'=>'error','errors'=>$moduleSubscribers->getErrorList()];
+
+    }
+
+
+    public function actionRemoveMailSubscriber()
+    {
+        /** @var SubscriberModule $moduleSubscribers */
+        $moduleSubscribers = \Yii::$app->getModule('subscribers');
+        if(  $moduleSubscribers->prevalidateRemoveSubscriber()){
+
+            if($moduleSubscribers->removeMailSubscriber(Yii::$app->request->post("Subscriber")['id'])){
                 return ['status'=>'o2k'];
             }
 
@@ -122,6 +151,22 @@ class AccountController extends Controller
         return ['status'=>'error','errors'=>$moduleSubscribers->getErrorList()];
 
     }
+
+
+    public function actionAddMailSubscriber()
+    {
+        /** @var SubscriberModule $moduleSubscribers */
+        $moduleSubscribers = \Yii::$app->getModule('subscribers');
+        if(  $moduleSubscribers->prevalidateMail()){
+            if($moduleSubscribers->addMailSubscriber(Yii::$app->request->post("Subscriber")['id'],'25 year')){
+                return ['status'=>'o2k'];
+            }
+
+        }
+        return ['status'=>'error','errors'=>$moduleSubscribers->getErrorList()];
+
+    }
+
 
     /**
      * Displays list message.    REST api
@@ -135,21 +180,98 @@ class AccountController extends Controller
         return $this->render('message',['balance'=>$balance] );
     }
 
+    /**
+     * Displays list message.    REST api
+     *
+     * @return mixed
+     */
+    public function actionChart($id)
+    {
+        $search=new   BalancestatisticsSearch();
+        $search_result= $search->searchChart($id);
+        return $search_result;
+    }
+
+
+    /**
+     * ОТКРЫТЫЕ ДОСТУПЫ
+     * @return array
+     */
+    public function actionOpenAccess($uid=null)
+    {
+        $openMe=[];
+        $openForMe=[];
+        if(!empty($uid)){
+
+        }else{
+
+            if(Yii::$app->user->isGuest){
+
+            }else{
+            $user=  User::find()->where(['id'=>Yii::$app->user->identity->getId()])->one();
+                          if($user){
+                      $openMe=$user->getOpenMe(Yii::$app->user->identity->getId());
+                      // test loop
+//                              foreach ($openMe as $us) {
+//                                $u=  $us->userown;
+//                                  yii::error($u);
+//                                                        }
+                      $openForMe=$user->getOpenedForMe(Yii::$app->user->identity->getId());
+                             }
+            }
+        }
+        return $this->renderAjax('openAccess',['openMe'=>$openMe,'openForMe'=>$openForMe] );
+
+
+    }
+
+    /**
+     * автозаполнение коментов подпискчиков
+     * @return array
+     */
+    public function actionAutocompleteComment($uid)
+    {
+            if(!Yii::$app->user->isGuest) {
+                $text=substr(trim( Yii::$app->request->post("Subscriber")['text']),0,ConstantsHelper::LENGTH_COMMENT_ACCESS_USER);
+                $user = User::find()->where(['id' => Yii::$app->user->identity->getId()])->one();
+                if ($user) {
+                  $s=Subscriber::find()->where(['user_own_id'=>Yii::$app->user->identity->getId(),'user_sub_id'=>$uid])->one();
+                  if($s){
+                      if( $s->text !== $text){
+                          $s->text= trim( $text);
+                          if($s->update(false)){
+                              return ['status'=>'ok'] ;
+                          }else{
+                              return ['status'=>'update bad'];
+                          }
+                      }
+                  }
+                }
+            }
+        return ['status'=>'actionAutocompleteComment Bad no if'];
+    }
+
+
+
 
     public function beforeAction($action)
     {
         if(in_array($action->id,$this->actionJsonList))  Yii::$app->response->format = Response::FORMAT_JSON;
 
         if(!Yii::$app->user->isGuest) {
-            if(Yii::$app->user->id == Yii::$app->request->get('id')){
-                            $this->redirect('/account',302);
+
+            if(Yii::$app->user->id == Yii::$app->request->get('id') && !is_null(Yii::$app->request->get('id')) ){
+//                var_dump([Yii::$app->user->id , Yii::$app->request->get('id')]);
+                // если не chart// назвал переменую для чарта ид и получилась колизия. будет время поправлю
+                if($action->id!='chart'){
+                    $this->redirect('/account',302);
+                }
+
             }
-
-            //die();
         }
-
-
         return parent::beforeAction($action);
     }
+
+
 
 }

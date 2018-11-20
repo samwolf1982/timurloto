@@ -25,6 +25,7 @@ class AccountIndexAsset extends AssetBundle
        // 'dist/libs/gridder-master/gridder-master/dist/js/jquery.gridder.js',// grid
       //  'dist/libs/gridder-master/initgrider.js',// grid
         'dist/js/manage_playlist.js',// playlist
+        'dist/js/subsribe.min.js',// открыть доступ закрыть
     ];
     public $depends = [
       // 'frontend\assets\AppAsset',

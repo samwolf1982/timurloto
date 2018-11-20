@@ -51,14 +51,16 @@ class UserChartInformer extends \yii\base\Widget
 //     $user=   User::find()->where(['id'=>$this->user_id])->one();
 //     /**@var  Score $balance**/
 //     $balance = number_format($user->userbalance->balance, 0, '', ',');
-//
-//
 //     $social_links=['/vk','/fb'];
 //     $userInfoAccount=new UserInfoAccount($this->user_id,$user->username,$balance,99,'/images/avatar-placeholder.svg','lorem lorem',$social_links);
 //
 //        $search_result= $search->searchCount($this->user_id);
-
-        return $this->render($this->view,[] );
+        //var_dump($this->user_id);
+        $search=new   BalancestatisticsSearch();
+        $countChart= $search->countChart($this->user_id);
+        $chartUrl="/account/chart?id={$this->user_id}";
+//        $chartUrl=
+        return $this->render($this->view,['chartUrl'=>$chartUrl,'countChart'=>$countChart] );
 
     }
 }

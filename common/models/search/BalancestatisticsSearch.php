@@ -3,6 +3,7 @@
 namespace common\models\search;
 use common\models\Balancestatistics;
 use Yii;
+use yii\helpers\ArrayHelper;
 
 
 /**
@@ -79,6 +80,47 @@ class BalancestatisticsSearch extends Balancestatistics
             ];
       return    array_merge($result,$prepare_result);   ;
     }
+
+    public function searchChart($user_id)
+    {
+        $b=Balancestatistics::find()->select(['profit','created_at'])->where(['user_id'=>$user_id])->orderBy(['created_at'=>SORT_ASC])->asArray()->all();
+
+        $totalos=0;
+        $result=[];
+        if($b){
+            $result = ArrayHelper::getColumn($b, function  ($element)  {
+                // $totalos+=round( $element['profit'],2);
+                return [ (strtotime ($element['created_at']) *1000),round( $element['profit'],2)  ];
+            });
+
+
+            $tmp=[];
+            // cумирование по дате . замыкание не работает в  ArrayHelper::getColumn
+            foreach ($result as $item) {
+                $totalos+=$item[1];
+                $tmp[]=[$item[0],$totalos];
+            }
+            $result=$tmp;
+        }
+
+
+
+        return  $result;
+
+    }
+
+
+
+
+    public function countChart($user_id)
+    {
+        $count=Balancestatistics::find()->where(['user_id'=>$user_id])->count();
+        return $count;
+    }
+
+
+
+
 //
 //    public function search($params)
 //    {

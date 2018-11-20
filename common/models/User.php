@@ -208,7 +208,7 @@ class User extends ActiveRecord implements IdentityInterface
 
     public function isSubscriber(){
        // 'asd', 42, 44,
-        yii::error(['asd',Yii::$app->user->id,$this->id]);
+//        yii::error(['asd',Yii::$app->user->id,$this->id]);
        // $u=Subscriber::find()->where(['user_own_id'=>Yii::$app->user->id,'user_sub_id'=>$this->id])->one();
         $u=Subscriber::find()->where(['user_own_id'=>$this->id,'user_sub_id'=>Yii::$app->user->id])->one();
           if($u){
@@ -222,8 +222,9 @@ class User extends ActiveRecord implements IdentityInterface
 
     public function isSubscriberfront(){
         // 'asd', 42, 44,
-        yii::error(['asd',Yii::$app->user->id,$this->id]);
-         $u=Subscriber::find()->where(['user_own_id'=>Yii::$app->user->id,'user_sub_id'=>$this->id])->one();
+//        yii::error(['asd',Yii::$app->user->id,$this->id]);
+         $u=Subscriber::find()->where(['user_own_id'=>Yii::$app->user->id,'user_sub_id'=>$this->id])->andWhere(['>','expired_at',date('Y-m-d H:i:s')])->one();
+        // $u=Subscriber::find()->where(['user_own_id'=>Yii::$app->user->id,'user_sub_id'=>$this->id])->one();
        // $u=Subscriber::find()->where(['user_own_id'=>$this->id,'user_sub_id'=>Yii::$app->user->id])->one();
         if($u){
 //              die();
@@ -233,6 +234,68 @@ class User extends ActiveRecord implements IdentityInterface
         return false;
 
     }
+
+    public function isSubscriberMailfront(){
+        $u=SubscriberMail::find()->where(['user_own_id'=>Yii::$app->user->id,'user_sub_id'=>$this->id])->one();
+        if($u){
+            return true;
+        }
+        return false;
+    }
+
+
+    /**
+     * количество ПОДПИСОК
+     * @return int|string
+     */
+    public function getCountSubscriberMail(){
+        return SubscriberMail::find()->where(['user_own_id'=>$this->id])->count();
+    }
+
+    /**
+     * количество ПОДПИСЧИКОВ
+     * @return int|string
+     */
+    public function getCountSubscribersMail(){
+        return SubscriberMail::find()->where(['user_sub_id'=>$this->id])->count();
+    }
+
+    /**
+     * количество cтавок
+     * @return int|string
+     */
+    public function getCountWagers(){
+        return Wager::find()->where(['user_id'=>$this->id])->count();
+    }
+
+
+    //----------- access subscribe for account controller
+    public function getOpenMe($u_id){
+       return Subscriber::find()->where(['user_own_id'=>$u_id])->all();
+    }
+
+    //----------- access subscribe for account controller
+    public function getCountOpenMe($u_id){
+        return Subscriber::find()->where(['user_own_id'=>$u_id])->count();
+    }
+
+    public function getOpenedForMe($u_id){
+        return Subscriber::find()->where(['user_sub_id'=>$u_id])->andWhere(['>','expired_at',date('Y-m-d H:i:s')])->all();
+    }
+
+
+    //----------- access subscribe for account controller
+    public function getCountOpenedForMe($u_id){
+        return Subscriber::find()->where(['user_sub_id'=>$u_id])->count();
+    }
+
+
+    public function check_openly_in_response($u_id)
+    {
+        return Subscriber::find()->where(['user_own_id'=>$this->id,'user_sub_id'=>$u_id])->one();
+    }
+
+
 
 
 

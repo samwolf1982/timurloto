@@ -4,7 +4,9 @@ use app\copmonents\widgets\addbet\AddbetWidget;
 use app\copmonents\widgets\showuser\ShowuserWidget;
 use app\modules\statistic\widgets\StatisticInformer;
 use app\modules\statistic\widgets\UserBlockInformer;
+use app\modules\statistic\widgets\UserChartInformer;
 use app\modules\statistic\widgets\WagersInformer;
+use common\models\DTO\AccessInfoAccount;
 use dektrium\user\widgets\Connect;
 use frontend\assets\AccountAsset;
 use frontend\assets\AccountIndexAsset;
@@ -15,6 +17,10 @@ $this->title='LOOK MY BET';
 AccountAsset::register($this);
 AccountIndexAsset::register($this);
 
+
+
+/**@var  AccessInfoAccount $accessInfoAccount **/
+$accessInfoAccount;
 ?>
 
 <body class="footer-login-page front-page">
@@ -46,10 +52,16 @@ AccountIndexAsset::register($this);
 <div class="account-statistic">
     <div class="content-container">
         <ul class="list-static">
-            <li><a href="#" class=""><span class="stat-title">Подписчики</span> <span class="stat-val">2,389</span></a></li>
-            <li><a href="#my-bet" class="ancor"><span class="stat-title">Прогнозы</span> <span class="stat-val">357</span></a></li>
+
+            <li><a href="/account/open-access" data-toggle="modal" data-target="#edit_subscriber" class=""><span class="stat-title">Открытые Доступы</span> <span class="stat-val"><?=$accessInfoAccount->getCountTotalOpenAccess()?></span></a></li>
+            <li><a href="#" data-toggle="modal" data-target="#edit_bet" class=""><span class="stat-title">Подписки</span> <span class="stat-val"><?=$accessInfoAccount->getCountSubscribe()?></span></a></li>
+            <li><a href="#" data-toggle="modal" data-target="#edit_bet" class=""><span class="stat-title">Подписчики</span> <span class="stat-val"><?=$accessInfoAccount->getCountSubscribers()?></span></a></li>
+            <li><a href="#my-bet" class="ancor"><span class="stat-title">Прогнозы</span> <span class="stat-val"><?=$accessInfoAccount->getCountWagers()?></span></a></li>
             <li><a href="#" class=""><span class="stat-title">week 1</span> <span class="stat-val">#4</span></a></li>
             <li><a href="#stat-block" class="ancor"><span class="stat-title">TOP - 100</span> <span class="stat-val">#13</span></a></li>
+
+
+
         </ul>
     </div>
 </div>
@@ -72,45 +84,9 @@ AccountIndexAsset::register($this);
 
                 </div>
                 <div class="column-8">
-                    <div class="table-wrapper stats-table" id="stat-block">
-                        <div class="table-inner">
-                            <div class="table-head head-with-tabs">
-                                <div class="tbl-icon">
-                                    <img src="images/stats.svg" alt="">
-                                </div>
-                                <div class="left-head-text">
-                                    <span class="text-head">Доходность</span>
-                                </div>
-                                <div class="right-head-tab">
-                                    <div class="for-mobile-drop">
-                                        <a href="#" class="trig-filter">За месяц</a>
-                                        <ul class="head-tabs">
-                                            <li>
-                                                <a href="#">Неделя</a>
-                                            </li>
-                                            <li class="active">
-                                                <a href="#">За месяц</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">3 месяца</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Год</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">За все время</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="table-body">
-                                <div class="chart-wrapper">
-                                    <img src="images/charts.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                    <?=UserChartInformer::widget(['user_id'=>yii::$app->user->identity->id]) ?>
+
                 </div>
             </div>
             <div class="row table-row">

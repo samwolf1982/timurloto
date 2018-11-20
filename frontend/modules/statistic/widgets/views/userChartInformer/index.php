@@ -18,6 +18,23 @@ UserChartAssets::register($this);
 
 ?>
 
+<?php
+//$this->registerJs( <<< EOT_JS_CODE
+//var userChartUrl='/account/chart';
+//EOT_JS_CODE
+//);
+
+
+$hr= <<< EOT_JS_CODE
+<script>
+   var userChartUrl='{$chartUrl}'; 
+</script>
+EOT_JS_CODE;
+echo  $hr;
+?>
+
+
+
 <div class="table-wrapper stats-table" id="stat-block">
     <div class="table-inner">
         <div class="table-head head-with-tabs">
@@ -27,7 +44,7 @@ UserChartAssets::register($this);
             <div class="left-head-text">
                 <span class="text-head">Доходность</span>
             </div>
-            <div class="right-head-tab">
+            <div class="right-head-tab "  style="opacity: 0;">
                 <div class="for-mobile-drop">
                     <a href="#" class="trig-filter">За месяц</a>
                     <ul class="head-tabs">
@@ -53,9 +70,26 @@ UserChartAssets::register($this);
         <div class="table-body">
             <div class="chart-wrapper">
 
-                <div id="containerChart" style="width:100%; height:400px;">
-                    {{createChart}}
-                </div>
+
+                <?php if($countChart>1){  ?>
+                    <div id="containerChart" style="height: 400px; min-width: 100%">
+                        {{createChart}}
+                    </div>
+               <?php  }else{ ?>
+                    <style>
+                        #containerChartEmpty{
+                            color: white;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    </style>
+                    <div id="containerChartEmpty" style="height: 400px; min-width: 100%">
+                      Не достаточно статистики для отображения графика
+                    </div>
+                <?php } ?>
+
+
 
             </div>
         </div>

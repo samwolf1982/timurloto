@@ -36,10 +36,10 @@ class Balancestatistics extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'wager_id', 'playlist_id', 'event_id', 'profit', 'penetration', 'middle_coef', 'roi', 'plus', 'minus', 'created_at'], 'required'],
+            [['user_id', 'wager_id', 'playlist_id', 'event_id', 'profit', 'penetration', 'middle_coef', 'roi', 'plus', 'minus', 'created_at', 'created_own'], 'required'],
             [['user_id', 'penetration', 'wager_id', 'playlist_id', 'event_id', 'plus', 'minus'], 'integer'],
             [['profit', 'middle_coef', 'roi'], 'number'],
-            [['created_at'], 'safe'],
+            [['created_at','created_own'], 'safe'],
         ];
     }
 
@@ -61,6 +61,7 @@ class Balancestatistics extends \yii\db\ActiveRecord
             'plus' => 'Количество Плюсов',
             'minus' => 'Количество Минусов',
             'created_at' => 'created at',
+            'created_own'=> 'Пользоваетельское время создания нужно для графика',
         ];
     }
 }

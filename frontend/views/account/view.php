@@ -6,6 +6,7 @@ use app\modules\statistic\widgets\StatisticInformer;
 use app\modules\statistic\widgets\UserBlockInformer;
 use app\modules\statistic\widgets\UserChartInformer;
 use app\modules\statistic\widgets\WagersInformer;
+use common\models\DTO\AccessInfoAccount;
 use dektrium\user\widgets\Connect;
 use frontend\assets\AccountAsset;
 use frontend\assets\AccountViewAsset;
@@ -15,6 +16,10 @@ use yii\helpers\Url;
 $this->title='LOOK MY BET';
 AccountAsset::register($this);
 AccountViewAsset::register($this);
+
+
+/**@var  AccessInfoAccount $accessInfoAccount **/
+$accessInfoAccount
 ?>
 
 <body class="footer-login-page front-page">

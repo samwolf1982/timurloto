@@ -94,7 +94,8 @@ return [
 
 
 //                    'returnUrl' => 'https://bet.domashka.in.ua/user/auth?authclient=google',
-                    'returnUrl' => 'https://bet.domashka.in.ua/user/security/auth?authclient=google',
+                  // own//  'returnUrl' => 'https://bet.domashka.in.ua/user/security/auth?authclient=google',
+                    'returnUrl' => 'https://www.lookmybets.com/user/security/auth?authclient=google',
                 ],
 
                 'vkontakte' => [

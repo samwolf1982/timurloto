@@ -1,14 +1,60 @@
+
+// cвои модалки. делаю через события и привязку к данным из елемента если есть какойто параметр тогда что-то делаю.  e.th -this e.modal_block -> модальное ид
+$(window).on('loadeModale', function (e) {
+
+    if($(e.th).data('target') === '#edit_subscriber'){
+        console.log('printer state changed', e.th);
+        console.log('printer state changed', e.modal_block);
+        $(e.modal_block).find(".body-modal").load($(e.th).attr("href"));
+
+    }
+});
+console.log('ssssssssss');
+
+// aвтосохранялки
+var timeoutId;
+$(document.body).on('input propertychange change','textarea.add-notification',function (el) {
+  // $('textarea.add-notification').on('input propertychange change', function() {
+    var gl_this=this;
+
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(function() {
+        // Runs 1 second (1000 ms) after the last change
+        UserSubscriber.autoSaveSubscriberComment(gl_this)
+        //saveToDB();
+    }, 1000);
+});
+
+$(document.body).on('click','#subscribersModalBlock .TabOpenMe .btn-subscribe',function (el) {
+    UserSubscriber.removeSubscriberFromModal(this);
+});
+
+
 $(function () {
 
-    $('.trigg-op-block_DEL').on('click', function () {
+    // ОТКРЫТЫЕ ДОСТУПЫ
 
-        UserSubscriber.showPop(this);
+    // Fill modal with content from link href
+    // $("#edit_subscriber").on("show.bs.modal", function(e) {
+    //     console.log('aadfdasf111')
+    //     var link = $(e.relatedTarget);
+    //     $(this).find(".modal-body").load(link.attr("href"));
+    //     console.log('aadfdasf')
+    // });
+    // ОТКРЫТЫЕ ДОСТУПЫ end
 
-        // if($(this).parents('.drop-open-block').hasClass('locked-bet')) {
-        //     $(this).parents('.drop-open-block').removeClass('locked-bet');
-        // } else {
-        //     $(this).parents('.drop-open-block').addClass('locked-bet');
-        // }
+
+    //Listen to your custom event Load modale
+
+
+    $('.event-subscribe-btn').on('click', function () {
+      // subscriberMail
+        if($(this).children('.unSubscribeMail').length>0 ){
+            UserSubscriber.removeMailSubscriber();
+        }else{
+            UserSubscriber.addMailSubscriber();
+
+        }
         return false;
     });
 
@@ -27,6 +73,7 @@ $(function () {
     //     return false;
     // });
 })
+
 
 
 
@@ -90,8 +137,6 @@ var UserSubscriber={
         });
     },
     removeSubscriber:function (el) {
-
-
         var data = {};
         data.Subscriber = {};
        data.Subscriber.id = $('#period_parent').data("parent-id");
@@ -112,13 +157,51 @@ var UserSubscriber={
         });
 
     },
+    removeMailSubscriber:function (el) {
+        var data = {};
+        data.Subscriber = {};
+        data.Subscriber.id = $('#period_parent').data("parent-id");
+        data[this.csrf_param] = this.csrf;
+        $.ajax({
+            url: "/account/remove-mail-subscriber",
+            type: "POST",
+            data: data,
+            dataType: "json",
+            success: function (json) {
+                if (json) {
+                    UserSubscriber.subscribeMailShow();
+                } else {
+                    UserSubscriber.test('No json');
+                }
+            }
+        });
+
+    },
+    addMailSubscriber: function (el) {
+        var data = {};
+        data.Subscriber = {};
+        data.Subscriber.id = $('#period_parent').data("parent-id");
+        data[this.csrf_param] = this.csrf;
+        $.ajax({
+            url: "/account/add-mail-subscriber",
+            type: "POST",
+            data: data,
+            dataType: "json",
+            success: function (json) {
+                if (json) {
+                    UserSubscriber.unSubscribeMailShow();
+                    // UserSubscriber.test(json);
+                    //  SmartCart.getFromCart(); // update cart
+                } else {
+                    UserSubscriber.test('No json');
+                }
+            }
+        });
+    },
 
   showPop:function (el) {
       $(el).parents('.drop-open-block').find('.drop-list').stop().fadeToggle(400);
   },
-    // showOpenAfterCloce:function (el) {
-    //     $(el).parents('.drop-open-block').find('.drop-list').stop().fadeToggle(400);
-    // },
     showOpen:function (el) {
           $(el).parents().find('.drop-list').stop().fadeOut(400);
         if ($(el).parents('.drop-open-block').hasClass('locked-bet')) {
@@ -128,8 +211,6 @@ var UserSubscriber={
         }
 
     },
-
-
     reloadDom:function (el){
         var count_items = $('.bet-coup-list li').length;
         if(count_items >= 1){
@@ -156,11 +237,73 @@ var UserSubscriber={
         $(el).parents('.row-collapse').find('.bet-parent-val').removeClass('selected');
         $(el).toggleClass('selected');
     },
-
     test:function (data) {
         console.log(data)
-    }
+    },
+
+    unSubscribeMailShow:function () {
+        $('#subscriberMail').html('');
+        $('#subscriberMail').append('<i class="text-show unSubscribeMail">Отписаться</i>');
+    },
+    subscribeMailShow:function () {
+        $('#subscriberMail').html('');
+        $('#subscriberMail').append('<i class="text-show subscribeMail">Подписаться</i>');
+    },
+    autoSaveSubscriberComment:function (el) {
+        console.log('Textarea     autoSaveSubscriberComment');
+        console.log(el);
+        // autocomplete-comment
+        var data = {};
+        data.Subscriber = {};
+        console.log($(el));
+        data.Subscriber.id = $(el).data("parent-id");
+        data.Subscriber.text = $(el).val();
+        data[this.csrf_param] = this.csrf;
+        $.ajax({
+            url: "/account/autocomplete-comment?uid="+data.Subscriber.id,
+            type: "POST",
+            data: data,
+            dataType: "json",
+            success: function (json) {
+                if (json) {
+                    // UserSubscriber.unSubscribeMailShow();
+                    // UserSubscriber.test(json);
+                    //  SmartCart.getFromCart(); // update cart
+                } else {
+                    // UserSubscriber.test('No json');
+                }
+            }
+        });
+    },
+    removeSubscriberFromModal:function (el) {
+        var data = {};
+        data.Subscriber = {};
+        data.Subscriber.id = $(el).data("parent-id");
+        data[this.csrf_param] = this.csrf;
+        $.ajax({
+            url: "/account/remove-subscriber",
+            type: "POST",
+            data: data,
+            dataType: "json",
+            success: function (json) {
+                if (json) {
+                    $('.subscribe-item_'+json.id).remove();
+                    $('.countOpenMe').html(json.countOpenMe);
+                } else {
+                    UserSubscriber.test('No json');
+                }
+            }
+        });
+
+    },
 };
+
+
+
+
+
+
+
 
 function showNotification(message) {
 

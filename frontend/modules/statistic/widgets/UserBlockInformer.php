@@ -53,10 +53,15 @@ class UserBlockInformer extends \yii\base\Widget
      $balance = number_format($user->userbalance->balance, 0, '', ',');
 
 
+
+
+
      $social_links=['/vk','/fb'];
      $userInfoAccount=new UserInfoAccount($this->user_id,$user->username,$balance,99,'/images/avatar-placeholder.svg','lorem lorem',$social_links);
-
         $search_result= $search->searchCount($this->user_id);
+
+
+
 
         return $this->render($this->view,['search_result'=>$search_result,'userInfoAccount'=>$userInfoAccount,'user'=>$user] );
 

@@ -45,11 +45,15 @@ class StatisticsManager
             $roi=$this->calculateRoi($wager->select_coef,$wager->coef,$wager->status);
 
             $penetration=$this->calculatePenetration($wager->status);
+
+
             $values = ['wager_id'=>$wager->id, 'profit' => $profit, 'user_id' => $wager->user_id,'playlist_id'=>$wager->playlist_id,
                 'event_id'=>0,
                 'penetration'=>$penetration,'middle_coef'=>$wager->coef,
                 'roi'=>$roi,
-                'plus'=>$this->setPlusWager($wager->status), 'minus'=>$this->setMinusWager($wager->status),'created_at'=>date('Y-m-d H:i:s')];
+                'plus'=>$this->setPlusWager($wager->status), 'minus'=>$this->setMinusWager($wager->status),'created_at'=>date('Y-m-d H:i:s'),
+                'created_own'=>$wager->created_at
+                ];
                  if( $this->writeToStatistics($values)){
                      $wager->status=Wager::STATUS_PAID_FOR;
                      $wager->save(false);
