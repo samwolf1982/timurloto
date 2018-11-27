@@ -44,6 +44,7 @@ class User extends BaseUser
             if(!$uA){
                 $uA=new UserAvatars();
             }
+
             $uA->uid=$u_id;
             $uA->avatar=$fileName;
             $uA->save(false);
