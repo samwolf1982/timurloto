@@ -1,6 +1,9 @@
 localhost35
 localhost36-- парсер
 
+"dektrium/yii2-rbac": "1.0.0-alpha@dev",
+
+
 php yii migrate/up --migrationPath=@yii/rbac/migrations
 
 корзина  
@@ -68,6 +71,32 @@ frontend/web/js/script.min.js   add    ReloaderBets.reupdate(this);  -- 6414
 старые
         "philippfrenzel/yii2fullcalendar": "3.8.*",
         "kartik-v/yii2-widget-depdrop": "1.0.4",
+
+
+
+
+
+
+
+в вендоре поправить
+C:/OSPanel/domains/atimur/loto/lotoproduction/vendor/yiisoft/yii2-authclient/src/OAuth2.php
+примерно 118 строка
+подставить у димы кидает ошыбки. попростить антона потестить у себя.
+           // для гугла баг.
+            if(0){
+                if (!isset($incomingState) || empty($authState) || strcmp($incomingState, $authState) !== 0) {
+                    if(strcmp($incomingState, $authState) !== 0){
+                        var_dump($incomingState);
+                        var_dump($authState);
+                        die();
+                    }
+                    throw new HttpException(400, 'Invalid auth state parameter.');
+                }
+            }
+
+
+
+
 
 <p align="center">
     <a href="https://github.com/yiisoft" target="_blank">

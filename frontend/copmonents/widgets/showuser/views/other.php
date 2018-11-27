@@ -21,10 +21,13 @@
                    +  <i>Дать Прогноз</i>
                    <span></span>
                </a>
+
            </div>
+
            <div class="faq-block">
                <a href="#" data-toggle="modal" data-target="#modal-faq"><i class="faq-icon"></i><span>FAQ</span></a>
            </div>
+
 
            <div class="notif-block drop-menu">
                <a href="#" class="notification has-notification drop-menu-trigger">
@@ -143,12 +146,12 @@
 
            <div class="avatar__user-block drop-menu">
 
-
                <a href="#" class="avatar__user drop-menu-trigger">
                             <span class="avatar__user-inner">
                                 <img src="<?=$userimage?>" alt="foto">
                             </span>
                </a>
+
 
                <div class="drop-wrapper drop-wrapper-small">
                    <div class="drop-inner">
@@ -172,16 +175,19 @@
                            </div>
                            <div class="link-drop-list">
                                <ul class="drop-list">
-                                   <li><a href="/account">перейти в кабинет</a></li>
+                                   <li><a href="<?=Url::to(['/account'])?>">перейти в кабинет</a></li>
                                    <li><a href="#" data-toggle="modal" data-target="#modal-chat">сообщения</a></li>
                                    <li><a href="#" data-toggle="modal" data-target="#modal-faq">FAQ</a></li>
-                                   <li><a href="settings.html" target="_blank">Настройки</a></li>
+                                   <li><a href="<?=Url::to(['/settings'])?>" target="_blank">Настройки</a></li>
                                    <li>
+
 
                                        <?=  Html::beginForm(['/user/security/logout'], 'post',['id'=>'logoutform2']) ?>
                                        <a href="" href="javascript:{}" onclick="document.getElementById('logoutform2').submit(); return false;" class=""  >
                                            выйти</a>
                                        <?= Html::endForm() ?>
+
+
                                    </li>
                                </ul>
                            </div>
@@ -191,6 +197,7 @@
            </div>
        </div>
    </div>
+
 
 <?php  if(0){ ?>
         <div class="user-block">

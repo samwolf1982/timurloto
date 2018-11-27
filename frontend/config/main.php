@@ -26,7 +26,9 @@ return [
 //        ],
         'session' => [
             // this is the name of the session cookie used for login on the frontend
-            'name' => 'advanced-frontend',
+           // 'name' => 'advanced-frontend',
+            'name' => 'advanced_frontend',
+            'class' => 'yii\web\DbSession',
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -46,6 +48,7 @@ return [
             'showScriptName' => false,
             'rules' => [
                 'account/'=>'account/index',
+                'settings/'=>'user/settings',
 
                 'account/<id:\d+>' => 'account/view',
                 '/'=>'dashboard/index',
@@ -94,10 +97,9 @@ return [
                     'clientSecret' => 'zEb1M5ojCOmR2D8sF5CGHvZX',
 
 
-
 //                    'returnUrl' => 'https://bet.domashka.in.ua/user/auth?authclient=google',
                   // own//  'returnUrl' => 'https://bet.domashka.in.ua/user/security/auth?authclient=google',
-                    'returnUrl' => 'https://www.lookmybets.com/user/security/auth?authclient=google',
+                    'returnUrl' => 'https://lookmybets.com/user/security/auth?authclient=google',
                 ],
 
                 'vkontakte' => [
@@ -111,6 +113,13 @@ return [
 //                    'clientSecret' => 'CLIENT_SECRET'
 //                ],
 
+            ],
+        ],
+        'view' => [
+            'theme' => [
+                'pathMap' => [
+                    '@dektrium/user/views' => '@app/views/account/overriden'
+                ],
             ],
         ],
 
@@ -137,6 +146,12 @@ return [
     'modules' => [
         'user' => [
             'class' => 'dektrium\user\Module',
+            'controllerMap' => [
+                'settings' => 'frontend\controllers\overriden\SettingsController'
+            ],
+            'modelMap' => [
+                'User' => 'common\models\overiden\User',
+            ],
 
 //            'controllerMap' => [
 //                'registration' => [

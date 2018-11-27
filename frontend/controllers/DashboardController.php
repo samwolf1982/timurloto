@@ -39,9 +39,12 @@ class DashboardController extends Controller
 
     public function actionIndex()
     {
-     
-        Yii::$app->user->setReturnUrl(Yii::$app->request->url); // url для переадресации на текушую страничку для логина чекрез соц сети.
+
+        // было
+     //   Yii::$app->user->setReturnUrl(Yii::$app->request->url); // url для переадресации на текушую страничку для логина чекрез соц сети.
+
         return $this->render('index',[]);
+
 
     }
 
@@ -106,6 +109,18 @@ class DashboardController extends Controller
         return ['fail'];
     }
 
+
+
+//    public function actions() {
+//        return [
+//                'auth' => [
+//                    'class' => 'yii\authclient\AuthAction',
+//                    'successCallback' => [$this, 'onAuthSuccess'],
+//                    'successUrl' => Url::to(['profile/successAuth']),
+//                ],
+//
+//    ];
+//}
 
     public function behaviors()
     {

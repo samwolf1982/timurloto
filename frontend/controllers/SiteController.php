@@ -73,8 +73,6 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-
-
         // cоздать кошелек для пользователя. пока что здесь
 //        if (!Yii::$app->user->isGuest ){
 //            $findUser = Score::find()->where(['user_id' => Yii::$app->user->id])->one();

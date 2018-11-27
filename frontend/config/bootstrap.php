@@ -9,6 +9,10 @@ use komer45\balance\models\Score;
 use komer45\balance\models\Transaction;
 use yii\base\Event;
 
+
+
+
+
 //Event::on(SecurityController::class, SecurityController::EVENT_AFTER_AUTHENTICATE, function (AuthEvent $e) {
 //Event::on('SecurityController', SecurityController::EVENT_AFTER_AUTHENTICATE, function (AuthEvent $e) {
 Event::on('dektrium\user\controllers\SecurityController', SecurityController::EVENT_AFTER_AUTHENTICATE, function (\dektrium\user\events\AuthEvent $e) {

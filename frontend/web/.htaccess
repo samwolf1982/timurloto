@@ -5,6 +5,7 @@ RewriteEngine on
 SetEnvIf Authorization .+ HTTP_AUTHORIZATION=$0 # php-fastci support
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}] # php-fpm support
 
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . index.php
@@ -20,3 +21,6 @@ RewriteRule . index.php
 	ExpiresByType text/css "access plus 1 months"
 	ExpiresDefault "access plus 7 days"
 </IfModule>
+
+
+
