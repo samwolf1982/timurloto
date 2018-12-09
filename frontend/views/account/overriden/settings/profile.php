@@ -85,12 +85,11 @@ $this->params['breadcrumbs'][] = $this->title;
                             <div class="avatar-row">
                                 <div class="avatar-inner">
                                     
-                                    <div class="round-avatar" style="background-image: url(<?=$modelUser->imageurl;?>);"></div>
+                                    <div class="round-avatar" style="background-image: url(/<?=$modelUser->imageurl;?>);"></div>
 
                                     <div class="edit-avatar">
 
                                         <?= $form->field($modelUser, 'avatarUser')->fileInput(['id'=>'avatr-edit'])->label(false); ?>
-                                     
                                         <label for="avatr-edit"><span class="icon-edit"></span></label>
                                         
                                     </div>
@@ -120,7 +119,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <label class="placeholder">Новый пароль - минимум 6 символов</label>
                             </div>
                             <div class="input-row">
-                                <input type="text" value="Я с 52 лет занимаюсь проффессиональным футболом.">
+                                <?= $form->field($modelUser, 'aboutInfo')->textInput(['class' => 'emptyClassField'])->label(false); ?>
                                 <label class="placeholder">Описание</label>
                             </div>
                             <div class="input-row">

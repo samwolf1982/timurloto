@@ -8,6 +8,7 @@
 
 namespace common\models\overiden;
 
+use common\models\UserAttachmentInfo;
 use common\models\UserAvatars;
 use yii\imagine\Image;
 use yii;
@@ -18,15 +19,52 @@ class User extends BaseUser
 {
 
     public $avatarUser;
+    public $aboutInfo;
+
+    /** @inheritdoc */
+    public function rules()
+    {
+        return [
+            // username rules
+            'usernameTrim'     => ['username', 'trim'],
+            'usernameRequired' => ['username', 'required', 'on' => ['register', 'create', 'connect', 'update']],
+            'usernameMatch'    => ['username', 'match', 'pattern' => static::$usernameRegexp],
+            'usernameLength'   => ['username', 'string', 'min' => 3, 'max' => 255],
+            'usernameUnique'   => [
+                'username',
+                'unique',
+                'message' => \Yii::t('user', 'This username has already been taken')
+            ],
+
+            // email rules
+            'emailTrim'     => ['email', 'trim'],
+            'emailRequired' => ['email', 'required', 'on' => ['register', 'connect', 'create', 'update']],
+            'emailPattern'  => ['email', 'email'],
+            'emailLength'   => ['email', 'string', 'max' => 255],
+            'emailUnique'   => [
+                'email',
+                'unique',
+                'message' => \Yii::t('user', 'This email address has already been taken')
+            ],
+
+            // password rules
+            'passwordRequired' => ['password', 'required', 'on' => ['register']],
+//            'passwordLength'   => ['password', 'string', 'min' => 6, 'max' => 72, 'on' => ['register', 'create']],
+            'passwordLength'   => ['password', 'string', 'min' => 6, 'max' => 72,],
+            [['aboutInfo',], 'string'],
+        ];
+    }
+
     public function imageUrl()
     {
 
     }
     public function getImageurl()
     {
-        $avaterPlaceholde='/images/avatar-placeholder.svg';
+        $avaterPlaceholde='images/avatar-placeholder.svg';
+
 //      $r=  $this->hasOne(UserAvatars::className(), ['id' => 'uid']);
-      if($this->imguse){  return  $this->imguse->avatar; }
+      if($this->imguse){   return  $this->imguse->avatar; }
       else return  $avaterPlaceholde;
 
     }
@@ -45,13 +83,13 @@ class User extends BaseUser
                 $uA=new UserAvatars();
             }
 
+
             $uA->uid=$u_id;
             $uA->avatar=$fileName;
             $uA->save(false);
-
-            $thumbFilename120=$path_dir.'/'.$u_id.'_120_120.'.$this->avatarUser->extension;
+            $thumbFilename120=$path_dir.'/'.$u_id.'_160_160.'.$this->avatarUser->extension;
             $thumbFilename=Yii::getAlias('@webroot/'.$thumbFilename120);
-            Image::thumbnail('@webroot/'.$fileName, 120, 120)
+            Image::thumbnail('@webroot/'.$fileName, 160, 160)
                 ->save($thumbFilename, ['quality' => 80]);
             $uA->avatar=$thumbFilename120;
             $uA->save(false);
@@ -63,8 +101,29 @@ class User extends BaseUser
     }
 
 
+    public function saveInfo()
+    {
+        $this->aboutInfo;
+        $ui = $this->userinfo;
+        if(empty($ui)){
+            $ui =new   UserAttachmentInfo();
+            $ui->uid=$this->id;
+        }
+//var_dump($this->aboutInfo); die();
+        if(!$ui->validate()){
+            var_dump($ui->errors); die();
+        }
+        $ui->about_me= $this->aboutInfo;
+        $ui->save();
+
+    }
+
     public function getImguse(){
               return    $this->hasOne(UserAvatars::className(), ['uid' => 'id']);
+    }
+
+    public function getUserinfo(){
+        return    $this->hasOne(UserAttachmentInfo::className(), ['uid' => 'id']);
     }
 
 }

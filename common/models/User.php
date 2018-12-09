@@ -307,6 +307,40 @@ class User extends ActiveRecord implements IdentityInterface
 //    }
 
 
+    public function getImageurl()
+    {
+
+        $avaterPlaceholde='/images/avatar-placeholder.svg';
+//      $r=  $this->hasOne(UserAvatars::className(), ['id' => 'uid']);
+        if($this->imguse){  return  $this->imguse->avatar; }
+        else return  $avaterPlaceholde;
+
+    }
+
+    // потом после переверски подставить  getImageurl
+    public function getImageurlForPanel()
+    {
+        $avaterPlaceholde='/images/avatar-placeholder.svg';
+        return $avaterPlaceholde;
+//      $r=  $this->hasOne(UserAvatars::className(), ['id' => 'uid']);
+        if($this->imguse){  return  $this->imguse->avatar; }
+        else return  $avaterPlaceholde;
+
+    }
+
+
+    public function getUserinfo(){
+        return    $this->hasOne(UserAttachmentInfo::className(), ['uid' => 'id']);
+    }
+
+
+
+
+    public function getImguse(){
+        return    $this->hasOne(UserAvatars::className(), ['uid' => 'id']);
+    }
+
+
 
 
 

@@ -20,8 +20,16 @@ class ShowuserWidget extends Widget
         $useremail=Yii::$app->user->identity->email;
         $userimage='/images/avatar-placeholder.svg';
         $userimage='https://avatars0.githubusercontent.com/u/8706421?s=40&v=40';
+       // $userimage=Yii::$app->user->identity->imageurl;
 
         if(empty($username)) $username='Anonim';
+        if(Yii::$app->user->isGuest) {
+            $userimage='/images/avatar-placeholder.svg';
+        }else{
+            $userimage='/'. Yii::$app->user->identity->imageurl;
+
+
+        }
 
 //var_dump(        $username=Yii::$app->user->identity); die();
 

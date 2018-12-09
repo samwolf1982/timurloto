@@ -31,8 +31,10 @@ class SettingsController extends BaseSettingsControllerDectrim
 //        $this->performAjaxValidation($modelAccount);
 
 
+
         // User LIke adminPanel
          $modelUser= $this->findModelUser(Yii::$app->user->identity->getId());
+
 
         $this->trigger(self::EVENT_BEFORE_PROFILE_UPDATE, $eventProfile);
        // $this->trigger(self::EVENT_BEFORE_ACCOUNT_UPDATE, $eventAccount);
@@ -50,16 +52,16 @@ class SettingsController extends BaseSettingsControllerDectrim
 //                       $this->updateUserFields(Yii::$app->user->identity->getId(),new UserDataSetting('asdf',asdfg))
             //}else{
 
-
-
+//var_dump($modelUser);
+//var_dump($modelUser->aboutInfo);
+//die();
                 if ($modelProfile->validate() && $modelUser->validate() ) {
                     $modelProfile->save(); $modelUser->save();
-
+                    $modelUser->saveInfo();
                     $modelUser->avatarUser = UploadedFile::getInstance($modelUser, 'avatarUser');
                     if(!empty($modelUser->avatarUser)){
                       $modelUser->saveAvatar();
                     }
-
 
                     \Yii::$app->getSession()->setFlash('success', \Yii::t('user', 'Your profile has been updated'));
                     $this->trigger(self::EVENT_AFTER_PROFILE_UPDATE, $eventProfile);
@@ -74,6 +76,7 @@ class SettingsController extends BaseSettingsControllerDectrim
 
         }
 
+        $modelUser->aboutInfo=$modelUser->userinfo->about_me;
 //        todo  обэденить проверки
 //        if ($modelProfile->load(\Yii::$app->request->post()) && $modelProfile->save()) {
 //            \Yii::$app->getSession()->setFlash('success', \Yii::t('user', 'Your profile has been updated'));
@@ -87,6 +90,10 @@ class SettingsController extends BaseSettingsControllerDectrim
 //
 //            return $this->refresh();
 //        }
+
+
+
+
 
 
         return $this->render('profile', [

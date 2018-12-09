@@ -13,6 +13,7 @@ use komer45\balance\models\Score;
 use Yii;
 use yii\base\DynamicModel;
 use yii\base\InvalidParamException;
+use yii\data\ArrayDataProvider;
 use yii\filters\AccessControl;
 use yii\helpers\Json;
 use yii\web\BadRequestHttpException;
@@ -67,8 +68,29 @@ class BetController extends Controller
         //die();
        // $cartElement = yii::$app->cart->put($model, 1, []);
 
+     //   $dataProvider=Typegamename::find()->where(1)->all();
+        $data = [
+            ['id' => 1, 'name' => 'name 1',],
+    ['id' => 2, 'name' => 'name 2', ],
 
-        return $this->render('index',compact('type_game','model','model_two','model_three'));
+    ['id' => 3, 'name' => 'name 100', ],
+];
+
+        foreach (range(4,500) as $item) {
+            $data[]=['id' => $item, 'name' => 'name 1',];
+        }
+
+        $dataProvider = new ArrayDataProvider([
+    'allModels' => $data,
+    'pagination' => [
+        'pageSize' => 10,
+    ],
+    'sort' => [
+        'attributes' => ['id', 'name'],
+    ],
+]);
+
+        return $this->render('index',compact('type_game','model','model_two','model_three','dataProvider'));
 
     }
 
@@ -126,8 +148,56 @@ class BetController extends Controller
 //                        'roles' => ['?', '@', 'admin'],
                         'roles' => [ 'simpleuser'],
                     ],
+                    [
+                        'actions' => ['jsontop'],
+                        'allow' => true,
+                        'roles' => ['?', '@', 'admin'],
+//                        'roles' => [ 'simpleuser'],
+                    ],
                 ],
             ],
         ];
     }
+
+
+
+
+    public function actionJsontop()
+    {
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+//        {
+//            "records": [
+//    {
+//        "someAttribute": "I am record one",
+//      "someOtherAttribute": "Fetched by AJAX"
+//    },
+//    {
+//        "someAttribute": "I am record two",
+//      "someOtherAttribute": "Cuz it's awesome"
+//    },
+//    {
+//        "someAttribute": "I am record three",
+//      "someOtherAttribute": "Yup, still AJAX"
+//    }
+//  ],
+//  "queryRecordCount": 3,
+//  "totalRecordCount": 3
+//}
+        $arr =["records"=>[
+            ['name'=>'fdsafadsf','name2'=>'dasfsdafadsfasdf'],
+            ['name'=>'fdsafadsf','name2'=>'dasfsdafadsfasdf'],
+            ['name'=>'fdsafadsf','name2'=>'dasfsdafadsfasdf'],
+
+        ],
+            'queryRecordCount'=>3,
+            'totalRecordCount'=>3
+            ];
+
+        return $arr;
+
+    }
+    
+    
+    
+    
 }

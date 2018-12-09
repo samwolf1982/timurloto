@@ -4,8 +4,12 @@ use app\copmonents\widgets\addbet\AddbetWidget;
 use app\copmonents\widgets\showuser\ShowuserWidget;
 use dvizh\cart\widgets\BuyButton;
 use frontend\assets\BetAsset;
+use frontend\assets\BetDinotableAsset;
+use yii\grid\GridView;
+use yii\widgets\LinkPager;
 
 BetAsset::register($this);
+BetDinotableAsset::register($this);
 ?>
 <body class="home-page footer-login-page">
 
@@ -13,7 +17,7 @@ BetAsset::register($this);
     <div class="header-inner">
         <div class="logo-block">
             <a href="/">
-                <img src="images/logo.svg" alt="Look My bet">
+                <img src="/images/logo.svg" alt="Look My bet">
             </a>
         </div>
         <div class="search-block">
@@ -92,7 +96,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava1.png" alt="">
+                                                            <img src="/images/ava1.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -111,7 +115,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava2.png" alt="">
+                                                            <img src="/images/ava2.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -130,7 +134,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava3.png" alt="">
+                                                            <img src="/images/ava3.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -149,7 +153,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava4.png" alt="">
+                                                            <img src="/images/ava4.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -168,7 +172,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava5.png" alt="">
+                                                            <img src="/images/ava5.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -187,7 +191,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava1.png" alt="">
+                                                            <img src="/images/ava1.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -206,7 +210,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava1.png" alt="">
+                                                            <img src="/images/ava1.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -225,7 +229,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava1.png" alt="">
+                                                            <img src="/images/ava1.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -244,7 +248,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava1.png" alt="">
+                                                            <img src="/images/ava1.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -263,7 +267,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava1.png" alt="">
+                                                            <img src="/images/ava1.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -282,7 +286,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava1.png" alt="">
+                                                            <img src="/images/ava1.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -301,7 +305,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava1.png" alt="">
+                                                            <img src="/images/ava1.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -320,7 +324,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava1.png" alt="">
+                                                            <img src="/images/ava1.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -339,7 +343,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava1.png" alt="">
+                                                            <img src="/images/ava1.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -358,7 +362,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava1.png" alt="">
+                                                            <img src="/images/ava1.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -384,20 +388,75 @@ BetAsset::register($this);
                     </div>
                 </div>
             </div>
+
+
+<!--            dino1-->
             <div class="row table-row">
                 <div class="column-12">
                     <div class="table-wrapper">
                         <div class="table-inner">
                             <div class="table-head">
                                 <div class="tbl-icon">
-                                    <img src="images/champ.svg" alt="">
+                                    <img src="/images/champ.svg" alt="">
                                 </div>
                                 <div class="left-head-text">
                                     <span class="text-head">Топ-100</span>
                                     <span class="text-head text-muted">3,000 ₽</span>
                                 </div>
                             </div>
+                            <script>
+
+
+                            </script>
                             <div class="table-body">
+
+
+
+                                <?= GridView::widget([
+                                    'dataProvider' => $dataProvider,
+                                        'layout' => "{summary}\n{items}\n <div class='table-footer'><div class='pagination'> <ul>  {pager}  </ul> </div></div>",
+                                    'columns' => [
+                                        ['class' => 'yii\grid\SerialColumn'],
+                                        'id',
+                                        'parent_id',
+                                        'name:ntext',
+                                        'url:ntext',
+                                        'category_image:ntext',
+                                        // 'created_at',
+                                        // 'updated_at',
+                                        ['class' => 'yii\grid\ActionColumn'],
+                                    ],
+                                    'pager' => [
+                                        
+                                       // 'view'=>'wwwwddde',
+
+//                                        'firstPageLabel' => 'first',
+//                                        'lastPageLabel' => 'last',
+                                        'prevPageLabel' => '<',
+                                        'nextPageLabel' => '>',
+
+                                        'maxButtonCount' => 4,
+
+                                        // Customzing options for pager container tag
+                                        'options' => [
+                                            'tag' => 'div',
+                                            'class' => [ 'class'=> 'pagination-list'],
+                                            'id' => 'pager-container',
+                                        ],
+
+                                        // Customzing CSS class for pager link
+                                        'linkOptions' => ['class' => 'mylink'],
+                                        'activePageCssClass' => 'active',
+                                        'disabledPageCssClass' => 'mydisable',
+
+                                        // Customzing CSS class for navigating link
+                                        'prevPageCssClass' => 'first-pag',
+                                        'nextPageCssClass' => 'pnext',
+                                        'firstPageCssClass' => 'first-pag2',
+                                        'lastPageCssClass' => 'last-pag',
+                                    ],
+                                ]); ?>
+
 
                             </div>
                             <div class="table-footer">
@@ -421,13 +480,15 @@ BetAsset::register($this);
                     </div>
                 </div>
             </div>
+
+
             <div class="row table-row">
                 <div class="column-4">
                     <div class="table-wrapper">
                         <div class="table-inner">
                             <div class="table-head">
                                 <div class="tbl-icon">
-                                    <img src="images/top_dollar.svg" alt="">
+                                    <img src="/images/top_dollar.svg" alt="">
                                 </div>
                                 <div class="left-head-text">
                                     <span class="text-head">Призовые</span>
@@ -459,7 +520,7 @@ BetAsset::register($this);
                         <div class="table-inner">
                             <div class="table-head">
                                 <div class="tbl-icon">
-                                    <img src="images/top_star.svg" alt="">
+                                    <img src="/images/top_star.svg" alt="">
                                 </div>
                                 <div class="left-head-text">
                                     <span class="text-head">Победители предыдущих недель</span>
@@ -477,7 +538,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava1.png" alt="">
+                                                            <img src="/images/ava1.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -501,7 +562,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava2.png" alt="">
+                                                            <img src="/images/ava2.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -525,7 +586,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava3.png" alt="">
+                                                            <img src="/images/ava3.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -549,7 +610,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava4.png" alt="">
+                                                            <img src="/images/ava4.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -573,7 +634,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava5.png" alt="">
+                                                            <img src="/images/ava5.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -597,7 +658,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava1.png" alt="">
+                                                            <img src="/images/ava1.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -621,7 +682,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava1.png" alt="">
+                                                            <img src="/images/ava1.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -645,7 +706,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava1.png" alt="">
+                                                            <img src="/images/ava1.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -669,7 +730,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava1.png" alt="">
+                                                            <img src="/images/ava1.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -693,7 +754,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava1.png" alt="">
+                                                            <img src="/images/ava1.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -717,7 +778,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava1.png" alt="">
+                                                            <img src="/images/ava1.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -741,7 +802,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava1.png" alt="">
+                                                            <img src="/images/ava1.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -765,7 +826,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava1.png" alt="">
+                                                            <img src="/images/ava1.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -789,7 +850,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava1.png" alt="">
+                                                            <img src="/images/ava1.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -813,7 +874,7 @@ BetAsset::register($this);
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="images/ava1.png" alt="">
+                                                            <img src="/images/ava1.png" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -846,7 +907,7 @@ BetAsset::register($this);
                         <div class="table-inner">
                             <div class="table-head head-with-tabs">
                                 <div class="tbl-icon">
-                                    <img src="images/champ.svg" alt="">
+                                    <img src="/images/champ.svg" alt="">
                                 </div>
                                 <div class="left-head-text">
                                     <span class="text-head">топ-100 пользователей</span>
@@ -898,7 +959,7 @@ BetAsset::register($this);
                         <div class="table-inner">
                             <div class="table-head head-with-tabs">
                                 <div class="tbl-icon">
-                                    <img src="images/champ.svg" alt="">
+                                    <img src="/images/champ.svg" alt="">
                                 </div>
                                 <div class="left-head-text">
                                     <span class="text-head">Рейтинг букмекерских контор</span>
@@ -950,7 +1011,7 @@ BetAsset::register($this);
                         <div class="table-inner table-transparent">
                             <div class="table-head head-with-tabs">
                                 <div class="tbl-icon">
-                                    <img src="images/soccer-ball.svg" alt="">
+                                    <img src="/images/soccer-ball.svg" alt="">
                                 </div>
                                 <div class="left-head-text">
                                     <span class="text-head">Последние Ставки</span>
@@ -979,7 +1040,7 @@ BetAsset::register($this);
                                                                     <div class="circle"></div>
                                                                 </div>
                                                                 <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
+                                                                    <img src="/images/ava1.png" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="user-info">
@@ -1056,7 +1117,7 @@ BetAsset::register($this);
                                                                     <div class="circle"></div>
                                                                 </div>
                                                                 <div class="avatar-user">
-                                                                    <img src="images/ava5.png" alt="">
+                                                                    <img src="/images/ava5.png" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="user-info">
@@ -1133,7 +1194,7 @@ BetAsset::register($this);
                                                                     <div class="circle"></div>
                                                                 </div>
                                                                 <div class="avatar-user">
-                                                                    <img src="images/ava2.png" alt="">
+                                                                    <img src="/images/ava2.png" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="user-info">
@@ -1210,7 +1271,7 @@ BetAsset::register($this);
                                                                     <div class="circle"></div>
                                                                 </div>
                                                                 <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
+                                                                    <img src="/images/ava3.png" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="user-info">
@@ -1295,7 +1356,7 @@ BetAsset::register($this);
                                                                     <div class="circle"></div>
                                                                 </div>
                                                                 <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
+                                                                    <img src="/images/ava3.png" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="user-info">
@@ -1377,7 +1438,7 @@ BetAsset::register($this);
                                                                     <div class="circle"></div>
                                                                 </div>
                                                                 <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
+                                                                    <img src="/images/ava3.png" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="user-info">
@@ -1459,7 +1520,7 @@ BetAsset::register($this);
                                                                     <div class="circle"></div>
                                                                 </div>
                                                                 <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
+                                                                    <img src="/images/ava3.png" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="user-info">
@@ -1541,7 +1602,7 @@ BetAsset::register($this);
                                                                     <div class="circle"></div>
                                                                 </div>
                                                                 <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
+                                                                    <img src="/images/ava3.png" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="user-info">
@@ -1628,7 +1689,7 @@ BetAsset::register($this);
                         <div class="table-inner">
                             <div class="table-head">
                                 <div class="tbl-icon">
-                                    <img src="images/top_play.svg" alt="">
+                                    <img src="/images/top_play.svg" alt="">
                                 </div>
                                 <div class="left-head-text">
                                     <span class="text-head">Прогнозы от Look My Bet</span>
@@ -1676,7 +1737,7 @@ BetAsset::register($this);
     <div class="main-footer-inner">
         <div class="logo-footer">
             <a href="/">
-                <img src="images/logo.svg" alt="Look My Bet">
+                <img src="/images/logo.svg" alt="Look My Bet">
             </a>
         </div>
         <div class="menu-footer">
@@ -1871,7 +1932,7 @@ BetAsset::register($this);
                         <div class="right-side-login small-side-login">
                             <div class="right-side-inner">
                                 <div class="logo-popup">
-                                    <img src="images/logo_red.svg" alt="">
+                                    <img src="/images/logo_red.svg" alt="">
                                 </div>
                                 <div class="text-left">
                                     <p>Look My Bet - Первая социальная сеть в СНГ для
@@ -1925,7 +1986,7 @@ BetAsset::register($this);
                                         <div class="circle"></div>
                                     </div>
                                     <div class="avatar-user">
-                                        <img src="images/ava3.png" alt="">
+                                        <img src="/images/ava3.png" alt="">
                                     </div>
                                 </div>
                                 <div class="user-info">
@@ -2028,7 +2089,7 @@ BetAsset::register($this);
                                         <div class="circle"></div>
                                     </div>
                                     <div class="avatar-user">
-                                        <img src="images/ava1.png" alt="">
+                                        <img src="/images/ava1.png" alt="">
                                     </div>
                                 </div>
                                 <div class="user-info">
@@ -2131,7 +2192,7 @@ BetAsset::register($this);
                                         <div class="circle"></div>
                                     </div>
                                     <div class="avatar-user">
-                                        <img src="images/ava5.png" alt="">
+                                        <img src="/images/ava5.png" alt="">
                                     </div>
                                 </div>
                                 <div class="user-info">
@@ -2234,7 +2295,7 @@ BetAsset::register($this);
                                         <div class="circle"></div>
                                     </div>
                                     <div class="avatar-user">
-                                        <img src="images/ava1.png" alt="">
+                                        <img src="/images/ava1.png" alt="">
                                     </div>
                                 </div>
                                 <div class="user-info">
@@ -2515,7 +2576,7 @@ BetAsset::register($this);
                                                     <div class="avatar-chat">
                                                         <div class="count-message-chat">5</div>
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -2548,7 +2609,7 @@ BetAsset::register($this);
                                                 <div data-toggle="#chat2" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -2581,7 +2642,7 @@ BetAsset::register($this);
                                                 <div data-toggle="#chat3" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -2615,7 +2676,7 @@ BetAsset::register($this);
 
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -2648,7 +2709,7 @@ BetAsset::register($this);
                                                 <div data-toggle="#chat5" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -2681,7 +2742,7 @@ BetAsset::register($this);
                                                 <div data-toggle="#chat6" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -2714,7 +2775,7 @@ BetAsset::register($this);
                                                 <div data-toggle="#chat7" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -2747,7 +2808,7 @@ BetAsset::register($this);
                                                 <div data-toggle="#chat8" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -2780,7 +2841,7 @@ BetAsset::register($this);
                                                 <div data-toggle="#chat9" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -2813,7 +2874,7 @@ BetAsset::register($this);
                                                 <div data-toggle="#chat10" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -2846,7 +2907,7 @@ BetAsset::register($this);
                                                 <div data-toggle="#chat11" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -2879,7 +2940,7 @@ BetAsset::register($this);
                                                 <div data-toggle="#chat12" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -2912,7 +2973,7 @@ BetAsset::register($this);
                                                 <div data-toggle="#chat13" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -2945,7 +3006,7 @@ BetAsset::register($this);
                                                 <div data-toggle="#chat14" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -2978,7 +3039,7 @@ BetAsset::register($this);
                                                 <div data-toggle="#chat15" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -3011,7 +3072,7 @@ BetAsset::register($this);
                                                 <div data-toggle="#chat16" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -3044,7 +3105,7 @@ BetAsset::register($this);
                                                 <div data-toggle="#chat17" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -3077,7 +3138,7 @@ BetAsset::register($this);
                                                 <div data-toggle="#chat18" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -3110,7 +3171,7 @@ BetAsset::register($this);
                                                 <div data-toggle="#chat19" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -3143,7 +3204,7 @@ BetAsset::register($this);
                                                 <div data-toggle="#chat20" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -3184,7 +3245,7 @@ BetAsset::register($this);
                                     </div>
                                     <div class="chanel-info">
                                         <div class="icon-chanel-info">
-                                            <img src="images/chat.svg" alt="">
+                                            <img src="/images/chat.svg" alt="">
                                         </div>
                                         <h4>Что Такое группа?</h4>
                                         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
@@ -3209,7 +3270,7 @@ BetAsset::register($this);
                                     </div>
                                     <div class="chanel-info">
                                         <div class="icon-chanel-info">
-                                            <img src="images/message-chanel.svg" alt="">
+                                            <img src="/images/message-chanel.svg" alt="">
                                         </div>
                                         <h4>Что Такое канал?</h4>
                                         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
@@ -3239,7 +3300,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3256,7 +3317,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3272,7 +3333,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3289,7 +3350,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3305,7 +3366,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3322,7 +3383,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3338,7 +3399,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3355,7 +3416,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3371,7 +3432,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3388,7 +3449,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3404,7 +3465,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3421,7 +3482,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3437,7 +3498,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3454,7 +3515,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3470,7 +3531,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3487,7 +3548,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3503,7 +3564,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3520,7 +3581,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3555,7 +3616,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3572,7 +3633,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3588,7 +3649,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3605,7 +3666,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3621,7 +3682,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3638,7 +3699,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3654,7 +3715,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3671,7 +3732,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3687,7 +3748,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3704,7 +3765,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3720,7 +3781,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3737,7 +3798,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3753,7 +3814,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3770,7 +3831,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3786,7 +3847,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3803,7 +3864,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3819,7 +3880,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3836,7 +3897,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3870,7 +3931,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3887,7 +3948,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3903,7 +3964,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3920,7 +3981,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3936,7 +3997,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3953,7 +4014,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3969,7 +4030,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3986,7 +4047,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4002,7 +4063,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4019,7 +4080,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4035,7 +4096,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4052,7 +4113,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4068,7 +4129,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4085,7 +4146,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4101,7 +4162,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4118,7 +4179,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4134,7 +4195,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4151,7 +4212,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4185,7 +4246,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4202,7 +4263,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4218,7 +4279,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4235,7 +4296,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4251,7 +4312,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4268,7 +4329,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4284,7 +4345,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4301,7 +4362,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4317,7 +4378,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4334,7 +4395,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4350,7 +4411,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4367,7 +4428,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4383,7 +4444,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4400,7 +4461,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4416,7 +4477,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4433,7 +4494,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4449,7 +4510,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4466,7 +4527,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4500,7 +4561,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4517,7 +4578,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4533,7 +4594,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4550,7 +4611,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4566,7 +4627,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4583,7 +4644,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4599,7 +4660,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4616,7 +4677,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4632,7 +4693,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4649,7 +4710,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4665,7 +4726,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4682,7 +4743,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4698,7 +4759,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4715,7 +4776,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4731,7 +4792,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4748,7 +4809,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4764,7 +4825,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4781,7 +4842,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4815,7 +4876,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4832,7 +4893,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4848,7 +4909,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4865,7 +4926,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4881,7 +4942,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4898,7 +4959,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4914,7 +4975,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4931,7 +4992,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4947,7 +5008,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4964,7 +5025,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4980,7 +5041,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4997,7 +5058,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5013,7 +5074,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5030,7 +5091,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5046,7 +5107,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5063,7 +5124,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5079,7 +5140,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5096,7 +5157,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5130,7 +5191,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5147,7 +5208,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5163,7 +5224,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5180,7 +5241,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5196,7 +5257,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5213,7 +5274,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5229,7 +5290,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5246,7 +5307,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5262,7 +5323,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5279,7 +5340,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5295,7 +5356,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5312,7 +5373,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5328,7 +5389,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5345,7 +5406,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5361,7 +5422,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5378,7 +5439,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5394,7 +5455,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5411,7 +5472,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5445,7 +5506,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5462,7 +5523,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5478,7 +5539,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5495,7 +5556,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5511,7 +5572,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5528,7 +5589,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5544,7 +5605,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5561,7 +5622,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5577,7 +5638,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5594,7 +5655,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5610,7 +5671,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5627,7 +5688,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5643,7 +5704,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5660,7 +5721,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5676,7 +5737,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5693,7 +5754,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5709,7 +5770,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5726,7 +5787,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5760,7 +5821,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5777,7 +5838,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5793,7 +5854,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5810,7 +5871,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5826,7 +5887,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5843,7 +5904,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5859,7 +5920,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5876,7 +5937,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5892,7 +5953,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5909,7 +5970,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5925,7 +5986,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5942,7 +6003,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5958,7 +6019,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5975,7 +6036,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5991,7 +6052,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6008,7 +6069,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6024,7 +6085,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6041,7 +6102,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6075,7 +6136,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6092,7 +6153,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6108,7 +6169,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6125,7 +6186,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6141,7 +6202,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6158,7 +6219,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6174,7 +6235,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6191,7 +6252,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6207,7 +6268,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6224,7 +6285,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6240,7 +6301,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6257,7 +6318,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6273,7 +6334,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6290,7 +6351,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6306,7 +6367,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6323,7 +6384,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6339,7 +6400,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6356,7 +6417,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6390,7 +6451,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6407,7 +6468,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6423,7 +6484,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6440,7 +6501,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6456,7 +6517,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6473,7 +6534,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6489,7 +6550,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6506,7 +6567,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6522,7 +6583,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6539,7 +6600,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6555,7 +6616,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6572,7 +6633,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6588,7 +6649,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6605,7 +6666,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6621,7 +6682,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6638,7 +6699,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6654,7 +6715,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6671,7 +6732,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6705,7 +6766,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6722,7 +6783,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6738,7 +6799,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6755,7 +6816,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6771,7 +6832,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6788,7 +6849,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6804,7 +6865,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6821,7 +6882,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6837,7 +6898,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6854,7 +6915,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6870,7 +6931,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6887,7 +6948,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6903,7 +6964,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6920,7 +6981,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6936,7 +6997,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6953,7 +7014,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6969,7 +7030,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6986,7 +7047,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7020,7 +7081,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7037,7 +7098,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7053,7 +7114,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7070,7 +7131,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7086,7 +7147,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7103,7 +7164,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7119,7 +7180,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7136,7 +7197,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7152,7 +7213,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7169,7 +7230,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7185,7 +7246,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7202,7 +7263,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7218,7 +7279,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7235,7 +7296,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7251,7 +7312,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7268,7 +7329,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7284,7 +7345,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7301,7 +7362,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7335,7 +7396,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7352,7 +7413,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7368,7 +7429,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7385,7 +7446,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7401,7 +7462,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7418,7 +7479,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7434,7 +7495,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7451,7 +7512,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7467,7 +7528,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7484,7 +7545,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7500,7 +7561,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7517,7 +7578,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7533,7 +7594,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7550,7 +7611,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7566,7 +7627,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7583,7 +7644,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7599,7 +7660,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7616,7 +7677,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7650,7 +7711,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7667,7 +7728,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7683,7 +7744,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7700,7 +7761,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7716,7 +7777,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7733,7 +7794,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7749,7 +7810,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7766,7 +7827,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7782,7 +7843,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7799,7 +7860,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7815,7 +7876,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7832,7 +7893,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7848,7 +7909,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7865,7 +7926,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7881,7 +7942,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7898,7 +7959,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7914,7 +7975,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7931,7 +7992,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7965,7 +8026,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7982,7 +8043,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7998,7 +8059,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8015,7 +8076,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8031,7 +8092,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8048,7 +8109,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8064,7 +8125,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8081,7 +8142,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8097,7 +8158,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8114,7 +8175,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8130,7 +8191,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8147,7 +8208,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8163,7 +8224,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8180,7 +8241,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8196,7 +8257,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8213,7 +8274,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8229,7 +8290,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8246,7 +8307,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8280,7 +8341,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8297,7 +8358,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8313,7 +8374,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8330,7 +8391,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8346,7 +8407,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8363,7 +8424,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8379,7 +8440,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8396,7 +8457,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8412,7 +8473,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8429,7 +8490,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8445,7 +8506,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8462,7 +8523,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8478,7 +8539,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8495,7 +8556,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8511,7 +8572,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8528,7 +8589,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8544,7 +8605,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8561,7 +8622,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8595,7 +8656,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8612,7 +8673,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8628,7 +8689,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8645,7 +8706,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8661,7 +8722,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8678,7 +8739,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8694,7 +8755,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8711,7 +8772,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8727,7 +8788,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8744,7 +8805,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8760,7 +8821,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8777,7 +8838,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8793,7 +8854,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8810,7 +8871,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8826,7 +8887,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8843,7 +8904,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8859,7 +8920,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8876,7 +8937,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8910,7 +8971,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8927,7 +8988,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8943,7 +9004,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8960,7 +9021,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8976,7 +9037,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8993,7 +9054,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9009,7 +9070,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9026,7 +9087,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9042,7 +9103,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9059,7 +9120,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9075,7 +9136,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9092,7 +9153,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9108,7 +9169,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9125,7 +9186,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9141,7 +9202,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9158,7 +9219,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9174,7 +9235,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9191,7 +9252,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9225,7 +9286,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9242,7 +9303,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9258,7 +9319,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9275,7 +9336,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9291,7 +9352,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9308,7 +9369,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9324,7 +9385,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9341,7 +9402,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9357,7 +9418,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9374,7 +9435,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9390,7 +9451,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9407,7 +9468,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9423,7 +9484,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9440,7 +9501,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9456,7 +9517,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9473,7 +9534,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9489,7 +9550,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9506,7 +9567,7 @@ BetAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -9537,6 +9598,6 @@ BetAsset::register($this);
         </div>
     </div>
 </div>
-<script src="js/script.min.js"></script>
+<script src="/js/script.min.js"></script>
 </body>
 

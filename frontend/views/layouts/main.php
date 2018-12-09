@@ -57,6 +57,9 @@ AppAsset::register($this);
        color: #fff;
        background: #EA4336;
    }
+   .modal-backdrop.in{
+       background-color:  transparent;
+   }
 </style>
 
 <div class="modal-wrapper user-modal" id="modal-auth">

@@ -40,7 +40,7 @@ $userInfoAccount;
                             <div class="big-circle"><canvas width="160" height="160"></canvas></div>
                         </div>
                         <div class="big-avatar-user">
-                            <img src="/images/avatar-placeholder.svg" alt="">
+                            <img src="<?=$userInfoAccount->getPhoto();?>" alt="">
                         </div>
                     </div>
                 </div>

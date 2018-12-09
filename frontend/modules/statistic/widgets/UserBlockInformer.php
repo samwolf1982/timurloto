@@ -26,6 +26,7 @@ class UserBlockInformer extends \yii\base\Widget
     {
         parent::init();
 
+
         WidgetAsset::register($this->getView());
 
         if ($this->offerUrl == NULL) {
@@ -54,10 +55,11 @@ class UserBlockInformer extends \yii\base\Widget
 
 
 
-
+//var_dump($user); die();
 
      $social_links=['/vk','/fb'];
-     $userInfoAccount=new UserInfoAccount($this->user_id,$user->username,$balance,99,'/images/avatar-placeholder.svg','lorem lorem',$social_links);
+     $photo=$user->getImageurlForPanel();   // после верстки подставкить  '/'.$user->imageurl
+     $userInfoAccount=new UserInfoAccount($this->user_id,$user->username,$balance,99,$photo, $user->userinfo->about_me,$social_links);
         $search_result= $search->searchCount($this->user_id);
 
 
