@@ -58,6 +58,7 @@ return [
             ],
         ],
 
+
         'authClientCollection' => [
             'class'   => \yii\authclient\Collection::className(),
             'clients' => [
