@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use common\models\overiden\User;
 
 /**
  * This is the model class for table "balancestatistics".
@@ -63,5 +64,10 @@ class Balancestatistics extends \yii\db\ActiveRecord
             'created_at' => 'created at',
             'created_own'=> 'Пользоваетельское время создания нужно для графика',
         ];
+    }
+
+    public function getUser()
+    {
+        return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
 }

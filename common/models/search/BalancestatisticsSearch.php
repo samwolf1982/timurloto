@@ -3,6 +3,8 @@
 namespace common\models\search;
 use common\models\Balancestatistics;
 use Yii;
+use yii\base\Model;
+use yii\data\ActiveDataProvider;
 use yii\helpers\ArrayHelper;
 
 
@@ -119,6 +121,64 @@ class BalancestatisticsSearch extends Balancestatistics
     }
 
 
+
+
+    /**
+     * {@inheritdoc}
+     */
+    public function scenarios()
+    {
+        // bypass scenarios() implementation in the parent class
+        return Model::scenarios();
+    }
+
+    /**
+     * Creates data provider instance with search query applied
+     *
+     * @param array $params
+     *
+     * @return ActiveDataProvider
+     */
+    public function search($params)
+    {
+        $query = Balancestatistics::find();
+
+        // add conditions that should always apply here
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+
+        $this->load($params);
+
+        if (!$this->validate()) {
+            // uncomment the following line if you do not want to return any records when validation fails
+            // $query->where('0=1');
+            return $dataProvider;
+        }
+
+        // grid filtering conditions
+        $query->andFilterWhere([
+            'id' => $this->id,
+            'user_id' => $this->user_id,
+            'wager_id' => $this->wager_id,
+            'playlist_id' => $this->playlist_id,
+            'event_id' => $this->event_id,
+            'profit' => $this->profit,
+            'penetration' => $this->penetration,
+            'middle_coef' => $this->middle_coef,
+            'roi' => $this->roi,
+            'plus' => $this->plus,
+            'minus' => $this->minus,
+            'created_at' => $this->created_at,
+            'created_own' => $this->created_own,
+        ]);
+
+        return $dataProvider;
+    }
+
+
+    // SELECT id, sum(profit) as sume FROM `balancestatistics`  WHERE 1 GROUP BY user_id ORDER BY sume DESC;
 
 
 //

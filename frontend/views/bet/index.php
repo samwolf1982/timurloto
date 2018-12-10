@@ -416,15 +416,32 @@ BetDinotableAsset::register($this);
                                     'dataProvider' => $dataProvider,
                                         'layout' => "{summary}\n{items}\n <div class='table-footer'><div class='pagination'> <ul>  {pager}  </ul> </div></div>",
                                     'columns' => [
-                                        ['class' => 'yii\grid\SerialColumn'],
-                                        'id',
-                                        'parent_id',
-                                        'name:ntext',
-                                        'url:ntext',
-                                        'category_image:ntext',
+
+                                        [
+                                            'attribute'=>'user_id',
+                                            'label'=>'',
+                                            'contentOptions' =>function ($model, $key, $index, $column){
+                                                return ['class' => 'name'];
+                                            },
+                                            'format' => 'raw',
+                                            'content'=>function($data){
+                                  //  var_dump($data); die();
+                                                /** @var common\models\overiden\User $user */
+                                                $user=$data->user;
+                                              return  $user->username;
+                                               // return "value";
+                                            }
+                                        ],
+
+                                      //  ['class' => 'yii\grid\SerialColumn'],
+//                                        'id',
+//                                        'parent_id',
+//                                        'name:ntext',
+//                                        'url:ntext',
+//                                        'category_image:ntext',
                                         // 'created_at',
                                         // 'updated_at',
-                                        ['class' => 'yii\grid\ActionColumn'],
+                                       // ['class' => 'yii\grid\ActionColumn'],
                                     ],
                                     'pager' => [
                                         

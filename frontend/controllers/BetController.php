@@ -6,6 +6,8 @@ use app\models\Turnire;
 use app\models\Turnirename;
 use app\models\Typegame;
 use app\models\Typegamename;
+use common\models\DTO\betreport\TopOneHandred;
+use common\models\search\BalancestatisticsSearch;
 use dektrium\user\filters\AccessRule;
 //use dvizh\cart\Cart;
 use dvizh\cart\Cart;
@@ -52,43 +54,11 @@ class BetController extends Controller
        // $model_two= Typegamename::find()->where(['id'=>$type_game[0]->id])->one();
         $id=0;
         $name='';
-        $model_three= new DynamicModel(compact('id', 'name'));
 
+        $model_three= new DynamicModel(compact('id', 'name')); // hz
 
-
-        //Любая модель
-        //$model = $this->findModel($id);
-        //Кладем ее в корзину (в количестве 1, без опций)
-        // $cartElement = yii::$app->cart->put($model, 1, []);
-        // $elements = yii::$app->cart->elements;
-//         var_dump(yii::$app->components['cart']);
-        // var_dump(yii::$app->cart2->put($model, 1, []));
-        // var_dump(yii::$app->cart);
-       // $c=new Cart();
-        //die();
-       // $cartElement = yii::$app->cart->put($model, 1, []);
-
-     //   $dataProvider=Typegamename::find()->where(1)->all();
-        $data = [
-            ['id' => 1, 'name' => 'name 1',],
-    ['id' => 2, 'name' => 'name 2', ],
-
-    ['id' => 3, 'name' => 'name 100', ],
-];
-
-        foreach (range(4,500) as $item) {
-            $data[]=['id' => $item, 'name' => 'name 1',];
-        }
-
-        $dataProvider = new ArrayDataProvider([
-    'allModels' => $data,
-    'pagination' => [
-        'pageSize' => 10,
-    ],
-    'sort' => [
-        'attributes' => ['id', 'name'],
-    ],
-]);
+        $searchModel = new BalancestatisticsSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index',compact('type_game','model','model_two','model_three','dataProvider'));
 
