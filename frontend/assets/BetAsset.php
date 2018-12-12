@@ -16,8 +16,8 @@ class BetAsset extends AssetBundle
 //    public $baseUrl = '@web';
 
     public $css = [
-        // 'dist/css/style.css',
-         'dist/libs/gridder-master/gridder-master/dist/css/jquery.gridder.min.css',
+        // 'dist/css/betasset.css',
+        // 'dist/libs/gridder-master/gridder-master/dist/css/jquery.gridder.min.css',
     ];
 
     public $js = [

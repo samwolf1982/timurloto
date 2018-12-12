@@ -5,6 +5,7 @@ use common\models\Balancestatistics;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
+use yii\data\SqlDataProvider;
 use yii\helpers\ArrayHelper;
 
 
@@ -131,6 +132,94 @@ class BalancestatisticsSearch extends Balancestatistics
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
+
+    /**
+     * Creates data provider instance with search query applied
+     *
+     * @param array $params
+     *
+     * @return ActiveDataProvider
+     */
+    public function search_custom_last_week($params)
+    {
+
+
+//        2020-08-22 01:19:58
+        $lastWeek    = date('Y-m-d h:i:s',strtotime('last sunday'));
+        $lastLastWeek= date('Y-m-d h:i:s',strtotime('last sunday -7 days'));
+$count=Yii::$app->db->createCommand("select COUNT(subquery.user_id) FROM
+( SELECT user_id, sum(profit) as sume, created_own  FROM `balancestatistics`  WHERE created_own BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume) AS subquery  WHERE 1",[':status' => 1])->queryScalar();
+
+        $dataProvider = new SqlDataProvider([
+            'sql' => "SELECT user_id, sum(profit) as sume, (SUM(`penetration`)/ COUNT(`penetration`)*100) as penet, ( SUM(`middle_coef`) / COUNT(`middle_coef`))    as mdc, (SUM(`roi`) / COUNT(`roi`)) as ro, created_own 
+                        FROM `balancestatistics`  WHERE created_own BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume DESC ",
+            //'params' => [':status' => 1],
+            'totalCount' => $count,
+            'sort' => [
+                'attributes' => [
+                    'user_id',
+                    'age',
+                    'penet',
+                    'mdc',
+                    'ro',
+                    'sume'=>['default' => SORT_DESC],
+//                    'name' => [
+//                        'asc' => ['first_name' => SORT_ASC, 'last_name' => SORT_ASC],
+//                        'desc' => ['first_name' => SORT_DESC, 'last_name' => SORT_DESC],
+//                        'default' => SORT_ASC,
+//                        'label' => 'Name',
+//                    ],
+                ],
+            ],
+            'pagination' => [
+                'pageSize' => 5,
+            ],
+        ]);
+
+        return $dataProvider;
+// get the user records in the current page
+        $models = $dataProvider->getModels();
+
+
+
+
+
+        $query = Balancestatistics::find();
+
+        // add conditions that should always apply here
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+
+        $this->load($params);
+
+        if (!$this->validate()) {
+            // uncomment the following line if you do not want to return any records when validation fails
+            // $query->where('0=1');
+            return $dataProvider;
+        }
+
+        // grid filtering conditions
+        $query->andFilterWhere([
+            'id' => $this->id,
+            'user_id' => $this->user_id,
+            'wager_id' => $this->wager_id,
+            'playlist_id' => $this->playlist_id,
+            'event_id' => $this->event_id,
+            'profit' => $this->profit,
+            'penetration' => $this->penetration,
+            'middle_coef' => $this->middle_coef,
+            'roi' => $this->roi,
+            'plus' => $this->plus,
+            'minus' => $this->minus,
+            'created_at' => $this->created_at,
+            'created_own' => $this->created_own,
+        ]);
+
+        return $dataProvider;
+    }
+
 
     /**
      * Creates data provider instance with search query applied

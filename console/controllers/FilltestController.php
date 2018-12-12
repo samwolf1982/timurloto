@@ -58,8 +58,19 @@ class FilltestController extends Controller
                 $day1= random_int(10,25);
                 $day2= $day1;
                 $day2+=5;
+
+                // delete
+//                $year=2018;
+//                $mounth=12;
+//                $day1= random_int(1,4);
+//                $day2= $day1;
+//                $day2+=5;
+                // delete
+
                 // $year= random_int(2017,2022);
                 $data[] = [random_int(100,10000),10,10, 500,rand(-25,45),1,1,1,1,0,"{$year}-0{$mounth}-{$day1} 01:19:58","{$year}-0{$mounth}-{$day2} 01:19:58"];
+               // var_dump([random_int(100,10000),10,10, 500,rand(-25,45),1,1,1,1,0,"{$year}-{$mounth}-0{$day1} 01:19:58","{$year}-{$mounth}-0{$day2} 01:19:58"]); die();
+               // $data[] = [random_int(100,10000),10,10, 500,rand(-25,45),1,1,1,1,0,"{$year}-{$mounth}-0{$day1} 01:19:58","{$year}-{$mounth}-0{$day2} 01:19:58"];
             }
 
 //        SELECT id, sum(profit) as sume FROM `balancestatistics`  WHERE 1 GROUP BY user_id ORDER BY sume DESC;

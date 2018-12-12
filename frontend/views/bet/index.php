@@ -2,6 +2,8 @@
 
 use app\copmonents\widgets\addbet\AddbetWidget;
 use app\copmonents\widgets\showuser\ShowuserWidget;
+use common\models\helpers\HtmlGenerator;
+use common\models\overiden\User;
 use dvizh\cart\widgets\BuyButton;
 use frontend\assets\BetAsset;
 use frontend\assets\BetDinotableAsset;
@@ -9,7 +11,7 @@ use yii\grid\GridView;
 use yii\widgets\LinkPager;
 
 BetAsset::register($this);
-BetDinotableAsset::register($this);
+//BetDinotableAsset::register($this);
 ?>
 <body class="home-page footer-login-page">
 
@@ -408,32 +410,84 @@ BetDinotableAsset::register($this);
 
 
                             </script>
-                            <div class="table-body">
-
+                            <div class="table-body  tableTop100">
 
 
                                 <?= GridView::widget([
                                     'dataProvider' => $dataProvider,
-                                        'layout' => "{summary}\n{items}\n <div class='table-footer'><div class='pagination'> <ul>  {pager}  </ul> </div></div>",
+                                        'layout' => " <div class='wrap_commercial_top'>  {items} <div class='commercial'> <div class='in_commercial'> Commercial Place </div> </div>  </div>  <div class='clearfix'></div> \n <div class='table-footer'><div class='pagination'> <ul>  {pager}  </ul> </div></div>",
+                                    'tableOptions'=>['class'=>'table table-striped table-bordered clearTableBorder'],
+                                    'summary' => '',
                                     'columns' => [
+
+                                        [   'class' => 'yii\grid\SerialColumn',
+                                            'contentOptions' => ['class' => 'numberClass'],
+                                            'headerOptions'=>['class'=>'fNumberHeader']
+                                         ],
 
                                         [
                                             'attribute'=>'user_id',
                                             'label'=>'',
                                             'contentOptions' =>function ($model, $key, $index, $column){
-                                                return ['class' => 'name'];
+                                                return ['class' => 'name '];
                                             },
                                             'format' => 'raw',
                                             'content'=>function($data){
-                                  //  var_dump($data); die();
+//                                    var_dump($data); die();
                                                 /** @var common\models\overiden\User $user */
-                                                $user=$data->user;
-                                              return  $user->username;
-                                               // return "value";
+                                                $user=User::find()->where(['id'=>$data['user_id']])->one();
+                                             return   HtmlGenerator::top100UserFace($user);
+
                                             }
                                         ],
 
-                                      //  ['class' => 'yii\grid\SerialColumn'],
+                                            [
+                                            'attribute'=>'sume',
+                                             'format' => 'raw',
+                                             'content'=>function($data){
+                                              return  sprintf("%01.2f %%", $data['sume']);  ;
+                                            },
+                                            'label'=>'Profit',
+
+                                                'contentOptions' => ['class' => 'text-center cellTable'],
+                                                'headerOptions'=>['class'=>'text-center']
+                                            ],
+                                        [
+                                            'attribute'=>'penet',
+                                            'format' => 'raw',
+                                            'content'=>function($data){
+                                                return  sprintf("%01.2f %%", $data['penet']);  ;
+                                            },
+                                            'label'=>'Проходимость',
+                                            'contentOptions' => ['class' => 'text-center cellTable'],
+                                            'headerOptions'=>['class'=>'text-center']
+                                         
+
+                                        ],
+                                        [
+                                            'attribute'=>'mdc',
+                                            'label'=>'Коэффициент',
+                                            'contentOptions' => ['class' => 'text-center cellTable'],
+                                            'headerOptions'=>['class'=>'text-center'],
+                                            'format' => 'raw',
+                                            'content'=>function($data){
+                                                return  sprintf("%01.2f", $data['mdc']);  ;
+                                            },
+
+                                        ],
+                                        [
+                                            'attribute'=>'ro',
+                                            'label'=>'ROI',
+                                            'contentOptions' => ['class' => 'text-center cellTable'],
+                                            'headerOptions'=>['class'=>'text-center'],
+                                            'format' => 'raw',
+                                            'content'=>function($data){
+                                                return  sprintf("%01.2f", $data['ro']);  ;
+                                            },
+                                        ],
+
+
+
 //                                        'id',
 //                                        'parent_id',
 //                                        'name:ntext',
@@ -476,6 +530,9 @@ BetDinotableAsset::register($this);
 
 
                             </div>
+                            
+                            
+                            <?php if(0){ ?>
                             <div class="table-footer">
                                 <div class="pagination">
                                     <ul class="pagination-list">
@@ -493,10 +550,22 @@ BetDinotableAsset::register($this);
                                     </ul>
                                 </div>
                             </div>
+                            <?php } ?>
+                            
                         </div>
+                        
+                        
+                        
                     </div>
                 </div>
             </div>
+
+
+            <style>
+
+            </style>
+
+
 
 
             <div class="row table-row">

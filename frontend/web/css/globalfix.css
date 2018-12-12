@@ -1,3 +1,170 @@
 div.preloader {
   opacity: 0.3;
 }
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: transparent;
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: transparent;
+}
+.wrap_commercial_top {
+  display: flex;
+}
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+  .wrap_commercial_top {
+    display: block;
+  }
+}
+.commercial {
+  width: 20%;
+}
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+  .commercial {
+    width: 100%;
+  }
+}
+.commercial .in_commercial {
+  background-color: grey;
+  height: 100%;
+  min-height: 125px;
+}
+.clearTableBorder {
+  border: none;
+  /*
+Generic Styling, for Desktops/Laptops
+*/
+  /*
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+}
+.clearTableBorder .wins-item {
+  position: initial;
+}
+.clearTableBorder .wins-item-inner {
+  padding: 0;
+}
+.clearTableBorder .wins-item-inner .row-ava {
+  flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  max-width: 100px;
+}
+.clearTableBorder th a {
+  color: #6B5C90;
+}
+.clearTableBorder .numberClass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-top: 2em;
+  min-height: 100%;
+}
+.clearTableBorder .fNumberHeader {
+  display: flex;
+  justify-content: center;
+}
+.clearTableBorder .cellTable {
+  vertical-align: middle;
+}
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+  .clearTableBorder {
+    width: 100%;
+    float: initial;
+    /* Zebra striping */
+    /* Force table to not be like tables anymore */
+    /* Hide table headers (but not display: none;, for accessibility) */
+    /*
+    Label the data
+    */
+  }
+  .clearTableBorder table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .clearTableBorder tr:nth-of-type(odd) {
+    background: #eee;
+  }
+  .clearTableBorder th {
+    background: #333;
+    color: white;
+    font-weight: bold;
+  }
+  .clearTableBorder td,
+  .clearTableBorder th {
+    padding: 6px;
+    border: 1px solid #ccc;
+    text-align: left;
+  }
+  .clearTableBorder table,
+  .clearTableBorder thead,
+  .clearTableBorder tbody,
+  .clearTableBorder th,
+  .clearTableBorder td,
+  .clearTableBorder tr {
+    display: block;
+  }
+  .clearTableBorder thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .clearTableBorder tr {
+    border: 1px solid #ccc;
+  }
+  .clearTableBorder td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 45%!important;
+  }
+  .clearTableBorder td:nth-of-type(2) {
+    padding-left: 0!important;
+  }
+  .clearTableBorder td:nth-of-type(2) .wins-item-inner .row-ava {
+    flex-wrap: nowrap;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    max-width: 100px;
+  }
+  .clearTableBorder td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+  .clearTableBorder td:nth-of-type(1) {
+    display: none;
+  }
+  .clearTableBorder td:nth-of-type(2):before {
+    content: "";
+  }
+  .clearTableBorder td:nth-of-type(3):before {
+    content: "Profit";
+  }
+  .clearTableBorder td:nth-of-type(4):before {
+    content: "Проходимость";
+  }
+  .clearTableBorder td:nth-of-type(5):before {
+    content: "Коэффициент";
+  }
+  .clearTableBorder td:nth-of-type(6):before {
+    content: "ROI";
+  }
+}
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+  border: none;
+  color: white;
+}

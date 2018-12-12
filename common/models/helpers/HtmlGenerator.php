@@ -344,6 +344,36 @@ class HtmlGenerator
     }
 
 
+    public static function top100UserFace($user)
+    {
+        $res='';
+        $res.='<div class="flex">
+    <div class="wins-item">
+        <div class="wins-item-inner">
+            <div class="row-ava">
+                <div class="rate-avatar-column">
+                    <div class="rate-avatar">
+                        <div class="circle-wrapper" data-ptc="14">
+                            <div class="circle"><canvas width="74" height="74"></canvas></div>
+                        </div>
+                        <div class="avatar-user">
+                            <img style="border-radius: 100%;" src="/'.$user->imageurl.'" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="user-info">
+                    <h4 class="name-l"><span>'.$user->username.'</span></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+';
+
+        return $res;
+    }
+
+
 
 
 }

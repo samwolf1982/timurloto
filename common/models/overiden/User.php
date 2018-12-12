@@ -24,6 +24,7 @@ class User extends BaseUser
     /** @inheritdoc */
     public function rules()
     {
+
         return [
             // username rules
             'usernameTrim'     => ['username', 'trim'],

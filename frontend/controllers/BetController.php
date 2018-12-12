@@ -58,7 +58,7 @@ class BetController extends Controller
         $model_three= new DynamicModel(compact('id', 'name')); // hz
 
         $searchModel = new BalancestatisticsSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->search_custom_last_week(Yii::$app->request->queryParams);
 
         return $this->render('index',compact('type_game','model','model_two','model_three','dataProvider'));
 

@@ -1,3 +1,181 @@
 div.preloader{
   opacity: 0.3;
 }
+
+.table-striped  tbody  tr:nth-of-type(odd) {
+  background-color: transparent;
+}
+.table-striped > tbody > tr:nth-of-type(odd){
+  background-color: transparent;
+}
+
+.wrap_commercial_top{
+  display: flex;
+
+@media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px)  {
+    display: block;
+  }
+
+}
+
+.commercial{
+  width: 20%;
+  @media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px)  {
+    width: 100%;
+  }
+  .in_commercial{
+    background-color: grey;
+    height: 100%;
+    min-height: 125px;
+
+  }
+}
+
+
+.clearTableBorder{
+  border: none;
+  .wins-item{
+    position: initial;
+  }
+  .wins-item-inner{
+    padding: 0;
+  }
+  .wins-item-inner .row-ava{
+     flex-wrap: nowrap;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    max-width: 100px;
+  }
+
+
+  th a{
+    color: #6B5C90;;
+  }
+
+  .numberClass{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    padding-top: 2em;
+    min-height: 100%;
+  }
+  .fNumberHeader{
+    display: flex;
+    justify-content: center;
+  }
+.cellTable{
+  vertical-align: middle;
+}
+
+
+//    mobile start
+  /*
+Generic Styling, for Desktops/Laptops
+*/
+
+
+  /*
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+  @media
+  only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px)  {
+
+
+      width: 100%;
+      float: initial;
+
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    /* Zebra striping */
+    tr:nth-of-type(odd) {
+      background: #eee;
+    }
+    th {
+      background: #333;
+      color: white;
+      font-weight: bold;
+    }
+    td, th {
+      padding: 6px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    /* Force table to not be like tables anymore */
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+
+    tr { border: 1px solid #ccc; }
+
+    td {
+      /* Behave  like a "row" */
+      border: none;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      padding-left: 45%!important;
+    }
+    td:nth-of-type(2) {
+      padding-left: 0!important;
+      .wins-item-inner .row-ava{
+        flex-wrap: nowrap;
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        max-width: 100px;
+      }
+    }
+
+    td:before {
+      /* Now like a table header */
+      position: absolute;
+      /* Top/left values mimic padding */
+      top: 6px;
+      left: 6px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+    }
+
+    /*
+    Label the data
+    */
+    td:nth-of-type(1){ display: none; }
+    td:nth-of-type(2):before { content: ""; }
+    td:nth-of-type(3):before { content: "Profit"; }
+    td:nth-of-type(4):before { content: "Проходимость"; }
+    td:nth-of-type(5):before { content: "Коэффициент"; }
+    td:nth-of-type(6):before { content: "ROI"; }
+  }
+
+// mobile end
+
+
+
+
+
+}
+.table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td{
+  border: none;
+  color: white;
+}
+
+
+
+
