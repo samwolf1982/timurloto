@@ -23,6 +23,7 @@ class m181213_042448_create_sesionbd_table extends Migration
 
 
 
+
     /**
      * {@inheritdoc}
      */
