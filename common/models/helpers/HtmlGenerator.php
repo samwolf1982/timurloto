@@ -190,8 +190,10 @@ class HtmlGenerator
 
             /**@var Bets $ishods */
             $ishods=$el->ishods;
+            $json_outcames =null;
+            if(isset($ishods[0])) $json_outcames = json_decode($ishods[0]->outcomes, true);
 
-            $json_outcames = json_decode($ishods[0]->outcomes, true);
+
 
             $res .= '<div class="row-collapse">
                             <div class="row-collapse-inner" data-parents="'.$el->event_id.'">

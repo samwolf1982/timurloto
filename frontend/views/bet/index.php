@@ -528,7 +528,6 @@ BetAsset::register($this);
                                     ],
                                 ]); ?>
 
-
                             </div>
                             
                             
@@ -987,9 +986,13 @@ BetAsset::register($this);
                     </div>
                 </div>
             </div>
+
+
             <div class="row table-row">
                 <div class="column-12">
                     <div class="table-wrapper top-user-table">
+
+
                         <div class="table-inner">
                             <div class="table-head head-with-tabs">
                                 <div class="tbl-icon">
@@ -1015,30 +1018,159 @@ BetAsset::register($this);
                                     </div>
                                 </div>
                             </div>
-                            <div class="table-body">
 
-                            </div>
-                            <div class="table-footer">
-                                <div class="pagination">
-                                    <ul class="pagination-list">
-                                        <li class="first-pag">
-                                            <a href="#"><span class="icon-arrow_left-small"></span></a>
-                                        </li>
-                                        <li class="active"><a href="#">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#" class="no-num-pag">...</a></li>
-                                        <li><a href="#">10</a></li>
-                                        <li class="last-pag">
-                                            <a href="#"><span class="icon-arrow_right-small"></span></a>
-                                        </li>
-                                    </ul>
+                                <div class="table-body  tableTop100">
+
+
+                                    <?= GridView::widget([
+                                        'dataProvider' => $dataProvider2,
+                                        'layout' => " <div class='wrap_commercial_top'>  {items}   </div>  <div class='clearfix'></div> \n <div class='table-footer'><div class='pagination'> <ul>  {pager}  </ul> </div></div>",
+                                        'tableOptions'=>['class'=>'table table-striped table-bordered clearTableBorder'],
+                                        'summary' => '',
+                                        'columns' => [
+
+                                            [   'class' => 'yii\grid\SerialColumn',
+                                                'contentOptions' => ['class' => 'numberClass'],
+                                                'headerOptions'=>['class'=>'fNumberHeader']
+                                            ],
+
+                                            [
+                                                'attribute'=>'user_id',
+                                                'label'=>'',
+                                                'contentOptions' =>function ($model, $key, $index, $column){
+                                                    return ['class' => 'name '];
+                                                },
+                                                'format' => 'raw',
+                                                'content'=>function($data){
+//                                    var_dump($data); die();
+                                                    /** @var common\models\overiden\User $user */
+                                                    $user=User::find()->where(['id'=>$data['user_id']])->one();
+                                                    return   HtmlGenerator::top100UserFace($user);
+
+                                                }
+                                            ],
+
+                                            [
+                                                'attribute'=>'sume',
+                                                'format' => 'raw',
+                                                'content'=>function($data){
+                                                    return  sprintf("%01.2f %%", $data['sume']);  ;
+                                                },
+                                                'label'=>'Profit',
+
+                                                'contentOptions' => ['class' => 'text-center cellTable'],
+                                                'headerOptions'=>['class'=>'text-center']
+                                            ],
+                                            [
+                                                'attribute'=>'penet',
+                                                'format' => 'raw',
+                                                'content'=>function($data){
+                                                    return  sprintf("%01.2f %%", $data['penet']);  ;
+                                                },
+                                                'label'=>'Проходимость',
+                                                'contentOptions' => ['class' => 'text-center cellTable'],
+                                                'headerOptions'=>['class'=>'text-center']
+
+
+                                            ],
+                                            [
+                                                'attribute'=>'mdc',
+                                                'label'=>'Коэффициент',
+                                                'contentOptions' => ['class' => 'text-center cellTable'],
+                                                'headerOptions'=>['class'=>'text-center'],
+                                                'format' => 'raw',
+                                                'content'=>function($data){
+                                                    return  sprintf("%01.2f", $data['mdc']);  ;
+                                                },
+
+                                            ],
+                                            [
+                                                'attribute'=>'ro',
+                                                'label'=>'ROI',
+                                                'contentOptions' => ['class' => 'text-center cellTable'],
+                                                'headerOptions'=>['class'=>'text-center'],
+                                                'format' => 'raw',
+                                                'content'=>function($data){
+                                                    return  sprintf("%01.2f", $data['ro']);  ;
+                                                },
+                                            ],
+                                            [
+                                                'attribute'=>'pluse',
+                                                'label'=>'Плюс',
+                                                'contentOptions' => ['class' => 'text-center cellTable'],
+                                                'headerOptions'=>['class'=>'text-center'],
+                                                'format' => 'raw',
+                                                'content'=>function($data){
+                                                    return  $data['pluse']; 
+                                                },
+                                            ],
+                                            [
+                                                'attribute'=>'minuse',
+                                                'label'=>'Минус',
+                                                'contentOptions' => ['class' => 'text-center cellTable'],
+                                                'headerOptions'=>['class'=>'text-center'],
+                                                'format' => 'raw',
+                                                'content'=>function($data){
+                                                    return  empty( $data['minuse']) ? 0:$data['minuse'];
+                                                },
+                                            ],
+
+
+
+
+
+
+//                                        'id',
+//                                        'parent_id',
+//                                        'name:ntext',
+//                                        'url:ntext',
+//                                        'category_image:ntext',
+                                            // 'created_at',
+                                            // 'updated_at',
+                                            // ['class' => 'yii\grid\ActionColumn'],
+                                        ],
+                                        'pager' => [
+
+                                            // 'view'=>'wwwwddde',
+
+//                                        'firstPageLabel' => 'first',
+//                                        'lastPageLabel' => 'last',
+                                            'prevPageLabel' => '<',
+                                            'nextPageLabel' => '>',
+
+                                            'maxButtonCount' => 4,
+
+                                            // Customzing options for pager container tag
+                                            'options' => [
+                                                'tag' => 'div',
+                                                'class' => [ 'class'=> 'pagination-list'],
+                                                'id' => 'pager-container',
+                                            ],
+
+                                            // Customzing CSS class for pager link
+                                            'linkOptions' => ['class' => 'mylink'],
+                                            'activePageCssClass' => 'active',
+                                            'disabledPageCssClass' => 'mydisable',
+
+                                            // Customzing CSS class for navigating link
+                                            'prevPageCssClass' => 'first-pag',
+                                            'nextPageCssClass' => 'pnext',
+                                            'firstPageCssClass' => 'first-pag2',
+                                            'lastPageCssClass' => 'last-pag',
+                                        ],
+                                    ]); ?>
+
                                 </div>
-                            </div>
+
+
+
                         </div>
+
                     </div>
                 </div>
             </div>
+
+
             <div class="row table-row">
                 <div class="column-12">
                     <div class="table-wrapper bookmake-rating">

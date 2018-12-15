@@ -168,3 +168,6 @@ and also iPads specifically.
   border: none;
   color: white;
 }
+.avatar__user-block .avatar__user-inner img {
+  border-radius: 100%;
+}

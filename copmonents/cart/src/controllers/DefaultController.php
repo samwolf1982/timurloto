@@ -87,8 +87,9 @@ class DefaultController extends \yii\web\Controller
             $json['price'] = 0;
         }
 
-
-        $b= Score::find()->where(['user_id' => Yii::$app->user->id])->one()->balance;
+        $scope=Score::find()->where(['user_id' => Yii::$app->user->id])->one();
+        $b=!empty($scope)?$scope->balance:0;
+      //  $b= Score::find()->where(['user_id' => Yii::$app->user->id])->one()->balance;
 //        $balance  = number_format($b, 0, '', ',');
         $json['currentBalance'] =  $b;
 

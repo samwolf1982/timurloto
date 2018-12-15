@@ -118,7 +118,7 @@
 
 
                                                <div class="val-drop">
-                                                   <button class="val-drop-btn"><?=$curent_playlist->name?></button>
+                                                   <button class="val-drop-btn"><?= !empty($curent_playlist)?$curent_playlist->name:''; ?></button>
                                                </div>
                                                <div class="dropdown-list">
 
@@ -150,7 +150,7 @@
                                                        <?php foreach ($playlists as $playlist) {  ?>
                                                            <div class="drop-item">
                                                                <div class="check-drop">
-                                                                    <?php if($curent_playlist->id==$playlist->id){  ?>
+                                                                    <?php if( (!empty($curent_playlist)&&!empty($playlist) ) &&  $curent_playlist->id==$playlist->id){  ?>
                                                                    <input name="playlistUser" data-type="statistic" type="radio" id="playlist_statistic_<?=$playlist->id?>" <?='checked="checked"'?>  data-value="<?=$playlist->id?>" value="<?=$playlist->name?>">
                                                                    <?php }else{ ?>
                                                                         <input name="playlistUser" data-type="statistic" type="radio" id="playlist_statistic_<?=$playlist->id?>"  data-value="<?=$playlist->id?>" value="<?=$playlist->name?>">
@@ -417,6 +417,7 @@
                </div>
            </div>
        </div>
+
   <?php } ?>
 
 

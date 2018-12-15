@@ -23,7 +23,6 @@ class m181213_042448_create_sesionbd_table extends Migration
 
 
 
-
     /**
      * {@inheritdoc}
      */
@@ -31,5 +30,8 @@ class m181213_042448_create_sesionbd_table extends Migration
     {
         $this->dropTable('session');
     }
+
+
+
 
 }

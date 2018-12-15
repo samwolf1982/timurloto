@@ -26,7 +26,12 @@ class DashboardcartWidget extends Widget
     public function run(){
 
 //                $sport_categories =   SportcategorynamesExt::getAll();
-        $b= Score::find()->where(['user_id' => Yii::$app->user->id])->one()->balance;
+        $uid= !empty(Yii::$app->user->id)?Yii::$app->user->id:null;
+
+        $scope=Score::find()->where(['user_id' =>$uid])->one();
+//        $b= Score::find()->where(['user_id' =>$uid])->one()->balance;
+        $b= !empty($scope)?$scope->balance:0;
+        //Score::find()->where(['user_id' =>$uid])->one()->balance;
         $total_balance  = number_format($b, 0, '', ',');
 
         $cart = yii::$app->cart;
@@ -39,13 +44,14 @@ class DashboardcartWidget extends Widget
         if(!$curent_playlist){
             $curent_playlist=Playlist::find()->where(['user_id'=>Yii::$app->user->id,'is_default'=>ConstantsHelper::STATUS_PlAYLIST_DEFAULT])->one();
             if(!$curent_playlist){
-                $curent_playlist = PlaylistManager::addElement(Yii::$app->user->id,'Плейлист по умолчанию',true)['playlist'];
+
+                $curent_playlist = @PlaylistManager::addElement(Yii::$app->user->id,'Плейлист по умолчанию',true)['playlist'];
 
             }
         }
 
 
-        if(empty($cart->playlist_id)){
+        if(empty($cart->playlist_id) && !empty($curent_playlist)){
             $current_cart->playlist_id=$curent_playlist->id;
             $current_cart->save(false);
         }

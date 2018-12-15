@@ -16,13 +16,19 @@ class ShowuserWidget extends Widget
     public $view;// вюшка для главной index для других other
     // возвращаем результат
     public function run(){
-        $username=Yii::$app->user->identity->username;
-        $useremail=Yii::$app->user->identity->email;
+
+        $username='Anonim';
+        $useremail='';
+        if(!empty(Yii::$app->user->identity)){
+            $username=Yii::$app->user->identity->username;
+            $useremail=Yii::$app->user->identity->email;
+        }
+
         $userimage='/images/avatar-placeholder.svg';
         $userimage='https://avatars0.githubusercontent.com/u/8706421?s=40&v=40';
        // $userimage=Yii::$app->user->identity->imageurl;
 
-        if(empty($username)) $username='Anonim';
+        if(empty($username))
         if(Yii::$app->user->isGuest) {
             $userimage='/images/avatar-placeholder.svg';
         }else{

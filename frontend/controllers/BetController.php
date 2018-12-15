@@ -36,7 +36,6 @@ class BetController extends Controller
 
 
 
-
     /**
      * index page видит только пользователь своя
      * @return mixed
@@ -60,7 +59,13 @@ class BetController extends Controller
         $searchModel = new BalancestatisticsSearch();
         $dataProvider = $searchModel->search_custom_last_week(Yii::$app->request->queryParams);
 
-        return $this->render('index',compact('type_game','model','model_two','model_three','dataProvider'));
+
+        $searchModel2 = new BalancestatisticsSearch();
+        $dataProvider2 = $searchModel2->search_custom_last_week_with_plus(Yii::$app->request->queryParams);
+
+
+
+        return $this->render('index',compact('type_game','model','model_two','model_three','dataProvider','dataProvider2'));
 
     }
 
