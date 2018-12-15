@@ -74,8 +74,8 @@ return [
 
                 'github' => [
                     'class'        => 'dektrium\user\clients\GitHub',
-                    'clientId'     => ISLOCAL ? '2035d003b9cdf93aeeca' :  '25151b54c968b94152f0',
-                    'clientSecret' => ISLOCAL ? '7e5b6ab5b8eeab5261b7edde23cbe3b0a4be276b' :  'b1420391d72fd5d50f38a5611c8c72729a4b3426',
+                    'clientId'     => YII_ENV=='dev' ? '2035d003b9cdf93aeeca' :  '25151b54c968b94152f0',
+                    'clientSecret' => YII_ENV=='dev' ? '7e5b6ab5b8eeab5261b7edde23cbe3b0a4be276b' :  'b1420391d72fd5d50f38a5611c8c72729a4b3426',
                 ],
 
 
