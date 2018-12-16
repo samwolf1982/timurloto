@@ -30,7 +30,7 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use yii\web\Response;
-die('post git test 2');
+
 /**
  * Site controller
  */
