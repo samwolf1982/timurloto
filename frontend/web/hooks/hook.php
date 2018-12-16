@@ -8,7 +8,7 @@ if ( $_POST['payload'] ) {
 }
 
 
-echo "<pre>".shell_exec( 'cd /home/lookmybe/lookmybets.com/lbrepo/  && git pull' )."</pre>";
+echo "<pre>".shell_exec( 'cd /home/lookmybe/lookmybets.com/lbrepo/ &&  git reset --hard HEAD  && git pull' )."</pre>";
 var_dump(shell_exec('date'));
 
 
