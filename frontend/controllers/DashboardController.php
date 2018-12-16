@@ -31,7 +31,7 @@ use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use yii\web\Response;
 
-die('test hook 2');
+die('test hook 3');
 /**
  * Site controller
  */
