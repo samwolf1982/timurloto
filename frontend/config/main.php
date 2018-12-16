@@ -28,7 +28,7 @@ return [
             // this is the name of the session cookie used for login on the frontend
            // 'name' => 'advanced-frontend',
             'name' => 'advanced_frontend',
-          //  'class' => 'yii\web\DbSession',
+            'class' => 'yii\web\DbSession',
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
