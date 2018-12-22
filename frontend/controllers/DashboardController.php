@@ -40,7 +40,6 @@ class DashboardController extends Controller
     public function actionIndex()
     {
 
-        die();
         // было
      //   Yii::$app->user->setReturnUrl(Yii::$app->request->url); // url для переадресации на текушую страничку для логина чекрез соц сети.
         return $this->render('index',[]);

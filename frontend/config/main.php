@@ -51,7 +51,8 @@ return [
                 'settings/'=>'user/settings',
 
                 'account/<id:\d+>' => 'account/view',
-                '/'=>'dashboard/index',
+//                '/'=>'dashboard/index',
+                '/dashboard/index'=>'matches',
 
 //                'site/index' =>   'dashboard',
 
