@@ -52,7 +52,7 @@ return [
 
                 'account/<id:\d+>' => 'account/view',
 //                '/'=>'dashboard/index',
-                '/dashboard/index'=>'matches',
+                '/dashboard/index'=>'/matches',
 
 //                'site/index' =>   'dashboard',
 
