@@ -37,9 +37,14 @@ use frontend\assets\DashboardAsset;
             </div>
         </div>
 
+
+
         <!--   вход выход  пользователя   -->
-        <?php // ShowuserWidget::widget(['userdata' => [],'view'=>'other']) ?>
-        <?= ShowuserWidget::widget(['userdata' => [],'view'=>'dashboard']) ?>
+        <?php  if(Yii::$app->user->isGuest){   ?>
+            <?= ShowuserWidget::widget(['userdata' => [],'view'=>'index']) ?>
+        <?php }else{ ?>
+            <?= ShowuserWidget::widget(['userdata' => [],'view'=>'other']) ?>
+        <?php }  ?>
 
 
     </div>

@@ -2,6 +2,8 @@
    use yii\helpers\Html;
    use yii\helpers\Url;
 
+
+
    ?>
 
 
@@ -12,6 +14,7 @@
                     <?php
                     if (!Yii::$app->user->isGuest) { ?>
                         <div class="user-status-text"><?=Yii::$app->user->identity->username;?></div>
+
                     <?php } ?>
 
                         <?php

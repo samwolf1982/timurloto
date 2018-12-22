@@ -44,7 +44,13 @@ MainAsset::register($this);
 
 
 <!--   вход выход  пользователя   -->
-        <?= ShowuserWidget::widget(['userdata' => [],'view'=>'index']) ?>
+        <?php  if(Yii::$app->user->isGuest){   ?>
+            <?= ShowuserWidget::widget(['userdata' => [],'view'=>'index']) ?>
+       <?php }else{ ?>
+            <?= ShowuserWidget::widget(['userdata' => [],'view'=>'other']) ?>
+        <?php }  ?>
+
+
 
 
 

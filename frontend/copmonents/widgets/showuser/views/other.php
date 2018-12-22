@@ -13,17 +13,43 @@
                </a>
            </div>
            <div class="add-block">
-               <a href="#" class="btn btn-primary btn-hover" data-toggle="modal" data-target="#modal-add-prognoz">
-                   +  <i>Дать Прогноз POPUP</i>
-                   <span></span>
-               </a>
-               <a href="<?=Url::to(['/dashboard']) ?>" class="btn btn-primary btn-hover">
+
+               <a href="<?=Url::to(['/matches']) ?>" class="btn btn-primary btn-hover">
                    +  <i>Дать Прогноз</i>
                    <span></span>
                </a>
 
            </div>
 
+           <style>
+ .block_2 a{
+     padding-right: 40px;
+     padding-left: 20px;
+     font-weight: 800;
+     font-size: 14px;
+     color: #FFF;
+     letter-spacing: 1px;
+     line-height: 14px;
+   }
+ a {
+     color: white;
+     text-decoration: none;
+ }
+ @media (max-width: 767px){
+     .dasboard-page .add-block {
+         display: initial;
+         padding-left: 0.5em;
+         padding-right: 0.5em;
+     }
+ }
+
+
+
+           </style>
+
+           <div class="faq-block_2">
+               <a href="<?=Url::to(['/bet']) ?>" data-toggle="modal" data-target="#modal-faq"><i class="faq-icon"></i><span>Турниры</span></a>
+           </div>
            <div class="faq-block">
                <a href="#" data-toggle="modal" data-target="#modal-faq"><i class="faq-icon"></i><span>FAQ</span></a>
            </div>

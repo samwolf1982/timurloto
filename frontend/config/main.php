@@ -53,14 +53,9 @@ return [
                 'account/<id:\d+>' => 'account/view',
 //                '/'=>'dashboard/index',
                 '/matches'=>'/dashboard/index',
-
 //                'site/index' =>   'dashboard',
-
             ],
         ],
-
-
-
 
         'authClientCollection' => [
             'class'   => \yii\authclient\Collection::className(),
