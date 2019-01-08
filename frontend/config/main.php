@@ -19,6 +19,7 @@ return [
             'csrfParam' => '_csrf-frontend',
         ],
 
+
 //        'user' => [
 //            'identityClass' => 'common\models\User',
 //            'enableAutoLogin' => true,
@@ -49,12 +50,15 @@ return [
             'rules' => [
                 'account/'=>'account/index',
                 'settings/'=>'user/settings',
-
                 'account/<id:\d+>' => 'account/view',
-//                '/'=>'dashboard/index',
+                '/'=>'dashboard/index', // убрать  на фронте
                 '/matches'=>'/dashboard/index',
 //                'site/index' =>   'dashboard',
-            ],
+            // модули удалить default
+                '<module:\w+>/<action:\w+>/<id:(.*?)>' => '<module>/default/<action>/<id>',
+                '<module:\w+>/<action:\w+>/<tourneyId:(.*?)>' => '<module>/default/<action>/<tourneyId>',
+                '<module:\w+>/<action:\w+>' => '<module>/default/<action>',
+                ],
         ],
 
         'authClientCollection' => [
@@ -139,6 +143,8 @@ return [
         ],
 
 
+
+
     ],
 
 
@@ -214,6 +220,12 @@ return [
         // подписчики
         'subscribers' => [
             'class' => 'frontend\modules\subscribers\SubscriberModule',
+        ],
+
+        // купленный парсер
+        'provider' => [
+            'class' => 'app\modules\parsernode\Module',
+
         ],
 
     ],

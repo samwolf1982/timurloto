@@ -6,14 +6,20 @@ use common\models\services\FiltertCountryBySport;
 
 <?php
 foreach ($listTurnire as $item) {
-//    yii::error($item);
-//tournament_id
+//    var_dump($item); die();
+    if(empty($item->tournament_id)) { yii::error('пустое значение  пропуск нужно пофиксить'); continue; }
+
+    //tournament_id
     $filter = new  FiltertCountryBySport(null, null, $item->tournament_id);
     $resultFilter = $filter->getTurniresByCountryFin();
+    //    var_dump($resultFilter);
+
+
     $html_block = HtmlGenerator::dashboardCountryByGroupFinBlockCenterWidget($resultFilter);
     echo $html_block;
 }
 ?>
+
 
 
 <?php if(0){ ?>

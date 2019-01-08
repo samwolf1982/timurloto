@@ -7,21 +7,36 @@
    ?>
 
 
+
+
         <div class="user-block">
+
             <div class="user-inner">
+
                 <div class="user-status">
+
+                    <div class="faq-block_2">
+                        <a href="<?=Url::to(['/bet']) ?>" data-toggle="modal" data-target="#modal-faq"><i class="faq-icon"></i><span>Турниры</span></a>
+                    </div>
+                    <div class="faq-block">
+                        <a href="#" data-toggle="modal" data-target="#modal-faq"><i class="faq-icon"></i><span>FAQ</span></a>
+                    </div>
 
                     <?php
                     if (!Yii::$app->user->isGuest) { ?>
                         <div class="user-status-text"><?=Yii::$app->user->identity->username;?></div>
-
                     <?php } ?>
 
                         <?php
                         if (Yii::$app->user->isGuest) { ?>
+
                             <div class="user-status-icon">
                                 <span class="icon-user"></span>
                             </div>
+
+
+
+
                         <?php }else{ ?>
                             <div class="avatar__user-block drop-menu">
                             <a href="#" class="avatar__user drop-menu-trigger">

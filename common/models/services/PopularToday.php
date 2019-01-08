@@ -44,9 +44,11 @@ class PopularToday
                 }
 
             }
+            //var_dump($name); die();
 //                $res[]=['id'=>$item->sport_id,'name'=>$name];
                 $res[$item->sport_id]=$name;
         }
+//        var_dump($res); die();
         return $res;
 
     }

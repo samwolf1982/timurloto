@@ -72,6 +72,24 @@ class ConstantsHelper
 // длина текста в кометах в открытых пользователях число
  const LENGTH_COMMENT_ACCESS_USER=160; //
 
+
+
+
+
+
+
+
+////////////////купленый парсер
+    // const PARSE_BASE_URL='http://157.230.134.85:8081';
+    const PARSE_BASE_URL='http://157.230.134.85';
+    const PARSE_SPORT_TYPE_URL_PARTS='?lineSport/all/ru/j_zaxscdvfq1w2e3r4';  // 1
+    //  const PARSE_TOURNEY_TYPE_URL_PARTS='getChampsBySportId/line/12341/ru/j_zaxscdvfq1w2e3r4'; // 2
+    const PARSE_TOURNEY_TYPE_URL_PARTS='?getChampsBySportId/line/%s/ru/j_zaxscdvfq1w2e3r4'; // 2
+    const PARSE_GAMES_IN_TOURNEY_URL_PARTS='?lineSport/%s/ru/j_zaxscdvfq1w2e3r4';  // 3 / http://157.230.134.85:8081/lineSport/131927/ru/j_zaxscdvfq1w2e3r4
+    const PARSE_EVENT_BY_ID_URL_PARTS='?getGameById/%s/ru/j_zaxscdvfq1w2e3r4';  // 4 / http://157.230.134.85:8081/getGameById/231729215/ru/j_zaxscdvfq1w2e3r4
+ //   const PARSE_BASE_DOCUMENTATION_URL='https://part.upnp.xyz';
+
+
 //<div class="list-item">
 //<button class="trig-val" data-value="day">день</button>
 //</div>

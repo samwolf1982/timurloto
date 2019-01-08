@@ -25,7 +25,7 @@
            <div class="tab-parent">
 
                <?=  $this->render('tabs/tabs_navigation',['tabs'=>$tabs,'activeIdtab'=>$activeIdtab]); ?>
-
+<?php //var_dump($listTurnire); die(); ?>
                <?=  $this->render('tabs/tabs_blocks',['listTurnire'=>$listTurnire]) ?>
 
 

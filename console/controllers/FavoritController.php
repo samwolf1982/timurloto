@@ -14,6 +14,8 @@ use common\models\helpers\ConstantsHelper;
 use common\models\Sportcategory;
 use common\models\Sportcategorynames;
 use common\models\Tournamentsnames;
+use console\models\DTO\DtoClearCollector;
+use console\models\services\ClearCollectort;
 use Yii;
 use yii\console\Controller;
 use yii\console\ExitCode;
@@ -35,12 +37,16 @@ use yii\httpclient\Client;
 class FavoritController extends Controller
 {
 
+    public $ex;  // cписок ??
+
     private  $urlApi=  'http://localhost36/api' ;
     // категории спорта футбол шахм.. ид брать из бд Sportcategorynames
     private $catList=[ 1,23, 2, 39, 20, 51, 62, 24, 6, 33, 26, 48, 7, 80, 52, 65, 72, 61, 29, 79, 25, 76, 60, 84, 77, 85, 73, 89, 57, 3, 9, 22, 30, 92, 34, 96, 99, 180,];
 
-
-
+    public function options($actionID)
+    {
+        return ['ex'];
+    }
 
     /**
      * This command echoes what you have entered as the message.
@@ -72,12 +78,14 @@ class FavoritController extends Controller
      */
     public function actionCategorynames()
     {
-
         $client = new Client(['baseUrl' =>Yii::$app->params['apiBaseUrl']]);
         $response = $client->get('sportcategory')->send();
         if ($response->isOk) {
 //         / $j= json_decode($response->data);
+
+            $catListForDElete=new  DtoClearCollector();
             foreach ($response->data as $item) {
+                $catListForDElete->addElement($item['sport_id']);
                 $cat=  Sportcategorynames::find()->where(['sport_id'=>$item['sport_id']])->one();
 //                    $cat=Sportcategorynames::find()->where(['sport_id'=>$item->sport_id])->one();
                     if ($cat and ($cat->is_updated==1) ){// обнова
@@ -109,11 +117,10 @@ class FavoritController extends Controller
                         }
                         echo "NEW : ".$cat->id.PHP_EOL;
                     }
-//                var_dump($item['sport_id']); die();
                                }
-
-           //  var_dump($response->data);
-
+            // чистка
+            $clearCollector=new ClearCollectort($catListForDElete);
+            $clearCollector->clearFavoritCategorynames();
 
 
         }
@@ -128,14 +135,17 @@ class FavoritController extends Controller
      *          'id' => $this->primaryKey(),
      * @return int
      */
-    public function actionTournamentsnames($sport_id_num=0)
+    public function actionTournamentsNames($sport_id_num=0)
     {
         $client = new Client(['baseUrl' =>Yii::$app->params['apiBaseUrl']]);
         $response = $client->get('turnirename')->send();
         if ($response->isOk) {
             //var_dump($response->data);
 //         / $j= json_decode($response->data);
+
+            $catListForDElete=new  DtoClearCollector();
             foreach ($response->data as $item) {
+                $catListForDElete->addElement($item['category_id']);
                 $cat=  Sportcategory::find()->where(['category_id'=>$item['category_id']])->one();
 //                    $cat=Sportcategorynames::find()->where(['sport_id'=>$item->sport_id])->one();
                 if ($cat and ($cat->is_updated==1) ){// обнова
@@ -168,7 +178,14 @@ class FavoritController extends Controller
                     echo "NEW : ".$cat->id.PHP_EOL;
                 }
 //                var_dump($item['sport_id']); die();
+
+
+
             }
+
+            // чистка
+            $clearCollector=new ClearCollectort($catListForDElete);
+            $clearCollector->clearTournamentsNames();
 
             //  var_dump($response->data);
 
@@ -189,16 +206,16 @@ class FavoritController extends Controller
      * events по стране->премьер лига  (пока что все вместе)  actionEventsnames
      * @return int
      */
-    public function actionEventsnames($tournament_id_num = 17336 , $base_click=8856)
+    public function actionEventsNames($tournament_id_num = 17336 , $base_click=8856)
     {
-
-
         $client = new Client(['baseUrl' =>Yii::$app->params['apiBaseUrl']]);
         $response = $client->get('turnire')->send();
         if ($response->isOk) {
           //  var_dump($response->data); die();
 //         / $j= json_decode($response->data);
-            foreach ($response->data as $item) {
+            $catListForDElete=new  DtoClearCollector();
+              foreach ($response->data as $item) {
+                $catListForDElete->addElement($item['tournament_id']);
                 $cat=  Tournamentsnames::find()->where(['tournament_id'=>$item['tournament_id']])->one();
 //                    $cat=Sportcategorynames::find()->where(['sport_id'=>$item->sport_id])->one();
                 if ($cat and ($cat->is_updated==1) ){// обнова
@@ -234,6 +251,10 @@ class FavoritController extends Controller
                 }
 //                var_dump($item['sport_id']); die();
             }
+            // чистка
+            $clearCollector=new ClearCollectort($catListForDElete);
+            $clearCollector->clearEventsNames();
+
 
             //  var_dump($response->data);
 
@@ -253,17 +274,17 @@ class FavoritController extends Controller
      * games по собитиям events (кто с кем играет)  (пока что все вместе)
      * @return int
      */
-    public function actionGamesnames()
+    public function actionGamesNames()
     {
         $client = new Client(['baseUrl' =>Yii::$app->params['apiBaseUrl']]);
         $response = $client->get('events')->send();
         if ($response->isOk) {
             //  var_dump($response->data); die();
 //         / $j= json_decode($response->data);
+            $catListForDElete=new  DtoClearCollector();
             foreach ($response->data as $item) {
+                $catListForDElete->addElement($item['event_id']);
                 $cat=  Eventsnames::find()->where(['event_id'=>$item['event_id']])->one();
-
-
                 if ($cat and ($cat->is_updated==1) ){// обнова
                     $cat->event_id=$item['event_id'];
                     $cat->event_name=$item['event_name'];
@@ -307,6 +328,10 @@ class FavoritController extends Controller
 //                var_dump($item['sport_id']); die();
             }
 
+            // чистка
+            $clearCollector=new ClearCollectort($catListForDElete);
+            $clearCollector->clearGamesNames();
+
             //  var_dump($response->data);
 
         }
@@ -319,6 +344,7 @@ class FavoritController extends Controller
 
 
 
+
     /**
      * 5 (пока что все вместе)
      * ставки на собитие
@@ -326,12 +352,150 @@ class FavoritController extends Controller
      */
     public function actionBets()
     {
+        $startTime=microtime(true);
+        $baseSport=1; // футбол
+     //   $baseSport=23; // футбол
+
         $client = new Client(['baseUrl' =>Yii::$app->params['apiBaseUrl']]);
         $response = $client->get('bets')->send();
         if ($response->isOk) {
+
+
+            //  var_dump($response->data); die();
+//         / $j= json_decode($response->data);
+            $countTotal=count($response->data);
+            if($countTotal <= 0) {die('empty data'); }
+
+
+            Yii::$app->db->createCommand("DELETE FROM `bets` WHERE `sport_id` ={$baseSport}")->execute();
+
+       
+         //   array_chunk($response->data,10)
+            foreach (array_chunk($response->data,10) as $ii => $items_arr) {
+               // $cat=  Bets::find()->where(['market_id'=>$item['market_id']])->one();
+//                'event_id' => 'event id ',
+//            'market_id' => 'market_id  не понятно',
+//            'market_name' => 'market_name название для групы например фора тотал ...',
+//            'market_order' => 'market_order идентификатор донора возможно',
+
+//            'outcomes' => 'outcomes JSON строка коофициентов',
+//            'market_suspend' => 'неясно ',
+//            'market_template_id' => 'неясно ',
+//            'market_template_view_id' => 'неясно ',
+//            'market_template_weigh' => 'неясно ',
+
+//            'result_type_id' => 'неясно ',
+//            'result_type_name' => 'имя результата ',
+//            'result_type_short_name' => 'имя результата короткое',
+//            'result_type_weigh' => 'неясно',
+
+//            'service_id' => 'service_id',
+//            'sport_id' => 'sport_id',
+//            'status' => '1 активная 0 не активная',
+//            'sort' => 'sort 0 1 2 3..',
+//            'is_updated' => 'обновлять ли категорию из парсера,следить 1-yes 0-no',
+
+                $toBatch=[];
+                foreach ( $items_arr as $item) {
+                    if($baseSport==$item['sport_id']){
+                        $toBatch[]=[$item['event_id'],$item['market_id'],$item['market_name'],$item['market_order'],$item['outcomes'],
+                            $item['market_suspend'],$item['market_template_id'],$item['market_template_view_id'],$item['market_template_weigh'],
+                            $item['result_type_id'],$item['result_type_name'],$item['result_type_short_name'],$item['result_type_weigh'],
+                            $item['service_id'],$item['sport_id'],1,1,0];
+                    }
+
+                 }
+
+
+
+
+                if (!empty($toBatch)){
+                    Yii::$app->db->createCommand()->batchInsert('bets',['event_id', 'market_id', 'market_name', 'market_order', 'outcomes',
+                        'market_suspend', 'market_template_id', 'market_template_view_id', 'market_template_weigh',
+                        'result_type_id', 'result_type_name', 'result_type_short_name', 'result_type_weigh',
+                        'service_id', 'sport_id', 'status', 'sort', 'is_updated'],
+                        $toBatch
+                    )->execute();
+                }
+
+
+               // var_dump($toBatch); die();
+//                    $cat= new Bets();
+//                    $cat->event_id=$item['event_id'];
+//                    $cat->market_id=$item['market_id'];
+//                    $cat->market_name=$item['market_name'];
+//                    $cat->market_order=$item['market_order'];
+//
+//                    $cat->outcomes=$item['outcomes'];
+//
+//                    $cat->market_suspend=$item['market_suspend'];
+//                    $cat->market_template_id=$item['market_template_id'];
+//                    $cat->market_template_view_id=$item['market_template_view_id'];
+//                    $cat->market_template_weigh=$item['market_template_weigh'];
+//
+//                    $cat->result_type_id=$item['result_type_id'];
+//                    $cat->result_type_name=$item['result_type_name'];
+//                    $cat->result_type_short_name=$item['result_type_short_name'];
+//                    $cat->result_type_weigh=$item['result_type_weigh'];
+//
+//
+//                    $cat->service_id=$item['service_id'];
+//                    $cat->sport_id=$item['sport_id'];
+//                    $cat->status=1;
+//                    $cat->is_updated=1;
+//                    $cat->sort=0;
+//                    if ($cat->validate()){
+//                        $cat->save(false);
+//                    }else{
+//                        yii::error(['badValidateActionCategory'=>$cat->errors,'id'=>$cat->id]);
+//                        var_dump($cat->errors);
+//                    }
+//                    echo "{$ii} from {$countTotal}  : ".$cat->id.PHP_EOL;
+                   $iii=$ii*10;
+                    echo "{$iii} from {$countTotal}  : ".PHP_EOL;
+
+//                var_dump($item['sport_id']); die();
+            }
+
+            //  var_dump($response->data);
+
+        }
+        // die();
+        // Create a client with a base URI
+        echo 'FIN ' . "\n";
+        echo 'Time: '.round(microtime(true) - $startTime, 4).' сек.'.PHP_EOL;
+        return ExitCode::OK;
+
+    }
+
+
+
+    /**
+     * 5 (пока что все вместе)
+     * ставки на собитие
+     * @return int
+     */
+    public function actionBetsOld()
+    {
+
+        $baseSport=1; // футбол
+        $baseSport=23; // футбол
+
+
+        $client = new Client(['baseUrl' =>Yii::$app->params['apiBaseUrl']]);
+        $response = $client->get('bets')->send();
+        if ($response->isOk) {
+
+
            //  var_dump($response->data); die();
 //         / $j= json_decode($response->data);
-            foreach ($response->data as $item) {
+            $countTotal=count($response->data);
+            if($countTotal <= 0) {die('empty data'); }
+
+
+            Yii::$app->db->createCommand("DELETE FROM `bets` WHERE `sport_id` ={$baseSport}")->execute();
+            foreach ($response->data as $ii => $item) {
+                if($item['sport_id']!=$baseSport) continue;
                 $cat=  Bets::find()->where(['market_id'=>$item['market_id']])->one();
 //                'event_id' => 'event id ',
 //            'market_id' => 'market_id  не понятно',
@@ -386,12 +550,13 @@ class FavoritController extends Controller
 
 
                     if ($cat->validate()){
-                        $cat->save();
+                        $cat->save(false);
                     }else{
                         yii::error(['badValidateActionCategory'=>$cat->errors,'id'=>$cat->id]);
                         var_dump($cat->errors);
                     }
-                    echo "Updated: ".$cat->id.PHP_EOL;
+//                    echo "{$ii} from {$countTotal} Updated: ".$cat->id.PHP_EOL;
+                    echo "{$ii} from {$countTotal} Updated: ".PHP_EOL;
                 }else{
                     $cat= new Bets();
                     $cat->event_id=$item['event_id'];
@@ -418,12 +583,13 @@ class FavoritController extends Controller
                     $cat->is_updated=1;
                     $cat->sort=0;
                     if ($cat->validate()){
-                        $cat->save();
+                        $cat->save(false);
                     }else{
                         yii::error(['badValidateActionCategory'=>$cat->errors,'id'=>$cat->id]);
                         var_dump($cat->errors);
                     }
-                    echo "NEW : ".$cat->id.PHP_EOL;
+//                    echo "{$ii} from {$countTotal}  : ".$cat->id.PHP_EOL;
+                    echo "{$ii} from {$countTotal}  : ".PHP_EOL;
                 }
 //                var_dump($item['sport_id']); die();
             }

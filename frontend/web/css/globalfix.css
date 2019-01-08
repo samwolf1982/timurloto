@@ -171,3 +171,29 @@ and also iPads specifically.
 .avatar__user-block .avatar__user-inner img {
   border-radius: 100%;
 }
+.header-inner .user-block {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 500px;
+  -moz-box-flex: 0;
+  -ms-flex: 0 0 500px;
+  flex: 0 0 500px;
+  max-width: 500px;
+  padding-left: 30px;
+}
+.header-inner .menu-block {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 -webkit-calc(-600%);
+  -moz-box-flex: 0;
+  -ms-flex: 0 0 calc(100% - 700px);
+  flex: 0 0 calc(100% - 700px);
+  max-width: -webkit-calc(-600%);
+  max-width: -moz-calc(-600%);
+  max-width: calc(100% - 700px);
+}
+.faq-block_2 a {
+  font-weight: 800;
+  font-size: 14px;
+  color: #FFF;
+  letter-spacing: 1px;
+  line-height: 14px;
+}
