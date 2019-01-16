@@ -29,7 +29,7 @@ $(document).ready(function () {
 
 
     // 4
-    $(document).on("click", ".turnire_fin , .total.show-all-bets.do_open_line222 ", function(e) {
+    $(document).on("click", ".turnire_fin , .total.show-all-bets.do_open_line ", function(e) {
         console.log('turnire_fin')
         DashboardCategory.sendData(this,$(this).data(),'/provider/events');
         // DashboardCategoryFinlink.sendData(this,$(this).data());
@@ -40,7 +40,7 @@ $(document).ready(function () {
 
     // // open event
     // // open line    delete this
-    $(document).on('click','.total.show-all-bets.do_open_line',function (e) {
+    $(document).on('click','.total.show-all-bets.do_open_line11111',function (e) {
         // console.log('getLine')
         // DashboardCategory.sendData(this,$(this).data(),'/provider/events');
         // // DashboardCategoryFinlink.sendData(this,$(this).data());
@@ -68,7 +68,6 @@ var DashboardCategory={
         data[this.csrf_param] = this.csrf;
         jQuery.post(link, data,
             function (json) {
-
                 if (json.errors) {
                     console.log(json.errors);
                 }
