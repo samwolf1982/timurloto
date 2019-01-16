@@ -166,6 +166,7 @@ var DashboardCategory={
 
 
 
+
          openline.append('<div class="content-bg pb-5">\n' +
              '                                    <div class="open-bet-wrapper">\n' +
              '                                        <div class="open-bet-wrapper-inner" data-parents="'+data.meta.id+'">\n' +
