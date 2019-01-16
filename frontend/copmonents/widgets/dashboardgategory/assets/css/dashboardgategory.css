@@ -1,0 +1,10 @@
+#sportTypeSidebar {
+  min-height: 150px;
+}
+.preloaderSport {
+  width: 100%;
+  height: 150px;
+  z-index: 999999;
+  background: url('/images/loading.gif') center no-repeat #fff;
+  text-align: center;
+}
