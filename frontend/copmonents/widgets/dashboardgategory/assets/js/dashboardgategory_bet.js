@@ -29,7 +29,7 @@ $(document).ready(function () {
 
 
     // 4
-    $(document).on("click", ".turnire_fin , .total.show-all-bets.do_open_line ", function(e) {
+    $(document).on("click", ".turnire_fin , .total.show-all-bets.do_open_line,  .info-bet.do_open_line ", function(e) {
         console.log('turnire_fin')
         DashboardCategory.sendData(this,$(this).data(),'/provider/events');
         // DashboardCategoryFinlink.sendData(this,$(this).data());
@@ -384,7 +384,7 @@ var DashboardCategory={
             colapsetabInner.children('.tab-collapse-content-inner').append('<div class="row-collapse">\n' +
                 '                            <div class="row-collapse-inner" data-parents="'+mainGameId+'">\n' +
                 '                                <div class="icon-bet"><span class="icon-football"></span></div>\n' +
-                '                                <a class="info-bet" href="bet-dashboard-open.html">\n' +
+                '                                <a class="info-bet do_open_line" data-id="'+mainGameId+'"  href="bet-dashboard-open.html">\n' +
                 '                                    <div class="title-bet">'+timeStartMatch+'</div>\n' +
                 '                                    <div class="value-bet">'+fullNamePlayers+'</div>\n' +
                 '                                </a>'+
