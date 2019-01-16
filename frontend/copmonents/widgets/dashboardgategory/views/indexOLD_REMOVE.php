@@ -14,28 +14,231 @@
    ?>
 
 
-   <div class="inner-sidebar" id="sportTypeSidebar">
+   <div class="inner-sidebar">
        <div class="head-pink" >
            <h3>Виды Спорта </h3>
        </div>
 
 
 
-
-
-            <?php foreach ($sport_categories  as $id_sport=>$sport_name) { continue;  ?>
+            <?php foreach ($sport_categories   as $id_sport=>$sport_name) {  ?>
                 <div class="collapsed-type">
                     <div class="collapse-head">
                         <button class="trigger-collapse" data-id="<?=$id_sport?>"><span class="icon-football"></span><?=$sport_name ?></button>
                     </div>
+
                     <div class="collapse-block" >
                         <ul class="collapse-list" id="child_colapse_<?=$id_sport?>" >
+                            <li class="">
+                                <a href="#" class="trigger-sub-collapse">
+                                                    <span class="flag">
+                                                        <img src="images/ua.png" alt="">
+                                                    </span>
+                                    Европа
+                                </a>
+                                <div class="sub-collapse">
+                                    <ul class="sub-collapse-list">
+                                        <li><a href="#">Премьер Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Чемпион Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Первая Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Вторая Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Национальная Лига <span class="count-block">26</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" class="trigger-sub-collapse">
+                                                    <span class="flag">
+                                                        <img src="images/sp.png" alt="">
+                                                    </span>
+                                    Южная Америка
+                                </a>
+                                <div class="sub-collapse">
+                                    <ul class="sub-collapse-list">
+                                        <li><a href="#">Премьер Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Чемпион Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Первая Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Вторая Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Национальная Лига <span class="count-block">26</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" class="trigger-sub-collapse">
+                                                    <span class="flag">
+                                                        <img src="images/en.png" alt="">
+                                                    </span>
+                                    Азия
+                                </a>
+                                <div class="sub-collapse">
+                                    <ul class="sub-collapse-list">
+                                        <li><a href="#">Премьер Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Чемпион Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Первая Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Вторая Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Национальная Лига <span class="count-block">26</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" class="trigger-sub-collapse">
+                                                    <span class="flag">
+                                                        <img src="images/ua.png" alt="">
+                                                    </span>
+                                    Украина
+                                </a>
+                                <div class="sub-collapse">
+                                    <ul class="sub-collapse-list">
+                                        <li><a href="#">Премьер Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Чемпион Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Первая Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Вторая Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Национальная Лига <span class="count-block">26</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" class="trigger-sub-collapse">
+                                                    <span class="flag">
+                                                        <img src="images/sp.png" alt="">
+                                                    </span>
+                                    Испания
+                                </a>
+                                <div class="sub-collapse">
+                                    <ul class="sub-collapse-list">
+                                        <li><a href="#">Премьер Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Чемпион Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Первая Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Вторая Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Национальная Лига <span class="count-block">26</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" class="trigger-sub-collapse">
+                                                    <span class="flag">
+                                                        <img src="images/en.png" alt="">
+                                                    </span>
+                                    Англия
+                                </a>
+                                <div class="sub-collapse">
+                                    <ul class="sub-collapse-list">
+                                        <li><a href="#">Премьер Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Чемпион Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Первая Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Вторая Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Национальная Лига <span class="count-block">26</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" class="trigger-sub-collapse">
+                                                    <span class="flag">
+                                                        <img src="images/fr.png" alt="">
+                                                    </span>
+                                    Франция
+                                </a>
+                                <div class="sub-collapse">
+                                    <ul class="sub-collapse-list">
+                                        <li><a href="#">Премьер Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Чемпион Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Первая Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Вторая Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Национальная Лига <span class="count-block">26</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" class="trigger-sub-collapse">
+                                                    <span class="flag">
+                                                        <img src="images/ua.png" alt="">
+                                                    </span>
+                                    Италия
+                                </a>
+                                <div class="sub-collapse">
+                                    <ul class="sub-collapse-list">
+                                        <li><a href="#">Премьер Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Чемпион Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Первая Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Вторая Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Национальная Лига <span class="count-block">26</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" class="trigger-sub-collapse">
+                                                    <span class="flag">
+                                                        <img src="images/sp.png" alt="">
+                                                    </span>
+                                    Германия
+                                </a>
+                                <div class="sub-collapse">
+                                    <ul class="sub-collapse-list">
+                                        <li><a href="#">Премьер Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Чемпион Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Первая Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Вторая Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Национальная Лига <span class="count-block">26</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" class="trigger-sub-collapse">
+                                                    <span class="flag">
+                                                        <img src="images/ru.png" alt="">
+                                                    </span>
+                                    Россия
+                                </a>
+                                <div class="sub-collapse">
+                                    <ul class="sub-collapse-list">
+                                        <li><a href="#">Премьер Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Чемпион Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Первая Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Вторая Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Национальная Лига <span class="count-block">26</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" class="trigger-sub-collapse">
+                                                    <span class="flag">
+                                                        <img src="images/fr.png" alt="">
+                                                    </span>
+                                    Аргентина
+                                </a>
+                                <div class="sub-collapse">
+                                    <ul class="sub-collapse-list">
+                                        <li><a href="#">Премьер Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Чемпион Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Первая Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Вторая Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Национальная Лига <span class="count-block">26</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" class="trigger-sub-collapse">
+                                                    <span class="flag">
+                                                        <img src="images/au.png" alt="">
+                                                    </span>
+                                    Австралия
+                                </a>
+                                <div class="sub-collapse">
+                                    <ul class="sub-collapse-list">
+                                        <li><a href="#">Премьер Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Чемпион Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Первая Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Вторая Лига <span class="count-block">26</span></a></li>
+                                        <li><a href="#">Национальная Лига <span class="count-block">26</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>
            <?php  }  ?>
 
-       <div class="preloaderSport"></div>
+
 
    </div>
 
@@ -71,7 +274,6 @@
                                </ul>
                            </div>
                        </li>
-
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">

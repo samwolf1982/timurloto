@@ -85,12 +85,12 @@ var SmartCart={
             // e.preventDefault();
             return false;
         });
-        // open line
-        $(document).on('click','.total.show-all-bets.do_open_line',function (e) {
-            SmartCart.getLine(this);
-            e.preventDefault();
-            return false;
-        });
+        // // open line
+        // $(document).on('click','.total.show-all-bets.do_open_line',function (e) {
+        //     SmartCart.getLine(this);
+        //     e.preventDefault();
+        //     return false;
+        // });
         // close line
         $(document).on('click','.closeLine',function (e) {
             SmartCart.hideLine(this);

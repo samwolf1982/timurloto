@@ -24,7 +24,8 @@ class AppAsset extends AssetBundle
       //  'js/libs/sticky-master/sticky-master/jquery.sticky.js',
         'js/libs/custombox-master/custombox-master/dist/custombox.min.js',
         'js/libs/loadModalAjax.js',
-    ];
+        '//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js'
+        ];
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',

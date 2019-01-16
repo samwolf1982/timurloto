@@ -58,6 +58,7 @@ class DashboardController extends Controller
     ////// удалить что не используется
 
     /**
+     * not use
      *      первый уровень
      * @return array
      */
@@ -70,6 +71,7 @@ class DashboardController extends Controller
       return ['fail'];
    }
     /**
+     * not use
      *      второй уровень
      * @return array
      */

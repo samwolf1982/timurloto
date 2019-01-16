@@ -197,3 +197,15 @@ and also iPads specifically.
   letter-spacing: 1px;
   line-height: 14px;
 }
+.head-open-bet .title-open-bet {
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 -webkit-calc(-155%);
+  -moz-box-flex: 0;
+  -ms-flex: 0 0 calc(100% - 255px);
+  flex: 0 0 calc(100% - 255px);
+  max-width: -webkit-calc(-155%);
+  max-width: -moz-calc(-155%);
+  max-width: calc(100% - 255px);
+}

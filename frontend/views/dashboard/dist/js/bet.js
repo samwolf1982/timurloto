@@ -35,10 +35,12 @@ $(document).ready(function () {
         $(this).toggleClass('active');
         return false;
     });
-    $('.tab-trigger').on('click',function () {
+
+
+    $(document).on("click", ".tab-trigger", function(e) {
         var id_tabs_b = $(this).attr('href');
+        $('.tab-trigger').removeClass('active');
         if(!$(this).hasClass('active')) {
-            $('.tab-trigger').removeClass('active');
             $(this).addClass('active');
             $('.tab-block').fadeOut(200);
             setTimeout(function () {

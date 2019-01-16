@@ -66,6 +66,7 @@ class HtmlGenerator
         foreach ($data as $el) {
             $res.=' <li><a href="#" class="turnire_fin" data-id="'.$el->tournament_id.'" >'.$el->tournament_name.' <span class="count-block">'.$el->countevents.'</span></a></li>';
         }
+
         return $res;
     }
 
@@ -84,7 +85,6 @@ class HtmlGenerator
                 
                 <div class="tab-collapse-content active">
                     <div class="tab-collapse-content-inner">';
-
 
         /** @var Eventsnames $el */
         foreach ($data as $el) {

@@ -14,6 +14,7 @@ class DashboardcenterAsset extends AssetBundle
 
     public $js = [
             'js/dashboardcenter_bet.min.js'
+//            'js/dashboardcenter_bet.js'
         ];
     public $depends = [
         // 'frontend\assets\AppAsset',

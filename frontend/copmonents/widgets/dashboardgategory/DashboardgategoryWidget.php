@@ -19,6 +19,7 @@ class DashboardgategoryWidget extends Widget
     // возвращаем результат
     public function run(){
                 $sport_categories =   SportcategorynamesExt::getAll();
+                $sport_categories =   SportcategorynamesExt::getAll();
         return       $this->render('index', ['sport_categories'=>$sport_categories]);
     }
     public function init(){

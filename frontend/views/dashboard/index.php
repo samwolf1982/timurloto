@@ -57,6 +57,7 @@ use frontend\assets\DashboardAsset;
         <div data-depth="0.2" class="background-image" style="background-image: url(images/back-body.jpg)"></div>
     </div>
 </div>
+
 <button class="open-coupon">
     <i class="count-coup">0</i>
     <span class="icon-coupon"></span>
