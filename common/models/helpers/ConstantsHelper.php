@@ -98,7 +98,7 @@ class ConstantsHelper
 
     ////////////////купленый парсер   reg ru
     // const PARSE_BASE_URL='http://157.230.134.85:8081';
-    const PARSE_BASE_URL='http://89.108.65.253:3000';
+    const PARSE_BASE_URL='http://89.108.65.253:8080';
     const PARSE_SPORT_TYPE_URL_PARTS='lineSport/all/ru/j_zaxscdvfq1w2e3r4';  // 1
     //  const PARSE_TOURNEY_TYPE_URL_PARTS='getChampsBySportId/line/12341/ru/j_zaxscdvfq1w2e3r4'; // 2
     const PARSE_TOURNEY_TYPE_URL_PARTS='getChampsBySportId/line/%s/ru/j_zaxscdvfq1w2e3r4'; // 2
