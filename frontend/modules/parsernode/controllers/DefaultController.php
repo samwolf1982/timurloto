@@ -13,7 +13,7 @@ use yii\web\Response;
 class DefaultController extends Controller
 {
 
-    private  $cacheLive=300;
+    private  $cacheLive=10;
     /**
      * step 1
      * @return array
