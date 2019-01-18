@@ -245,7 +245,7 @@ class ParserNodeDos extends \yii\base\BaseObject
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_URL,$url);
 
-        curl_setopt($ch, CURLOPT_PORT, 3000);
+//        curl_setopt($ch, CURLOPT_PORT, 3000);
 
         $result=curl_exec($ch);
         if($erCode=curl_errno($ch)) {echo "Error curl: {$erCode}   " . curl_error($ch);die();}
