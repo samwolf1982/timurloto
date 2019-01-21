@@ -269,16 +269,16 @@ $(document).ready(function () {
 
 
 
-    $('.delete-all-bets').on('click',function () {
-        $('.bet-coup-list li').remove();
-        $('.bet-parent-val,.bets-val').removeClass('selected');
-        $('.ordinator').addClass('active');
-        $('.express').removeClass('active');
-        $('.all-coeficient,.delete-block').slideUp(400);
-        $('.coupon-tabs-wrapper-inner').fadeOut(200);
-        setTimeout(function () {
-            $('.no-bet-selected-text').fadeIn(400);
-        },210);
-        return false;
-    });
+    // $('.delete-all-bets').on('click',function () {
+    //     $('.bet-coup-list li').remove();
+    //     $('.bet-parent-val,.bets-val').removeClass('selected');
+    //     $('.ordinator').addClass('active');
+    //     $('.express').removeClass('active');
+    //     $('.all-coeficient,.delete-block').slideUp(400);
+    //     $('.coupon-tabs-wrapper-inner').fadeOut(200);
+    //     setTimeout(function () {
+    //         $('.no-bet-selected-text').fadeIn(400);
+    //     },210);
+    //     return false;
+    // });
 });

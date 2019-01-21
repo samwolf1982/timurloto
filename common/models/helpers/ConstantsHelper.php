@@ -102,7 +102,7 @@ class ConstantsHelper
 //    const PARSE_BASE_URL='http://89.108.65.253:6543';
 //    const PARSE_BASE_URL='http://89.108.65.253';
 //    const PARSE_BASE_URL='http://89.108.65.253';
-    const PARSE_BASE_URL='http://104.248.229.40';
+    const PARSE_BASE_URL='http://104.248.229.40'; // tim
     const PARSE_SPORT_TYPE_URL_PARTS='?lineSport/all/ru/j_zaxscdvfq1w2e3r4';  // 1
     //  const PARSE_TOURNEY_TYPE_URL_PARTS='getChampsBySportId/line/12341/ru/j_zaxscdvfq1w2e3r4'; // 2
     const PARSE_TOURNEY_TYPE_URL_PARTS='?getChampsBySportId/line/%s/ru/j_zaxscdvfq1w2e3r4'; // 2

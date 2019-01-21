@@ -49,25 +49,22 @@ class ElementController extends \yii\web\Controller
 
     public function actionCreate()
     {
+
         $json = ['result' => 'undefined', 'error' => false];
         /**@var Cart $cart*/
         $cart = yii::$app->cart;
         $postData = yii::$app->request->post();
         $current_cart=$cart->getCart()->my();
-
         $current_cart->current_coefficient=$postData['CartElement']['currentCooeficientDrop'];
         if(empty($postData['CartElement']['currentCooeficientDrop'])){  $current_cart->current_coefficient = ConstantsHelper::DEFAULT_COEFFICIENT; }
-
 //        $current_cart->playlist_id=$postData['CartElement']['playlist_id'];
-
        // $current_cart->status= $this->setStatusBet( $postData['CartElement']['status']);
         $current_cart->save();
-
         $model = $postData['CartElement']['model'];
         if($model) {
             $productModel = new $model();
+            yii::error($productModel);
             $productModel = $productModel::findOne($postData['CartElement']['item_id']);
-
 
             $options = [];
             if(isset($postData['CartElement']['options'])) {
@@ -78,7 +75,7 @@ class ElementController extends \yii\web\Controller
                 yii::error('price');
                 $elementModel = $cart->putWithPrice($productModel, $postData['CartElement']['price'], $postData['CartElement']['count'], $options);
             } else {
-                yii::error(get_class($cart));
+                yii::error([get_class($cart),$productModel]);
                 $elementModel = $cart->put($productModel, $postData['CartElement']['count'], $options,null);
             }
 

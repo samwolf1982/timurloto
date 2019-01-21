@@ -1,8 +1,8 @@
 $(document).ready(function () {
     DashboardCategory.init();
     DashboardCategory.gerSports();
+    DashboardCategory.getPopularSports();
     // DashboardCategory.test();
-
 
 
     // $('.trigger-collapse').on('click',function (e) {
@@ -85,13 +85,32 @@ var DashboardCategory={
                     }else{
                         DashboardCategory.render(el,json); // not using
                     }
-
                 }
             }, "json");
         return false;
     },
+    sendDataProgressBar: function (el,data, link) {
+        data[this.csrf_param] = this.csrf;
+        $('.progresse_bare').css({width: 100+'%'});
+        jQuery.post(link, data,
+            function (json) {
+                if (json.errors) {
+                    console.log(json.errors);
+                }
+                else {
+                    $('.progresse_bare').hide();
+                    if(json.meta.type==='popularsports'){
+                        DashboardCategory.renderTabsGames(el, json.data);
+                    }else{
+                        console.log('is no popularsports')
+                    }
+                }
+            }, "json");
 
 
+
+        return false;
+    },
 
     render: function (el,json) {
         // console.log($(el).data());
@@ -214,8 +233,10 @@ var DashboardCategory={
 
              $.each(eld,function (k1,eldIn) {
                   console.log(eldIn);
+                //  dParent=eldIn.id.split('-')[0]  + '_'+eldIn.id.split('-')[2];  // группа фора и тд
+                  dParent=eldIn.id.split('-')[0];  // группа фора и тд
                  rowbetsstats.append( '<div class="column4">\n' +
-                     '<button class="bets-val" data-id="133103" data-parent="17543507" data-options="" data-current_outcome_id="1439535219" data-players="133103" data-cat="563715518" data-text="Арсенал Киев">\n' +
+                     '<button class="bets-val" data-id="'+eldIn.id+'" data-parent="'+dParent+'"  data-text1="'+fullgamename+'" data-text2="'+eldIn.eventName+'" data-coof="'+eldIn.cf+'">\n' +
                      '<span class="mobile-name">'+eldIn.eventName+'</span>\n' +
                      '<span class="name-b">'+eldIn.eventName+'</span>\n' +
                      '<span class="coefficient-b">'+eldIn.cf+'</span>\n' +
@@ -233,98 +254,9 @@ var DashboardCategory={
 
              openCollapsedWrapper.append(collapseOpenBet);
 
-             // openCollapsedWrapper.append('<div class="collapse-open-bet">\n' +
-             //     '                                                            <div class="collapse-open-bet-head">\n' +
-             //     '                                                                <button class="collapse-open-bet-trigger active">Победа</button>\n' +
-             //     '                                                            </div>\n' +
-             //     '                                                            <div class="collapse-open-bet-content">   <div class="collapse-open-bet-item">\n' +
-             //     '                                                                   <h4>Основное время</h4>\n' +
-             //     '                                                                    <div class="row-bets-stats">    <div class="column4">\n' +
-             //     '                                                                            <button class="bets-val" data-id="133103" data-parent="17543507" data-options="{&quot;outcome_coef&quot;:3.65,&quot;outcome_id&quot;:1439535219,&quot;outcome_name&quot;:&quot;\u0410\u0440\u0441\u0435\u043d\u0430\u043b \u041a\u0438\u0435\u0432&quot;,&quot;outcome_param&quot;:null,&quot;outcome_perc_stat&quot;:39.98,&quot;outcome_short_name&quot;:&quot;1&quot;,&quot;outcome_tag&quot;:null,&quot;outcome_tl_header_name&quot;:null,&quot;outcome_tl_left_name&quot;:null,&quot;outcome_type_id&quot;:1,&quot;outcome_visible&quot;:true,&quot;participant_number&quot;:1}" data-current_outcome_id="1439535219" data-players="133103" data-cat="563715518" data-text="Арсенал Киев">\n' +
-             //     '                                                                                <span class="mobile-name">Арсенал Киев</span>\n' +
-             //     '                                                                                <span class="name-b">Арсенал Киев</span>\n' +
-             //     '                                                                                <span class="coefficient-b">3.65</span>\n' +
-             //     '                                                                            </button>\n' +
-             //     '                                                                        \n' +
-             //     '                                                                        </div>    <div class="column4">\n' +
-             //     '                                                                            <button class="bets-val" data-id="133103" data-parent="17543507" data-options="{&quot;outcome_coef&quot;:3.1,&quot;outcome_id&quot;:1439535220,&quot;outcome_name&quot;:&quot;\u041d\u0438\u0447\u044c\u044f&quot;,&quot;outcome_param&quot;:&quot;Draw&quot;,&quot;outcome_perc_stat&quot;:16.36,&quot;outcome_short_name&quot;:&quot;X&quot;,&quot;outcome_tag&quot;:null,&quot;outcome_tl_header_name&quot;:null,&quot;outcome_tl_left_name&quot;:null,&quot;outcome_type_id&quot;:2,&quot;outcome_visible&quot;:true,&quot;participant_number&quot;:null}" data-current_outcome_id="1439535220" data-players="133103" data-cat="563715518" data-text="Ничья">\n' +
-             //     '                                                                                <span class="mobile-name">Ничья</span>\n' +
-             //     '                                                                                <span class="name-b">Ничья</span>\n' +
-             //     '                                                                                <span class="coefficient-b">3.1</span>\n' +
-             //     '                                                                            </button>\n' +
-             //     '                                                                        \n' +
-             //     '                                                                        </div>    <div class="column4">\n' +
-             //     '                                                                            <button class="bets-val" data-id="133103" data-parent="17543507" data-options="{&quot;outcome_coef&quot;:2.21,&quot;outcome_id&quot;:1439535221,&quot;outcome_name&quot;:&quot;\u0414\u0435\u0441\u043d\u0430 \u0427\u0435\u0440\u043d\u0438\u0433\u043e\u0432&quot;,&quot;outcome_param&quot;:null,&quot;outcome_perc_stat&quot;:43.66,&quot;outcome_short_name&quot;:&quot;2&quot;,&quot;outcome_tag&quot;:null,&quot;outcome_tl_header_name&quot;:null,&quot;outcome_tl_left_name&quot;:null,&quot;outcome_type_id&quot;:3,&quot;outcome_visible&quot;:true,&quot;participant_number&quot;:2}" data-current_outcome_id="1439535221" data-players="133103" data-cat="563715518" data-text="Десна Чернигов">\n' +
-             //     '                                                                                <span class="mobile-name">Десна Чернигов</span>\n' +
-             //     '                                                                                <span class="name-b">Десна Чернигов</span>\n' +
-             //     '                                                                                <span class="coefficient-b">2.21</span>\n' +
-             //     '                                                                            </button>\n' +
-             //     '                                                                        \n' +
-             //     '                                                                        </div>       </div>\n' +
-             //     '                                                                </div>   <div class="collapse-open-bet-item">\n' +
-             //     '                                                                   <h4>1 Тайм</h4>\n' +
-             //     '                                                                    <div class="row-bets-stats">    <div class="column4">\n' +
-             //     '                                                                            <button class="bets-val" data-id="133104" data-parent="17543507" data-options="{&quot;outcome_coef&quot;:4.3,&quot;outcome_id&quot;:1439535322,&quot;outcome_name&quot;:&quot;\u0410\u0440\u0441\u0435\u043d\u0430\u043b \u041a\u0438\u0435\u0432&quot;,&quot;outcome_param&quot;:null,&quot;outcome_perc_stat&quot;:0,&quot;outcome_short_name&quot;:&quot;1&quot;,&quot;outcome_tag&quot;:null,&quot;outcome_tl_header_name&quot;:null,&quot;outcome_tl_left_name&quot;:null,&quot;outcome_type_id&quot;:1,&quot;outcome_visible&quot;:true,&quot;participant_number&quot;:1}" data-current_outcome_id="1439535322" data-players="133104" data-cat="563715554" data-text="Арсенал Киев">\n' +
-             //     '                                                                                <span class="mobile-name">Арсенал Киев</span>\n' +
-             //     '                                                                                <span class="name-b">Арсенал Киев</span>\n' +
-             //     '                                                                                <span class="coefficient-b">4.3</span>\n' +
-             //     '                                                                            </button>\n' +
-             //     '                                                                        \n' +
-             //     '                                                                        </div>    <div class="column4">\n' +
-             //     '                                                                            <button class="bets-val" data-id="133104" data-parent="17543507" data-options="{&quot;outcome_coef&quot;:2.01,&quot;outcome_id&quot;:1439535323,&quot;outcome_name&quot;:&quot;\u041d\u0438\u0447\u044c\u044f&quot;,&quot;outcome_param&quot;:&quot;Draw&quot;,&quot;outcome_perc_stat&quot;:75,&quot;outcome_short_name&quot;:&quot;X&quot;,&quot;outcome_tag&quot;:null,&quot;outcome_tl_header_name&quot;:null,&quot;outcome_tl_left_name&quot;:null,&quot;outcome_type_id&quot;:2,&quot;outcome_visible&quot;:true,&quot;participant_number&quot;:null}" data-current_outcome_id="1439535323" data-players="133104" data-cat="563715554" data-text="Ничья">\n' +
-             //     '                                                                                <span class="mobile-name">Ничья</span>\n' +
-             //     '                                                                                <span class="name-b">Ничья</span>\n' +
-             //     '                                                                                <span class="coefficient-b">2.01</span>\n' +
-             //     '                                                                            </button>\n' +
-             //     '                                                                        \n' +
-             //     '                                                                        </div>    <div class="column4">\n' +
-             //     '                                                                            <button class="bets-val" data-id="133104" data-parent="17543507" data-options="{&quot;outcome_coef&quot;:2.93,&quot;outcome_id&quot;:1439535324,&quot;outcome_name&quot;:&quot;\u0414\u0435\u0441\u043d\u0430 \u0427\u0435\u0440\u043d\u0438\u0433\u043e\u0432&quot;,&quot;outcome_param&quot;:null,&quot;outcome_perc_stat&quot;:25,&quot;outcome_short_name&quot;:&quot;2&quot;,&quot;outcome_tag&quot;:null,&quot;outcome_tl_header_name&quot;:null,&quot;outcome_tl_left_name&quot;:null,&quot;outcome_type_id&quot;:3,&quot;outcome_visible&quot;:true,&quot;participant_number&quot;:2}" data-current_outcome_id="1439535324" data-players="133104" data-cat="563715554" data-text="Десна Чернигов">\n' +
-             //     '                                                                                <span class="mobile-name">Десна Чернигов</span>\n' +
-             //     '                                                                                <span class="name-b">Десна Чернигов</span>\n' +
-             //     '                                                                                <span class="coefficient-b">2.93</span>\n' +
-             //     '                                                                            </button>\n' +
-             //     '                                                                        \n' +
-             //     '                                                                        </div>       </div>\n' +
-             //     '                                                                </div>   <div class="collapse-open-bet-item">\n' +
-             //     '                                                                   <h4>2 Тайм</h4>\n' +
-             //     '                                                                    <div class="row-bets-stats">    <div class="column4">\n' +
-             //     '                                                                            <button class="bets-val" data-id="133105" data-parent="17543507" data-options="{&quot;outcome_coef&quot;:3.9,&quot;outcome_id&quot;:1439535342,&quot;outcome_name&quot;:&quot;\u0410\u0440\u0441\u0435\u043d\u0430\u043b \u041a\u0438\u0435\u0432&quot;,&quot;outcome_param&quot;:null,&quot;outcome_perc_stat&quot;:0,&quot;outcome_short_name&quot;:&quot;1&quot;,&quot;outcome_tag&quot;:null,&quot;outcome_tl_header_name&quot;:null,&quot;outcome_tl_left_name&quot;:null,&quot;outcome_type_id&quot;:1,&quot;outcome_visible&quot;:true,&quot;participant_number&quot;:1}" data-current_outcome_id="1439535342" data-players="133105" data-cat="563715563" data-text="Арсенал Киев">\n' +
-             //     '                                                                                <span class="mobile-name">Арсенал Киев</span>\n' +
-             //     '                                                                                <span class="name-b">Арсенал Киев</span>\n' +
-             //     '                                                                                <span class="coefficient-b">3.9</span>\n' +
-             //     '                                                                            </button>\n' +
-             //     '                                                                        \n' +
-             //     '                                                                        </div>    <div class="column4">\n' +
-             //     '                                                                            <button class="bets-val" data-id="133105" data-parent="17543507" data-options="{&quot;outcome_coef&quot;:2.35,&quot;outcome_id&quot;:1439535343,&quot;outcome_name&quot;:&quot;\u041d\u0438\u0447\u044c\u044f&quot;,&quot;outcome_param&quot;:&quot;Draw&quot;,&quot;outcome_perc_stat&quot;:40,&quot;outcome_short_name&quot;:&quot;X&quot;,&quot;outcome_tag&quot;:null,&quot;outcome_tl_header_name&quot;:null,&quot;outcome_tl_left_name&quot;:null,&quot;outcome_type_id&quot;:2,&quot;outcome_visible&quot;:true,&quot;participant_number&quot;:null}" data-current_outcome_id="1439535343" data-players="133105" data-cat="563715563" data-text="Ничья">\n' +
-             //     '                                                                                <span class="mobile-name">Ничья</span>\n' +
-             //     '                                                                                <span class="name-b">Ничья</span>\n' +
-             //     '                                                                                <span class="coefficient-b">2.35</span>\n' +
-             //     '                                                                            </button>\n' +
-             //     '                                                                        \n' +
-             //     '                                                                        </div>    <div class="column4">\n' +
-             //     '                                                                            <button class="bets-val" data-id="133105" data-parent="17543507" data-options="{&quot;outcome_coef&quot;:2.58,&quot;outcome_id&quot;:1439535344,&quot;outcome_name&quot;:&quot;\u0414\u0435\u0441\u043d\u0430 \u0427\u0435\u0440\u043d\u0438\u0433\u043e\u0432&quot;,&quot;outcome_param&quot;:null,&quot;outcome_perc_stat&quot;:60,&quot;outcome_short_name&quot;:&quot;2&quot;,&quot;outcome_tag&quot;:null,&quot;outcome_tl_header_name&quot;:null,&quot;outcome_tl_left_name&quot;:null,&quot;outcome_type_id&quot;:3,&quot;outcome_visible&quot;:true,&quot;participant_number&quot;:2}" data-current_outcome_id="1439535344" data-players="133105" data-cat="563715563" data-text="Десна Чернигов">\n' +
-             //     '                                                                                <span class="mobile-name">Десна Чернигов</span>\n' +
-             //     '                                                                                <span class="name-b">Десна Чернигов</span>\n' +
-             //     '                                                                                <span class="coefficient-b">2.58</span>\n' +
-             //     '                                                                            </button>\n' +
-             //     '                                                                        \n' +
-             //     '                                                                        </div>       </div>\n' +
-             //     '                                                                </div>                       </div>\n' +
-             //     '                                                        </div>')
-
 
 
          });
-
-
-
-
-
-
-
-
-
-
          $('.open_line_center_block').fadeIn(400);
 
 
@@ -356,7 +288,8 @@ var DashboardCategory={
 
         var tabeBody = $('#tab_'+data[0].sport_id);// body tabs
         if(tabeBody.length===0){
-            $('#dashboard_center_block_tab_blocks').append('<div class="tab-block" id="tab_'+data[0].sport_id+'">\n' + '<div class="tab-block-inner">\n' + '</div>\n' + '</div>');
+            $('.tab-block').hide();
+            $('#dashboard_center_block_tab_blocks').append('<div style="display: block;" class="tab-block" id="tab_'+data[0].sport_id+'">\n' + '<div class="tab-block-inner">\n' + '</div>\n' + '</div>');
             tabeBody = $('#tab_'+data[0].sport_id);// body tabs
         }
 
@@ -377,7 +310,6 @@ var DashboardCategory={
         colapsetabInner.children('.tab-collapse-content-inner').html('');
 
         $.each(data[0].data, function( index, value ) {
-            console.log(value);
             mainGameId=value.attributes['main-game-id'];
             fullNamePlayers=value.attributes['team-1-user-locale-lng-name']+ ' - '+value.attributes['team-2-user-locale-lng-name'];
             timeStartMatch=timeConverter(value.attributes['start'])
@@ -400,7 +332,7 @@ var DashboardCategory={
                     eventCooef=valueEv.attributes['odd'];
                     eventId=valueEv.id;
                     colapseLine.append('<div class="team">\n' +
-                        '                                <button class="bet-parent-val" data-id="'+eventId+'" data-parent="'+mainGameId+'" data-options="{&quot;outcome_coef&quot;:3.65,&quot;outcome_id&quot;:1439535219,&quot;outcome_name&quot;:&quot;\u0410\u0440\u0441\u0435\u043d\u0430\u043b \u041a\u0438\u0435\u0432&quot;,&quot;outcome_param&quot;:null,&quot;outcome_perc_stat&quot;:39.98,&quot;outcome_short_name&quot;:&quot;1&quot;,&quot;outcome_tag&quot;:null,&quot;outcome_tl_header_name&quot;:null,&quot;outcome_tl_left_name&quot;:null,&quot;outcome_type_id&quot;:1,&quot;outcome_visible&quot;:true,&quot;participant_number&quot;:1}" data-current_outcome_id="1439535219" data-players="133103" data-cat="563715518" data-text="Арсенал Киев">\n' +
+                        '                                <button class="bet-parent-val" data-id="'+eventId+'" data-parent="'+mainGameId+'"  data-text1="'+fullNamePlayers+'" data-text2="'+eventNameLoop+'"  data-coof="'+eventCooef+'" >\n' +
                         '                                    <div class="title-bet">'+eventNameLoop+'</div>\n' +
                         '                                    <div class="value-bet">'+eventCooef+'</div>\n' +
                         '                                </button></div> ');
@@ -421,6 +353,11 @@ var DashboardCategory={
        gerSports:function () {
         DashboardCategory.sendData(null,{},'/provider/sports');
             console.log('gerSports');
+    },
+
+    getPopularSports:function () {
+        DashboardCategory.sendDataProgressBar(null,{id:131927},'/provider/popularsports');
+        console.log('getPopularSports');
     },
     test:function () {
         console.log(this.csrf)

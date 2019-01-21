@@ -13,7 +13,8 @@ class DashboardcartAsset extends AssetBundle
     ];
 
     public $js = [
-            'js/dashboardcart_bet.min.js'
+          //  'js/dashboardcart_bet.min.js'
+            'js/dashboardcart_bet.js'
         ];
     public $depends = [
         // 'frontend\assets\AppAsset',

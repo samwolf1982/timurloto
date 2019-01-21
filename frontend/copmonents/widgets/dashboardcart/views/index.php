@@ -26,6 +26,8 @@
                    <h4>Пока ничего не выбрано</h4>
                </div>
            </div>
+
+
            <div class="coupon-tabs-wrapper-inner">
                <ul class="coupon-tabs-nav">
                    <li>
@@ -36,10 +38,7 @@
                    </li>
                </ul>
                <div class="coupon-tabs-body">
-
                    <div class="coupon-tab-item active" id="ordinator">
-
-
                        <div class="coupon-tab-content">
                            <ul class="bet-coup-list"></ul>
                            <div class="all-coeficient">
@@ -228,12 +227,15 @@
                    </div>
                </div>
            </div>
+
+
        </div>
    </div>
 
 
 
    <?php  if(0){ ?>
+
        <div class="overlay-sidebar-right"></div>
        <button class="right-sidebar-close"><span class="icon-close2"></span></button>
        <div class="inner-sidebar">

@@ -54,10 +54,19 @@ return [
                 '/'=>'dashboard/index', // убрать  на фронте
                 '/matches'=>'/dashboard/index',
 //                'site/index' =>   'dashboard',
+
+            // корзина
+                '/cart/default/info' => '/cart/default/info',
+                '/cart/element/create' => '/cart/element/create',
+
             // модули удалить default
                 '<module:\w+>/<action:\w+>/<id:(.*?)>' => '<module>/default/<action>/<id>',
                 '<module:\w+>/<action:\w+>/<tourneyId:(.*?)>' => '<module>/default/<action>/<tourneyId>',
                 '<module:\w+>/<action:\w+>' => '<module>/default/<action>',
+
+                //'<module:\w+>/<action:\w+>/<id:(.*?)>' => '<module>/default/<action>/<id>',
+
+
                 ],
         ],
 
@@ -135,6 +144,7 @@ return [
             'class' => 'komer45\balance\Balance'
         ],
 
+
         'cart' => [
             'class' => 'dvizh\cart\Cart',
             'currency' => 'р.', //Валюта
@@ -204,9 +214,11 @@ return [
             'otherRoles' => ['simpleuser'],
             'currencyName' => 'баллов'
         ],
+
         'cart' => [
             'class' => 'dvizh\cart\Module',
         ],
+
         // cтатистка информационные виджеты
         'statistic' => [
             'class' => 'app\modules\statistic\Module',

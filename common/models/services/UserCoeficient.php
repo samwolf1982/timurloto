@@ -16,22 +16,26 @@ class UserCoeficient
     private $cart;
 
     /**
+     * not use cart
      * UserCoeficient constructor.
      * @param $cart
      */
     public function __construct($cart)
     {
-        $this->cart = $cart;
+        $this->cartPost = $cart;
         $this->calulateMaxCoefficient();
     }
 
     private function calulateMaxCoefficient(){
         $coefficient=1;
 //        $this->cart->getElements();
-        foreach ($this->cart->getElements() as $element) {
-            if(!$element->status){
-               $j=  Json::decode( $element->options);
-                $coefficient*=$j['outcome_coef'];
+
+        foreach ($this->cartPost as $element) {
+
+            yii::error($element);
+            if(isset($element['CartElement']['coef'])){
+                if($element['CartElement']['status']=='true')    $coefficient*= $element['CartElement']['coef'];
+
             }
         }
 

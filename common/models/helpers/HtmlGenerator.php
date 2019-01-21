@@ -173,7 +173,7 @@ class HtmlGenerator
     public static function dashboardCountryByGroupFinBlockCenterWidget($data)
     {
 
-        if(empty($data)) return '<div class="tab-blocks" id="dashboard_center_block_tab_blocks"></div>';
+        if(empty($data)) return '<div class="tab-blocks" id="dashboard_center_block_tab_blocks"><div class="progresse_bare"></div></div>';
 
         $res ='
 <div class="tab-blocks" id="dashboard_center_block_tab_blocks">

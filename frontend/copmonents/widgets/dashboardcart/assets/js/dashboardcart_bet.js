@@ -21,17 +21,26 @@ var SmartCart={
         this.csrf = jQuery('meta[name=csrf-token]').attr("content");
         this.csrf_param = jQuery('meta[name=csrf-param]').attr("content");
 
-        $(document).on("click", ".bet-parent-val", function(e) {
-            SmartCart.addToCart(this);
+        // $(document).on("click", ".bet-parent-val", function(e) {
+        //
+        //     SmartCart.addToCart(this);
+        //     e.preventDefault();
+        //     return false;
+        // });
+
+        $(document).on("click", ".bet-parent-val, .bets-val", function(e) {
+
+           SmartCart.addToCartLocalStorage(this);
             e.preventDefault();
             return false;
         });
 
-        $(document).on("click", ".bets-val", function(e) {
-            SmartCart.addToCart(this);
-            e.preventDefault();
-            return false;
-        });
+        // $(document).on("click", ".bets-val", function(e) {
+        //     // SmartCart.addToCart(this);
+        //     SmartCart.addToCartLocalStorage(this);
+        //     e.preventDefault();
+        //     return false;
+        // });
 
 
         // delete
@@ -69,6 +78,14 @@ var SmartCart={
             SmartCart.updatePlaylist($(this).data('value'));
         });
 
+        // delete-all-bets
+        $('.delete-all-bets').on('click',function () {
+            SmartCart.deleteAll();
+
+            return false;
+        });
+
+
         // playlist
         // $('input[type=radio][name=playlistUser]').change(function() {
         //     console.log('playlistUser change val: '+$(this).data('value'));
@@ -77,10 +94,10 @@ var SmartCart={
         $(document).on('change','.bet-coup-info input[type=checkbox]',function (e) {
             console.log('change '+ $(this).attr('id'));
             if ($(this).prop('checked')) {
-                SmartCart.updateCheckboxStatus($(this).attr('id'),1);
+                SmartCart.updateCheckboxStatus($(this).attr('id'),0);
             }
             else {
-                SmartCart.updateCheckboxStatus($(this).attr('id'),0);
+                SmartCart.updateCheckboxStatus($(this).attr('id'),1);
             }
             // e.preventDefault();
             return false;
@@ -107,7 +124,7 @@ var SmartCart={
         console.log('Init SmartCart');
     },
 
-    addToCart: function (el) {
+    addToCart: function (el) {   // not use !
         var data = {};
         data.CartElement = {};
         data.CartElement.model = 'common\\models\\Bets';
@@ -128,6 +145,7 @@ var SmartCart={
             data: data,
             dataType: "json",
             success: function (json) {
+
                 if (json) {
                     SmartCart.getFromCart(); // update cart
 
@@ -138,6 +156,68 @@ var SmartCart={
 
         });
     },
+
+    addToCartLocalStorage: function (el) {
+     var cartLS= JSON.parse ( localStorage.getItem('cartLS'));
+        if(!cartLS){
+            localStorage.setItem('cartLS',JSON.stringify([]));
+            cartLS=JSON.parse(localStorage.getItem( 'cartLS'));
+        }
+        // data-text1="Манчестер Юнайтед - ПСЖ" data-text2="П1" data-coof="3.11"
+        var data = {};
+        data.CartElement = {};
+        // data.CartElement.group_item_id = $(el).data("id").split('-')[0]; // parent id
+      //  data.CartElement.group_item_id = $(el).data("id").split('-')[0]+'_'+$(el).data("id").split('-')[2]; // parent id   // группа фора и тд
+        data.CartElement.group_item_id = $(el).data("id").split('-')[0]; // parent id   // группа фора и тд
+        data.CartElement.item_id = $(el).data("id");
+        data.CartElement.gamersName = $(el).data("text1");
+        data.CartElement.name = $(el).data("text2");
+        data.CartElement.status = true;
+        data.CartElement.coef = $(el).data("coof");
+        if(cartLS.length===0){cartLS.push(data);}else{
+            gatecartLS=true;
+            cartLS.forEach(function (item,i,arr) {
+                if(item.CartElement.group_item_id===data.CartElement.group_item_id){
+                    console.log('check it' + item.CartElement.group_item_id);
+                    arr[i]=data;
+                    gatecartLS=false;
+                    return;
+                }
+            });
+
+            if(gatecartLS===true){       // новый об
+                console.log('Pusdh data' + data.CartElement.group_item_id);
+                cartLS.push(data);
+            }
+
+        }
+        console.log(data);
+        // $.ajax({
+        //     url: "/cart/element/create",
+        //     type: "POST",
+        //     data: data,
+        //     dataType: "json",
+        //     success: function (json) {
+        //
+        //         if (json) {
+        //             SmartCart.getFromCart(); // update cart
+        //
+        //         } else {
+        //             console.log(json);
+        //         }
+        //     }
+        //
+        // });
+
+        localStorage.setItem('cartLS',JSON.stringify(cartLS));
+
+        SmartCart.getFromCart(); // update cart
+
+    },
+
+
+
+
 
     updateStatus: function (status) {
         var data = {};
@@ -158,23 +238,39 @@ var SmartCart={
                 }
             }
         });
+
+
     },
 
     updateCheckboxStatus: function (id,status) {
-        var data = {};
-        data.CartElement = {};
-        data.CartElement.id = id;
-        data.CartElement.status = status;
-        data[this.csrf_param] = this.csrf;
-        $.ajax({
-            url: "/cart/element/update-bet-status",
-            type: "POST",
-            data: data,
-            dataType: "json",
-            success: function (json) {
-                    SmartCart.getFromCart(); // update cart
+        // переход в локалстораge
+        var cartLS= JSON.parse ( localStorage.getItem('cartLS'));
+        cartLS.forEach(function (item,i,arr) {
+            if(item.CartElement.item_id===id){
+                console.log('check it update Staus ' + item.CartElement.item_id);
+                if(item.CartElement.status)arr[i].CartElement.status=false;
+                else arr[i].CartElement.status=true;
+               return;
             }
         });
+        localStorage.setItem('cartLS',JSON.stringify(cartLS));
+
+        // var data = {};
+        // data.CartElement = {};
+        // data.CartElement.id = id;
+        // data.CartElement.status = status;
+        // data[this.csrf_param] = this.csrf;
+        // $.ajax({
+        //     url: "/cart/element/update-bet-status",
+        //     type: "POST",
+        //     data: data,
+        //     dataType: "json",
+        //     success: function (json) {
+        //             SmartCart.getFromCart(); // update cart
+        //     }
+        // });
+
+        SmartCart.getFromCart(); // update cart
     },
     updateCoefficient: function (coefficient) {
         var data = {};
@@ -231,99 +327,10 @@ var SmartCart={
             tottal_coeficient = tottal_coeficient + coeficient;
             // $('#total-coeficient').text(tottal_coeficient);
             SmartCart.renderAdd(id_for_bets,data_parent,name_competition,name_bet,coefficient_bet)
-            // $('.bet-coup-list').append('<li class="'+id_for_bets+'" data-child="'+data_parent+'">' +
-            //     '<div class="bet-coup-info">' +
-            //     '<div class="bet-coup-icon">' +
-            //     ' <input type="checkbox" id="'+id_for_bets+'" checked="checked">' +
-            //     ' <label for="'+id_for_bets+'"></label>' +
-            //     '</div>' +
-            //     '<div class="bet-coup-text">'+name_competition+'</div>' +
-            //     '<button class="delete-item"><span class="icon-close2"></span></button>' +
-            //     '</div>' +
-            //     '<div class="bet-calc-row">' +
-            //     '<div class="title-bet-calc">'+name_bet+'</div>' +
-            //     '<div class="percent-bet-calc">x <span class="perc-for-calc">'+coefficient_bet+'</span></div>' +
-            //     '</div>' +
-            //     '</li>');
+
         }
         SmartCart.reloadDom(el)
-        // var count_items = $('.bet-coup-list li').length;
-        // if(count_items >= 1){
-        //     $('.no-bet-selected-text').fadeOut(400);
-        //     setTimeout(function () {
-        //         $('.coupon-tabs-wrapper-inner').fadeIn(400);
-        //     },410);
-        // } else {
-        //     $('.coupon-tabs-wrapper-inner').fadeOut(400);
-        //     setTimeout(function () {
-        //         $('.no-bet-selected-text').fadeIn(400);
-        //     },410);
-        // }
-        // if(count_items > 1){
-        //     $('.ordinator').removeClass('active');
-        //     $('.express').addClass('active');
-        //     $('.all-coeficient,.delete-block').slideDown(400);
-        // } else {
-        //     $('.ordinator').addClass('active');
-        //     $('.express').removeClass('active');
-        //     $('.all-coeficient,.delete-block').slideUp(400);
-        // }
-        // $('.open-coupon .count-coup').text(count_items);
-        // $(el).parents('.row-collapse').find('.bet-parent-val').removeClass('selected');
-        // $(el).toggleClass('selected');
 
-
-        // var id_for_bets = $(this).attr('data-id');
-        // var data_parent = $(this).parents('.row-collapse-inner').attr('data-parents');
-        // var name_competition = $(this).parents('.row-collapse-inner').find('.info-bet .value-bet').text();
-        // var name_bet = $(this).attr('data-text') + '&nbsp;' + $(this).find('.title-bet').text();
-        // // var name_bet = $(this).attr('data-text');
-        // var coefficient_bet = $(this).find('.value-bet').text();
-        // var coeficient = parseFloat($(this).find('.value-bet').text());
-        // if(!$(this).hasClass('selected')){
-        //     tottal_coeficient = tottal_coeficient + coeficient;
-        //
-        //     // $('#total-coeficient').text(tottal_coeficient);
-        //     $('li[data-child="'+data_parent+'"]').remove();
-        //     $('.bet-coup-list').append('<li class="'+id_for_bets+'" data-child="'+data_parent+'">' +
-        //         '<div class="bet-coup-info">' +
-        //         '<div class="bet-coup-icon">' +
-        //         ' <input type="checkbox" id="'+id_for_bets+'" checked="checked">' +
-        //         ' <label for="'+id_for_bets+'"></label>' +
-        //         '</div>' +
-        //         '<div class="bet-coup-text">'+name_competition+'</div>' +
-        //         '<button class="delete-item"><span class="icon-close2"></span></button>' +
-        //         '</div>' +
-        //         '<div class="bet-calc-row">' +
-        //         '<div class="title-bet-calc">'+name_bet+'</div>' +
-        //         '<div class="percent-bet-calc">x <span class="perc-for-calc">'+coefficient_bet+'</span></div>' +
-        //         '</div>' +
-        //         '</li>');
-        // }
-        // var count_items = $('.bet-coup-list li').length;
-        // if(count_items >= 1){
-        //     $('.no-bet-selected-text').fadeOut(400);
-        //     setTimeout(function () {
-        //         $('.coupon-tabs-wrapper-inner').fadeIn(400);
-        //     },410);
-        // } else {
-        //     $('.coupon-tabs-wrapper-inner').fadeOut(400);
-        //     setTimeout(function () {
-        //         $('.no-bet-selected-text').fadeIn(400);
-        //     },410);
-        // }
-        // if(count_items > 1){
-        //     $('.ordinator').removeClass('active');
-        //     $('.express').addClass('active');
-        //     $('.all-coeficient,.delete-block').slideDown(400);
-        // } else {
-        //     $('.ordinator').addClass('active');
-        //     $('.express').removeClass('active');
-        //     $('.all-coeficient,.delete-block').slideUp(400);
-        // }
-        // $('.open-coupon .count-coup').text(count_items);
-        // $(this).parents('.row-collapse').find('.bet-parent-val').removeClass('selected');
-        // $(this).toggleClass('selected');
 
     },
 
@@ -331,7 +338,8 @@ var SmartCart={
 
         $('li[data-child="'+data_parent+'"]').remove();
         is_checked= '';
-        if(!status_select_bet){
+        console.log(status_select_bet);
+        if(status_select_bet==='true'){
             is_checked= 'checked="checked"';
         }
 
@@ -379,10 +387,18 @@ var SmartCart={
         $(el).toggleClass('selected');
     },
 
+
     getFromCart:function () {
         // /cart/default/info
         var data = {};
         data.CartElement = {};
+        var cartLS= JSON.parse ( localStorage.getItem('cartLS'));
+        if(!cartLS){
+            localStorage.setItem('cartLS',JSON.stringify([]));
+            cartLS=JSON.parse(localStorage.getItem( 'cartLS'));
+        }
+        data.CartElements = cartLS ;
+        // data.CartElements = cartLS ;
         data[this.csrf_param] = this.csrf;
         $.ajax({
             url: "/cart/default/info",
@@ -392,30 +408,56 @@ var SmartCart={
             success: function (json) {
                 local_tottal_coeficient=1;
                 if (json) {
-
+                    //console.log(json);
                     $.each(json.elements, function( index, value ) {
-//                        console.log([value.item_id,value.parent_id,value]);
-                    outcome=    JSON.parse(value.options);
                         console.log(value);
-                        console.log(outcome);
-                        if(!value.status){
-                            local_tottal_coeficient*=outcome.outcome_coef;
+//                        console.log([value.item_id,value.parent_id,value]);
+                       // outcome=    JSON.parse(value.options);
+                        outcome=0;
+                        // console.log(value.CartElement.item_id);
+                        // console.log(outcome);
+                        if(value.CartElement.status==='true'){
+                            local_tottal_coeficient*=value.CartElement.coef;
                         }
+                        // SmartCart.renderAdd(value.item_id,value.parent_id,value.current_market_name+' '+value.result_type_name+' '+outcome.outcome_name,value.gamers_name,outcome.outcome_coef,value.status);
+                        SmartCart.renderAdd(value.CartElement.item_id,value.CartElement.group_item_id, value.CartElement.gamersName,value.CartElement.name,value.CartElement.coef,value.CartElement.status);
+                        SmartCart.reloadDom();
 
-    SmartCart.renderAdd(value.item_id,value.parent_id,value.current_market_name+' '+value.result_type_name+' '+outcome.outcome_name,value.gamers_name,outcome.outcome_coef,value.status);
-    SmartCart.reloadDom();
-
-    $('#total-coeficient').html( Math.round10(local_tottal_coeficient, -2));
+                        $('#total-coeficient').html( Math.round10(local_tottal_coeficient, -2));
                     });
 
 
-        SmartCart.tottal_coeficient=local_tottal_coeficient;
-        SmartCart.currentBalance=json.currentBalance;
-        SmartCart.currentCooeficientDrop=json.currentCooeficientDrop;
-        SmartCart.max_coeficientDrop=json.max_coeficientDrop;
-        SmartCart.recalculateSumBet();
-        SmartCart.recalculateMaybeWin();
-        SmartCart.renderCalculate();
+                    SmartCart.tottal_coeficient=local_tottal_coeficient;
+                    SmartCart.currentBalance=json.currentBalance;
+                    SmartCart.currentCooeficientDrop=json.currentCooeficientDrop;
+                    SmartCart.max_coeficientDrop=json.max_coeficientDrop;
+                    SmartCart.recalculateSumBet();
+                    SmartCart.recalculateMaybeWin();
+                    SmartCart.renderCalculate();
+
+                    //-----------------------------
+//                     $.each(json.elements, function( index, value ) {
+// //                        console.log([value.item_id,value.parent_id,value]);
+//                         outcome=    JSON.parse(value.options);
+//                         console.log(value);
+//                         console.log(outcome);
+//                         if(!value.status){
+//                             local_tottal_coeficient*=outcome.outcome_coef;
+//                         }
+//                         SmartCart.renderAdd(value.item_id,value.parent_id,value.current_market_name+' '+value.result_type_name+' '+outcome.outcome_name,value.gamers_name,outcome.outcome_coef,value.status);
+//                         SmartCart.reloadDom();
+//
+//                         $('#total-coeficient').html( Math.round10(local_tottal_coeficient, -2));
+//                     });
+//
+//
+//                     SmartCart.tottal_coeficient=local_tottal_coeficient;
+//                     SmartCart.currentBalance=json.currentBalance;
+//                     SmartCart.currentCooeficientDrop=json.currentCooeficientDrop;
+//                     SmartCart.max_coeficientDrop=json.max_coeficientDrop;
+//                     SmartCart.recalculateSumBet();
+//                     SmartCart.recalculateMaybeWin();
+//                     SmartCart.renderCalculate();
 
 
 
@@ -427,6 +469,8 @@ var SmartCart={
 
         });
     },
+
+
     recalculateSumBet: function () {
         SmartCart.sumBet=    Math.round10((SmartCart.currentBalance * SmartCart.currentCooeficientDrop / 100), -2)  ;
     },
@@ -457,43 +501,23 @@ var SmartCart={
     },
     deleteSingle:function (el) {
 
-
-
         var id_bet = $(el).parents('li').attr('class');
 
-        var data = {};
-        data['elementId']=id_bet;
-        // data.CartElement = {};
-        // data.CartElement.model = 'common\\models\\Bets';
-        // data.CartElement.item_id = $(el).data("id");
-        // data.CartElement.cat_id = $(el).data("cat");
-        // data.CartElement.players_id = $(el).data("players");
-        // data.CartElement.parent_id= $(el).data("parent");
-        // data.CartElement.count = 1;
-        // data.CartElement.price = 0;
-        // data.CartElement.options = $(el).data("options");
-        // data.CartElement.current_outcome_id = $(el).data("current_outcome_id");
-        data[this.csrf_param] = this.csrf;
-        $.ajax({
-            url: "/cart/element/delete",
-            type: "POST",
-            data: data,
-            dataType: "json",
-            success: function (json) {
-                if (json) {
-                    SmartCart.getFromCart(); // update cart
-
-                } else {
-                    console.log(json);
-                }
+        var cartLS= JSON.parse ( localStorage.getItem('cartLS'));
+        cartLS.forEach(function (item,i,arr) {
+            if(item.CartElement.item_id===id_bet){
+                arr.splice(i,1)
+                return;
             }
-
         });
+        localStorage.setItem('cartLS',JSON.stringify(cartLS));
+
+
+        SmartCart.getFromCart(); // update cart
 
 
 
 
-        console.log(id_bet)
         var count_items = $('.bet-coup-list li').length-1;
         if(count_items >= 1){
             $('.no-bet-selected-text').fadeOut(200);
@@ -519,6 +543,29 @@ var SmartCart={
         $('.bets-val[data-id="'+id_bet+'"]').removeClass('selected');
         $('.bet-parent-val[data-id="'+id_bet+'"]').removeClass('selected');
         $(el).parents('li').remove();
+
+
+
+
+
+    },
+    deleteAll:function () {
+
+        localStorage.removeItem('cartLS');
+        SmartCart.getFromCart(); // update cart
+
+        $('.bet-coup-list li').remove();
+        $('.bet-parent-val,.bets-val').removeClass('selected');
+        $('.ordinator').addClass('active');
+        $('.express').removeClass('active');
+        $('.all-coeficient,.delete-block').slideUp(400);
+        $('.coupon-tabs-wrapper-inner').fadeOut(200);
+        setTimeout(function () {
+            $('.no-bet-selected-text').fadeIn(400);
+        },210);
+
+
+
 
 
     },
@@ -630,8 +677,9 @@ function  addEventForNewDrop() {
     $('input[type=radio][name=playlistPercent]').change(function() {
         console.log('percent change val: '+this.value);
         SmartCart.currentCooeficientDrop=this.value.replace("%", "");
-        SmartCart.updateCoefficient(SmartCart.currentCooeficientDrop);
-        // SmartCart.getFromCart();
+        console.log('SmartCart.currentCooeficientDrop' + SmartCart.currentCooeficientDrop)
+       // SmartCart.updateCoefficient(SmartCart.currentCooeficientDrop);
+         SmartCart.getFromCart();
     });
 }
 

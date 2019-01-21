@@ -112,7 +112,6 @@ use frontend\assets\DashboardAsset;
 
 
                     <div class="dash-col dash-right-col">
-
                         <!--   корзина -->
                         <?= DashboardcartWidget::widget(['userdata' => []]) ?>
 

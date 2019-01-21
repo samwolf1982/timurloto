@@ -74,6 +74,42 @@ class DefaultController extends Controller
     }
 
 
+    /**
+     * popular game center front
+     * step 5   http://localhost35/provider/tourneygame?tourneyId=131927
+     * @return array
+     */
+    public function actionPopularsports($tourneyId=0)
+    {
+
+        if(!empty($_POST['id'])) $tourneyId=$_POST['id']; else $tourneyId=131927;
+        $key="actionPopularsports_{$tourneyId}";
+        $cache=\Yii::$app->cache;
+        $cache->flush();
+        $data = $cache->get($key);
+        if ($data === false) {
+            $dos=new ParserNodeDos();
+            $data= $dos->getTabsTourneyGames($tourneyId);
+            $cache->set($key, $data,$this->cacheLive);
+        }
+        return  [ 'meta'=>['type'=>'popularsports'] ,'data'=>$data];
+
+
+//        if(!empty($_POST['id'])) $tourneyId=$_POST['id'];
+//        $tourneyId=131927;
+//        $key="actionPopularsports_{$tourneyId}";
+//        $cache=\Yii::$app->cache;
+//        //   $cache->flush();
+//        $data = $cache->get($key);
+//        if ($data === false) {
+//            $dos=new ParserNodeDos();
+//            $data= $dos->getTourneyGames($tourneyId);
+//            $cache->set($key, $data,$this->cacheLive);
+//        }
+//        return  [ 'meta'=>['type'=>'games'] ,'data'=>$data];
+    }
+
+
 
     /**
      * step 4  http://localhost35/provider/events?gameId=231729215
@@ -86,6 +122,8 @@ class DefaultController extends Controller
         return  [ 'meta'=>['type'=>'event','count'=>count($data['data']),'id'=>$gameId,'attr'=> $data['attr']] ,'data'=>$data['data']];
 
     }
+
+
 
     /**
      *

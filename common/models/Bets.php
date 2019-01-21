@@ -1,5 +1,6 @@
 <?php
 
+// NOT use !!
 namespace common\models;
 
 use Yii;

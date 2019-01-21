@@ -222,6 +222,21 @@ and also iPads specifically.
   max-width: calc(100% - 255px);
 }
 
+.progresse_bare {
+  background: #d00069;
+  display: block;
+  height: 20px;
+  text-align: center;
+  //transition: width .3s;
+  transition: width 3s linear;
+  width: 0;
+}
+
+.progresse_bare.hide {
+  opacity: 0;
+  transition: opacity 1.3s;
+}
+
 
 
 

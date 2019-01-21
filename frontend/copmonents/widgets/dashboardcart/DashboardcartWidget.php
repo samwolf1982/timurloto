@@ -33,9 +33,7 @@ class DashboardcartWidget extends Widget
         $b= !empty($scope)?$scope->balance:0;
         //Score::find()->where(['user_id' =>$uid])->one()->balance;
         $total_balance  = number_format($b, 0, '', ',');
-
         $cart = yii::$app->cart;
-
         $current_cart=$cart->getCart()->my();
         $currentCooeficientDrop= $current_cart->current_coefficient;
         $currentStatus= $current_cart->status;
@@ -50,7 +48,6 @@ class DashboardcartWidget extends Widget
             }
         }
 
-
         if(empty($cart->playlist_id) && !empty($curent_playlist)){
             $current_cart->playlist_id=$curent_playlist->id;
             $current_cart->save(false);
@@ -60,7 +57,6 @@ class DashboardcartWidget extends Widget
 
         $userCoefficient=new UserCoeficient($cart);
         $max_coeficientDrop=$userCoefficient->getMaxCoeficient();
-
 
         if($max_coeficientDrop < $currentCooeficientDrop){ // перезапись если коофициент не совпадает по процентам. ставим максимально возможный // -controllers/DefaultController.php тоже править
             $currentCooeficientDrop =$max_coeficientDrop;
