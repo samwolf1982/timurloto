@@ -3,6 +3,7 @@
 namespace common\models;
 
 
+use common\models\helpers\ConstantsHelper;
 use common\models\helpers\Initiator;
 use common\models\DTO\CompetitionS3;
 use common\models\DTO\GameS3;
@@ -120,13 +121,16 @@ class ParserNodeDos extends \yii\base\BaseObject
 
         }
 
-
         foreach ($eventsCollector as $item) {
             foreach ($item as $event) {
-                //var_dump($event);
-//                echo $event->attributes->{'market-name'}. '   '.$event->attributes->{'event-name'}. '  cf:  '.$event->attributes->{'odd'}. PHP_EOL;
-                $res[]=['id'=>$event->id,'marketId'=>$event->attributes->{'market-id'},  'marketName'=>$event->attributes->{'market-name'},'eventName'=>$event->attributes->{'event-name'},'cf'=>$event->attributes->{'odd'}];
+//                var_dump($event);
+//                die();
 
+//                echo $event->attributes->{'market-name'}. '   '.$event->attributes->{'event-name'}. '  cf:  '.$event->attributes->{'odd'}. PHP_EOL;
+
+                if(!in_array($event->attributes->{'market-id'},ConstantsHelper::AVELABLE_MAKRETS)) {
+                    $res[] = ['id' => $event->id, 'marketId' => $event->attributes->{'market-id'}, 'marketName' => $event->attributes->{'market-name'}, 'eventName' => $event->attributes->{'event-name'}, 'cf' => $event->attributes->{'odd'}];
+                }
             }
 
 
