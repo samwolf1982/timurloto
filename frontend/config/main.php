@@ -64,6 +64,7 @@ return [
 
                 // авторизация нужно для совм с модулями
                 'user/security/auth'=>'user/security/auth',
+                'user/registration/connect'=>'user/registration/connect',
 
             // модули удалить default мешают для аутентификации через соцсети
                 '<module:\w+>/<action:\w+>/<id:(.*?)>' => '<module>/default/<action>/<id>',
