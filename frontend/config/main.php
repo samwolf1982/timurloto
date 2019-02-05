@@ -171,6 +171,12 @@ return [
                 'User' => 'common\models\overiden\User',
             ],
 
+
+            'enableUnconfirmedLogin' => true,
+            'confirmWithin' => 21600,
+            'cost' => 12,
+            'admins' => ['admin'],
+
 //            'controllerMap' => [
 //                'registration' => [
 //                    'class' => \dektrium\user\controllers\RegistrationController::className(),
