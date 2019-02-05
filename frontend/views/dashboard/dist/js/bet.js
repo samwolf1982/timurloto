@@ -248,7 +248,6 @@ $(document).ready(function () {
             $('.notification-calculate').stop().fadeIn(300).addClass('active_notification');
             console.log('plus-minus-block .plus =')
         }
-
         console.log('plus-minus-block .plus default')
         return false;
     });

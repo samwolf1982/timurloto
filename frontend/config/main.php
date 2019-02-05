@@ -100,9 +100,11 @@ return [
                     'clientId'     => 'APP_ID',
                     'clientSecret' => 'APP_SECRET',
                 ],
+
+
+
                 'google' => [
                     'class'        => 'dektrium\user\clients\Google',
-
                   //own //  'clientId'     => '1011370333812-pb8qcuc01ves6bavav1hciafk6g60cnk.apps.googleusercontent.com',
                     'clientId'     => '602134147548-udkk32mg3v5rvjgtnbla1a1e0u9gve37.apps.googleusercontent.com',
                  //own //    'clientSecret' => 'Lsx7FJfrnPeKqBDltaALWBSS',
@@ -111,7 +113,8 @@ return [
 
 //                    'returnUrl' => 'https://bet.domashka.in.ua/user/auth?authclient=google',
                   // own//  'returnUrl' => 'https://bet.domashka.in.ua/user/security/auth?authclient=google',
-                    'returnUrl' => 'https://lookmybets.com/user/security/auth?authclient=google',
+
+//                    'returnUrl' => 'https://lookmybets.com/user/security/auth?authclient=google',
                 ],
 
                 'vkontakte' => [
