@@ -111,11 +111,11 @@ return [
                     'clientSecret' => 'zEb1M5ojCOmR2D8sF5CGHvZX',
 
 
-                    'returnUrl' => 'https://lookmybets.com/user/auth?authclient=google',
+//                    'returnUrl' => 'https://bet.domashka.in.ua/user/auth?authclient=google',
                   // own//  'returnUrl' => 'https://bet.domashka.in.ua/user/security/auth?authclient=google',
 
                     //??
-                    //'returnUrl' => 'https://lookmybets.com/user/security/auth?authclient=google',
+                    'returnUrl' => 'https://lookmybets.com/user/security/auth?authclient=google',
                 ],
 
                 'vkontakte' => [
