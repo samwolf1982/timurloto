@@ -111,10 +111,11 @@ return [
                     'clientSecret' => 'zEb1M5ojCOmR2D8sF5CGHvZX',
 
 
-//                    'returnUrl' => 'https://bet.domashka.in.ua/user/auth?authclient=google',
+                    'returnUrl' => 'https://lookmybets.com/user/auth?authclient=google',
                   // own//  'returnUrl' => 'https://bet.domashka.in.ua/user/security/auth?authclient=google',
 
-                    'returnUrl' => 'https://lookmybets.com/user/security/auth?authclient=google',
+                    //??
+                    //'returnUrl' => 'https://lookmybets.com/user/security/auth?authclient=google',
                 ],
 
                 'vkontakte' => [
@@ -172,10 +173,10 @@ return [
             ],
 
 
-            'enableUnconfirmedLogin' => true,
-            'confirmWithin' => 21600,
-            'cost' => 12,
-            'admins' => ['admin'],
+//            'enableUnconfirmedLogin' => true,
+//            'confirmWithin' => 21600,
+//            'cost' => 12,
+//            'admins' => ['admin'],
 
 //            'controllerMap' => [
 //                'registration' => [
