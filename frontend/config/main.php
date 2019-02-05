@@ -60,10 +60,10 @@ return [
                 '/cart/element/create' => '/cart/element/create',
 
 
-            // модули удалить default
-//                '<module:\w+>/<action:\w+>/<id:(.*?)>' => '<module>/default/<action>/<id>',
-//                '<module:\w+>/<action:\w+>/<tourneyId:(.*?)>' => '<module>/default/<action>/<tourneyId>',
-//                '<module:\w+>/<action:\w+>' => '<module>/default/<action>',
+            // модули удалить default мешают для аутентификации через соцсети
+                '<module:\w+>/<action:\w+>/<id:(.*?)>' => '<module>/default/<action>/<id>',
+                '<module:\w+>/<action:\w+>/<tourneyId:(.*?)>' => '<module>/default/<action>/<tourneyId>',
+                '<module:\w+>/<action:\w+>' => '<module>/default/<action>',
 
                 //'<module:\w+>/<action:\w+>/<id:(.*?)>' => '<module>/default/<action>/<id>',
 
