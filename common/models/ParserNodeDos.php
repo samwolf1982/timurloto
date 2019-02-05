@@ -125,14 +125,10 @@ class ParserNodeDos extends \yii\base\BaseObject
             foreach ($item as $event) {
 //                var_dump($event);
 //                die();
-
-//                echo $event->attributes->{'market-name'}. '   '.$event->attributes->{'event-name'}. '  cf:  '.$event->attributes->{'odd'}. PHP_EOL;
-
-                if(!in_array($event->attributes->{'market-id'},ConstantsHelper::AVELABLE_MAKRETS)) {
-                  //  $res[] = ['id' => $event->id, 'marketId' => $event->attributes->{'market-id'}, 'marketName' => $event->attributes->{'market-name'}, 'eventName' => $event->attributes->{'event-name'}, 'cf' => $event->attributes->{'odd'}];
+                if(in_array($event->attributes->{'market-id'},ConstantsHelper::AVELABLE_MAKRETS)) {
+                    $res[] = ['id' => $event->id, 'marketId' => $event->attributes->{'market-id'}, 'marketName' => $event->attributes->{'market-name'}, 'eventName' => $event->attributes->{'event-name'}, 'cf' => $event->attributes->{'odd'}];
                 }
 
-                $res[] = ['id' => $event->id, 'marketId' => $event->attributes->{'market-id'}, 'marketName' => $event->attributes->{'market-name'}, 'eventName' => $event->attributes->{'event-name'}, 'cf' => $event->attributes->{'odd'}];
 
             }
 
