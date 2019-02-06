@@ -303,8 +303,8 @@ class WagerManager
             ,
             "user_id"=> $user_id,
             "type"=> "Single",
-//            "stake"=> $total_sum,
-            "stake"=> 150,
+            "stake"=> $total_sum,
+//            "stake"=> 150,
             "option"=> null,
             "ApiKEY"=> "j_zaxscdvfq1w2e3t7",
         ];
