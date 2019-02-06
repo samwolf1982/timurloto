@@ -176,7 +176,7 @@
                                        </div>
                                    </div>
 
-                                   <button class="type-list">
+                                   <button class="type-list" id="statusBetPuPr">
                                        <?php if($currentStatus==ConstantsHelper::STATUS_PUBLIC_BET){   ?>
                                            <span class="show"><i class="icon-open"></i> Открытый</span>
                                            <span class=""><i class="icon-lock"></i> Закрытый</span>

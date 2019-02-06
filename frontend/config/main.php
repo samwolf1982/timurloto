@@ -66,6 +66,12 @@ return [
                 'user/security/auth'=>'user/security/auth',
                 'user/registration/connect'=>'user/registration/connect',
 
+
+                //корзина ставка
+                'wager/default/add'=>'wager/default/add',
+                'cart/element/update-status'=>'cart/element/update-status',
+
+
             // модули удалить default мешают для аутентификации через соцсети
                 '<module:\w+>/<action:\w+>/<id:(.*?)>' => '<module>/default/<action>/<id>',
                 '<module:\w+>/<action:\w+>/<tourneyId:(.*?)>' => '<module>/default/<action>/<tourneyId>',

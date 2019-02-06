@@ -194,9 +194,11 @@ class ParserNodeDos extends \yii\base\BaseObject
 
         }
 
+//        var_dump($gameList2); die();
         $dataResult=[];
         $completitionresult=[];
         foreach ( $completition2 as $item) {
+//            var_dump($item); die();
             $completitionresult[]=new CompetitionS3($gameList2,$item);
         }
 

@@ -8,6 +8,8 @@ $(document).ready(function () {
 
 });
 
+statusBet=localStorage.getItem('statusBet'); // public  private
+if(statusBet === null) {statusBet='public'; localStorage.setItem('statusBet',statusBet);}
 var SmartCart={
     currentCooeficientDrop:1,
     currentBalance:0,
@@ -15,6 +17,7 @@ var SmartCart={
     sumBet:0,
     maybeWin:0,
     max_coeficientDrop:10,
+    statusBet:statusBet, // public  private
     csrf:null,
     csrf_param:null,
     init:function () {
@@ -174,6 +177,8 @@ var SmartCart={
         data.CartElement.name = $(el).data("text2");
         data.CartElement.status = true;
         data.CartElement.coef = $(el).data("coof");
+        data.CartElement.shid = $(el).data("shid");
+        data.CartElement.spid = $(el).data("spid");
         if(cartLS.length===0){cartLS.push(data);}else{
             gatecartLS=true;
             cartLS.forEach(function (item,i,arr) {
@@ -220,24 +225,28 @@ var SmartCart={
 
 
     updateStatus: function (status) {
-        var data = {};
-        data.CartElement = {};
-        data.CartElement.status = status;
-        data[this.csrf_param] = this.csrf;
-        $.ajax({
-            url: "/cart/element/update-status",
-            type: "POST",
-            data: data,
-            dataType: "json",
-            success: function (json) {
-                if (json) {
-                    SmartCart.getFromCart(); // update cart
+        console.log(status)
+        localStorage.setItem('statusBet',status)
+        SmartCart.statusBet= status;
 
-                } else {
-                    console.log(json);
-                }
-            }
-        });
+        // var data = {};
+        // data.CartElement = {};
+        // data.CartElement.status = status;
+        // data[this.csrf_param] = this.csrf;
+        // $.ajax({
+        //     url: "/cart/element/update-status",
+        //     type: "POST",
+        //     data: data,
+        //     dataType: "json",
+        //     success: function (json) {
+        //         if (json) {
+        //             SmartCart.getFromCart(); // update cart
+        //
+        //         } else {
+        //             console.log(json);
+        //         }
+        //     }
+        // });
 
 
     },
@@ -385,7 +394,12 @@ var SmartCart={
         $('.open-coupon .count-coup').text(count_items);
         $(el).parents('.row-collapse').find('.bet-parent-val').removeClass('selected');
         $(el).toggleClass('selected');
+
+
+        // статус обнова
+        if(SmartCart.statusBet==='private')  $("#statusBetPuPr").html('    <span class=""><i class="icon-open"></i> Открытый</span>\n' + '        <span class="show"><i class="icon-lock"></i> Закрытый</span>');
     },
+
 
 
     getFromCart:function () {
@@ -400,6 +414,7 @@ var SmartCart={
         data.CartElements = cartLS ;
         // data.CartElements = cartLS ;
         data[this.csrf_param] = this.csrf;
+        data['currentCooeficientDrop'] = SmartCart.currentCooeficientDrop;
         $.ajax({
             url: "/cart/default/info",
             type: "POST",
@@ -603,10 +618,25 @@ var SmartCart={
 
 
     createBet:function (el) {
-        console.log('createBet');
+        console.log('createBet 78');
+        // var data = {};
+        // data[jQuery("meta[name=csrf-param]").attr("content")]=jQuery("meta[name=csrf-token]").attr("content");
+        // console.log(data);
+
+//--------------
         var data = {};
-        data[jQuery("meta[name=csrf-param]").attr("content")]=jQuery("meta[name=csrf-token]").attr("content");
-        console.log(data);
+        data.CartElement = {};
+        var cartLS= JSON.parse ( localStorage.getItem('cartLS'));
+        if(!cartLS){
+            localStorage.setItem('cartLS',JSON.stringify([]));
+            cartLS=JSON.parse(localStorage.getItem( 'cartLS'));
+        }
+        data.CartElements = cartLS ;
+        // data.CartElements = cartLS ;
+        data[this.csrf_param] = this.csrf;
+        data['currentCooeficientDrop'] = SmartCart.currentCooeficientDrop;
+        data['statusBet'] = SmartCart.statusBet;
+        //-------------
         $.ajax({
             url: "/wager/default/add",
             type: "post",
@@ -614,7 +644,6 @@ var SmartCart={
             dataType: "json",
             beforeSend: function () {
                 $('#ajax-button-confirm').addClass('preloader');
-
             },
             complete: function () {
                 $('#ajax-button-confirm').removeClass('preloader');

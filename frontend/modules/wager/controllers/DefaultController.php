@@ -78,14 +78,25 @@ class DefaultController extends Controller
 
 
 
-        if(WagerManager::preValidate(Yii::$app->cart,Yii::$app->user->identity->getId(),$errorLocalLog)){  //$errorLocalLog по ссылке
+// not use
+        if(WagerManager::preValidate(Yii::$app->request->post(),Yii::$app->user->identity->getId(),$errorLocalLog)){  //$errorLocalLog по ссылке
+            $totalSumCoeficient=0;
+            foreach (Yii::$app->request->post()['CartElements'] as $cE) {
+                $totalSumCoeficient+=$cE['CartElement']['coef']; // возможно нужно умножать проверить
+            }
+            $total_sum =  WagerManager::calculateTotalSumForBet(Yii::$app->user->identity->getId(),$totalSumCoeficient,false); // ручнную сумму еще нужно доделать
+
+           $resp=  WagerManager::makeBet(Yii::$app->user->identity->getId(),Yii::$app->request->post(),$total_sum);
+
+            var_dump($resp);
+            die('Fin oki');
             $current_cart=Yii::$app->cart->getCart()->my();
             $total_sum =  WagerManager::calculateTotalSum(Yii::$app->cart,Yii::$app->user->identity->getId(),$current_cart->coefficient,false); // ручнную сумму еще нужно доделать
             $tdo_Wager_user_info=new WagerInfo(Yii::$app->user->identity->getId(),$current_cart->playlist_id,Yii::$app->request->post('comment'),$total_sum,$current_cart->coefficient,$current_cart->status);
             $vagerManager=new WagerManager(Yii::$app->cart,$tdo_Wager_user_info);
             $vagerManager->add();
 
-         $score_id=Score::find()->where(['user_id' => $tdo_Wager_user_info->getUserId()])->one()->id;
+             $score_id=Score::find()->where(['user_id' => $tdo_Wager_user_info->getUserId()])->one()->id;
             // ставка добавлена  снятие баланса
             $modelTransaction = new Transaction();
             yii::error($total_sum);

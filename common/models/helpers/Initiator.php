@@ -63,6 +63,7 @@ class Initiator extends \yii\base\BaseObject
         return $this->generateUrl();
     }
 
+
     public function getEventsTypeUrl($tourneyId)
     {
         $this->setEventsType($tourneyId);

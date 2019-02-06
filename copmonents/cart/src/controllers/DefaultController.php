@@ -83,7 +83,9 @@ class DefaultController extends \yii\web\Controller
             }
 
 
-            $json['currentCooeficientDrop'] = $current_cart->current_coefficient;
+
+            //$json['currentCooeficientDrop'] = $current_cart->current_coefficient;
+            $json['currentCooeficientDrop'] = Yii::$app->request->post('currentCooeficientDrop');
             $json['max_coeficientDrop'] = $max_coeficientDrop;
 //            $json['full_name_shod'] = $cartModel->current_market_name;
 //            $json['coef'] = $this->getCurrentCooef($cartModel);

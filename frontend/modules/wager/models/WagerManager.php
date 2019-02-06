@@ -4,6 +4,7 @@ use app\modules\statistic\models\PlaylistManager;
 use common\models\DTO\WagerInfo;
 use common\models\Eventsnames;
 use common\models\helpers\OutcomeParser;
+use common\models\helpers\ReaderParams;
 use common\models\Playlist;
 use common\models\Sportcategorynames;
 use common\models\Tournamentsnames;
@@ -186,7 +187,7 @@ class WagerManager
     }
 
 
-    static public function preValidate(Cart $cart,$user_id,&$errorLocalLog){
+    static public function preValidateOldDELETE(Cart $cart,$user_id,&$errorLocalLog){
         // криттические проверки, необычные действия
         $current_cart=$cart->getCart()->my();
             if($cart->getCount()==0 ) { $e='попытка дать ставку на пустую корзину'; $errorLocalLog[]=$e; yii::error([$e]); return false; };
@@ -224,6 +225,144 @@ class WagerManager
 
 
     /**
+     * валидация ставки доступность баланс и тд
+     * @param $post
+     * @param $user_id
+     * @param $errorLocalLog
+     * @return bool
+     */
+    static public function preValidate($post, $user_id, &$errorLocalLog){
+        yii::error($post);
+     //   $post['playlist_id']=1;
+//        var_dump($post['CartElement']); die();
+        // криттические проверки, необычные действия
+
+        if(empty($post) OR empty($post['CartElements'])   ) { $e='попытка дать ставку на пустую корзину'; $errorLocalLog[]=$e; yii::error([$e]); return false; };
+        if(empty($post['statusBet'])   ) { $e='Нету статуса'; $errorLocalLog[]=$e; yii::error([$e]); return false; };
+//        if(empty( $current_cart->playlist_id)){  $e='попытка дать ставку без плейлиста'; $errorLocalLog[]=$e; yii::error([$e]); return false; };
+//        if(empty( $current_cart->coefficient)) { $e='попытка дать ставку без коофициента в корзине'; $errorLocalLog[]=$e; yii::error([$e]); return false; };
+//        if(!empty( $current_cart->coefficient) && $current_cart->coefficient < 1 ) { $e='попытка дать ставку  с коофициентом меньше 1'; $errorLocalLog[]=$e; yii::error([$e]); return false; };
+//        if(!empty( $current_cart->current_coefficient) && $current_cart->coefficient > 10 ) { $e='попытка дать ставку  с коофициентом больше 10'; $errorLocalLog[]=$e; yii::error([$e]); return false; };
+        $b= Score::find()->where(['user_id' => $user_id])->one()->balance;
+        if(empty( $b)) { $e='у пользователя нету баланса'; $errorLocalLog[]=$e; yii::error([]); return false; };
+
+        // проверка на плейлист
+//        $curent_playlist=Playlist::find()->where(['id'=>$current_cart->playlist_id])->one();
+//        if(empty( $curent_playlist)) { $e='у пользователя нету плейлиста'; $errorLocalLog[]=$e; yii::error([$e]); return false; };
+
+
+        // польльзователшьские проверки
+        // достаточно ли на балансе?
+       // $total_sum =  WagerManager::calculateTotalSum($cart,$user_id,$current_cart->coefficient,false); // ручнную сумму еще нужно доделать
+
+        $totalSumCoeficient=0;
+        foreach ($post['CartElements'] as $cE) {
+            $totalSumCoeficient+=$cE['CartElement']['coef']; // возможно нужно умножать проверить
+        }
+
+        if(empty($totalSumCoeficient) or  $totalSumCoeficient <= 1 )  { $e='Нулевой коофициент или меньше 1 ставка не возможна'; $errorLocalLog[]=$e; yii::error([$e]); return false; };
+
+        $total_sum =  WagerManager::calculateTotalSumForBet($user_id,$totalSumCoeficient,false); // ручнную сумму еще нужно доделать
+        if($b < $total_sum ) { $e='у пользователя недостаточно на балансе '+$total_sum .' | '.$b; $errorLocalLog[]=$e; return false;}
+        $total_balance  = number_format($b, 0, '', ',');
+
+        // проход по ставкам и если еще доступные тогда +
+        $gate=true;
+//        foreach ($cart->elements as $element) {
+//            if(!$element->status){ $gate=false; break; }
+//        }
+//        if($gate){  $e='пустая ставка'; $errorLocalLog[]=$e; return false;  }
+
+
+
+
+
+        return true;
+//        if(empty($post)) return false;
+//        if(Playlist::find()->where(['user_id'=>$user_id,])->count() >= Playlist::LIMIT ) return false;
+//        return true;
+    }
+
+
+    /**
+     * созадаме ставку
+     * @param $user_id
+     * @param $post
+     * @param $total_sum
+     */
+    public static function makeBet($user_id, $post, $total_sum)
+    {
+
+        $reader=new ReaderParams($post);
+//        var_dump($reader->getSingleBet());
+//        die();
+
+
+        $betData =[
+            "events"=>$reader->getSingleBet() // arr
+            ,
+            "user_id"=> $user_id,
+            "type"=> "Single",
+            "stake"=> "stake",
+            "option"=> null,
+            "ApiKEY"=> "j_zaxscdvfq1w2e3t7",
+        ];
+
+
+        $url = 'http://confirm.lookmybets.com/bet';
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query( $betData));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        var_dump($response);
+
+        die();
+
+//process $response
+
+
+//        $betData =[
+//        "events"=> [
+//            "market_id"=> "market_id",
+//            "event_id"=> "event_id",
+//            "sport_id"=> "sport_id",
+//            "league_id"=> "117849",
+//            "country_id"=> "4",
+//            "country_code"=> "AU",
+//            "start_result"=> "-",
+//            "game_id"=> "game_id",
+//           // game_short_id: 7004, //need to paste real value or
+//           // game_short_id: 40391, //need to paste real value
+//            "game_short_id" => "shortId", //need to paste real value
+//            "base"=> "base",
+//            "odd" => "c_f",
+//            // val:val,
+//            //    start: 1547369100, //unix timestamp
+//          //  start: 1550001600, //unix timestamp
+//            "start"=> "startTime", //unix timestamp
+//            //  type: "live", //все live
+//            "type"=> "line",
+//            "is_main_game"=> true,
+//            "overtime"=>null
+//        ,],
+//        "user_id"=> "user_id",
+//         "type"=> "Single",
+//        "stake"=> "stake",
+//        "option"=> null,
+//        "ApiKEY"=> "j_zaxscdvfq1w2e3t7",
+//    ];
+        var_dump($betData);
+
+        return 'res malkebet';
+    }
+
+
+
+    /**
+     *  старый код удалить если нету ссылок
      * @param Cart $cart
      * @param $user_id
      * @param $coefficient
@@ -236,6 +375,29 @@ class WagerManager
             $current_cart=$cart->getCart()->my();
             $b= Score::find()->where(['user_id' => $user_id])->one()->balance;
             $percentSum =    $b*$coefficient/100;
+            //$totalSum  = number_format($percentSum, 0, '', ',');
+            $totalSum  = $percentSum;
+        }else{
+            $totalSum=0;
+        }
+
+
+        return $totalSum;
+    }
+
+
+    /**
+     * подсчет  суммы из коофициента  общего
+     * на входе только коофициент для ставки
+     * @param $user_id
+     * @param $coefficientSum
+     * @param bool $manualSum
+     * @return float|int
+     */
+    static public function calculateTotalSumForBet($user_id, $coefficientSum, $manualSum=false){
+        if(!$manualSum){
+            $b= Score::find()->where(['user_id' => $user_id])->one()->balance;
+            $percentSum =    $b*$coefficientSum/100;
             //$totalSum  = number_format($percentSum, 0, '', ',');
             $totalSum  = $percentSum;
         }else{

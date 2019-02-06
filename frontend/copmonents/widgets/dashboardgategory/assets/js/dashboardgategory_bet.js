@@ -324,13 +324,14 @@ var DashboardCategory={
                 '                        </div>');
 
           colapseLine=colapsetabInner.find('.row-collapse-inner[data-parents="'+mainGameId+'"]');
-
                 $.each(value.events['12341'], function( indexEv, valueEv ) {  //value.events['12341'] из маркета одна или вторая команда
                     // colapseLine.append('zzzz '+indexEv)
                     // colapseLine.append(valueEv)
                     eventNameLoop=valueEv.attributes['event-name'];
                     eventCooef=valueEv.attributes['odd'];
                     eventId=valueEv.id;
+                    console.log(valueEv);
+                    spid=valueEv.id;
                     colapseLine.append('<div class="team">\n' +
                         '                                <button class="bet-parent-val" data-id="'+eventId+'" data-parent="'+mainGameId+'"  data-text1="'+fullNamePlayers+'" data-text2="'+eventNameLoop+'"  data-coof="'+eventCooef+'" >\n' +
                         '                                    <div class="title-bet">'+eventNameLoop+'</div>\n' +
