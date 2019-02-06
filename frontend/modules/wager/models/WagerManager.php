@@ -295,6 +295,7 @@ class WagerManager
 
         $reader=new ReaderParams($post);
 //        var_dump($reader->getSingleBet());
+        var_dump($total_sum); die();
 //        die();
 
 
