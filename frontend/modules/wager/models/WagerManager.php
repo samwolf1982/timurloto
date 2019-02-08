@@ -3,6 +3,7 @@ namespace app\modules\wager\models;
 use app\modules\statistic\models\PlaylistManager;
 use common\models\DTO\WagerInfo;
 use common\models\Eventsnames;
+use common\models\helpers\ConstantsHelper;
 use common\models\helpers\OutcomeParser;
 use common\models\helpers\ReaderParams;
 use common\models\Playlist;
@@ -232,11 +233,10 @@ class WagerManager
      * @return bool
      */
     static public function preValidate($post, $user_id, &$errorLocalLog){
-        yii::error($post);
+       // yii::error($post);
      //   $post['playlist_id']=1;
 //        var_dump($post['CartElement']); die();
         // криттические проверки, необычные действия
-
         if(empty($post) OR empty($post['CartElements'])   ) { $e='попытка дать ставку на пустую корзину'; $errorLocalLog[]=$e; yii::error([$e]); return false; };
         if(empty($post['statusBet'])   ) { $e='Нету статуса'; $errorLocalLog[]=$e; yii::error([$e]); return false; };
 //        if(empty( $current_cart->playlist_id)){  $e='попытка дать ставку без плейлиста'; $errorLocalLog[]=$e; yii::error([$e]); return false; };
@@ -266,6 +266,13 @@ class WagerManager
         if($b < $total_sum ) { $e='у пользователя недостаточно на балансе '+$total_sum .' | '.$b; $errorLocalLog[]=$e; return false;}
         $total_balance  = number_format($b, 0, '', ',');
 
+
+
+        //todo1
+        // проверка на соответсвие коофициента к списку процентов currentCooeficientDrop
+
+
+
         // проход по ставкам и если еще доступные тогда +
         $gate=true;
 //        foreach ($cart->elements as $element) {
@@ -293,9 +300,13 @@ class WagerManager
     public static function makeBet($user_id, $post, $total_sum)
     {
 
+
+
         $reader=new ReaderParams($post);
 //        var_dump($reader->getSingleBet());
-        var_dump($total_sum); die();
+//        var_dump($total_sum);
+//        die();
+
 //        die();
 
 
@@ -311,7 +322,8 @@ class WagerManager
         ];
 
 
-        $url = 'http://confirm.lookmybets.com/bet';
+//        $url = 'http://confirm.lookmybets.com/bet';
+        $url = ConstantsHelper::URL_CREATE_BET;
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query( $betData));

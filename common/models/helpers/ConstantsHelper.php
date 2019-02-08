@@ -111,6 +111,9 @@ class ConstantsHelper
     //   const PARSE_BASE_DOCUMENTATION_URL='https://part.upnp.xyz';
 
 
+       const URL_CREATE_BET='http://confirm.lookmybets.com/bet';
+
+
 
 
 

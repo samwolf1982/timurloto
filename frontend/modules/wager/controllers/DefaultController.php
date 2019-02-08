@@ -80,13 +80,11 @@ class DefaultController extends Controller
 
 // not use
         if(WagerManager::preValidate(Yii::$app->request->post(),Yii::$app->user->identity->getId(),$errorLocalLog)){  //$errorLocalLog по ссылке
-            $totalSumCoeficient=0;
-            foreach (Yii::$app->request->post()['CartElements'] as $cE) {
-                $totalSumCoeficient+=$cE['CartElement']['coef']; // возможно нужно умножать проверить
-            }
-            $total_sum =  WagerManager::calculateTotalSumForBet(Yii::$app->user->identity->getId(),$totalSumCoeficient,false); // ручнную сумму еще нужно доделать
 
-           $resp=  WagerManager::makeBet(Yii::$app->user->identity->getId(),Yii::$app->request->post(),$total_sum);
+           // $total_sum =  WagerManager::calculateTotalSumForBet(Yii::$app->user->identity->getId(),$totalSumCoeficient,false); // ручнную сумму еще нужно доделать
+            $total_sum =  WagerManager::calculateTotalSumForBet(Yii::$app->user->identity->getId(),(integer)Yii::$app->request->post('currentCooeficientDrop'),false); // ручнную сумму еще нужно доделать
+            $resp=  WagerManager::makeBet(Yii::$app->user->identity->getId(),Yii::$app->request->post(),$total_sum);
+
 
             var_dump($resp);
             die('Fin oki');
