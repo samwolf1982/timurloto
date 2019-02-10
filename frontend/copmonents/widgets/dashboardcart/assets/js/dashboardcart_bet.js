@@ -20,7 +20,7 @@ var SmartCart={
     statusBet:statusBet, // public  private
     csrf:null,
     csrf_param:null,
-    devStatus:false,
+    devStatus:false, // для разработки
     init:function () {
         this.csrf = jQuery('meta[name=csrf-token]').attr("content");
         this.csrf_param = jQuery('meta[name=csrf-param]').attr("content");

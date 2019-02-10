@@ -78,10 +78,23 @@ class DefaultController extends Controller
 
         if(WagerManager::preValidate(Yii::$app->request->post(),Yii::$app->user->identity->getId(),$errorLocalLog)){  //$errorLocalLog по ссылке
 
-           // $total_sum =  WagerManager::calculateTotalSumForBet(Yii::$app->user->identity->getId(),$totalSumCoeficient,false); // ручнную сумму еще нужно доделать
+
+            // $total_sum =  WagerManager::calculateTotalSumForBet(Yii::$app->user->identity->getId(),$totalSumCoeficient,false); // ручнную сумму еще нужно доделать
             $total_sum =  WagerManager::calculateTotalSumForBet(Yii::$app->user->identity->getId(),(integer)Yii::$app->request->post('currentCooeficientDrop'),false); // ручнную сумму еще нужно доделать
             $result=  WagerManager::makeBet(Yii::$app->user->identity->getId(),Yii::$app->request->post(),$total_sum);
-
+          //  var_dump($result->status); die();
+            if($result->status===1){// снятие баланса подтверждение
+                $score_id = Score::find()->where(['user_id' => Yii::$app->user->identity->getId()])->one()->id;
+                $modelTransaction = new Transaction();
+                $param = ['type' => 'out', 'amount' => abs($total_sum), 'balance_id' => $score_id, 'refill_type' => 'Снятие на ставку: '];
+                $modelTransaction->attributes = $param;
+                if ($modelTransaction->validate()) {
+                    $addTransaction = Yii::$app->balance->addTransaction($modelTransaction->balance_id, $modelTransaction->type, $modelTransaction->amount, $modelTransaction->refill_type);
+                    //   yii::error($addTransaction);
+                } else {
+                     yii::error($modelTransaction->errors);
+                }
+            }
 
             if(0) {  // старый код но еще будет использоваться для баланса
                 $current_cart = Yii::$app->cart->getCart()->my();
