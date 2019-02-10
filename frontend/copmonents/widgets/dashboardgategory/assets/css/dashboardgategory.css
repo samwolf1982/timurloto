@@ -8,3 +8,10 @@
   background: url('/images/loading.gif') center no-repeat #fff;
   text-align: center;
 }
+.preloaderCart {
+  background: url(/images/circular-water-fill-loading-animation.gif) 100% 100% no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  min-height: 25em;
+}

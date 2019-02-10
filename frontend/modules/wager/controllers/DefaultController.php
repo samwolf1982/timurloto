@@ -76,44 +76,41 @@ class DefaultController extends Controller
 //            $addTransaction = Yii::$app->balance->addTransaction($modelTransaction->balance_id, $modelTransaction->type,$modelTransaction->amount, $modelTransaction->refill_type);
 //        }
 
-
-
-// not use
         if(WagerManager::preValidate(Yii::$app->request->post(),Yii::$app->user->identity->getId(),$errorLocalLog)){  //$errorLocalLog по ссылке
 
            // $total_sum =  WagerManager::calculateTotalSumForBet(Yii::$app->user->identity->getId(),$totalSumCoeficient,false); // ручнную сумму еще нужно доделать
             $total_sum =  WagerManager::calculateTotalSumForBet(Yii::$app->user->identity->getId(),(integer)Yii::$app->request->post('currentCooeficientDrop'),false); // ручнную сумму еще нужно доделать
-            $resp=  WagerManager::makeBet(Yii::$app->user->identity->getId(),Yii::$app->request->post(),$total_sum);
+            $result=  WagerManager::makeBet(Yii::$app->user->identity->getId(),Yii::$app->request->post(),$total_sum);
 
 
-            var_dump($resp);
-            die('Fin oki');
-            $current_cart=Yii::$app->cart->getCart()->my();
-            $total_sum =  WagerManager::calculateTotalSum(Yii::$app->cart,Yii::$app->user->identity->getId(),$current_cart->coefficient,false); // ручнную сумму еще нужно доделать
-            $tdo_Wager_user_info=new WagerInfo(Yii::$app->user->identity->getId(),$current_cart->playlist_id,Yii::$app->request->post('comment'),$total_sum,$current_cart->coefficient,$current_cart->status);
-            $vagerManager=new WagerManager(Yii::$app->cart,$tdo_Wager_user_info);
-            $vagerManager->add();
+            if(0) {  // старый код но еще будет использоваться для баланса
+                $current_cart = Yii::$app->cart->getCart()->my();
+                $total_sum = WagerManager::calculateTotalSum(Yii::$app->cart, Yii::$app->user->identity->getId(), $current_cart->coefficient, false); // ручнную сумму еще нужно доделать
+                $tdo_Wager_user_info = new WagerInfo(Yii::$app->user->identity->getId(), $current_cart->playlist_id, Yii::$app->request->post('comment'), $total_sum, $current_cart->coefficient, $current_cart->status);
+                $vagerManager = new WagerManager(Yii::$app->cart, $tdo_Wager_user_info);
+                $vagerManager->add();
 
-             $score_id=Score::find()->where(['user_id' => $tdo_Wager_user_info->getUserId()])->one()->id;
-            // ставка добавлена  снятие баланса
-            $modelTransaction = new Transaction();
-            yii::error($total_sum);
+                $score_id = Score::find()->where(['user_id' => $tdo_Wager_user_info->getUserId()])->one()->id;
+                // ставка добавлена  снятие баланса
+                $modelTransaction = new Transaction();
+                yii::error($total_sum);
 //            'balance_id' => $this->integer(11)->notNull(), 'date' => $this->datetime()->null()->defaultValue(null), 'type' => "ENUM('in', 'out') NOT NULL", 'amount' => $this->decimal(12, 2)->notNull(), 'balance' => $this->decimal(12, 2)->notNull(), 'user_id'=> $this->integer(11)->notNull(), 'refill_type' => $this->string(255)->notNull(), 'canceled' => $this->datetime()->null()->defaultValue(null), 'comment' => $this->string(255)->null()->defaultValue(null),
-           // $param=['type'=>'in','amount'=>(-1*abs($total_sum)),'balance_id'=>$score_id,'refill_type'=>'some refill_type'];
-            $param=['type'=>'out','amount'=>abs($total_sum),'balance_id'=>$score_id,'refill_type'=>'Снятие на ставку: '];
-            $modelTransaction->attributes=$param;
-            if($modelTransaction->validate()){
-                            $addTransaction = Yii::$app->balance->addTransaction($modelTransaction->balance_id, $modelTransaction->type, $modelTransaction->amount, $modelTransaction->refill_type);
-                         //   yii::error($addTransaction);
-            }else{
-                yii::error($modelTransaction->errors);
+                // $param=['type'=>'in','amount'=>(-1*abs($total_sum)),'balance_id'=>$score_id,'refill_type'=>'some refill_type'];
+                $param = ['type' => 'out', 'amount' => abs($total_sum), 'balance_id' => $score_id, 'refill_type' => 'Снятие на ставку: '];
+                $modelTransaction->attributes = $param;
+                if ($modelTransaction->validate()) {
+                    $addTransaction = Yii::$app->balance->addTransaction($modelTransaction->balance_id, $modelTransaction->type, $modelTransaction->amount, $modelTransaction->refill_type);
+                    //   yii::error($addTransaction);
+                } else {
+                    yii::error($modelTransaction->errors);
+                }
             }
-
         }else{
             $result=['status'=>'error','message'=>$errorLocalLog];
         }
-        yii::error($errorLocalLog);
-       return $result;
+
+
+       return    $result;
     }
 
     public function actionViewdetail($id)

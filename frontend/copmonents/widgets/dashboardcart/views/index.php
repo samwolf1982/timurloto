@@ -38,7 +38,9 @@
                    </li>
                </ul>
                <div class="coupon-tabs-body">
+
                    <div class="coupon-tab-item active" id="ordinator">
+
                        <div class="coupon-tab-content">
                            <ul class="bet-coup-list"></ul>
                            <div class="all-coeficient">
@@ -222,7 +224,7 @@
 
                            </div>
                        </div>
-
+                       <div class="preloaderCart" style="display: none;"></div>
 
                    </div>
                </div>
@@ -231,7 +233,6 @@
 
        </div>
    </div>
-
 
 
    <?php  if(0){ ?>

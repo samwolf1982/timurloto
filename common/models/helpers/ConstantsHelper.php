@@ -108,13 +108,16 @@ class ConstantsHelper
     const PARSE_TOURNEY_TYPE_URL_PARTS='?getChampsBySportId/line/%s/ru/j_zaxscdvfq1w2e3r4'; // 2
     const PARSE_GAMES_IN_TOURNEY_URL_PARTS='?lineSport/%s/ru/j_zaxscdvfq1w2e3r4';  // 3 / http://157.230.134.85:8081/lineSport/131927/ru/j_zaxscdvfq1w2e3r4
     const PARSE_EVENT_BY_ID_URL_PARTS='?getGameById/%s/ru/j_zaxscdvfq1w2e3r4';  // 4 / http://157.230.134.85:8081/getGameById/231729215/ru/j_zaxscdvfq1w2e3r4
+
+
     //   const PARSE_BASE_DOCUMENTATION_URL='https://part.upnp.xyz';
 
 
        const URL_CREATE_BET='http://confirm.lookmybets.com/bet';
 
 
-
+    // обновка корзины
+    const PARSE_SINGLE_BET='/?getEventResolveInfo/%s/%s/%s/%s/en/j_zaxscdvfq1w2e3r4';  // http://104.248.229.40/?getEventResolveInfo/233861820/12342/7/-2.5/en/j_zaxscdvfq1w2e3r4
 
 
 

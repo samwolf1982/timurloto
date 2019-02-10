@@ -70,6 +70,7 @@ return [
                 //корзина ставка
                 'wager/default/add'=>'wager/default/add',
                 'cart/element/update-status'=>'cart/element/update-status',
+                'cart/element/update-single'=>'cart/element/update-single',
 
 
             // модули удалить default мешают для аутентификации через соцсети

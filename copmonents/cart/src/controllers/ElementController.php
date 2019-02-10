@@ -1,7 +1,9 @@
 <?php
 namespace dvizh\cart\controllers;
 
+use app\modules\wager\models\WagerManager;
 use common\models\helpers\ConstantsHelper;
+use common\models\helpers\ReaderParams;
 use common\models\services\UserPlaylists;
 use dvizh\cart\Cart;
 use komer45\balance\models\Score;
@@ -198,6 +200,27 @@ class ElementController extends \yii\web\Controller
     }
 
 
+    /**
+     * обновить одиночную ставке
+     * @return string
+     */
+    public function actionUpdateSingle()
+    {
+        $json = ['result' => 'undefined', 'error' => false];
+        $postData = yii::$app->request->post();
+
+
+        $reader=new  ReaderParams($postData);
+    //    $reader->getUrlSingleUpdate();
+        $res =   WagerManager::getSingleBetInfo( $reader->getUrlSingleUpdate());
+//        var_dump($res); die();
+        $json['update_single']= $res;
+        return $this->_cartJson($json);
+
+    }
+
+
+
     public function actionUpdateStatus()
     {
         $json = ['result' => 'undefined', 'error' => false];
@@ -247,6 +270,9 @@ class ElementController extends \yii\web\Controller
 //        $b= Score::find()->where(['user_id' => Yii::$app->user->id])->one()->balance;
         $balance  = number_format($b, 0, '', ',');
         $json['currentBalance'] = $balance;
+
+
+
 
 
         return Json::encode($json);

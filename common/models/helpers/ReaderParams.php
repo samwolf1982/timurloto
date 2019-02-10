@@ -20,10 +20,13 @@ class ReaderParams extends \yii\base\BaseObject
     private function loade()
     {
         $this->bets=[];
-        foreach ($this->post['CartElements'] as $cE) {
+        if(isset($this->post['CartElements'])){
+            foreach ($this->post['CartElements'] as $cE) {
 
-            $this->bets[]=$cE['CartElement'];
+                $this->bets[]=$cE['CartElement'];
+            }
         }
+
     }
 
 
@@ -41,8 +44,13 @@ class ReaderParams extends \yii\base\BaseObject
 
     }
 
+    public function getBetelements()
+    {
+        if(count($this->bets) > 1) return $this->getMultiBet();
+        else  return $this->getSingleBet();
+    }
 
-    public function getSingleBet()
+    private function getSingleBet()
     {
 
        $b = $this->bets[0];
@@ -84,5 +92,92 @@ class ReaderParams extends \yii\base\BaseObject
         return $res;
 
     }
-    
+
+    private function getMultiBet()
+    {
+
+        $res=[];
+        foreach ($this->bets as $bet) {
+            $b = $bet;
+//       var_dump($b['coef']); die();
+            $valueArr=  explode('-',$b['item_id']);
+            // sport_id=valueArr[2]
+            $event_id=$valueArr[1];
+            $market_id=$valueArr[2];
+            $game_id=$valueArr[0];
+            $base=$valueArr[3]; // invariant
+            $dataParser=$this->getInfoAboutGame($game_id);
+
+
+            $res[]=[
+                "market_id"=> $market_id,
+                "event_id"=> $event_id,
+                "sport_id"=> $dataParser->attributes->{'sport-id'},
+                "league_id"=>$dataParser->attributes->{'league-id'} ,
+                "country_id"=>$dataParser->attributes->{'country-id'},
+                "country_code"=>$dataParser->attributes->{'country-code'},
+                "start_result"=> "-",
+                "game_id"=> $game_id,
+                // game_short_id: 7004, //need to paste real value or
+                // game_short_id: 40391, //need to paste real value
+                "game_short_id" =>$dataParser->attributes->{'short-id'} , //need to paste real value
+                "base"=> $base,
+                "odd" => $b['coef'],
+                // val:val,
+                //    start: 1547369100, //unix timestamp
+                //  start: 1550001600, //unix timestamp
+                "start"=> $dataParser->attributes->{'start'}, //unix timestamp
+                //  type: "live", //все live
+                "type"=> "line",
+                "is_main_game"=> true,
+                "overtime"=> $dataParser->attributes->{'overtime'},
+                'full_id'=>$b['item_id']
+                ,];
+
+        }
+
+
+
+        //  var_dump($dataParser->attributes->{'short-id'}); die();
+
+
+
+        return $res;
+
+    }
+
+
+    /**
+     * тип ставки  Single Multiple  or some else для мультиствок нужно доделать
+     * @return string
+     */
+    public function getTypeBet()
+    {
+//        $type = 'Single';
+//        $type = 'Multiple';
+        if(count($this->bets) > 1)   return  'Multiple';
+        else return 'Single';
+
+    }
+
+
+    /**
+     * разбор поста и генерация ссылки для обновы одиночной ствавки
+     * испольуюетя только в обнове корзины
+     * @return string http://104.248.229.40/?getEventResolveInfo/233861820/12342/7/-2.5/en/j_zaxscdvfq1w2e3r4
+     */
+    public function getUrlSingleUpdate()
+    {
+        $urle=ConstantsHelper::PARSE_BASE_URL.ConstantsHelper::PARSE_SINGLE_BET; //     // обновка корзины /?getEventResolveInfo/%s/%s/%s/%s/en/j_zaxscdvfq1w2e3r4';
+                                                                                        // http://104.248.229.40/?getEventResolveInfo/233861820/12342/7/-2.5/en/j_zaxscdvfq1w2e3r4
+       // $this->post['id']='233861820-7-12342--2.5';
+        $ex=explode('-',$this->post['id']);
+        if(stristr($this->post['id'], '--') !== FALSE) { // c минусом    $this->post['id']='233861820-7-12342--2.5';
+            $res= sprintf($urle,$ex[0],$ex[2],$ex[1],'-'.$ex[4]);
+        }else{
+            $res= sprintf($urle,$ex[0],$ex[2],$ex[1],$ex[3]);
+        }
+        return  $res;
+    }
+
 }

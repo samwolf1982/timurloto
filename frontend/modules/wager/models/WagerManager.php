@@ -51,6 +51,7 @@ class WagerManager
 
     }
 
+
     public function add(){
       //  $elements = yii::$app->cart->elements;
 //        yii::error($this);
@@ -188,6 +189,7 @@ class WagerManager
     }
 
 
+
     static public function preValidateOldDELETE(Cart $cart,$user_id,&$errorLocalLog){
         // криттические проверки, необычные действия
         $current_cart=$cart->getCart()->my();
@@ -310,11 +312,35 @@ class WagerManager
 //        die();
 
 
+
+
+
+        if(0){ // single
+            $betData =[
+                "events"=>$reader->getSingleBet() // arr
+                ,
+                "user_id"=> $user_id,
+                "type"=> "Single",
+                "stake"=> $total_sum,
+//            "stake"=> 150,
+                "option"=> null,
+                "ApiKEY"=> "j_zaxscdvfq1w2e3t7",
+            ];
+        }
+
+
+
+
+
+
+        // Multiple
         $betData =[
-            "events"=>$reader->getSingleBet() // arr
+           // "events"=>$reader->getMultiBet() // arr
+            "events"=>$reader->getBetelements() // arr
             ,
             "user_id"=> $user_id,
-            "type"=> "Single",
+           // "type"=> "Multiple",
+            "type"=> $reader->getTypeBet(),
             "stake"=> $total_sum,
 //            "stake"=> 150,
             "option"=> null,
@@ -331,9 +357,70 @@ class WagerManager
         $response = curl_exec($ch);
         curl_close($ch);
 
-        var_dump($response);
 
-        die();
+//        $res=json_decode($response);
+         // var_dump($response); die();
+//
+//        return $response;
+      return  json_decode($response);
+
+//process $response
+
+
+//        $betData =[
+//        "events"=> [
+//            "market_id"=> "market_id",
+//            "event_id"=> "event_id",
+//            "sport_id"=> "sport_id",
+//            "league_id"=> "117849",
+//            "country_id"=> "4",
+//            "country_code"=> "AU",
+//            "start_result"=> "-",
+//            "game_id"=> "game_id",
+//           // game_short_id: 7004, //need to paste real value or
+//           // game_short_id: 40391, //need to paste real value
+//            "game_short_id" => "shortId", //need to paste real value
+//            "base"=> "base",
+//            "odd" => "c_f",
+//            // val:val,
+//            //    start: 1547369100, //unix timestamp
+//          //  start: 1550001600, //unix timestamp
+//            "start"=> "startTime", //unix timestamp
+//            //  type: "live", //все live
+//            "type"=> "line",
+//            "is_main_game"=> true,
+//            "overtime"=>null
+//        ,],
+//        "user_id"=> "user_id",
+//         "type"=> "Single",
+//        "stake"=> "stake",
+//        "option"=> null,
+//        "ApiKEY"=> "j_zaxscdvfq1w2e3t7",
+//    ];
+        var_dump($betData);
+
+        return 'res malkebet';
+    }
+
+
+    /**
+     * значение для одиночной ставки по ид из фронта
+     * @param $url
+     * @return mixed|string
+     */
+    public static function getSingleBetInfo($url)
+    {
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_POST, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($ch);
+        curl_close($ch);
+      //  return $response;
+        return  json_decode($response);
+//        curl_setopt($ch, CURLOPT_POST, 1);
+//        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query( $betData));
+
+
 
 //process $response
 
