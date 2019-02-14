@@ -84,16 +84,24 @@ class DefaultController extends Controller
             $result=  WagerManager::makeBet(Yii::$app->user->identity->getId(),Yii::$app->request->post(),$total_sum);
           //  var_dump($result->status); die();
             if($result->status===1){// снятие баланса подтверждение
+
                 $score_id = Score::find()->where(['user_id' => Yii::$app->user->identity->getId()])->one()->id;
                 $modelTransaction = new Transaction();
                 $param = ['type' => 'out', 'amount' => abs($total_sum), 'balance_id' => $score_id, 'refill_type' => 'Снятие на ставку: '];
                 $modelTransaction->attributes = $param;
                 if ($modelTransaction->validate()) {
                     $addTransaction = Yii::$app->balance->addTransaction($modelTransaction->balance_id, $modelTransaction->type, $modelTransaction->amount, $modelTransaction->refill_type);
+                    // если все ок тогда дублирование ставки   // старый код переделан
+                    $vagerManager = new WagerManager(Yii::$app->cart, $tdo_Wager_user_info);
+                    $vagerManager->add();
+
                     //   yii::error($addTransaction);
                 } else {
                      yii::error($modelTransaction->errors);
                 }
+
+
+
             }
 
             if(0) {  // старый код но еще будет использоваться для баланса

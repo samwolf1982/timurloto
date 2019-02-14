@@ -49,6 +49,7 @@ class WagersInformer extends \yii\base\Widget
 
         $playlists=Playlist::find()->where(['user_id'=>$this->user_id , 'status'=>Playlist::STATUS_ON])->all();
         $wagers = new  WagerStatisticManager($this->user_id ,Yii::$app->request->queryParams);
+
         $wagersModels= $wagers->getAllWagers();
         $paginationPages=$wagers->getPaginationPages();
 

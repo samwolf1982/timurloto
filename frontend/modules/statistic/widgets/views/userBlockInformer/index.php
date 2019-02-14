@@ -24,7 +24,7 @@ $userInfoAccount;
                         <span>уровень</span>
                     </div>
                     <div class="user-money">
-                        <?=$balance?>
+
                         <?=$userInfoAccount->getBalance();?>
                         <span class="currency">betcoins</span>
                     </div>
