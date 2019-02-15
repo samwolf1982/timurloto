@@ -27,10 +27,12 @@ class WagerManager
     private $sum;
     private $select_coef;
     private $is_private;
+    private $wagerInfo;
 
-    public function __construct(  $cart, WagerInfo  $wagerInfo)
+    public function __construct(  $cart_post, WagerInfo  $wagerInfo)
     {
-        $this->cart=$cart;
+
+        $this->cart= $this->genPseudoCart($cart_post);
         $this->user_id=$wagerInfo->getUserId();
         $this->comment=$wagerInfo->getComment();
         $this->sum=$wagerInfo->getSum();
@@ -48,6 +50,24 @@ class WagerManager
         }else{
             $this->playlist_id=$wagerInfo->getPlaylistId();
         }
+
+        $this->wagerInfo=$wagerInfo;
+
+    }
+
+
+    /**
+     * генерация из пост псевдоелементов корзины (от старого кода)
+     * @param $cart
+     */
+    private function genPseudoCart($cart_post)
+    {
+
+        $reader=new ReaderParams($cart_post);
+
+
+        return  $reader->getLocalBetelements() ;
+
 
     }
 
@@ -76,7 +96,7 @@ class WagerManager
         $total_coef=   $this->addWagerElements();
         // обновить коофи и статус и ставка готова
         $wager->coef=$total_coef;
-        $wager->status=Wager::STATUS_OPEN;
+        $wager->status=Wager::STATUS_NEW;
 
 
         $wager->save();
@@ -85,67 +105,99 @@ class WagerManager
     // проход по корзине и добавить елементы.
     private function addWagerElements(){
         $total_coef=1;
-        foreach ($this->cart->elements as $element) {
-            $outcomeCoefficient=OutcomeParser::getCoefficient($element);
-          if($element->status)   continue;
+
+
+
+//        'group_item_id' => '231735495',
+//    'item_id' => '231735495-1-12341-0',
+//    'gamersName' => 'Лион - Барселона',
+//    'name' => 'П1',
+//    'status' => 'true',
+//    'coef' => '4.80',
+        foreach ($this->cart as $i=> $element) {
+            yii::error($element);
+//            var_dump($this->wagerInfo->getResulto($i)); die();
+            $outcomeCoefficient=(float)$element['coef'];
+          //if($element->status)   continue;
           if(empty($outcomeCoefficient) ||  $outcomeCoefficient<=1)continue;
             $total_coef *= $outcomeCoefficient;
-            $this->addWagerElement($element);
-             if(CLEAR_CART){
-                 $element->delete();
-             }
+
+            $this->addWagerElement($element,$this->wagerInfo->getResulto($i));
+//             if(CLEAR_CART){
+//                 $element->delete();
+//             }
              // $element->delete();
          }
          return $total_coef;
     }
 
-    private function addWagerElement($element){
+    private function addWagerElement($element,$ob){
+
+//        var_dump($ob); die();
             $wagerelement= new Wagerelements();
             $wagerelement->wager_id=$this->wager_id;
-            $wagerelement->event_id=  (string) OutcomeParser::getId($element);
-            $wagerelement->outcome_id= (string) $element->item_id;
+           // $wagerelement->event_id=  (string) OutcomeParser::getId($element);
+            $wagerelement->event_id=  (string) $element['item_id'];
+            $wagerelement->outcome_id= (string) '-';
 //            $wagerelement->coef= $element->coof;
-            $wagerelement->coef= OutcomeParser::getCoefficient($element);
+            $wagerelement->coef= $element['coef'];
             $wagerelement->status=Wager::STATUS_NEW;
 //            $wagerelement->name=$element->name_full;
             //$wagerelement->name=sprintf('%s %s %s',$element->current_market_name,$element->result_type_name,$element->gamers_name);
-            $wagerelement->name=OutcomeParser::getName($element);
-
-            $wagerelement->sub_category_id=(string)$element->parent_id;
+            $wagerelement->name=$element['name'];
+             $wagerelement->info_name=   $element['gamersName'];
+            $wagerelement->sub_category_id=(string)'0';
 //            $wagerelement->sub_category_id=(string)$element->category_id;
-            $wagerelement->info_main_cat_name=$element->current_market_name;
+
+            $wagerelement->info_main_cat_name=  $element['mname']; // marketname  фора
 
 //        'current_market_name' => 'current_market_name from json',
 //            'result_type_name' => 'result type name ',
 //            'gamers_name' => 'gamers name',
 // todo сверитьт с предыдущейй верстисее
             //$wagerelement->info_name=   $element->name;
-            $wagerelement->info_name=   $element->result_type_name;
+
 //            $wagerelement->info_name_full=sprintf('%s %s %s',$element->current_market_name,$element->result_type_name,$element->gamers_name);
-            $wagerelement->info_name_full=$element->gamers_name;
+            $wagerelement->info_name_full=$ob->{'team-1-name_ru'} .' - '.$ob->{'team-2-name_ru'} ;
 
 
 //            $wagerelement->info_cat_name=$element->cat_name;
 //            $wagerelement->info_cat_name= $element->result_type_name;
-            $wagerelement->info_cat_name=OutcomeParser::getName($element);;
+            $wagerelement->info_cat_name=$element['name'];
             $wagerelement->created_at=date('Y-m-d H:i:s');
 //        main_cat_name
 //name
 //name_full
 //cat_name
-            $info_about_turnire=$this->searchSportNameCategoryName($element);
+
 //            yii::error($info_about_turnire);
 
 
 //        ['sport_name' => 'Футбол', 'tournament_name' => 'Премьер Лига', 'category_name' => 'Украина', 'event_name' => 'Олимпик Донецк - ФК Львов',]
         // sport_id
-         $wagerelement->sport_name=$info_about_turnire['sport_name'];
-         $wagerelement->country_name=$info_about_turnire['category_name'];
-         $wagerelement->category_name=$info_about_turnire['tournament_name'];
-         $wagerelement->sub_category_name =$info_about_turnire['event_name'];
-         $wagerelement->sport_id =$info_about_turnire['sport_id'];
-         $wagerelement->country_id =$info_about_turnire['country_id'];
-        $wagerelement->category_id =$info_about_turnire['category_id'];
+
+if(0){
+    $info_about_turnire=$this->searchSportNameCategoryName($element);
+
+    $wagerelement->sport_name=$info_about_turnire['sport_name'];
+    $wagerelement->country_name=$info_about_turnire['category_name'];
+    $wagerelement->category_name=$info_about_turnire['tournament_name'];
+    $wagerelement->sub_category_name =$info_about_turnire['event_name'];
+    $wagerelement->sport_id =$info_about_turnire['sport_id'];
+    $wagerelement->country_id =$info_about_turnire['country_id'];
+    $wagerelement->category_id =$info_about_turnire['category_id'];
+}
+
+
+
+         $addINfo=
+         $wagerelement->sport_name=$ob->{'sport-name_ru'};
+         $wagerelement->country_name='a2';
+         $wagerelement->category_name=$ob->{'league-name_ru'};
+         $wagerelement->sub_category_name ='a4';
+         $wagerelement->sport_id =555;
+         $wagerelement->country_id ='a6';
+        $wagerelement->category_id ='a7';
 
 
 
@@ -156,6 +208,15 @@ class WagerManager
         }
     }
 
+    public static function getFullCoeficientByPost($postElements)
+    {
+
+        $coef=1;
+        foreach ($postElements as $item) {
+                 $coef*=  (float) $item['CartElement']['coef'];
+           }
+           return  round( $coef,2);
+    }
     private function searchSportNameCategoryName($element){
 
        // $eventsnames=Eventsnames::find()->where(['event_id'=>$element->category_id])->one();
@@ -360,7 +421,7 @@ class WagerManager
 
 //        $res=json_decode($response);
          // var_dump($response); die();
-//
+
 //        return $response;
       return  json_decode($response);
 

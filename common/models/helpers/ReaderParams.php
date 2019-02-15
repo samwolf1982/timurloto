@@ -44,11 +44,26 @@ class ReaderParams extends \yii\base\BaseObject
 
     }
 
+
+    /**
+     * для ставок из парсер
+     * @return array
+     */
     public function getBetelements()
     {
         if(count($this->bets) > 1) return $this->getMultiBet();
         else  return $this->getSingleBet();
     }
+
+    /**
+     * для ставок локального отображение
+     * @return array
+     */
+    public function getLocalBetelements()
+    {
+         return $this->bets;
+    }
+
 
     private function getSingleBet()
     {

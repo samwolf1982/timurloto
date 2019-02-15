@@ -151,7 +151,20 @@ use yii\widgets\LinkPager;
                                                         <div class="circle-wrapper" data-ptc="3">
                                                             <div class="circle"><canvas width="74" height="74"></canvas></div>
                                                         </div>
-                                                        <div class="avatar-status-bet avatar-status-bet-success"></div>
+
+
+                                                        <?php if($wager->status == Wager::STATUS_NEW){ ?>
+                                                            <div class="avatar-status-bet avatar-status-bet-create"></div>
+                                                        <?php  }elseif($wager->status == Wager::STATUS_ENTERED){ ?>
+                                                            <div class="avatar-status-bet avatar-status-bet-success"></div>
+                                                        <?php  }elseif ($wager->status == Wager::STATUS_NOT_ENTERD){ ?>
+                                                            <div class="avatar-status-bet avatar-status-bet-cancel"></div>
+                                                        <?php }elseif ($wager->status == Wager::STATUS_RETURN_BET){ ?>
+                                                            <div class="avatar-status-bet avatar-status-bet-returno"></div>
+                                                        <?php } ?>
+
+
+
                                                     </div>
 
 

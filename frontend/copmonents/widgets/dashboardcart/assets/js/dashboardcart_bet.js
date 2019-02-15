@@ -176,6 +176,7 @@ var SmartCart={
         data.CartElement.item_id = $(el).data("id");
         data.CartElement.gamersName = $(el).data("text1");
         data.CartElement.name = $(el).data("text2");
+        data.CartElement.mname = $(el).data("text3");
         data.CartElement.status = true;
         data.CartElement.coef = $(el).data("coof");
         data.CartElement.shid = $(el).data("shid");

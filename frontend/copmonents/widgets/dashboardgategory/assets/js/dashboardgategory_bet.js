@@ -236,7 +236,7 @@ var DashboardCategory={
                 //  dParent=eldIn.id.split('-')[0]  + '_'+eldIn.id.split('-')[2];  // группа фора и тд
                   dParent=eldIn.id.split('-')[0];  // группа фора и тд
                  rowbetsstats.append( '<div class="column4">\n' +
-                     '<button class="bets-val" data-id="'+eldIn.id+'" data-parent="'+dParent+'"  data-text1="'+fullgamename+'" data-text2="'+eldIn.eventName+'" data-coof="'+eldIn.cf+'">\n' +
+                     '<button class="bets-val" data-id="'+eldIn.id+'" data-parent="'+dParent+'"  data-text1="'+fullgamename+'" data-text2="'+eldIn.eventName+'"  data-text3="'+eldIn.marketName+'"  data-coof="'+eldIn.cf+'">\n' +
                      '<span class="mobile-name">'+eldIn.eventName+'</span>\n' +
                      '<span class="name-b">'+eldIn.eventName+'</span>\n' +
                      '<span class="coefficient-b">'+eldIn.cf+'</span>\n' +
@@ -329,11 +329,12 @@ var DashboardCategory={
                     // colapseLine.append(valueEv)
                     eventNameLoop=valueEv.attributes['event-name'];
                     eventCooef=valueEv.attributes['odd'];
+                    mName=valueEv.attributes['market-name'];
                     eventId=valueEv.id;
                     console.log(valueEv);
                     spid=valueEv.id;
                     colapseLine.append('<div class="team">\n' +
-                        '                                <button class="bet-parent-val" data-id="'+eventId+'" data-parent="'+mainGameId+'"  data-text1="'+fullNamePlayers+'" data-text2="'+eventNameLoop+'"  data-coof="'+eventCooef+'" >\n' +
+                        '                                <button class="bet-parent-val" data-id="'+eventId+'" data-parent="'+mainGameId+'"  data-text1="'+fullNamePlayers+'" data-text2="'+eventNameLoop+'" data-text3="'+mName+'"  data-coof="'+eventCooef+'" >\n' +
                         '                                    <div class="title-bet">'+eventNameLoop+'</div>\n' +
                         '                                    <div class="value-bet">'+eventCooef+'</div>\n' +
                         '                                </button></div> ');

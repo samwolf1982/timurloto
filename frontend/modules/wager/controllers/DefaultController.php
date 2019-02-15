@@ -82,7 +82,8 @@ class DefaultController extends Controller
             // $total_sum =  WagerManager::calculateTotalSumForBet(Yii::$app->user->identity->getId(),$totalSumCoeficient,false); // ручнную сумму еще нужно доделать
             $total_sum =  WagerManager::calculateTotalSumForBet(Yii::$app->user->identity->getId(),(integer)Yii::$app->request->post('currentCooeficientDrop'),false); // ручнную сумму еще нужно доделать
             $result=  WagerManager::makeBet(Yii::$app->user->identity->getId(),Yii::$app->request->post(),$total_sum);
-          //  var_dump($result->status); die();
+//            var_dump($result->data[0]); die();
+//            var_dump($result); die();
             if($result->status===1){// снятие баланса подтверждение
 
                 $score_id = Score::find()->where(['user_id' => Yii::$app->user->identity->getId()])->one()->id;
@@ -91,9 +92,15 @@ class DefaultController extends Controller
                 $modelTransaction->attributes = $param;
                 if ($modelTransaction->validate()) {
                     $addTransaction = Yii::$app->balance->addTransaction($modelTransaction->balance_id, $modelTransaction->type, $modelTransaction->amount, $modelTransaction->refill_type);
-                    // если все ок тогда дублирование ставки   // старый код переделан
-                    $vagerManager = new WagerManager(Yii::$app->cart, $tdo_Wager_user_info);
+                    // если все ок тогда дублирование ставки   // старый код переделан -- start
+                    $playlist_id=Yii::$app->request->post('playlist_id');
+                    $coefficient= WagerManager::getFullCoeficientByPost(Yii::$app->request->post('CartElements'));;
+                    $coefficient=Yii::$app->request->post('currentCooeficientDrop');
+                    $open_close=  Yii::$app->request->post('statusBet')== 'private'? true :  false;
+                    $tdo_Wager_user_info = new WagerInfo(Yii::$app->user->identity->getId(), $playlist_id, Yii::$app->request->post('comment'), $total_sum, $coefficient, $open_close,$result->data);
+                    $vagerManager = new WagerManager(Yii::$app->request->post(), $tdo_Wager_user_info);
                     $vagerManager->add();
+                    // если все ок тогда дублирование ставки   // старый код переделан -- end
 
                     //   yii::error($addTransaction);
                 } else {

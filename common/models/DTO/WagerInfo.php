@@ -13,8 +13,20 @@ class WagerInfo
     private $sum;
     private $select_coef;
     private $is_private;
+    private $result;
 
-  public function __construct($user_id,$playlist_id,$comment,$sum,$select_coef,$is_private)
+
+    /**
+     * WagerInfo constructor.
+     * @param $user_id
+     * @param $playlist_id
+     * @param $comment
+     * @param $sum
+     * @param $select_coef
+     * @param $is_private
+     * @param $resulto     // результат из парстера массив индекс совападает с индексом - корзины
+     */
+    public function __construct($user_id, $playlist_id, $comment, $sum, $select_coef, $is_private, $resulto=[])
   {
       $this->user_id=$user_id;
       $this->playlist_id=$playlist_id;
@@ -27,8 +39,39 @@ class WagerInfo
           $this->is_private=ConstantsHelper::STATUS_PUBLIC_BET;
       }
 
+//   [] <b>object</b>(<i>stdClass</i>)[<i>188</i>]
+//      <i>public</i> 'sport-name_ru' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Футбол'</font> <i>(length=12)</i>
+//      <i>public</i> 'league-name_ru' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Лига Чемпионов УЕФА'</font> <i>(length=36)</i>
+//      <i>public</i> 'team-1-name_ru' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Атлетико Мадрид'</font> <i>(length=29)</i>
+//      <i>public</i> 'team-2-name_ru' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Ювентус'</font> <i>(length=14)</i>
+//      <i>public</i> 'country-name_ru' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Европа'</font> <i>(length=12)</i>
+//      <i>public</i> 'market-name_ru' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'1x2'</font> <i>(length=3)</i>
+//      <i>public</i> 'event-name_ru' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'П2'</font> <i>(length=3)</i>
+//      <i>public</i> 'additional_game_name_ru' <font color='#888a85'>=&gt;</font> <font color='#3465a4'>null</font>
+//      <i>public</i> 'sport-name_en' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Football'</font> <i>(length=8)</i>
+//      <i>public</i> 'league-name_en' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'UEFA Champions League'</font> <i>(length=21)</i>
+//      <i>public</i> 'team-1-name_en' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Atletico Madrid'</font> <i>(length=15)</i>
+//      <i>public</i> 'team-2-name_en' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Juventus'</font> <i>(length=8)</i>
+//      <i>public</i> 'country-name_en' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Europe'</font> <i>(length=6)</i>
+//      <i>public</i> 'market-name_en' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'1x2  '</font> <i>(length=5)</i>
+//      <i>public</i> 'event-name_en' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'W Juventus'</font> <i>(length=10)</i>
+//      <i>public</i> 'additional_game_name_en' <font color='#888a85'>=&gt;</font> <font color='#3465a4'>null</font>
+//      <i>public</i> 'odd' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'2.80'</font> <i>(length=4)</i>
+//      <i>public</i> 'status' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'success'</font> <i>(length=7)</i>
+
+      $this->result=$resulto;
+
   }
 
+    /**
+     * результат из ответа из подтверждения ставки
+     * @param $i
+     */
+    public function getResulto($i)
+    {
+         if(isset($this->result[$i])) return $this->result[$i];
+         return ['empty resulto'];
+    }
 
     /**
      * @return mixed
