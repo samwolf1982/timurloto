@@ -73,6 +73,11 @@ return [
                 'cart/element/update-single'=>'cart/element/update-single',
 
 
+                // переписки запросы
+                'account/default/chart'=>'account/default/chart',
+
+
+
             // модули удалить default мешают для аутентификации через соцсети
                 '<module:\w+>/<action:\w+>/<id:(.*?)>' => '<module>/default/<action>/<id>',
                 '<module:\w+>/<action:\w+>/<tourneyId:(.*?)>' => '<module>/default/<action>/<tourneyId>',
