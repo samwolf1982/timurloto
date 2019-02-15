@@ -24,6 +24,7 @@ class Wager extends \yii\db\ActiveRecord
 {
 
 
+
 //(общее) Статут 0 - закрыто, 1-открыто, 2-истекла 3-блокировано, 4-зайшла 5 не зайшла
     const  STATUS_CREATE=-1;
     const  STATUS_NEW=0;
