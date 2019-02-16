@@ -99,7 +99,7 @@ class DefaultController extends Controller
                     $open_close=  Yii::$app->request->post('statusBet')== 'private'? true :  false;
                     $tdo_Wager_user_info = new WagerInfo(Yii::$app->user->identity->getId(), $playlist_id, Yii::$app->request->post('comment'), $total_sum, $coefficient, $open_close,$result->data);
                     $vagerManager = new WagerManager(Yii::$app->request->post(), $tdo_Wager_user_info);
-                    $vagerManager->add();
+                    $vagerManager->add($result->bid);
                     // если все ок тогда дублирование ставки   // старый код переделан -- end
 
                     //   yii::error($addTransaction);
