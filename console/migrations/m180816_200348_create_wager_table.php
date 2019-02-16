@@ -18,6 +18,7 @@ class m180816_200348_create_wager_table extends Migration
             'id' => $this->primaryKey(),
             'user_id' => $this->integer()->notNull()->comment("user id "),
             'playlist_id' => $this->integer()->null()->comment("playlist id  может и не быть плейслисты создвются в кабинете или в форме"),
+            'bid' => $this->integer()->null()->comment("Значение из сonfirm  ид ставки НЕ события"),
             'total' => $this->money()->notNull()->comment("сумма общая"),
             'coef' => $this->float()->notNull()->comment("Коофициент общий  висчитивать из wagerelements - coef+coef+coef..."),
             'select_coef' => $this->float()->notNull()->comment("Коофищиент выбраный из дропа"),

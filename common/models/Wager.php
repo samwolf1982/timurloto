@@ -95,8 +95,8 @@ class Wager extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'total', 'coef', 'status','select_coef'], 'required'],
-            [['user_id', 'playlist_id', 'status','is_private'], 'integer'],
+            [['user_id', 'total', 'coef', 'status','select_coef','bid'], 'required'],
+            [['user_id', 'playlist_id', 'status','is_private','bid'], 'integer'],
             [['total', 'coef','select_coef'], 'number'],
             [['comment'], 'string'],
             [['created_at'], 'safe'],
@@ -120,6 +120,8 @@ class Wager extends \yii\db\ActiveRecord
             'status' => '(общее) Только что создана пустая -1 Статут 0 - закрыто, 1-открыто, 2-истекла 3-блокировано, 4-зайшла 5 не зайшла',
             'created_at' => 'Created At',
             'is_private' => 'is_private 0 нет 1 да',
+
+            'bid'=>'Значение из сonfirm  ид ставки НЕ события'
         ];
     }
 

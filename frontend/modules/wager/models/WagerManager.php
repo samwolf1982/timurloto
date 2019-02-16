@@ -72,7 +72,7 @@ class WagerManager
     }
 
 
-    public function add(){
+    public function add($bid=0){
       //  $elements = yii::$app->cart->elements;
 //        yii::error($this);
         $wager=new Wager();
@@ -83,6 +83,7 @@ class WagerManager
         $wager->comment= $this->comment;
         $wager->created_at=date('Y-m-d H:i:s');
         $wager->coef=0;
+        $wager->bid=$bid;
         $wager->is_private=$this->is_private;
         $wager->select_coef=$this->select_coef;
 
