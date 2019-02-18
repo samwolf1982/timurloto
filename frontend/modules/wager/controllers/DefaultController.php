@@ -107,11 +107,10 @@ class DefaultController extends Controller
 //              if ($statusName === 'win' || $statusName === 'return') { STATUS_NOT_ENTERD STATUS_NOT_ENTERD STATUS_RETURN_BET
 
 
-
               $postStatus=Yii::$app->request->post('statusName');
-                  if($postStatus=='win') $newStatus=Wager::STATUS_ENTERED;
-                  elseif ($postStatus=='return') $newStatus=Wager::STATUS_RETURN_BET;
-                  elseif ($postStatus=='lost') $newStatus=Wager::STATUS_NOT_ENTERD;
+                  if($postStatus=='win') $newStatus=Wager::STATUS_ENTERED;  //6
+                  elseif ($postStatus=='return') $newStatus=Wager::STATUS_RETURN_BET; // 10
+                  elseif ($postStatus=='lost') $newStatus=Wager::STATUS_NOT_ENTERD; // 7
 
                   $wager->status=$newStatus;
 
@@ -122,8 +121,27 @@ class DefaultController extends Controller
                       $testVal=15;
                         Yii::error($wager->errors);
                   }
-              $wager->save(false);
 
+                  // добави ть баланс WIN
+                  if($wager->status == Wager::STATUS_ENTERED){
+                      $score_id = Score::find()->where(['user_id' => $user_id])->one()->id;
+                      $modelTransaction = new Transaction();
+                      $total_sum=$wager->total*$wager->coef;
+                      $param = ['type' => 'in', 'amount' => abs($total_sum), 'balance_id' => $score_id, 'refill_type' => 'Выигрыш: '.$wager->id];
+                      $modelTransaction->attributes = $param;
+                      if ($modelTransaction->validate()) {
+                          $addTransaction = Yii::$app->balance->addTransaction($modelTransaction->balance_id, $modelTransaction->type, $modelTransaction->amount, $modelTransaction->refill_type);
+                      }
+                  }elseif ($wager->status == Wager::STATUS_RETURN_BET){ // возврат
+                      $score_id = Score::find()->where(['user_id' => $user_id])->one()->id;
+                      $modelTransaction = new Transaction();
+                      $total_sum=$wager->total;
+                      $param = ['type' => 'in', 'amount' => abs($total_sum), 'balance_id' => $score_id, 'refill_type' => 'Возврат: '.$wager->id];
+                      $modelTransaction->attributes = $param;
+                      if ($modelTransaction->validate()) {
+                          $addTransaction = Yii::$app->balance->addTransaction($modelTransaction->balance_id, $modelTransaction->type, $modelTransaction->amount, $modelTransaction->refill_type);
+                      }
+                  }
 
 
 
