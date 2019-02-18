@@ -74,7 +74,7 @@ class DefaultController extends Controller
         $bet= Yii::$app->request->post('bet');
         $bet_id=Yii::$app->request->post('bet_id');
         $user_id=Yii::$app->request->post('user_id');
-         Yii::error( $bet);
+         Yii::error( ['bet'=>$bet] );
          Yii::error(  $bet_id);
          Yii::error(  $user_id);
 
@@ -110,8 +110,10 @@ class DefaultController extends Controller
 
                   $wager->status=$newStatus;
                   $wager->save(false);
+              Yii::error([['user_id' => $user_id,'bid'=>$bet_id,'nowager'=>0]]);
+
           }else{
-              Yii::error([['user_id' => $bet['user_id'],'bid'=>$bet['id'],'nowager'=>1]]);
+              Yii::error([['user_id' => $user_id,'bid'=>$bet_id,'nowager'=>1]]);
           }
 
         }
