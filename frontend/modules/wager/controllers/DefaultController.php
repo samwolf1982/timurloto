@@ -70,6 +70,17 @@ class DefaultController extends Controller
 
 
          Yii::error(  Yii::$app->request->post());
+
+
+        $log =
+            Yii::$app->request->post();
+
+
+        $file = fopen(__DIR__  . "/bets_log.txt", "a+");
+        $log = json_encode($log) .", \n";
+        fwrite($file, $log);
+        fclose($file);
+
          $typeName=Yii::$app->request->post('typeName'); // Single   Multiple
 
         // обработчик для single
