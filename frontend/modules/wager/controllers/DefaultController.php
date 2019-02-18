@@ -111,7 +111,7 @@ class DefaultController extends Controller
               $postStatus=Yii::$app->request->post('statusName');
                   if($postStatus=='win') $newStatus=Wager::STATUS_ENTERED;
                   elseif ($postStatus=='return') $newStatus=Wager::STATUS_RETURN_BET;
-                  elseif ($postStatus=='lose') $newStatus=Wager::STATUS_NOT_ENTERD;
+                  elseif ($postStatus=='lost') $newStatus=Wager::STATUS_NOT_ENTERD;
 
                   $wager->status=$newStatus;
 
