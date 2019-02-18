@@ -125,6 +125,7 @@ class DefaultController extends Controller
 
 
 
+
               Yii::error(['user_id' => $user_id,'bid'=>$bet_id,'nowager'=>0,'status'=>$wager->status]);
 
           }else{
