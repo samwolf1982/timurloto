@@ -68,6 +68,10 @@ class DefaultController extends Controller
     {
 
 
+         Yii::error(  Yii::$app->request->post());
+
+
+
         return ['s'=>456];
         $result=[];
         $errorLocalLog=[]; // LOg ошыбок
