@@ -74,12 +74,14 @@ class DefaultController extends Controller
 
         $log =
             Yii::$app->request->post();
+//        {"bet_id":"1","user_id":"44","statusName":"lost"},
+//        {"bet_id":"2","user_id":"44","statusName":"win"},
+//        {"bet_id":"3","user_id":"44","statusName":"lost"},
 
-
-        $file = fopen(__DIR__  . "/bets_log.txt", "a+");
-        $log = json_encode($log) .", \n";
-        fwrite($file, $log);
-        fclose($file);
+//        $file = fopen(__DIR__  . "/bets_log.txt", "a+");
+//        $log = json_encode($log) .", \n";
+//        fwrite($file, $log);
+//        fclose($file);
 
          $typeName=Yii::$app->request->post('typeName'); // Single   Multiple
 
