@@ -75,7 +75,10 @@ class DefaultController extends Controller
         // обработчик для single
         if($typeName=='Single'){
           $bet= Yii::$app->request->post('bet');
-          $wager=Wager::find()->where(['user_id' => $bet['user_id'],'bid'=>$bet['id']])->one();
+          $bet_id=Yii::$app->request->post('$bet_id');
+          $user_id=Yii::$app->request->post('user_id');
+
+          $wager=Wager::find()->where(['user_id' =>$user_id,'bid'=>$bet_id])->one();
           if($wager){
 
               $newStatus=-11;
