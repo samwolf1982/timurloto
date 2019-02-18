@@ -69,7 +69,14 @@ class DefaultController extends Controller
     {
 
 
-         Yii::error(  Yii::$app->request->post());
+//         Yii::error(  Yii::$app->request->post());
+         Yii::error(  Yii::$app->request->post('typeName'));
+        $bet= Yii::$app->request->post('bet');
+        $bet_id=Yii::$app->request->post('bet_id');
+        $user_id=Yii::$app->request->post('user_id');
+         Yii::error( $bet);
+         Yii::error(  $bet_id);
+         Yii::error(  $user_id);
 
 
         $log =
@@ -88,7 +95,7 @@ class DefaultController extends Controller
         // обработчик для single
         if($typeName=='Single'){
           $bet= Yii::$app->request->post('bet');
-          $bet_id=Yii::$app->request->post('$bet_id');
+          $bet_id=Yii::$app->request->post('bet_id');
           $user_id=Yii::$app->request->post('user_id');
 
           $wager=Wager::find()->where(['user_id' =>$user_id,'bid'=>$bet_id])->one();
