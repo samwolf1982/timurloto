@@ -130,7 +130,7 @@ class DefaultController extends Controller
         }
 
 
-        return ['s'=>456];
+        return ['s'=>456,'errors'=>$wager->errors];
         $result=[];
         $errorLocalLog=[]; // LOg ошыбок
         // add balanse ONLY DEV
