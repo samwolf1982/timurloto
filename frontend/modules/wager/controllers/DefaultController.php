@@ -135,7 +135,7 @@ class DefaultController extends Controller
 
 
 
-        return ['s'=>456,'errors'=>$wager->errors,'testVal'=>$testVal=11,'typeName'=>$typeName];
+        return ['s'=>456,'errors'=>$wager->errors,'testVal'=>$testVal,'typeName'=>$typeName];
         $result=[];
         $errorLocalLog=[]; // LOg ошыбок
         // add balanse ONLY DEV
