@@ -92,6 +92,7 @@ class DefaultController extends Controller
 
          $typeName=Yii::$app->request->post('typeName'); // Single   Multiple
 
+        $testVal=11;
         // обработчик для single
         if($typeName=='Single'){
           $bet= Yii::$app->request->post('bet');
@@ -99,8 +100,9 @@ class DefaultController extends Controller
           $user_id=Yii::$app->request->post('user_id');
 
           $wager=Wager::find()->where(['user_id' =>$user_id,'bid'=>$bet_id])->one();
+            $testVal=12;
           if($wager){
-
+              $testVal=13;
               $newStatus=-11;
 //              if ($statusName === 'win' || $statusName === 'return') {
               $postStatus=Yii::$app->request->post('statusName');
@@ -111,8 +113,10 @@ class DefaultController extends Controller
                   $wager->status=$newStatus;
 
                   if($wager->validate()){
+                      $testVal=14;
                       $wager->save(false);
                   }else{
+                      $testVal=15;
                         Yii::error($wager->errors);
                   }
               $wager->save(false);
@@ -130,7 +134,8 @@ class DefaultController extends Controller
         }
 
 
-        return ['s'=>456,'errors'=>$wager->errors];
+
+        return ['s'=>456,'errors'=>$wager->errors,'testVal'=>$testVal=11];
         $result=[];
         $errorLocalLog=[]; // LOg ошыбок
         // add balanse ONLY DEV
