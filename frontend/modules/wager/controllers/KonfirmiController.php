@@ -1,7 +1,7 @@
 <?php
 
 namespace app\modules\wager\controllers;
-
+// NOT USE DELETE
 use app\modules\wager\models\WagerManager;
 use common\models\DTO\WagerInfo;
 use common\models\Playlist;
@@ -17,41 +17,11 @@ use yii\web\Response;
 /**
  * Default controller for the `wager` module
  */
-class DefaultController extends Controller
+class KonfirmiController extends Controller
 {
 
-    private  $actionJsonList=['add','konfirmi'];
+    private  $actionJsonList=['add'];
 
-    public function behaviors()
-    {
-        // index  -- all user
-        // add   -- auth
-        // todo if(view id is current user)  redirect
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['index', 'add'],
-                'rules' => [
-                    [
-                        'allow' => true,
-                        'actions' => ['index'],
-                        'roles' => ['?','@'],
-                    ],
-                    [
-                        'allow' => true,
-                        'actions' => ['add'],
-                        'roles' => ['@'],
-                        'verbs' => ['POST']
-                    ],
-                    [
-                        'allow' => true,
-                        'actions' => ['konfirmi'],
-                        'verbs' => ['POST',"GET"]
-                    ],
-                ],
-            ],
-        ];
-    }
     /**
      *
      * Renders the index view for the module
@@ -59,16 +29,15 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
-    }
 
+        return ['a'=>99];
+
+    }
 
 
     public function actionKonfirmi()
     {
 
-
-        return ['s'=>456];
         $result=[];
         $errorLocalLog=[]; // LOg ошыбок
         // add balanse ONLY DEV
@@ -114,6 +83,29 @@ class DefaultController extends Controller
 
 
             }
+
+            if(0) {  // старый код но еще будет использоваться для баланса
+                $current_cart = Yii::$app->cart->getCart()->my();
+                $total_sum = WagerManager::calculateTotalSum(Yii::$app->cart, Yii::$app->user->identity->getId(), $current_cart->coefficient, false); // ручнную сумму еще нужно доделать
+                $tdo_Wager_user_info = new WagerInfo(Yii::$app->user->identity->getId(), $current_cart->playlist_id, Yii::$app->request->post('comment'), $total_sum, $current_cart->coefficient, $current_cart->status);
+                $vagerManager = new WagerManager(Yii::$app->cart, $tdo_Wager_user_info);
+                $vagerManager->add();
+
+                $score_id = Score::find()->where(['user_id' => $tdo_Wager_user_info->getUserId()])->one()->id;
+                // ставка добавлена  снятие баланса
+                $modelTransaction = new Transaction();
+                yii::error($total_sum);
+//            'balance_id' => $this->integer(11)->notNull(), 'date' => $this->datetime()->null()->defaultValue(null), 'type' => "ENUM('in', 'out') NOT NULL", 'amount' => $this->decimal(12, 2)->notNull(), 'balance' => $this->decimal(12, 2)->notNull(), 'user_id'=> $this->integer(11)->notNull(), 'refill_type' => $this->string(255)->notNull(), 'canceled' => $this->datetime()->null()->defaultValue(null), 'comment' => $this->string(255)->null()->defaultValue(null),
+                // $param=['type'=>'in','amount'=>(-1*abs($total_sum)),'balance_id'=>$score_id,'refill_type'=>'some refill_type'];
+                $param = ['type' => 'out', 'amount' => abs($total_sum), 'balance_id' => $score_id, 'refill_type' => 'Снятие на ставку: '];
+                $modelTransaction->attributes = $param;
+                if ($modelTransaction->validate()) {
+                    $addTransaction = Yii::$app->balance->addTransaction($modelTransaction->balance_id, $modelTransaction->type, $modelTransaction->amount, $modelTransaction->refill_type);
+                    //   yii::error($addTransaction);
+                } else {
+                    yii::error($modelTransaction->errors);
+                }
+            }
         }else{
             $result=['status'=>'error','message'=>$errorLocalLog];
         }
@@ -121,8 +113,6 @@ class DefaultController extends Controller
 
         return    $result;
     }
-
-
     public function actionAdd()
     {
 
@@ -220,10 +210,8 @@ class DefaultController extends Controller
 
     public function beforeAction($action)
     {
+        $this->enableCsrfValidation = false;
         if(in_array($action->id,$this->actionJsonList))  Yii::$app->response->format = Response::FORMAT_JSON;
-        if ($action->id == 'konfirmi') {
-            $this->enableCsrfValidation = false;
-        }
         return parent::beforeAction($action);
     }
 }

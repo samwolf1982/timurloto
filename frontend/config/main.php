@@ -72,6 +72,8 @@ return [
                 'cart/element/update-status'=>'cart/element/update-status',
                 'cart/element/update-single'=>'cart/element/update-single',
 
+                // подвтерждение ставки из confirm
+                'wager/default/konfirmi'=>'wager/default/konfirmi',
 
                 // переписки запросы
                 'account/default/chart'=>'account/default/chart',
