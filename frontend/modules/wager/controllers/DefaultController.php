@@ -94,7 +94,7 @@ class DefaultController extends Controller
 
         $testVal=11;
         // обработчик для single
-        if($typeName=='Single'){
+        if($typeName=="Single"){
           $bet= Yii::$app->request->post('bet');
           $bet_id=Yii::$app->request->post('bet_id');
           $user_id=Yii::$app->request->post('user_id');
