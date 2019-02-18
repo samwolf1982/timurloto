@@ -109,11 +109,20 @@ class DefaultController extends Controller
                   elseif ($postStatus=='lose') $newStatus=Wager::STATUS_NOT_ENTERD;
 
                   $wager->status=$newStatus;
-                  $wager->save(false);
-              Yii::error([['user_id' => $user_id,'bid'=>$bet_id,'nowager'=>0]]);
+
+                  if($wager->validate()){
+                      $wager->save(false);
+                  }else{
+                        Yii::error($wager->errors);
+                  }
+              $wager->save(false);
+
+
+
+              Yii::error(['user_id' => $user_id,'bid'=>$bet_id,'nowager'=>0]);
 
           }else{
-              Yii::error([['user_id' => $user_id,'bid'=>$bet_id,'nowager'=>1]]);
+              Yii::error(['user_id' => $user_id,'bid'=>$bet_id,'nowager'=>1]);
           }
 
         }
