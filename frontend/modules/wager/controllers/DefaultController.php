@@ -4,6 +4,7 @@ namespace app\modules\wager\controllers;
 
 use app\modules\wager\models\WagerManager;
 use common\models\DTO\WagerInfo;
+use common\models\helpers\ConstantsHelper;
 use common\models\Playlist;
 use common\models\services\UserInfo;
 use common\models\Wager;
@@ -69,7 +70,28 @@ class DefaultController extends Controller
 
 
          Yii::error(  Yii::$app->request->post());
+         $typeName=Yii::$app->request->post('typeName'); // Single   Multiple
 
+        // обработчик для single
+        if($typeName=='Single'){
+          $bet= Yii::$app->request->post('bet');
+          $wager=Wager::find()->where(['user_id' => $bet['user_id'],'bid'=>$bet['id']])->one();
+          if($wager){
+
+              $newStatus=-11;
+//              if ($statusName === 'win' || $statusName === 'return') {
+              $postStatus=Yii::$app->request->post('statusName');
+                  if($postStatus=='win') $newStatus=Wager::STATUS_NEW;
+                  elseif ($postStatus=='return') $newStatus=Wager::STATUS_RETURN_BET;
+                  elseif ($postStatus=='lose') $newStatus=Wager::STATUS_NOT_ENTERD;
+
+                  $wager->status=$newStatus;
+                  $wager->save(false);
+          }else{
+              Yii::error([['user_id' => $bet['user_id'],'bid'=>$bet['id'],'nowager'=>1]]);
+          }
+
+        }
 
 
         return ['s'=>456];
