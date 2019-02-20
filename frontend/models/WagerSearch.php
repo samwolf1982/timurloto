@@ -47,7 +47,7 @@ class WagerSearch extends Wager
     public function searchWithPagination($params)
     {
         $offsetPage=0;
-        $pageSize=3;
+        $pageSize=30;
         if (!empty($params->page)) {
             $offsetPage=$params->page;
         }
