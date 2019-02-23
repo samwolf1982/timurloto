@@ -153,11 +153,70 @@ class DefaultController extends Controller
               Yii::error(['user_id' => $user_id,'bid'=>$bet_id,'nowager'=>1]);
           }
 
+        }elseif($typeName=="Multiple"){      // обработчик для мульти
+            $bet= Yii::$app->request->post('bet');
+            $bet_id=Yii::$app->request->post('bet_id');
+            $user_id=Yii::$app->request->post('user_id');
+            $wager=Wager::find()->where(['user_id' =>$user_id,'bid'=>$bet_id])->one();
+            $testVal=12;
+
+
+            if($wager){
+                $newStatus=-11;
+                $postStatus=Yii::$app->request->post('statusName');
+                if($postStatus=='win') $newStatus=Wager::STATUS_ENTERED;  //6
+                elseif ($postStatus=='return') $newStatus=Wager::STATUS_RETURN_BET; // 10
+                elseif ($postStatus=='lost') $newStatus=Wager::STATUS_NOT_ENTERD; // 7
+
+                $wager->status=$newStatus;
+
+                if($wager->validate()){
+                    $wager->save(false);
+                }else{
+
+                    Yii::error($wager->errors);
+                }
+
+                // добави ть баланс WIN
+                if($wager->status == Wager::STATUS_ENTERED){
+                    $score_id = Score::find()->where(['user_id' => $user_id])->one()->id;
+                    $modelTransaction = new Transaction();
+                    $total_sum=$wager->total*$wager->coef;
+                    $param = ['type' => 'in', 'amount' => abs($total_sum), 'balance_id' => $score_id, 'refill_type' => 'Выигрыш: '.$wager->id];
+                    $modelTransaction->attributes = $param;
+                    if ($modelTransaction->validate()) {
+                        $addTransaction = Yii::$app->balance->addTransaction($modelTransaction->balance_id, $modelTransaction->type, $modelTransaction->amount, $modelTransaction->refill_type);
+                    }
+                }elseif ($wager->status == Wager::STATUS_RETURN_BET){ // возврат
+                    $score_id = Score::find()->where(['user_id' => $user_id])->one()->id;
+                    $modelTransaction = new Transaction();
+                    $total_sum=$wager->total;
+                    $param = ['type' => 'in', 'amount' => abs($total_sum), 'balance_id' => $score_id, 'refill_type' => 'Возврат: '.$wager->id];
+                    $modelTransaction->attributes = $param;
+                    if ($modelTransaction->validate()) {
+                        $addTransaction = Yii::$app->balance->addTransaction($modelTransaction->balance_id, $modelTransaction->type, $modelTransaction->amount, $modelTransaction->refill_type);
+                    }
+                }
+
+
+
+
+
+                Yii::error(['user_id' => $user_id,'bid'=>$bet_id,'nowager'=>0,'status'=>$wager->status]);
+
+            }else{
+                Yii::error(['user_id' => $user_id,'bid'=>$bet_id,'nowager'=>1]);
+            }
+
         }
 
 
 
-        return ['s'=>456,'errors'=>$wager->errors,'testVal'=>$testVal,'typeName'=>$typeName];
+
+
+
+        yii::error(['typeName'=>$typeName]);
+        return ['s'=>456,'errors_prod'=>$wager->errors,'testVal'=>$testVal,'typeName'=>$typeName];
         $result=[];
         $errorLocalLog=[]; // LOg ошыбок
         // add balanse ONLY DEV
