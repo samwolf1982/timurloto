@@ -216,7 +216,7 @@ class DefaultController extends Controller
 
 
         yii::error(['typeName'=>$typeName]);
-        return ['s'=>456,'errors_prod'=>$wager->errors,'testVal'=>$testVal,'typeName'=>$typeName];
+        return ['s'=>456,'errors_me'=>$wager->errors,'testVal'=>$testVal,'typeName'=>$typeName];
         $result=[];
         $errorLocalLog=[]; // LOg ошыбок
         // add balanse ONLY DEV
