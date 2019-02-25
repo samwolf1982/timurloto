@@ -3,10 +3,14 @@
 
 use common\models\DTO\UserInfoAccount;
 use common\models\helpers\ConstantsHelper;
+use common\models\services\UserInfo;
 use yii\helpers\Html;
 
 /**@var  UserInfoAccount $userInfoAccount **/
 $userInfoAccount;
+
+/**@var  UserInfo $userInfo**/
+$userInfo;
 ?>
 
 <div class="table-wrapper transparent-bg">
@@ -20,7 +24,7 @@ $userInfoAccount;
                          pink label -> class="level-info low-level"
                            -->
                     <div class="level-info level8">
-                        <div class="label-level">8</div>
+                        <div class="label-level"><?=$userInfo->getUserLevelNumber() ?> </div>
                         <span>уровень</span>
                     </div>
                     <div class="user-money">
@@ -34,7 +38,7 @@ $userInfoAccount;
                         <!--
                             data-ptc - percentage of occupancy
                             -->
-                        <div class="big-circle-wrapper" data-ptc="8">
+                        <div class="big-circle-wrapper" data-ptc="<?=$userInfo->getUserLevelNumber() ?>">
                             <div class="big-circle"><canvas width="160" height="160"></canvas></div>
                         </div>
                         <div class="big-avatar-user">
@@ -43,7 +47,12 @@ $userInfoAccount;
                     </div>
                 </div>
                 <div class="user-acc-name">
-                    <h3><span> <?=$userInfoAccount->getName();?></span> <span class="label-user-pro">pro</span></h3>
+                    <h3><span> <?=$userInfoAccount->getName();?></span>
+                        <?php if($userInfo->getisPro()) { ?>
+                            <span class="label-user-pro">pro</span>
+                        <?php  } ?>
+
+                    </h3>
                     <div class="user-nik-name hidden">john.baklan</div>
                 </div>
                 <div class="user-acc-text">

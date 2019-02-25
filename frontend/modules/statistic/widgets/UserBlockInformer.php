@@ -5,6 +5,7 @@ use app\modules\statistic\assets\WidgetAsset;
 use common\models\DTO\UserInfoAccount;
 use common\models\Playlist;
 use common\models\search\BalancestatisticsSearch;
+use common\models\services\UserInfo;
 use common\models\User;
 use komer45\balance\models\Score;
 use yii\helpers\Html;
@@ -53,19 +54,17 @@ class UserBlockInformer extends \yii\base\Widget
      /**@var  Score $balance**/
      $balance = number_format($user->userbalance->balance, 0, '', ',');
 
-
-
-//var_dump($balance); die();
-
      $social_links=['/vk','/fb'];
      $photo=$user->getImageurlForPanel();   // после верстки подставкить  '/'.$user->imageurl
      $userInfoAccount=new UserInfoAccount($this->user_id,$user->username,$balance,99,$photo, $user->userinfo->about_me,$social_links);
         $search_result= $search->searchCount($this->user_id);
 
 
+        // use here
+        $userInfo= new UserInfo($this->user_id);
 
 
-        return $this->render($this->view,['search_result'=>$search_result,'userInfoAccount'=>$userInfoAccount,'user'=>$user] );
+        return $this->render($this->view,['search_result'=>$search_result,'userInfoAccount'=>$userInfoAccount,'user'=>$user,'userInfo'=>$userInfo] );
 
     }
 }

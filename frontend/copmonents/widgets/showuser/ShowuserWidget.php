@@ -7,6 +7,7 @@ namespace app\copmonents\widgets\showuser;
  * Time: 20:35
  */
 
+use common\models\services\UserInfo;
 use Yii;
 use yii\base\Widget;
 
@@ -23,6 +24,8 @@ class ShowuserWidget extends Widget
             $username=Yii::$app->user->identity->username;
             $useremail=Yii::$app->user->identity->email;
         }
+
+
 
         $userimage='/images/avatar-placeholder.svg';
         $userimage='https://avatars0.githubusercontent.com/u/8706421?s=40&v=40';
