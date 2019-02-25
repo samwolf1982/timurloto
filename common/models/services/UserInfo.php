@@ -104,7 +104,11 @@ class UserInfo
 
         if(!empty($balance) and  $balance>0){
           $curentPecent=$balance*100/ ConstantsHelper::DEFAULT_USER_CALCULATE_BALANCE_FOR_LEVEL;
+          $curentPecent-=100;
             switch ($curentPecent) {
+                case ($curentPecent<=0 ):
+                    $lv=1;
+                    break;
                 case ($curentPecent<2.5 ):
                     $lv=2;
                     break;
