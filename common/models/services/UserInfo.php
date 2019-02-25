@@ -57,9 +57,22 @@ class UserInfo
     }
 
     private function setUserLevel(){
-        //todo  можно кешыровать
-        $balance = Score::find()->where(['user_id' => $this->user_id])->one()->balance;
-        return $this-> calculateLevel($balance);
+        $key='ulevel_'.$this->user_id;
+        $data = Yii::$app->cache->get($key);
+        if ($data === false) {
+            $balance = Score::find()->where(['user_id' => $this->user_id])->one()->balance;
+            $data=  $this-> calculateLevel($balance);
+            $time_cache=1;
+            if(YII_ENV=='prod') $time_cache=5*60;
+            Yii::$app->cache->set($key, $data,($time_cache));
+        }
+
+
+        return $data;
+
+
+//        $balance = Score::find()->where(['user_id' => $this->user_id])->one()->balance;
+//        return $this-> calculateLevel($balance);
 
     }
 
@@ -160,8 +173,15 @@ class UserInfo
 
 
     }
+
+    /**
+     * после 8 уровнв ПРО
+     * @return int
+     */
     private function setPro(){
-        return rand(0,1);
+        if($this->userLevel >8 ) return 1;
+        return 0;
+
     }
 
     /**
