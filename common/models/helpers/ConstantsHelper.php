@@ -37,6 +37,8 @@ class ConstantsHelper
 
         // баланс для новосозданных
         const DEFAULT_USER_CREATE_BALANCE=100000;
+        // базис для отчета уровня пользователе относительно баланса
+        const DEFAULT_USER_CALCULATE_BALANCE_FOR_LEVEL=100000;
 
 
 

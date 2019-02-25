@@ -95,7 +95,8 @@ class AccountController extends Controller
      */
     public function actionView($id)
     {
-
+// todo для несуществующего сюда попадать не должны
+//        var_dump($id); die();
         $b= Score::find()->where(['user_id' => $id])->one()->balance;
         $balance  = number_format($b, 0, '', ',');
         return $this->render('view',['balance'=>$balance]);

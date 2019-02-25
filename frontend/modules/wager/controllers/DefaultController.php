@@ -179,6 +179,10 @@ class DefaultController extends Controller
 
                 // добави ть баланс WIN
                 if($wager->status == Wager::STATUS_ENTERED){
+                    //todo
+                    //ставка [['win','3'],['win','4'],['return','6'],]
+                    //ставка [['win','3'],['win','4'],['win','6'],]
+
                     $score_id = Score::find()->where(['user_id' => $user_id])->one()->id;
                     $modelTransaction = new Transaction();
                     $total_sum=$wager->total*$wager->coef;
