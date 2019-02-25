@@ -44,6 +44,12 @@ class UserInfo
             return 'Новичок';
         }
     }
+
+
+    public function getUserLevelNumber(){
+        return $this->userLevel;
+    }
+
     private function setUserName(){
         /** @var  User $this->user */
         if($this->user){
