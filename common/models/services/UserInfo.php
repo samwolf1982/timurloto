@@ -64,6 +64,7 @@ class UserInfo
             $data=  $this-> calculateLevel($balance);
             $time_cache=1;
             if(YII_ENV=='prod') $time_cache=5*60;
+            if(YII_ENV=='prod') $time_cache=5;
             Yii::$app->cache->set($key, $data,($time_cache));
         }
 

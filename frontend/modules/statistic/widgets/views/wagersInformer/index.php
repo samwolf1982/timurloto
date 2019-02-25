@@ -148,7 +148,7 @@ use yii\widgets\LinkPager;
 
 
                                                     <div class="rate-avatar">
-                                                        <div class="circle-wrapper" data-ptc="3">
+                                                        <div class="circle-wrapper" data-ptc="10">
                                                             <div class="circle"><canvas width="74" height="74"></canvas></div>
                                                         </div>
 
