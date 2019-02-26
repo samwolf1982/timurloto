@@ -3,10 +3,12 @@
 namespace app\modules\wager\controllers;
 
 use app\modules\wager\models\WagerManager;
+use common\models\Balancestatistics;
 use common\models\DTO\WagerInfo;
 use common\models\helpers\ConstantsHelper;
 use common\models\Playlist;
 use common\models\services\UserInfo;
+use common\models\StatisticsManagerCommon;
 use common\models\Wager;
 use komer45\balance\models\Score;
 use komer45\balance\models\Transaction;
@@ -131,6 +133,8 @@ class DefaultController extends Controller
                       $modelTransaction->attributes = $param;
                       if ($modelTransaction->validate()) {
                           $addTransaction = Yii::$app->balance->addTransaction($modelTransaction->balance_id, $modelTransaction->type, $modelTransaction->amount, $modelTransaction->refill_type);
+                        $stm= new  StatisticsManagerCommon($wager);
+                        $stm->calculateStatistics();
                       }
                   }elseif ($wager->status == Wager::STATUS_RETURN_BET){ // возврат
                       $score_id = Score::find()->where(['user_id' => $user_id])->one()->id;
@@ -140,7 +144,12 @@ class DefaultController extends Controller
                       $modelTransaction->attributes = $param;
                       if ($modelTransaction->validate()) {
                           $addTransaction = Yii::$app->balance->addTransaction($modelTransaction->balance_id, $modelTransaction->type, $modelTransaction->amount, $modelTransaction->refill_type);
+                          $stm= new  StatisticsManagerCommon($wager);
+                          $stm->calculateStatistics();
                       }
+                  }elseif ($wager->status == Wager::STATUS_NOT_ENTERD) { // проигрыш
+                      $stm= new  StatisticsManagerCommon($wager);
+                      $stm->calculateStatistics();
                   }
 
 
@@ -190,6 +199,8 @@ class DefaultController extends Controller
                     $modelTransaction->attributes = $param;
                     if ($modelTransaction->validate()) {
                         $addTransaction = Yii::$app->balance->addTransaction($modelTransaction->balance_id, $modelTransaction->type, $modelTransaction->amount, $modelTransaction->refill_type);
+                        $stm= new  StatisticsManagerCommon($wager);
+                        $stm->calculateStatistics();
                     }
                 }elseif ($wager->status == Wager::STATUS_RETURN_BET){ // возврат
                     $score_id = Score::find()->where(['user_id' => $user_id])->one()->id;
@@ -200,6 +211,9 @@ class DefaultController extends Controller
                     if ($modelTransaction->validate()) {
                         $addTransaction = Yii::$app->balance->addTransaction($modelTransaction->balance_id, $modelTransaction->type, $modelTransaction->amount, $modelTransaction->refill_type);
                     }
+                }elseif ($wager->status == Wager::STATUS_NOT_ENTERD) { // проигрыш
+                    $stm= new  StatisticsManagerCommon($wager);
+                    $stm->calculateStatistics();
                 }
 
 

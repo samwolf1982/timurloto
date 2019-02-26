@@ -44,8 +44,11 @@ $accessInfoAccount;
         </div>
 
 
+
         <!--   вход выход  пользователя   -->
         <?= ShowuserWidget::widget(['userdata' => [],'view'=>'other']) ?>
+
+
 
     </div>
 </header>

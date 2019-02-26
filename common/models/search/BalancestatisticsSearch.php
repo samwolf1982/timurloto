@@ -52,8 +52,6 @@ class BalancestatisticsSearch extends Balancestatistics
 
 
 
-
-
     /**
      * {@inheritdoc}
      */
