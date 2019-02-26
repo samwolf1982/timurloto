@@ -125,7 +125,7 @@ class ReaderParams extends \yii\base\BaseObject
         if ($pos !== false) {
             $valueArrNoSpace=   str_replace(' ','',$valueArr);
             $valueArrNew=  explode('-',$valueArrNoSpace);
-            $base=sprintf('%s - %s',$valueArrNew[3],$valueArrNew[4]);
+            $base=sprintf('%s-%s',$valueArrNew[3],$valueArrNew[4]);
              return $base;
         } else {
             return $valueArr[3];
