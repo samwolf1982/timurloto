@@ -410,6 +410,7 @@ if(0){
         ];
 
 
+
 //        $url = 'http://confirm.lookmybets.com/bet';
         $url = ConstantsHelper::URL_CREATE_BET;
         $ch = curl_init($url);
@@ -421,7 +422,7 @@ if(0){
 
 
 //        $res=json_decode($response);
-         // var_dump($response); die();
+//          var_dump($response); die();
 
 //        return $response;
       return  json_decode($response);
