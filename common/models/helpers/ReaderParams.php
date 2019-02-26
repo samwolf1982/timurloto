@@ -117,10 +117,14 @@ class ReaderParams extends \yii\base\BaseObject
      */
     private function getBaseInvariant($item_id)
     {
+
         $valueArr=  explode('-',$item_id);
 
         $findme   = ' - ';
         $pos = strpos($item_id, $findme);
+
+        $findmeMinusFora   = '--'; // минус фора
+        $posMinusFora = strpos($item_id, $findmeMinusFora);
 
         if ($pos !== false) {
 
@@ -131,8 +135,11 @@ class ReaderParams extends \yii\base\BaseObject
              return $base;
 
 
-            // todo для минусовой форы тоже нужно обработчик
-        } else {
+
+        }elseif ($posMinusFora !== false){   // todo для минусовой форы тоже нужно обработчик 237678771-7-12342--2
+            $valueArrNew=  explode($findmeMinusFora,$item_id);
+            return '-'.$valueArrNew[1];
+        }  else {
             return $valueArr[3];
         }
 
