@@ -123,6 +123,7 @@ class ReaderParams extends \yii\base\BaseObject
         $pos = strpos($item_id, $findme);
 
         if ($pos !== false) {
+            // todo для минусовой форы тоже нужно обработчик
             $valueArrNoSpace=   str_replace(' ','',$valueArr);
             $valueArrNew=  explode('-',$valueArrNoSpace);
             $base=sprintf('%s - %s',$valueArrNew[3],$valueArrNew[4]);
