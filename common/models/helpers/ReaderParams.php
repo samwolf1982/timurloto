@@ -75,7 +75,9 @@ class ReaderParams extends \yii\base\BaseObject
     $event_id=$valueArr[1];
     $market_id=$valueArr[2];
     $game_id=$valueArr[0];
+
     $base=$valueArr[3]; // invariant
+    $base=$this->getBaseInvariant($b['item_id']); // invariant
 
       $dataParser=$this->getInfoAboutGame($game_id);
       //  var_dump($dataParser->attributes->{'short-id'}); die();
@@ -105,6 +107,29 @@ class ReaderParams extends \yii\base\BaseObject
         ,];
 
         return $res;
+
+    }
+
+
+    /**
+     * подсчет инванианта базового для ставко тип  точный счет 4 - 3
+     * @param $item_id
+     */
+    private function getBaseInvariant($item_id)
+    {
+        $valueArr=  explode('-',$item_id);
+
+        $findme   = ' - ';
+        $pos = strpos($item_id, $findme);
+
+        if ($pos !== false) {
+            $valueArrNoSpace=   str_replace(' ','',$valueArr);
+            $valueArrNew=  explode('-',$valueArrNoSpace);
+            $base=sprintf('%s - %s',$valueArrNew[3],$valueArrNew[4]);
+             return $base;
+        } else {
+            return $valueArr[3];
+        }
 
     }
 
