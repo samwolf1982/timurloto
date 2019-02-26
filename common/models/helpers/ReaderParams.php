@@ -146,6 +146,7 @@ class ReaderParams extends \yii\base\BaseObject
             $market_id=$valueArr[2];
             $game_id=$valueArr[0];
             $base=$valueArr[3]; // invariant
+            $base=$this->getBaseInvariant($b['item_id']); // invariant
             $dataParser=$this->getInfoAboutGame($game_id);
 
 
