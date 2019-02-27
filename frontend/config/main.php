@@ -61,7 +61,8 @@ return [
 
 
 
-
+                // chart
+                'account/chart/<id:\d+>' => 'account/chart',
                 // авторизация нужно для совм с модулями
                 'user/security/auth'=>'user/security/auth',
                 'user/registration/connect'=>'user/registration/connect',
