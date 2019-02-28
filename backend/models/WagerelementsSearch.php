@@ -127,6 +127,7 @@ class WagerelementsSearch extends Wagerelements
             'created_at' => $this->created_at,
         ]);
 
+
 //        $query->andFilterWhere(['like', 'event_id', $this->event_id])
 //            ->andFilterWhere(['like', 'outcome_id', $this->outcome_id])
           $query->andFilterWhere(['like', 'sport_name', $this->sport_name])
