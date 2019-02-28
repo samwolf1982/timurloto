@@ -161,7 +161,7 @@ use yii\widgets\LinkPager;
                                                             <div class="avatar-status-bet avatar-status-bet-cancel"></div>
                                                         <?php }elseif ($wager->status == Wager::STATUS_RETURN_BET){ ?>
                                                             <div class="avatar-status-bet avatar-status-bet-returno"></div>
-                                                        <?php }elseif ($wager->status == Wager::STATUS_MANUAL_BET){ ?>
+                                                        <?php }elseif ($wager->status == Wager::STATUS_MANUAL_BET){ Yii::error(['me stat'=>$wager->status]); ?>
                                                             <div class="avatar-status-bet avatar-status-bet-manualo"></div>
                                                         <?php } ?>
 
