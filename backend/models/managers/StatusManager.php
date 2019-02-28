@@ -9,6 +9,7 @@
 namespace app\models\managers;
 
 
+use common\models\StatisticsManagerCommon;
 use common\models\Wager;
 use common\models\Wagerelements;
 use Yii;
@@ -67,6 +68,8 @@ class StatusManager
                                   $item->wager->status= $newStatus;
                                   //Wager::STATUS_CLOSE;
                                   $item->wager->update(false);
+                $stm= new  StatisticsManagerCommon($item->wager);
+                $stm->calculateStatistics();
                                   // change statiostics
 
                               //}
