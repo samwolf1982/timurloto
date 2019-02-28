@@ -9,6 +9,7 @@
 namespace app\models\managers;
 
 
+use common\models\Balancestatistics;
 use common\models\StatisticsManagerCommon;
 use common\models\Wager;
 use common\models\Wagerelements;
@@ -68,6 +69,9 @@ class StatusManager
                                   $item->wager->status= $newStatus;
                                   //Wager::STATUS_CLOSE;
                                   $item->wager->update(false);
+                                  //удалить пред статистик
+                                 $bs=  Balancestatistics::find()->where(['wager_id'=>$item->wager->id])->one();
+                                 if($bs) $bs->delete();
                 $stm= new  StatisticsManagerCommon($item->wager);
                 $stm->calculateStatistics();
                                   // change statiostics
