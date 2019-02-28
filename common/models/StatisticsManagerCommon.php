@@ -137,7 +137,7 @@ class StatisticsManagerCommon
            // return $select_coef * $coef - $select_coef;
             return ($select_coef * $coef - $select_coef) / $select_coef * 100;
         }elseif ($is_win==Wager::STATUS_NOT_ENTERD){
-            return -abs($select_coef);
+            return -abs($coef);
           //  return -abs(100);
         }
         else{
