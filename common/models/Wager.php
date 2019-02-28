@@ -38,7 +38,7 @@ class Wager extends \yii\db\ActiveRecord
     const  STATUS_RETURN=8;
     const  STATUS_PAID_FOR=9;  //  уже насчитано конечный статус
     const  STATUS_RETURN_BET=10;  //  возврат
-    const  STATUS_MANUAL_BET=11;  //  возврат
+    const  STATUS_MANUAL_BET=11;  //  'Ручное подтверждение',
 
 
     public static function getStatusName($status){
@@ -51,6 +51,7 @@ class Wager extends \yii\db\ActiveRecord
             self::STATUS_BLOCKED=>'Заблокинована',
             self::STATUS_ENTERED=>'Прошла',
             self::STATUS_RETURN=>'Возврат',
+            self::STATUS_MANUAL_BET=>'Ручное подтверждение',
         ];
         return $arr[$status];
     }
@@ -65,6 +66,7 @@ class Wager extends \yii\db\ActiveRecord
             self::STATUS_ENTERED=>'Прошла',
             self::STATUS_NOT_ENTERD=>'Не прошла',
             self::STATUS_RETURN=>'Возврат',
+            self::STATUS_MANUAL_BET=>'Ручное подтверждение',
         ];
         return $arr;
     }
@@ -75,6 +77,7 @@ class Wager extends \yii\db\ActiveRecord
             self::STATUS_ENTERED=>'Прошла',
             self::STATUS_NOT_ENTERD=>'Не прошла',
             self::STATUS_RETURN=>'Возврат',
+            self::STATUS_MANUAL_BET=>'Ручное подтверждение',
         ];
         return $arr;
     }

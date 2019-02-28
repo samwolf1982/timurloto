@@ -32,8 +32,9 @@ class StatusManager
 
 
     public function recalculateStatus(){
-        $this->changeStatusSiblingsElements();
-        $this->changeStatusParents();
+        // todo stope here
+//        $this->changeStatusSiblingsElements();
+//        $this->changeStatusParents();
     }
 
     private function changeStatusSiblingsElements(){

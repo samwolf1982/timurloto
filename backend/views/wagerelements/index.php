@@ -208,11 +208,17 @@ $this->params['breadcrumbs'][] = $this->title;
                         ];
                     },
                     'format'=>'raw',
-                    'value'=>function($model){
-                        if($model->status==Wager::STATUS_NEW){
-                            return Html::tag('p',   Wager::getStatusName($model->status),['class'=>'text-danger']);
+                    'value'=>function($model){ // common\models\Wagerelements
+
+                        if($model->wager->status==Wager::STATUS_MANUAL_BET){
+                            return Html::tag('p',   Wager::getStatusName($model->wager->status),['class'=>'text-danger']);
                         }
-                        return Html::tag('p',   Wager::getStatusName($model->status),[]);
+                        return Html::tag('p',   Wager::getStatusName($model->wager->status),[]);
+                        // old code
+//                        if($model->status==Wager::STATUS_NOT_ENTERD){
+//                            return Html::tag('p',   Wager::getStatusName($model->status),['class'=>'text-danger']);
+//                        }
+//                        return Html::tag('p',   Wager::getStatusName($model->status),[]);
 
 
 
