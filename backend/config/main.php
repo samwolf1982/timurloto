@@ -6,6 +6,16 @@ $params = array_merge(
     require __DIR__ . '/params-local.php'
 );
 
+$configo=[];
+$configo['bootstrap'][] = 'debug';
+$configo['modules']['debug'] = [
+    'class' => 'yii\debug\Module',
+    'allowedIPs' => ['127.0.0.1', '::1', '192.168.0.*' ,  '192.168.56.*', '*']
+];
+array_merge($params,$configo);
+
+
+
 return [
     'id' => 'app-backend',
     'basePath' => dirname(__DIR__),
