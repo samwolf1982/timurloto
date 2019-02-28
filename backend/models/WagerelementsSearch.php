@@ -142,7 +142,8 @@ class WagerelementsSearch extends Wagerelements
             ->andFilterWhere(['like', 'info_name_full', $this->info_name_full])
             ->andFilterWhere(['like', 'info_cat_name', $this->info_cat_name]);
 
-        $query->andFilterWhere(['=','wager.status', Wager::STATUS_OPEN]);
+     //   $query->andFilterWhere(['=','wager.status', Wager::STATUS_OPEN]);
+        $query->andFilterWhere(['=','wager.status', Wager::STATUS_MANUAL_BET]);
         $query->groupBy(['event_id']);
 
 

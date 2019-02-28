@@ -95,6 +95,23 @@ class DefaultController extends Controller
          $typeName=Yii::$app->request->post('typeName'); // Single   Multiple
 
         $testVal=11;
+        // обработчик для мануала
+        if($typeName=="manual"){
+            $bet= Yii::$app->request->post('bet');
+            $bet_id=Yii::$app->request->post('bet_id');
+            $user_id=Yii::$app->request->post('user_id');
+            $wager=Wager::find()->where(['user_id' =>$user_id,'bid'=>$bet_id])->one();
+            if($wager){
+                $wager->status=Wager::STATUS_MANUAL_BET;
+                if($wager->validate()){
+                    $wager->save(false);
+                }else{
+                    Yii::error($wager->errors);
+                }
+            }
+
+        }
+
         // обработчик для single
         if($typeName=="Single"){
           $bet= Yii::$app->request->post('bet');
@@ -113,6 +130,7 @@ class DefaultController extends Controller
                   if($postStatus=='win') $newStatus=Wager::STATUS_ENTERED;  //6
                   elseif ($postStatus=='return') $newStatus=Wager::STATUS_RETURN_BET; // 10
                   elseif ($postStatus=='lost') $newStatus=Wager::STATUS_NOT_ENTERD; // 7
+                  elseif ($postStatus=='manual') $newStatus=Wager::STATUS_MANUAL_BET; // 11 // not use
 
                   $wager->status=$newStatus;
 
@@ -148,9 +166,10 @@ class DefaultController extends Controller
                           $stm->calculateStatistics();
                       }
                   }elseif ($wager->status == Wager::STATUS_NOT_ENTERD) { // проигрыш
-                      $stm= new  StatisticsManagerCommon($wager);
+                      $stm = new  StatisticsManagerCommon($wager);
                       $stm->calculateStatistics();
                   }
+
 
 
 
