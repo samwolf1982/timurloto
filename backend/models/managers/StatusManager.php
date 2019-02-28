@@ -33,15 +33,19 @@ class StatusManager
 
     public function recalculateStatus(){
         // todo stope here
-//        $this->changeStatusSiblingsElements();
-//        $this->changeStatusParents();
+        $this->changeStatusSiblingsElements();
+        $this->changeStatusParents();
     }
 
+
+    /**
+     * смена значения для потомков 1
+     */
     private function changeStatusSiblingsElements(){
         /**@var Wagerelements $class **/
         $class=  get_class($this->model);
 //        $class::updateAll(['status'=>$this->post_value],['=','event_id',$this->model->event_id]);
-        foreach ($class::find()->where(['=','event_id',$this->model->event_id])->andWhere(['!=','status',Wager::STATUS_PAID_FOR]) ->all() as $item) {
+        foreach ($class::find()->where(['=','event_id',$this->model->event_id])->andWhere(['!=','status',Wager::STATUS_PAID_FOR]) ->all() as $item) { //  STATUS_PAID_FOR not use
             $item->status=      $this->post_value;
             $item->update(false);
         }
@@ -56,13 +60,15 @@ class StatusManager
         foreach ($class::find()->where(['event_id'=>$this->model->event_id])->all() as $item) {
             if($item->wager->checkCloseElements()){ // все внутрение прошли
            //     if(!$item->wager->checkCloseState()){  // но родитель еще не прошел
-
+//Yii::error(['checkCloseElements '=>'oki']);
                               $newStatus=$item->wager->getFinalStatus();
 
                               //if($newStatus!=Wager::STATUS_PAID_FOR){ // пропуск если ранее уже был подсчет
                                   $item->wager->status= $newStatus;
                                   //Wager::STATUS_CLOSE;
                                   $item->wager->update(false);
+                                  // change statiostics
+
                               //}
 
 
