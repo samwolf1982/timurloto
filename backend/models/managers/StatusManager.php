@@ -13,6 +13,8 @@ use common\models\Balancestatistics;
 use common\models\StatisticsManagerCommon;
 use common\models\Wager;
 use common\models\Wagerelements;
+use komer45\balance\models\Score;
+use komer45\balance\models\Transaction;
 use Yii;
 
 class StatusManager
