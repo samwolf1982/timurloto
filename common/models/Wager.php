@@ -168,6 +168,12 @@ class Wager extends \yii\db\ActiveRecord
 
     public function getFinalStatus()
     {
+
+        if(count($this->wagerelements)==1){ //  для ординоров
+            return $this->wagerelements[0]->status;
+        }
+
+        // для експресов
         $status=self::STATUS_ENTERED;
         // check STATUS_ENTERED;
         foreach ($this->wagerelements as $item) {
