@@ -110,6 +110,7 @@ class StatusManager
            //     if(!$item->wager->checkCloseState()){  // но родитель еще не прошел
 //Yii::error(['checkCloseElements '=>'oki']);
                               $newStatus=$item->wager->getFinalStatus();
+                              yii::error(['nesStat'=>$newStatus]);
                 //удалить пред статистик
                 $bs=  Balancestatistics::find()->where(['wager_id'=>$item->wager->id])->one();
                 if($bs) $bs->delete();
