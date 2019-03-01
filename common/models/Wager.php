@@ -50,7 +50,7 @@ class Wager extends \yii\db\ActiveRecord
             self::STATUS_EXPIRED=>'Прострочена',
             self::STATUS_BLOCKED=>'Заблокинована',
             self::STATUS_ENTERED=>'Прошла',
-            self::STATUS_RETURN=>'Возврат',
+            self::STATUS_RETURN_BET=>'Возврат',
             self::STATUS_MANUAL_BET=>'Ручное подтверждение',
         ];
         return $arr[$status];
@@ -65,7 +65,7 @@ class Wager extends \yii\db\ActiveRecord
             self::STATUS_BLOCKED=>'Заблокинована',
             self::STATUS_ENTERED=>'Прошла',
             self::STATUS_NOT_ENTERD=>'Не прошла',
-            self::STATUS_RETURN=>'Возврат',
+            self::STATUS_RETURN_BET=>'Возврат',
             self::STATUS_MANUAL_BET=>'Ручное подтверждение',
         ];
         return $arr;
@@ -76,7 +76,7 @@ class Wager extends \yii\db\ActiveRecord
             self::STATUS_NEW=>'Новая',
             self::STATUS_ENTERED=>'Прошла',
             self::STATUS_NOT_ENTERD=>'Не прошла',
-            self::STATUS_RETURN=>'Возврат',
+            self::STATUS_RETURN_BET=>'Возврат',
             self::STATUS_MANUAL_BET=>'Ручное подтверждение',
         ];
         return $arr;

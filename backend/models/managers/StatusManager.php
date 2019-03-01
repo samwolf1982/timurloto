@@ -61,12 +61,13 @@ class StatusManager
         $score_id = Score::find()->where(['user_id' => $wager->user_id])->one()->id;
         $modelTransaction = new Transaction();
         $total_sum=$wager->total*$wager->coef;
+        $prevWagerStatusGate=false; // для определения что ставка раньше не была обработана
         if($wager->status == Wager::STATUS_ENTERED || $wager->status == Wager::STATUS_NOT_ENTERD ||  $wager->status == Wager::STATUS_RETURN_BET){
             if($wager->status == Wager::STATUS_ENTERED){ // cтавка была зашла нужно отнять
                 $param = ['type' => 'out', 'amount' => abs($total_sum), 'balance_id' => $score_id, 'refill_type' => 'Мануально пересчет cнятие: '.$wager->id];
             }
-            if($wager->status == Wager::STATUS_NOT_ENTERD){ // cтавка была зашла нужно добавить
-                $param = ['type' => 'in', 'amount' => abs($total_sum), 'balance_id' => $score_id, 'refill_type' => 'Мануально пересчет добавить: '.$wager->id];
+            if($wager->status == Wager::STATUS_NOT_ENTERD){ // cтавка была зашла нужно добавить суму что проиграл
+                $param = ['type' => 'in', 'amount' => abs($wager->total), 'balance_id' => $score_id, 'refill_type' => 'Мануально пересчет добавить: '.$wager->id];
             }
             if($wager->status == Wager::STATUS_RETURN_BET){ // cтавка была зашла нужно отнять
                 $param = ['type' => 'out', 'amount' => abs($wager->total), 'balance_id' => $score_id, 'refill_type' => 'Мануально пересчет cнятие: '.$wager->id];
@@ -75,6 +76,7 @@ class StatusManager
             if ($modelTransaction->validate()) {
                 $addTransaction = Yii::$app->balance->addTransaction($modelTransaction->balance_id, $modelTransaction->type, $modelTransaction->amount, $modelTransaction->refill_type);
             }
+            $prevWagerStatusGate=true;
         }
 
         //--------добавление или снятие
@@ -82,7 +84,7 @@ class StatusManager
             if($newStatus == Wager::STATUS_ENTERED){ // cтавка зашла мануально
                 $param = ['type' => 'in', 'amount' => abs($total_sum), 'balance_id' => $score_id, 'refill_type' => 'Мануально пересчет добавить: '.$wager->id];
             }
-            if($newStatus == Wager::STATUS_NOT_ENTERD){ // cтавка не зашла
+            if($newStatus == Wager::STATUS_NOT_ENTERD and $prevWagerStatusGate){ // cтавка не зашла
                 $param = ['type' => 'out', 'amount' => abs($total_sum), 'balance_id' => $score_id, 'refill_type' => 'Мануально пересчет cнять: '.$wager->id];
             }
             if($newStatus == Wager::STATUS_RETURN_BET){ // cтавка возврать
@@ -123,6 +125,13 @@ class StatusManager
 
                 $stm= new  StatisticsManagerCommon($item->wager);
                 $stm->calculateStatistics();
+
+                $postStatus=Yii::$app->request->post('statusName');
+                if($postStatus=='win') $newStatus=Wager::STATUS_ENTERED;  //6
+                elseif ($postStatus=='return') $newStatus=Wager::STATUS_RETURN_BET; // 10
+                elseif ($postStatus=='lost') $newStatus=Wager::STATUS_NOT_ENTERD; // 7
+                elseif ($postStatus=='manual') $newStatus=Wager::STATUS_MANUAL_BET; // 11 // not use
+
                                   // change statiostics
 
                               //}
