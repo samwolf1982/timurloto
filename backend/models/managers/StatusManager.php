@@ -64,13 +64,13 @@ class StatusManager
         $prevWagerStatusGate=false; // для определения что ставка раньше не была обработана
         if($wager->status == Wager::STATUS_ENTERED || $wager->status == Wager::STATUS_NOT_ENTERD ||  $wager->status == Wager::STATUS_RETURN_BET){
             if($wager->status == Wager::STATUS_ENTERED){ // cтавка была зашла нужно отнять
-                $param = ['type' => 'out', 'amount' => abs($total_sum), 'balance_id' => $score_id, 'refill_type' => 'Мануально пересчет cнятие: '.$wager->id];
+                $param = ['type' => 'out', 'amount' => abs($total_sum), 'balance_id' => $score_id, 'refill_type' => 'Мануально пересчет cнятие (a1): '.$wager->id];
             }
             if($wager->status == Wager::STATUS_NOT_ENTERD){ // cтавка была зашла нужно добавить суму что проиграл
-                $param = ['type' => 'in', 'amount' => abs($wager->total), 'balance_id' => $score_id, 'refill_type' => 'Мануально пересчет добавить: '.$wager->id];
+                $param = ['type' => 'in', 'amount' => abs($wager->total), 'balance_id' => $score_id, 'refill_type' => 'Мануально пересчет добавить (a2): '.$wager->id];
             }
             if($wager->status == Wager::STATUS_RETURN_BET){ // cтавка была зашла нужно отнять
-                $param = ['type' => 'out', 'amount' => abs($wager->total), 'balance_id' => $score_id, 'refill_type' => 'Мануально пересчет cнятие: '.$wager->id];
+                $param = ['type' => 'out', 'amount' => abs($wager->total), 'balance_id' => $score_id, 'refill_type' => 'Мануально пересчет cнятие (a3): '.$wager->id];
             }
             $modelTransaction->attributes = $param;
             if ($modelTransaction->validate()) {
@@ -82,13 +82,13 @@ class StatusManager
         //--------добавление или снятие
         if($newStatus == Wager::STATUS_ENTERED || $newStatus == Wager::STATUS_NOT_ENTERD ||  $newStatus == Wager::STATUS_RETURN_BET){
             if($newStatus == Wager::STATUS_ENTERED){ // cтавка зашла мануально
-                $param = ['type' => 'in', 'amount' => abs($total_sum), 'balance_id' => $score_id, 'refill_type' => 'Мануально пересчет добавить: '.$wager->id];
+                $param = ['type' => 'in', 'amount' => abs($total_sum), 'balance_id' => $score_id, 'refill_type' => 'Мануально пересчет добавить (a4): '.$wager->id];
             }
             if($newStatus == Wager::STATUS_NOT_ENTERD and $prevWagerStatusGate){ // cтавка не зашла
-                $param = ['type' => 'out', 'amount' => abs($total_sum), 'balance_id' => $score_id, 'refill_type' => 'Мануально пересчет cнять: '.$wager->id];
+                $param = ['type' => 'out', 'amount' => abs($total_sum), 'balance_id' => $score_id, 'refill_type' => 'Мануально пересчет cнять (a5): '.$wager->id];
             }
             if($newStatus == Wager::STATUS_RETURN_BET){ // cтавка возврать
-                $param = ['type' => 'in', 'amount' => abs($total_sum), 'balance_id' => $score_id, 'refill_type' => 'Мануально пересчет добавить: '.$wager->id];
+                $param = ['type' => 'in', 'amount' => abs($total_sum), 'balance_id' => $score_id, 'refill_type' => 'Мануально пересчет добавить (a6): '.$wager->id];
             }
 
             $modelTransaction->attributes = $param;
