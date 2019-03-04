@@ -208,8 +208,8 @@ use yii\helpers\Html;
                     </div>
                     <div class="video-item__t">
                         <div class="video-inner__t">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/k-29x5iI8dA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                            <div class="cover-video__t" style="background-image: url(images/video-2@2x.png)">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/KrqeZ43Q65U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="cover-video__t" style="background-image: url(images/video-2@2x.png2)">
                                 <a href="#" class="round-play" data-toggle="modal" data-target="#main-video">
                                     <span class="icon-play"></span>
                                 </a>
@@ -221,7 +221,7 @@ use yii\helpers\Html;
                     </div>
                 </div>
                 <div class="table-btn">
-                    <a href="#" class="show-all-video main-btn">Перейти на Youtube канал</a>
+                    <a href="https://www.youtube.com/channel/UCyJaf537o7MQomzG0goLc-g" target="_blank" class="show-all-video main-btn">Перейти на Youtube канал</a>
                 </div>
             </div>
         </div>
