@@ -52,7 +52,7 @@ return [
                 'settings/'=>'user/settings',
                 'account/<id:\d+>' => 'account/view',
 
-                '/'=>'dashboard/index', // убрать  на фронте
+//                '/'=>'dashboard/index', // убрать  на фронте
 
 
 //                '/matches'=>'/dashboard/index',
