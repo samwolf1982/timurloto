@@ -55,7 +55,8 @@ return [
 //                '/'=>'dashboard/index', // убрать  на фронте
 
 
-//                '/matches'=>'/dashboard/index',
+                '/matches'=>'/dashboard/index', // для разработки
+//                '/matches'=>'/matches/index',
 
               //  'site/index' =>   'dashboard',
 
