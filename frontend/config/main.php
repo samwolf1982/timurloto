@@ -51,12 +51,13 @@ return [
                 'account/'=>'account/index',
                 'settings/'=>'user/settings',
                 'account/<id:\d+>' => 'account/view',
+
                 '/'=>'dashboard/index', // убрать  на фронте
 
 
 //                '/matches'=>'/dashboard/index',
 
-                'site/index' =>   'dashboard',
+              //  'site/index' =>   'dashboard',
 
             // корзина
                 '/cart/default/info' => '/cart/default/info',
