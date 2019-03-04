@@ -16,7 +16,7 @@
                 <div class="user-status">
 
                     <div class="faq-block_2">
-                        <a href="<?=Url::to(['/bet']) ?>" data-toggle="modal" data-target="#modal-faq"><i class="faq-icon"></i><span>Турниры</span></a>
+                        <a href="<?=Url::to(['/bet']) ?>" data-toggle="no-modal" data-target="#modal-faq"><i class="faq-icon"></i><span>Турниры</span></a>
                     </div>
                     <div class="faq-block">
                         <a href="#" data-toggle="modal" data-target="#modal-faq"><i class="faq-icon"></i><span>FAQ</span></a>

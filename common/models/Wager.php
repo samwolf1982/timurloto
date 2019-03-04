@@ -36,7 +36,7 @@ class Wager extends \yii\db\ActiveRecord
     const  STATUS_ENTERED=6;
     const  STATUS_NOT_ENTERD=7;
     const  STATUS_RETURN=8;
-    const  STATUS_PAID_FOR=9;  //  уже насчитано конечный статус
+    const  STATUS_PAID_FOR=9;  //  уже насчитано конечный статус // всем начитало пофиксить
     const  STATUS_RETURN_BET=10;  //  возврат
     const  STATUS_MANUAL_BET=11;  //  'Ручное подтверждение',
 
