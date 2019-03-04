@@ -2,6 +2,7 @@
 
 use app\copmonents\widgets\addbet\AddbetWidget;
 use app\copmonents\widgets\showuser\ShowuserWidget;
+use app\modules\statistic\widgets\LastBets;
 use common\models\helpers\HtmlGenerator;
 use common\models\overiden\User;
 use dvizh\cart\widgets\BuyButton;
@@ -52,344 +53,348 @@ BetAsset::register($this);
 <div class="front-page-wrapper">
     <div class="front-page-inner">
         <div class="content-container">
-            <div class="row table-row">
-                <div class="column-12">
-                    <div class="table-wrapper table-winner">
-                        <div class="table-inner">
-                            <div class="table-body">
-                                <div class="head-bets-slider">
-                                    <h3>Ставки на спорт от команды прогнозистов</h3>
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    <?php if(0){ ?>
-                                        <section>
-                                            <p>button</p>
-                                            <?= BuyButton::widget([
-                                                'model' => $model,
-                                                'text' => 'Заказать',
-                                                'htmlTag' => 'a',
-                                                'cssClass' => 'custom_class'
-                                            ]) ?>
-                                        </section>
 
-                                  <?php   }     ?>
-                                    
+            <?php if(0){ ?>
+                <div class="row table-row">
+                    <div class="column-12">
+                        <div class="table-wrapper table-winner">
+                            <div class="table-inner">
+                                <div class="table-body">
+                                    <div class="head-bets-slider">
+                                        <h3>Ставки на спорт от команды прогнозистов</h3>
 
-                                    
-                                    
-                                    
-                                    <a href="#" class="label-promoution">РЕКЛАМА</a>
+
+
+
+
+
+
+
+
+
+                                        <?php if(0){ ?>
+                                            <section>
+                                                <p>button</p>
+                                                <?= BuyButton::widget([
+                                                    'model' => $model,
+                                                    'text' => 'Заказать',
+                                                    'htmlTag' => 'a',
+                                                    'cssClass' => 'custom_class'
+                                                ]) ?>
+                                            </section>
+
+                                        <?php   }     ?>
+
+
+
+
+
+                                        <a href="#" class="label-promoution">РЕКЛАМА</a>
+                                    </div>
+                                    <div class="bets-slider">
+                                        <div class="wins-item">
+                                            <div class="wins-item-inner">
+                                                <div class="row-ava">
+                                                    <div class="rate-avatar-column">
+                                                        <div class="rate-avatar">
+                                                            <div class="circle-wrapper" data-ptc="11">
+                                                                <div class="circle"></div>
+                                                            </div>
+                                                            <div class="avatar-user">
+                                                                <img src="/images/ava1.png" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-info">
+                                                        <h4 class="name-l"><span>Евгений</span> <span>Дорниенко</span></h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wins-item">
+                                            <div class="wins-item-inner">
+                                                <div class="row-ava">
+                                                    <div class="rate-avatar-column">
+                                                        <div class="rate-avatar">
+                                                            <div class="circle-wrapper" data-ptc="14">
+                                                                <div class="circle"></div>
+                                                            </div>
+                                                            <div class="avatar-user">
+                                                                <img src="/images/ava2.png" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-info">
+                                                        <h4 class="name-l"><span>Евгений</span> <span>Дорниенко</span></h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wins-item">
+                                            <div class="wins-item-inner">
+                                                <div class="row-ava">
+                                                    <div class="rate-avatar-column">
+                                                        <div class="rate-avatar">
+                                                            <div class="circle-wrapper" data-ptc="21">
+                                                                <div class="circle"></div>
+                                                            </div>
+                                                            <div class="avatar-user">
+                                                                <img src="/images/ava3.png" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-info">
+                                                        <h4 class="name-l"><span>Евгений</span> <span>Дорниенко</span></h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wins-item">
+                                            <div class="wins-item-inner">
+                                                <div class="row-ava">
+                                                    <div class="rate-avatar-column">
+                                                        <div class="rate-avatar">
+                                                            <div class="circle-wrapper" data-ptc="2">
+                                                                <div class="circle"></div>
+                                                            </div>
+                                                            <div class="avatar-user">
+                                                                <img src="/images/ava4.png" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-info">
+                                                        <h4 class="name-l"><span>Евгений</span> <span>Дорниенко</span></h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wins-item">
+                                            <div class="wins-item-inner">
+                                                <div class="row-ava">
+                                                    <div class="rate-avatar-column">
+                                                        <div class="rate-avatar">
+                                                            <div class="circle-wrapper" data-ptc="17">
+                                                                <div class="circle"></div>
+                                                            </div>
+                                                            <div class="avatar-user">
+                                                                <img src="/images/ava5.png" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-info">
+                                                        <h4 class="name-l"><span>Евгений</span> <span>Дорниенко</span></h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wins-item">
+                                            <div class="wins-item-inner">
+                                                <div class="row-ava">
+                                                    <div class="rate-avatar-column">
+                                                        <div class="rate-avatar">
+                                                            <div class="circle-wrapper" data-ptc="20">
+                                                                <div class="circle"></div>
+                                                            </div>
+                                                            <div class="avatar-user">
+                                                                <img src="/images/ava1.png" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-info">
+                                                        <h4 class="name-l"><span>Евгений</span> <span>Дорниенко</span></h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wins-item">
+                                            <div class="wins-item-inner">
+                                                <div class="row-ava">
+                                                    <div class="rate-avatar-column">
+                                                        <div class="rate-avatar">
+                                                            <div class="circle-wrapper" data-ptc="20">
+                                                                <div class="circle"></div>
+                                                            </div>
+                                                            <div class="avatar-user">
+                                                                <img src="/images/ava1.png" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-info">
+                                                        <h4 class="name-l"><span>Евгений</span> <span>Дорниенко</span></h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wins-item">
+                                            <div class="wins-item-inner">
+                                                <div class="row-ava">
+                                                    <div class="rate-avatar-column">
+                                                        <div class="rate-avatar">
+                                                            <div class="circle-wrapper" data-ptc="20">
+                                                                <div class="circle"></div>
+                                                            </div>
+                                                            <div class="avatar-user">
+                                                                <img src="/images/ava1.png" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-info">
+                                                        <h4 class="name-l"><span>Евгений</span> <span>Дорниенко</span></h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wins-item">
+                                            <div class="wins-item-inner">
+                                                <div class="row-ava">
+                                                    <div class="rate-avatar-column">
+                                                        <div class="rate-avatar">
+                                                            <div class="circle-wrapper" data-ptc="20">
+                                                                <div class="circle"></div>
+                                                            </div>
+                                                            <div class="avatar-user">
+                                                                <img src="/images/ava1.png" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-info">
+                                                        <h4 class="name-l"><span>Евгений</span> <span>Дорниенко</span></h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wins-item">
+                                            <div class="wins-item-inner">
+                                                <div class="row-ava">
+                                                    <div class="rate-avatar-column">
+                                                        <div class="rate-avatar">
+                                                            <div class="circle-wrapper" data-ptc="20">
+                                                                <div class="circle"></div>
+                                                            </div>
+                                                            <div class="avatar-user">
+                                                                <img src="/images/ava1.png" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-info">
+                                                        <h4 class="name-l"><span>Евгений</span> <span>Дорниенко</span></h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wins-item">
+                                            <div class="wins-item-inner">
+                                                <div class="row-ava">
+                                                    <div class="rate-avatar-column">
+                                                        <div class="rate-avatar">
+                                                            <div class="circle-wrapper" data-ptc="20">
+                                                                <div class="circle"></div>
+                                                            </div>
+                                                            <div class="avatar-user">
+                                                                <img src="/images/ava1.png" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-info">
+                                                        <h4 class="name-l"><span>Евгений</span> <span>Дорниенко</span></h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wins-item">
+                                            <div class="wins-item-inner">
+                                                <div class="row-ava">
+                                                    <div class="rate-avatar-column">
+                                                        <div class="rate-avatar">
+                                                            <div class="circle-wrapper" data-ptc="20">
+                                                                <div class="circle"></div>
+                                                            </div>
+                                                            <div class="avatar-user">
+                                                                <img src="/images/ava1.png" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-info">
+                                                        <h4 class="name-l"><span>Евгений</span> <span>Дорниенко</span></h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wins-item">
+                                            <div class="wins-item-inner">
+                                                <div class="row-ava">
+                                                    <div class="rate-avatar-column">
+                                                        <div class="rate-avatar">
+                                                            <div class="circle-wrapper" data-ptc="20">
+                                                                <div class="circle"></div>
+                                                            </div>
+                                                            <div class="avatar-user">
+                                                                <img src="/images/ava1.png" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-info">
+                                                        <h4 class="name-l"><span>Евгений</span> <span>Дорниенко</span></h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wins-item">
+                                            <div class="wins-item-inner">
+                                                <div class="row-ava">
+                                                    <div class="rate-avatar-column">
+                                                        <div class="rate-avatar">
+                                                            <div class="circle-wrapper" data-ptc="20">
+                                                                <div class="circle"></div>
+                                                            </div>
+                                                            <div class="avatar-user">
+                                                                <img src="/images/ava1.png" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-info">
+                                                        <h4 class="name-l"><span>Евгений</span> <span>Дорниенко</span></h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wins-item">
+                                            <div class="wins-item-inner">
+                                                <div class="row-ava">
+                                                    <div class="rate-avatar-column">
+                                                        <div class="rate-avatar">
+                                                            <div class="circle-wrapper" data-ptc="20">
+                                                                <div class="circle"></div>
+                                                            </div>
+                                                            <div class="avatar-user">
+                                                                <img src="/images/ava1.png" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-info">
+                                                        <h4 class="name-l">
+                                                            <span>Евгений</span>
+                                                            <span>Дорниенко</span>
+                                                        </h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="bets-slider">
-                                    <div class="wins-item">
-                                        <div class="wins-item-inner">
-                                            <div class="row-ava">
-                                                <div class="rate-avatar-column">
-                                                    <div class="rate-avatar">
-                                                        <div class="circle-wrapper" data-ptc="11">
-                                                            <div class="circle"></div>
-                                                        </div>
-                                                        <div class="avatar-user">
-                                                            <img src="/images/ava1.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="user-info">
-                                                    <h4 class="name-l"><span>Евгений</span> <span>Дорниенко</span></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="wins-item">
-                                        <div class="wins-item-inner">
-                                            <div class="row-ava">
-                                                <div class="rate-avatar-column">
-                                                    <div class="rate-avatar">
-                                                        <div class="circle-wrapper" data-ptc="14">
-                                                            <div class="circle"></div>
-                                                        </div>
-                                                        <div class="avatar-user">
-                                                            <img src="/images/ava2.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="user-info">
-                                                    <h4 class="name-l"><span>Евгений</span> <span>Дорниенко</span></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="wins-item">
-                                        <div class="wins-item-inner">
-                                            <div class="row-ava">
-                                                <div class="rate-avatar-column">
-                                                    <div class="rate-avatar">
-                                                        <div class="circle-wrapper" data-ptc="21">
-                                                            <div class="circle"></div>
-                                                        </div>
-                                                        <div class="avatar-user">
-                                                            <img src="/images/ava3.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="user-info">
-                                                    <h4 class="name-l"><span>Евгений</span> <span>Дорниенко</span></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="wins-item">
-                                        <div class="wins-item-inner">
-                                            <div class="row-ava">
-                                                <div class="rate-avatar-column">
-                                                    <div class="rate-avatar">
-                                                        <div class="circle-wrapper" data-ptc="2">
-                                                            <div class="circle"></div>
-                                                        </div>
-                                                        <div class="avatar-user">
-                                                            <img src="/images/ava4.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="user-info">
-                                                    <h4 class="name-l"><span>Евгений</span> <span>Дорниенко</span></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="wins-item">
-                                        <div class="wins-item-inner">
-                                            <div class="row-ava">
-                                                <div class="rate-avatar-column">
-                                                    <div class="rate-avatar">
-                                                        <div class="circle-wrapper" data-ptc="17">
-                                                            <div class="circle"></div>
-                                                        </div>
-                                                        <div class="avatar-user">
-                                                            <img src="/images/ava5.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="user-info">
-                                                    <h4 class="name-l"><span>Евгений</span> <span>Дорниенко</span></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="wins-item">
-                                        <div class="wins-item-inner">
-                                            <div class="row-ava">
-                                                <div class="rate-avatar-column">
-                                                    <div class="rate-avatar">
-                                                        <div class="circle-wrapper" data-ptc="20">
-                                                            <div class="circle"></div>
-                                                        </div>
-                                                        <div class="avatar-user">
-                                                            <img src="/images/ava1.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="user-info">
-                                                    <h4 class="name-l"><span>Евгений</span> <span>Дорниенко</span></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="wins-item">
-                                        <div class="wins-item-inner">
-                                            <div class="row-ava">
-                                                <div class="rate-avatar-column">
-                                                    <div class="rate-avatar">
-                                                        <div class="circle-wrapper" data-ptc="20">
-                                                            <div class="circle"></div>
-                                                        </div>
-                                                        <div class="avatar-user">
-                                                            <img src="/images/ava1.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="user-info">
-                                                    <h4 class="name-l"><span>Евгений</span> <span>Дорниенко</span></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="wins-item">
-                                        <div class="wins-item-inner">
-                                            <div class="row-ava">
-                                                <div class="rate-avatar-column">
-                                                    <div class="rate-avatar">
-                                                        <div class="circle-wrapper" data-ptc="20">
-                                                            <div class="circle"></div>
-                                                        </div>
-                                                        <div class="avatar-user">
-                                                            <img src="/images/ava1.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="user-info">
-                                                    <h4 class="name-l"><span>Евгений</span> <span>Дорниенко</span></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="wins-item">
-                                        <div class="wins-item-inner">
-                                            <div class="row-ava">
-                                                <div class="rate-avatar-column">
-                                                    <div class="rate-avatar">
-                                                        <div class="circle-wrapper" data-ptc="20">
-                                                            <div class="circle"></div>
-                                                        </div>
-                                                        <div class="avatar-user">
-                                                            <img src="/images/ava1.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="user-info">
-                                                    <h4 class="name-l"><span>Евгений</span> <span>Дорниенко</span></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="wins-item">
-                                        <div class="wins-item-inner">
-                                            <div class="row-ava">
-                                                <div class="rate-avatar-column">
-                                                    <div class="rate-avatar">
-                                                        <div class="circle-wrapper" data-ptc="20">
-                                                            <div class="circle"></div>
-                                                        </div>
-                                                        <div class="avatar-user">
-                                                            <img src="/images/ava1.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="user-info">
-                                                    <h4 class="name-l"><span>Евгений</span> <span>Дорниенко</span></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="wins-item">
-                                        <div class="wins-item-inner">
-                                            <div class="row-ava">
-                                                <div class="rate-avatar-column">
-                                                    <div class="rate-avatar">
-                                                        <div class="circle-wrapper" data-ptc="20">
-                                                            <div class="circle"></div>
-                                                        </div>
-                                                        <div class="avatar-user">
-                                                            <img src="/images/ava1.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="user-info">
-                                                    <h4 class="name-l"><span>Евгений</span> <span>Дорниенко</span></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="wins-item">
-                                        <div class="wins-item-inner">
-                                            <div class="row-ava">
-                                                <div class="rate-avatar-column">
-                                                    <div class="rate-avatar">
-                                                        <div class="circle-wrapper" data-ptc="20">
-                                                            <div class="circle"></div>
-                                                        </div>
-                                                        <div class="avatar-user">
-                                                            <img src="/images/ava1.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="user-info">
-                                                    <h4 class="name-l"><span>Евгений</span> <span>Дорниенко</span></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="wins-item">
-                                        <div class="wins-item-inner">
-                                            <div class="row-ava">
-                                                <div class="rate-avatar-column">
-                                                    <div class="rate-avatar">
-                                                        <div class="circle-wrapper" data-ptc="20">
-                                                            <div class="circle"></div>
-                                                        </div>
-                                                        <div class="avatar-user">
-                                                            <img src="/images/ava1.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="user-info">
-                                                    <h4 class="name-l"><span>Евгений</span> <span>Дорниенко</span></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="wins-item">
-                                        <div class="wins-item-inner">
-                                            <div class="row-ava">
-                                                <div class="rate-avatar-column">
-                                                    <div class="rate-avatar">
-                                                        <div class="circle-wrapper" data-ptc="20">
-                                                            <div class="circle"></div>
-                                                        </div>
-                                                        <div class="avatar-user">
-                                                            <img src="/images/ava1.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="user-info">
-                                                    <h4 class="name-l"><span>Евгений</span> <span>Дорниенко</span></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="wins-item">
-                                        <div class="wins-item-inner">
-                                            <div class="row-ava">
-                                                <div class="rate-avatar-column">
-                                                    <div class="rate-avatar">
-                                                        <div class="circle-wrapper" data-ptc="20">
-                                                            <div class="circle"></div>
-                                                        </div>
-                                                        <div class="avatar-user">
-                                                            <img src="/images/ava1.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="user-info">
-                                                    <h4 class="name-l">
-                                                        <span>Евгений</span>
-                                                        <span>Дорниенко</span>
-                                                    </h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="table-footer">
-                                <div class="pagination slider-navigation" id="bets-nav">
-                                    <div class="slider-navigation-inner">
+                                <div class="table-footer">
+                                    <div class="pagination slider-navigation" id="bets-nav">
+                                        <div class="slider-navigation-inner">
 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            <?php } ?>
+
 
 
 <!--            dino1-->
@@ -402,8 +407,8 @@ BetAsset::register($this);
                                     <img src="/images/champ.svg" alt="">
                                 </div>
                                 <div class="left-head-text">
-                                    <span class="text-head">Топ-100</span>
-                                    <span class="text-head text-muted">3,000 ₽</span>
+                                    <span class="text-head">Еженедельный Турнир</span>
+                                    <span class="text-head text-muted">25,000 ₽</span>
                                 </div>
                             </div>
                             <script>
@@ -413,9 +418,11 @@ BetAsset::register($this);
                             <div class="table-body  tableTop100">
 
 
+
+
                                 <?= GridView::widget([
                                     'dataProvider' => $dataProvider,
-                                        'layout' => " <div class='wrap_commercial_top'>  {items} <div class='commercial'> <div class='in_commercial'> Commercial Place </div> </div>  </div>  <div class='clearfix'></div> \n <div class='table-footer'><div class='pagination'> <ul>  {pager}  </ul> </div></div>",
+                                        'layout' => " <div class='wrap_commercial_top'>  {items} <div class='commercial'> <div class='in_commercial' >  </div> </div>  </div>  <div class='clearfix'></div> \n <div class='table-footer'><div class='pagination'> <ul>  {pager}  </ul> </div></div>",
                                     'tableOptions'=>['class'=>'table table-striped table-bordered clearTableBorder'],
                                     'summary' => '',
                                     'columns' => [
@@ -581,16 +588,14 @@ BetAsset::register($this);
                             </div>
                             <div class="table-body">
                                 <div class="table-body-inner">
-                                    <div class="text-table">
-                                        <p>The complexity of mining crypto currency is growing
-                                            rapidly, and many crypto-currencies initially use POS
-                                            or plan to switch to POW instead. The financial well-being
-                                            of miners is under threat.
-                                        </p>
-                                        <p>MARK.SPACE means hundreds of thousands of high-end
-                                            renders, which requires terabytes of content to create.</p>
-                                        <a href="#" class="btn btn-hover btn-primary no-before save-btn">
-                                            <i class="text-show">+  принять участие</i>
+                                    <div class="text-table prizeplace" ">
+                                        <p>У нас ты имеешь уникальную возможность заработать на ставках, при этом ничего не вложив.<p>
+                                        <p>    Каждую неделю ты можешь участвовать в турнирах и побороться за 25 000 руб. <p>
+
+
+                                     
+                                        <a href="#" data-toggle="modal" data-target="#modal-faq" class="btn btn-hover btn-primary no-before ">
+                                            <i class="text-show">+  правила участия</i>
                                             <i class="text-hide">Готово</i>
                                             <span></span>
                                         </a>
@@ -1171,6 +1176,9 @@ BetAsset::register($this);
             </div>
 
 
+
+
+        <?php if(0){ // Рейтинг букмекерских контор ?>
             <div class="row table-row">
                 <div class="column-12">
                     <div class="table-wrapper bookmake-rating">
@@ -1223,99 +1231,112 @@ BetAsset::register($this);
                     </div>
                 </div>
             </div>
-            <div class="row table-row">
-                <div class="column-8">
-                    <div class="table-wrapper last-bet">
-                        <div class="table-inner table-transparent">
-                            <div class="table-head head-with-tabs">
-                                <div class="tbl-icon">
-                                    <img src="/images/soccer-ball.svg" alt="">
+        <?php } ?>
+
+
+            <?php if(1){ // верстка для посл ставок  ?>
+
+
+                <?=LastBets::widget(['user_id'=>yii::$app->user->identity->id]); ?>
+
+
+            <?php } ?>
+
+            <?php if(0){ // верстка для посл ставок  ?>
+                <div class="row table-row">
+                    <div class="column-8">
+                        <div class="table-wrapper last-bet">
+                            <div class="table-inner table-transparent">
+                                <div class="table-head head-with-tabs">
+                                    <div class="tbl-icon">
+                                        <img src="/images/soccer-ball.svg" alt="">
+                                    </div>
+                                    <div class="left-head-text">
+                                        <span class="text-head">Последние Ставки</span>
+                                    </div>
+                                    <div class="right-head-tab">
+                                        <ul class="head-tabs">
+                                            <li class="active">
+                                                <a href="#">Только PRO</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Все Прогнозы</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="left-head-text">
-                                    <span class="text-head">Последние Ставки</span>
-                                </div>
-                                <div class="right-head-tab">
-                                    <ul class="head-tabs">
-                                        <li class="active">
-                                            <a href="#">Только PRO</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Все Прогнозы</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="table-body">
-                                <div class="row">
-                                    <div class="column-6 rate-column">
-                                        <div class="rate-wrapper">
-                                            <div class="rate-inner">
-                                                <div class="user-rate">
-                                                    <div class="user-rate-inner">
-                                                        <div class="row-ava">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper" data-ptc="19">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="/images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="user-info">
-                                                                <h4 class="name-r">john.baklan</h4>
-                                                                <div class="level-user level-user-label">
-                                                                    <div class="level-text">Уровень 19</div>
-                                                                    <span class="label-user label-user-pro">pro</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="rate-content">
-                                                            <div class="rate-c__item rate-c__item__two">
-                                                                <div class="rate-c">
-                                                                    <div class="title_rate_c">Ординар</div>
-                                                                    <div class="value_rate_c">7,200 ₽ - 37%</div>
-                                                                </div>
-                                                                <div class="rate-c">
-                                                                    <div class="title_rate_c">26.05.2018</div>
-                                                                    <div class="value_rate_c">Тотал Больше 3.5 - x 1.67</div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rate-c__item">
-                                                                <div class="rate-c">
-                                                                    <div class="title_rate_c">Футбол - Лига Чемпионов</div>
-                                                                    <div class="value_rate_c">Реал Мадрид - Ливерпуль</div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rate-c__footer">
-                                                                <div class="btn-shared">
-                                                                    <button class="like"></button>
-                                                                    <div class="shared-block">
-                                                                        <button class="shared">
-                                                                            <span class="icon-network"></span>
-                                                                        </button>
-                                                                        <div class="drop-shared">
-                                                                            <ul class="shared-social">
-                                                                                <li>
-                                                                                    <a href="https://twitter.com/home?status=http%3A//test6.tino.com.ua/account.html" target="_blank">
-                                                                                        <span class="icon-tw"></span>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//test6.tino.com.ua/account.html" target="_blank">
-                                                                                        <span class="icon-fb"></span>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <a href="https://plus.google.com/share?url=https%3A//www.facebook.com/sharer/sharer.php?u=http%253A//test6.tino.com.ua/account.html" target="_blank">
-                                                                                        <span class="icon-gp"></span>
-                                                                                    </a>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
+                                <div class="table-body">
+                                    <div class="row">
+                                        <div class="column-6 rate-column">
+                                            <div class="rate-wrapper">
+                                                <div class="rate-inner">
+                                                    <div class="user-rate">
+                                                        <div class="user-rate-inner">
+                                                            <div class="row-ava">
+                                                                <div class="rate-avatar">
+                                                                    <div class="circle-wrapper" data-ptc="19">
+                                                                        <div class="circle"></div>
+                                                                    </div>
+                                                                    <div class="avatar-user">
+                                                                        <img src="/images/ava1.png" alt="">
                                                                     </div>
                                                                 </div>
-                                                                <div class="link-rate">
-                                                                    <a href="#" data-toggle="modal" data-target="#bet1">+  Подробнее</a>
+                                                                <div class="user-info">
+                                                                    <h4 class="name-r">john.baklan</h4>
+                                                                    <div class="level-user level-user-label">
+                                                                        <div class="level-text">Уровень 19</div>
+                                                                        <span class="label-user label-user-pro">pro</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="rate-content">
+                                                                <div class="rate-c__item rate-c__item__two">
+                                                                    <div class="rate-c">
+                                                                        <div class="title_rate_c">Ординар</div>
+                                                                        <div class="value_rate_c">7,200 ₽ - 37%</div>
+                                                                    </div>
+                                                                    <div class="rate-c">
+                                                                        <div class="title_rate_c">26.05.2018</div>
+                                                                        <div class="value_rate_c">Тотал Больше 3.5 - x 1.67</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="rate-c__item">
+                                                                    <div class="rate-c">
+                                                                        <div class="title_rate_c">Футбол - Лига Чемпионов</div>
+                                                                        <div class="value_rate_c">Реал Мадрид - Ливерпуль</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="rate-c__footer">
+                                                                    <div class="btn-shared">
+                                                                        <button class="like"></button>
+                                                                        <div class="shared-block">
+                                                                            <button class="shared">
+                                                                                <span class="icon-network"></span>
+                                                                            </button>
+                                                                            <div class="drop-shared">
+                                                                                <ul class="shared-social">
+                                                                                    <li>
+                                                                                        <a href="https://twitter.com/home?status=http%3A//test6.tino.com.ua/account.html" target="_blank">
+                                                                                            <span class="icon-tw"></span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//test6.tino.com.ua/account.html" target="_blank">
+                                                                                            <span class="icon-fb"></span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <a href="https://plus.google.com/share?url=https%3A//www.facebook.com/sharer/sharer.php?u=http%253A//test6.tino.com.ua/account.html" target="_blank">
+                                                                                            <span class="icon-gp"></span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="link-rate">
+                                                                        <a href="#" data-toggle="modal" data-target="#bet1">+  Подробнее</a>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1323,76 +1344,76 @@ BetAsset::register($this);
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="column-6 rate-column">
-                                        <div class="rate-wrapper">
-                                            <div class="rate-inner">
-                                                <div class="user-rate">
-                                                    <div class="user-rate-inner">
-                                                        <div class="row-ava">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper" data-ptc="8">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="/images/ava5.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="user-info">
-                                                                <h4 class="name-r">rodrigo_pes</h4>
-                                                                <div class="level-user level-user-label">
-                                                                    <div class="level-text">Уровень 8</div>
-                                                                    <span class="label-user label-user-pro">pro</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="rate-content">
-                                                            <div class="rate-c__item rate-c__item__two">
-                                                                <div class="rate-c">
-                                                                    <div class="title_rate_c">Ординар</div>
-                                                                    <div class="value_rate_c">7,200 ₽ - 9%</div>
-                                                                </div>
-                                                                <div class="rate-c">
-                                                                    <div class="title_rate_c">26.05.2018 <span class="more__text">...+3</span></div>
-                                                                    <div class="value_rate_c">Тотал Больше 3.5 - x 1.67 <span class="more__text">...+3</span></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rate-c__item">
-                                                                <div class="rate-c">
-                                                                    <div class="title_rate_c">Футбол, Хоккей, Теннис</div>
-                                                                    <div class="value_rate_c">Реал Мадрид - Ливерпуль <span class="more__text">...+3</span></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rate-c__footer">
-                                                                <div class="btn-shared">
-                                                                    <button class="like"></button>
-                                                                    <div class="shared-block">
-                                                                        <button class="shared">
-                                                                            <span class="icon-network"></span>
-                                                                        </button>
-                                                                        <div class="drop-shared">
-                                                                            <ul class="shared-social">
-                                                                                <li>
-                                                                                    <a href="https://twitter.com/home?status=http%3A//test6.tino.com.ua/account.html" target="_blank">
-                                                                                        <span class="icon-tw"></span>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//test6.tino.com.ua/account.html" target="_blank">
-                                                                                        <span class="icon-fb"></span>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <a href="https://plus.google.com/share?url=https%3A//www.facebook.com/sharer/sharer.php?u=http%253A//test6.tino.com.ua/account.html" target="_blank">
-                                                                                        <span class="icon-gp"></span>
-                                                                                    </a>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
+                                        <div class="column-6 rate-column">
+                                            <div class="rate-wrapper">
+                                                <div class="rate-inner">
+                                                    <div class="user-rate">
+                                                        <div class="user-rate-inner">
+                                                            <div class="row-ava">
+                                                                <div class="rate-avatar">
+                                                                    <div class="circle-wrapper" data-ptc="8">
+                                                                        <div class="circle"></div>
+                                                                    </div>
+                                                                    <div class="avatar-user">
+                                                                        <img src="/images/ava5.png" alt="">
                                                                     </div>
                                                                 </div>
-                                                                <div class="link-rate">
-                                                                    <a href="#" data-toggle="modal" data-target="#bet2">+  Подробнее</a>
+                                                                <div class="user-info">
+                                                                    <h4 class="name-r">rodrigo_pes</h4>
+                                                                    <div class="level-user level-user-label">
+                                                                        <div class="level-text">Уровень 8</div>
+                                                                        <span class="label-user label-user-pro">pro</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="rate-content">
+                                                                <div class="rate-c__item rate-c__item__two">
+                                                                    <div class="rate-c">
+                                                                        <div class="title_rate_c">Ординар</div>
+                                                                        <div class="value_rate_c">7,200 ₽ - 9%</div>
+                                                                    </div>
+                                                                    <div class="rate-c">
+                                                                        <div class="title_rate_c">26.05.2018 <span class="more__text">...+3</span></div>
+                                                                        <div class="value_rate_c">Тотал Больше 3.5 - x 1.67 <span class="more__text">...+3</span></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="rate-c__item">
+                                                                    <div class="rate-c">
+                                                                        <div class="title_rate_c">Футбол, Хоккей, Теннис</div>
+                                                                        <div class="value_rate_c">Реал Мадрид - Ливерпуль <span class="more__text">...+3</span></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="rate-c__footer">
+                                                                    <div class="btn-shared">
+                                                                        <button class="like"></button>
+                                                                        <div class="shared-block">
+                                                                            <button class="shared">
+                                                                                <span class="icon-network"></span>
+                                                                            </button>
+                                                                            <div class="drop-shared">
+                                                                                <ul class="shared-social">
+                                                                                    <li>
+                                                                                        <a href="https://twitter.com/home?status=http%3A//test6.tino.com.ua/account.html" target="_blank">
+                                                                                            <span class="icon-tw"></span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//test6.tino.com.ua/account.html" target="_blank">
+                                                                                            <span class="icon-fb"></span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <a href="https://plus.google.com/share?url=https%3A//www.facebook.com/sharer/sharer.php?u=http%253A//test6.tino.com.ua/account.html" target="_blank">
+                                                                                            <span class="icon-gp"></span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="link-rate">
+                                                                        <a href="#" data-toggle="modal" data-target="#bet2">+  Подробнее</a>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1400,76 +1421,76 @@ BetAsset::register($this);
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="column-6 rate-column">
-                                        <div class="rate-wrapper">
-                                            <div class="rate-inner">
-                                                <div class="user-rate">
-                                                    <div class="user-rate-inner">
-                                                        <div class="row-ava">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper" data-ptc="10">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="/images/ava2.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="user-info">
-                                                                <h4 class="name-r">john.baklan</h4>
-                                                                <div class="level-user level-user-label">
-                                                                    <div class="level-text">Уровень 10</div>
-                                                                    <span class="label-user label-user-pro">pro</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="rate-content">
-                                                            <div class="rate-c__item rate-c__item__two">
-                                                                <div class="rate-c">
-                                                                    <div class="title_rate_c">Ординар</div>
-                                                                    <div class="value_rate_c">7,200 ₽ - 37%</div>
-                                                                </div>
-                                                                <div class="rate-c">
-                                                                    <div class="title_rate_c">26.05.2018</div>
-                                                                    <div class="value_rate_c">Тотал Больше 3.5 - x 1.67</div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rate-c__item">
-                                                                <div class="rate-c">
-                                                                    <div class="title_rate_c">Футбол - Лига Чемпионов</div>
-                                                                    <div class="value_rate_c">Реал Мадрид - Ливерпуль</div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rate-c__footer">
-                                                                <div class="btn-shared">
-                                                                    <button class="like"></button>
-                                                                    <div class="shared-block">
-                                                                        <button class="shared">
-                                                                            <span class="icon-network"></span>
-                                                                        </button>
-                                                                        <div class="drop-shared">
-                                                                            <ul class="shared-social">
-                                                                                <li>
-                                                                                    <a href="https://twitter.com/home?status=http%3A//test6.tino.com.ua/account.html" target="_blank">
-                                                                                        <span class="icon-tw"></span>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//test6.tino.com.ua/account.html" target="_blank">
-                                                                                        <span class="icon-fb"></span>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <a href="https://plus.google.com/share?url=https%3A//www.facebook.com/sharer/sharer.php?u=http%253A//test6.tino.com.ua/account.html" target="_blank">
-                                                                                        <span class="icon-gp"></span>
-                                                                                    </a>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
+                                        <div class="column-6 rate-column">
+                                            <div class="rate-wrapper">
+                                                <div class="rate-inner">
+                                                    <div class="user-rate">
+                                                        <div class="user-rate-inner">
+                                                            <div class="row-ava">
+                                                                <div class="rate-avatar">
+                                                                    <div class="circle-wrapper" data-ptc="10">
+                                                                        <div class="circle"></div>
+                                                                    </div>
+                                                                    <div class="avatar-user">
+                                                                        <img src="/images/ava2.png" alt="">
                                                                     </div>
                                                                 </div>
-                                                                <div class="link-rate">
-                                                                    <a href="#" data-toggle="modal" data-target="#bet3">+  Подробнее</a>
+                                                                <div class="user-info">
+                                                                    <h4 class="name-r">john.baklan</h4>
+                                                                    <div class="level-user level-user-label">
+                                                                        <div class="level-text">Уровень 10</div>
+                                                                        <span class="label-user label-user-pro">pro</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="rate-content">
+                                                                <div class="rate-c__item rate-c__item__two">
+                                                                    <div class="rate-c">
+                                                                        <div class="title_rate_c">Ординар</div>
+                                                                        <div class="value_rate_c">7,200 ₽ - 37%</div>
+                                                                    </div>
+                                                                    <div class="rate-c">
+                                                                        <div class="title_rate_c">26.05.2018</div>
+                                                                        <div class="value_rate_c">Тотал Больше 3.5 - x 1.67</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="rate-c__item">
+                                                                    <div class="rate-c">
+                                                                        <div class="title_rate_c">Футбол - Лига Чемпионов</div>
+                                                                        <div class="value_rate_c">Реал Мадрид - Ливерпуль</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="rate-c__footer">
+                                                                    <div class="btn-shared">
+                                                                        <button class="like"></button>
+                                                                        <div class="shared-block">
+                                                                            <button class="shared">
+                                                                                <span class="icon-network"></span>
+                                                                            </button>
+                                                                            <div class="drop-shared">
+                                                                                <ul class="shared-social">
+                                                                                    <li>
+                                                                                        <a href="https://twitter.com/home?status=http%3A//test6.tino.com.ua/account.html" target="_blank">
+                                                                                            <span class="icon-tw"></span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//test6.tino.com.ua/account.html" target="_blank">
+                                                                                            <span class="icon-fb"></span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <a href="https://plus.google.com/share?url=https%3A//www.facebook.com/sharer/sharer.php?u=http%253A//test6.tino.com.ua/account.html" target="_blank">
+                                                                                            <span class="icon-gp"></span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="link-rate">
+                                                                        <a href="#" data-toggle="modal" data-target="#bet3">+  Подробнее</a>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1477,477 +1498,482 @@ BetAsset::register($this);
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="column-6 rate-column">
-                                        <div class="rate-wrapper">
-                                            <div class="rate-inner">
-                                                <div class="user-rate">
-                                                    <div class="user-rate-inner">
-                                                        <div class="row-ava">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper" data-ptc="16">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="/images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="user-info">
-                                                                <h4 class="name-r">john.baklan</h4>
-                                                                <div class="level-user level-user-label">
-                                                                    <div class="level-text">Уровень 16</div>
-                                                                    <span class="label-user label-user-pro">pro</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="rate-content">
-                                                            <div class="rate-c__item rate-c__item__two">
-                                                                <div class="rate-c">
-                                                                    <div class="title_rate_c">Ординар</div>
-                                                                    <div class="value_rate_c">7,200 ₽ - 37%</div>
-                                                                </div>
-                                                                <div class="rate-c">
-                                                                    <div class="title_rate_c">26.05.2018</div>
-                                                                    <div class="value_rate_c">Тотал Больше 3.5 - x 1.67</div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rate-c__item">
-                                                                <div class="rate-c">
-                                                                    <div class="title_rate_c">Футбол - Лига Чемпионов</div>
-                                                                    <div class="value_rate_c">Реал Мадрид - Ливерпуль</div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rate-c__footer">
-                                                                <div class="btn-shared">
-                                                                    <button class="like"></button>
-                                                                    <div class="shared-block">
-                                                                        <button class="shared">
-                                                                            <span class="icon-network"></span>
-                                                                        </button>
-                                                                        <div class="drop-shared">
-                                                                            <ul class="shared-social">
-                                                                                <li>
-                                                                                    <a href="https://twitter.com/home?status=http%3A//test6.tino.com.ua/account.html" target="_blank">
-                                                                                        <span class="icon-tw"></span>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//test6.tino.com.ua/account.html" target="_blank">
-                                                                                        <span class="icon-fb"></span>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <a href="https://plus.google.com/share?url=https%3A//www.facebook.com/sharer/sharer.php?u=http%253A//test6.tino.com.ua/account.html" target="_blank">
-                                                                                        <span class="icon-gp"></span>
-                                                                                    </a>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
+                                        <div class="column-6 rate-column">
+                                            <div class="rate-wrapper">
+                                                <div class="rate-inner">
+                                                    <div class="user-rate">
+                                                        <div class="user-rate-inner">
+                                                            <div class="row-ava">
+                                                                <div class="rate-avatar">
+                                                                    <div class="circle-wrapper" data-ptc="16">
+                                                                        <div class="circle"></div>
+                                                                    </div>
+                                                                    <div class="avatar-user">
+                                                                        <img src="/images/ava3.png" alt="">
                                                                     </div>
                                                                 </div>
-                                                                <div class="link-rate">
-                                                                    <a href="#" data-toggle="modal" data-target="#bet4">+  Подробнее</a>
+                                                                <div class="user-info">
+                                                                    <h4 class="name-r">john.baklan</h4>
+                                                                    <div class="level-user level-user-label">
+                                                                        <div class="level-text">Уровень 16</div>
+                                                                        <span class="label-user label-user-pro">pro</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="rate-content">
+                                                                <div class="rate-c__item rate-c__item__two">
+                                                                    <div class="rate-c">
+                                                                        <div class="title_rate_c">Ординар</div>
+                                                                        <div class="value_rate_c">7,200 ₽ - 37%</div>
+                                                                    </div>
+                                                                    <div class="rate-c">
+                                                                        <div class="title_rate_c">26.05.2018</div>
+                                                                        <div class="value_rate_c">Тотал Больше 3.5 - x 1.67</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="rate-c__item">
+                                                                    <div class="rate-c">
+                                                                        <div class="title_rate_c">Футбол - Лига Чемпионов</div>
+                                                                        <div class="value_rate_c">Реал Мадрид - Ливерпуль</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="rate-c__footer">
+                                                                    <div class="btn-shared">
+                                                                        <button class="like"></button>
+                                                                        <div class="shared-block">
+                                                                            <button class="shared">
+                                                                                <span class="icon-network"></span>
+                                                                            </button>
+                                                                            <div class="drop-shared">
+                                                                                <ul class="shared-social">
+                                                                                    <li>
+                                                                                        <a href="https://twitter.com/home?status=http%3A//test6.tino.com.ua/account.html" target="_blank">
+                                                                                            <span class="icon-tw"></span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//test6.tino.com.ua/account.html" target="_blank">
+                                                                                            <span class="icon-fb"></span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <a href="https://plus.google.com/share?url=https%3A//www.facebook.com/sharer/sharer.php?u=http%253A//test6.tino.com.ua/account.html" target="_blank">
+                                                                                            <span class="icon-gp"></span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="link-rate">
+                                                                        <a href="#" data-toggle="modal" data-target="#bet4">+  Подробнее</a>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="user-rate-info">
-                                                    <div class="user-rate-info-inner">
+                                                    <div class="user-rate-info">
+                                                        <div class="user-rate-info-inner">
 
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
 
 
-                                    <div class="column-6 rate-column hide-col">
-                                        <div class="rate-wrapper">
-                                            <div class="rate-inner">
-                                                <div class="user-rate">
-                                                    <div class="user-rate-inner">
-                                                        <div class="row-ava">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper" data-ptc="16">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="/images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="user-info">
-                                                                <h4 class="name-r">john.baklan</h4>
-                                                                <div class="level-user level-user-label">
-                                                                    <div class="level-text">Уровень 16</div>
-                                                                    <span class="label-user label-user-pro">pro</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="rate-content">
-                                                            <div class="rate-c__item rate-c__item__two">
-                                                                <div class="rate-c">
-                                                                    <div class="title_rate_c">Ординар</div>
-                                                                    <div class="value_rate_c">7,200 ₽ - 37%</div>
-                                                                </div>
-                                                                <div class="rate-c">
-                                                                    <div class="title_rate_c">26.05.2018</div>
-                                                                    <div class="value_rate_c">Тотал Больше 3.5 - x 1.67</div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rate-c__item">
-                                                                <div class="rate-c">
-                                                                    <div class="title_rate_c">Футбол - Лига Чемпионов</div>
-                                                                    <div class="value_rate_c">Реал Мадрид - Ливерпуль</div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rate-c__footer">
-                                                                <div class="btn-shared">
-                                                                    <button class="like"></button>
-                                                                    <div class="shared-block">
-                                                                        <button class="shared">
-                                                                            <span class="icon-network"></span>
-                                                                        </button>
-                                                                        <div class="drop-shared">
-                                                                            <ul class="shared-social">
-                                                                                <li>
-                                                                                    <a href="https://twitter.com/home?status=http%3A//test6.tino.com.ua/account.html" target="_blank">
-                                                                                        <span class="icon-tw"></span>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//test6.tino.com.ua/account.html" target="_blank">
-                                                                                        <span class="icon-fb"></span>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <a href="https://plus.google.com/share?url=https%3A//www.facebook.com/sharer/sharer.php?u=http%253A//test6.tino.com.ua/account.html" target="_blank">
-                                                                                        <span class="icon-gp"></span>
-                                                                                    </a>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
+                                        <div class="column-6 rate-column hide-col">
+                                            <div class="rate-wrapper">
+                                                <div class="rate-inner">
+                                                    <div class="user-rate">
+                                                        <div class="user-rate-inner">
+                                                            <div class="row-ava">
+                                                                <div class="rate-avatar">
+                                                                    <div class="circle-wrapper" data-ptc="16">
+                                                                        <div class="circle"></div>
+                                                                    </div>
+                                                                    <div class="avatar-user">
+                                                                        <img src="/images/ava3.png" alt="">
                                                                     </div>
                                                                 </div>
-                                                                <div class="link-rate">
-                                                                    <a href="#" data-toggle="modal" data-target="#bet4">+  Подробнее</a>
+                                                                <div class="user-info">
+                                                                    <h4 class="name-r">john.baklan</h4>
+                                                                    <div class="level-user level-user-label">
+                                                                        <div class="level-text">Уровень 16</div>
+                                                                        <span class="label-user label-user-pro">pro</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="rate-content">
+                                                                <div class="rate-c__item rate-c__item__two">
+                                                                    <div class="rate-c">
+                                                                        <div class="title_rate_c">Ординар</div>
+                                                                        <div class="value_rate_c">7,200 ₽ - 37%</div>
+                                                                    </div>
+                                                                    <div class="rate-c">
+                                                                        <div class="title_rate_c">26.05.2018</div>
+                                                                        <div class="value_rate_c">Тотал Больше 3.5 - x 1.67</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="rate-c__item">
+                                                                    <div class="rate-c">
+                                                                        <div class="title_rate_c">Футбол - Лига Чемпионов</div>
+                                                                        <div class="value_rate_c">Реал Мадрид - Ливерпуль</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="rate-c__footer">
+                                                                    <div class="btn-shared">
+                                                                        <button class="like"></button>
+                                                                        <div class="shared-block">
+                                                                            <button class="shared">
+                                                                                <span class="icon-network"></span>
+                                                                            </button>
+                                                                            <div class="drop-shared">
+                                                                                <ul class="shared-social">
+                                                                                    <li>
+                                                                                        <a href="https://twitter.com/home?status=http%3A//test6.tino.com.ua/account.html" target="_blank">
+                                                                                            <span class="icon-tw"></span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//test6.tino.com.ua/account.html" target="_blank">
+                                                                                            <span class="icon-fb"></span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <a href="https://plus.google.com/share?url=https%3A//www.facebook.com/sharer/sharer.php?u=http%253A//test6.tino.com.ua/account.html" target="_blank">
+                                                                                            <span class="icon-gp"></span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="link-rate">
+                                                                        <a href="#" data-toggle="modal" data-target="#bet4">+  Подробнее</a>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="user-rate-info">
-                                                    <div class="user-rate-info-inner">
+                                                    <div class="user-rate-info">
+                                                        <div class="user-rate-info-inner">
 
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="column-6 rate-column hide-col">
-                                        <div class="rate-wrapper">
-                                            <div class="rate-inner">
-                                                <div class="user-rate">
-                                                    <div class="user-rate-inner">
-                                                        <div class="row-ava">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper" data-ptc="16">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="/images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="user-info">
-                                                                <h4 class="name-r">john.baklan</h4>
-                                                                <div class="level-user level-user-label">
-                                                                    <div class="level-text">Уровень 16</div>
-                                                                    <span class="label-user label-user-pro">pro</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="rate-content">
-                                                            <div class="rate-c__item rate-c__item__two">
-                                                                <div class="rate-c">
-                                                                    <div class="title_rate_c">Ординар</div>
-                                                                    <div class="value_rate_c">7,200 ₽ - 37%</div>
-                                                                </div>
-                                                                <div class="rate-c">
-                                                                    <div class="title_rate_c">26.05.2018</div>
-                                                                    <div class="value_rate_c">Тотал Больше 3.5 - x 1.67</div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rate-c__item">
-                                                                <div class="rate-c">
-                                                                    <div class="title_rate_c">Футбол - Лига Чемпионов</div>
-                                                                    <div class="value_rate_c">Реал Мадрид - Ливерпуль</div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rate-c__footer">
-                                                                <div class="btn-shared">
-                                                                    <button class="like"></button>
-                                                                    <div class="shared-block">
-                                                                        <button class="shared">
-                                                                            <span class="icon-network"></span>
-                                                                        </button>
-                                                                        <div class="drop-shared">
-                                                                            <ul class="shared-social">
-                                                                                <li>
-                                                                                    <a href="https://twitter.com/home?status=http%3A//test6.tino.com.ua/account.html" target="_blank">
-                                                                                        <span class="icon-tw"></span>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//test6.tino.com.ua/account.html" target="_blank">
-                                                                                        <span class="icon-fb"></span>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <a href="https://plus.google.com/share?url=https%3A//www.facebook.com/sharer/sharer.php?u=http%253A//test6.tino.com.ua/account.html" target="_blank">
-                                                                                        <span class="icon-gp"></span>
-                                                                                    </a>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
+                                        <div class="column-6 rate-column hide-col">
+                                            <div class="rate-wrapper">
+                                                <div class="rate-inner">
+                                                    <div class="user-rate">
+                                                        <div class="user-rate-inner">
+                                                            <div class="row-ava">
+                                                                <div class="rate-avatar">
+                                                                    <div class="circle-wrapper" data-ptc="16">
+                                                                        <div class="circle"></div>
+                                                                    </div>
+                                                                    <div class="avatar-user">
+                                                                        <img src="/images/ava3.png" alt="">
                                                                     </div>
                                                                 </div>
-                                                                <div class="link-rate">
-                                                                    <a href="#" data-toggle="modal" data-target="#bet4">+  Подробнее</a>
+                                                                <div class="user-info">
+                                                                    <h4 class="name-r">john.baklan</h4>
+                                                                    <div class="level-user level-user-label">
+                                                                        <div class="level-text">Уровень 16</div>
+                                                                        <span class="label-user label-user-pro">pro</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="rate-content">
+                                                                <div class="rate-c__item rate-c__item__two">
+                                                                    <div class="rate-c">
+                                                                        <div class="title_rate_c">Ординар</div>
+                                                                        <div class="value_rate_c">7,200 ₽ - 37%</div>
+                                                                    </div>
+                                                                    <div class="rate-c">
+                                                                        <div class="title_rate_c">26.05.2018</div>
+                                                                        <div class="value_rate_c">Тотал Больше 3.5 - x 1.67</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="rate-c__item">
+                                                                    <div class="rate-c">
+                                                                        <div class="title_rate_c">Футбол - Лига Чемпионов</div>
+                                                                        <div class="value_rate_c">Реал Мадрид - Ливерпуль</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="rate-c__footer">
+                                                                    <div class="btn-shared">
+                                                                        <button class="like"></button>
+                                                                        <div class="shared-block">
+                                                                            <button class="shared">
+                                                                                <span class="icon-network"></span>
+                                                                            </button>
+                                                                            <div class="drop-shared">
+                                                                                <ul class="shared-social">
+                                                                                    <li>
+                                                                                        <a href="https://twitter.com/home?status=http%3A//test6.tino.com.ua/account.html" target="_blank">
+                                                                                            <span class="icon-tw"></span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//test6.tino.com.ua/account.html" target="_blank">
+                                                                                            <span class="icon-fb"></span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <a href="https://plus.google.com/share?url=https%3A//www.facebook.com/sharer/sharer.php?u=http%253A//test6.tino.com.ua/account.html" target="_blank">
+                                                                                            <span class="icon-gp"></span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="link-rate">
+                                                                        <a href="#" data-toggle="modal" data-target="#bet4">+  Подробнее</a>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="user-rate-info">
-                                                    <div class="user-rate-info-inner">
+                                                    <div class="user-rate-info">
+                                                        <div class="user-rate-info-inner">
 
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="column-6 rate-column hide-col">
-                                        <div class="rate-wrapper">
-                                            <div class="rate-inner">
-                                                <div class="user-rate">
-                                                    <div class="user-rate-inner">
-                                                        <div class="row-ava">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper" data-ptc="16">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="/images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="user-info">
-                                                                <h4 class="name-r">john.baklan</h4>
-                                                                <div class="level-user level-user-label">
-                                                                    <div class="level-text">Уровень 16</div>
-                                                                    <span class="label-user label-user-pro">pro</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="rate-content">
-                                                            <div class="rate-c__item rate-c__item__two">
-                                                                <div class="rate-c">
-                                                                    <div class="title_rate_c">Ординар</div>
-                                                                    <div class="value_rate_c">7,200 ₽ - 37%</div>
-                                                                </div>
-                                                                <div class="rate-c">
-                                                                    <div class="title_rate_c">26.05.2018</div>
-                                                                    <div class="value_rate_c">Тотал Больше 3.5 - x 1.67</div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rate-c__item">
-                                                                <div class="rate-c">
-                                                                    <div class="title_rate_c">Футбол - Лига Чемпионов</div>
-                                                                    <div class="value_rate_c">Реал Мадрид - Ливерпуль</div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rate-c__footer">
-                                                                <div class="btn-shared">
-                                                                    <button class="like"></button>
-                                                                    <div class="shared-block">
-                                                                        <button class="shared">
-                                                                            <span class="icon-network"></span>
-                                                                        </button>
-                                                                        <div class="drop-shared">
-                                                                            <ul class="shared-social">
-                                                                                <li>
-                                                                                    <a href="https://twitter.com/home?status=http%3A//test6.tino.com.ua/account.html" target="_blank">
-                                                                                        <span class="icon-tw"></span>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//test6.tino.com.ua/account.html" target="_blank">
-                                                                                        <span class="icon-fb"></span>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <a href="https://plus.google.com/share?url=https%3A//www.facebook.com/sharer/sharer.php?u=http%253A//test6.tino.com.ua/account.html" target="_blank">
-                                                                                        <span class="icon-gp"></span>
-                                                                                    </a>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
+                                        <div class="column-6 rate-column hide-col">
+                                            <div class="rate-wrapper">
+                                                <div class="rate-inner">
+                                                    <div class="user-rate">
+                                                        <div class="user-rate-inner">
+                                                            <div class="row-ava">
+                                                                <div class="rate-avatar">
+                                                                    <div class="circle-wrapper" data-ptc="16">
+                                                                        <div class="circle"></div>
+                                                                    </div>
+                                                                    <div class="avatar-user">
+                                                                        <img src="/images/ava3.png" alt="">
                                                                     </div>
                                                                 </div>
-                                                                <div class="link-rate">
-                                                                    <a href="#" data-toggle="modal" data-target="#bet4">+  Подробнее</a>
+                                                                <div class="user-info">
+                                                                    <h4 class="name-r">john.baklan</h4>
+                                                                    <div class="level-user level-user-label">
+                                                                        <div class="level-text">Уровень 16</div>
+                                                                        <span class="label-user label-user-pro">pro</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="rate-content">
+                                                                <div class="rate-c__item rate-c__item__two">
+                                                                    <div class="rate-c">
+                                                                        <div class="title_rate_c">Ординар</div>
+                                                                        <div class="value_rate_c">7,200 ₽ - 37%</div>
+                                                                    </div>
+                                                                    <div class="rate-c">
+                                                                        <div class="title_rate_c">26.05.2018</div>
+                                                                        <div class="value_rate_c">Тотал Больше 3.5 - x 1.67</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="rate-c__item">
+                                                                    <div class="rate-c">
+                                                                        <div class="title_rate_c">Футбол - Лига Чемпионов</div>
+                                                                        <div class="value_rate_c">Реал Мадрид - Ливерпуль</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="rate-c__footer">
+                                                                    <div class="btn-shared">
+                                                                        <button class="like"></button>
+                                                                        <div class="shared-block">
+                                                                            <button class="shared">
+                                                                                <span class="icon-network"></span>
+                                                                            </button>
+                                                                            <div class="drop-shared">
+                                                                                <ul class="shared-social">
+                                                                                    <li>
+                                                                                        <a href="https://twitter.com/home?status=http%3A//test6.tino.com.ua/account.html" target="_blank">
+                                                                                            <span class="icon-tw"></span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//test6.tino.com.ua/account.html" target="_blank">
+                                                                                            <span class="icon-fb"></span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <a href="https://plus.google.com/share?url=https%3A//www.facebook.com/sharer/sharer.php?u=http%253A//test6.tino.com.ua/account.html" target="_blank">
+                                                                                            <span class="icon-gp"></span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="link-rate">
+                                                                        <a href="#" data-toggle="modal" data-target="#bet4">+  Подробнее</a>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="user-rate-info">
-                                                    <div class="user-rate-info-inner">
+                                                    <div class="user-rate-info">
+                                                        <div class="user-rate-info-inner">
 
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="column-6 rate-column hide-col">
-                                        <div class="rate-wrapper">
-                                            <div class="rate-inner">
-                                                <div class="user-rate">
-                                                    <div class="user-rate-inner">
-                                                        <div class="row-ava">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper" data-ptc="16">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="/images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="user-info">
-                                                                <h4 class="name-r">john.baklan</h4>
-                                                                <div class="level-user level-user-label">
-                                                                    <div class="level-text">Уровень 16</div>
-                                                                    <span class="label-user label-user-pro">pro</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="rate-content">
-                                                            <div class="rate-c__item rate-c__item__two">
-                                                                <div class="rate-c">
-                                                                    <div class="title_rate_c">Ординар</div>
-                                                                    <div class="value_rate_c">7,200 ₽ - 37%</div>
-                                                                </div>
-                                                                <div class="rate-c">
-                                                                    <div class="title_rate_c">26.05.2018</div>
-                                                                    <div class="value_rate_c">Тотал Больше 3.5 - x 1.67</div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rate-c__item">
-                                                                <div class="rate-c">
-                                                                    <div class="title_rate_c">Футбол - Лига Чемпионов</div>
-                                                                    <div class="value_rate_c">Реал Мадрид - Ливерпуль</div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rate-c__footer">
-                                                                <div class="btn-shared">
-                                                                    <button class="like"></button>
-                                                                    <div class="shared-block">
-                                                                        <button class="shared">
-                                                                            <span class="icon-network"></span>
-                                                                        </button>
-                                                                        <div class="drop-shared">
-                                                                            <ul class="shared-social">
-                                                                                <li>
-                                                                                    <a href="https://twitter.com/home?status=http%3A//test6.tino.com.ua/account.html" target="_blank">
-                                                                                        <span class="icon-tw"></span>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//test6.tino.com.ua/account.html" target="_blank">
-                                                                                        <span class="icon-fb"></span>
-                                                                                    </a>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <a href="https://plus.google.com/share?url=https%3A//www.facebook.com/sharer/sharer.php?u=http%253A//test6.tino.com.ua/account.html" target="_blank">
-                                                                                        <span class="icon-gp"></span>
-                                                                                    </a>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
+                                        <div class="column-6 rate-column hide-col">
+                                            <div class="rate-wrapper">
+                                                <div class="rate-inner">
+                                                    <div class="user-rate">
+                                                        <div class="user-rate-inner">
+                                                            <div class="row-ava">
+                                                                <div class="rate-avatar">
+                                                                    <div class="circle-wrapper" data-ptc="16">
+                                                                        <div class="circle"></div>
+                                                                    </div>
+                                                                    <div class="avatar-user">
+                                                                        <img src="/images/ava3.png" alt="">
                                                                     </div>
                                                                 </div>
-                                                                <div class="link-rate">
-                                                                    <a href="#" data-toggle="modal" data-target="#bet4">+  Подробнее</a>
+                                                                <div class="user-info">
+                                                                    <h4 class="name-r">john.baklan</h4>
+                                                                    <div class="level-user level-user-label">
+                                                                        <div class="level-text">Уровень 16</div>
+                                                                        <span class="label-user label-user-pro">pro</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="rate-content">
+                                                                <div class="rate-c__item rate-c__item__two">
+                                                                    <div class="rate-c">
+                                                                        <div class="title_rate_c">Ординар</div>
+                                                                        <div class="value_rate_c">7,200 ₽ - 37%</div>
+                                                                    </div>
+                                                                    <div class="rate-c">
+                                                                        <div class="title_rate_c">26.05.2018</div>
+                                                                        <div class="value_rate_c">Тотал Больше 3.5 - x 1.67</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="rate-c__item">
+                                                                    <div class="rate-c">
+                                                                        <div class="title_rate_c">Футбол - Лига Чемпионов</div>
+                                                                        <div class="value_rate_c">Реал Мадрид - Ливерпуль</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="rate-c__footer">
+                                                                    <div class="btn-shared">
+                                                                        <button class="like"></button>
+                                                                        <div class="shared-block">
+                                                                            <button class="shared">
+                                                                                <span class="icon-network"></span>
+                                                                            </button>
+                                                                            <div class="drop-shared">
+                                                                                <ul class="shared-social">
+                                                                                    <li>
+                                                                                        <a href="https://twitter.com/home?status=http%3A//test6.tino.com.ua/account.html" target="_blank">
+                                                                                            <span class="icon-tw"></span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//test6.tino.com.ua/account.html" target="_blank">
+                                                                                            <span class="icon-fb"></span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <a href="https://plus.google.com/share?url=https%3A//www.facebook.com/sharer/sharer.php?u=http%253A//test6.tino.com.ua/account.html" target="_blank">
+                                                                                            <span class="icon-gp"></span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="link-rate">
+                                                                        <a href="#" data-toggle="modal" data-target="#bet4">+  Подробнее</a>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="user-rate-info">
-                                                    <div class="user-rate-info-inner">
+                                                    <div class="user-rate-info">
+                                                        <div class="user-rate-info-inner">
 
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="column-12 rate-column all-column">
-                                        <a href="#" class="all-rate-btn">
-                                            <i class="show-text">+  показать все прогнозы на сегодня</i>
-                                            <i class="hide-text">-  скрыть</i>
-                                        </a>
+                                        <div class="column-12 rate-column all-column">
+                                            <a href="#" class="all-rate-btn">
+                                                <i class="show-text">+  показать все прогнозы на сегодня</i>
+                                                <i class="hide-text">-  скрыть</i>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="column-4">
-                    <div class="table-wrapper video-table">
-                        <div class="table-inner">
-                            <div class="table-head">
-                                <div class="tbl-icon">
-                                    <img src="/images/top_play.svg" alt="">
+                    <div class="column-4">
+                        <div class="table-wrapper video-table">
+                            <div class="table-inner">
+                                <div class="table-head">
+                                    <div class="tbl-icon">
+                                        <img src="/images/top_play.svg" alt="">
+                                    </div>
+                                    <div class="left-head-text">
+                                        <span class="text-head">Прогнозы от Look My Bet</span>
+                                    </div>
                                 </div>
-                                <div class="left-head-text">
-                                    <span class="text-head">Прогнозы от Look My Bet</span>
-                                </div>
-                            </div>
-                            <div class="table-body">
-                                <div class="video-item__t">
-                                    <div class="video-inner__t">
-                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/k-29x5iI8dA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                                        <div class="cover-video__t" style="background-image: url(images/video-1@2x.png)">
-                                            <a href="#" class="round-play" data-toggle="modal" data-target="#main-video">
-                                                <span class="icon-play"></span>
-                                            </a>
-                                            <div class="title-cover__t">
-                                                Барселона - Реал (06.05.2018)
+                                <div class="table-body">
+                                    <div class="video-item__t">
+                                        <div class="video-inner__t">
+                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/k-29x5iI8dA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                            <div class="cover-video__t" style="background-image: url(images/video-1@2x.png)">
+                                                <a href="#" class="round-play" data-toggle="modal" data-target="#main-video">
+                                                    <span class="icon-play"></span>
+                                                </a>
+                                                <div class="title-cover__t">
+                                                    Барселона - Реал (06.05.2018)
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="video-item__t">
+                                        <div class="video-inner__t">
+                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/k-29x5iI8dA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                            <div class="cover-video__t" style="background-image: url(images/video-2@2x.png)">
+                                                <a href="#" class="round-play" data-toggle="modal" data-target="#main-video">
+                                                    <span class="icon-play"></span>
+                                                </a>
+                                                <div class="title-cover__t">
+                                                    Барселона - Реал (06.05.2018)
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="video-item__t">
-                                    <div class="video-inner__t">
-                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/k-29x5iI8dA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                                        <div class="cover-video__t" style="background-image: url(images/video-2@2x.png)">
-                                            <a href="#" class="round-play" data-toggle="modal" data-target="#main-video">
-                                                <span class="icon-play"></span>
-                                            </a>
-                                            <div class="title-cover__t">
-                                                Барселона - Реал (06.05.2018)
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="table-btn">
+                                    <a href="#" class="show-all-video main-btn">Перейти на Youtube канал</a>
                                 </div>
-                            </div>
-                            <div class="table-btn">
-                                <a href="#" class="show-all-video main-btn">Перейти на Youtube канал</a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            <?php } ?>
+
+
+            
+            
+            
         </div>
     </div>
 </div>
@@ -2624,9 +2650,17 @@ BetAsset::register($this);
                             <span class="left-bottom"></span>
                             <span class="right-bottom"></span>
                             <span class="right-top"></span>
-                            <iframe width="100%" src="https://www.youtube.com/embed/Hbd8ghFICJk?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            <?php if(0){ // for example ?>
+
+                                <iframe width="100%" src="https://www.youtube.com/embed/Hbd8ghFICJk?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            <?php  } ?>
+                            <iframe width="1280" height="720" src="https://www.youtube.com/embed/TxsqgQJLyi0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
                         </div>
                     </div>
+
+
+
                     <div class="text-video-modal">
                         <h2>Первая социальная сеть в СНГ </h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto laborum libero ratione suscipit vitae? Amet dolores eaque minima, nesciunt optio quae quaerat rerum sit! Ab dolor eligendi illo ipsam tempore.</p>

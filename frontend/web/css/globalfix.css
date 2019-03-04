@@ -236,3 +236,16 @@ and also iPads specifically.
   -o-background-size: 14px auto;
   background-size: 14px auto;
 }
+.in_commercial {
+  background: url(https://www.e-reading.club/cover/1056/1056769.jpg) no-repeat center center;
+  background-size: cover;
+}
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+  .in_commercial {
+    background: url(https://sportum.com.ua/wp-content/uploads/2017/11/664x276.jpg) no-repeat center center;
+    background-size: cover;
+  }
+}
+.prizeplace p {
+  font-size: large!important;
+}

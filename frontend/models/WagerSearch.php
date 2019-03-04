@@ -38,16 +38,13 @@ class WagerSearch extends Wager
 
 
     /**
-     * Creates data provider instance with search query applied
-     *
-     * @param array $params
-     *
-     * @return ActiveDataProvider
+     * @param $params
+     * @param null $pageSize   // размер на странице
+     * @return array|ActiveDataProvider|\yii\db\ActiveRecord[]
      */
-    public function searchWithPagination($params)
+    public function searchWithPagination($params, $pageSize=30)
     {
         $offsetPage=0;
-        $pageSize=30;
         if (!empty($params->page)) {
             $offsetPage=$params->page;
         }

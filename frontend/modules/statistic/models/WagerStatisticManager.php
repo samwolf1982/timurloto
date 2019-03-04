@@ -45,6 +45,28 @@ class WagerStatisticManager
     }
 
 
+    /**
+     * последнии ставки для /bet
+     * @return array
+     */
+    public function getLastWagers(){
+
+        $searchModelWager = new WagerSearch();
+        // $dataProviderWagers = $searchModelWager->search($this->queryParams);
+
+//        sort=last_login_at
+        $own_query=['sort'=>'created_at'];
+        $this->queryParams= array_merge($this->queryParams,$own_query);
+        $dataProviderWagers = $searchModelWager->searchWithPagination($this->queryParams,4);
+        //  $pages = new Pagination(['totalCount' => $dataProviderWagers->getTotalCount()]);
+        $result=$this->prepareWagers($dataProviderWagers);
+        $this->paginationPages = $searchModelWager->getPages();
+
+        return $result;
+
+    }
+
+
 
 
 

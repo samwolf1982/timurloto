@@ -351,8 +351,10 @@ class HtmlGenerator
 
     public static function top100UserFace($user)
     {
+//        $url = Url::toRoute(['product/view', 'id' => 42]);
+        $pathToUser=Url::toRoute(['/account/view','id'=>$user->id]);
         $res='';
-        $res.='<div class="flex">
+        $res.='<div class="flex"> <a href="'.$pathToUser.'">
     <div class="wins-item">
         <div class="wins-item-inner">
             <div class="row-ava">
@@ -371,7 +373,7 @@ class HtmlGenerator
                 </div>
             </div>
         </div>
-    </div>
+    </div></a>
 </div>
 ';
 
