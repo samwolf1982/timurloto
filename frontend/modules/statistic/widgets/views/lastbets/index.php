@@ -57,7 +57,7 @@ use yii\helpers\Html;
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img style="border-radius: 100%;" src="<?=$userInfo->getUserImage()?>" alt="<?=$userInfo->getUserName()?>">
+                                                            <img style="border-radius: 100%;" src="/<?=$userInfo->getUserImage()?>" alt="<?=$userInfo->getUserName()?>">
                                                         </div>
                                                         </a>
                                                     </div>
