@@ -6,6 +6,7 @@ namespace common\models\helpers;
 use common\models\Bets;
 use common\models\Eventsnames;
 use common\models\services\EventLine;
+use common\models\services\UserInfo;
 use common\models\wraps\EventsnamesExt;
 use common\models\wraps\SportcategoryExt;
 use common\models\wraps\TournamentsnamesExt;
@@ -351,8 +352,11 @@ class HtmlGenerator
 
     public static function top100UserFace($user)
     {
+
+
 //        $url = Url::toRoute(['product/view', 'id' => 42]);
         if(!empty($user)){
+            $useeInfo=new UserInfo($user->id);
             $pathToUser=Url::toRoute(['/account/view','id'=>$user->id]);
             $res='';
             $res.='<div class="flex"> <a href="'.$pathToUser.'">
@@ -361,11 +365,11 @@ class HtmlGenerator
             <div class="row-ava">
                 <div class="rate-avatar-column">
                     <div class="rate-avatar">
-                        <div class="circle-wrapper" data-ptc="14">
+                        <div class="circle-wrapper" data-ptc="'.$useeInfo->getUserLevelNumber().'">
                             <div class="circle"><canvas width="74" height="74"></canvas></div>
                         </div>
                         <div class="avatar-user">
-                            <img style="border-radius: 100%;" src="/'.$user->imageurl.'" alt="">
+                            <img style="border-radius: 100%;" src="/'.$user->imageurl.'" alt="'.$useeInfo->getUserName().'">
                         </div>
                     </div>
                 </div>
@@ -388,11 +392,11 @@ class HtmlGenerator
             <div class="row-ava">
                 <div class="rate-avatar-column">
                     <div class="rate-avatar">
-                        <div class="circle-wrapper" data-ptc="14">
+                        <div class="circle-wrapper" data-ptc="1">
                             <div class="circle"><canvas width="74" height="74"></canvas></div>
                         </div>
                         <div class="avatar-user">
-                            <img style="border-radius: 100%;" src="/'.$imageurl.'" alt="">
+                            <img style="border-radius: 100%;" src="/'.$imageurl.'" alt="no name">
                         </div>
                     </div>
                 </div>
