@@ -219,4 +219,15 @@ class UserInfo
         return $this->user_image;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getUserUrl()
+    {
+        $url='#';
+        if(!empty($this->user_id)) $url=Url::toRoute(['/account/view','id'=>$this->user_id]);
+        return $url;
+        return $this->user_image;
+    }
+
 }

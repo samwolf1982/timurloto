@@ -49,14 +49,17 @@ use yii\helpers\Html;
                                     <div class="rate-inner">
                                         <div class="user-rate">
                                             <div class="user-rate-inner">
+
                                                 <div class="row-ava">
                                                     <div class="rate-avatar">
+                                                        <a href="<?= $userInfo->getUserUrl()?>">
                                                         <div class="circle-wrapper" data-ptc="<?=$userInfo->getUserLevelNumber()?>">
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="<?=$userInfo->getUserImage()?>" alt="<?=$userInfo->getUserName()?>">
+                                                            <img style="border-radius: 100%;" src="<?=$userInfo->getUserImage()?>" alt="<?=$userInfo->getUserName()?>">
                                                         </div>
+                                                        </a>
                                                     </div>
                                                     <div class="user-info">
                                                         <h4 class="name-r"><?=$userInfo->getUserName()?></h4>
