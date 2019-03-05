@@ -12,7 +12,7 @@ use yii\helpers\ArrayHelper;
 /**
  * WagerSearch represents the model behind the search form of `common\models\Wager`.
  */
-class BalancestatisticsSearch extends Balancestatistics
+class BalancestatisticsSearchTop extends Balancestatistics
 {
 
     /**
@@ -265,7 +265,6 @@ $count=Yii::$app->db->createCommand("select COUNT(subquery.user_id) FROM
             ],
             'pagination' => [
                 'pageSize' => 3,
-                'pageParam' => 'tournament',
             ],
         ]);
 
@@ -358,7 +357,6 @@ $count=Yii::$app->db->createCommand("select COUNT(subquery.user_id) FROM
             ],
             'pagination' => [
                 'pageSize' => 5,
-                'pageParam' => 'tournament',
             ],
         ]);
 

@@ -8,6 +8,7 @@ use app\models\Typegame;
 use app\models\Typegamename;
 use common\models\DTO\betreport\TopOneHandred;
 use common\models\search\BalancestatisticsSearch;
+use common\models\search\BalancestatisticsSearchTop;
 use dektrium\user\filters\AccessRule;
 //use dvizh\cart\Cart;
 use dvizh\cart\Cart;
@@ -66,6 +67,7 @@ class BetController extends Controller
 
 
         $searchModel2 = new BalancestatisticsSearch();
+     //   $searchModel2 = new BalancestatisticsSearchTop();
         $dataProvider2 = $searchModel2->search_custom_last_week_with_plus(Yii::$app->request->queryParams);
 
 

@@ -87,6 +87,12 @@ return [
 
 
 
+                // cтавки  http://localhost35/bet/index
+                'bet/index'=>'bet',
+
+
+
+
 
             // модули удалить default мешают для аутентификации через соцсети
                 '<module:\w+>/<action:\w+>/<id:(.*?)>' => '<module>/default/<action>/<id>',

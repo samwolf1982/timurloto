@@ -9,6 +9,7 @@ use dvizh\cart\widgets\BuyButton;
 use frontend\assets\BetAsset;
 use frontend\assets\BetDinotableAsset;
 use yii\grid\GridView;
+use yii\helpers\Url;
 use yii\widgets\LinkPager;
 
 BetAsset::register($this);
@@ -421,6 +422,7 @@ BetAsset::register($this);
 
 
                                 <?= GridView::widget([
+
                                     'dataProvider' => $dataProvider,
                                         'layout' => " <div class='wrap_commercial_top'>  {items} <div class='commercial'> <div class='in_commercial' >  </div> </div>  </div>  <div class='clearfix'></div> \n <div class='table-footer'><div class='pagination'> <ul>  {pager}  </ul> </div></div>",
                                     'tableOptions'=>['class'=>'table table-striped table-bordered clearTableBorder'],
@@ -1011,13 +1013,13 @@ BetAsset::register($this);
                                         <a href="#" class="trig-filter">За месяц</a>
                                         <ul class="head-tabs">
                                             <li class="active">
-                                                <a href="#">За месяц</a>
+                                                <a href="<?=Url::to(['/bet']);?>">За месяц</a>
                                             </li>
                                             <li>
-                                                <a href="#">3 месяца</a>
+                                                <a href="<?=Url::to(['/bet','period'=>'3m']);?>">3 месяца</a>
                                             </li>
                                             <li>
-                                                <a href="#">За все время</a>
+                                                <a href="<?=Url::to(['/bet','period'=>'all']);?>">За все время</a>
                                             </li>
                                         </ul>
                                     </div>
