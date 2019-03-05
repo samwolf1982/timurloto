@@ -21,7 +21,7 @@ class BetAsset extends AssetBundle
     ];
 
     public $js = [
-       // 'dist/js/formBet.js',// обработчик для - поставить ставку в попапу
+        'dist/js/formBet.js', // скролы в низ для пагинации
         //'dist/libs/gridder-master/gridder-master/dist/js/jquery.gridder.js',// grid
       //  'dist/libs/gridder-master/initgrider.js',// grid
     ];

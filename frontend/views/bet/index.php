@@ -400,7 +400,7 @@ BetAsset::register($this);
 
 
 <!--            dino1-->
-            <div class="row table-row">
+            <div class="row table-row" >
                 <div class="column-12">
                     <div class="table-wrapper">
                         <div class="table-inner">
@@ -994,7 +994,7 @@ BetAsset::register($this);
             </div>
 
 
-            <div class="row table-row">
+            <div class="row table-row" >
                 <div class="column-12">
                     <div class="table-wrapper top-user-table">
 
@@ -1007,7 +1007,7 @@ BetAsset::register($this);
                                 <div class="left-head-text">
                                     <span class="text-head">топ-100 пользователей</span>
                                 </div>
-                                <div class="right-head-tab">
+                                <div class="right-head-tab" id="tope100">
                                     <div class="for-mobile-drop">
                                         <a href="#" class="trig-filter">За месяц</a>
                                         <ul class="head-tabs">
