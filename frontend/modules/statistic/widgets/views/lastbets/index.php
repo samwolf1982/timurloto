@@ -42,6 +42,7 @@ use yii\helpers\Html;
                             $front_element=$wagerInfoFront['front_element'];
                             /**  @var UserInfo $userInfo **/
                             $userInfo=$wagerInfoFront['userInfo'];
+//                            var_dump($userInfo); die();
                             ?>
                             <div class="column-6 rate-column">
                                 <div class="rate-wrapper">
@@ -54,7 +55,7 @@ use yii\helpers\Html;
                                                             <div class="circle"></div>
                                                         </div>
                                                         <div class="avatar-user">
-                                                            <img src="/images/ava1.png" alt="">
+                                                            <img src="<?=$userInfo->getUserImage()?>" alt="<?=$userInfo->getUserName()?>">
                                                         </div>
                                                     </div>
                                                     <div class="user-info">

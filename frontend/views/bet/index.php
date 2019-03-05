@@ -3,6 +3,7 @@
 use app\copmonents\widgets\addbet\AddbetWidget;
 use app\copmonents\widgets\showuser\ShowuserWidget;
 use app\modules\statistic\widgets\LastBets;
+use common\models\helpers\ConstantsHelper;
 use common\models\helpers\HtmlGenerator;
 use common\models\overiden\User;
 use dvizh\cart\widgets\BuyButton;
@@ -569,9 +570,7 @@ BetAsset::register($this);
             </div>
 
 
-            <style>
-
-            </style>
+           
 
 
 
@@ -1012,14 +1011,14 @@ BetAsset::register($this);
                                     <div class="for-mobile-drop">
                                         <a href="#" class="trig-filter">За месяц</a>
                                         <ul class="head-tabs">
-                                            <li class="active">
+                                            <li class="<?=$periodOne?>">
                                                 <a href="<?=Url::to(['/bet']);?>">За месяц</a>
                                             </li>
-                                            <li>
-                                                <a href="<?=Url::to(['/bet','period'=>'3m']);?>">3 месяца</a>
+                                            <li class="<?=$period3m?>">
+                                                <a href="<?=Url::to(['/bet','period'=>ConstantsHelper::PERIOD_3_M]);?>">3 месяца</a>
                                             </li>
-                                            <li>
-                                                <a href="<?=Url::to(['/bet','period'=>'all']);?>">За все время</a>
+                                            <li class="<?=$periodAll?>">
+                                                <a href="<?=Url::to(['/bet','period'=>ConstantsHelper::PERIOD_ALL]);?>">За все время</a>
                                             </li>
                                         </ul>
                                     </div>

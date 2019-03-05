@@ -7,6 +7,7 @@ use app\models\Turnirename;
 use app\models\Typegame;
 use app\models\Typegamename;
 use common\models\DTO\betreport\TopOneHandred;
+use common\models\helpers\ConstantsHelper;
 use common\models\search\BalancestatisticsSearch;
 use common\models\search\BalancestatisticsSearchTop;
 use dektrium\user\filters\AccessRule;
@@ -68,11 +69,19 @@ class BetController extends Controller
 
         $searchModel2 = new BalancestatisticsSearch();
      //   $searchModel2 = new BalancestatisticsSearchTop();
-        $dataProvider2 = $searchModel2->search_custom_last_week_with_plus(Yii::$app->request->queryParams);
+        $dataProvider2 = $searchModel2->search_custom_last_week_with_plus(Yii::$app->request->queryParams);  // top 100
 
 
 
-        return $this->render('index',compact('type_game','model','model_two','model_three','dataProvider','dataProvider2'));
+
+        if(Yii::$app->request->get('period')==ConstantsHelper::PERIOD_ALL){ $periodOne='';$period3m='';$periodAll='active';
+        }elseif (Yii::$app->request->get('period')==ConstantsHelper::PERIOD_3_M) { $periodOne='';$period3m='active';$periodAll='';
+
+        }else { $periodOne='active';$period3m='';$periodAll='';  }
+
+
+        return $this->render('index',compact('type_game','model','model_two','model_three','dataProvider','dataProvider2',
+            'periodOne','period3m','periodAll'));
 
     }
 

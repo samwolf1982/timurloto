@@ -352,9 +352,10 @@ class HtmlGenerator
     public static function top100UserFace($user)
     {
 //        $url = Url::toRoute(['product/view', 'id' => 42]);
-        $pathToUser=Url::toRoute(['/account/view','id'=>$user->id]);
-        $res='';
-        $res.='<div class="flex"> <a href="'.$pathToUser.'">
+        if(!empty($user)){
+            $pathToUser=Url::toRoute(['/account/view','id'=>$user->id]);
+            $res='';
+            $res.='<div class="flex"> <a href="'.$pathToUser.'">
     <div class="wins-item">
         <div class="wins-item-inner">
             <div class="row-ava">
@@ -376,6 +377,35 @@ class HtmlGenerator
     </div></a>
 </div>
 ';
+        }else{
+
+            $res='';
+            $imageurl='';
+            $username='no name';
+            $res.='<div class="flex"> <a href="#">
+    <div class="wins-item">
+        <div class="wins-item-inner">
+            <div class="row-ava">
+                <div class="rate-avatar-column">
+                    <div class="rate-avatar">
+                        <div class="circle-wrapper" data-ptc="14">
+                            <div class="circle"><canvas width="74" height="74"></canvas></div>
+                        </div>
+                        <div class="avatar-user">
+                            <img style="border-radius: 100%;" src="/'.$imageurl.'" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="user-info">
+                    <h4 class="name-l"><span>'.$username.'</span></h4>
+                </div>
+            </div>
+        </div>
+    </div></a>
+</div>
+';
+        }
+
 
         return $res;
     }

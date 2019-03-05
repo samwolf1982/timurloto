@@ -188,8 +188,11 @@ class ConstantsHelper
 
 
 
+// для фронта
 
-
+// топ 100 периоды
+    const PERIOD_3_M='3m'; //
+    const PERIOD_ALL='all'; //
 
 
 
