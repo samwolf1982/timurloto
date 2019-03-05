@@ -3,7 +3,8 @@
 namespace common\models\services;
 
 use common\models\helpers\ConstantsHelper;
-use dektrium\user\models\User;
+//use dektrium\user\models\User;
+use common\models\overiden\User;
 use komer45\balance\models\Score;
 use Yii;
 use yii\helpers\Url;
@@ -31,6 +32,7 @@ class UserInfo
 
 
   function loadUser($id){
+      /** @var common\models\overiden\User $user */ // фикс раньше был  ektrium\user\models\User;
       return User::find()->where(['id'=>$id])->cache(1*24*60*60)->one();
   }
     /**
@@ -216,6 +218,7 @@ class UserInfo
      */
     public function getUserImage()
     {
+        return $this->user->imageurl;
         return $this->user_image;
     }
 
