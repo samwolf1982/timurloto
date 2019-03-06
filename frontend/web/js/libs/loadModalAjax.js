@@ -1,7 +1,9 @@
 $(function () {
 
     console.log("load modal ajax");
-    $('.modaleAjax').click(function(e){
+
+    $(document).on("click", ".modaleAjax", function(e) {
+    // $('.modaleAjax').click(function(e){
         var dataTargetWager=$(this).data('target');
         // Instantiate new modal
         var modal = new Custombox.modal(
@@ -43,6 +45,8 @@ $(function () {
         event.stopImmediatePropagation();
         event.preventDefault();
     });
+
+
 
 
 

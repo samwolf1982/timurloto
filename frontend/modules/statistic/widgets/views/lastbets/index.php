@@ -2,6 +2,7 @@
 
 use common\models\helpers\ConstantsHelper;
 use yii\helpers\Html;
+use yii\helpers\Url;
 
 
 ?>
@@ -146,7 +147,9 @@ use yii\helpers\Html;
                                                             </div>
                                                         </div>
                                                         <div class="link-rate">
-                                                            <a href="#" data-toggle="modal" data-target="#bet1">+  Подробнее</a>
+
+                                                            <a href="#"  class="modaleAjax"  data-target="<?=Url::to(['/wager/default/viewdetail','id'=>$front_element->getId() ])?>">+  Подробнее</a>
+
                                                         </div>
                                                     </div>
                                                 </div>

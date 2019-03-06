@@ -532,7 +532,8 @@ class HtmlGenerator
                                                             </div>
                                                         </div>
                                                         <div class="link-rate">
-                                                            <a href="#" data-toggle="modal" data-target="#bet1">+  Подробнее</a>
+                                                            <a href="#" data-toggle="modaleAjax" data-target="'.Url::to(['/wager/default/viewdetail','id'=>$front_element->getId() ]).'">+  Подробнее</a>
+                                                            
                                                         </div>
                                                     </div>
                                                 </div>
@@ -544,7 +545,6 @@ class HtmlGenerator
                                 </div>
                             </div>';
                        }
-
 
 
         return $res;
