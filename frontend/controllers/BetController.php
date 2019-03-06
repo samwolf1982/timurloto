@@ -6,8 +6,10 @@ use app\models\Turnire;
 use app\models\Turnirename;
 use app\models\Typegame;
 use app\models\Typegamename;
+use app\modules\statistic\models\WagerStatisticManager;
 use common\models\DTO\betreport\TopOneHandred;
 use common\models\helpers\ConstantsHelper;
+use common\models\helpers\HtmlGenerator;
 use common\models\search\BalancestatisticsSearch;
 use common\models\search\BalancestatisticsSearchTop;
 use dektrium\user\filters\AccessRule;
@@ -128,17 +130,13 @@ class BetController extends Controller
                     ],
 
                     [
-                        'actions' => ['view', 'search','index','create','update'],
+                       //'actions' => ['view', 'search','index','create','update','nextload'],
+                        'actions' => ['view','index','nextload'],
                         'allow' => true,
-//                        'roles' => ['?', '@', 'admin'],
+//                      'roles' => ['?', '@', 'admin'],
                         'roles' => [ 'simpleuser','?','@','admin'],
                     ],
-                    [
-                        'actions' => ['index'],
-                        'allow' => true,
-//                        'roles' => ['?', '@', 'admin'],
-                        'roles' => [ 'simpleuser'],
-                    ],
+
                     [
                         'actions' => ['jsontop'],
                         'allow' => true,
@@ -151,6 +149,25 @@ class BetController extends Controller
     }
 
 
+    public function actionNextload()
+    {
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        $user_id = yii::$app->user->identity->id;
+        if ($user_id === NULL)  $user_id = -1;
+
+        $offset=Yii::$app->request->post('offset');
+
+        if(empty($offset)){
+            $offset=6;
+        }
+
+       // $wagers = new  WagerStatisticManager($user_id ,[]);
+        $wagers = new  WagerStatisticManager($user_id ,['offset'=>$offset]);
+        $wagersModels= $wagers->getNextWagers();
+        $html=HtmlGenerator::nextBets($wagersModels);
+
+        return ['offset'=>($offset+ConstantsHelper::COUNT_LOAD_NEXT_IN_BET) ,'models'=>$wagersModels,'html'=>$html];
+    }
 
 
     public function actionJsontop()

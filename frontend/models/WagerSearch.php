@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+use common\models\helpers\ConstantsHelper;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
@@ -106,6 +107,71 @@ class WagerSearch extends Wager
         $countQuery = clone $query;
         $this->pages = new Pagination(['totalCount' => $countQuery->count(),'pageSize'=>$pageSize]);
         $models = $query->orderBy(['id'=>SORT_DESC])-> offset($this->pages->offset)->limit($this->pages->limit)->all();
+
+        return $models;
+
+    }
+
+
+    /**
+     * поиск следующих
+     * @param $params
+     * @param null $pageSize   //
+     * @return array|ActiveDataProvider|\yii\db\ActiveRecord[]
+     */
+    public function searchNextElements($params, $pageSize=30)
+    {
+
+
+        $offsetElements=ConstantsHelper::COUNT_LOAD_NEXT_IN_BET;
+        if (!empty($params['offset'])) {
+            $offsetElements=$params['offset'];
+        }
+
+
+
+yii::error($offsetElements);
+
+        $query = Wager::find()->offset($offsetElements);
+        // add conditions that should always apply here
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+            'sort'=>array(
+                'defaultOrder'=>['id' => SORT_DESC],
+            ),
+//            'totalCount' => 3,
+//            'pagination' => [
+//                'pageSize' => 2,
+//            ]
+        ]);
+
+        $this->load($params);
+
+
+
+        if (!$this->validate()) {
+            // uncomment the following line if you do not want to return any records when validation fails
+            // $query->where('0=1');
+            return $dataProvider;
+        }
+
+        // grid filtering conditions
+        $query->andFilterWhere([
+            'id' => $this->id,
+            'user_id' => $this->user_id,
+            'playlist_id' => $this->playlist_id,
+            'total' => $this->total,
+            'coef' => $this->coef,
+            'status' => $this->status,
+        ]);
+
+
+
+
+        $countQuery = clone $query;
+        $this->pages = new Pagination(['totalCount' => $countQuery->count(),'pageSize'=>$pageSize]);
+        $models = $query->orderBy(['id'=>SORT_DESC])-> offset($offsetElements)->limit($this->pages->limit)->all();
+//        $models = $query->orderBy(['id'=>SORT_DESC])-> offset($this->pages->offset)->limit($this->pages->limit)->all();
 
         return $models;
 

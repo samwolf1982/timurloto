@@ -416,6 +416,142 @@ class HtmlGenerator
 
 
 
+    public static function nextBets($models)
+    {
+
+        $isSubscriber=false; // todo
+        $res='';
+     foreach ($models as $wagerInfoFront) {
+                            /** @var Wager $wager */
+                            $wager=$wagerInfoFront['model'];
+                            /** @var WagerInfoFrontSingle $front_element **/
+                            $front_element=$wagerInfoFront['front_element'];
+                            /**  @var UserInfo $userInfo **/
+                            $userInfo=$wagerInfoFront['userInfo'];
+//                            var_dump($userInfo); die();
+
+                       $res.='    <div class="column-6 rate-column">
+                                <div class="rate-wrapper">
+                                    <div class="rate-inner">
+                                        <div class="user-rate">
+                                            <div class="user-rate-inner">
+
+                                                <div class="row-ava">
+                                                    <div class="rate-avatar">
+                                                        <a href="'.$userInfo->getUserUrl().'">
+                                                        <div class="circle-wrapper" data-ptc="'.$userInfo->getUserLevelNumber().'">
+                                                            <div class="circle"></div>
+                                                        </div>
+                                                        <div class="avatar-user">
+                                                            <img style="border-radius: 100%;" src="/'.$userInfo->getUserImage().'" alt="'.$userInfo->getUserName().'">
+                                                        </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="user-info">
+                                                        <h4 class="name-r">'.$userInfo->getUserName().'</h4>
+                                                        <div class="level-user level-user-label">
+
+                                                            <div class="level-text">  '.$userInfo->getUserLevel().'</div>';
+                                                         if($userInfo->getisPro()){
+                                                             $res.='   <span class="label-user label-user-pro">pro</span>';
+                                                              }
+                                                $res.='  </div>
+                                                    </div>
+                                                    <a href="#" data-toggle="no-modal" data-target="#edit_subscriber" class="bet-status bet-status-editable">
+                                                        <div class="bet-status-inner">';
+                                                             if($front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_ORDINAR || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS   ){
+                                                                  $res.='  <span class="icon-open"></span>';
+                                                            }
+                                                             if($front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_PRIVATE_ORDINAR || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_PRIVATE_EXPRESS  ){
+                                                                 $res.=' <span class="icon-lock"></span>';
+                                                             }
+                                                 $res.='  </div>
+                                                    </a>
+
+                                                </div>
+
+
+
+                                                <div class="rate-content">
+                                                    <div class="rate-c__item rate-c__item__two">
+                                                        <div class="rate-c">
+                                                            <div class="title_rate_c"> '.$front_element->getType() .'</div>
+                                                            <div class="value_rate_c">'.$front_element->getSumAndPercent().'</div>
+                                                            <div class="value_rate_c">  '.$front_element->getUserPercent().'</div>
+                                                        </div>
+                                                        <div class="rate-c">
+                                                            <div class="title_rate_c">'.$front_element->getCreatedAt() .'</div>';
+                                                             if($isSubscriber || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_ORDINAR || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS  ){
+
+                                                                 if($front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS){
+                                                                  $res.='<div class="value_rate_c" id="FormantedNameAndPercent">Экспресс LP#</div>';
+                                                                 }else{
+                                                                     $res.=' <div class="value_rate_c" id="FormantedNameAndPercent"> <?=$front_element->getFormantedNameAndPercent()  </div>';
+                                                                 }
+                                                             }else{
+                                                               $res.=' <div class="value_rate_c" id="FormantedNameAndPercent">Экспресс LP</div>';
+                                                              }
+                                                        $res.=' </div>
+                                                    </div>
+                                                    <div class="rate-c__item">
+                                                        <div class="rate-c">
+                                                            <div class="title_rate_c">'.$front_element->getSportAndTurnire()  .'</div>';
+                                                             if($front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS  || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_PRIVATE_EXPRESS ){
+                                                                 $res.='<div class="value_rate_c"> '.$front_element->getInfoNameFull()  .' ... + '.$front_element->getTotalCount().'  </div>';
+                                                             }else{
+                                                                 $res.='<div class="value_rate_c"> '.$front_element->getInfoNameFull()  .'  </div>';
+                                                             }
+                                                    $res.='</div>
+                                                    </div>
+                                                    <div class="rate-c__footer">
+                                                        <div class="btn-shared">
+                                                            <button class="like"></button>
+                                                            <div class="shared-block">
+                                                                <button class="shared">
+                                                                    <span class="icon-network"></span>
+                                                                </button>
+                                                                <div class="drop-shared">
+                                                                    <ul class="shared-social">
+                                                                        <li>
+                                                                            <a href="https://twitter.com/home?status=http%3A//test6.tino.com.ua/account.html" target="_blank">
+                                                                                <span class="icon-tw"></span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//test6.tino.com.ua/account.html" target="_blank">
+                                                                                <span class="icon-fb"></span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="https://plus.google.com/share?url=https%3A//www.facebook.com/sharer/sharer.php?u=http%253A//test6.tino.com.ua/account.html" target="_blank">
+                                                                                <span class="icon-gp"></span>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="link-rate">
+                                                            <a href="#" data-toggle="modal" data-target="#bet1">+  Подробнее</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>';
+                       }
+
+
+
+        return $res;
+    }
+
+
+
 
 }
 

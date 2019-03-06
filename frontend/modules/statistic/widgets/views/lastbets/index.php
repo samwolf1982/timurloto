@@ -160,16 +160,10 @@ use yii\helpers\Html;
                         <?php } ?>
 
 
-
-
-
-
-
-
-                        <div class="column-12 rate-column all-column">
-                            <a href="#" class="all-rate-btn">
+                        <div class="column-12 rate-column all-column" id="wrape_next_bet">
+                            <a href="#" class="all-rate-btn" data-offset="<?=ConstantsHelper::COUNT_LOAD_NEXT_IN_BET?>" >
                                 <i class="show-text">+  показать все прогнозы на сегодня</i>
-                                <i class="hide-text">-  скрыть</i>
+                                <i class="hide-text">-  показать все прогнозы на сегодня</i>
                             </a>
                         </div>
                     </div>

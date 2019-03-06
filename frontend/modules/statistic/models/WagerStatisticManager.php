@@ -4,6 +4,7 @@ use app\models\WagerSearch;
 use common\models\DTO\WagerInfoFront;
 use common\models\DTO\WagerInfoFrontSingle;
 use common\models\DTO\WagerInfoStringResult;
+use common\models\helpers\ConstantsHelper;
 use common\models\services\UserInfo;
 use common\models\Wager;
 use yii;
@@ -57,7 +58,28 @@ class WagerStatisticManager
 //        sort=last_login_at
         $own_query=['sort'=>'created_at'];
         $this->queryParams= array_merge($this->queryParams,$own_query);
-        $dataProviderWagers = $searchModelWager->searchWithPagination($this->queryParams,4);
+        $dataProviderWagers = $searchModelWager->searchWithPagination($this->queryParams,ConstantsHelper::COUNT_LOAD_NEXT_IN_BET);
+        //  $pages = new Pagination(['totalCount' => $dataProviderWagers->getTotalCount()]);
+        $result=$this->prepareWagers($dataProviderWagers);
+        $this->paginationPages = $searchModelWager->getPages();
+
+        return $result;
+
+    }
+
+    /**
+     * последнии ставки для /bet дозаполнение
+     * @return array
+     */
+    public function getNextWagers(){
+
+        $searchModelWager = new WagerSearch();
+        // $dataProviderWagers = $searchModelWager->search($this->queryParams);
+
+//        sort=last_login_at
+        $own_query=['sort'=>'created_at'];
+        $this->queryParams= array_merge($this->queryParams,$own_query);
+        $dataProviderWagers = $searchModelWager->searchNextElements($this->queryParams,ConstantsHelper::COUNT_LOAD_NEXT_IN_BET);
         //  $pages = new Pagination(['totalCount' => $dataProviderWagers->getTotalCount()]);
         $result=$this->prepareWagers($dataProviderWagers);
         $this->paginationPages = $searchModelWager->getPages();

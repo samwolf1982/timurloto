@@ -195,6 +195,11 @@ class ConstantsHelper
     const PERIOD_ALL='all'; //
 
 
+    // топ 100 периоды
+    const COUNT_LOAD_NEXT_IN_BET=6; //
+
+
+
 
 }
 
