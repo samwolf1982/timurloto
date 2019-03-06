@@ -249,3 +249,6 @@ and also iPads specifically.
 .prizeplace p {
   font-size: large!important;
 }
+.avatar-user > img {
+  border-radius: 100%;
+}
