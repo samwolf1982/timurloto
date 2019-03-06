@@ -23,11 +23,11 @@ use common\models\Wagerelements;
                         <div class="head-bets">
                             <div class="row-ava">
                                 <div class="rate-avatar">
-                                    <div class="circle-wrapper" data-ptc="90">
+                                    <div class="circle-wrapper" data-ptc="<?=$userInfo->getUserLevelNumber()?>">
                                         <div class="circle"><canvas width="74" height="74"></canvas></div>
                                     </div>
                                     <div class="avatar-user">
-                                        <img src="<?=$userInfo->getUserImage()?>" alt="<?=$userInfo->getUserName()?>">
+                                        <img src="/<?=$userInfo->getUserImage();?>" alt="<?=$userInfo->getUserName()?>">
                                     </div>
                                 </div>
                                 <div class="user-info">
