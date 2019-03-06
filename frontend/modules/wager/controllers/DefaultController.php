@@ -390,9 +390,10 @@ class DefaultController extends Controller
     public function actionViewdetail($id)
     {
         $model=Wager::find()->where(['id'=>$id])->one();
-        $userInfo= new UserInfo(Yii::$app->user->identity->getId());
+
+        $userInfo= new UserInfo($model->user_id);
 //        $type_play
-//        yii::error([$id,$model]);
+//        yii::error($model);
         if($model){
             return $this->renderPartial('detail',['model'=>$model,'userInfo'=>$userInfo]);
         }

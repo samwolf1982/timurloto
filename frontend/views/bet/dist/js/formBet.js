@@ -24,7 +24,6 @@ $(document).ready(function () {
         return false;
     });
 
-
 });
 
 var LoadeNext={
@@ -48,6 +47,7 @@ var LoadeNext={
                 else {
                     if(json.offset){ $(el).data('offset',json.offset);}
                     if(json.html){ $('#wrape_next_bet').before(json.html);}
+
 
                     // if(json.meta.type==='sports'){
                     //     DashboardCategory.renderSport(el,json.data);
