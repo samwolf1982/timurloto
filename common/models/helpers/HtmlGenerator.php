@@ -456,17 +456,18 @@ class HtmlGenerator
                                                              $res.='   <span class="label-user label-user-pro">pro</span>';
                                                               }
                                                 $res.='  </div>
-                                                    </div>
-                                                    <a href="#" data-toggle="no-modal" data-target="#edit_subscriber" class="bet-status bet-status-editable">
-                                                        <div class="bet-status-inner">';
+                                                    </div>';
                                                              if($front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_ORDINAR || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS   ){
-                                                                  $res.='  <span class="icon-open"></span>';
+                                                                  $res.=' <a href="#" data-toggle="no-modal" data-target="#edit_subscriber" class="bet-status bet-status-editable"> <div class="bet-status-inner"> <span class="icon-open"></span> </div></a>';
                                                             }
                                                              if($front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_PRIVATE_ORDINAR || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_PRIVATE_EXPRESS  ){
-                                                                 $res.=' <span class="icon-lock"></span>';
+                                                                 if($isSubscriber){
+                                                                     $res.='  <a href="#" data-target='.Url::to(['/subscribers/default/peto','id'=>Yii::$app->user->id]).' onclick="return false;" data-toggle="modaleAjax" class="bet-status bet-status-editable"> <div class="bet-status-inner"> <span class="icon-lock"></span> </div></a>';
+                                                                 }else{
+                                                                     $res.='  <a href="#" data-target='.Url::to(['/subscribers/default/peto','id'=>Yii::$app->user->id]).' onclick="openModaleMoreDetail(this);" data-toggle="modaleAjax" class="bet-status bet-status-editable"> <div class="bet-status-inner"> <span class="icon-lock"></span> </div></a>';
+                                                                 }
                                                              }
-                                                 $res.='  </div>
-                                                    </a>
+                                                 $res.=' 
 
                                                 </div>
 
@@ -563,8 +564,7 @@ class HtmlGenerator
 
                                                          }else{
                                                                    $res.='<div class="link-rate">
-
-                                                                  <a href="#" onclick="openModaleMoreDetail(this);" data-toggle="modaleAjax">Узнать прогноз</a>
+                                                                  <a href="#" data-target='.Url::to(['/subscribers/default/peto','id'=>Yii::$app->user->id]).' onclick="openModaleMoreDetail(this);" data-toggle="modaleAjax">Узнать прогноз</a>
                                                             </div>';
                                                           }
 

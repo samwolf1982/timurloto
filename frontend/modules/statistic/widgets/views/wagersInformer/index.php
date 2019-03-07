@@ -138,6 +138,7 @@ use yii\widgets\LinkPager;
                             /**  @var UserInfo $userInfo **/
                             $userInfo=$wagerInfoFront['userInfo'];
 
+                            $isSubscriber=   $wager->canShow();
                             ?>
                             <div class="column-4 rate-column">
                                 <div class="rate-wrapper">
@@ -182,16 +183,26 @@ use yii\widgets\LinkPager;
 
 
 
-                                                    <a href="#" data-toggle="modal" data-target="#edit_subscriber" class="bet-status bet-status-editable">
-                                                        <div class="bet-status-inner">
+
+
+
+
                                                             <?php if($front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_ORDINAR || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS   ){ ?>
-                                                                <span class="icon-open"></span>
+                                                                <a href="#" onclick="return false;" data-toggle="no-modal" data-target="#edit_subscriber" class="bet-status bet-status-editable"> <div class="bet-status-inner">  <span class="icon-open"></span></div></a>
                                                             <?php } ?>
                                                             <?php if($front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_PRIVATE_ORDINAR || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_PRIVATE_EXPRESS  ){ ?>
-                                                                <span class="icon-lock"></span>
+
+                                                               <?php if($isSubscriber){ ?>
+                                                                    <a href="#" onclick="return false;"  data-target='<?=Url::to(['/subscribers/default/peto','id'=>Yii::$app->user->id])?>'  data-toggle="modaleAjax" data-target="#edit_subscriber" class="bet-status bet-status-editable"><div class="bet-status-inner"> <span class="icon-lock"></span>  </div></a>
+                                                                <?php }else{ ?>
+                                                                    <a href="#" onclick="openModaleMoreDetail(this);"  data-target='<?=Url::to(['/subscribers/default/peto','id'=>Yii::$app->user->id])?>'  data-toggle="modaleAjax" data-target="#edit_subscriber" class="bet-status bet-status-editable"><div class="bet-status-inner"> <span class="icon-lock"></span>  </div></a>
+                                                                <?php  } ?>
+
+<!--                                                                <a href="#" data-toggle="modal" data-target="#edit_subscriber" class="bet-status bet-status-editable"> <div class="bet-status-inner">  <span class="icon-lock"></span></div></a>-->
                                                             <?php } ?>
-                                                        </div>
-                                                    </a>
+
+
+
 
                                                 </div>
                                                 <div class="rate-content">
@@ -199,7 +210,20 @@ use yii\widgets\LinkPager;
                                                         <div class="rate-c">
                                                             <div class="title_rate_c"> <?=$front_element->getType() ;?></div>
                                                             <div class="value_rate_c">  <?=$front_element->getSumAndPercent() ?> </div>
-                                                            <div class="value_rate_c">  <?=$front_element->getUserPercent() ?> </div>
+
+                                                            <?php if($isSubscriber || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_ORDINAR || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS  ){ ?>
+
+                                                                <?php if($front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS){ ?>
+                                                                    <div class="value_rate_c">  <?=$front_element->getUserPercent() ?> </div>
+                                                                <?php }else{ ?>
+                                                                    <div class="value_rate_c">  <?=$front_element->getUserPercent() ?> </div>
+                                                                <?php } ?>
+                                                            <?php }else{  // смотрим чужой акканут закрытую ставку ?>
+                                                                <div class="value_rate_c" id="FormantedNameAndPercent"><?=$front_element->getFormantedCloseText()?></div>
+                                                            <?php  } ?>
+
+
+
                                                         </div>
                                                         <div class="rate-c">
 
@@ -226,7 +250,8 @@ use yii\widgets\LinkPager;
                                                                     <?php } ?>
                                                             <?php }else{ // смотрим чужой акканут закрытую ставку
                                                                     // var_dump($front_element->getType()=='Экспресс'); die();  ?>
-                                                                <div class="value_rate_c" id="FormantedNameAndPercent"><?=$front_element->getFormantedCloseText()?></div>
+                                                                <div class="value_rate_c" id="FormantedNameAndPercent"><?=$front_element->getType()?></div>
+
                                                             <?php  } ?>
 
                                                             <?php } ?>
@@ -301,8 +326,11 @@ use yii\widgets\LinkPager;
                                                         <?php } ?>
 
                                                         <?php }else{  ?>
-                                                            <div class="link-rate">
-                                                                <a href="#"  class="modaleAjax">Узнать прогноз</a>
+
+
+
+                                                        <div class="link-rate">
+                                                                <a href="#" onclick="openModaleMoreDetail(this);" data-target='<?=Url::to(['/subscribers/default/peto','id'=>Yii::$app->user->id])?>'  data-toggle="modaleAjax"  class="modaleAjax">Узнать прогноз</a>
                                                             </div>
                                                         <?php  } ?>
 

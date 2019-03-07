@@ -78,16 +78,22 @@ use yii\helpers\Url;
                                                             <?php   }  ?>
                                                         </div>
                                                     </div>
-                                                    <a href="#" data-toggle="no-modal" data-target="#edit_subscriber" class="bet-status bet-status-editable">
-                                                        <div class="bet-status-inner">
+
+
                                                             <?php if($front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_ORDINAR || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS   ){ ?>
-                                                                <span class="icon-open"></span>
+                                                                 <a href="#" onclick="return false;" data-toggle="no-modale"  data-target="#edit_subscriber" class="bet-status bet-status-editable"><div class="bet-status-inner"> <span class="icon-open"></span>  </div></a>
                                                             <?php } ?>
                                                             <?php if($front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_PRIVATE_ORDINAR || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_PRIVATE_EXPRESS  ){ ?>
-                                                                <span class="icon-lock"></span>
+
+                                                                <?php if($isSubscriber){ // cвоя или уже подписан ?>
+                                                                    <a href="#" onclick="return false;"  data-target='<?=Url::to(['/subscribers/default/peto','id'=>Yii::$app->user->id])?>'  data-toggle="modaleAjax" data-target="#edit_subscriber" class="bet-status bet-status-editable"><div class="bet-status-inner"> <span class="icon-lock"></span>  </div></a>
+                                                                <?php  }else{ ?>
+                                                                    <a href="#" onclick="openModaleMoreDetail(this);"  data-target='<?=Url::to(['/subscribers/default/peto','id'=>Yii::$app->user->id])?>'  data-toggle="modaleAjax" data-target="#edit_subscriber" class="bet-status bet-status-editable"><div class="bet-status-inner"> <span class="icon-lock"></span>  </div></a>
+                                                                <?php } ?>
+
+
                                                             <?php } ?>
-                                                        </div>
-                                                    </a>
+
 
                                                 </div>
 
@@ -179,9 +185,6 @@ use yii\helpers\Url;
                                                                         <a href="#"  class="modaleAjax"  data-target="<?=Url::to(['/wager/default/viewdetail','id'=>$front_element->getId() ])?>">+  Показать Ординар</a>
                                                                     </div>
                                                                 <?php } ?>
-
-
-
                                                             <?php }else{  ?>
                                                                 <div class="link-rate">
                                                                     <a href="#"  class="modaleAjax"  data-target="<?=Url::to(['/wager/default/viewdetail','id'=>$front_element->getId() ])?>">+  Показать Экспресс</a>
@@ -190,7 +193,8 @@ use yii\helpers\Url;
 
                                                         <?php }else{  ?>
                                                             <div class="link-rate">
-                                                                <a href="#"  class="modaleAjax">Узнать прогноз</a>
+                                                                <a href="#" onclick="openModaleMoreDetail(this);" data-target="<?=Url::to(['/subscribers/default/peto','id'=>Yii::$app->user->id])?>" data-toggle="modaleAjax">Узнать прогноз</a>
+
                                                             </div>
                                                         <?php  } ?>
 

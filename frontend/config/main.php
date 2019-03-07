@@ -84,6 +84,8 @@ return [
 
                 // переписки запросы
                 'account/default/chart'=>'account/default/chart',
+                'subscribers/default/add-message'=>'subscribers/default/add-message',
+                'account/addsubscriber'=>'account/addsubscriber',
 
 
 
