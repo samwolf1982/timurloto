@@ -27,6 +27,7 @@ class WagerInfoFrontSingle
 
     private $info_name_full;
     private $totalCount;
+    private $start_at;
 
 
 
@@ -35,10 +36,15 @@ class WagerInfoFrontSingle
   {
       $this->id=$id;
       $this->type=$type;
+
       if(count($prepare_elements)){
+
            $first_el=$prepare_elements[0];
            $this->wager= $first_el;
+          // var_dump($this->wager); die();
       }else{
+//          var_dump($prepare_elements); die();
+//           die('sss');
           $this->wager=null;
       }
 
@@ -50,6 +56,9 @@ class WagerInfoFrontSingle
       $this->turnire_name= $this->wager->getNameTurnire();
       $date=date_create($created_at);
       $this->created_at=  date_format($date,"d-m-Y") ;
+
+      //$this->start_at=   $this->wager->s date_format($date,"d-m-Y") ;
+      $this->start_at=   $this->wager->getStartGame();// date_format($date,"d-m-Y") ;
       $this->type_extend=$type_extend;
       $this->bank_percent=$bank_percent;
 
@@ -144,5 +153,12 @@ class WagerInfoFrontSingle
         return ($this->totalCount -1);
     }
 
+    /**
+     * @return string
+     */
+    public function getStartAt()
+    {
+        return $this->start_at;
+    }
 
 }

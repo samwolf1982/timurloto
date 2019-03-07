@@ -16,7 +16,10 @@ class WagerInfoFront
     private $status_name;
    // private $wagerInfoFront;
     private $wagerInfoStringResult;
-  public function __construct($id,$percent,$date,$nameTeams,$nameSport,$nameTurnire,$nameEventName, $status,WagerInfoStringResult $wagerInfoStringResult)
+    private $startGame;
+
+
+  public function __construct($id,$percent,$date,$nameTeams,$nameSport,$nameTurnire,$nameEventName, $status,WagerInfoStringResult $wagerInfoStringResult,$startGame=0)
   {
       $this->id=$id;
       $this->percent=$percent;
@@ -29,6 +32,7 @@ class WagerInfoFront
       $this->status_name=$this->setStatusName();
 
       $this->wagerInfoStringResult=$wagerInfoStringResult;
+      $this->startGame=$startGame;
 
 
   }
@@ -139,6 +143,14 @@ class WagerInfoFront
     public function getWagerInfoFront()
     {
         return $this->wagerInfoFront;
+    }
+    /**
+     * @return int
+     */
+    public function getStartGame()
+    {
+         return gmdate("Y-m-d H:i", $this->startGame);
+        return $this->startGame;
     }
 
 }

@@ -14,6 +14,9 @@ class WagerInfo
     private $select_coef;
     private $is_private;
     private $result;
+    private $time_list;
+
+
 
 
     /**
@@ -25,8 +28,9 @@ class WagerInfo
      * @param $select_coef
      * @param $is_private
      * @param $resulto     // результат из парстера массив индекс совападает с индексом - корзины
+     * @param $time_list     // ответ из конфирм   $result['time_list'] = [[ 'id'=>$betEventData['game_id'],'start'=>$betEventData['start']]];
      */
-    public function __construct($user_id, $playlist_id, $comment, $sum, $select_coef, $is_private, $resulto=[])
+    public function __construct($user_id, $playlist_id, $comment, $sum, $select_coef, $is_private, $resulto=[],$time_list=[])
   {
       $this->user_id=$user_id;
       $this->playlist_id=$playlist_id;
@@ -60,6 +64,7 @@ class WagerInfo
 //      <i>public</i> 'status' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'success'</font> <i>(length=7)</i>
 
       $this->result=$resulto;
+      $this->time_list=$time_list;
 
   }
 
@@ -117,4 +122,30 @@ class WagerInfo
     {
         return $this->sum;
     }
+
+//    /**
+//     * @return array
+//     */
+//    public function getTimeList()
+//    {
+//        return $this->time_list;
+//    }
+
+
+    /**
+     * начало игры  из массива перебором
+     * @param $id
+     * @return int
+     */
+    public function getStarttimeGameById($id)
+    {
+        foreach ($this->time_list as $el) {
+            $r = explode('-',$id);
+            if($r[0]==$el->id) return $el->start;
+        }
+        return 0;
+    }
+
+
+
 }

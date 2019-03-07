@@ -95,7 +95,7 @@ use yii\helpers\Url;
                                                             <div class="value_rate_c">  <?=$front_element->getUserPercent() ?> </div>
                                                         </div>
                                                         <div class="rate-c">
-                                                            <div class="title_rate_c"><?=$front_element->getCreatedAt() ?></div>
+                                                            <div class="title_rate_c"><?=$front_element->getStartAt() ?></div>
                                                             <?php if($isSubscriber || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_ORDINAR || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS  ){ ?>
 
                                                                 <?php if($front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS){ ?>

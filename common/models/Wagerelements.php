@@ -54,7 +54,7 @@ class Wagerelements extends \yii\db\ActiveRecord
     {
         return [
             [['wager_id', 'coef', 'status'], 'required'],
-            [['wager_id', 'sport_id', 'status'], 'integer'],
+            [['wager_id', 'sport_id', 'status','startgame'], 'integer'],
             [['coef'], 'number'],
             [['created_at','countevents','infoName'], 'safe'],
             [['event_id', 'outcome_id', 'sport_name', 'country_id', 'country_name', 'category_id', 'category_name', 'sub_category_id', 'sub_category_name', 'name', 'info_main_cat_name', 'info_name', 'info_name_full', 'info_cat_name'], 'string', 'max' => 255],
@@ -103,6 +103,7 @@ class Wagerelements extends \yii\db\ActiveRecord
 
             //  add
             'countevents' => 'Количество',
+            'startgame' => 'Начало игры',
             'infoName'=>'Описание исхода'
 
 

@@ -116,7 +116,7 @@ class WagerManager
 //    'status' => 'true',
 //    'coef' => '4.80',
         foreach ($this->cart as $i=> $element) {
-            yii::error($element);
+//            yii::error($element);
 //            var_dump($this->wagerInfo->getResulto($i)); die();
             $outcomeCoefficient=(float)$element['coef'];
           //if($element->status)   continue;
@@ -124,17 +124,16 @@ class WagerManager
             $total_coef *= $outcomeCoefficient;
 
             $this->addWagerElement($element,$this->wagerInfo->getResulto($i));
-//             if(CLEAR_CART){
-//                 $element->delete();
-//             }
-             // $element->delete();
+
          }
          return $total_coef;
     }
 
     private function addWagerElement($element,$ob){
 
-//        var_dump($ob); die();
+
+//        var_dump([$element->item_id]); die();
+//        var_dump([$this->wagerInfo->getStarttimeGameById($element['item_id']),$ob]); die();
             $wagerelement= new Wagerelements();
             $wagerelement->wager_id=$this->wager_id;
            // $wagerelement->event_id=  (string) OutcomeParser::getId($element);
@@ -166,16 +165,7 @@ class WagerManager
 //            $wagerelement->info_cat_name= $element->result_type_name;
             $wagerelement->info_cat_name=$element['name'];
             $wagerelement->created_at=date('Y-m-d H:i:s');
-//        main_cat_name
-//name
-//name_full
-//cat_name
-
-//            yii::error($info_about_turnire);
-
-
-//        ['sport_name' => 'Футбол', 'tournament_name' => 'Премьер Лига', 'category_name' => 'Украина', 'event_name' => 'Олимпик Донецк - ФК Львов',]
-        // sport_id
+            $wagerelement->startgame=$this->wagerInfo->getStarttimeGameById($element['item_id']);
 
 if(0){
     $info_about_turnire=$this->searchSportNameCategoryName($element);
@@ -190,8 +180,7 @@ if(0){
 }
 
 
-
-         $addINfo=
+//         $addINfo=
          $wagerelement->sport_name=$ob->{'sport-name_ru'};
          $wagerelement->country_name='a2';
          $wagerelement->category_name=$ob->{'league-name_ru'};

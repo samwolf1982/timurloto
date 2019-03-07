@@ -60,6 +60,7 @@ class WagerStatisticManager
         $this->queryParams= array_merge($this->queryParams,$own_query);
         $dataProviderWagers = $searchModelWager->searchWithPagination($this->queryParams,ConstantsHelper::COUNT_LOAD_NEXT_IN_BET);
         //  $pages = new Pagination(['totalCount' => $dataProviderWagers->getTotalCount()]);
+//        var_dump($dataProviderWagers); die();
         $result=$this->prepareWagers($dataProviderWagers);
         $this->paginationPages = $searchModelWager->getPages();
 
@@ -101,7 +102,8 @@ class WagerStatisticManager
            $wagerelements=$wager->wagerelements;
              $type=$this->getTypeWager($wagerelements);
              $prepare_elements=$this->prepareWager($wagerelements);
-//             var_dump(get_class($wager)); die();
+             if(empty($prepare_elements)){ yii::error(['empty elements wager id:', $wager->id]); continue; }
+//             var_dump($prepare_elements); die();
              $frontElement=new WagerInfoFrontSingle($wager->id,$type,$prepare_elements,$wager->coef,$wager->total,$wager->created_at,$wager->fronttypebet,$wager->select_coef);
              $userInfo = new UserInfo($wager->user_id);
             // $result_all[]=['elements'=>$prepare_elements,'front_element'=>$frontElement,'model'=>$wager];
@@ -112,10 +114,10 @@ class WagerStatisticManager
 
     private function prepareWager($wagerelements){
       $res=[];
-        foreach ($wagerelements as $wagerelement) { // var_dump($wagerelement); die();
+        foreach ($wagerelements as $wagerelement) { //var_dump($wagerelement); die();
             $wagerInfoStringResult=new WagerInfoStringResult($wagerelement->info_main_cat_name,$wagerelement->info_cat_name,$wagerelement->info_name);
 
-            $res[]=  new WagerInfoFront($wagerelement->id,$wagerelement->coef,$wagerelement->created_at,$wagerelement->info_name_full,$wagerelement->sport_name,$wagerelement->category_name,$wagerelement->name, 'status',$wagerInfoStringResult);
+            $res[]=  new WagerInfoFront($wagerelement->id,$wagerelement->coef,$wagerelement->created_at,$wagerelement->info_name_full,$wagerelement->sport_name,$wagerelement->category_name,$wagerelement->name, 'status',$wagerInfoStringResult,$wagerelement->startgame);
       }
       return $res;
     }

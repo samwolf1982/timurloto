@@ -52,6 +52,7 @@ class m180816_200348_create_wager_table extends Migration
 //            self::STATUS_NOT_ENTERD=>'Не прошла',
 //            self::STATUS_RETURN=>'Возврат',
 //        ];
+        //ALTER TABLE `wagerelements` ADD `startgame` INT NOT NULL COMMENT 'время начала игры' AFTER `created_at`;
 
         $this->createTable('wagerelements',[
             'id' => $this->primaryKey(),
@@ -84,6 +85,8 @@ class m180816_200348_create_wager_table extends Migration
 
 
             'created_at'=>$this->dateTime(),
+            'startgame' => $this->integer()->notNull()->comment("Начало игры"),
+
         ]);
 
         // cвязь   wagerelements принадлежыт  wager // может удалить каскадом или спрятать (уточнить)
