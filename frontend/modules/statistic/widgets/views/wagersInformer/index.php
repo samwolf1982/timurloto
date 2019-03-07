@@ -203,7 +203,7 @@ use yii\widgets\LinkPager;
                                                         </div>
                                                         <div class="rate-c">
 
-                                                            <div class="title_rate_c"><?=$front_element->getCreatedAt() ?></div>
+                                                            <div class="title_rate_c"><?=$front_element->getStartAt() ?></div>
 
 
                                                             <?php if(0){ // еще не понянтно ?>

@@ -140,8 +140,9 @@ class Wagerelements extends \yii\db\ActiveRecord
     }
 
     public  function getFormantedStartGame(){
-        return date("Y-m-d H:i", $this->startgame);
-        return gmdate("Y-m-d H:i", $this->startgame);
+        return gmdate("Y-m-d H:i", $this->startgame + 7200);
+//        return gmdate("Y-m-d H:i", ($this->startgame ) );
+        return gmdate("Y-m-d H:i", ($this->startgame +(60*60*2)) );
 
     }
 
