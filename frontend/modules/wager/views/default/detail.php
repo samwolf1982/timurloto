@@ -48,7 +48,7 @@ use common\models\Wagerelements;
 
                                 <?php
                                 /** @var Wagerelements $item */
-                                foreach ($model->wagerelements  as $k => $item) { ?>
+                                foreach ($model->wagerelements  as $k => $item) { //var_dump($item);die(); ?>
                                     <div class="table-bets-row">
                                     <div class="count-row__t"><?=$k+1?></div>
                                     <div class="item-tbl-row-bts">
@@ -56,7 +56,7 @@ use common\models\Wagerelements;
                                         <div class="value__t"><?=$item->name ?></div>
                                     </div>
                                     <div class="item-tbl-row-bts">
-                                        <div class="title__t"><?= date('Y-m-d',strtotime( $item->created_at)) ?></div>
+                                        <div class="title__t"><?= $item->getFormantedStartGame(); ?></div>
                                         <div class="value__t">  <?=$item->getFormantedNameAndPercent() ?></div>
 
                                     </div>

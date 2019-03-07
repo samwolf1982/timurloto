@@ -150,7 +150,7 @@ class WagerInfoFront
     public function getStartGame()
     {
          return gmdate("Y-m-d H:i", $this->startGame);
-        return $this->startGame;
+
     }
 
 }

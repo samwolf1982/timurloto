@@ -139,6 +139,13 @@ class Wagerelements extends \yii\db\ActiveRecord
         return $info->getFormantedNameAndPercent();  //7,200 ₽ - 37%
     }
 
+    public  function getFormantedStartGame(){
+        return gmdate("Y-m-d H:i", $this->startgame);
+
+    }
+
+
+
 
 
 }
