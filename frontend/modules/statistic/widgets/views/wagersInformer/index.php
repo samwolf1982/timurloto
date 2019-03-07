@@ -244,7 +244,7 @@ use yii\widgets\LinkPager;
                                                             <?php if($isSubscriber || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_ORDINAR || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS  ){ ?>
 
                                                                     <?php if($front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS){ ?>
-                                                                        <div class="value_rate_c" id="FormantedNameAndPercent">Экспресс LP#</div>
+                                                                        <div class="value_rate_c" id="FormantedNameAndPercent"> <?=$front_element->getFormantedNameAndPercent()  ?></div>
                                                                     <?php }else{ ?>
                                                                         <div class="value_rate_c" id="FormantedNameAndPercent"> <?=$front_element->getFormantedNameAndPercent()  ?></div>
                                                                     <?php } ?>
