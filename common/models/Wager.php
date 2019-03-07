@@ -214,14 +214,7 @@ class Wager extends \yii\db\ActiveRecord
     {
         $count =   $this->getWagerelements()->count();  // >1 тогда експресс
 
-//        $count_opened =   $this->getOpenedbet()->count();  // >0 тогда Open
-//        if($count_opened >0){ // комуто открыто -> открытый ординар или експресс
-//                     if($count>1){
-//                         return ConstantsHelper::BET_TYPE_OPEN_EXPRESS;
-//                     }else{
-//                         return ConstantsHelper::BET_TYPE_OPEN_ORDINAR;
-//                     }
-//        }
+
 
 
         if($this->is_private){ // приватная

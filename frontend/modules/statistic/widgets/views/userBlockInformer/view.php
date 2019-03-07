@@ -22,7 +22,7 @@ $userInfo;
                          yellow label -> class="level-info medium-level"
                          pink label -> class="level-info low-level"
                            -->
-                    <div class="level-info level8">
+                    <div class="level-info level<?=$userInfo->getUserLevelNumber() ?>">
                         <div class="label-level"><?=$userInfo->getUserLevelNumber() ?> </div>
                         <span>уровень</span>
                     </div>

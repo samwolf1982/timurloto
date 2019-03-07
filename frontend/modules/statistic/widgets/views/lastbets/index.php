@@ -1,5 +1,6 @@
 <?php
 
+use common\models\DTO\WagerInfoFrontSingle;
 use common\models\helpers\ConstantsHelper;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -97,19 +98,31 @@ use yii\helpers\Url;
                                                         <div class="rate-c">
                                                             <div class="title_rate_c"> <?=$front_element->getType() ;?></div>
                                                             <div class="value_rate_c"><?=$front_element->getSumAndPercent() ?></div>
-                                                            <div class="value_rate_c">  <?=$front_element->getUserPercent() ?> </div>
+
+                                                            <?php if($isSubscriber || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_ORDINAR || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS  ){ ?>
+
+                                                                <?php if($front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS){ ?>
+                                                                    <div class="value_rate_c">  <?=$front_element->getUserPercent() ?> </div>
+                                                                <?php }else{ ?>
+                                                                    <div class="value_rate_c">  <?=$front_element->getUserPercent() ?> </div>
+                                                                <?php } ?>
+                                                            <?php }else{  // смотрим чужой акканут закрытую ставку ?>
+                                                                <div class="value_rate_c" id="FormantedNameAndPercent"><?=$front_element->getFormantedCloseText()?></div>
+                                                            <?php  } ?>
+
+
                                                         </div>
                                                         <div class="rate-c">
                                                             <div class="title_rate_c"><?=$front_element->getStartAt() ?></div>
                                                             <?php if($isSubscriber || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_ORDINAR || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS  ){ ?>
 
                                                                 <?php if($front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS){ ?>
-                                                                    <div class="value_rate_c" id="FormantedNameAndPercent">Экспресс LP#</div>
+                                                                    <div class="value_rate_c" id="FormantedNameAndPercent">Экспресс LP</div>
                                                                 <?php }else{ ?>
                                                                     <div class="value_rate_c" id="FormantedNameAndPercent"> <?=$front_element->getFormantedNameAndPercent()  ?></div>
                                                                 <?php } ?>
                                                             <?php }else{  // смотрим чужой акканут закрытую ставку ?>
-                                                                <div class="value_rate_c" id="FormantedNameAndPercent"><?=$front_element->getFormantedCloseText()?></div>
+                                                                <div class="value_rate_c" id="FormantedNameAndPercent"><?=$front_element->getType()?></div>
                                                             <?php  } ?>
                                                         </div>
                                                     </div>

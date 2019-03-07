@@ -121,9 +121,9 @@ class WagerInfoFrontSingle
         elseif ($this->percent<10)$roundPercent=10;
         elseif ($this->percent<999999999)$roundPercent='10 +';
         if($this->type=='Экспресс'){
-            return  sprintf("Экспресс КФ : ~ %s",$roundPercent  );
+            return  sprintf("x ~ %s",$roundPercent  );
         }else{
-            return  sprintf("... КФ : ~ %s",$roundPercent  );
+            return  sprintf("x  ~ %s",$roundPercent  );
         }
         return '55555';
         return  sprintf("%s",  $this->wager->getFormatedString()) ;  //7,200 ₽ - 37%
