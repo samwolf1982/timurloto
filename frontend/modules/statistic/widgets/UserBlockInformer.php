@@ -56,7 +56,9 @@ class UserBlockInformer extends \yii\base\Widget
 
      $social_links=['/vk','/fb'];
      $photo=$user->getImageurlForPanel();   // после верстки подставкить  '/'.$user->imageurl
-     $userInfoAccount=new UserInfoAccount($this->user_id,$user->username,$balance,99,$photo, $user->userinfo->about_me,$social_links);
+       //var_dump([$user->id,$user->userinfo]); die();
+   //  $userInfoAccount=new UserInfoAccount($this->user_id,$user->username,$balance,99,$photo, $user->userinfo->about_me,$social_links);
+     $userInfoAccount=new UserInfoAccount($this->user_id,$user->username,$balance,99,$photo, @$user->userinfo->about_me,$social_links);
         $search_result= $search->searchCount($this->user_id);
 
 

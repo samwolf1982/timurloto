@@ -106,6 +106,30 @@ class WagerInfoFrontSingle
     }
 
 
+    /**
+     * ординар ,,, експресс так и остается + примерный исход
+     * @return string
+     */
+    public  function getFormantedCloseText(){
+
+//        var_dump($this->type); die();
+        $roundPercent=1;
+        if($this->percent<1.5)$roundPercent=1.5;
+        elseif ($this->percent<2.5)$roundPercent=2;
+        elseif ($this->percent<3.5)$roundPercent=3;
+        elseif ($this->percent<5)$roundPercent=5;
+        elseif ($this->percent<10)$roundPercent=10;
+        elseif ($this->percent<999999999)$roundPercent='10 +';
+        if($this->type=='Экспресс'){
+            return  sprintf("Экспресс КФ : ~ %s",$roundPercent  );
+        }else{
+            return  sprintf("... КФ : ~ %s",$roundPercent  );
+        }
+        return '55555';
+        return  sprintf("%s",  $this->wager->getFormatedString()) ;  //7,200 ₽ - 37%
+        //  return  sprintf("%s - x %0.2F",  $this->wager->getFormatedString(), $this->percent) ;  //7,200 ₽ - 37%
+    }
+
 
     /**
      * @return mixed
@@ -160,5 +184,20 @@ class WagerInfoFrontSingle
     {
         return $this->start_at;
     }
+
+    /**
+     * @return string
+     */
+    public function getRoundPercent()
+    {
+
+        $res=$this->percent;
+        return $res;
+    }
+
+
+
+
+
 
 }

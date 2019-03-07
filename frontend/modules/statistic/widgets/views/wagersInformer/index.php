@@ -224,8 +224,9 @@ use yii\widgets\LinkPager;
                                                                     <?php }else{ ?>
                                                                         <div class="value_rate_c" id="FormantedNameAndPercent"> <?=$front_element->getFormantedNameAndPercent()  ?></div>
                                                                     <?php } ?>
-                                                            <?php }else{  ?>
-                                                                <div class="value_rate_c" id="FormantedNameAndPercent">Экспресс LP</div>
+                                                            <?php }else{ // смотрим чужой акканут закрытую ставку
+                                                                    // var_dump($front_element->getType()=='Экспресс'); die();  ?>
+                                                                <div class="value_rate_c" id="FormantedNameAndPercent"><?=$front_element->getFormantedCloseText()?></div>
                                                             <?php  } ?>
 
                                                             <?php } ?>

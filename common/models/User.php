@@ -331,6 +331,10 @@ class User extends ActiveRecord implements IdentityInterface
 
     public function getUserinfo(){
         return    $this->hasOne(UserAttachmentInfo::className(), ['uid' => 'id']);
+//        $userInfo=$this->hasOne(UserAttachmentInfo::className(), ['uid' => 'id']);
+//        if($userInfo) var_dump($userInfo); die();  return $userInfo;
+//        return new UserAttachmentInfo();
+//        return    $this->hasOne(UserAttachmentInfo::className(), ['uid' => 'id']);
     }
 
 

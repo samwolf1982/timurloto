@@ -55,13 +55,15 @@ class LastBets extends \yii\base\Widget
         /** @var SubscriberModule $moduleSubscribers */
         $moduleSubscribers = \Yii::$app->getModule('subscribers');
 
+
+
+
         if(!$this->is_own){
-
-
             $isSubscriber = $moduleSubscribers->isSubscriber($this->user_id,Yii::$app->user->id);
         }else{
             $isSubscriber= true;
         }
+
 
 
         $video_models=[];
