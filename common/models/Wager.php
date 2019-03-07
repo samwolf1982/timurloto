@@ -246,6 +246,42 @@ class Wager extends \yii\db\ActiveRecord
         return $this->hasMany(Openedbet::className(), ['bet_id' => 'id']);
     }
 
+    public function canShow()
+    {
+
+        if($this->user_id == Yii::$app->user->id) return true;
+        return $this->isSubscriber($this->user_id,Yii::$app->user->id);
+
+//        return false;
+//         $this->user_id;
+    }
+
+    /**
+     * @param $user_sub_id // пользователь на кого подписан (берем ид странички где находимся)
+     * @param $current_user_id  // текуший пользователь
+     * @return bool
+     */
+    public function isSubscriber($user_sub_id, $current_user_id){
+
+
+        $user_owm = User::find()->where(['id'=>$user_sub_id])->one();
+        $current_user = User::find()->where(['id'=>$current_user_id])->one();
+
+        if($user_owm && $current_user ){
+//         'user_own_id', 'user_sub_id'
+            Yii::error(['qwert',$user_sub_id, $current_user_id]);
+            //   $subscriber=Subscriber::find()->where(['user_sub_id'=>(integer)$user_sub_id,'user_own_id'=>$current_user_id])->one();
+            $subscriber=Subscriber::find()->where(['user_sub_id'=>$current_user_id,'user_own_id'=>$user_sub_id])->one();
+
+            if($subscriber){
+
+                return true;
+            }
+        }
+        return false;
+
+    }
+
 
 
 }

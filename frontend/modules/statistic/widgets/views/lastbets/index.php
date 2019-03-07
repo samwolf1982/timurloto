@@ -39,11 +39,16 @@ use yii\helpers\Url;
                         <?php   foreach ($wagersModels as $wagerInfoFront) {
                             /** @var Wager $wager */
                             $wager=$wagerInfoFront['model'];
+
+                            //var_dump($wager->canShow()); die();
                             /** @var WagerInfoFrontSingle $front_element **/
                             $front_element=$wagerInfoFront['front_element'];
                             /**  @var UserInfo $userInfo **/
                             $userInfo=$wagerInfoFront['userInfo'];
 //                            var_dump($userInfo); die();
+
+                            $isSubscriber=   $wager->canShow();
+                            //var_dump($isSubscriber);
                             ?>
                             <div class="column-6 rate-column">
                                 <div class="rate-wrapper">
@@ -103,8 +108,8 @@ use yii\helpers\Url;
                                                                 <?php }else{ ?>
                                                                     <div class="value_rate_c" id="FormantedNameAndPercent"> <?=$front_element->getFormantedNameAndPercent()  ?></div>
                                                                 <?php } ?>
-                                                            <?php }else{  ?>
-                                                                <div class="value_rate_c" id="FormantedNameAndPercent">Экспресс LP</div>
+                                                            <?php }else{  // смотрим чужой акканут закрытую ставку ?>
+                                                                <div class="value_rate_c" id="FormantedNameAndPercent"><?=$front_element->getFormantedCloseText()?></div>
                                                             <?php  } ?>
                                                         </div>
                                                     </div>
@@ -146,11 +151,36 @@ use yii\helpers\Url;
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="link-rate">
 
-                                                            <a href="#"  class="modaleAjax"  data-target="<?=Url::to(['/wager/default/viewdetail','id'=>$front_element->getId() ])?>">+  Подробнее</a>
 
-                                                        </div>
+                                                        <?php if($isSubscriber || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_ORDINAR || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS  ){ ?>
+
+                                                            <?php if($isSubscriber || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_ORDINAR ){ ?>
+
+                                                                <?php if($front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_PRIVATE_EXPRESS ||   $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS ){ ?>
+                                                                    <div class="link-rate">
+                                                                        <a href="#"  class="modaleAjax"  data-target="<?=Url::to(['/wager/default/viewdetail','id'=>$front_element->getId() ])?>">+  Показать Экспресс</a>
+                                                                    </div>
+                                                                <?php  }else{  ?>
+                                                                    <div class="link-rate">
+                                                                        <a href="#"  class="modaleAjax"  data-target="<?=Url::to(['/wager/default/viewdetail','id'=>$front_element->getId() ])?>">+  Показать Ординар</a>
+                                                                    </div>
+                                                                <?php } ?>
+
+
+
+                                                            <?php }else{  ?>
+                                                                <div class="link-rate">
+                                                                    <a href="#"  class="modaleAjax"  data-target="<?=Url::to(['/wager/default/viewdetail','id'=>$front_element->getId() ])?>">+  Показать Экспресс</a>
+                                                                </div>
+                                                            <?php } ?>
+
+                                                        <?php }else{  ?>
+                                                            <div class="link-rate">
+                                                                <a href="#"  class="modaleAjax">Узнать прогноз</a>
+                                                            </div>
+                                                        <?php  } ?>
+
                                                     </div>
                                                 </div>
 

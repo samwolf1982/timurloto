@@ -13,7 +13,7 @@ class LastBets extends \yii\base\Widget
 {
 
     public $text = NULL;
-    public $user_id = NULL;
+    public $user_id = NULL; // текущий пользователь
     public $offerUrl = NULL;
     public $is_own = NULL;  // указательна то что это своя страничка юзатьтолько на индекс и bets
 
@@ -57,7 +57,7 @@ class LastBets extends \yii\base\Widget
 
 
 
-
+        yii::error([$this->user_id,Yii::$app->user->id]);
         if(!$this->is_own){
             $isSubscriber = $moduleSubscribers->isSubscriber($this->user_id,Yii::$app->user->id);
         }else{
@@ -65,6 +65,7 @@ class LastBets extends \yii\base\Widget
         }
 
 
+      //  var_dump($wagersModels[0]); die();
 
         $video_models=[];
         return $this->render('lastbets/index',['wagersModels'=>$wagersModels,'video_models'=>$video_models,'isSubscriber'=>$isSubscriber] );
