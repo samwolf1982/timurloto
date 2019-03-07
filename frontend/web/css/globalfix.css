@@ -252,3 +252,6 @@ and also iPads specifically.
 .avatar-user > img {
   border-radius: 100%;
 }
+.search-block {
+  display: none;
+}

@@ -93,6 +93,10 @@ $accessInfoAccount;
 
                 </div>
             </div>
+
+
+
+            <?php if(YII_ENV=='dev'){  ?>
             <div class="row table-row">
                 <div class="column-4 fav-column">
                     <div class="table-wrapper">
@@ -247,7 +251,7 @@ $accessInfoAccount;
                     </div>
                 </div>
             </div>
-
+            <?php } ?>
 
 
 
