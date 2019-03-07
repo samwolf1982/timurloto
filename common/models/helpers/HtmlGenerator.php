@@ -429,7 +429,7 @@ class HtmlGenerator
                             /**  @var UserInfo $userInfo **/
                             $userInfo=$wagerInfoFront['userInfo'];
 //                            var_dump($userInfo); die();
-
+         $isSubscriber=   $wager->canShow();
                        $res.='    <div class="column-6 rate-column">
                                 <div class="rate-wrapper">
                                     <div class="rate-inner">
@@ -476,20 +476,27 @@ class HtmlGenerator
                                                     <div class="rate-c__item rate-c__item__two">
                                                         <div class="rate-c">
                                                             <div class="title_rate_c"> '.$front_element->getType() .'</div>
-                                                            <div class="value_rate_c">'.$front_element->getSumAndPercent().'</div>
-                                                            <div class="value_rate_c">  '.$front_element->getUserPercent().'</div>
-                                                        </div>
+                                                            <div class="value_rate_c">'.$front_element->getSumAndPercent().'</div>';
+
+                                                              if($isSubscriber || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_ORDINAR || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS  ){
+                                                                  $res.='  <div class="value_rate_c">  '.$front_element->getUserPercent().'</div>';
+                                                                             }else{
+                                                                  $res.='  <div class="value_rate_c">  '.$front_element->getFormantedCloseText().'</div>';
+                                                                             }
+
+
+         $res.='        </div>
                                                         <div class="rate-c">
                                                             <div class="title_rate_c">'.$front_element->getStartAt() .'</div>';
                                                              if($isSubscriber || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_ORDINAR || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS  ){
 
                                                                  if($front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS){
-                                                                  $res.='<div class="value_rate_c" id="FormantedNameAndPercent">Экспресс LP#</div>';
+                                                                  $res.='<div class="value_rate_c" id="FormantedNameAndPercent">Экспресс</div>';
                                                                  }else{
-                                                                     $res.=' <div class="value_rate_c" id="FormantedNameAndPercent"> <?=$front_element->getFormantedNameAndPercent()  </div>';
+                                                                     $res.=' <div class="value_rate_c" id="FormantedNameAndPercent"> '. $front_element->getFormantedNameAndPercent().'  </div>';
                                                                  }
                                                              }else{
-                                                               $res.=' <div class="value_rate_c" id="FormantedNameAndPercent">Экспресс LP</div>';
+                                                               $res.=' <div class="value_rate_c" id="FormantedNameAndPercent">'.$front_element->getType().'</div>';
                                                               }
                                                         $res.=' </div>
                                                     </div>
@@ -530,12 +537,39 @@ class HtmlGenerator
                                                                     </ul>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="link-rate">
-                                                            <a href="#" onclick="openModaleDinamik(this);" data-toggle="modaleAjax" data-target="'.Url::to(['/wager/default/viewdetail','id'=>$front_element->getId() ]).'">+  Подробнее</a>
-                                                            
-                                                        </div>
-                                                    </div>
+                                                        </div>';
+
+
+
+                                                               if($isSubscriber || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_ORDINAR || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS  ){
+
+                                                             if($isSubscriber || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_ORDINAR ){
+
+                                                                 if($front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_PRIVATE_EXPRESS ||   $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS ){
+                                                                     $res.=' <div class="link-rate">
+                                                                          <a href="#" onclick="openModaleDinamik(this);" data-toggle="modaleAjax" data-target="'.Url::to(['/wager/default/viewdetail','id'=>$front_element->getId() ]).'">+  Показать Экспресс</a>
+                                                                    </div>';
+                                                                  }else{
+                                                                     $res.='<div class="link-rate">
+                                                                          <a href="#" onclick="openModaleDinamik(this);" data-toggle="modaleAjax" data-target="'.Url::to(['/wager/default/viewdetail','id'=>$front_element->getId() ]).'">+  Показать Ординар</a>
+                                                                    </div>';
+                                                                 }
+
+                                                             }else{
+                                                                 $res.='<div class="link-rate">
+                                                                      <a href="#" onclick="openModaleDinamik(this);" data-toggle="modaleAjax" data-target="'.Url::to(['/wager/default/viewdetail','id'=>$front_element->getId() ]).'">+  Показать Экспресс</a>
+                                                                </div>';
+                                                             }
+
+                                                         }else{
+                                                                   $res.='<div class="link-rate">
+
+                                                                  <a href="#" onclick="openModaleMoreDetail(this);" data-toggle="modaleAjax">Узнать прогноз</a>
+                                                            </div>';
+                                                          }
+
+
+                                                  $res.='  </div>
                                                 </div>
 
 
