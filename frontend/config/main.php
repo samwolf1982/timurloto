@@ -92,6 +92,10 @@ return [
                 'subscribers/default/send-message'=>'subscribers/default/send-message',
                 'account/addsubscriber'=>'account/addsubscriber',
 
+                // доступы
+
+               'account/open-access'=>'account/open-access',
+
 
 
                 // cтавки  http://localhost35/bet/index

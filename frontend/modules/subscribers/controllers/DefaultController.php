@@ -69,7 +69,7 @@ class DefaultController extends Controller
 //        $type_play
 //        yii::error($model);
 
-        return $this->renderPartial('peto',['model'=>$model,'userInfo'=>$userInfo]);
+        return $this->renderPartial('sminfo',['model'=>$model,'userInfo'=>$userInfo]);
     }
 
 
