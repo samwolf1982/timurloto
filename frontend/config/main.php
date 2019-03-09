@@ -1,6 +1,8 @@
 <?php
 
 
+throw  new  ErrorException('no users fields ');
+
 $params = array_merge(
     require __DIR__ . '/../../common/config/params.php',
     require __DIR__ . '/../../common/config/params-local.php',
