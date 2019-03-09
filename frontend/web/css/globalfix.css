@@ -283,3 +283,11 @@ and also iPads specifically.
   max-width: -moz-calc(-530%);
   max-width: calc(100% - 630px);
 }
+.text-head > .user-money {
+  font-weight: 700;
+  font-size: 25px;
+  color: #8DB055;
+  letter-spacing: 0;
+  text-align: right;
+  line-height: 25px;
+}

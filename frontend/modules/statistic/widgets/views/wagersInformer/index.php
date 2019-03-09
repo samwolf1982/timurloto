@@ -106,7 +106,7 @@ use yii\widgets\LinkPager;
                     </div>
 
                     <div class="left-head-text" style="padding-left: 1em;">
-                        <span class="text-head" > Не разыграно <?=$wagerManager->getFormatedNotPlaySum()?> </span>
+                        <span class="text-head" > Не разыграно  <span class="user-money"> <?=$wagerManager->getFormatedNotPlaySum()?> </span></span>
                     </div>
 
 
