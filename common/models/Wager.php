@@ -155,8 +155,10 @@ class Wager extends \yii\db\ActiveRecord
 
         Yii::error([$this->id,$this->status]);
         if($this->status==Wager::STATUS_ENTERED )    return   sprintf(' %.2f р.', ($this->total*$this->coef));
-        if($this->status==Wager::STATUS_RETURN )    return   'Возврат';
+        if($this->status==Wager::STATUS_RETURN_BET )    return   'Возврат';
         if($this->status==Wager::STATUS_NOT_ENTERD )    return   sprintf(' -%.2f р.', ($this->total));
+
+
         return   'Расчет';
 
     }
