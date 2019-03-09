@@ -1,4 +1,8 @@
 <?php
+
+
+throw new \yii\base\ErrorException('error unknown user fields');
+
 $params = array_merge(
     require __DIR__ . '/../../common/config/params.php',
     require __DIR__ . '/../../common/config/params-local.php',
