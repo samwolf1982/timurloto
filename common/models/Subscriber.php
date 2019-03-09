@@ -72,6 +72,7 @@ class Subscriber extends \yii\db\ActiveRecord
 
 
         $dt_end = new DateTime($this->expired_at);
+        $remain = $dt_end->diff(new DateTime());
         if($dt_end > new DateTime()){
             $remain = $dt_end->diff(new DateTime());
 //             Бывает “1 отзыв”, “2 отзыва” и “12 отзывов”.
