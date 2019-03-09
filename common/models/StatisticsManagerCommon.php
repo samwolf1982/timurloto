@@ -33,7 +33,7 @@ class StatisticsManagerCommon
 
             $profit=$this->calculateProfit($this->wager->select_coef,$this->wager->coef,$this->wager->status);
 
-            $roi=$this->calculateRoi($this->wager->select_coef,$this->wager->coef,$this->wager->status);
+            $roi=$this->calculateRoi($this->wager->total,$this->wager->coef,$this->wager->status);
 
             $penetration=$this->calculatePenetration($this->wager->status);
 
@@ -109,8 +109,8 @@ class StatisticsManagerCommon
 
 
 
-    // по идеи тоже что и проходимость  уточнить
-    private function calculateRoi($select_coef,$coef,$is_win)
+
+    private function calculateRoi($sumBet,$coef,$is_win)
     {
 //        ROI
 //Ставка сыграла
@@ -133,14 +133,22 @@ class StatisticsManagerCommon
 //ROI:
 //Общее
 //(10%+(-5%)+0%/5%+5%+5%)*100%=33%
+
+
+        ///////// переделка под википедию
+        /// https://ru.wikipedia.org/wiki/%D0%9E%D0%BA%D1%83%D0%BF%D0%B0%D0%B5%D0%BC%D0%BE%D1%81%D1%82%D1%8C_%D0%B8%D0%BD%D0%B2%D0%B5%D1%81%D1%82%D0%B8%D1%86%D0%B8%D0%B9
+
+
         if($is_win==Wager::STATUS_ENTERED){
-           // return $select_coef * $coef - $select_coef;
-            return ($select_coef * $coef - $select_coef) / $select_coef * 100;
+            $total=$sumBet*$coef;
+            return ($total - $sumBet) / $sumBet;
+
         }elseif ($is_win==Wager::STATUS_NOT_ENTERD){
            // return -abs($coef);
-            return -abs(100);
+          //  return -abs(100);
+            return -abs(-1);
         }
-        else{
+        else{ // возврать
             return 0;
         }
 

@@ -1,7 +1,7 @@
 <?php
 
 
-throw new \yii\base\ErrorException('error unknown user fields');
+
 
 $params = array_merge(
     require __DIR__ . '/../../common/config/params.php',
@@ -89,6 +89,7 @@ return [
                 // переписки запросы
                 'account/default/chart'=>'account/default/chart',
                 'subscribers/default/add-message'=>'subscribers/default/add-message',
+                'subscribers/default/send-message'=>'subscribers/default/send-message',
                 'account/addsubscriber'=>'account/addsubscriber',
 
 

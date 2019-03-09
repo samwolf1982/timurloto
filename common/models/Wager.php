@@ -150,6 +150,24 @@ class Wager extends \yii\db\ActiveRecord
 
     }
 
+    public function geFormatedWin(){
+
+
+        Yii::error([$this->id,$this->status]);
+        if($this->status==Wager::STATUS_ENTERED )    return   sprintf(' %.2f р.', ($this->total*$this->coef));
+        if($this->status==Wager::STATUS_RETURN )    return   'Возврат';
+        if($this->status==Wager::STATUS_NOT_ENTERD )    return   sprintf(' -%.2f р.', ($this->total));
+        return   'Расчет';
+
+    }
+
+    public function getFormatedBetSum(){
+
+        return   sprintf('%.2f р. <span>%s %%</span>','5000 ',152);
+        return   sprintf('%.2f р. <span>%s %%</span>',$this->total,$this->select_coef);
+
+    }
+
 
 
 

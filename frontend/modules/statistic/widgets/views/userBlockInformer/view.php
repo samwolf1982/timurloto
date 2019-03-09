@@ -4,6 +4,7 @@
 use common\models\DTO\UserInfoAccount;
 use common\models\helpers\ConstantsHelper;
 use yii\helpers\Html;
+use yii\helpers\Url;
 
 /**@var  UserInfoAccount $userInfoAccount **/
 $userInfoAccount;
@@ -75,14 +76,19 @@ $userInfo;
                     </ul>
                 </div>
                 <div class="user-acc-btn mt-0">
-                    <a href="#" class="btn btn-hover btn-primary no-before">
-                        <i class="icon-mail"></i>Сообщение
-                        <span></span>
-                    </a>
+
+
+
+
 
 
 
                     <?php if(!Yii::$app->user->isGuest){ ?>
+                        <a href="#" onclick="openModaleMoreDetail(this);"  data-target='<?=Url::to(['/subscribers/default/send-message','id'=>Yii::$app->user->id])?>' data-toggle="modaleAjax" data-target="#edit_subscriber"  class="btn btn-hover btn-primary no-before">
+                            <i class="icon-mail"></i>Сообщение
+                            <span></span>
+                        </a>
+
 
                         <a href="#" class="btn btn-hover btn-default event-subscribe-btn " id="subscriberMail">
                         <?php if($user->isSubscriberMailfront()){ ?>
@@ -93,6 +99,13 @@ $userInfo;
 
                             <span></span>
                         </a>
+
+                    <?php }else{  ?>
+                        <a href="#" onclick="openModaleMoreDetail(this);"  data-target='<?=Url::to(['/subscribers/default/send-messageguest','id'=>Yii::$app->user->id])?>' data-toggle="modaleAjax" data-target="#edit_subscriber"  class="btn btn-hover btn-primary no-before">
+                            <i class="icon-mail"></i>Сообщение гостевое
+                            <span></span>
+                        </a>
+
 
                     <?php } ?>
 

@@ -106,8 +106,12 @@ use common\models\Wagerelements;
                                 </div>
                                 <div class="static-footer-bets">
                                     <div class="static-footer-bets-title"><?=$model->getTypeWager() ?></div>
-                                    <div class="static-footer-bets-value"><?=$model->getTotalAndPercent()?></div>
+                                    <div class="static-footer-bets-value fill-all">Ставка: <?=$model->getTotalAndPercent()?></div>
+
+                                    <div class="static-footer-bets-value fill-all">Выигрыш : <?=$model->geFormatedWin()?> </div>
                                 </div>
+
+
                             </div>
                             <div class="shared-block-modal">
                                 <div class="btn-shared">

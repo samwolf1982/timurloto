@@ -159,6 +159,12 @@ class WagerStatisticManager
       return  Wager::find()->where(['user_id'=>$this->user_id])->count();
     }
 
+    public function getFormatedNotPlaySum(){
+//        return sprintf('%.2f р.',99999999);
+       return   sprintf('%.2f р.',Wager::find()->where(['user_id'=>$this->user_id])->andWhere(['in','status',[Wager::STATUS_NEW,Wager::STATUS_MANUAL_BET]])->sum('total'));
+        return   ;
+    }
+
 
 
 

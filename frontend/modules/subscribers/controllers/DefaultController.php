@@ -57,6 +57,23 @@ class DefaultController extends Controller
         return ['status'=>"error"]; //
     }
 
+    /**
+     *
+     * @return array
+     */
+    public function actionSendMessage($id)
+    {
+        // все переделать под
+        $model=null;
+        $userInfo= new UserInfo($id);
+//        $type_play
+//        yii::error($model);
+
+        return $this->renderPartial('peto',['model'=>$model,'userInfo'=>$userInfo]);
+    }
+
+
+
 
     public function actionAdd()
     {

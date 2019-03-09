@@ -30,6 +30,7 @@ use yii\widgets\LinkPager;
                     <div class="left-head-text">
                         <span class="text-head"><?=$text?> <sup><?=$wagerManager->getCountAllElements()?></sup></span>
                     </div>
+
                     <div class="play-list-drop">
                         <!--<button class="drop-trig-lay">Плейлист #A</button>-->
                         <!--<div class="drop-play">-->
@@ -103,6 +104,11 @@ use yii\widgets\LinkPager;
                             </div>
                         </div>
                     </div>
+
+                    <div class="left-head-text" style="padding-left: 1em;">
+                        <span class="text-head" > Не разыграно <?=$wagerManager->getFormatedNotPlaySum()?> </span>
+                    </div>
+
 
                     <div class="right-head-tab">
                         <div class="for-mobile-drop">
@@ -817,6 +823,9 @@ use yii\widgets\LinkPager;
                         <div class="left-head-text">
                             <span class="text-head">Мои Ставки <sup><?=$wagerManager->getCountAllElements()?></sup></span>
                         </div>
+
+
+
                         <div class="play-list-drop">
                             <!--<button class="drop-trig-lay">Плейлист #A</button>-->
                             <!--<div class="drop-play">-->

@@ -70,13 +70,13 @@ class WagersInformer extends \yii\base\Widget
 
 
         yii::error(['subscriber'=>$isSubscriber,$this->user_id,Yii::$app->user->id]);
-
+        $sumNotPlay=9990;
 //        $searchModelWager = new WagerSearch();
 //        $dataProviderWagers = $searchModelWager->search(Yii::$app->request->queryParams);
 
 
         return $this->render('wagersInformer/index',['playlists'=>$playlists ,'wagersModels'=> $wagersModels,'wagerManager'=>$wagers,'paginationPages'=>$paginationPages,
-            'pageInfo'=>$pageInfo,'text'=>$this->text,'isSubscriber'=>$isSubscriber] );
+            'pageInfo'=>$pageInfo,'text'=>$this->text,'isSubscriber'=>$isSubscriber,'sumNotPlay'=>$sumNotPlay] );
 
     }
 }
