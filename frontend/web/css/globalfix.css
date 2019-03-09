@@ -291,3 +291,8 @@ and also iPads specifically.
   text-align: right;
   line-height: 25px;
 }
+.text-head > .currency {
+  font-weight: 700;
+  font-size: 15px;
+  color: #6B5C90;
+}
