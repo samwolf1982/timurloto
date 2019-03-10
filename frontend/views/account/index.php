@@ -61,7 +61,7 @@ $accessInfoAccount;
             <li><a href="/account/my-subscriptions" data-toggle="modal" data-target="#edit_bet" class=""><span class="stat-title">Подписки</span> <span class="stat-val"><?=$accessInfoAccount->getCountSubscribe()?></span></a></li>
             <li><a href="/account/my-subscribers" data-toggle="modal" data-target="#edit_bet" class=""><span class="stat-title">Подписчики</span> <span class="stat-val"><?=$accessInfoAccount->getCountSubscribers()?></span></a></li>
             <li><a href="#my-bet" class="ancor"><span class="stat-title">Прогнозы</span> <span class="stat-val"><?=$accessInfoAccount->getCountWagers()?></span></a></li>
-            <li><a href="<?=Url::toRoute(['/bet'])?>" class=""><span class="stat-title">week 1</span> <span class="stat-val">#<?=$weekNum?> </span></a></li>
+            <li><a href="<?=Url::toRoute(['/bet'])?>" class=""><span class="stat-title">week </span> <span class="stat-val">#<?=$weekNum?> </span></a></li>
             <li><a href="#stat-block" class="ancor"><span class="stat-title">TOP - 100</span> <span class="stat-val">#13</span></a></li>
 
 
