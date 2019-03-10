@@ -47,7 +47,7 @@ class AccessInfo
     /**
      * номер в турнире за неделю
      */
-    public function getWeekNum()
+    public function getWeekNum($baseUserId)
     {
     //    return 23;
         $lastWeek    = date('Y-m-d h:i:s');
@@ -57,7 +57,7 @@ class AccessInfo
               $numberWeek=0;
               foreach (Yii::$app->db->createCommand($sql)->queryAll() as $i=>$el){
                          Yii::error($el['user_id']);
-                         if($el['user_id']==$this->user)  {$numberWeek=$i; $numberWeek++; break; }
+                         if($el['user_id']==$baseUserId)  {$numberWeek=$i; $numberWeek++; break; }
                      }
 
                      return $numberWeek;
