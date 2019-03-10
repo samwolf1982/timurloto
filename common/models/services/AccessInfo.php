@@ -10,6 +10,7 @@ use common\models\User;
 use common\models\wraps\EventsnamesExt;
 use common\models\wraps\SportcategoryExt;
 use common\models\wraps\TournamentsnamesExt;
+use Yii;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 
@@ -34,11 +35,24 @@ class AccessInfo
     $getCountOpenMe=$this->user->getCountOpenMe($this->user->id);
     $getCountOpenForMe=$this->user->getCountOpenedForMe($this->user->id);
 
+//    Yii::error([$getCountOpenMe,$getCountOpenForMe]);
         $accessInfoAccount=new  AccessInfoAccount(($getCountOpenMe+$getCountOpenForMe),
             $this->user->getCountSubscriberMail(),
             $this->user->getCountSubscribersMail(),
             $this->user->getCountWagers(),555,666);
         return $accessInfoAccount;
+    }
+
+
+    /**
+     * номер в турнире за неделю
+     */
+    public function getWeekNum()
+    {
+        return 23;
+        $sql="SELECT user_id, sum(profit) as sume FROM `balancestatistics` WHERE  GROUP BY user_id ORDER BY sume DESC;";
+        $names = Yii::$app->db->createCommand($sql)->queryAll();
+            return 23;
     }
 
 

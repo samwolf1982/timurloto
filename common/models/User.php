@@ -1,6 +1,7 @@
 <?php
 namespace common\models;
 
+use common\models\helpers\ConstantsHelper;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
@@ -259,6 +260,7 @@ class User extends ActiveRecord implements IdentityInterface
      * @return int|string
      */
     public function getCountSubscribersMail(){
+        yii::error($this->id);
         return SubscriberMail::find()->where(['user_sub_id'=>$this->id])->count();
     }
 
@@ -272,6 +274,12 @@ class User extends ActiveRecord implements IdentityInterface
 
 
     //----------- access subscribe for account controller
+
+    /**
+     * открыто мной
+     * @param $u_id
+     * @return array|ActiveRecord[]
+     */
     public function getOpenMe($u_id){
        return Subscriber::find()->where(['user_own_id'=>$u_id])->all();
     }
@@ -281,6 +289,11 @@ class User extends ActiveRecord implements IdentityInterface
         return Subscriber::find()->where(['user_own_id'=>$u_id])->count();
     }
 
+    /**
+     * открыто для меня
+     * @param $u_id
+     * @return array|ActiveRecord[]
+     */
     public function getOpenedForMe($u_id){
         return Subscriber::find()->where(['user_sub_id'=>$u_id])->andWhere(['>','expired_at',date('Y-m-d H:i:s')])->all();
     }
@@ -288,7 +301,8 @@ class User extends ActiveRecord implements IdentityInterface
 
     //----------- access subscribe for account controller
     public function getCountOpenedForMe($u_id){
-        return Subscriber::find()->where(['user_sub_id'=>$u_id])->count();
+//        yii::error($u_id);
+        return Subscriber::find()->where(['user_sub_id'=>$u_id])->andWhere(['>','expired_at',date('Y-m-d H:i:s')])->count();
     }
 
 
@@ -341,8 +355,50 @@ class User extends ActiveRecord implements IdentityInterface
 
 
     public function getImguse(){
-        return    $this->hasOne(UserAvatars::className(), ['uid' => 'id']);
+     //   return    $this->hasOne(UserAvatars::className(), ['uid' => 'id']);
+        $userAvatars=$this->hasOne(UserAvatars::className(), ['uid' => 'id'])->one();
+
+
+        if(!$userAvatars){
+
+            $userAvatars=new UserAvatars();
+            $userAvatars->avatar=ConstantsHelper::DEFAULT_USER_AVATAR_IMAGE;
+            yii::error($userAvatars->avatar);
+        }
+
+        return $userAvatars;
+
     }
+
+
+    /**
+     * подписки
+     * @param $u_id
+     * @return array|ActiveRecord[]
+     */
+    public function getMySubscriptions($u_id){
+
+        return SubscriberMail::find()->where(['user_own_id'=>$u_id])->andWhere(['>','expired_at',date('Y-m-d H:i:s')])->all();
+
+
+    }
+
+
+    /**
+     * подписчики
+     * @param $u_id
+     * @return array|ActiveRecord[]
+     */
+    public function getMySubscribers($u_id){
+
+        return SubscriberMail::find()->where(['user_sub_id'=>$u_id])->andWhere(['>','expired_at',date('Y-m-d H:i:s')])->all();
+        //return SubscriberMail::find()->where(['user_sub_id'=>$u_id])->andWhere(['>','expired_at',date('Y-m-d H:i:s')])->all();
+
+
+    }
+
+
+
 
 
 

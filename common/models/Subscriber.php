@@ -91,10 +91,6 @@ class Subscriber extends \yii\db\ActiveRecord
 
         return  'Время доступа закончилось'.$remain->m;
 
-      //  echo $a.' отзыв'.NumberEnd($a, array('','а','ов'));
-
-        //$remain->d . ' days and ' . $remain->h . ' hours';
-
     }
 
 

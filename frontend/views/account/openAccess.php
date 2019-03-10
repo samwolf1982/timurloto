@@ -39,16 +39,26 @@ use yii\helpers\Url;
                                 <div class="for-scroll">
 
 
+                                    <?php if( empty( $openMe)){  ?>
+                                        <div class="subscribe-item user-access-item" style="justify-content: center;">
+                                            <p style="color: black;"> Вы еще никому не открыли доступ</p>
+                                        </div>
+                                    <?php }else{  ?>
                                     <?php
                                     /** @var Subscriber $us */
-                                    foreach ($openMe as $sub) {?>
+                                    foreach ($openMe as $sub) { ?>
                                         <div class="subscribe-item user-access-item subscribe-item_<?=$sub->usersub->id?>">
                                             <div class="rate-avatar">
                                                 <div class="circle-wrapper grey-null-full" data-ptc="15">
                                                     <div class="circle"></div>
                                                 </div>
                                                 <div class="avatar-user">
-                                                    <img src="images/ava3.png" alt="">
+
+
+
+                                                    <img src="/<?=$sub->usersub->imguse->avatar?>" alt="">
+
+
                                                 </div>
                                             </div>
                                             <div class="name-block">
@@ -74,7 +84,7 @@ use yii\helpers\Url;
 
                                             </div>
                                         </div>
-                                   <?php  }?>
+                                   <?php  } }?>
 
 
 
@@ -675,21 +685,28 @@ use yii\helpers\Url;
                 </div>
 
 
-                <div class="tabs-item TabOpenForMe" id="tab2">
+                <div class="tabs-item TabOpenForMe" id="tab2" >
                     <div class="tabs-item-inner">
                         <div class="list-block-subscribe">
                             <div class="list-block-subscribe-inner" data-simplebar data-simplebar-auto-hide="true">
                                 <div class="for-scroll">
+
+
+                                    <?php if( empty( $openForMe)){  ?>
+                                        <div class="subscribe-item user-access-item" style="justify-content: center;">
+                                            <p style="color: black;"> Вам еще никто не открыл доступ</p>
+                                        </div>
+                                    <?php }else{  ?>
                                     <?php
-                                    /** @var Subscriber $us */
-                                    foreach ($openForMe as $sub) {?>
+                                     /** @var Subscriber $us */
+                                    foreach ($openForMe as $sub) { ?>
                                     <div class="subscribe-item user-access-item">
                                         <div class="rate-avatar">
                                             <div class="circle-wrapper grey-null-full" data-ptc="15">
                                                 <div class="circle"></div>
                                             </div>
                                             <div class="avatar-user">
-                                                <img src="images/ava3.png" alt="">
+                                                <img src="/<?=$sub->usersub->imguse->avatar?>" alt="">
                                             </div>
                                         </div>
                                         <div class="name-block">
@@ -719,7 +736,6 @@ use yii\helpers\Url;
                                                   echo '  <span class="shown-text">Открыть в ответ</span>';
                                                   echo '  <span class="hidden-text">Открыто</span>';
                                               }
-Yii::error($u);
                                                 ?>
 
 
@@ -727,7 +743,7 @@ Yii::error($u);
                                         </div>
 
                                     </div>
-                                    <?php  }?>
+                                    <?php  } }  ?>
 
 
                                     <?php if(0){ ?>

@@ -197,6 +197,7 @@ class ConstantsHelper
 
     // топ 100 периоды
     const COUNT_LOAD_NEXT_IN_BET=6; //
+    const DEFAULT_USER_AVATAR_IMAGE='images/avatar-placeholder.svg'; //
 
 
 

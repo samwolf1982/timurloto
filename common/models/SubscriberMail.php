@@ -56,4 +56,14 @@ class SubscriberMail extends \yii\db\ActiveRecord
             'created_at' => 'создан',
         ];
     }
+
+    public function getUsersub()
+    {
+        return $this->hasOne(User::className(), ['id' => 'user_sub_id']);
+    }
+    public function getUserown()
+    {
+        return $this->hasOne(User::className(), ['id' => 'user_own_id']);
+    }
+
 }

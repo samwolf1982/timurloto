@@ -102,7 +102,11 @@ class WagerStatisticManager
            $wagerelements=$wager->wagerelements;
              $type=$this->getTypeWager($wagerelements);
              $prepare_elements=$this->prepareWager($wagerelements);
-             if(empty($prepare_elements)){ yii::error(['empty elements wager id:', $wager->id]); continue; }
+             if(empty($prepare_elements)){
+
+                 //yii::error(['empty elements wager id:', $wager->id]);
+
+                 continue; }
 //             var_dump($prepare_elements); die();
              $frontElement=new WagerInfoFrontSingle($wager->id,$type,$prepare_elements,$wager->coef,$wager->total,$wager->created_at,$wager->fronttypebet,$wager->select_coef);
              $userInfo = new UserInfo($wager->user_id);

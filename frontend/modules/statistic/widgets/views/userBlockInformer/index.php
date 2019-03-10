@@ -5,6 +5,7 @@ use common\models\DTO\UserInfoAccount;
 use common\models\helpers\ConstantsHelper;
 use common\models\services\UserInfo;
 use yii\helpers\Html;
+use yii\helpers\Url;
 
 /**@var  UserInfoAccount $userInfoAccount **/
 $userInfoAccount;
@@ -82,7 +83,7 @@ $userInfo;
                 </div>
 
                 <div class="user-acc-btn mt-0">
-                    <a href="settings.html" class="btn btn-hover btn-default settings-btn">
+                    <a href="<?=Url::to(['/settings'])?>" class="btn btn-hover btn-default settings-btn">
                         <i class="icon-setting"></i> НАСТРОЙКИ
                         <span></span>
                     </a>

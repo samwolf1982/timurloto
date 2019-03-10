@@ -78,13 +78,16 @@ class AccountController extends Controller
         $balance  = number_format($b, 0, '', ',');
 
 
+
+
+
         $accessInfo=new  AccessInfo(Yii::$app->user->id);
 
         $accessInfoAccount=$accessInfo->getData();
 
+        $weekNum=$accessInfo->getWeekNum();
 
-
-        return $this->render('index',['balance'=>$balance,'accessInfoAccount'=>$accessInfoAccount] );
+        return $this->render('index',['balance'=>$balance,'accessInfoAccount'=>$accessInfoAccount,'weekNum'=>$weekNum] );
     }
 
 
@@ -212,19 +215,79 @@ class AccountController extends Controller
             $user=  User::find()->where(['id'=>Yii::$app->user->identity->getId()])->one();
                           if($user){
                       $openMe=$user->getOpenMe(Yii::$app->user->identity->getId());
+                    //  yii::error($openMe[0]->userown->imguse->avatar);
                       // test loop
 //                              foreach ($openMe as $us) {
 //                                $u=  $us->userown;
 //                                  yii::error($u);
 //                                                        }
                       $openForMe=$user->getOpenedForMe(Yii::$app->user->identity->getId());
+                      yii::error($openForMe);
                              }
             }
         }
         return $this->renderAjax('openAccess',['openMe'=>$openMe,'openForMe'=>$openForMe] );
-
-
     }
+
+
+
+    /**
+     * Мои подписки
+     * @return array
+     */
+    public function actionMySubscriptions($uid=null)
+    {
+
+        $openMe=[];
+        $openForMe=[];
+        if(!empty($uid)){
+
+        }else{
+
+            if(Yii::$app->user->isGuest){
+
+            }else{
+                $user=  User::find()->where(['id'=>Yii::$app->user->identity->getId()])->one();
+                if($user){
+                    $mySubscriptions=$user->getMySubscriptions(Yii::$app->user->identity->getId());
+                    $countSubsMail=  $user->getCountSubscriberMail();
+                   // $openForMe=$user->getOpenedForMe(Yii::$app->user->identity->getId());
+                }
+            }
+        }
+        return $this->renderAjax('mySubscriptions',['countSubsMail'=>$countSubsMail, 'mySubscriptions'=>$mySubscriptions] );
+    }
+
+    /**
+     * Мои подписчики
+     * @return array
+     */
+    public function actionMySubscribers($uid=null)
+    {
+
+        $openMe=[];
+        $openForMe=[];
+        if(!empty($uid)){
+
+        }else{
+
+            if(Yii::$app->user->isGuest){
+
+            }else{
+                $user=  User::find()->where(['id'=>Yii::$app->user->identity->getId()])->one();
+                if($user){
+                    $mySubscribers=$user->getMySubscribers(Yii::$app->user->identity->getId());
+                    $countSubsMail=  $user->getCountSubscribersMail();
+                    // $openForMe=$user->getOpenedForMe(Yii::$app->user->identity->getId());
+                }
+            }
+        }
+        return $this->renderAjax('mySubscribers',['countSubsMail'=>$countSubsMail, 'mySubscribers'=>$mySubscribers] );
+    }
+
+
+
+
 
     /**
      * автозаполнение коментов подпискчиков

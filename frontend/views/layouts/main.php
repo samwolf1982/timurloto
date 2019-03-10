@@ -7418,6 +7418,8 @@ AppAsset::register($this);
                             <div class="list-block-subscribe">
                                 <div class="list-block-subscribe-inner" data-simplebar data-simplebar-auto-hide="true">
                                     <div class="for-scroll">
+                                        <?php if(0){ ?>
+
                                         <div class="subscribe-item">
                                             <div class="rate-avatar">
                                                 <div class="circle-wrapper grey-null-full" data-ptc="15">
@@ -7658,6 +7660,7 @@ AppAsset::register($this);
                                                 </a>
                                             </div>
                                         </div>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </div>
@@ -7672,7 +7675,6 @@ AppAsset::register($this);
         </div>
     </div>
 </div>
-
 
 
 
