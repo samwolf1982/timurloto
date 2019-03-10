@@ -49,10 +49,19 @@ class AccessInfo
      */
     public function getWeekNum()
     {
-        return 23;
-        $sql="SELECT user_id, sum(profit) as sume FROM `balancestatistics` WHERE  GROUP BY user_id ORDER BY sume DESC;";
+    //    return 23;
+        $lastWeek    = date('Y-m-d h:i:s');
+        $lastLastWeek= date('Y-m-d h:i:s',strtotime('last sunday'));
+        $sql="SELECT user_id, sum(profit) as sume FROM `balancestatistics` WHERE  created_own BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume DESC;";
         $names = Yii::$app->db->createCommand($sql)->queryAll();
-            return 23;
+              $numberWeek=0;
+              foreach (Yii::$app->db->createCommand($sql)->queryAll() as $i=>$el){
+                         Yii::error($el['user_id']);
+                         if($el['user_id']==$this->user)  {$numberWeek=$i; $numberWeek++; break; }
+                     }
+
+                     return $numberWeek;
+//            return 23;
     }
 
 
