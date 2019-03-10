@@ -86,8 +86,9 @@ class AccountController extends Controller
         $accessInfoAccount=$accessInfo->getData();
 
         $weekNum=$accessInfo->getWeekNum(Yii::$app->user->id);
+        $top100=$accessInfo->getTop100(Yii::$app->user->id);
 
-        return $this->render('index',['balance'=>$balance,'accessInfoAccount'=>$accessInfoAccount,'weekNum'=>$weekNum] );
+        return $this->render('index',['balance'=>$balance,'accessInfoAccount'=>$accessInfoAccount,'weekNum'=>$weekNum,'top100'=>$top100] );
     }
 
 

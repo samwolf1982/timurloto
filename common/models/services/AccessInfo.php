@@ -53,14 +53,30 @@ class AccessInfo
         $lastWeek    = date('Y-m-d h:i:s');
         $lastLastWeek= date('Y-m-d h:i:s',strtotime('last sunday'));
         $sql="SELECT user_id, sum(profit) as sume FROM `balancestatistics` WHERE  created_own BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume DESC;";
-        $names = Yii::$app->db->createCommand($sql)->queryAll();
               $numberWeek=0;
               foreach (Yii::$app->db->createCommand($sql)->queryAll() as $i=>$el){
-                         Yii::error($el['user_id']);
                          if($el['user_id']==$baseUserId)  {$numberWeek=$i; $numberWeek++; break; }
                      }
 
                      return $numberWeek;
+//            return 23;
+    }
+
+    /**
+     * номер в турнире за Top100
+     */
+    public function getTop100($baseUserId)
+    {
+
+        $lastLastWeek= date('Y-m-d h:i:s',strtotime('-90 days'));
+        $lastWeek    = date('Y-m-d h:i:s');
+        $sql="SELECT user_id, sum(profit) as sume FROM `balancestatistics` WHERE  created_own BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume DESC;";
+        $numberWeek=0;
+        foreach (Yii::$app->db->createCommand($sql)->queryAll() as $i=>$el){
+            if($el['user_id']==$baseUserId)  {$numberWeek=$i; $numberWeek++; break; }
+        }
+
+        return $numberWeek;
 //            return 23;
     }
 
