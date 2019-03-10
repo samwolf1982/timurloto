@@ -51,10 +51,10 @@ $accessInfoAccount
 <div class="account-statistic">
     <div class="content-container">
         <ul class="list-static">
-            <li><a href="#" class=""><span class="stat-title">Подписчики</span> <span class="stat-val">2,389</span></a></li>
-            <li><a href="#my-bet" class="ancor"><span class="stat-title">Прогнозы</span> <span class="stat-val">357</span></a></li>
-            <li><a href="#" class=""><span class="stat-title">week 1</span> <span class="stat-val">#4</span></a></li>
-            <li><a href="#stat-block" class="ancor"><span class="stat-title">TOP - 100</span> <span class="stat-val">#13</span></a></li>
+            <li><a href="#" class=""><span class="stat-title">Подписчики</span> <span class="stat-val"><?=$accessInfoAccount->getCountSubscribers()?></span></a></li>
+            <li><a href="#my-bet" class="ancor"><span class="stat-title">Прогнозы</span> <span class="stat-val"><?=$accessInfoAccount->getCountWagers()?></span></a></li>
+            <li><a href="#" class=""><span class="stat-title">week </span> <span class="stat-val">#<?=$weekNum?></span></a></li>
+            <li><a href="#stat-block" class="ancor"><span class="stat-title">TOP - 100</span> <span class="stat-val">#<?=$top100?></span></a></li>
         </ul>
     </div>
 </div>
@@ -74,7 +74,6 @@ $accessInfoAccount
             <div class="row table-row">
                 <div class="column-4">
 
-
                     <?=UserBlockInformer::widget(['user_id'=>yii::$app->request->get('id'),'view'=>'userBlockInformer/view']) ?>
 
                 </div>
@@ -82,7 +81,6 @@ $accessInfoAccount
                 <div class="column-8">
 
                     <?=UserChartInformer::widget(['user_id'=>yii::$app->request->get('id')]) ?>
-
 
                 </div>
 
@@ -217,6 +215,7 @@ $accessInfoAccount
                 </div>
             </div>
             <?php }  ?>
+
             <?=StatisticInformer::widget(['user_id'=>yii::$app->request->get('id')]); ?>
 
 

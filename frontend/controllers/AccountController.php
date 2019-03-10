@@ -103,7 +103,12 @@ class AccountController extends Controller
 //        var_dump($id); die();
         $b= Score::find()->where(['user_id' => $id])->one()->balance;
         $balance  = number_format($b, 0, '', ',');
-        return $this->render('view',['balance'=>$balance]);
+        $accessInfo=new  AccessInfo($id);
+        $accessInfoAccount=$accessInfo->getData();
+        $weekNum=$accessInfo->getWeekNum($id);
+        $top100=$accessInfo->getTop100($id);
+
+        return $this->render('view',['balance'=>$balance,'accessInfoAccount'=>$accessInfoAccount,'weekNum'=>$weekNum,'top100'=>$top100]);
 
     }
 
