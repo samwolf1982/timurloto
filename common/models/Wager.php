@@ -177,6 +177,7 @@ class Wager extends \yii\db\ActiveRecord
 
     public function checkCloseElements()
     {
+        return true;
         $is_close=true;
             $status_new_arr=[self::STATUS_NEW,self::STATUS_OPEN,self::STATUS_CREATE]; // ,self::STATUS_CREATE ??
             foreach ($this->wagerelements as $item) {

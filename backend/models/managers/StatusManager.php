@@ -114,7 +114,7 @@ class StatusManager
         $class=  get_class($this->model);
         /**@var Wagerelements $item **/
         foreach ($class::find()->where(['event_id'=>$this->model->event_id])->all() as $item) {
-            if($item->wager->checkCloseElements()){ // все внутрение прошли
+            if($item->wager->checkCloseElements()){ // все внутрение прошли теперь всегда +
            //     if(!$item->wager->checkCloseState()){  // но родитель еще не прошел
 //Yii::error(['checkCloseElements '=>'oki']);
                               $newStatus=$item->wager->getFinalStatus();
