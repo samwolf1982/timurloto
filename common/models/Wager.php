@@ -74,7 +74,7 @@ class Wager extends \yii\db\ActiveRecord
 
     public static function getStatusNamesIshod(){
         $arr=[
-            self::STATUS_NEW=>'Новая',
+//            self::STATUS_NEW=>'Новая',
             self::STATUS_ENTERED=>'Прошла',
             self::STATUS_NOT_ENTERD=>'Не прошла',
             self::STATUS_RETURN_BET=>'Возврат',
