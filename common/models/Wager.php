@@ -226,7 +226,7 @@ class Wager extends \yii\db\ActiveRecord
             if($returno){  $status = self::STATUS_ENTERED; $gate= false; }
         }
 
-        if($item->id==11 || $item->id==1 ){
+        if($item->id==11 || $item->id==12 ){
             yii::error(['id'=>$item->id,'stat'=>$item->status]);
         }
         // цикл проверок
