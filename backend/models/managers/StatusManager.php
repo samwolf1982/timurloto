@@ -45,6 +45,7 @@ class StatusManager
 
     /**
      * смена значения для потомков 1
+     * если возврать  пересчет кооефициента a*b*c*...
      */
     private function changeStatusSiblingsElements(){
         /**@var Wagerelements $class **/
@@ -58,9 +59,15 @@ class StatusManager
             foreach ($class::find()->where(['=','event_id',$this->model->event_id])->all() as $item) { //  STATUS_PAID_FOR not use
                 if($this->post_value==Wager::STATUS_RETURN_BET){ // recalculate bet percent
 
-                  //$oldFullCoef=  $this->model->wager->coef;
+                  $oldFullCoef=  $this->model->wager->coef;   // 'common\\models\\Wagerelements'
                     $className=get_class($item);
-                    Yii::error(['nedd recalc',$className]);
+                    Yii::error(['nedd recalc','pld coef'=>$oldFullCoef,$className]);
+
+                    $new_coef=1;
+                    foreach ($this->model->wager->wagerelements as $wagerelemento) {
+                        Yii::error(['wao'=>$wagerelemento]);
+                        $new_coef=1;
+                    }
 
                 }
                 $item->status=$this->post_value;
