@@ -257,9 +257,17 @@ class Wager extends \yii\db\ActiveRecord
                 $statusList[]=['id'=>$item->id,'status'=>$item->status];
             }
             Yii::error($statusList);
+           // throw  new ErrorException('hzNULL  status ');
 
         }
 
+
+        $statusList=[];
+        foreach ($this->wagerelements as $item) {
+            $statusList[]=['id'=>$item->id,'status'=>$item->status,'resStatus'=>$status];
+        }
+
+        Yii::error($statusList);
 
 
         // check STATUS_ENTERED;
