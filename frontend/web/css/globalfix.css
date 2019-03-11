@@ -296,3 +296,13 @@ and also iPads specifically.
   font-size: 15px;
   color: #6B5C90;
 }
+#sportTypeSidebar .collapse-list li a.trigger-sub-collapse {
+  padding-bottom: 8px;
+  padding-top: 8px;
+}
+#sportTypeSidebar .collapse-list li a.trigger-sub-collapse.flevel {
+  line-height: 18px;
+}
+#sportTypeSidebar .collapse-list li a .flag {
+  display: none;
+}

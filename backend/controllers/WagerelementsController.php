@@ -85,13 +85,13 @@ class WagerelementsController extends Controller
 
 
     /**
-     * подтверждение ставок
+     * подтверждение ставок NOT USE
      * проход по всем где статус CLOSE и на их основе заполнение пользователям балов и запись в статистику.
      * @return \yii\web\Response
      */
     public function actionConfirm()
     {
-
+        return $this->redirect(['index']);
           $statisticManager= new  StatisticsManager();
            $statisticManager->calculateStatistics();
 //        calculateStatistics

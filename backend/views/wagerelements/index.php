@@ -26,9 +26,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
 
-    <p>
-        <?= Html::a('Подтвердить', ['confirm'], ['class' => 'btn btn-success']) ?>
-    </p>
+    <?php if(0){ ?>
+        <p>
+            <?= Html::a('Подтвердить', ['confirm'], ['class' => 'btn btn-success']) ?>
+        </p>
+    <?php } ?>
+
 
     <?php if(0){// показать все поля  ?>
         <?= GridView::widget([
@@ -210,10 +213,14 @@ $this->params['breadcrumbs'][] = $this->title;
                     'format'=>'raw',
                     'value'=>function($model){ // common\models\Wagerelements
 
-                        if($model->wager->status==Wager::STATUS_MANUAL_BET){
-                            return Html::tag('p',   Wager::getStatusName($model->wager->status),['class'=>'text-danger']);
+                        if($model->status==Wager::STATUS_MANUAL_BET){
+                            return Html::tag('p',   Wager::getStatusName($model->status),['class'=>'text-danger']);
                         }
-                        return Html::tag('p',   Wager::getStatusName($model->wager->status),[]);
+                        return Html::tag('p',   Wager::getStatusName($model->status),[]);
+//                        if($model->wager->status==Wager::STATUS_MANUAL_BET){
+//                            return Html::tag('p',   Wager::getStatusName($model->wager->status),['class'=>'text-danger']);
+//                        }
+//                        return Html::tag('p',   Wager::getStatusName($model->wager->status),[]);
                         // old code
 //                        if($model->status==Wager::STATUS_NOT_ENTERD){
 //                            return Html::tag('p',   Wager::getStatusName($model->status),['class'=>'text-danger']);

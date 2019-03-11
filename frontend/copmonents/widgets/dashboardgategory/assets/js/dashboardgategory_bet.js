@@ -141,10 +141,11 @@ var DashboardCategory={
         $('#child_colapse_'+$(el).data('id')).html('');
         $.each(data, function( k, e ) {    // e.id e.name e.count
             $('#child_colapse_'+$(el).data('id')).append('    <li class="">\n' +
-                '            <a href="#" class="trigger-sub-collapse" data-id="'+e.id+'">\n' +
+                '            <a href="#" class="trigger-sub-collapse flevel" data-id="'+e.id+'">\n' +
                 '            <span class="flag">\n' +
                 '            <img src="images/ua.png" alt="">\n' +
-                '            </span>\n' + e.name.substr(0, 26) +'        </a>\n' +
+             //   '            </span>\n' + e.name.substr(0, 26) +'        </a>\n' +
+                '            </span>\n' + e.name +'        </a>\n' +
                 '        <div class="sub-collapse">\n' +
                 '            <ul class="sub-collapse-list" id="child_sub_colapse_'+e.id+'" >\n' +
                 '            <li><a href="#">Премьер Лига <span class="count-block">26</span></a></li>\n' +

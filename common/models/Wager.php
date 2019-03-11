@@ -5,6 +5,7 @@ namespace common\models;
 use common\models\DTO\WagerInfoStringResult;
 use common\models\helpers\ConstantsHelper;
 use Yii;
+use yii\base\ErrorException;
 
 /**
  * This is the model class for table "wager".
@@ -36,7 +37,7 @@ class Wager extends \yii\db\ActiveRecord
     const  STATUS_ENTERED=6;
     const  STATUS_NOT_ENTERD=7;
     const  STATUS_RETURN=8;    // NOT USE select STATUS_RETURN_BET
-    const  STATUS_PAID_FOR=9;  //  уже насчитано конечный статус // всем начитало пофиксить
+   // const  STATUS_PAID_FOR=9;  //  уже насчитано конечный статус // всем начитало пофиксить
     const  STATUS_RETURN_BET=10;  //  возврат
     const  STATUS_MANUAL_BET=11;  //  'Ручное подтверждение',
 
@@ -193,17 +194,87 @@ class Wager extends \yii\db\ActiveRecord
             return $this->wagerelements[0]->status;
         }
 
-        // для експресов
-        $status=self::STATUS_ENTERED;
-        // check STATUS_ENTERED;
+        // для експресов все проверки линейные зависят друг от друга порядок важен
+        $status=null;
+
+        // цикл проверок
+        // 1 на присутсвие  STATUS_NOT_ENTERD // если есть ставка не прошла полностю
+        $gate=true;
         foreach ($this->wagerelements as $item) {
-            if($item->status != self::STATUS_ENTERED){
-                if($item->status==self::STATUS_NOT_ENTERD){ $status = self::STATUS_NOT_ENTERD; }
-                if($item->status==self::STATUS_RETURN){ $status = self::STATUS_RETURN; }
-                if($item->status==self::STATUS_PAID_FOR){ $status = self::STATUS_PAID_FOR; }
-                break;
-            }
+            if($item->status==self::STATUS_NOT_ENTERD){ $status = self::STATUS_NOT_ENTERD; $gate= false;  break; }
         }
+
+        // цикл проверок
+        // 2 на присутсвие  STATUS_ENTERED // если есть ставка прошла
+        if($gate){
+            $entere=true;
+            foreach ($this->wagerelements as $item) {
+                if($item->status !=self::STATUS_ENTERED){ $entere=false;  break; }
+            }
+            if($entere){  $status = self::STATUS_ENTERED; $gate= false; }
+        }
+
+        // цикл проверок
+        // 3 на присутсвие  STATUS_RETURN_BET // все исходы возврат
+        if($gate){
+            $returno=true;
+            foreach ($this->wagerelements as $item) {
+                if($item->status !=self::STATUS_RETURN_BET){ $returno=false;  break; }
+            }
+            if($returno){  $status = self::STATUS_ENTERED; $gate= false; }
+        }
+
+        // цикл проверок
+        // 4 на присутсвие  STATUS_RETURN_BET STATUS_ENTERED // все исходы  ставка прошла но может быть один возврать
+        if($gate){
+            $entere_returno=true;
+            foreach ($this->wagerelements as $item) {
+                if($item->status !=self::STATUS_RETURN_BET AND $item->status !=self::STATUS_ENTERED ) { $entere_returno=false;  break; }
+            }
+            if($entere_returno){  $status = self::STATUS_ENTERED; $gate= false; }
+        }
+
+
+        // цикл проверок
+        //  на присутсвие  STATUS_MANUAL_BET // все исходы  ставка если хоть один манула тогда и ставка мануал
+        if($gate){
+            $manualo=false;
+            foreach ($this->wagerelements as $item) {
+                if($item->status ==self::STATUS_MANUAL_BET) { $manualo=true;  break; }
+            }
+            if($manualo){  $status = self::STATUS_MANUAL_BET; $gate= false; }
+        }
+
+
+
+        // возможно еще варианты
+
+        if(is_null($status)){// ошыбка !
+            $statusList=[];
+            foreach ($this->wagerelements as $item) {
+                $statusList[]=['id'=>$item->id,'status'=>$item->status];
+            }
+            Yii::error($statusList);
+
+        }
+
+
+
+        // check STATUS_ENTERED;
+//         foreach ($this->wagerelements as $item) {
+//            if($item->status != self::STATUS_ENTERED){
+//                if($item->status==self::STATUS_NOT_ENTERD){ $status = self::STATUS_NOT_ENTERD;  break; }
+////                if($item->status==self::STATUS_RETURN){ $status = self::STATUS_RETURN;  break; }
+//                if($item->status==self::STATUS_MANUAL_BET){ $status = self::STATUS_MANUAL_BET;  break; }
+//
+//                if($item->status==self::STATUS_RETURN_BET){ $status = self::STATUS_MANUAL_BET;  break; }
+//
+//                //if($item->status==self::STATUS_PAID_FOR){ throw  new ErrorException('hz status '.$item->status)}
+//                //10
+//                 throw  new ErrorException('hz status '.$item->status);
+//
+//            }
+//        }
         return $status;
     }
 

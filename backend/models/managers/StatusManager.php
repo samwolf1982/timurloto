@@ -16,6 +16,7 @@ use common\models\Wagerelements;
 use komer45\balance\models\Score;
 use komer45\balance\models\Transaction;
 use Yii;
+use yii\base\ErrorException;
 
 class StatusManager
 {
@@ -49,10 +50,13 @@ class StatusManager
         /**@var Wagerelements $class **/
         $class=  get_class($this->model);
 //        $class::updateAll(['status'=>$this->post_value],['=','event_id',$this->model->event_id]);
-        foreach ($class::find()->where(['=','event_id',$this->model->event_id])->andWhere(['!=','status',Wager::STATUS_PAID_FOR]) ->all() as $item) { //  STATUS_PAID_FOR not use
-            $item->status=      $this->post_value;
-            $item->update(false);
+        if(0){
+//            foreach ($class::find()->where(['=','event_id',$this->model->event_id])->andWhere(['!=','status',Wager::STATUS_PAID_FOR]) ->all() as $item) { //  STATUS_PAID_FOR not use
+//                $item->status=      $this->post_value;
+//                $item->update(false);
+//            }
         }
+
 
     }
 
@@ -110,6 +114,9 @@ class StatusManager
            //     if(!$item->wager->checkCloseState()){  // но родитель еще не прошел
 //Yii::error(['checkCloseElements '=>'oki']);
                               $newStatus=$item->wager->getFinalStatus();
+                              if(is_null($newStatus)){
+                                  throw new  ErrorException('Статус is NULL changeStatusParents()');
+                              }
                               yii::error(['nesStat'=>$newStatus]);
                 //удалить пред статистик
                 $bs=  Balancestatistics::find()->where(['wager_id'=>$item->wager->id])->one();
@@ -119,10 +126,14 @@ class StatusManager
 
 
 
-                              //if($newStatus!=Wager::STATUS_PAID_FOR){ // пропуск если ранее уже был подсчет
+
                                   $item->wager->status= $newStatus;
-                                  //Wager::STATUS_CLOSE;
-                                  $item->wager->update(false);
+                                  if($item->wager->validate()){
+                                      Yii::error($item->wager->errors);
+                                  }else{
+                                      Yii::error($item->wager->errors);
+                                  }
+                                  $item->wager->save(false);
 
                 $stm= new  StatisticsManagerCommon($item->wager);
                 $stm->calculateStatistics();
