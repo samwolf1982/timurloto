@@ -57,7 +57,11 @@ class StatusManager
         if(1){
             foreach ($class::find()->where(['=','event_id',$this->model->event_id])->all() as $item) { //  STATUS_PAID_FOR not use
                 if($this->post_value==Wager::STATUS_RETURN_BET){ // recalculate bet percent
-                    Yii::error('nedd recalc');
+
+                  //$oldFullCoef=  $this->model->wager->coef;
+                    $className=get_class($item);
+                    Yii::error(['nedd recalc',$className]);
+
                 }
                 $item->status=$this->post_value;
                 $item->save(false);
