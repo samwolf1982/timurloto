@@ -49,16 +49,16 @@ class StatusManager
     private function changeStatusSiblingsElements(){
         /**@var Wagerelements $class **/
         $class=  get_class($this->model);
-        $this->model->status=$this->post_value;
-        $this->model->save(false);
+//        $this->model->status=$this->post_value;
+//        $this->model->save(false);
 
 //        yii::error(['wid'=>$this->model->id,$this->post_value]);
       //  $class::updateAll(['status'=>$this->post_value],['=','id',$this->model->id]);
-        if(0){
-//            foreach ($class::find()->where(['=','event_id',$this->model->event_id])->andWhere(['!=','status',Wager::STATUS_PAID_FOR]) ->all() as $item) { //  STATUS_PAID_FOR not use
-//                $item->status=      $this->post_value;
-//                $item->update(false);
-//            }
+        if(1){
+            foreach ($class::find()->where(['=','event_id',$this->model->event_id])as $item) { //  STATUS_PAID_FOR not use
+                $item->status=$this->post_value;
+                $item->save(false);
+            }
         }
 
 
@@ -116,6 +116,7 @@ class StatusManager
         yii::error([$class,$this->model->event_id]);
         /**@var Wagerelements $item **/
         foreach ($class::find()->where(['event_id'=>$this->model->event_id])->all() as $item) {
+
             if($item->wager->checkCloseElements()){ // все внутрение прошли теперь всегда +
            //     if(!$item->wager->checkCloseState()){  // но родитель еще не прошел
 //Yii::error(['checkCloseElements '=>'oki']);
@@ -144,11 +145,11 @@ class StatusManager
                 $stm= new  StatisticsManagerCommon($item->wager);
                 $stm->calculateStatistics();
 
-                $postStatus=Yii::$app->request->post('statusName');
-                if($postStatus=='win') $newStatus=Wager::STATUS_ENTERED;  //6
-                elseif ($postStatus=='return') $newStatus=Wager::STATUS_RETURN_BET; // 10
-                elseif ($postStatus=='lost') $newStatus=Wager::STATUS_NOT_ENTERD; // 7
-                elseif ($postStatus=='manual') $newStatus=Wager::STATUS_MANUAL_BET; // 11 // not use
+//                $postStatus=Yii::$app->request->post('statusName');
+//                if($postStatus=='win') $newStatus=Wager::STATUS_ENTERED;  //6
+//                elseif ($postStatus=='return') $newStatus=Wager::STATUS_RETURN_BET; // 10
+//                elseif ($postStatus=='lost') $newStatus=Wager::STATUS_NOT_ENTERD; // 7
+//                elseif ($postStatus=='manual') $newStatus=Wager::STATUS_MANUAL_BET; // 11 // not use
 
                                   // change statiostics
 
