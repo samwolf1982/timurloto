@@ -223,9 +223,10 @@ class Wager extends \yii\db\ActiveRecord
             foreach ($this->wagerelements as $item) {
                 if($item->status !=self::STATUS_RETURN_BET){ $returno=false;  break; }
             }
-            if($returno){  $status = self::STATUS_ENTERED; $gate= false; }
+            if($returno){  $status = self::STATUS_RETURN_BET; $gate= false; }
         }
 
+        //todohere stop???
         foreach ($this->wagerelements as $item) {
             if($item->id == 11 || $item->id==12 ){
                 yii::error(['id'=>$item->id,'stat'=>$item->status]);
