@@ -227,7 +227,7 @@ class Wager extends \yii\db\ActiveRecord
         }
 
         if($item->id==11 || $item->id==1 ){
-            yii::error(['id'=>$item->id,'stat'=>item->status]);
+            yii::error(['id'=>$item->id,'stat'=>$item->status]);
         }
         // цикл проверок
         // 4 на присутсвие  STATUS_RETURN_BET STATUS_ENTERED // все исходы  ставка прошла но может быть один возврать
