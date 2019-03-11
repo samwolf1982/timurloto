@@ -154,7 +154,9 @@ class StatusManager
 
 
 
-                }
+                }else{
+                Yii::error(['no close game']);
+            }
           //  }
         }
 
