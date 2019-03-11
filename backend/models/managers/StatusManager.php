@@ -55,7 +55,7 @@ class StatusManager
 //        yii::error(['wid'=>$this->model->id,$this->post_value]);
       //  $class::updateAll(['status'=>$this->post_value],['=','id',$this->model->id]);
         if(1){
-            foreach ($class::find()->where(['=','event_id',$this->model->event_id])as $item) { //  STATUS_PAID_FOR not use
+            foreach ($class::find()->where(['=','event_id',$this->model->event_id])->all() as $item) { //  STATUS_PAID_FOR not use
                 $item->status=$this->post_value;
                 $item->save(false);
             }
