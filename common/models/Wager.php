@@ -264,7 +264,7 @@ class Wager extends \yii\db\ActiveRecord
 
         $statusList=[];
         foreach ($this->wagerelements as $item) {
-            $statusList[]=['id'=>$item->id,'status'=>$item->status,'resStatus'=>$status];
+            $statusList[]=['id'=>$item->id,'status'=>$item->status,'resStatus'=>$status,'wagerID'=>$this->id];
         }
 
         Yii::error($statusList);
