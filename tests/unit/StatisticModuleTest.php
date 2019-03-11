@@ -68,7 +68,7 @@ class StatisticModuleTest extends TestCase
 //        foreach (range(1,5) as $item) {
 //            $b=new Balancestatistics();
 //            $arr=['user_id' => $user_id, 'wager_id' => $wager_id, 'playlist_id' => $playlist_id, 'event_id' => $event_id, 'profit' => 10, 'penetration' => ($item >2?0:1),
-//                'middle_coef' => (12+$item), 'roi' => 13, 'plus' => ($item >3?0:1), 'minus' => ($item >3?1:0), 'created_at' => date('Y-m-d h:i:s')];
+//                'middle_coef' => (12+$item), 'roi' => 13, 'plus' => ($item >3?0:1), 'minus' => ($item >3?1:0), 'created_at' => date('Y-m-d H:i:s')];
 //            $b->attributes=$arr;
 //            if($b->validate()){
 //                $b->save();
@@ -111,7 +111,7 @@ class StatisticModuleTest extends TestCase
         $testWager->select_coef=102;
         $testWager->comment="lorem";
         $testWager->status=Wager::STATUS_ENTERED;
-        $testWager->created_at=date('Y-m-d h:i:s');
+        $testWager->created_at=date('Y-m-d H:i:s');
         $testWager->save(false);
         $this->testWager_id_win=$testWager->id;
         $statisticManager= new  StatisticsManager();
@@ -143,7 +143,7 @@ class StatisticModuleTest extends TestCase
         $testWager->select_coef=102;
         $testWager->comment="lorem";
         $testWager->status=Wager::STATUS_NOT_ENTERD;
-        $testWager->created_at=date('Y-m-d h:i:s');
+        $testWager->created_at=date('Y-m-d H:i:s');
         $testWager->save(false);
 
         $this->testWager_id_not_win=$testWager->id;
@@ -187,7 +187,7 @@ class StatisticModuleTest extends TestCase
             $roi=rand(-100,200);
             $roi_total+=$roi;
             $arr=['user_id' => $user_id, 'wager_id' => $wager_id, 'playlist_id' => $playlist_id, 'event_id' => $event_id, 'profit' => 10,'penetration' => ($item >2?0:1),
-                'middle_coef' => (12+$item), 'roi' => $roi, 'plus' => ($item >3?0:1), 'minus' => ($item >3?1:0), 'created_at' => date('Y-m-d h:i:s')];
+                'middle_coef' => (12+$item), 'roi' => $roi, 'plus' => ($item >3?0:1), 'minus' => ($item >3?1:0), 'created_at' => date('Y-m-d H:i:s')];
             $b->attributes=$arr;
             if($b->validate()){
                 $b->save();
@@ -230,7 +230,7 @@ class StatisticModuleTest extends TestCase
         foreach (range(1,5) as $item) {
             $b=new Balancestatistics();
             $arr=['user_id' => $user_id, 'wager_id' => $wager_id, 'playlist_id' => $playlist_id, 'event_id' => $event_id, 'profit' => 10, 'penetration' => ($item >2?0:1),
-                'middle_coef' => (12+$item), 'roi' => 13, 'plus' => ($item >3?0:1), 'minus' => ($item >3?1:0), 'created_at' => date('Y-m-d h:i:s')];
+                'middle_coef' => (12+$item), 'roi' => 13, 'plus' => ($item >3?0:1), 'minus' => ($item >3?1:0), 'created_at' => date('Y-m-d H:i:s')];
             $b->attributes=$arr;
             if($b->validate()){
                 $b->save();
@@ -328,7 +328,7 @@ class StatisticModuleTest extends TestCase
 
     private function generateWagersAndBalancestatistics($period){
 
-//$baseUserId, $is_pass=true, $created_at=1, $profit=10, $penetration=1, $middle_coef=12, $roi=13 ){ //date('Y-m-d h:i:s')
+//$baseUserId, $is_pass=true, $created_at=1, $profit=10, $penetration=1, $middle_coef=12, $roi=13 ){ //date('Y-m-d H:i:s')
              $last_wager_id =  $this->generateSingleWager(-100,true,1,10,1,12,13);
 
 
@@ -343,21 +343,21 @@ class StatisticModuleTest extends TestCase
     /**
      * @param $baseUserId
      * @param boolean $is_pass     прошла
-     * @param int $created_at   //if 1 => date('Y-m-d h:i:s')
+     * @param int $created_at   //if 1 => date('Y-m-d H:i:s')
      * @param int $profit
      * @param int $penetration
      * @param int $middle_coef
      * @param int $roi
      * @return int
      */
-    private function generateSingleWager($baseUserId, $is_pass=true, $created_at=1, $profit=10, $penetration=1, $middle_coef=12, $roi=13  ){ //date('Y-m-d h:i:s')
+    private function generateSingleWager($baseUserId, $is_pass=true, $created_at=1, $profit=10, $penetration=1, $middle_coef=12, $roi=13  ){ //date('Y-m-d H:i:s')
 
         $user_id= -abs( $baseUserId);
         $wager_id= -abs($baseUserId+500);
         $playlist_id= -abs($baseUserId+800);
         $event_id= -abs($baseUserId+900);
         if($created_at==1){
-            $created_at=date('Y-m-d h:i:s');
+            $created_at=date('Y-m-d H:i:s');
         }
         if($is_pass){
             $plus=1;

@@ -31,8 +31,8 @@ class FillController extends Controller {
              'roi' => 1,
              'plus' => 1,
              'minus' => 0,
-             'created_at' => date('Y-m-d h:i:s', strtotime( '+'.mt_rand(0,400).' days')),
-             'created_own'=> date('Y-m-d h:i:s', strtotime( '+'.mt_rand(0,400).' days')),];
+             'created_at' => date('Y-m-d H:i:s', strtotime( '+'.mt_rand(0,400).' days')),
+             'created_own'=> date('Y-m-d H:i:s', strtotime( '+'.mt_rand(0,400).' days')),];
 
             $b->attributes=$attr;
             $b->save();

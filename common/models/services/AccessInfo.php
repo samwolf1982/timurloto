@@ -50,8 +50,8 @@ class AccessInfo
     public function getWeekNum($baseUserId)
     {
     //    return 23;
-        $lastWeek    = date('Y-m-d h:i:s');
-        $lastLastWeek= date('Y-m-d h:i:s',strtotime('last sunday'));
+        $lastWeek    = date('Y-m-d H:i:s');
+        $lastLastWeek= date('Y-m-d H:i:s',strtotime('last sunday'));
         $sql="SELECT user_id, sum(profit) as sume FROM `balancestatistics` WHERE  created_own BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume DESC;";
               $numberWeek=0;
               foreach (Yii::$app->db->createCommand($sql)->queryAll() as $i=>$el){
@@ -68,8 +68,8 @@ class AccessInfo
     public function getTop100($baseUserId)
     {
 
-        $lastLastWeek= date('Y-m-d h:i:s',strtotime('-90 days'));
-        $lastWeek    = date('Y-m-d h:i:s');
+        $lastLastWeek= date('Y-m-d H:i:s',strtotime('-90 days'));
+        $lastWeek    = date('Y-m-d H:i:s');
         $sql="SELECT user_id, sum(profit) as sume FROM `balancestatistics` WHERE  created_own BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume DESC;";
         $numberWeek=0;
         foreach (Yii::$app->db->createCommand($sql)->queryAll() as $i=>$el){

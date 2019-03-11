@@ -143,8 +143,8 @@ class BalancestatisticsSearchTop extends Balancestatistics
 
 
 //        2020-08-22 01:19:58
-        $lastWeek    = date('Y-m-d h:i:s',strtotime('last sunday'));
-        $lastLastWeek= date('Y-m-d h:i:s',strtotime('last sunday -7 days'));
+        $lastWeek    = date('Y-m-d H:i:s',strtotime('last sunday'));
+        $lastLastWeek= date('Y-m-d H:i:s',strtotime('last sunday -7 days'));
 $count=Yii::$app->db->createCommand("select COUNT(subquery.user_id) FROM
 ( SELECT user_id, sum(profit) as sume, created_own  FROM `balancestatistics`  WHERE created_own BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume) AS subquery  WHERE 1",[':status' => 1])->queryScalar();
 
@@ -231,14 +231,14 @@ $count=Yii::$app->db->createCommand("select COUNT(subquery.user_id) FROM
 
 
 //        2020-08-22 01:19:58
-//        $lastWeek    = date('Y-m-d h:i:s',strtotime('last sunday'));
-//        $lastLastWeek= date('Y-m-d h:i:s',strtotime('last sunday -7 days'));
-//        $lastWeek    = date('Y-m-d h:i:s',strtotime('last sunday'));
-//        $lastLastWeek= date('Y-m-d h:i:s');
-//        $lastWeek    = date('Y-m-d h:i:s',strtotime('last sunday'));
+//        $lastWeek    = date('Y-m-d H:i:s',strtotime('last sunday'));
+//        $lastLastWeek= date('Y-m-d H:i:s',strtotime('last sunday -7 days'));
+//        $lastWeek    = date('Y-m-d H:i:s',strtotime('last sunday'));
+//        $lastLastWeek= date('Y-m-d H:i:s');
+//        $lastWeek    = date('Y-m-d H:i:s',strtotime('last sunday'));
         //----------
-        $lastWeek    = date('Y-m-d h:i:s');
-        $lastLastWeek= date('Y-m-d h:i:s',strtotime('last sunday'));
+        $lastWeek    = date('Y-m-d H:i:s');
+        $lastLastWeek= date('Y-m-d H:i:s',strtotime('last sunday'));
         $count=Yii::$app->db->createCommand("select COUNT(subquery.user_id) FROM
 ( SELECT user_id, sum(profit) as sume, created_own  FROM `balancestatistics`  WHERE created_own BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume) AS subquery  WHERE 1",[':status' => 1])->queryScalar();
 
@@ -325,12 +325,12 @@ $count=Yii::$app->db->createCommand("select COUNT(subquery.user_id) FROM
 
 
 //        2020-08-22 01:19:58
-        $lastWeek    = date('Y-m-d h:i:s',strtotime('last sunday'));
-        $lastLastWeek= date('Y-m-d h:i:s',strtotime('last sunday -7 days'));
+        $lastWeek    = date('Y-m-d H:i:s',strtotime('last sunday'));
+        $lastLastWeek= date('Y-m-d H:i:s',strtotime('last sunday -7 days'));
 
 
-        $lastWeek    = date('Y-m-d h:i:s');
-        $lastLastWeek= date('Y-m-d h:i:s',strtotime('last sunday -30 days'));
+        $lastWeek    = date('Y-m-d H:i:s');
+        $lastLastWeek= date('Y-m-d H:i:s',strtotime('last sunday -30 days'));
         $count=Yii::$app->db->createCommand("select COUNT(subquery.user_id) FROM
 ( SELECT user_id, sum(profit) as sume, created_own  FROM `balancestatistics`  WHERE created_own BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume) AS subquery  WHERE 1",[':status' => 1])->queryScalar();
 
