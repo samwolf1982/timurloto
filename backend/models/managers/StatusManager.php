@@ -49,6 +49,7 @@ class StatusManager
     private function changeStatusSiblingsElements(){
         /**@var Wagerelements $class **/
         $class=  get_class($this->model);
+        yii::error(['wid'=>$this->model->id]);
 //        $class::updateAll(['status'=>$this->post_value],['=','event_id',$this->model->event_id]);
         if(0){
 //            foreach ($class::find()->where(['=','event_id',$this->model->event_id])->andWhere(['!=','status',Wager::STATUS_PAID_FOR]) ->all() as $item) { //  STATUS_PAID_FOR not use
