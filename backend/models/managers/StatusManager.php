@@ -112,6 +112,8 @@ class StatusManager
     private function changeStatusParents(){
         /**@var Wagerelements $class **/
         $class=  get_class($this->model);
+
+        yii::error([$class,$this->model->event_id]);
         /**@var Wagerelements $item **/
         foreach ($class::find()->where(['event_id'=>$this->model->event_id])->all() as $item) {
             if($item->wager->checkCloseElements()){ // все внутрение прошли теперь всегда +
