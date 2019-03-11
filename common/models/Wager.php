@@ -190,9 +190,10 @@ class Wager extends \yii\db\ActiveRecord
     public function getFinalStatus()
     {
 
-//        if(count($this->wagerelements)==1){ //  для ординоров
-//            return $this->wagerelements[0]->status;
-//        }
+        if(count($this->wagerelements)==1){ //  для ординоров
+            yii::error($this->wagerelements[0]->status);
+            return $this->wagerelements[0]->status;
+        }
 
         // для експресов все проверки линейные зависят друг от друга порядок важен
         $status=null;
