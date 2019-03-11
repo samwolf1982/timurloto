@@ -67,10 +67,14 @@ class StatusManager
                     foreach ($this->model->wager->wagerelements as $wagerelemento) {
                         if($item->id==$wagerelemento->id){
                             Yii::error(['coef=='=>[$item->id,$wagerelemento->id]]);
+                        }else{
+                            $new_coef*=$item->coef;
                         }
+
 //                        Yii::error(['wao'=>$wagerelemento]);
-                        $new_coef=1;
+
                     }
+                    Yii::error(['wao new'=>$new_coef]);
 
                 }
                 $item->status=$this->post_value;
