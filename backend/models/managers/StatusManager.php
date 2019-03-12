@@ -67,7 +67,7 @@ class StatusManager
 
                 }else{  // if         $this->post_value==            Wager::STATUS_ENTERED; Wager::STATUS_NOT_ENTERD; Wager::STATUS_MANUAL_BET;
                     //      пересчет коофициетов обратно с отрицательного на положытельный
-                    $oldFullCoef=  $item->model->wager->coef;
+                    $oldFullCoef=  $item->wager->coef;
                     $new_coef=   $this->recalculatoNewCoef($item->wager->wagerelements,$item->id,true);
                     // обновка кооефициента для wager
                     Yii::error(['nedd2 recalc','pld coef'=>$oldFullCoef,'wao new'=>$new_coef]);
