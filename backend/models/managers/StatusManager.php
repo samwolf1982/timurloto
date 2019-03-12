@@ -62,7 +62,7 @@ class StatusManager
                     $new_coef=   $this->recalculatoNewCoef($item->model->wager->wagerelements,$item->id,false);
                     // обновка кооефициента для wager
                     Yii::error(['nedd1 recalc','pld coef'=>$oldFullCoef,'wao new'=>$new_coef]);
-                    $item->model->wager->coef=$new_coef;
+                    $item->wager->coef=$new_coef;
                   //  $this->model->wager->coef=$new_coef;
 
                 }else{  // if         $this->post_value==            Wager::STATUS_ENTERED; Wager::STATUS_NOT_ENTERD; Wager::STATUS_MANUAL_BET;
@@ -72,13 +72,13 @@ class StatusManager
                     // обновка кооефициента для wager
                     Yii::error(['nedd2 recalc','pld coef'=>$oldFullCoef,'wao new'=>$new_coef]);
 //                     $this->model->wager->coef=$new_coef;
-                    $item->model->wager->coef=$new_coef;
+                    $item->wager->coef=$new_coef;
 
                 }
                 $item->status=$this->post_value;
                 $item->save(false);
 
-                $item->model->wager->save(false);
+                $item->wager->save(false);
 
              //   $this->model->wager->save(false);
             }
