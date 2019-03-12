@@ -85,7 +85,7 @@ class StatusManager
                 //    Yii::error(['wao new'=>$new_coef]);
                     Yii::error(['nedd recalc','pld coef'=>$oldFullCoef,'wao new'=>$new_coef]);
                     $this->model->wager->coef=$new_coef;
-                    $this->model->wager->save(false);
+//                    $this->model->wager->save(false);
 
                 }
                 $item->status=$this->post_value;
