@@ -202,7 +202,7 @@ class Wager extends \yii\db\ActiveRecord
         // цикл проверок
         // 1 на присутсвие  STATUS_NOT_ENTERD // если есть ставка не прошла полностю   7
         $gate=true;
-        foreach ($this->wagerelements as $item) {
+        foreach ($this->getWagerelements()->all() as $item) {
             if($item->status==self::STATUS_NOT_ENTERD){ $status = self::STATUS_NOT_ENTERD; $gate= false;  break; }
         }
 
@@ -210,7 +210,7 @@ class Wager extends \yii\db\ActiveRecord
         // 2 на присутсвие  STATUS_ENTERED // если есть ставка прошла
         if($gate){
             $entere=true;
-            foreach ($this->wagerelements as $item) {
+            foreach ($this->getWagerelements()->all() as $item) {
                 if($item->status !=self::STATUS_ENTERED){ $entere=false;  break; }
             }
             if($entere){  $status = self::STATUS_ENTERED; $gate= false; }
@@ -220,24 +220,24 @@ class Wager extends \yii\db\ActiveRecord
         // 3 на присутсвие  STATUS_RETURN_BET // все исходы возврат
         if($gate){
             $returno=true;
-            foreach ($this->wagerelements as $item) {
+            foreach ($this->getWagerelements()->all() as $item) {
                 if($item->status !=self::STATUS_RETURN_BET){ $returno=false;  break; }
             }
             if($returno){  $status = self::STATUS_RETURN_BET; $gate= false; }
         }
 
-        //todohere stop???
-        foreach ($this->wagerelements as $item) {
-            if($item->id == 11 || $item->id==12 ){
-                yii::error(['id'=>$item->id,'stat'=>$item->status]);
-            }
-        }
+//        //todohere stop???
+//        foreach ($this->wagerelements as $item) {
+//            if($item->id == 11 || $item->id==12 ){
+//                yii::error(['id'=>$item->id,'stat'=>$item->status]);
+//            }
+//        }
 
         // цикл проверок
         // 4 на присутсвие  STATUS_RETURN_BET STATUS_ENTERED // все исходы  ставка прошла но может быть один возврать
         if($gate){
             $entere_returno=true;
-            foreach ($this->wagerelements as $item) {
+            foreach ($this->getWagerelements()->all() as $item) {
                 if($item->status !=self::STATUS_RETURN_BET AND $item->status !=self::STATUS_ENTERED ) { $entere_returno=false;  break; }
             }
             if($entere_returno){  $status = self::STATUS_ENTERED; $gate= false; }
@@ -248,19 +248,20 @@ class Wager extends \yii\db\ActiveRecord
         //  на присутсвие  STATUS_MANUAL_BET // все исходы  ставка если хоть один манула тогда и ставка мануал
         if($gate){
             $manualo=false;
-            foreach ($this->wagerelements as $item) {
-                if($item->status ==self::STATUS_MANUAL_BET) { $manualo=true;  break; }
+            foreach ($this->getWagerelements()->all() as $item) {
+                   Yii::error(['instatuso'=>$item->status]);
+                 if($item->status ==self::STATUS_MANUAL_BET) { $manualo=true;  break; }
             }
             if($manualo){  $status = self::STATUS_MANUAL_BET; $gate= false; }
         }
 
 
 
-        // возможно еще варианты
+        // возможно еще варианты     // например если еще есть не разыграные игры
 
         if(is_null($status)){// ошыбка !
             $statusList=[];
-            foreach ($this->wagerelements as $item) {
+            foreach ($this->getWagerelements() as $item) {
                 $statusList[]=['id'=>$item->id,'status'=>$item->status];
             }
             Yii::error($statusList);
