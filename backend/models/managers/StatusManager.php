@@ -38,7 +38,7 @@ class StatusManager
 
     public function recalculateStatus(){
         // todo stope here
-        $this->changeStatusSiblingsElements();
+        $this->changeStatusSiblingsElements();// смена коофициентов и статусов в исходах
         $this->changeStatusParents();
     }
 
@@ -64,7 +64,6 @@ class StatusManager
                     Yii::error(['nedd1 recalc','pld coef'=>$oldFullCoef,'wao new'=>$new_coef]);
                     $item->wager->coef=$new_coef;
                   //  $this->model->wager->coef=$new_coef;
-
                 }else{  // if         $this->post_value==            Wager::STATUS_ENTERED; Wager::STATUS_NOT_ENTERD; Wager::STATUS_MANUAL_BET;
                     //      пересчет коофициетов обратно с отрицательного на положытельный
                     $oldFullCoef=  $item->wager->coef;
@@ -77,14 +76,75 @@ class StatusManager
                 }
                 $item->status=$this->post_value;
                 $item->save(false);
-
                 $item->wager->save(false);
 
+                //Yii::error(['nedd2 recalc','pld coef'=>$oldFullCoef,'wao new'=>$new_coef]);
              //   $this->model->wager->save(false);
             }
         }
 
 
+    }
+
+
+    // пересчет баланса и смена статуса для родителья
+    private function changeStatusParents(){
+        /**@var Wagerelements $class **/
+        $class=  get_class($this->model);
+
+        yii::error([$class,$this->model->event_id]);
+        /**@var Wagerelements $item **/
+        foreach ($class::find()->where(['event_id'=>$this->model->event_id])->all() as $item) {
+
+           // if($item->wager->checkCloseElements()){ // все внутрение прошли теперь всегда +
+                //     if(!$item->wager->checkCloseState()){  // но родитель еще не прошел
+//Yii::error(['checkCloseElements '=>'oki']);
+
+
+                $newStatus=$item->wager->getFinalStatus();
+                if(is_null($newStatus)){
+                    throw new  ErrorException('Статус is NULL changeStatusParents()');
+                }
+                yii::error(['nesStat'=>$newStatus]);
+                //удалить пред статистик
+                $bs=  Balancestatistics::find()->where(['wager_id'=>$item->wager->id])->one();
+                if($bs) $bs->delete();
+                // смена баланса
+                $this->reupdateBalance($item->wager,$newStatus);
+
+
+
+
+                $item->wager->status= $newStatus;
+                if($item->wager->validate()){
+                    Yii::error($item->wager->errors);
+                }else{
+                    Yii::error($item->wager->errors);
+                }
+                $item->wager->save(false);
+
+                $stm= new  StatisticsManagerCommon($item->wager);
+                $stm->calculateStatistics();
+
+//                $postStatus=Yii::$app->request->post('statusName');
+//                if($postStatus=='win') $newStatus=Wager::STATUS_ENTERED;  //6
+//                elseif ($postStatus=='return') $newStatus=Wager::STATUS_RETURN_BET; // 10
+//                elseif ($postStatus=='lost') $newStatus=Wager::STATUS_NOT_ENTERD; // 7
+//                elseif ($postStatus=='manual') $newStatus=Wager::STATUS_MANUAL_BET; // 11 // not use
+
+                // change statiostics
+
+                //}
+
+
+
+//            }else{
+//                Yii::error(['no close game']);
+//            }
+            //  }
+        }
+
+        // $class::updateAll(['status'=>$this->post_value],['=','event_id',$this->model->event_id]);
     }
 
 
@@ -173,61 +233,6 @@ class StatusManager
 
     }
 
-    private function changeStatusParents(){
-        /**@var Wagerelements $class **/
-        $class=  get_class($this->model);
 
-        yii::error([$class,$this->model->event_id]);
-        /**@var Wagerelements $item **/
-        foreach ($class::find()->where(['event_id'=>$this->model->event_id])->all() as $item) {
-
-            if($item->wager->checkCloseElements()){ // все внутрение прошли теперь всегда +
-           //     if(!$item->wager->checkCloseState()){  // но родитель еще не прошел
-//Yii::error(['checkCloseElements '=>'oki']);
-                              $newStatus=$item->wager->getFinalStatus();
-                              if(is_null($newStatus)){
-                                  throw new  ErrorException('Статус is NULL changeStatusParents()');
-                              }
-                              yii::error(['nesStat'=>$newStatus]);
-                //удалить пред статистик
-                $bs=  Balancestatistics::find()->where(['wager_id'=>$item->wager->id])->one();
-                if($bs) $bs->delete();
-                // смена баланса
-                $this->reupdateBalance($item->wager,$newStatus);
-
-
-
-
-                                  $item->wager->status= $newStatus;
-                                  if($item->wager->validate()){
-                                      Yii::error($item->wager->errors);
-                                  }else{
-                                      Yii::error($item->wager->errors);
-                                  }
-                                  $item->wager->save(false);
-
-                $stm= new  StatisticsManagerCommon($item->wager);
-                $stm->calculateStatistics();
-
-//                $postStatus=Yii::$app->request->post('statusName');
-//                if($postStatus=='win') $newStatus=Wager::STATUS_ENTERED;  //6
-//                elseif ($postStatus=='return') $newStatus=Wager::STATUS_RETURN_BET; // 10
-//                elseif ($postStatus=='lost') $newStatus=Wager::STATUS_NOT_ENTERD; // 7
-//                elseif ($postStatus=='manual') $newStatus=Wager::STATUS_MANUAL_BET; // 11 // not use
-
-                                  // change statiostics
-
-                              //}
-
-
-
-                }else{
-                Yii::error(['no close game']);
-            }
-          //  }
-        }
-
-           // $class::updateAll(['status'=>$this->post_value],['=','event_id',$this->model->event_id]);
-    }
 
 }
