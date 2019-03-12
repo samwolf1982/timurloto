@@ -59,33 +59,20 @@ class StatusManager
             foreach ($class::find()->where(['=','event_id',$this->model->event_id])->all() as $item) { //  STATUS_PAID_FOR not use
                 if($this->post_value==Wager::STATUS_RETURN_BET){ // recalculate bet percent // возврать
                   $oldFullCoef=  $this->model->wager->coef;   // 'common\\models\\Wagerelements'
-                    //$className=get_class($item);
-                    //Yii::error(['nedd recalc','pld coef'=>$oldFullCoef,$className]);
-
-                    $new_coef=1;
-                    foreach ($this->model->wager->wagerelements as $wagerelemento) {
-
-                        if($item->id==$wagerelemento->id){
-                            Yii::error(['coef=='=>[$item->id,$wagerelemento->id]]);
-                            $wagerelemento->coef = (-abs($wagerelemento->coef));
-                            $wagerelemento->save(false);
-                            $new_coef*=1; //для понятности
-
-                        }else{
-                            if($wagerelemento->coef < 0 )  $new_coef*=1; //для понятности
-                            else $new_coef*=$wagerelemento->coef;
-                        }
-
-
-
-//                        Yii::error(['wao'=>$wagerelemento]);
-
-                    }
+                    $new_coef=   $this->recalculatoNewCoef($this->model->wager->wagerelements,$item->id,false);
                     // обновка кооефициента для wager
-                //    Yii::error(['wao new'=>$new_coef]);
                     Yii::error(['nedd recalc','pld coef'=>$oldFullCoef,'wao new'=>$new_coef]);
                     $this->model->wager->coef=$new_coef;
 //                    $this->model->wager->save(false);
+
+                }else{  // if         $this->post_value==            Wager::STATUS_ENTERED; Wager::STATUS_NOT_ENTERD; Wager::STATUS_MANUAL_BET;
+                    //      пересчет коофициетов обратно с отрицательного на положытельный
+                    $oldFullCoef=  $this->model->wager->coef;   // 'common\\models\\Wagerelements'
+                    $new_coef=   $this->recalculatoNewCoef($this->model->wager->wagerelements,$item->id,true);
+                    // обновка кооефициента для wager
+                    Yii::error(['nedd recalc','pld coef'=>$oldFullCoef,'wao new'=>$new_coef]);
+                    $this->model->wager->coef=$new_coef;
+
 
                 }
                 $item->status=$this->post_value;
@@ -93,6 +80,47 @@ class StatusManager
             }
         }
 
+
+    }
+
+
+    /**
+     * подсчет нового кооефициента
+     * @param $wagerelements
+     * @param $item_id
+     * @param $moreOrLess  // уменьшать (false) для  Wager::STATUS_RETURN_BET    или увеличивать (true)  для Wager::STATUS_ENTERED; Wager::STATUS_NOT_ENTERD; Wager::STATUS_MANUAL_BET;
+     * @return int
+     */
+    private function recalculatoNewCoef($wagerelements, $item_id, $moreOrLess=false ){
+        $new_coef=1;
+        if(!$moreOrLess) {
+//        foreach ($this->model->wager->wagerelements as $wagerelemento) {
+            foreach ($wagerelements as $wagerelemento) {
+//            if($item->id==$wagerelemento->id){
+                if ($item_id == $wagerelemento->id) {
+                    $wagerelemento->coef = (-abs($wagerelemento->coef));
+                    $wagerelemento->save(false);
+                    $new_coef *= 1; //для понятности
+
+                } else {
+                    if ($wagerelemento->coef < 0) $new_coef *= 1; //для понятности
+                    else $new_coef *= $wagerelemento->coef;
+                }
+            }
+        }else{
+
+            foreach ($wagerelements as $wagerelemento) {
+                if ($item_id == $wagerelemento->id) {
+                    $wagerelemento->coef = (abs($wagerelemento->coef));
+                    $wagerelemento->save(false);
+                    $new_coef *= $wagerelemento->coef;
+                } else {
+                    if ($wagerelemento->coef < 0) $new_coef *= 1; //для понятности
+                    else $new_coef *= $wagerelemento->coef;
+                }
+            }
+        }
+        return  $new_coef;
 
     }
 
