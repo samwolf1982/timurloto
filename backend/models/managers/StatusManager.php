@@ -58,25 +58,29 @@ class StatusManager
         if(1){
             foreach ($class::find()->where(['=','event_id',$this->model->event_id])->all() as $item) { //  STATUS_PAID_FOR not use
                 if($this->post_value==Wager::STATUS_RETURN_BET){ // recalculate bet percent // возврать
-                  $oldFullCoef=  $this->model->wager->coef;   // 'common\\models\\Wagerelements'
-                    $new_coef=   $this->recalculatoNewCoef($this->model->wager->wagerelements,$item->id,false);
+                  $oldFullCoef=  $item->model->wager->coef;
+                    $new_coef=   $this->recalculatoNewCoef($item->model->wager->wagerelements,$item->id,false);
                     // обновка кооефициента для wager
-                    Yii::error(['nedd recalc','pld coef'=>$oldFullCoef,'wao new'=>$new_coef]);
-                    $this->model->wager->coef=$new_coef;
-//                    $this->model->wager->save(false);
+                    Yii::error(['nedd1 recalc','pld coef'=>$oldFullCoef,'wao new'=>$new_coef]);
+                    $item->model->wager->coef=$new_coef;
+                  //  $this->model->wager->coef=$new_coef;
 
                 }else{  // if         $this->post_value==            Wager::STATUS_ENTERED; Wager::STATUS_NOT_ENTERD; Wager::STATUS_MANUAL_BET;
                     //      пересчет коофициетов обратно с отрицательного на положытельный
-                    $oldFullCoef=  $this->model->wager->coef;   // 'common\\models\\Wagerelements'
-                    $new_coef=   $this->recalculatoNewCoef($this->model->wager->wagerelements,$item->id,true);
+                    $oldFullCoef=  $item->model->wager->coef;
+                    $new_coef=   $this->recalculatoNewCoef($item->model->wager->wagerelements,$item->id,true);
                     // обновка кооефициента для wager
-                    Yii::error(['nedd recalc','pld coef'=>$oldFullCoef,'wao new'=>$new_coef]);
-                    $this->model->wager->coef=$new_coef;
-
+                    Yii::error(['nedd2 recalc','pld coef'=>$oldFullCoef,'wao new'=>$new_coef]);
+//                     $this->model->wager->coef=$new_coef;
+                    $item->model->wager->coef=$new_coef;
 
                 }
                 $item->status=$this->post_value;
                 $item->save(false);
+
+                $item->model->wager->save(false);
+
+             //   $this->model->wager->save(false);
             }
         }
 
