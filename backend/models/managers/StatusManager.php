@@ -72,7 +72,7 @@ class StatusManager
                             $new_coef*=1; //для понятности
 
                         }else{
-                            if($item->coef < 0 )  $new_coef*=1; //для понятности
+                            if($wagerelemento->coef < 0 )  $new_coef*=1; //для понятности
                             else $new_coef*=$wagerelemento->coef;
                         }
 
