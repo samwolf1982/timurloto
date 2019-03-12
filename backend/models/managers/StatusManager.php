@@ -65,10 +65,17 @@ class StatusManager
 
                     $new_coef=1;
                     foreach ($this->model->wager->wagerelements as $wagerelemento) {
+
                         if($item->id==$wagerelemento->id){
                             Yii::error(['coef=='=>[$item->id,$wagerelemento->id]]);
+                            $wagerelemento->coef = (-abs($wagerelemento->coef));
+                            $wagerelemento->save(false);
+                            $new_coef*=1; //для понятности
+
                         }else{
-                            $new_coef*=$item->coef;
+                            if($item->coef < 0 )  $new_coef*=1; //для понятности
+                            else $new_coef*=$wagerelemento->coef;
+
                         }
 
 //                        Yii::error(['wao'=>$wagerelemento]);
