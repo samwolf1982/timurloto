@@ -57,11 +57,10 @@ class StatusManager
       //  $class::updateAll(['status'=>$this->post_value],['=','id',$this->model->id]);
         if(1){
             foreach ($class::find()->where(['=','event_id',$this->model->event_id])->all() as $item) { //  STATUS_PAID_FOR not use
-                if($this->post_value==Wager::STATUS_RETURN_BET){ // recalculate bet percent
-
+                if($this->post_value==Wager::STATUS_RETURN_BET){ // recalculate bet percent // возврать
                   $oldFullCoef=  $this->model->wager->coef;   // 'common\\models\\Wagerelements'
-                    $className=get_class($item);
-                    Yii::error(['nedd recalc','pld coef'=>$oldFullCoef,$className]);
+                    //$className=get_class($item);
+                    //Yii::error(['nedd recalc','pld coef'=>$oldFullCoef,$className]);
 
                     $new_coef=1;
                     foreach ($this->model->wager->wagerelements as $wagerelemento) {
@@ -75,13 +74,18 @@ class StatusManager
                         }else{
                             if($item->coef < 0 )  $new_coef*=1; //для понятности
                             else $new_coef*=$wagerelemento->coef;
-
                         }
+
+
 
 //                        Yii::error(['wao'=>$wagerelemento]);
 
                     }
-                    Yii::error(['wao new'=>$new_coef]);
+                    // обновка кооефициента для wager
+                //    Yii::error(['wao new'=>$new_coef]);
+                    Yii::error(['nedd recalc','pld coef'=>$oldFullCoef,'wao new'=>$new_coef]);
+                    $this->model->wager->coef=$new_coef;
+                    $this->model->wager->save(false);
 
                 }
                 $item->status=$this->post_value;
