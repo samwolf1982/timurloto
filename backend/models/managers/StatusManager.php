@@ -85,23 +85,17 @@ class StatusManager
 
 
 
-
                     $item->status = $this->post_value;
                     $item->save(false);
-
 
                     $oldStatus = $item->wager->status;
                     $newStatus = $item->getWager()->one()->getFinalStatus();
 
                 Yii::error(['id'=>$item->wager->id, 'wager goef old'=>$oldFullCoef, 'wager goef NEW'=>$new_coef,'oldStatus'=>$oldStatus,'newStatus'=>$newStatus]);
                // continue;
-
                 if(1) {
                     $item->wager->status = $newStatus;
-
                     $item->wager->save(false);
-
-
                     //удалить пред статистик
                     $bs = Balancestatistics::find()->where(['wager_id' => $item->wager->id])->one();
                     if ($bs) $bs->delete();
