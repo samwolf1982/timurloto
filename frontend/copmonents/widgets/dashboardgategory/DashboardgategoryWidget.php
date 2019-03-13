@@ -7,7 +7,7 @@ namespace app\copmonents\widgets\dashboardgategory;
  * Time: 20:35
  */
 
-use app\modules\statistic\models\PlaylistManager;
+use frontend\modules\statistic\models\PlaylistManager;
 use common\models\wraps\SportcategorynamesExt;
 use dvizh\cart\controllers\ElementController;
 use Yii;

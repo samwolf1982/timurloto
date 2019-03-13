@@ -7,7 +7,7 @@ namespace app\copmonents\widgets\dashboardtopmatch;
  * Time: 20:35
  */
 
-use app\modules\statistic\models\PlaylistManager;
+use frontend\modules\statistic\models\PlaylistManager;
 use common\models\helpers\ConstantsHelper;
 use common\models\Playlist;
 use common\models\services\UserCoeficient;

@@ -7,7 +7,7 @@ namespace app\copmonents\widgets\dashboardcenter;
  * Time: 20:35
  */
 
-use app\modules\statistic\models\PlaylistManager;
+use frontend\modules\statistic\models\PlaylistManager;
 use common\models\Popularturnire;
 use common\models\services\PopularToday;
 use common\models\wraps\SportcategorynamesExt;

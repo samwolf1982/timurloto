@@ -2,7 +2,7 @@
 
 namespace app\modules\statistic\controllers;
 
-use app\modules\statistic\models\PlaylistManager;
+use frontend\modules\statistic\models\PlaylistManager;
 use common\models\Playlist;
 use Yii;
 use yii\filters\AccessControl;

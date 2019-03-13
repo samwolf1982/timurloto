@@ -7,7 +7,7 @@ namespace app\copmonents\widgets\addbet;
  * Time: 20:35
  */
 
-use app\modules\statistic\models\PlaylistManager;
+use frontend\modules\statistic\models\PlaylistManager;
 use dvizh\cart\controllers\ElementController;
 use Yii;
 use yii\base\Widget;
