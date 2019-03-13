@@ -2,7 +2,8 @@
 
 namespace app\modules\wager\controllers;
 
-use app\modules\wager\models\WagerManager;
+use frontend\modules\wager\models\WagerManager;
+
 use common\models\Balancestatistics;
 use common\models\DTO\WagerInfo;
 use common\models\helpers\ConstantsHelper;
@@ -334,6 +335,24 @@ class DefaultController extends Controller
                     $coefficient= WagerManager::getFullCoeficientByPost(Yii::$app->request->post('CartElements'));;
                     $coefficient=Yii::$app->request->post('currentCooeficientDrop');
                     $open_close=  Yii::$app->request->post('statusBet')== 'private'? true :  false;
+
+
+                    // test
+
+                    foreach($result->data as $ki => $vi)
+                    {
+                        $stdArray[$ki] = (array) $vi;
+                    }
+                    yii::error($stdArray);
+                    $stdArray=[];
+                    foreach($result->time_list as $ki => $vi)
+                    {
+                        $stdArray[$ki] = (array) $vi;
+                    }
+                    yii::error($stdArray);
+                    yii::error(Yii::$app->request->post());
+                    // test end
+
                     $tdo_Wager_user_info = new WagerInfo(Yii::$app->user->identity->getId(), $playlist_id, Yii::$app->request->post('comment'), $total_sum, $coefficient, $open_close,$result->data,$result->time_list);
                     $vagerManager = new WagerManager(Yii::$app->request->post(), $tdo_Wager_user_info);
                     $vagerManager->add($result->bid);

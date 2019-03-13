@@ -2,7 +2,7 @@
 
 namespace app\modules\wager\controllers;
 // NOT USE DELETE
-use app\modules\wager\models\WagerManager;
+use frontend\modules\wager\models\WagerManager;
 use common\models\DTO\WagerInfo;
 use common\models\Playlist;
 use common\models\services\UserInfo;

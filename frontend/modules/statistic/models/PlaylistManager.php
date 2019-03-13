@@ -1,5 +1,5 @@
 <?php
-namespace app\modules\statistic\models;
+namespace frontend\modules\statistic\models;
 use common\models\helpers\ConstantsHelper;
 use common\models\Playlist;
 use yii;

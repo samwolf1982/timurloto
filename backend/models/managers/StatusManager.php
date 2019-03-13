@@ -103,7 +103,7 @@ class StatusManager
 
                   //  Yii::error(['oldStatus' => $oldStatus, 'newStatus' => $newStatus]);
                     $this->reupdateBalance2($item->wager, $oldStatus, $oldFullCoef);
-                    $stm = new  StatisticsManagerCommon($item->wager);
+                    $stm = new  StatisticsManagerCommon($item->getWager()->one());
                     $stm->calculateStatistics();
                 }
                 //Yii::error(['nedd2 recalc','pld coef'=>$oldFullCoef,'wao new'=>$new_coef]);

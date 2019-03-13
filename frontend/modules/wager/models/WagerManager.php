@@ -1,6 +1,8 @@
 <?php
-namespace app\modules\wager\models;
-use app\modules\statistic\models\PlaylistManager;
+namespace frontend\modules\wager\models;
+
+
+use frontend\modules\statistic\models\PlaylistManager;
 use common\models\DTO\WagerInfo;
 use common\models\Eventsnames;
 use common\models\helpers\ConstantsHelper;
@@ -101,6 +103,7 @@ class WagerManager
 
 
         $wager->save();
+        return $wager->id;
     }
 
     // проход по корзине и добавить елементы.
@@ -115,6 +118,7 @@ class WagerManager
 //    'name' => 'П1',
 //    'status' => 'true',
 //    'coef' => '4.80',
+//        var_dump($this->cart);
         foreach ($this->cart as $i=> $element) {
 //            yii::error($element);
 //            var_dump($this->wagerInfo->getResulto($i)); die();
