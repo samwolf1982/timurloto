@@ -82,6 +82,7 @@ class DefaultController extends Controller
     public function actionPopularsports($tourneyId=0)
     {
 
+
         if(!empty($_POST['id'])) $tourneyId=$_POST['id']; else $tourneyId=131927;
         if(!empty($_POST['id'])) $tourneyId=$_POST['id']; else $tourneyId=12341; //14.03 смена
         if(!empty($_POST['id'])) $tourneyId=$_POST['id']; else $tourneyId=12341; //14.03 смена
