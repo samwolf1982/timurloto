@@ -122,6 +122,7 @@ var SmartCart={
 // закрытие модального для корзины
         $('#modal-success-bet .close').on('click', function (e) {
             console.log('Close modal');
+            if(SmartCart.devStatus === false ) SmartCart.deleteAll();
             $('.dashboard-row .dash-right-col').hide();
             location.reload(true);
         });
