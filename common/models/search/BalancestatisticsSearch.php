@@ -98,6 +98,7 @@ class BalancestatisticsSearch extends Balancestatistics
 
         foreach ($resultSql as $data) {
             yii::error([$data->status,$data->cleare,]);
+            yii::error($data);
         }
 
 
