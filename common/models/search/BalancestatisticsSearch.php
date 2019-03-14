@@ -103,6 +103,7 @@ class BalancestatisticsSearch extends Balancestatistics
 
 
 
+
         return $roi;
     }
     public function searchChart($user_id)
