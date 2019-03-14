@@ -94,6 +94,7 @@ use yii\helpers\Html;
                                                         <?=$search_result['profit']?> <sup>%</sup>
                                                     <?php } ?>
 
+
                                                     <?=$newProfit?> <sup>%</sup>
 
                                                 </span>
