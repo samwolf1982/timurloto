@@ -107,6 +107,7 @@ class BalancestatisticsSearch extends Balancestatistics
         ])->queryAll();
 
 
+
         foreach ($resultSql as $data) {
             if($data['status'] == Wager::STATUS_ENTERED){
                 $totalSumBet+=$data['total'];
