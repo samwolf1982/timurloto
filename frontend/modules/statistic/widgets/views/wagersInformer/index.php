@@ -344,6 +344,7 @@ use yii\widgets\LinkPager;
                                                             <?php } ?>
 
 
+
                                                         <div class="link-rate">
                                                                 <a href="#" onclick="openModaleMoreDetail(this);" data-target='<?=Url::to(['/subscribers/default/peto','id'=>Yii::$app->user->id])?>'  data-toggle="modaleAjax"  class="modaleAjax">Узнать прогноз</a>
                                                             </div>
