@@ -113,6 +113,7 @@ class BalancestatisticsSearch extends Balancestatistics
             }
 
 
+
             yii::error([$data['id'],$data['status'],$data['cleare'],$data['total'],]);
         }
         if(!empty($totalSumBet)){
