@@ -81,13 +81,29 @@ class BalancestatisticsSearch extends Balancestatistics
       $roi2=1;
         $prepare_result=   ['profit'=> round($result['profit'],2),'penetration'=>round($result['penetration'],2),
             'middle_coef'=>round($result['middle_coef'],2),
-            'roi'=>round($result['roi'],2),
+            'roi'=>round($this->newRoiCalk($user_id),2),
             'roi'=>123,
 
             ];
       return    array_merge($result,$prepare_result);   ;
     }
 
+    private function newRoiCalk($user_id){
+        $roi=1;
+        $sql="SELECT   `status`,  ((total*coef)- total) as 'cleare'   FROM `wager` WHERE user_id = :u_id";
+        $resultSql =   yii::$app->db->createCommand($sql, [
+            ':u_id' => $user_id,
+//        ])->execute();
+        ])->queryAll();
+
+        foreach ($resultSql as $data) {
+            yii::error([$data->status,$data->cleare,]);
+        }
+
+
+
+        return $roi;
+    }
     public function searchChart($user_id)
     {
         $b=Balancestatistics::find()->select(['profit','created_at'])->where(['user_id'=>$user_id])->orderBy(['created_at'=>SORT_ASC])->asArray()->all();
