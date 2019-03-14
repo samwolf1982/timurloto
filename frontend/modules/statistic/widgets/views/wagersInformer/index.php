@@ -341,7 +341,7 @@ use yii\widgets\LinkPager;
 
                                                             <?php if( $wager->status == Wager::STATUS_ENTERED || $wager->status == Wager::STATUS_NOT_ENTERD || $wager->status == Wager::STATUS_RETURN_BET){ ?>
 
-                                                            <?php} ?>
+                                                            <?php } ?>
 
 
                                                         <div class="link-rate">
