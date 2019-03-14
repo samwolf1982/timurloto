@@ -3,6 +3,7 @@
 namespace common\models\search;
 use common\models\Balancestatistics;
 use common\models\helpers\ConstantsHelper;
+use common\models\Wager;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
@@ -88,11 +89,12 @@ class BalancestatisticsSearch extends Balancestatistics
       return    array_merge($result,$prepare_result);   ;
     }
 
+
     private function newRoiCalk($user_id){
         $roi=1;
         $totalSumBet=0; // сумма всех ставок
         $totalSumBetCleare=0; // сумма всех чистых ставок
-        $sql="SELECT  id,  status, (total*coef) as 'totale',  ((total*coef)- total) as 'cleare'   FROM `wager` WHERE user_id = :u_id";
+        $sql="SELECT  id,  status, total,  ((total*coef)- total) as 'cleare'   FROM `wager` WHERE user_id = :u_id";
         $resultSql =   yii::$app->db->createCommand($sql, [
             ':u_id' => $user_id,
 //        ])->execute();
@@ -100,9 +102,18 @@ class BalancestatisticsSearch extends Balancestatistics
 
 
         foreach ($resultSql as $data) {
-            $totalSumBet+=$data['totale'];
-            $totalSumBetCleare+=$data['cleare'];
-            yii::error([$data['id'],$data['status'],$data['cleare'],$data['totale'],]);
+            if($data['status'] == Wager::STATUS_ENTERED){
+                $totalSumBet+=$data['total'];
+                $totalSumBetCleare+=$data['cleare'];
+            }elseif ($data['status'] == Wager::STATUS_NOT_ENTERD){
+                $totalSumBet+=$data['total'];
+                $totalSumBetCleare+=  -abs( $data['total']);
+            }elseif ($data['status'] == Wager::STATUS_RETURN_BET){
+                $totalSumBet+=$data['total'];
+            }
+
+
+            yii::error([$data['id'],$data['status'],$data['cleare'],$data['total'],]);
         }
         if(!empty($totalSumBet)){
             $roi=$totalSumBetCleare/$totalSumBet;
