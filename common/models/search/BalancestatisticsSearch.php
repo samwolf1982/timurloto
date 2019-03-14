@@ -75,9 +75,13 @@ class BalancestatisticsSearch extends Balancestatistics
             ':u_id' => $user_id,
 //        ])->execute();
         ])->queryOne();
+
+      // второй вариант рои переделка
+      $roi2=1;
         $prepare_result=   ['profit'=> round($result['profit'],2),'penetration'=>round($result['penetration'],2),
             'middle_coef'=>round($result['middle_coef'],2),
             'roi'=>round($result['roi'],2),
+            'roi'=>123,
 
             ];
       return    array_merge($result,$prepare_result);   ;

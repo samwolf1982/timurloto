@@ -89,8 +89,8 @@ class TestController extends Controller {
 
 
 
-            $statusManager=new StatusManager($model,Wager::STATUS_ENTERED);
-            $statusManager->recalculateStatus();
+//            $statusManager=new StatusManager($model,Wager::STATUS_ENTERED);
+//            $statusManager->recalculateStatus();
 
 
 
@@ -113,6 +113,14 @@ class TestController extends Controller {
         echo 'End'.PHP_EOL;
     }
 
+
+    public function actionRoi()
+    {
+         echo 'Start roi'.PHP_EOL;
+        $stat=Balancestatistics::find()->where()->all();
+        echo 'End roi'.PHP_EOL;
+
+    }
     public function actionLastWeek() {
 
 

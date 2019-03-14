@@ -107,10 +107,13 @@ class StatisticsManagerCommon
     }
 
 
-
-
-
-    private function calculateRoi($sumBet,$coef,$is_win)
+    /**
+     * @param $sumBet сума ставки
+     * @param $coef    кооеф
+     * @param $is_win
+     * @return float|int
+     */
+    private function calculateRoi($sumBet, $coef, $is_win)
     {
 //        ROI
 //Ставка сыграла
