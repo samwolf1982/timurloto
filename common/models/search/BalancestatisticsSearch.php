@@ -92,7 +92,7 @@ class BalancestatisticsSearch extends Balancestatistics
         $roi=1;
         $totalSumBet=0; // сумма всех ставок
         $totalSumBetCleare=0; // сумма всех чистых ставок
-        $sql="SELECT   status, (total*coef) as 'totale',  ((total*coef)- total) as 'cleare'   FROM `wager` WHERE user_id = :u_id";
+        $sql="SELECT  id,  status, (total*coef) as 'totale',  ((total*coef)- total) as 'cleare'   FROM `wager` WHERE user_id = :u_id";
         $resultSql =   yii::$app->db->createCommand($sql, [
             ':u_id' => $user_id,
 //        ])->execute();
@@ -102,7 +102,7 @@ class BalancestatisticsSearch extends Balancestatistics
         foreach ($resultSql as $data) {
             $totalSumBet+=$data['totale'];
             $totalSumBetCleare+=$data['cleare'];
-            yii::error([$data['status'],$data['cleare'],$data['totale'],]);
+            yii::error([$data['id'],$data['status'],$data['cleare'],$data['totale'],]);
         }
         if(!empty($totalSumBet)){
             $roi=$totalSumBetCleare/$totalSumBet;
