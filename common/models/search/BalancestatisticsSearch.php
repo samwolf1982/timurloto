@@ -82,7 +82,7 @@ class BalancestatisticsSearch extends Balancestatistics
         $prepare_result=   ['profit'=> round($result['profit'],2),'penetration'=>round($result['penetration'],2),
             'middle_coef'=>round($result['middle_coef'],2),
             'roi'=>round($this->newRoiCalk($user_id),2),
-            'roi'=>123,
+
 
             ];
       return    array_merge($result,$prepare_result);   ;
