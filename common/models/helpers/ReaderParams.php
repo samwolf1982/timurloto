@@ -103,7 +103,8 @@ class ReaderParams extends \yii\base\BaseObject
         //  type: "live", //все live
         "type"=> "line",
         "is_main_game"=> true,
-        "overtime"=> $dataParser->attributes->{'overtime'}
+        "overtime"=> $dataParser->attributes->{'overtime'},
+        'full_id'=>$b['item_id']
         ,];
 
         return $res;

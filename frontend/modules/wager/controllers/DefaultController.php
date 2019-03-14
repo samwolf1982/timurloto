@@ -315,14 +315,15 @@ class DefaultController extends Controller
         $result=[];
         $errorLocalLog=[]; // LOg ошыбок
 
+
         if(WagerManager::preValidate(Yii::$app->request->post(),Yii::$app->user->identity->getId(),$errorLocalLog)){  //$errorLocalLog по ссылке
 
 
             // $total_sum =  WagerManager::calculateTotalSumForBet(Yii::$app->user->identity->getId(),$totalSumCoeficient,false); // ручнную сумму еще нужно доделать
             $total_sum =  WagerManager::calculateTotalSumForBet(Yii::$app->user->identity->getId(),(integer)Yii::$app->request->post('currentCooeficientDrop'),false); // ручнную сумму еще нужно доделать
             $result=  WagerManager::makeBet(Yii::$app->user->identity->getId(),Yii::$app->request->post(),$total_sum);
-//            var_dump($result->data[0]); die();
-            if($result->status===1){// снятие баланса подтверждение
+           // var_dump($result); die();
+            if($result->status===1){ // снятие баланса подтверждение
 
                 $score_id = Score::find()->where(['user_id' => Yii::$app->user->identity->getId()])->one()->id;
                 $modelTransaction = new Transaction();
@@ -390,7 +391,8 @@ class DefaultController extends Controller
                 }
             }
         }else{
-            $result=['status'=>'error','message'=>$errorLocalLog];
+
+            $result=['status'=>'error','mimi'=>111,'message'=>$errorLocalLog];
         }
 
 

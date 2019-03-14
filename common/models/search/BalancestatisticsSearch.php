@@ -128,7 +128,7 @@ class BalancestatisticsSearch extends Balancestatistics
         }
         if(!empty($totalSumBet)){
             $roi=$totalSumBetCleare/$totalSumBet;
-            yii::error(['$totalSumBetCleare'=>$totalSumBetCleare,'$totalSumBet'=>$totalSumBet,'$roi'=>$roi]);
+          //  yii::error(['$totalSumBetCleare'=>$totalSumBetCleare,'$totalSumBet'=>$totalSumBet,'$roi'=>$roi]);
             return $roi * 100;
         }
         return 0;

@@ -1,7 +1,7 @@
 <?php
 namespace dvizh\cart\controllers;
 
-use app\modules\wager\models\WagerManager;
+use frontend\modules\wager\models\WagerManager;
 use common\models\helpers\ConstantsHelper;
 use common\models\helpers\ReaderParams;
 use common\models\services\UserPlaylists;
