@@ -25,7 +25,6 @@ var SmartCart={
         this.csrf = jQuery('meta[name=csrf-token]').attr("content");
         this.csrf_param = jQuery('meta[name=csrf-param]').attr("content");
 
-
         // $(document).on("click", ".bet-parent-val", function(e) {
         //
         //     SmartCart.addToCart(this);
