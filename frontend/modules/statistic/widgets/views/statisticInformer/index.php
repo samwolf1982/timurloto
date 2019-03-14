@@ -96,7 +96,6 @@ use yii\helpers\Html;
 
                                                     <?=$newProfit?> <sup>%</sup>
 
-
                                                 </span>
                                 <span class="list-stats-tbl-title">
                                                     Прибыль
