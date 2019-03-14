@@ -116,7 +116,7 @@ class BalancestatisticsSearch extends Balancestatistics
                 $totalSumBetCleare+=$data['cleare'];
             }elseif ($data['status'] == Wager::STATUS_NOT_ENTERD){
                 $totalSumBet+=$data['total'];
-                $totalSumBetCleare+=  -abs( $data['total']);
+                $totalSumBetCleare+=  (-abs( $data['total']));
             }elseif ($data['status'] == Wager::STATUS_RETURN_BET){
                 $totalSumBet+=$data['total'];
             }
