@@ -88,6 +88,7 @@ use yii\helpers\Html;
                     <div class="stats-tbl-wrapper">
                         <ul class="list-stats-tbl">
                             <li>
+
                                                 <span class="list-stats-tbl-val up-val">
 
                                                     <?php if(0){ //старый профит относительно ставки НЕ баланса ?>
