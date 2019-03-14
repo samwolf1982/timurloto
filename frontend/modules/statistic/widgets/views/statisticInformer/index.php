@@ -94,7 +94,7 @@ use yii\helpers\Html;
                                                     <?php if(0){ //старый профит относительно ставки НЕ баланса ?>
                                                         <?=$search_result['profit']?> <sup>%</sup>
                                                     <?php } ?>
-                                                    <?=$newProfit?>  - <?=$search_result['profit']?>  <sup>%</sup>
+                                                    <?=$newProfit?>  /  <?=$search_result['profit']?>  <sup>%</sup>
 
                                                 </span>
                                 <span class="list-stats-tbl-title">
