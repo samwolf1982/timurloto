@@ -90,7 +90,7 @@ class BalancestatisticsSearch extends Balancestatistics
 
     private function newRoiCalk($user_id){
         $roi=1;
-        $sql="SELECT   'status','total',  ((total*coef)- total) as 'cleare'   FROM `wager` WHERE user_id = :u_id";
+        $sql="SELECT   status,total,  ((total*coef)- total) as 'cleare'   FROM `wager` WHERE user_id = :u_id";
         $resultSql =   yii::$app->db->createCommand($sql, [
             ':u_id' => $user_id,
 //        ])->execute();
