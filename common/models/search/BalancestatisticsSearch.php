@@ -108,6 +108,7 @@ class BalancestatisticsSearch extends Balancestatistics
             $roi=$totalSumBetCleare/$totalSumBet;
         }
 
+        yii::error(['$totalSumBetCleare'=>$totalSumBetCleare,'$totalSumBet'=>$totalSumBet,'$roi'=>$roi]);
 
 
 
