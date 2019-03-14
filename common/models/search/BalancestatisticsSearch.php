@@ -121,9 +121,9 @@ class BalancestatisticsSearch extends Balancestatistics
                 $totalSumBet+=$data['total'];
             }
 
-            if($data['status'] == Wager::STATUS_ENTERED || $data['status'] == Wager::STATUS_NOT_ENTERD || $data['status'] == Wager::STATUS_RETURN_BET ){
-                yii::error([$data['id'],$data['status'],$data['cleare'],$data['total'],]);
-            }
+//            if($data['status'] == Wager::STATUS_ENTERED || $data['status'] == Wager::STATUS_NOT_ENTERD || $data['status'] == Wager::STATUS_RETURN_BET ){
+//                yii::error([$data['id'],$data['status'],$data['cleare'],$data['total'],]);
+//            }
 
         }
         if(!empty($totalSumBet)){
