@@ -209,6 +209,14 @@ class User extends ActiveRecord implements IdentityInterface
         return $this->hasOne(Score::className(), ['user_id' =>'id']);
     }
 
+    public function getNewprofit()
+    {
+      $b=  $this->userbalance->balance;
+      $baseCalc= ConstantsHelper::DEFAULT_USER_CALCULATE_BALANCE_FOR_LEVEL;
+        return ($b*100/$baseCalc)-100;
+    }
+
+
     public function isSubscriber(){
        // 'asd', 42, 44,
 //        yii::error(['asd',Yii::$app->user->id,$this->id]);
