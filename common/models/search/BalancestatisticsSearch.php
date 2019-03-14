@@ -128,8 +128,6 @@ class BalancestatisticsSearch extends Balancestatistics
 
         yii::error(['$totalSumBetCleare'=>$totalSumBetCleare,'$totalSumBet'=>$totalSumBet,'$roi'=>$roi]);
 
-
-
         return $roi * 100 ;
     }
     public function searchChart($user_id)
