@@ -83,6 +83,7 @@ class DefaultController extends Controller
     {
 
         if(!empty($_POST['id'])) $tourneyId=$_POST['id']; else $tourneyId=131927;
+        if(!empty($_POST['id'])) $tourneyId=$_POST['id']; else $tourneyId=12341; //14.03 смена
         $key="actionPopularsports_{$tourneyId}";
         $cache=\Yii::$app->cache;
         $cache->flush();
