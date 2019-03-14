@@ -65,6 +65,7 @@ class BalancestatisticsSearch extends Balancestatistics
 
     public function searchCount($user_id)
     {
+
         //SELECT  SUM(profit) as `profit`,SUM(`penetration`) as `penetration`, SUM(`middle_coef`) as `middle_coef`, SUM(`roi`) as `roi`,SUM(`plus`) as `plus`,SUM(`minus`) as `minus`  FROM `balancestatistics` WHERE 1
 // SELECT  SUM(profit) as `profit`,SUM(`penetration`) as `penetration`, SUM(`middle_coef`) / COUNT(`middle_coef`)  as `middle_coef`, SUM(`roi`) as `roi`,SUM(`plus`) as `plus`,SUM(`minus`) as `minus`  FROM `balancestatistics` WHERE 1
 //        SELECT SUM(profit) as `profit`, SUM(`penetration`)/ COUNT(`penetration`)*100 as `penetration`, SUM(`middle_coef`) / COUNT(`middle_coef`) as `middle_coef`, SUM(`roi`) as `roi`,SUM(`plus`) as `plus`,SUM(`minus`) as `minus` FROM `balancestatistics` WHERE 1
