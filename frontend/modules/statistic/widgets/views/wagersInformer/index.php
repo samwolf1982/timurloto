@@ -341,13 +341,26 @@ use yii\widgets\LinkPager;
 
                                                             <?php if( $wager->status == Wager::STATUS_ENTERED || $wager->status == Wager::STATUS_NOT_ENTERD || $wager->status == Wager::STATUS_RETURN_BET){ ?>
 
+                                                                <?php if($front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_PRIVATE_EXPRESS){  ?>
+                                                                    <div class="link-rate">
+                                                                        <a href="#" onclick="openModaleMoreDetail(this);" data-target='<?=Url::to(['/wager/default/viewdetail','id'=>$front_element->getId() ])?>'  data-toggle="modaleAjax"  class="modaleAjax">+  Показать Экспресс</a>
+                                                                    </div>
+                                                                <?php }else{ ?>
+                                                                    <div class="link-rate">
+                                                                        <a href="#" onclick="openModaleMoreDetail(this);" data-target='<?=Url::to(['/wager/default/viewdetail','id'=>$front_element->getId() ])?>'  data-toggle="modaleAjax"  class="modaleAjax">Показать Ординар</a>
+                                                                    </div>
+                                                                <?php } ?>
+
+
+                                                            <?php }else{ ?>
+                                                                <div class="link-rate">
+                                                                    <a href="#" onclick="openModaleMoreDetail(this);" data-target='<?=Url::to(['/subscribers/default/peto','id'=>Yii::$app->user->id])?>'  data-toggle="modaleAjax"  class="modaleAjax">Узнать прогноз</a>
+                                                                </div>
                                                             <?php } ?>
 
 
 
-                                                        <div class="link-rate">
-                                                                <a href="#" onclick="openModaleMoreDetail(this);" data-target='<?=Url::to(['/subscribers/default/peto','id'=>Yii::$app->user->id])?>'  data-toggle="modaleAjax"  class="modaleAjax">Узнать прогноз</a>
-                                                            </div>
+
                                                         <?php  } ?>
 
 
