@@ -129,6 +129,7 @@ var SmartCart={
         console.log('Init SmartCart');
     },
 
+
     addToCart: function (el) {   // not use !
         var data = {};
         data.CartElement = {};
