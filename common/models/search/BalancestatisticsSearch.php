@@ -90,6 +90,12 @@ class BalancestatisticsSearch extends Balancestatistics
     }
 
 
+    /**
+     * новый пересчет рои
+     * @param $user_id
+     * @return float|int
+     * @throws \yii\db\Exception
+     */
     private function newRoiCalk($user_id){
         $roi=1;
         $totalSumBet=0; // сумма всех ставок
@@ -114,7 +120,7 @@ class BalancestatisticsSearch extends Balancestatistics
 
 
 
-            yii::error([$data['id'],$data['status'],$data['cleare'],$data['total'],]);
+          //  yii::error([$data['id'],$data['status'],$data['cleare'],$data['total'],]);
         }
         if(!empty($totalSumBet)){
             $roi=$totalSumBetCleare/$totalSumBet;
@@ -124,7 +130,7 @@ class BalancestatisticsSearch extends Balancestatistics
 
 
 
-        return $roi;
+        return $roi * 100 ;
     }
     public function searchChart($user_id)
     {
