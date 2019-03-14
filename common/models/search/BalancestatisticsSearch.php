@@ -118,18 +118,15 @@ class BalancestatisticsSearch extends Balancestatistics
                 $totalSumBet+=$data['total'];
             }
 
-
-
           //  yii::error([$data['id'],$data['status'],$data['cleare'],$data['total'],]);
         }
         if(!empty($totalSumBet)){
             $roi=$totalSumBetCleare/$totalSumBet;
+            yii::error(['$totalSumBetCleare'=>$totalSumBetCleare,'$totalSumBet'=>$totalSumBet,'$roi'=>$roi]);
+            return $roi;
         }
-
-
-        yii::error(['$totalSumBetCleare'=>$totalSumBetCleare,'$totalSumBet'=>$totalSumBet,'$roi'=>$roi]);
-
-        return $roi * 100 ;
+        return 0;
+       // return $roi * 100 ;
     }
     public function searchChart($user_id)
     {

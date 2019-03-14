@@ -16,6 +16,7 @@ use yii\widgets\LinkPager;
 /**@var PageInfo $pageInfo  */
 
 
+
 ?>
 
 
@@ -198,9 +199,14 @@ use yii\widgets\LinkPager;
                                                             <?php } ?>
                                                             <?php if($front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_PRIVATE_ORDINAR || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_PRIVATE_EXPRESS  ){ ?>
 
-                                                               <?php if($isSubscriber){ ?>
+
+
+
+                                                               <?php if($isSubscriber   ){ ?>
+
                                                                     <a href="#" onclick="return false;"  data-target='<?=Url::to(['/subscribers/default/peto','id'=>Yii::$app->user->id])?>'  data-toggle="modaleAjax" data-target="#edit_subscriber" class="bet-status bet-status-editable"><div class="bet-status-inner"> <span class="icon-lock"></span>  </div></a>
                                                                 <?php }else{ ?>
+
                                                                     <a href="#" onclick="openModaleMoreDetail(this);"  data-target='<?=Url::to(['/subscribers/default/peto','id'=>Yii::$app->user->id])?>'  data-toggle="modaleAjax" data-target="#edit_subscriber" class="bet-status bet-status-editable"><div class="bet-status-inner"> <span class="icon-lock"></span>  </div></a>
                                                                 <?php  } ?>
 
@@ -309,7 +315,7 @@ use yii\widgets\LinkPager;
                                                         </div>
 
 
-                                                        <?php if($isSubscriber || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_ORDINAR || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS  ){ ?>
+                                                        <?php if($isSubscriber || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_ORDINAR || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS     ){ ?>
 
                                                         <?php if($isSubscriber || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_ORDINAR ){ ?>
 
@@ -331,8 +337,11 @@ use yii\widgets\LinkPager;
                                                             </div>
                                                         <?php } ?>
 
-                                                        <?php }else{  ?>
+                                                        <?php }else{ // если закрыто или  уже сыграли  ?>
 
+                                                            <?php if( $wager->status == Wager::STATUS_ENTERED || $wager->status == Wager::STATUS_NOT_ENTERD || $wager->status == Wager::STATUS_RETURN_BET){ ?>
+
+                                                            <?php} ?>
 
 
                                                         <div class="link-rate">
