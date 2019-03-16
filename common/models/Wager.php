@@ -385,5 +385,19 @@ class Wager extends \yii\db\ActiveRecord
     }
 
 
+    /**
+     * возврта коофициента старого без модификаций отрицательныйх
+     * @return false|float|null|string
+     * @throws \yii\db\Exception
+     */
+    public function getLastcoef()
+    {
+            if($this->coef===1.0) return Yii::$app->db->createCommand("SELECT  SUM( ABS( coef)) FROM `wagerelements` WHERE wager_id={$this->id};")->queryScalar();
+            return $this->coef;
+    }
+
+
+
+
 
 }

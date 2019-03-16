@@ -60,37 +60,28 @@ class DefaultController extends \yii\web\Controller
     {
         /** @var Cart $cartModel */
         if ($cartModel = yii::$app->cart) {       // проверка если по времени не будет долго.
-          //  yii::error(Yii::$app->request->post('CartElements'));
-          // var_dump($cartModel);
+
             $json['count'] = count(Yii::$app->request->post('CartElements'));
-//            $json['elements']=$cartModel->getElements();
+
             $json['elements']=Yii::$app->request->post('CartElements');
-//            $json['price'] = $cartModel->getCostFormatted();
             $json['price'] = 55;
 
             $current_cart=$cartModel->getCart()->my();
-            $currentCooeficientDrop= $current_cart->current_coefficient;
+            $currentCooeficientDrop= (integer) Yii::$app->request->post('currentCooeficientDrop');;
+
+            yii::error(['cc'=>$current_cart->current_coefficient]);
+
             if(empty($currentCooeficientDrop)){ $currentCooeficientDrop =1; }
 
             $userCoefficient=new UserCoeficient(Yii::$app->request->post('CartElements'));
             $max_coeficientDrop=$userCoefficient->getMaxCoeficient();
 
 
-            if($max_coeficientDrop < $currentCooeficientDrop){ // перезапись если коофициент не совпадает по процентам. ставим максимально возможный  в виджете тоже нужно править --frontend/copmonents/widgets/dashboardcart/DashboardcartWidget.php
-                $currentCooeficientDrop =$max_coeficientDrop;
-                $current_cart->current_coefficient=$currentCooeficientDrop;
-                $current_cart->save(false);
-            }
 
-
-
-            //$json['currentCooeficientDrop'] = $current_cart->current_coefficient;
-            $json['currentCooeficientDrop'] = Yii::$app->request->post('currentCooeficientDrop');
+            if($currentCooeficientDrop > $max_coeficientDrop) $currentCooeficientDrop=$max_coeficientDrop;
+            $json['currentCooeficientDrop'] =$currentCooeficientDrop;
             $json['max_coeficientDrop'] = $max_coeficientDrop;
-//            $json['full_name_shod'] = $cartModel->current_market_name;
-//            $json['coef'] = $this->getCurrentCooef($cartModel);
-//            $json['m_name'] =  $cartModel->getMarketName();
-            //$json['elementsHTML'] = \dvizh\cart\widgets\ElementsList::widget();
+
 
         } else {
             $json['count'] = 0;
@@ -99,8 +90,6 @@ class DefaultController extends \yii\web\Controller
 
         $scope=Score::find()->where(['user_id' => Yii::$app->user->id])->one();
         $b=!empty($scope)?$scope->balance:0;
-        //  $b= Score::find()->where(['user_id' => Yii::$app->user->id])->one()->balance;
-//        $balance  = number_format($b, 0, '', ',');
         $json['currentBalance'] =  $b;
 
 

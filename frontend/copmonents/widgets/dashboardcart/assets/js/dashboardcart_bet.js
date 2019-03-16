@@ -495,6 +495,7 @@ var SmartCart={
                     SmartCart.recalculateSumBet();
                     SmartCart.recalculateMaybeWin();
                     SmartCart.renderCalculate();
+                    SmartCart.backlight();
 
                     //-----------------------------
 //                     $.each(json.elements, function( index, value ) {
@@ -529,6 +530,32 @@ var SmartCart={
             }
 
         });
+    },
+
+
+
+    backlight:function () { //подсветка
+        cartLSLocal=JSON.parse(localStorage.getItem( 'cartLS'));
+        console.log('backlight');
+        // console.log(cartLSLocal);
+
+        $('.activePink').removeClass('activePink');
+        // $('.bets-val').removeClass('activePink');
+        // $('.bet-parent-val').removeClass('activePink');
+        for (var i = 0; i < cartLSLocal.length; i++) {
+            // if(cartLS[i].CartElement.item_id===id){
+            //
+            // }
+            console.log(cartLSLocal[i].CartElement.item_id);
+            console.log(cartLSLocal[i].CartElement.status);
+
+
+            if(cartLSLocal[i].CartElement.status === true) $('.bet-parent-val[data-id="'+cartLSLocal[i].CartElement.item_id+'"],  .bets-val[data-id="'+cartLSLocal[i].CartElement.item_id+'"]').addClass('activePink');
+
+
+
+        }
+
     },
 
     updateSingleElementIncart:function (json,id) {

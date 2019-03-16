@@ -306,3 +306,45 @@ and also iPads specifically.
 #sportTypeSidebar .collapse-list li a .flag {
   display: none;
 }
+.row-collapse-inner .bet-parent-val.activePink,
+.collapse-open-bet-item .bets-val.activePink {
+  background-color: #D00069;
+}
+.row-collapse-inner .bet-parent-val.activePink .title-bet,
+.collapse-open-bet-item .bets-val.activePink .title-bet,
+.row-collapse-inner .bet-parent-val.activePink .mobile-name,
+.collapse-open-bet-item .bets-val.activePink .mobile-name,
+.row-collapse-inner .bet-parent-val.activePink .name-b,
+.collapse-open-bet-item .bets-val.activePink .name-b,
+.row-collapse-inner .bet-parent-val.activePink .coefficient-b,
+.collapse-open-bet-item .bets-val.activePink .coefficient-b {
+  color: white;
+}
+#wrapePlayliste ::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #8887ad;
+  opacity: 1;
+  /* Firefox */
+}
+#wrapePlayliste :-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #8887ad;
+}
+#wrapePlayliste ::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #8887ad;
+}
+#wrapePlayliste .input-create {
+  display: block;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+  width: 100%;
+  background: lightgrey;
+}
+#wrapePlayliste .input-create input {
+  padding: 5px;
+}
+#wrapePlayliste .btn-create {
+  margin-top: 5px;
+}

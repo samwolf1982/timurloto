@@ -78,10 +78,12 @@ return [
                 'user/registration/connect'=>'user/registration/connect',
 
 
-                //корзина ставка
+                //корзина ставка  плейлисты
                 'wager/default/add'=>'wager/default/add',
                 'cart/element/update-status'=>'cart/element/update-status',
                 'cart/element/update-single'=>'cart/element/update-single',
+                'cart/element/update-playlist'=>'cart/element/update-playlist',
+                'statistic/default/add'=>'statistic/default/add',
 
                 // подвтерждение ставки из confirm
                 'wager/default/konfirmi'=>'wager/default/konfirmi',

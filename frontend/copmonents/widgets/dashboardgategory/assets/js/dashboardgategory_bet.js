@@ -268,6 +268,7 @@ var DashboardCategory={
         });
         $(el).parent().toggleClass('active_coll').find('.sub-collapse').stop().slideToggle(400);
         console.log('render Event Game');
+        SmartCart.backlight();
     },
 
 

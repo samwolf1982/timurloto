@@ -7,11 +7,13 @@ use app\copmonents\widgets\dashboardgategory\DashboardgategoryWidget;
 use app\copmonents\widgets\dashboardpopular\DashboardpopularWidget;
 use app\copmonents\widgets\dashboardtopmatch\DashboardtopmatchWidget;
 use app\copmonents\widgets\showuser\ShowuserWidget;
+use app\modules\statistic\assets\WidgetAsset;
 use dektrium\user\widgets\Connect;
 use dvizh\cart\widgets\BuyButton;
 use frontend\assets\DashboardAsset;
 
     DashboardAsset::register($this);
+    WidgetAsset::register($this);
 ?>
 
 <body class="home-page footer-login-page dasboard-page">

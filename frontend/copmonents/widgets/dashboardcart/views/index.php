@@ -163,14 +163,15 @@
                                                    </div>
 
 
-                                                   <div class="drop-item">
-                                                       <div class="create-playlist">
-                                                           <div class="input-create">
-                                                               <input type="text" placeholder="Новый плейлист">
+                                                   <div class="drop-item" id="wrapePlayliste">
+                                                       <div class="create-playlist" style="display: block;">
+                                                           <div class="input-create" >
+                                                               <input type="text" placeholder="Новый плейлист" >
                                                            </div>
                                                            <div class="btn-create">
-                                                               <button class="btn-primary btn btn-hover create-btn">Создать</button>
+                                                               <button class="btn-primary btn btn-hover create-btn" id="createPlaylist">Создать</button>
                                                            </div>
+
                                                        </div>
                                                    </div>
                                                </div>
