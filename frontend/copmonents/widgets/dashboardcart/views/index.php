@@ -109,6 +109,9 @@
 
 
                                <div class="wrap_buttons">
+                                   <p class="hidden" style="margin-top: 0;">Сумма ставки: <span id="betSum">0</span> <span> betcoins</span></p>
+                               </div>
+                               <div class="wrap_buttons">
 
 
 
@@ -219,7 +222,7 @@
                                    <button hidden   id="smartCartButtonModal"  class="btn btn-primary send-bets hidden" data-toggle="modal" data-target="#modal-success-bet">Сделать Ставку Модальное</button>
                                <?php } ?>
 
-                               <p>Баланс: <span id="currentBalance"><?=$total_balance; ?> </span> <span> betcoins</span></p>
+                               <p class="balanceText">Баланс: <span id="currentBalance"><?= $total_balance ?> </span> <span> betcoins</span></p>
                                <p class="hidden">Сумма ставки: <span id="betSum">0</span> <span> betcoins</span></p>
 
 

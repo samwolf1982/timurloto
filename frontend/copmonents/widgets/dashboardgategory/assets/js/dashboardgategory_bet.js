@@ -209,7 +209,7 @@ var DashboardCategory={
              '                                                    <div class="search-bets-block">\n' +
              '                                                        <div class="search-bets-block-inner">\n' +
              '                                                            <form action="#">\n' +
-             '                                                                <input type="text" placeholder="Поиск по событию">\n' +
+             '                                                                <input type="text" class="livesearcheform" name="livesearcheform" placeholder="Поиск по событию" >\n' +
              '                                                                <button id="search-bets" type="submit"><span class="icon-search"></span></button>\n' +
              '                                                            </form>\n' +
              '                                                        </div>\n' +

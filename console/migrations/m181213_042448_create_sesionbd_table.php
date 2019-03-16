@@ -12,6 +12,9 @@ class m181213_042448_create_sesionbd_table extends Migration
      */
     public function safeUp()
     {
+        if ($this->tableExists('session')){
+            $this->dropTable('session');
+        }
         $this->createTable('session', [
             'id' => $this->primaryKey(),
             'expire' => $this->integer(),
@@ -31,6 +34,18 @@ class m181213_042448_create_sesionbd_table extends Migration
         $this->dropTable('session');
     }
 
+    private function tableExists($tableName, $db = null)
+    {
+        if ($db)
+            $dbConnect = \Yii::$app->get($db);
+        else
+            $dbConnect = \Yii::$app->get('db');
+
+        if (!($dbConnect instanceof \yii\db\Connection))
+            throw new \yii\base\InvalidParamException;
+
+        return in_array($tableName, $dbConnect->schema->getTableNames());
+    }
 
 
 

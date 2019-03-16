@@ -289,7 +289,7 @@ class HtmlGenerator
                                                     <div class="search-bets-block">
                                                         <div class="search-bets-block-inner">
                                                             <form action="#">
-                                                                <input type="text" placeholder="Поиск по событию">
+                                                                <input type="text" placeholder="Поиск по событию 2">
                                                                 <button id="search-bets" type="submit"><span class="icon-search"></span></button>
                                                             </form>
                                                         </div>

@@ -348,3 +348,10 @@ and also iPads specifically.
 #wrapePlayliste .btn-create {
   margin-top: 5px;
 }
+.content-center-block + .content-center-block {
+  margin-top: 0;
+}
+.more-bets-info p.balanceText {
+  font-size: large;
+  color: white;
+}

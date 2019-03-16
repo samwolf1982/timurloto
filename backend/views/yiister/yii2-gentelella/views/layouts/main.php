@@ -103,6 +103,12 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                                                     ['label'=>'Популярные ставки',"url"=>['/popularsport/index']],
                                                     ['label'=>'Популярное',"url"=>['/popular/index']]
                                             ] ],
+
+                                            ["label" => "Турниры", "url" => "#", "items"=>[
+                                                ['label'=>'победители предыдущих недель',"url"=>['/lastweekwinner/index']],
+
+                                                ]
+                                            ] ,
 //                                            ["label" => "Транзакции", "url" => [Url::to(['/balance/transaction/index','sort'=>'-id'])]],
 //                                            ["label" => "DEV", "url" => ["/balance"]],
                                         ],

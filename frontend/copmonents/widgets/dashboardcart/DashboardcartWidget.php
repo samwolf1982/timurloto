@@ -32,7 +32,7 @@ class DashboardcartWidget extends Widget
 //        $b= Score::find()->where(['user_id' =>$uid])->one()->balance;
         $b= !empty($scope)?$scope->balance:0;
         //Score::find()->where(['user_id' =>$uid])->one()->balance;
-        $total_balance  = number_format($b, 0, '', ',');
+        $total_balance  = number_format($b, 0, ' ', ',');
         $cart = yii::$app->cart;
         $current_cart=$cart->getCart()->my();
         $currentCooeficientDrop= $current_cart->current_coefficient;

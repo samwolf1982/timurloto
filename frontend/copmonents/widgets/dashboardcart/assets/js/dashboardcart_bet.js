@@ -740,7 +740,7 @@ var SmartCart={
             beforeSend: function () {
                 $('#ajax-button-confirm').addClass('preloader');
                 // $('#ordinator').addClass('preloader');
-                $('#ordinator .coupon-tab-content').delay(350).fadeOut('slow',function () {
+                $('#ordinator .coupon-tab-content').delay(1).fadeOut(function () {
                     $('#ordinator .preloaderCart').show();
                 });
 
@@ -748,17 +748,20 @@ var SmartCart={
 
             },
             complete: function () {
-                $('#ajax-button-confirm').removeClass('preloader');
-                // $('#ordinator').removeClass('preloader');
-                $('#ordinator .preloaderCart').delay(350).fadeOut('slow',function () {
+                setTimeout(function () { // штучная задержка
+                    $('#ajax-button-confirm').removeClass('preloader');
+                    // $('#ordinator').removeClass('preloader');
+                    $('#ordinator .preloaderCart').delay(1).fadeOut(function () {
                         $('#ordinator .coupon-tab-content').show();
-                });
+                    });
+                },500);
+
 
             },
             success: function (json) {
                 console.log(json);
                 console.log(json.message);
-                showNotification(json.message);
+              showNotification(json.message);
                 if(json.status===0){ //error
                     // code : 'change'    //cмена кооеф
                     if(json.code==='change'){
@@ -766,6 +769,9 @@ var SmartCart={
                         console.log(elChanged);
                         $('#smb_'+json.id).remove();
                         elChanged.append('<button class="btn-xs btn-small btn-primary" id="smb_' + json.id + '" onclick="SmartCart.updateSingleBet(this);">Обновить ставку</button>')
+                    }else if('text'===json.code){
+                      //  $('#ajax-button-confirm').removeClass('preloader');
+                      // showNotification(json.message);
                     }
                 }else if(json.status===1){
 
@@ -776,25 +782,6 @@ var SmartCart={
 
                 }
 
-
-                if(0){
-                    if(json.message){
-                        showNotification(json.message);
-                    }else{   // showPOPap
-                        // не работает делаю тригер для невидимой кнопки LIfeHac(^-^)  #smartCartButtonModal
-                        // $('#modal-success-bet').modal({'show'});
-                        // $('#modal-success-bet').modal('show');
-                        //$('#modal-success-bet').modal();
-
-                        $('#smartCartButtonModal').trigger('click');
-
-                    }
-                }
-
-                if(json.status !== 'error'){
-
-                   // showNotification(json.message);
-                }
                 // $('#ajax-button-confirm').removeClass('preloader');
                 // $('#ordinator').removeClass('preloader');
 
@@ -820,10 +807,11 @@ var SmartCart={
 function showNotification(message) {
 
     $('.notification-calculate').html(message);
-    $('.notification-calculate').fadeIn(400);
-    setTimeout(function () {
-        $('.notification-calculate').fadeOut(400);
-    },2000);
+
+    $('.notification-calculate').fadeIn(1);
+    // setTimeout(function () {
+    //     $('.notification-calculate').fadeOut(1);
+    // },5000);
 }
 
 

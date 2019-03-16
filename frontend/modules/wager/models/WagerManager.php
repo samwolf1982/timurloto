@@ -295,6 +295,16 @@ if(0){
 //        var_dump($post['CartElement']); die();
         // криттические проверки, необычные действия
         if(empty($post) OR empty($post['CartElements'])   ) { $e='попытка дать ставку на пустую корзину'; $errorLocalLog[]=$e; yii::error([$e]); return false; };
+
+        $ountOpenElementStatus=false; // проверка на корзину с выкл чекбоксами
+        foreach ($post['CartElements'] as $cE) {
+            yii::error($cE['CartElement']['status']);
+            if($cE['CartElement']['status']!='false') { $ountOpenElementStatus=true; break;  };
+        }
+        yii::error(['statuse'=> $ountOpenElementStatus]);
+        if(!$ountOpenElementStatus)   { $e='попытка дать ставку на пустую корзину'; $errorLocalLog[]=$e; yii::error([$e]); return false; }
+
+
         if(empty($post['statusBet'])   ) { $e='Нету статуса'; $errorLocalLog[]=$e; yii::error([$e]); return false; };
 //        if(empty( $current_cart->playlist_id)){  $e='попытка дать ставку без плейлиста'; $errorLocalLog[]=$e; yii::error([$e]); return false; };
 //        if(empty( $current_cart->coefficient)) { $e='попытка дать ставку без коофициента в корзине'; $errorLocalLog[]=$e; yii::error([$e]); return false; };
@@ -568,6 +578,19 @@ if(0){
 
     static public function getWagersByUser($user_id,$play_list_limit=8,$page=0){
 
+    }
+
+    /**
+     * уборка елементов что не выбраны    ЕСЛИ ВАЛИДАТОР ПУСТИТ БУДЕТ ОШЫБКА  ПУСТОЙ  $res=['CartElements']
+     * @param $post
+     * @return array
+     */
+    static public function clearPost($post){
+        $res=[];
+        foreach ($post['CartElements'] as $cE) {
+            if($cE['CartElement']['status']!='false') { $res['CartElements'][]=$cE; };
+        }
+        return $res;
     }
 
 
