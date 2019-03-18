@@ -83,21 +83,40 @@ class DefaultController extends Controller
     {
 
 
-        if(!empty($_POST['id'])) $tourneyId=$_POST['id']; else $tourneyId=131927;
-        if(!empty($_POST['id'])) $tourneyId=$_POST['id']; else $tourneyId=12341; //14.03 смена
-        if(!empty($_POST['id'])) $tourneyId=$_POST['id']; else $tourneyId=12341; //14.03 смена
+//        if(!empty($_POST['id'])) $tourneyId=$_POST['id']; else $tourneyId=131927;
+//        if(!empty($_POST['id'])) $tourneyId=$_POST['id']; else $tourneyId=12341; //14.03 смена
+//        if(!empty($_POST['id'])) $tourneyId=$_POST['id']; else $tourneyId=12341; //14.03 смена
 
-        $tourneyId=12341;
-        $key="actionPopularsports_{$tourneyId}";
         $cache=\Yii::$app->cache;
-        $cache->flush();
-        $data = $cache->get($key);
-        if ($data === false) {
-            $dos=new ParserNodeDos();
-            $data= $dos->getTabsTourneyGames($tourneyId);
-            $cache->set($key, $data,$this->cacheLive);
+//        $tourneyId=12341;// footbal
+//        $tourneyId=12348;// footbal
+//        $key="actionPopularsports_{$tourneyId}";
+
+//        $cache->flush();
+//        $data = $cache->get($key);
+//        if ($data === false) {
+//            $dos=new ParserNodeDos();
+//            $data= $dos->getTabsTourneyGames($tourneyId);
+//            $cache->set($key, $data,$this->cacheLive);
+//        }
+
+        $data2=[];
+        $listSportId=[12341,12348];
+        foreach ($listSportId as $tourneyId) {
+            $key="actionPopularsports_{$tourneyId}";
+            $data = $cache->get($key);
+            if ($data === false) {
+                $dos=new ParserNodeDos();
+                $data= $dos->getTabsTourneyGames($tourneyId);
+                $cache->set($key, $data,$this->cacheLive);
+            }
+            $data2[]=$data;
+//            $dos=new ParserNodeDos();
+//            $data2[]= $dos->getTabsTourneyGames($tourneyId);
         }
-        return  [ 'meta'=>['type'=>'popularsports'] ,'data'=>$data];
+
+
+        return  [ 'meta'=>['type'=>'popularsports'], 'data'=>$data2];
 
 
 //        if(!empty($_POST['id'])) $tourneyId=$_POST['id'];

@@ -100,7 +100,18 @@ var DashboardCategory={
                 else {
                     $('.progresse_bare').hide();
                     if(json.meta.type==='popularsports'){
-                        DashboardCategory.renderTabsGames(el, json.data);
+                        // DashboardCategory.renderTabsGames(el, json.data);
+                        $.each(json.data, function( index, value ) {
+                            if(index===0)  DashboardCategory.renderTabsGames(el, value,'active'); //массив елементов
+                            else DashboardCategory.renderTabsGames(el, value,''); //массив елементов
+                        });
+
+                        $('#dashboard_center_block_tab_blocks .tab-block').hide();
+                        $('#dashboard_center_block_tab_blocks .tab-block:first').show();
+
+                         // DashboardCategory.renderTabsGames(el, json.data2[0]);
+                         // DashboardCategory.renderTabsGames(el, json.data2[1]);
+                        // DashboardCategory.renderTabsGames(el, json.data);
                     }else{
                         console.log('is no popularsports')
                     }
@@ -272,7 +283,7 @@ var DashboardCategory={
     },
 
 
-    renderTabsGames: function (el,data) {
+    renderTabsGames: function (el,data,activeStatus) {
 
       var tabeUp = $('#sp_'+data[0].sport_id);//tabs
       if(tabeUp.length===0){
@@ -283,7 +294,7 @@ var DashboardCategory={
               // sportName=data[0].data[0].attributesuser-locale-lng-name;
           }
           $('#sporttabsNavigation').append('<li>\n' +
-              '                <a href="#tab_'+data[0].sport_id+'" id="sp_'+data[0].sport_id+'" class="active tab-trigger" data-toggle="tabs"><span class="icon-football"></span> '+sportName+'</a>\n' +
+              '                <a href="#tab_'+data[0].sport_id+'" id="sp_'+data[0].sport_id+'" class="'+activeStatus+' tab-trigger" data-toggle="tabs"><span class="icon-football"></span> '+sportName+'</a>\n' +
               '            </li>');
       }
 
