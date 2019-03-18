@@ -18,7 +18,6 @@ AccountAsset::register($this);
 AccountIndexAsset::register($this);
 
 
-
 /**@var  AccessInfoAccount $accessInfoAccount **/
 $accessInfoAccount;
 ?>

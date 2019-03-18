@@ -224,14 +224,14 @@ use yii\widgets\LinkPager;
                                                             <div class="value_rate_c">  <?=$front_element->getSumAndPercent() ?> </div>
 
                                                             <?php if($isSubscriber || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_ORDINAR || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS  ){ ?>
+                                                                    <div class="value_rate_c">  <?=$front_element->getUserPercent() ?> </div>
+                                                            <?php }else{  // смотрим чужой акканут закрытую ставку или уже сыграла ?>
 
-                                                                <?php if($front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS){ ?>
+                                                            <?php if( $wager->status == Wager::STATUS_ENTERED || $wager->status == Wager::STATUS_NOT_ENTERD || $wager->status == Wager::STATUS_RETURN_BET){ ?>
                                                                     <div class="value_rate_c">  <?=$front_element->getUserPercent() ?> </div>
                                                                 <?php }else{ ?>
-                                                                    <div class="value_rate_c">  <?=$front_element->getUserPercent() ?> </div>
+                                                                    <div class="value_rate_c" id="FormantedNameAndPercent"><?=$front_element->getFormantedCloseText()?></div>
                                                                 <?php } ?>
-                                                            <?php }else{  // смотрим чужой акканут закрытую ставку ?>
-                                                                <div class="value_rate_c" id="FormantedNameAndPercent"><?=$front_element->getFormantedCloseText()?></div>
                                                             <?php  } ?>
 
 
@@ -254,15 +254,16 @@ use yii\widgets\LinkPager;
 
                                                             <!--                                                                                            может смотреть здесь-->
                                                             <?php if($isSubscriber || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_ORDINAR || $front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS  ){ ?>
-
-                                                                    <?php if($front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS){ ?>
-                                                                        <div class="value_rate_c" id="FormantedNameAndPercent"> <?=$front_element->getFormantedNameAndPercent()  ?></div>
-                                                                    <?php }else{ ?>
-                                                                        <div class="value_rate_c" id="FormantedNameAndPercent"> <?=$front_element->getFormantedNameAndPercent()  ?></div>
-                                                                    <?php } ?>
+                                                                    <div class="value_rate_c" id="FormantedNameAndPercent"> <?=$front_element->getFormantedNameAndPercent()  ?></div>
                                                             <?php }else{ // смотрим чужой акканут закрытую ставку
                                                                     // var_dump($front_element->getType()=='Экспресс'); die();  ?>
-                                                                <div class="value_rate_c" id="FormantedNameAndPercent"><?=$front_element->getType()?></div>
+
+                                                                <?php if( $wager->status == Wager::STATUS_ENTERED || $wager->status == Wager::STATUS_NOT_ENTERD || $wager->status == Wager::STATUS_RETURN_BET){ ?>
+                                                                        <div class="value_rate_c" id="FormantedNameAndPercent"> <?=$front_element->getFormantedNameAndPercent()  ?></div>
+                                                                    <?php }else{ ?>
+                                                                        <div class="value_rate_c" id="FormantedNameAndPercent"><?=$front_element->getType()?></div>
+                                                                        <?php } ?>
+
 
                                                             <?php  } ?>
 
