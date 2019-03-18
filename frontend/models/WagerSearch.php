@@ -45,6 +45,8 @@ class WagerSearch extends Wager
      */
     public function searchWithPagination($params, $pageSize=30)
     {
+
+        yii::error($params);
         $offsetPage=0;
         if (!empty($params->page)) {
             $offsetPage=$params->page;
@@ -94,7 +96,15 @@ class WagerSearch extends Wager
             'status' => $this->status,
         ]);
 
-//        $query->andFilterWhere(['like', 'comment', $this->comment]);
+
+
+
+        if (!empty($params['level']) && $params['level']=='pro' ) {  // for PRO
+            $query->innerJoin('balance_score','wager.user_id =balance_score.user_id');
+            $query->andFilterWhere(['>', 'balance_score.balance', ((2*ConstantsHelper::DEFAULT_USER_CALCULATE_BALANCE_FOR_LEVEL)-1) ]); // balance_score.balance > 180000
+        }
+
+
 
             if (!empty($params['play-period'])) {
                 $lasrPeriod=(integer)$params['play-period'];
@@ -130,7 +140,6 @@ class WagerSearch extends Wager
 
 
 
-yii::error($offsetElements);
 
         $query = Wager::find()->offset($offsetElements);
         // add conditions that should always apply here
@@ -155,6 +164,7 @@ yii::error($offsetElements);
             return $dataProvider;
         }
 
+
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
@@ -164,6 +174,13 @@ yii::error($offsetElements);
             'coef' => $this->coef,
             'status' => $this->status,
         ]);
+
+        $post_level=Yii::$app->request->post('level');
+        if (!empty($post_level) &&$post_level=='pro' ) {  // for PRO
+            $query->innerJoin('balance_score','wager.user_id =balance_score.user_id');
+            $query->andFilterWhere(['>', 'balance_score.balance', ((2*ConstantsHelper::DEFAULT_USER_CALCULATE_BALANCE_FOR_LEVEL)-1) ]); // balance_score.balance > 180000
+        }
+
 
 
 

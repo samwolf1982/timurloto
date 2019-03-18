@@ -23,10 +23,11 @@ use yii\helpers\Url;
         <div class="table-body">
             <div class="wins-slider">
 
-                <?php foreach ($models as $model) { ?>
+
+                <?php foreach ($models as $ii => $model) { ?>
                     <div class="wins-item">
                         <div class="wins-item-inner">
-                            <div class="date-wins">2.05-9.05</div>
+                            <div class="date-wins"><?=$model->getPeriod($ii)?> </div>
                             <div class="row-ava">
                                 <div class="rate-avatar-column">
                                     <div class="rate-avatar">
@@ -34,15 +35,18 @@ use yii\helpers\Url;
                                             <div class="circle"></div>
                                         </div>
                                         <div class="avatar-user">
-                                            <img src="/images/ava1.png" alt="">
+                                            <img src="/<?=$model->user->imageurl?>  " alt="<?=$model->user->username ?>">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="user-info">
-                                    <h4 class="name-r">john.baklan</h4>
+                                    <h4 class="name-r"><?=$model->user->username ?></h4>
                                     <div class="level-user level-user-label">
-                                        <div class="level-text">Уровень 11</div>
-                                        <span class="label-user label-user-pro">pro</span>
+                                        <div class="level-text">Уровень <?=$model->userinfo->getUserLevelNumber() ?></div>
+                                        <?php if( $model->userinfo->getisPro() ){ ?>
+                                            <span class="label-user label-user-pro">pro</span>
+                                        <?php } ?>
+
                                     </div>
                                 </div>
                             </div>

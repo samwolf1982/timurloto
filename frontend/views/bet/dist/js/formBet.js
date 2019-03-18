@@ -38,6 +38,12 @@ var LoadeNext={
             link = '/bet/nextload';
         }
         data[this.csrf_param] = this.csrf;
+        if(getAllUrlParams().level){
+            data['level'] = 'pro';
+        }
+
+
+
         jQuery.post(link, data,
             function (json) {
                 console.log(json);
@@ -164,3 +170,9 @@ function getAllUrlParams(url) {
 
     return obj;
 }
+
+
+
+
+
+

@@ -55,9 +55,6 @@ class BetController extends Controller
         $model->line='line';
         $model->save(false);
 
-
-     //   $model_two=new Turnirename();
-       // $model_two= Typegamename::find()->where(['id'=>$type_game[0]->id])->one();
         $id=0;
         $name='';
 

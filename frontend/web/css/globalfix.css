@@ -363,3 +363,7 @@ and also iPads specifically.
   flex: 0 0 75%;
   max-width: 75%;
 }
+.wl {
+  color: white;
+  font-size: large;
+}

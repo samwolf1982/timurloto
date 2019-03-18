@@ -21,11 +21,14 @@ use yii\helpers\Url;
                     </div>
                     <div class="right-head-tab">
                         <ul class="head-tabs">
-                            <li class="active">
-                                <a href="#">Все Прогнозы</a>
+
+
+                            <li class="<?= (!$proLevel?'active':'');?>">
+                                <a href="<?=Url::toRoute(['/bet'])?>">Все Прогнозы</a>
                             </li>
-                            <li >
-                                <a href="#">Только PRO</a>
+
+                            <li class="<?= ($proLevel?'active':'');?>" >
+                                <a href="<?=Url::toRoute(['/bet','level'=>'pro'])?>">Только PRO</a>
                             </li>
 
                         </ul>

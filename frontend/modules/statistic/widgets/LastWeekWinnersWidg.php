@@ -3,13 +3,14 @@ namespace app\modules\statistic\widgets;
 
 use app\modules\statistic\assets\WidgetAsset;
 use app\modules\statistic\models\WagerStatisticManager;
+use common\models\Lastweekwinners;
 use common\models\Playlist;
 use common\models\search\BalancestatisticsSearch;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii;
 
-class LastWeekWinners extends \yii\base\Widget
+class LastWeekWinnersWidg extends \yii\base\Widget
 {
 
     public $text = NULL;
@@ -45,16 +46,12 @@ class LastWeekWinners extends \yii\base\Widget
         $models =$this->lastWeekWinnersUsers();
 
 
-
-
-        yii::error([$this->user_id,Yii::$app->user->id]);
-
         return $this->render('lastweekwinners/index',[ 'text'=>$this->text,'models'=>$models] );
 
     }
 
     public function lastWeekWinnersUsers()
     {
-          return [];
+        return  Lastweekwinners::find(['status'=>0])->orderBy(['sort'=>SORT_DESC])->limit(20)->all();
     }
 }

@@ -156,9 +156,13 @@ class ConstantsHelper
         '15206',
         '15207',
         '20301',
+
+        // уже новые из таска
+        '13239'
         // '12439',
         // '12360',
     ];
+//240942915-500-13239-0
 
 //<div class="list-item">
 //<button class="trig-val" data-value="day">день</button>

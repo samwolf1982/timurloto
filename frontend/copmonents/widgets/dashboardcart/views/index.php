@@ -108,9 +108,14 @@
 
 
 
-                               <div class="wrap_buttons">
-                                   <p class="hidden" style="margin-top: 0;">Сумма ставки: <span id="betSum">0</span> <span> betcoins</span></p>
+
+                               <div class="wrap_buttons flex" style="width: 100%;">
+
+                                   <p class="hidden " style="margin-top: 0; text-align: right;      -ms-text-align: right; -moz-text-align: right; -o-text-align: right; -webkit-text-align: right;  ">Сумма ставки: <span class="wl" id="betSum">0</span> <span class="icon-betcoin-logo wl"></span></p>
+
                                </div>
+
+
                                <div class="wrap_buttons">
 
 
@@ -222,7 +227,7 @@
                                    <button hidden   id="smartCartButtonModal"  class="btn btn-primary send-bets hidden" data-toggle="modal" data-target="#modal-success-bet">Сделать Ставку Модальное</button>
                                <?php } ?>
 
-                               <p class="balanceText">Баланс: <span id="currentBalance"><?= $total_balance ?> </span> <span> betcoins</span></p>
+                               <p class="balanceText" style=" text-align: right;      -ms-text-align: right; -moz-text-align: right; -o-text-align: right; -webkit-text-align: right;  " >Баланс: <span id="currentBalance"><?= $total_balance ?> </span> <span class="icon-betcoin-logo wl"></span></p>
                                <p class="hidden">Сумма ставки: <span id="betSum">0</span> <span> betcoins</span></p>
 
 

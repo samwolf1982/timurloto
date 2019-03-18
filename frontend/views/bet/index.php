@@ -3,7 +3,7 @@
 use app\copmonents\widgets\addbet\AddbetWidget;
 use app\copmonents\widgets\showuser\ShowuserWidget;
 use app\modules\statistic\widgets\LastBets;
-use app\modules\statistic\widgets\LastWeekWinners;
+use app\modules\statistic\widgets\LastWeekWinnersWidg;
 use common\models\helpers\ConstantsHelper;
 use common\models\helpers\HtmlGenerator;
 use common\models\overiden\User;
@@ -611,7 +611,7 @@ BetAsset::register($this);
 
 
 <!--                    ПОБЕДИТЕЛИ ПРЕДЫДУЩИХ НЕДЕЛЬ-->
-                    <?= LastWeekWinners::widget(['text' =>'ПОБЕДИТЕЛИ ПРЕДЫДУЩИХ НЕДЕЛЬ' ]) ?>
+                    <?= LastWeekWinnersWidg::widget(['text' =>'ПОБЕДИТЕЛИ ПРЕДЫДУЩИХ НЕДЕЛЬ' ]) ?>
 
 
 

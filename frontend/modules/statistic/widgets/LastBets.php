@@ -57,7 +57,7 @@ class LastBets extends \yii\base\Widget
 
 
 
-        yii::error([$this->user_id,Yii::$app->user->id]);
+        //yii::error([$this->user_id,Yii::$app->user->id]);
         if(!$this->is_own){
             $isSubscriber = $moduleSubscribers->isSubscriber($this->user_id,Yii::$app->user->id);
         }else{
@@ -65,10 +65,18 @@ class LastBets extends \yii\base\Widget
         }
 
 
+        $proLevel=$this->lookPro();
       //  var_dump($wagersModels[0]); die();
 
         $video_models=[];
-        return $this->render('lastbets/index',['wagersModels'=>$wagersModels,'video_models'=>$video_models,'isSubscriber'=>$isSubscriber] );
+        return $this->render('lastbets/index',['wagersModels'=>$wagersModels,'video_models'=>$video_models,'isSubscriber'=>$isSubscriber,'proLevel'=>$proLevel] );
 
+    }
+
+    private function lookPro()
+    {
+        $r=$x=Yii::$app->request->get('level');
+        if(!empty($r) && $r=='pro') return true;
+        return false;
     }
 }
