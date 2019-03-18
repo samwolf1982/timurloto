@@ -54,6 +54,7 @@ class Lastweekwinners extends \yii\db\ActiveRecord
         return $this->hasOne(User::className(), ['id' => 'uid']);
     }
 
+
     /**
      *
      * возврать периода недели относительно текущей недели  2.05-9.05
