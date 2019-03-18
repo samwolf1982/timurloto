@@ -32,7 +32,7 @@ use yii\helpers\Url;
                                 <div class="rate-avatar-column">
                                     <div class="rate-avatar">
                                         <div class="circle-wrapper" data-ptc="<?=$model->userinfo->getUserLevelNumber() ?>">
-                                            <a href="<?=Url::toRoute(['/account','id'=>$model->user->id])?>">    <div class="circle"></div>  </a>
+                                            <a href="<?=Url::toRoute(['/account/view','id'=>$model->user->id])?>">    <div class="circle"></div>  </a>
                                         </div>
                                         <div class="avatar-user">
                                                <img src="/<?=$model->user->imageurl?>  " alt="<?=$model->user->username ?>">
@@ -40,7 +40,7 @@ use yii\helpers\Url;
                                     </div>
                                 </div>
                                 <div class="user-info">
-                                    <a href="<?=Url::toRoute(['/account','id'=>$model->user->id])?>"> <h4 class="name-r"><?=$model->user->username ?></h4> </a>
+                                    <a href="<?=Url::toRoute(['/account/view','id'=>$model->user->id])?>"> <h4 class="name-r"><?=$model->user->username ?></h4> </a>
                                     <div class="level-user level-user-label">
                                         <div class="level-text">Уровень <?=$model->userinfo->getUserLevelNumber() ?></div>
                                         <?php if( $model->userinfo->getisPro() ){ ?>
