@@ -367,3 +367,6 @@ and also iPads specifically.
   color: white;
   font-size: large;
 }
+.list-stats-tbl li .list-stats-tbl-val {
+  font-size: 38px;
+}
