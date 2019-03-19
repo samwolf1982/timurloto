@@ -7,6 +7,7 @@ use common\models\Bets;
 use common\models\Eventsnames;
 use common\models\services\EventLine;
 use common\models\services\UserInfo;
+use common\models\Wager;
 use common\models\wraps\EventsnamesExt;
 use common\models\wraps\SportcategoryExt;
 use common\models\wraps\TournamentsnamesExt;
@@ -497,7 +498,14 @@ class HtmlGenerator
                                                                      $res.=' <div class="value_rate_c" id="FormantedNameAndPercent"> '. $front_element->getFormantedNameAndPercent().'  </div>';
                                                                  }
                                                              }else{
-                                                               $res.=' <div class="value_rate_c" id="FormantedNameAndPercent">'.$front_element->getType().'</div>';
+
+                                                                          if( $wager->status == Wager::STATUS_ENTERED || $wager->status == Wager::STATUS_NOT_ENTERD || $wager->status == Wager::STATUS_RETURN_BET){
+                                                                              $res.=' <div class="value_rate_c" id="FormantedNameAndPercent"> '. $front_element->getFormantedNameAndPercent().'  </div>';
+                                                                          }else{
+                                                                              $res.=' <div class="value_rate_c" id="FormantedNameAndPercent">'.$front_element->getType().'</div>';
+                                                                          }
+
+
                                                               }
                                                         $res.=' </div>
                                                     </div>
@@ -557,15 +565,18 @@ class HtmlGenerator
                                                                  }
 
                                                              }else{
-                                                                 $res.='<div class="link-rate">
-                                                                      <a href="#" onclick="openModaleDinamik(this);" data-toggle="modaleAjax" data-target="'.Url::to(['/wager/default/viewdetail','id'=>$front_element->getId() ]).'">+  Показать Экспресс</a>
-                                                                </div>';
+                                                                 $res.='<div class="link-rate"> <a href="#" onclick="openModaleDinamik(this);" data-toggle="modaleAjax" data-target="'.Url::to(['/wager/default/viewdetail','id'=>$front_element->getId() ]).'">+  Показать Экспресс</a> </div>';
                                                              }
 
                                                          }else{
-                                                                   $res.='<div class="link-rate">
-                                                                  <a href="#" data-target='.Url::to(['/subscribers/default/peto','id'=>Yii::$app->user->id]).' onclick="openModaleMoreDetail(this);" data-toggle="modaleAjax">Узнать прогноз</a>
-                                                            </div>';
+
+                                                                   if( $wager->status == Wager::STATUS_ENTERED || $wager->status == Wager::STATUS_NOT_ENTERD || $wager->status == Wager::STATUS_RETURN_BET){
+                                                                       $res.='<div class="link-rate"> <a href="#" onclick="openModaleDinamik(this);" data-toggle="modaleAjax" data-target="'.Url::to(['/wager/default/viewdetail','id'=>$front_element->getId() ]).'">Узнать прогноз</a> </div>';
+                                                                   }else{
+                                                                       $res.='<div class="link-rate"> <a href="#" data-target='.Url::to(['/subscribers/default/peto','id'=>Yii::$app->user->id]).' onclick="openModaleMoreDetail(this);" data-toggle="modaleAjax">Узнать прогноз</a> </div>';
+
+                                                                   }
+
                                                           }
 
 

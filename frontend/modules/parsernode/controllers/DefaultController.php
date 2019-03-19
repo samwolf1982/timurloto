@@ -108,8 +108,10 @@ class DefaultController extends Controller
             if ($data === false) {
                 $dos=new ParserNodeDos();
                 $data= $dos->getTabsTourneyGames($tourneyId);
+
                 $cache->set($key, $data,$this->cacheLive);
             }
+            Yii::error($data);
             $data2[]=$data;
 //            $dos=new ParserNodeDos();
 //            $data2[]= $dos->getTabsTourneyGames($tourneyId);

@@ -314,7 +314,47 @@ $(document).ready(function () {
 });
 
 
+
 $(document).on('keyup', $(".livesearcheform"), function(el) {
+    var filtero =$(el.target).val().toLowerCase();
+    $('.collapse-open-bet-trigger').each(function (i,elem) {
+            // проход по детям
+      // dt=   $(elem).parent().next().find('.bets-val .mobile-name').html();
+        countChech=0;
+        $(elem).parent().next().find('.bets-val .mobile-name').each(function (j,chelem) {
+            dt=$(chelem).html();
+
+            if(dt.toLowerCase().indexOf(filtero) + 1) {
+                console.log('ok1 '+ dt)
+                $(chelem).parent().fadeIn();
+                countChech++;
+                $(elem).parent().parent().fadeIn();
+            }else{
+                $(chelem).parent().fadeOut();
+                 // $(elem).parent().parent().fadeOut();
+            }
+
+
+        });
+        console.log('countChech '+countChech);
+        if(countChech>0){ // если пусто тогда скрываем
+            $(elem).parent().parent().fadeIn();
+        }else{
+            $(elem).parent().parent().fadeOut();
+        }
+
+
+
+        // if($(elem).html().toLowerCase().indexOf(filtero) + 1) {
+        //     console.log('ok1 '+  $(elem).html())
+        //     $(elem).parent().parent().fadeIn();
+        // }else{
+        //     $(elem).parent().parent().fadeOut();
+        // }
+    });
+});
+// фильтр старый по заголовкам
+$(document).on('keyup2', $(".livesearcheform"), function(el) {
     var filtero =$(el.target).val().toLowerCase();
     $('.collapse-open-bet-trigger').each(function (i,elem) {
         if($(elem).html().toLowerCase().indexOf(filtero) + 1) {

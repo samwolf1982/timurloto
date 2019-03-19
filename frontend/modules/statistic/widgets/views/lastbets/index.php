@@ -2,6 +2,7 @@
 
 use common\models\DTO\WagerInfoFrontSingle;
 use common\models\helpers\ConstantsHelper;
+use common\models\Wager;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
@@ -102,6 +103,7 @@ use yii\helpers\Url;
 
 
 
+
                                                 <div class="rate-content">
                                                     <div class="rate-c__item rate-c__item__two">
                                                         <div class="rate-c">
@@ -116,7 +118,14 @@ use yii\helpers\Url;
                                                                     <div class="value_rate_c">  <?=$front_element->getUserPercent() ?> </div>
                                                                 <?php } ?>
                                                             <?php }else{  // смотрим чужой акканут закрытую ставку ?>
-                                                                <div class="value_rate_c" id="FormantedNameAndPercent"><?=$front_element->getFormantedCloseText()?></div>
+
+
+                                                                <?php if( $wager->status == Wager::STATUS_ENTERED || $wager->status == Wager::STATUS_NOT_ENTERD || $wager->status == Wager::STATUS_RETURN_BET){ ?>
+                                                                    <div class="value_rate_c">  <?=$front_element->getUserPercent() ?> </div>
+                                                                <?php }else{ ?>
+                                                                    <div class="value_rate_c" id="FormantedNameAndPercent"><?=$front_element->getFormantedCloseText()?></div>
+                                                                <?php } ?>
+
                                                             <?php  } ?>
 
 
@@ -128,10 +137,16 @@ use yii\helpers\Url;
                                                                 <?php if($front_element->getTypeExtend()== ConstantsHelper::BET_TYPE_FREE_EXPRESS){ ?>
                                                                     <div class="value_rate_c" id="FormantedNameAndPercent">Экспресс</div>
                                                                 <?php }else{ ?>
+
                                                                     <div class="value_rate_c" id="FormantedNameAndPercent"> <?=$front_element->getFormantedNameAndPercent()  ?></div>
                                                                 <?php } ?>
                                                             <?php }else{  // смотрим чужой акканут закрытую ставку ?>
-                                                                <div class="value_rate_c" id="FormantedNameAndPercent"><?=$front_element->getType()?></div>
+                                                            <?php if( $wager->status == Wager::STATUS_ENTERED || $wager->status == Wager::STATUS_NOT_ENTERD || $wager->status == Wager::STATUS_RETURN_BET){ ?>
+                                                                    <div class="value_rate_c" id="FormantedNameAndPercent"> <?=$front_element->getFormantedNameAndPercent()  ?></div>
+                                                            <?php }else{ ?>
+                                                                    <div class="value_rate_c" id="FormantedNameAndPercent"><?=$front_element->getType()?></div>
+                                                                <?php } ?>
+
                                                             <?php  } ?>
                                                         </div>
                                                     </div>
@@ -195,10 +210,17 @@ use yii\helpers\Url;
                                                             <?php } ?>
 
                                                         <?php }else{  ?>
-                                                            <div class="link-rate">
-                                                                <a href="#" onclick="openModaleMoreDetail(this);" data-target="<?=Url::to(['/subscribers/default/peto','id'=>Yii::$app->user->id])?>" data-toggle="modaleAjax">Узнать прогноз</a>
 
-                                                            </div>
+                                                        <?php if( $wager->status == Wager::STATUS_ENTERED || $wager->status == Wager::STATUS_NOT_ENTERD || $wager->status == Wager::STATUS_RETURN_BET){ ?>
+                                                                <div class="link-rate">
+                                                                    <a href="#" onclick="openModaleMoreDetail(this);" data-target="<?=Url::to(['/wager/default/viewdetail','id'=>$front_element->getId() ])?>" data-toggle="modaleAjax">Узнать прогноз</a>
+                                                                </div>
+                                                        <?php }else{  ?>
+                                                                <div class="link-rate">
+                                                                    <a href="#" onclick="openModaleMoreDetail(this);" data-target="<?=Url::to(['/subscribers/default/peto','id'=>Yii::$app->user->id])?>" data-toggle="modaleAjax">Узнать прогноз</a>
+                                                                </div>
+                                                            <?php } ?>
+
                                                         <?php  } ?>
 
                                                     </div>
