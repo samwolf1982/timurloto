@@ -53,6 +53,8 @@ class ConstantsHelper
     // максимальное количество ставко на исход
         const MAX_BET_TODO=2;
 
+        // все что выше уже про щас 8 уже про
+        const LEVEL_PRO=7;
     // пока что не используются
 //        const BET_TYPE_OPEN_EXPRESS=5;  // cтавка уже кому тo открыта, раньше была или PRIVAT    или FREE
 //        const BET_TYPE_OPEN_ORDINAR=6;// cтавка уже кому тo открыта, раньше была или PRIVAT      или FREE

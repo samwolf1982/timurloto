@@ -192,7 +192,7 @@ class UserInfo
      * @return int
      */
     private function setPro(){
-        if($this->userLevel >8 ) return 1;
+        if($this->userLevel > (ConstantsHelper::LEVEL_PRO ) ) return 1;
         return 0;
 
     }
