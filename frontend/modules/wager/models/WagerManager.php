@@ -293,8 +293,16 @@ if(0){
        // yii::error($post);
      //   $post['playlist_id']=1;
 //        var_dump($post['CartElement']); die();
+
+        // проверка на дубли
+
+
         // криттические проверки, необычные действия
         if(empty($post) OR empty($post['CartElements'])   ) { $e='попытка дать ставку на пустую корзину'; $errorLocalLog[]=$e; yii::error([$e]); return false; };
+
+
+
+
 
         $ountOpenElementStatus=false; // проверка на корзину с выкл чекбоксами
         foreach ($post['CartElements'] as $cE) {
@@ -338,6 +346,21 @@ if(0){
         //todo1
         // проверка на соответсвие коофициента к списку процентов currentCooeficientDrop
 
+
+        $listIdBets=[];
+        foreach ($post['CartElements'] as $cE) {
+
+            if($cE['CartElement']['status']!='false') $listIdBets[]=$cE['CartElement']['group_item_id'];
+
+           // $totalSumCoeficient+=$cE['CartElement']['coef']; // возможно нужно умножать проверить
+        }
+
+
+
+        if(YII_ENV == 'prod'){
+            $isRepeatBet=   WagerManager::checkManyBets($user_id,$listIdBets);
+            if($isRepeatBet)  { $e='На каждое событие можно ставить не более '.ConstantsHelper::MAX_BET_TODO.' раз'; $errorLocalLog[]=$e; yii::error([$e]); return false; };
+        }
 
 
         // проход по ставкам и если еще доступные тогда +
@@ -468,6 +491,49 @@ if(0){
         return 'res malkebet';
     }
 
+
+
+    public  static  function  checkManyBets($uid,$bet_id_list){
+
+       Yii::error([$uid,$bet_id_list]);
+       $sql="SELECT id  FROM `wager` WHERE `user_id`={$uid} and `status` = 0 ;";
+       $wageroList=[];
+        foreach (Yii::$app->db->createCommand($sql)->queryAll() as $wagero ) {
+            $wageroList[]= $wagero['id'];
+        };
+
+        $wageroList=implode(',',$wageroList );
+        if(!empty($wageroList)){ // when no wagers
+
+            $sql="SELECT wagerelements.event_id FROM wagerelements WHERE wager_id in ({$wageroList});";
+            $parseIdList=[];
+            foreach (Yii::$app->db->createCommand($sql)->queryAll() as $wagero ) {
+                $idd=explode('-',$wagero['event_id']);
+                $parseIdList[]= $idd[0];
+            };
+                foreach ($parseIdList as $idElId) {
+                       $idd=explode('-',$idElId);
+                }
+
+
+                $resDiff=(array_diff(array_count_values($parseIdList),$bet_id_list));
+//            yii::error((array_diff(array_count_values($parseIdList),$bet_id_list)));
+
+            foreach ($bet_id_list as $item) {
+                       if(isset($resDiff[$item])){
+                           $countEl=  $resDiff[$item];
+                           if($countEl>=ConstantsHelper::MAX_BET_TODO) return true;   // есть попадание количесвта ид
+                       }
+
+                }
+        }
+        yii::error($wageroList);
+        yii::error($parseIdList);
+
+
+        return false; // одинаковых нету
+
+    }
 
     /**
      * значение для одиночной ставки по ид из фронта

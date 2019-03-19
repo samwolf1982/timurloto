@@ -49,6 +49,10 @@ class ConstantsHelper
         const BET_TYPE_PRIVATE_EXPRESS=3; //
         const BET_TYPE_PRIVATE_ORDINAR=4; //
 
+
+    // максимальное количество ставко на исход
+        const MAX_BET_TODO=2;
+
     // пока что не используются
 //        const BET_TYPE_OPEN_EXPRESS=5;  // cтавка уже кому тo открыта, раньше была или PRIVAT    или FREE
 //        const BET_TYPE_OPEN_ORDINAR=6;// cтавка уже кому тo открыта, раньше была или PRIVAT      или FREE
