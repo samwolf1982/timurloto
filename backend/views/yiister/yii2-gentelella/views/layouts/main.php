@@ -106,7 +106,7 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
 
                                             ["label" => "Матчи", "url" => "#", "items"=>[
                                                 ['label'=>'ПОПУЛЯРНЫЕ СТАВКИ НА СЕГОДНЯ (низ)',"url"=>['/populartoday/index']],
-                                                ['label'=>'ПОПУЛЯРНОЕ (лево)',"url"=>['/popular/index']],
+                                                ['label'=>'ПОПУЛЯРНОЕ (лево)',"url"=>['/popularwiget/index']],
                                                 ['label'=>'ТОП МАТЧИ (верх)',"url"=>['/topmatch/index']],
 
                                             ]

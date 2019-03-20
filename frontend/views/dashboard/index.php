@@ -998,8 +998,8 @@ use frontend\assets\DashboardAsset;
                     <div class="choose-bet-wrapper">
                         <div class="choose-bet-inner">
                             <div class="success-bets">
-                                <h4>Твой прогноз принят</h4>
-                                <p>Поздравляем, теперь вы лучше Виктора Файзулина. <br> Ведь вы в игре!</p>
+                                <h4>Ваш прогноз принят</h4>
+                                <p class="hidden">Поздравляем, теперь вы лучше Виктора Файзулина. <br> Ведь вы в игре!</p>
                                 <div class="shared-bet-social">
                                     <h5>Поделитесь прогнозом</h5>
                                     <ul class="social">

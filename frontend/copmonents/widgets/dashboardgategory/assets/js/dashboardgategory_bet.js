@@ -19,17 +19,22 @@ $(document).ready(function () {
 
         DashboardCategory.sendData(this,$(this).data(),'/provider/tourneygame');
         DashboardCategory.sendData(this,$(this).data(),'/provider/updatetabstourneygame');
-
-      //   DashboardCategoryGroup.sendData(this,$(this).data());
-
-       // $(this).parent().toggleClass('active_coll').find('.sub-collapse').stop().slideToggle(400);
          e.preventDefault();
         return false;
     });
 
 
+    // left widget
+    $(document).on("click", ".top-link-block", function(e) {
+        // DashboardCategory.sendData(this,$(this).data(),'/provider/tourneygame');
+        DashboardCategory.sendData(this,$(this).data(),'/provider/updatetabstourneygame');
+        e.preventDefault();
+        return false;
+    });
+
+
     // 4
-    $(document).on("click", ".turnire_fin , .total.show-all-bets.do_open_line,  .info-bet.do_open_line ", function(e) {
+    $(document).on("click", ".turnire_fin , .total.show-all-bets.do_open_line,  .info-bet.do_open_line  ", function(e) {
         console.log('turnire_fin')
         DashboardCategory.sendData(this,$(this).data(),'/provider/events');
         // DashboardCategoryFinlink.sendData(this,$(this).data());
@@ -322,38 +327,48 @@ var DashboardCategory={
         colapsetabInner=$('#tab-collapse-tournire_'+data[0].id);// тело таблиц
         colapsetabInner.children('.tab-collapse-content-inner').html('');
 
+
+        listmg=[];
         $.each(data[0].data, function( index, value ) {
-            mainGameId=value.attributes['main-game-id'];
-            fullNamePlayers=value.attributes['team-1-user-locale-lng-name']+ ' - '+value.attributes['team-2-user-locale-lng-name'];
-            timeStartMatch=timeConverter(value.attributes['start'])
+            mainGameId = value.attributes['main-game-id'];
+            if (listmg.indexOf(mainGameId) === -1) {  // fix for period games
+            //     mainGameId=value;
+            console.log(mainGameId);
+            listmg.push(mainGameId);
+            fullNamePlayers = value.attributes['team-1-user-locale-lng-name'] + ' - ' + value.attributes['team-2-user-locale-lng-name'];
+            timeStartMatch = timeConverter(value.attributes['start'])
             colapsetabInner.children('.tab-collapse-content-inner').append('<div class="row-collapse">\n' +
-                '                            <div class="row-collapse-inner" data-parents="'+mainGameId+'">\n' +
+                '                            <div class="row-collapse-inner" data-parents="' + mainGameId + '">\n' +
                 '                                <div class="icon-bet"><span class="icon-football"></span></div>\n' +
-                '                                <a class="info-bet do_open_line" data-id="'+mainGameId+'"  href="bet-dashboard-open.html">\n' +
-                '                                    <div class="title-bet">'+timeStartMatch+'</div>\n' +
-                '                                    <div class="value-bet">'+fullNamePlayers+'</div>\n' +
-                '                                </a>'+
+                '                                <a class="info-bet do_open_line" data-id="' + mainGameId + '"  href="bet-dashboard-open.html">\n' +
+                '                                    <div class="title-bet">' + timeStartMatch + '</div>\n' +
+                '                                    <div class="value-bet">' + fullNamePlayers + '</div>\n' +
+                '                                </a>' +
                 '                            </div>\n' +
                 '                        </div>');
 
-          colapseLine=colapsetabInner.find('.row-collapse-inner[data-parents="'+mainGameId+'"]');
-                $.each(value.events['12341'], function( indexEv, valueEv ) {  //value.events['12341'] из маркета одна или вторая команда
-                    // colapseLine.append('zzzz '+indexEv)
-                    // colapseLine.append(valueEv)
-                    eventNameLoop=valueEv.attributes['event-name'];
-                    eventCooef=valueEv.attributes['odd'];
-                    mName=valueEv.attributes['market-name'];
-                    eventId=valueEv.id;
-                    console.log(valueEv);
-                    spid=valueEv.id;
-                    colapseLine.append('<div class="team">\n' +
-                        '                                <button class="bet-parent-val" data-id="'+eventId+'" data-parent="'+mainGameId+'"  data-text1="'+fullNamePlayers+'" data-text2="'+eventNameLoop+'" data-text3="'+mName+'"  data-coof="'+eventCooef+'" >\n' +
-                        '                                    <div class="title-bet">'+eventNameLoop+'</div>\n' +
-                        '                                    <div class="value-bet">'+eventCooef+'</div>\n' +
-                        '                                </button></div> ');
-                });
-            colapseLine.append('<a href="bet-dashboard-open.html" class="total show-all-bets do_open_line" data-id="'+mainGameId+'">0</a>');
+            colapseLine = colapsetabInner.find('.row-collapse-inner[data-parents="' + mainGameId + '"]');
+            $.each(value.events['12341'], function (indexEv, valueEv) {  //value.events['12341'] из маркета одна или вторая команда
+                // colapseLine.append('zzzz '+indexEv)
+                // colapseLine.append(valueEv)
+                eventNameLoop = valueEv.attributes['event-name'];
+                eventCooef = valueEv.attributes['odd'];
+                mName = valueEv.attributes['market-name'];
+                eventId = valueEv.id;
+                // console.log(valueEv);
+                spid = valueEv.id;
+                colapseLine.append('<div class="team">\n' +
+                    '                                <button class="bet-parent-val" data-id="' + eventId + '" data-parent="' + mainGameId + '"  data-text1="' + fullNamePlayers + '" data-text2="' + eventNameLoop + '" data-text3="' + mName + '"  data-coof="' + eventCooef + '" >\n' +
+                    '                                    <div class="title-bet">' + eventNameLoop + '</div>\n' +
+                    '                                    <div class="value-bet">' + eventCooef + '</div>\n' +
+                    '                                </button></div> ');
+            });
+            // todo count here
+            colapseLine.append('<a href="bet-dashboard-open.html" class="total show-all-bets do_open_line" data-id="' + mainGameId + '">'+' '+'</a>');
+        }
         });
+        console.log(listmg);
+
 
         // $('#child_sub_colapse_'+$(el).data('id')).html("");
         // $.each(data, function( k, e ) {    // e.id e.name e.count

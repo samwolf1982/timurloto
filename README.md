@@ -103,6 +103,14 @@ C:/OSPanel/domains/atimur/loto/lotoproduction/vendor/yiisoft/yii2-authclient/src
 
 
 
+
+
+devStatus для правки корзины
+frontend/copmonents/widgets/dashboardcart/views/index.php
+
+
+
+
 <p align="center">
     <a href="https://github.com/yiisoft" target="_blank">
         <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">

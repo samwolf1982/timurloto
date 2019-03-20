@@ -1,5 +1,6 @@
 var tottal_coeficient=1;
 
+
 $(document).ready(function () {
     SmartCart.init();
     SmartCart.getFromCart(); // update cart
@@ -7,7 +8,7 @@ $(document).ready(function () {
 
 
 });
-
+// console.log({'devStatus': devStatus});
 statusBet=localStorage.getItem('statusBet'); // public  private
 if(statusBet === null) {statusBet='public'; localStorage.setItem('statusBet',statusBet);}
 var SmartCart={
@@ -17,10 +18,10 @@ var SmartCart={
     sumBet:0,
     maybeWin:0,
     max_coeficientDrop:10,
-    statusBet:statusBet, // public  private
+    statusBet:devStatus, // public  private
     csrf:null,
     csrf_param:null,
-    devStatus:true, // для разработки+ чистка корзыни и попап
+    devStatus:false, // для разработки+ чистка корзыни и попап
     init:function () {
         this.csrf = jQuery('meta[name=csrf-token]').attr("content");
         this.csrf_param = jQuery('meta[name=csrf-param]').attr("content");

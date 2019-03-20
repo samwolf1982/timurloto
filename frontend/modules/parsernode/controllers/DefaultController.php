@@ -2,6 +2,7 @@
 
 namespace app\modules\parsernode\controllers;
 
+use common\models\Centerturnire;
 use common\models\ParserNodeDos;
 use Yii;
 use yii\web\Controller;
@@ -75,64 +76,35 @@ class DefaultController extends Controller
 
 
     /**
-     * popular game center front
+     * popular game center front даные из админки  http://admin.localhost35/populartoday/index
      * step 5   http://localhost35/provider/tourneygame?tourneyId=131927
      * @return array
      */
     public function actionPopularsports($tourneyId=0)
     {
-
-
-//        if(!empty($_POST['id'])) $tourneyId=$_POST['id']; else $tourneyId=131927;
-//        if(!empty($_POST['id'])) $tourneyId=$_POST['id']; else $tourneyId=12341; //14.03 смена
-//        if(!empty($_POST['id'])) $tourneyId=$_POST['id']; else $tourneyId=12341; //14.03 смена
-
         $cache=\Yii::$app->cache;
-//        $tourneyId=12341;// footbal
-//        $tourneyId=12348;// footbal
-//        $key="actionPopularsports_{$tourneyId}";
-
-//        $cache->flush();
-//        $data = $cache->get($key);
-//        if ($data === false) {
-//            $dos=new ParserNodeDos();
-//            $data= $dos->getTabsTourneyGames($tourneyId);
-//            $cache->set($key, $data,$this->cacheLive);
-//        }
-
         $data2=[];
-        $listSportId=[12341,12348];
-        foreach ($listSportId as $tourneyId) {
-            $key="actionPopularsports_{$tourneyId}";
+//        $listSportId=[12341,12348];
+        foreach (Centerturnire::find()->select(['sportid'])->where(['status'=>0])->orderBy(['sort'=>SORT_ASC])->all() as $tourneyM) {
+            $key="actionPopularsports_{$tourneyM->sportid}";
             $data = $cache->get($key);
             if ($data === false) {
                 $dos=new ParserNodeDos();
-                $data= $dos->getTabsTourneyGames($tourneyId);
+                $data= $dos->getTabsTourneyGames($tourneyM->sportid);
 
-                $cache->set($key, $data,$this->cacheLive);
+                if(!empty($data)) $cache->set($key, $data,$this->cacheLive);
+
+
             }
-            Yii::error($data);
-            $data2[]=$data;
-//            $dos=new ParserNodeDos();
-//            $data2[]= $dos->getTabsTourneyGames($tourneyId);
+            if(!empty($data)){
+                $data2[]=$data;
+            }
+
         }
 
 
         return  [ 'meta'=>['type'=>'popularsports'], 'data'=>$data2];
 
-
-//        if(!empty($_POST['id'])) $tourneyId=$_POST['id'];
-//        $tourneyId=131927;
-//        $key="actionPopularsports_{$tourneyId}";
-//        $cache=\Yii::$app->cache;
-//        //   $cache->flush();
-//        $data = $cache->get($key);
-//        if ($data === false) {
-//            $dos=new ParserNodeDos();
-//            $data= $dos->getTourneyGames($tourneyId);
-//            $cache->set($key, $data,$this->cacheLive);
-//        }
-//        return  [ 'meta'=>['type'=>'games'] ,'data'=>$data];
     }
 
 

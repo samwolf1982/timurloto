@@ -237,8 +237,8 @@ use yii\helpers\Url;
 
                         <div class="column-12 rate-column all-column" id="wrape_next_bet">
                             <a href="#" class="all-rate-btn" data-offset="<?=ConstantsHelper::COUNT_LOAD_NEXT_IN_BET?>" >
-                                <i class="show-text">+  показать все прогнозы на сегодня</i>
-                                <i class="hide-text">-  показать все прогнозы на сегодня</i>
+                                <i class="show-text">+  Все последние прогнозы</i>
+                                <i class="hide-text">-  Все последние прогнозы</i>
                             </a>
                         </div>
                     </div>

@@ -100,6 +100,53 @@ class ParserNodeDos extends \yii\base\BaseObject
     public function getEventsByGameId($gameId)
     {
 
+//        Yii::error($this->initiator->getEventsTypeUrl($gameId));
+        $data= $this->parse($this->initiator->getEventsTypeUrl($gameId));
+        $res=[];
+        //  var_dump($this->initiator->lastUrl); die();
+        //  var_dump($data); die();
+
+        $eventsCollector=[];
+        if (empty($data->included)) { yii::error("getEventsByGameId    gameId :    {$gameId}");  return ['errors'=>['some error see log file']];  }
+        foreach ($data->included as $datum) {
+            if($datum->type=='competition'){
+
+            }else if($datum->type=='game'){
+
+            }else if($datum->type=='event'){
+                $eventsCollector[$datum->attributes->{'market-id'}][]=$datum;
+            }else{
+                var_dump($datum->type);
+                die('not  $datum->type==\'competition\' or not  $datum->type==\'game\' or not $datum->type==\'event\' ' );
+            }
+
+        }
+
+        foreach ($eventsCollector as $item) {
+            foreach ($item as $event) {
+//                var_dump($event);
+//                die();
+                if(in_array($event->attributes->{'market-id'},ConstantsHelper::AVELABLE_MAKRETS)) {
+                    $res[] = ['id' => $event->id, 'marketId' => $event->attributes->{'market-id'}, 'marketName' => $event->attributes->{'market-name'}, 'eventName' => $event->attributes->{'event-name'}, 'cf' => $event->attributes->{'odd'}];
+                }
+
+
+            }
+
+
+        }
+
+
+        $resulte['data']=$res;
+        $resulte['attr']=$data->data;
+        return $resulte;
+        return $res;
+
+    }
+    public function getEventsByGameId_OLD_WORK($gameId)
+    {
+
+        Yii::error($this->initiator->getEventsTypeUrl($gameId));
         $data= $this->parse($this->initiator->getEventsTypeUrl($gameId));
         $res=[];
          //  var_dump($this->initiator->lastUrl); die();
@@ -143,9 +190,120 @@ class ParserNodeDos extends \yii\base\BaseObject
 
     }
 
+
+
+
+
+
     public function getTabsTourneyGames($tourneyId)
     {
+
+//        yii::error($this->initiator->getTourneyGamesTypeUrl($tourneyId));
+
+        $data= $this->parse($this->initiator->getTourneyGamesTypeUrl($tourneyId)); //http://157.230.134.85:8081/lineSport/131927/ru/j_zaxscdvfq1w2e3r4
+
+
+        if(empty($data)) {  yii::error(['getTabsTourneyGames is EMPTY ', 'url'=>$this->initiator->getTourneyGamesTypeUrl($tourneyId)]);   return []; }
+        $res=[];
+        $sportId=$data->data[0]->relationships->sport->data->id;
+        $gameCollector=[];
+
+
+        $completition=[];
+        $gameList=[];
+
+        $gameList2=[]; // class
+        $completition2=[]; // class
+
+        $eventList=[];
+        $eventList2=[];
+
+
+        foreach ($data->included as $datum) {
+            if($datum->type=='competition'){
+                $completition[$datum->id]=['name'=>$datum->attributes->name,'elements'=>[]];
+                $completition2[$datum->id]=$datum;
+//                var_dump($datum); die();
+            }else if($datum->type=='game'){
+                $gameList[]=$datum;
+                $gameList2[]= new GameS3($data->included,$datum);
+                $gameCollector[]=$datum->attributes;
+            }else if($datum->type=='event'){
+                $eventList[$datum->id]=$datum;
+                $eventList2[$datum->id]=$datum;
+            }else{
+                var_dump($datum->type);
+                die('not  $datum->type==\'competition\' or not  $datum->type==\'game\' or not $datum->type==\'event\' ' );
+            }
+            // $res[]=['id'=>$datum->{'league-id'},'name'=>$datum->{'league-name'},'count'=>$datum->{'games-count'}];
+            //  echo      sprintf('id) %s count) %s name) %s',$datum->id,$datum->attributes->{'count'},$datum->attributes->{'user-locale-lng-name'}).PHP_EOL;
+//            var_dump($datum->id);
+//            var_dump($datum->attributes->{'count'});
+//            var_export($datum->attributes->{'user-locale-lng-name'});
+        }
+
+
+
+//        foreach ($gameCollector as $item) {
+//            $res[]=['id'=>$item->{'main-game-id'},'name'=>($item->{'team-1-user-locale-lng-name'}.' - '.$item->{'team-2-user-locale-lng-name'} ),'count'=>$item->{'event-count'}];
+//        }
+
+        yii::error(['countecc'=>count($completition2)]);
+        yii::error(['counteccG'=>count($gameList2)]);
+        yii::error(['countecE'=>count($eventList2)]);
+        foreach ( $gameList2 as $item) {
+//            yii::error($item->getId()); //241528127
+//            break;
+        }
+
+//        var_dump($gameList2); die();
+        $dataResult=[];
+        $completitionresult=[];
+        foreach ( $completition2 as $item) {
+//            var_dump($item); die();
+            $completitionresult[]=new CompetitionS3($gameList2,$item);
+        }
+
+
+      //  echo count($completitionresult).PHP_EOL;
+        /** @var CompetitionS3  $compe */
+        foreach ($completitionresult as $compe) {
+             //$sportName=$compe->getGames()[0]->attributes->{'user-locale-lng-name'};
+             $tmpCompe=['data'=>[],'id'=>$compe->getId(),'name'=>$compe->getName(),'sport_id'=>$sportId,'sport_name'=>'Временное название спорта'];
+            /** @var  GameS3 $game */
+            foreach ($compe->getGames() as $game) {
+//                $tmpGame=['data'=>[],'id'=>$game->getId()];
+//            //    echo  sprintf('--%s : %s : %s', count($game->getEvents()),$game->getCurentObj()->attributes->{'league-user-locale-lng-name'},$game->getCurentObj()->attributes->{'team-1-user-locale-lng-name'},$game->getCurentObj()->attributes->{'team-2-user-locale-lng-name'} )   .PHP_EOL;
+//                foreach ($game->getEvents() as $event) {
+////                    $tmpGame['data'][]=$event->
+//                        //      echo  sprintf('---%s : %s : %s',  $event->attributes->{'market-name'}, $event->attributes->{'event-name'}, $event->attributes->{'odd'} )    .PHP_EOL;
+//                }
+                $countEvent=0;
+                foreach ($game->getEventsGroups() as $eventsGroup) {
+                    $countEvent+=  count($eventsGroup);
+//                    yii::error(['counte'=>$eventsGroup]);
+                }
+//                yii::error(['counte'=>count( $game->getEvents())]);
+                $tmpCompe['data'][]=['attributes'=>$game->getAttr(),'events'=>$game->getEventsGroups(),'count'=>$countEvent];
+            }
+
+           // if(!empty($tmpCompe['data']))    $dataResult[]=$tmpCompe;
+               $dataResult[]=$tmpCompe;
+
+
+        }
+
+       $res=$dataResult;
+
+        return $res;
+
+    }
+
+    public function getTabsTourneyGames_OLD_WORK($tourneyId)
+    {
+
         yii::error($this->initiator->getTourneyGamesTypeUrl($tourneyId));
+
         $data= $this->parse($this->initiator->getTourneyGamesTypeUrl($tourneyId)); //http://157.230.134.85:8081/lineSport/131927/ru/j_zaxscdvfq1w2e3r4
         $res=[];
         $sportId=$data->data[0]->relationships->sport->data->id;
@@ -187,12 +345,13 @@ class ParserNodeDos extends \yii\base\BaseObject
 
 
 
-        foreach ($gameCollector as $item) {
-            $res[]=['id'=>$item->{'main-game-id'},'name'=>($item->{'team-1-user-locale-lng-name'}.' - '.$item->{'team-2-user-locale-lng-name'} ),'count'=>$item->{'event-count'}];
-        }
+//        foreach ($gameCollector as $item) {
+//            $res[]=['id'=>$item->{'main-game-id'},'name'=>($item->{'team-1-user-locale-lng-name'}.' - '.$item->{'team-2-user-locale-lng-name'} ),'count'=>$item->{'event-count'}];
+//        }
 
         foreach ( $gameList2 as $item) {
-
+            yii::error($item);
+            break;
         }
 
 //        var_dump($gameList2); die();
@@ -204,11 +363,11 @@ class ParserNodeDos extends \yii\base\BaseObject
         }
 
 
-      //  echo count($completitionresult).PHP_EOL;
+        //  echo count($completitionresult).PHP_EOL;
         /** @var CompetitionS3  $compe */
         foreach ($completitionresult as $compe) {
-             //$sportName=$compe->getGames()[0]->attributes->{'user-locale-lng-name'};
-             $tmpCompe=['data'=>[],'id'=>$compe->getId(),'name'=>$compe->getName(),'sport_id'=>$sportId,'sport_name'=>'Временное название спорта'];
+            //$sportName=$compe->getGames()[0]->attributes->{'user-locale-lng-name'};
+            $tmpCompe=['data'=>[],'id'=>$compe->getId(),'name'=>$compe->getName(),'sport_id'=>$sportId,'sport_name'=>'Временное название спорта'];
             /** @var  GameS3 $game */
             foreach ($compe->getGames() as $game) {
 //                $tmpGame=['data'=>[],'id'=>$game->getId()];
@@ -220,13 +379,13 @@ class ParserNodeDos extends \yii\base\BaseObject
                 $tmpCompe['data'][]=['attributes'=>$game->getAttr(),'events'=>$game->getEventsGroups()];
             }
 
-           // if(!empty($tmpCompe['data']))    $dataResult[]=$tmpCompe;
-               $dataResult[]=$tmpCompe;
+            // if(!empty($tmpCompe['data']))    $dataResult[]=$tmpCompe;
+            $dataResult[]=$tmpCompe;
 
 
         }
 
-       $res=$dataResult;
+        $res=$dataResult;
 
         return $res;
 

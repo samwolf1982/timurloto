@@ -4,6 +4,8 @@ namespace common\models\DTO;
 
 
 
+use app\models\TDO\GameS3;
+
 class CompetitionS3{
 
 
@@ -26,7 +28,7 @@ class CompetitionS3{
 
     private function calculate(){
         $curentId=$this->item->id;
-        /** @var  \app\models\TDO\GameS3 $datum **/
+        /** @var  GameS3 $datum **/
         foreach ($this->data as $datum) {
 
             if($curentId==$datum->getRelationCompetitonId()){   //die('fineee');

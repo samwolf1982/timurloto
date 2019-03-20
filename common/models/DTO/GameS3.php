@@ -30,9 +30,11 @@ class GameS3{
 
     private function calculate(){
         foreach ($this->data as $datum) {
+
             if($datum->type=='event') {
                 if($this->id==$datum->id) $this->events[]=$datum; // можно еще написать проверку на тип связи. пока что нет необходимость
             }
+
         }
     }
 

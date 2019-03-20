@@ -12,8 +12,18 @@
    use yii\helpers\Url;
 
 
+
    DashboardcartAsset::register($this);
+
+
    ?>
+
+   <?php if(YII_ENV=='prod'){ ?>
+       <script> var devStatus=false; </script>
+   <?php }else{ ?>
+       <script> var devStatus=true; </script>
+   <?php } ?>
+
    <div class="overlay-sidebar-right"></div>
    <button class="right-sidebar-close"><span class="icon-close2"></span></button>
    <div class="inner-sidebar">
