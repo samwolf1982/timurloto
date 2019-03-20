@@ -40,7 +40,7 @@ class DefaultController extends Controller
     public function actionTourney($tourneyId=0)
     {
         if(YII_ENV !='prod') $this->cacheLive=10;
-        Yii::error(['show env'=>YII_ENV]);
+//        Yii::error(['show env'=>YII_ENV]);
         if(!empty($_POST['id'])) $tourneyId=$_POST['id'];
         $key="actionTourney_{$tourneyId}";
         $cache=\Yii::$app->cache;
@@ -66,6 +66,7 @@ class DefaultController extends Controller
     {
         if(!empty($_POST['id'])) $tourneyId=$_POST['id'];
         $key="actionTourneygame_{$tourneyId}";
+        if(YII_ENV !='prod') $this->cacheLive=10;
         $cache=\Yii::$app->cache;
      //   $cache->flush();
         $data = $cache->get($key);
@@ -86,6 +87,8 @@ class DefaultController extends Controller
     public function actionPopularsports($tourneyId=0)
     {
         $cache=\Yii::$app->cache;
+        if(YII_ENV !='prod') $this->cacheLive=10;
+        Yii::error(['show env'=>YII_ENV]);
         $data2=[];
 //        $listSportId=[12341,12348];
         foreach (Centerturnire::find()->select(['sportid'])->where(['status'=>0])->orderBy(['sort'=>SORT_ASC])->all() as $tourneyM) {
