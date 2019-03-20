@@ -370,3 +370,6 @@ and also iPads specifically.
 .list-stats-tbl li .list-stats-tbl-val {
   font-size: 38px;
 }
+.modal-backdrop.in {
+  z-index: 0;
+}
