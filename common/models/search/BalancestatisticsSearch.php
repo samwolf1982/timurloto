@@ -318,7 +318,7 @@ $count=Yii::$app->db->createCommand("select COUNT(subquery.user_id) FROM
                 ],
             ],
             'pagination' => [
-                'pageSize' => 6,
+                'pageSize' => 8,
                 'pageParam' => 'tournament',
             ],
         ]);
