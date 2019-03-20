@@ -39,6 +39,7 @@ class DefaultController extends Controller
      */
     public function actionTourney($tourneyId=0)
     {
+        if(YII_ENV !='prod') $this->cacheLive=10;
         if(!empty($_POST['id'])) $tourneyId=$_POST['id'];
         $key="actionTourney_{$tourneyId}";
         $cache=\Yii::$app->cache;
