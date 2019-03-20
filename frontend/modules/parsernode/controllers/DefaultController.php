@@ -14,7 +14,7 @@ use yii\web\Response;
 class DefaultController extends Controller
 {
 
-    private  $cacheLive=10;
+    private  $cacheLive=60;
     /**
      * step 1
      * @return array
