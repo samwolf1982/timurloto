@@ -14,13 +14,14 @@ use yii\web\Response;
 class DefaultController extends Controller
 {
 
-    private  $cacheLive=60;
+    private  $cacheLive=120;
     /**
      * step 1
      * @return array
      */
     public function actionSports()
     {
+        if(YII_ENV !='prod') $this->cacheLive=10;
         $key='actionSports';
         $cache=\Yii::$app->cache;
         $data = $cache->get($key);
