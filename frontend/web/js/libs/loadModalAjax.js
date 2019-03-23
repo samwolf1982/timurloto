@@ -278,7 +278,7 @@ var UserReg={
 
                 $('#formWrapperRegister').html(data);
                 inputFocusUpdate();
-                console.log(data);
+                // console.log(data);
                 // if (json) {
                 //     Peto.render(json.status);
                 // } else {
@@ -414,8 +414,48 @@ $(function () {
         return false;
     });
 
+    // $(document).on('beforeSubmit', 'form#registration-form', function () {
+    //     var form = $(this);
+    //     // return false if form still have some validation errors
+    //     if (form.find('.has-error').length)
+    //     {
+    //         return false;
+    //     }
+    //     // submit form
+    //     $.ajax({
+    //         url    : form.attr('action'),
+    //         type   : 'post',
+    //         data   : form.serialize(),
+    //         success: function (response)
+    //         {
+    //             console.log('HEREE2');
+    //             console.log(response);
+    //             if(response.status){
+    //                 console.log('HEREE');
+    //                 $('#formWrapperRegister').html(response.data);
+    //             }
+    //             // var getupdatedata = $(response).find('#filter_id_test');
+    //             // $.pjax.reload('#note_update_id'); for pjax update
+    //
+    //             // inputFocusUpdate();
+    //
+    //         },
+    //         error  : function ()
+    //         {
+    //             console.log('internal server error');
+    //         }
+    //     });
+    //     return false;
+    // });
+
 
 });
+
+
+
+
+
+
 
 
 function inputFocusUpdate() {

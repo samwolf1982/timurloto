@@ -12,8 +12,10 @@ use dektrium\user\controllers\RegistrationController as  OverriddeneRegistration
 use dektrium\user\Module;
 use yii\base\DynamicModel;
 use yii\filters\AccessControl;
+use yii\helpers\Url;
 use yii\web\NotFoundHttpException;
-
+use yii\web\Response;
+use yii\widgets\ActiveForm;
 
 class UregistrationController  extends OverriddeneRegistrationController
 {
@@ -38,34 +40,50 @@ class UregistrationController  extends OverriddeneRegistrationController
             throw new NotFoundHttpException();
         }
         $this->module=Yii::$app->getModule('user');
-//        $this->layout = '/_register.php';
-//        return parent::actionRegister();
-//        if (!$this->module->enableRegistration) {
-//        if (!Yii::$app->getModule('user')->manager->enableRegistration) {
-//            throw new NotFoundHttpException();
-//        }
-
-
 
         /** @var RegistrationForm $model */
-        $model = \Yii::createObject(RegistrationForm::className());
+        $model = \Yii::createObject(RegistrationForm::className());    // нужно еще добавит поле чекбокс todo
+        if(YII_ENV!='prod'){
+            if(empty($model->username))  $model->username='some_name_' .rand();
+            if(empty($model->fullname))  $model->fullname='some fullname ' .rand();
+            if(empty($model->email))  $model->email='mail'.rand().'@mail.ru';
+            if(empty($model->password))  $model->password=rand(111111,9999999);
+        }
+
+
+
 
         $event = $this->getFormEvent($model);
-
 
         $this->trigger(self::EVENT_BEFORE_REGISTER, $event);
 
         $this->performAjaxValidation($model);
+// own validate
+//        if (\Yii::$app->request->isAjax && $model->load(\Yii::$app->request->post())) {
+//            \Yii::$app->response->format = Response::FORMAT_JSON;
+//            \Yii::$app->response->data   = ActiveForm::validate($model);
+//            if(!empty(\Yii::$app->response->data)){
+//                \Yii::$app->response->send();
+//                \Yii::$app->end();
+//            }
+//
+//        }
+
 
 
 
         if ($model->load(\Yii::$app->request->post()) && $model->register()) {
-//            Yii::error($event);
+            Yii::error($event);
             $this->trigger(self::EVENT_AFTER_REGISTER, $event);
-            return $this->render('/message', [
-                'title'  => \Yii::t('user', 'Your account has been created'),
-                'module' => $this->module,
-            ]);
+//            \Yii::$app->response->format = Response::FORMAT_JSON;
+//            return ['success' => 'sssss'];
+            Yii::$app->response->redirect(Url::toRoute(['/success']));
+//            return  ['status'=>'success','data'=>   $this->renderAjax('@app/views/account/overriden/registration/registerok', [
+//                'module' => $this->module,])];
+//            return $this->render('@app/views/account/overriden/message', [
+//                'title'  => \Yii::t('user', 'Ваш аккант был создан'),
+//                'module' => $this->module,
+//            ]);
         }
 
         return $this->renderAjax('@app/views/account/overriden/registration/register', [

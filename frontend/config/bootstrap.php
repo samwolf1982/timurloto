@@ -95,7 +95,7 @@ Event::on('dektrium\user\controllers\RegistrationController', RegistrationContro
 
 });
 
-// регистрация + создание кошелька  для формы
+// регистрация + создание кошелька  для формы подтверждение с мейла щас
 Event::on('dektrium\user\controllers\RegistrationController', RegistrationController::EVENT_AFTER_CONFIRM, function (dektrium\user\events\UserEvent $e) {
     $findUser = Score::find()->where(['user_id' => $e->user->id])->one();
     if (!$findUser){
