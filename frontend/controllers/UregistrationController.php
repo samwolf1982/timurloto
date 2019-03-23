@@ -52,6 +52,7 @@ class UregistrationController  extends OverriddeneRegistrationController
 
         $event = $this->getFormEvent($model);
 
+
         $this->trigger(self::EVENT_BEFORE_REGISTER, $event);
 
         $this->performAjaxValidation($model);
@@ -59,8 +60,8 @@ class UregistrationController  extends OverriddeneRegistrationController
 
 
         if ($model->load(\Yii::$app->request->post()) && $model->register()) {
+//            Yii::error($event);
             $this->trigger(self::EVENT_AFTER_REGISTER, $event);
-
             return $this->render('/message', [
                 'title'  => \Yii::t('user', 'Your account has been created'),
                 'module' => $this->module,

@@ -16,13 +16,11 @@ use yii\base\Event;
 //Event::on(SecurityController::class, SecurityController::EVENT_AFTER_AUTHENTICATE, function (AuthEvent $e) {
 //Event::on('SecurityController', SecurityController::EVENT_AFTER_AUTHENTICATE, function (AuthEvent $e) {
 Event::on('dektrium\user\controllers\SecurityController', SecurityController::EVENT_AFTER_AUTHENTICATE, function (\dektrium\user\events\AuthEvent $e) {
-
 //    yii::error(['zzz',$e->client->getUserAttributes()]);
     // if user account was not created we should not continue
     if ($e->account->user === null) {
         return;
     }
-
     // we are using switch here, because all networks provide different sets of data
     switch ($e->client->getName()) {
         case 'facebook':
@@ -96,6 +94,42 @@ Event::on('dektrium\user\controllers\RegistrationController', RegistrationContro
 
 
 });
+
+
+
+// регистрация + создание кошелька  для  формы регистрации
+//Event::on('dektrium\user\controllers\RegistrationController', RegistrationController::EVENT_AFTER_REGISTER, function (dektrium\user\events\FormEvent $e) {
+//    $findUser = Score::find()->where(['user_id' => $e->user->id])->one();
+//    if (!$findUser){
+//        $userBalance = new Score;
+//        $userBalance->user_id = $e->user->id;
+//        //  $userBalance->balance = ConstantsHelper::DEFAULT_USER_CREATE_BALANCE;
+//        $userBalance->balance = 0;
+//        if($userBalance->validate()){
+//            $userBalance->save();
+//            // ставка добавлена  снятие баланса
+//            $modelTransaction = new Transaction();
+////            'balance_id' => $this->integer(11)->notNull(), 'date' => $this->datetime()->null()->defaultValue(null), 'type' => "ENUM('in', 'out') NOT NULL", 'amount' => $this->decimal(12, 2)->notNull(), 'balance' => $this->decimal(12, 2)->notNull(), 'user_id'=> $this->integer(11)->notNull(), 'refill_type' => $this->string(255)->notNull(), 'canceled' => $this->datetime()->null()->defaultValue(null), 'comment' => $this->string(255)->null()->defaultValue(null),
+//            $param=['type'=>'in','amount'=>ConstantsHelper::DEFAULT_USER_CREATE_BALANCE,'balance_id'=>$userBalance->id,'refill_type'=>'first transaction, add default'];
+//            $modelTransaction->attributes=$param;
+//            if($modelTransaction->validate()){
+//                $addTransaction = Yii::$app->balance->addTransaction($modelTransaction->balance_id, $modelTransaction->type, $modelTransaction->amount, $modelTransaction->refill_type);
+//            }else{
+//                yii::error($modelTransaction->errors);
+//            }
+//
+//        } else{
+//            var_dump($userBalance->errors);
+//            die('Uh-oh, somethings went wrong!');
+//        }
+//    }
+//
+//
+//});
+
+
+
+
 
 
 
