@@ -105,6 +105,12 @@ return [
                 '/bet/nextload'=>'/bet/nextload',
 
 
+                // регистрации
+                '/user/registration/register'=>'/user/registration/register',
+                '/uregistration/index'=>'/uregistration/index',
+                '/uregistration/register'=>'/uregistration/register',
+
+
 
 
 
@@ -183,7 +189,8 @@ return [
         'view' => [
             'theme' => [
                 'pathMap' => [
-                    '@dektrium/user/views' => '@app/views/account/overriden'
+                    '@dektrium/user/views' => '@app/views/account/overriden',
+
                 ],
             ],
         ],
@@ -215,7 +222,8 @@ return [
         'user' => [
             'class' => 'dektrium\user\Module',
             'controllerMap' => [
-                'settings' => 'frontend\controllers\overriden\SettingsController'
+                'settings' => '\frontend\controllers\overriden\SettingsController',
+                'uregistration' => '\frontend\controllers\UregistrationController'
             ],
             'modelMap' => [
                 'User' => 'common\models\overiden\User',

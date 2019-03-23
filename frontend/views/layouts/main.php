@@ -87,40 +87,15 @@ AppAsset::register($this);
                                 <div class="line-text">
                                     <span>или создайте аккаунт с помощью e-mail</span>
                                 </div>
-                                <div class="form-wrapper">
-                                    <div class="form-inner">
-                                        <form action="#">
-                                            <div class="input-row">
-                                                <input type="text">
-                                                <label class="placeholder">Ваше Имя</label>
-                                            </div>
-                                            <div class="input-row">
-                                                <input type="text">
-                                                <label class="placeholder">Никнейм</label>
-                                            </div>
-                                            <div class="input-row">
-                                                <input type="email">
-                                                <label class="placeholder">Email</label>
-                                            </div>
-                                            <div class="input-row">
-                                                <input type="text">
-                                                <label class="placeholder">Пароль - <span>минимум 6 символов</span></label>
-                                            </div>
-                                            <div class="checkbox-row">
-                                                <input type="checkbox" id="konf">
-                                                <label for="konf" class="check-text">
-                                                    Я прочитал <a href="#">Политику Конфиденциальности</a> сервиса Look My Bet
-                                                </label>
-                                            </div>
-                                            <div class="input-row btn-row">
-                                                <button type="submit" class="btn big-btn btn-primary btn-hover">
-                                                    СОЗДАТЬ АККАУНТ
-                                                    <span></span>
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
+
+
+                                <div class="form-wrapper" id="formWrapperRegister">
+
                                 </div>
+
+
+
+
                             </div>
                             <div class="left-side-inner login-inner">
                                 <h2>Авторизируйтесь</h2>

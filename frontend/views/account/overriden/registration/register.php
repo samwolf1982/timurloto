@@ -20,35 +20,52 @@ use yii\widgets\ActiveForm;
 
 $this->title = Yii::t('user', 'Sign up');
 $this->params['breadcrumbs'][] = $this->title;
+//Html::a(Yii::t('user', 'Already registered? Sign in!'), ['/user/security/login'])
+
+//    <input type="checkbox" id="konf">
+//            <label for="konf" class="check-text">
+//                Я прочитал <a href="#">Политику Конфиденциальности</a> сервиса Look My Bet
+//            </label>
+//            $readconfirm='';
 ?>
-<div class="row">
-    <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title"><?= Html::encode($this->title) ?></h3>
-            </div>
-            <div class="panel-body">
-                <?php $form = ActiveForm::begin([
-                    'id' => 'registration-form',
-                    'enableAjaxValidation' => true,
-                    'enableClientValidation' => false,
-                ]); ?>
 
-                <?= $form->field($model, 'email') ?>
 
-                <?= $form->field($model, 'username') ?>
 
-                <?php if ($module->enableGeneratingPassword == false): ?>
-                    <?= $form->field($model, 'password')->passwordInput() ?>
-                <?php endif ?>
 
-                <?= Html::submitButton(Yii::t('user', 'Sign up'), ['class' => 'btn btn-success btn-block']) ?>
 
-                <?php ActiveForm::end(); ?>
-            </div>
+
+
+
+<div class="form-inner">
+    <?php $form = ActiveForm::begin([
+        'id' => 'registration-form',
+        'enableAjaxValidation' => true,
+        'enableClientValidation' => false,
+//        'placeholdersFromLabels' => true
+    ]); ?>
+        <div class="input-row">
+            <?= $form->field($model, 'fullname')->label('Имя',['class'=>'placeholder']) ?>
         </div>
-        <p class="text-center">
-            <?= Html::a(Yii::t('user', 'Already registered? Sign in!'), ['/user/security/login']) ?>
-        </p>
+        <div class="input-row">
+            <?= $form->field($model, 'username')->label('Никнейм',['class'=>'placeholder']) ?>
+        </div>
+        <div class="input-row">
+            <?= $form->field($model, 'email')->label('Email',['class'=>'placeholder']) ?>
+        </div>
+    <div class="input-row">
+    <?php if ($module->enableGeneratingPassword == false): ?>
+        <?= $form->field($model, 'password')->passwordInput()->label('Пароль - минимум 6 символов',['class'=>'placeholder']) ?>
+    <?php endif ?>
     </div>
+
+        <div class="checkbox-row">
+            <?php //$form->field($model, 'readconfirm')->checkbox([ 'value' => '1', 'checked ' => true])->label(''); ?>
+        </div>
+        <div class="input-row btn-row">
+            <?= Html::submitButton(Yii::t('user', 'СОЗДАТЬ АККАУНТ'), ['class' => 'btn big-btn btn-primary btn-hover']) ?>
+        </div>
+    <?php ActiveForm::end(); ?>
+
 </div>
+
+

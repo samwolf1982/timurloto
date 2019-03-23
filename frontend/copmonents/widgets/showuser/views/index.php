@@ -99,7 +99,7 @@
                 </div>
                 <?php     if (Yii::$app->user->isGuest) { ?>
                     <div class="user-btn">
-                        <a href="#" class="btn btn-small btn-primary"  data-toggle="modal" data-target="#modal-auth"><i class="icon-user"></i> <span>ВОЙТИ</span></a>
+                        <a href="#" class="btn btn-small btn-primary"  id="openMadaInner" data-toggle="modal-reg" data-target="#modal-auth"><i class="icon-user"></i> <span>ВОЙТИ</span></a>
                     </div>
                 <?php }else{ ?>
                     <div class="user-btn">
