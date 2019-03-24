@@ -238,9 +238,21 @@ return [
                 'User' => 'common\models\overiden\User',
             ],
 
-            'mailer' => [
-                'viewPath' => '@app/views/account/overriden/mail',
-            ],
+//            'components' => [
+//                'mailer' => [
+//                    'class' => 'app\components\Mailer'
+//                    // 'viewPath' => '@app/views/account/overriden/mail',
+//                ]
+//            ],
+
+//            'mailer' => [
+//
+//                'viewPath1' => '@frontend/views/user/mail',
+//
+//            ],
+//            'mailer' => [
+//                'viewPath' => '@frontend/views/account/overriden/mail',
+//            ],
 
 
 //            'enableUnconfirmedLogin' => true,

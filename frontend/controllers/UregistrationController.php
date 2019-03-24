@@ -40,6 +40,8 @@ class UregistrationController  extends OverriddeneRegistrationController
             throw new NotFoundHttpException();
         }
         $this->module=Yii::$app->getModule('user');
+//        $this->module->viewPath = '@frontend/views/account/overriden/mail';
+//        Yii::$app->mailer->viewPath = '@frontend/views/account/overriden/mail';
 
         /** @var RegistrationForm $model */
         $model = \Yii::createObject(RegistrationForm::className());    // нужно еще добавит поле чекбокс todo
@@ -73,7 +75,8 @@ class UregistrationController  extends OverriddeneRegistrationController
 
 
         if ($model->load(\Yii::$app->request->post()) && $model->register()) {
-            Yii::error($event);
+            Yii::$app->mailer->viewPath="@frontend/views/account/overriden/mail";
+            Yii::error(Yii::$app->mailer->viewPath );
             $this->trigger(self::EVENT_AFTER_REGISTER, $event);
 //            \Yii::$app->response->format = Response::FORMAT_JSON;
 //            return ['success' => 'sssss'];
