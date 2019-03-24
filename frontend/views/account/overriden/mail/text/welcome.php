@@ -25,7 +25,7 @@
 <?= Yii::t('user', 'Для завершения регистрации перейдите по ссылке ниже') ?>.
 
     <?php // смена урла для подтверждения для переопределения/ самый простой способ
-    $rUrl=Html::a(Html::encode($token->url), $token->url);
+    $rUrl=$token->url;
     $rUrl= str_replace('/user/confirm/','/uregistration/confirm/',$rUrl);
     ?>
     <?= $rUrl ?>
