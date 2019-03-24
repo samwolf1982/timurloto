@@ -110,9 +110,12 @@ return [
                 '/user/registration/register'=>'/user/registration/register',
                 '/uregistration/index'=>'/uregistration/index',
                 '/uregistration/register'=>'/uregistration/register',
+
+
+                '/uregistration/confirm/<id:(.*?)>/<code:(.*?)>'=>'/uregistration/confirm',
+
                 '/usecurity/login'=>'/usecurity/login',
                 '/urecovery/request'=>'/urecovery/request',
-
                 // delete
                 '/user/security/login'=>'/user/security/login',
                 '/user/recovery/request'=>'/user/recovery/request',

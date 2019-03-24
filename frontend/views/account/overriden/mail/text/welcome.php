@@ -24,7 +24,11 @@
 <?php if ($token !== null): ?>
 <?= Yii::t('user', 'Для завершения регистрации перейдите по ссылке ниже') ?>.
 
-<?= $token->url ?>
+    <?php // смена урла для подтверждения для переопределения/ самый простой способ
+    $rUrl=Html::a(Html::encode($token->url), $token->url);
+    $rUrl= str_replace('/user/confirm/','/uregistration/confirm/',$rUrl);
+    ?>
+    <?= $rUrl ?>
 
 <?= Yii::t('user', 'Если вы не можете нажать на ссылку, тогда скопируйте ёё и вставьте в ваш браузер.') ?>.
 <?php endif ?>

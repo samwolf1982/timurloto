@@ -80,4 +80,38 @@ class UregistrationController  extends OverriddeneRegistrationController
     }
 
 
+    /**
+     * Confirms user's account. If confirmation was successful logs the user and shows success message. Otherwise
+     * shows error message.
+     *
+     * @param int    $id
+     * @param string $code
+     *
+     * @return string
+     * @throws \yii\web\HttpException
+     */
+    public function actionConfirm($id, $code)
+    {
+        ///uregistration/register
+        $this->module=Yii::$app->getModule('user');
+        $user = $this->finder->findUserById($id);
+
+        if ($user === null || $this->module->enableConfirmation == false) {
+            throw new NotFoundHttpException();
+        }
+
+        $event = $this->getUserEvent($user);
+
+        $this->trigger(self::EVENT_BEFORE_CONFIRM, $event);
+
+        $user->attemptConfirmation($code);
+
+        $this->trigger(self::EVENT_AFTER_CONFIRM, $event);
+
+        return $this->render('/message', [
+            'title'  => \Yii::t('user', 'Account confirmation'),
+            'module' => $this->module,
+        ]);
+    }
+
 }

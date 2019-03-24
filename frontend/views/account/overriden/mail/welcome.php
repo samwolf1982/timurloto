@@ -36,7 +36,11 @@ use yii\helpers\Html;
         <?= Yii::t('user', 'Для завершения регистрации перейдите по ссылке ниже') ?>.
     </p>
     <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6; font-weight: normal; margin: 0 0 10px; padding: 0;">
-        <?= Html::a(Html::encode($token->url), $token->url); ?>
+        <?php // смена урла для подтверждения для переопределения/ самый простой способ
+             $rUrl=Html::a(Html::encode($token->url), $token->url);
+             $rUrl= str_replace('/user/confirm/','/uregistration/confirm/',$rUrl);
+         ?>
+        <?= $rUrl ?>
     </p>
     <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6; font-weight: normal; margin: 0 0 10px; padding: 0;">
         <?= Yii::t('user', 'Если вы не можете нажать на ссылку, тогда скопируйте ёё и вставьте в ваш браузер.') ?>.
