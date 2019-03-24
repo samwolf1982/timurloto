@@ -60,23 +60,12 @@ class UregistrationController  extends OverriddeneRegistrationController
         $this->trigger(self::EVENT_BEFORE_REGISTER, $event);
 
         $this->performAjaxValidation($model);
-// own validate
-//        if (\Yii::$app->request->isAjax && $model->load(\Yii::$app->request->post())) {
-//            \Yii::$app->response->format = Response::FORMAT_JSON;
-//            \Yii::$app->response->data   = ActiveForm::validate($model);
-//            if(!empty(\Yii::$app->response->data)){
-//                \Yii::$app->response->send();
-//                \Yii::$app->end();
-//            }
-//
-//        }
-
 
 
 
         if ($model->load(\Yii::$app->request->post()) && $model->register()) {
-            Yii::$app->mailer->viewPath="@frontend/views/account/overriden/mail";
-            Yii::error(Yii::$app->mailer->viewPath );
+//            Yii::$app->mailer->viewPath="@frontend/views/account/overriden/mail";
+//            Yii::error(Yii::$app->mailer->viewPath );
             $this->trigger(self::EVENT_AFTER_REGISTER, $event);
 //            \Yii::$app->response->format = Response::FORMAT_JSON;
 //            return ['success' => 'sssss'];

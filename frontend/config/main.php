@@ -245,11 +245,9 @@ return [
 //                ]
 //            ],
 
-//            'mailer' => [
-//
-//                'viewPath1' => '@frontend/views/user/mail',
-//
-//            ],
+            'mailer' => [
+                'viewPath' => '@frontend//views/account/overriden/mail',
+            ],
 //            'mailer' => [
 //                'viewPath' => '@frontend/views/account/overriden/mail',
 //            ],
