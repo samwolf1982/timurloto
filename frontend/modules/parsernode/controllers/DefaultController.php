@@ -91,7 +91,9 @@ class DefaultController extends Controller
         Yii::error(['show env'=>YII_ENV]);
         $data2=[];
 //        $listSportId=[12341,12348];
-        foreach (Centerturnire::find()->select(['sportid'])->where(['status'=>0])->orderBy(['sort'=>SORT_ASC])->all() as $tourneyM) {
+        foreach (Centerturnire::find()->select(['sportid'])->where(['status'=>0])->orderBy(['sort'=>SORT_ASC])->all() as $kii=> $tourneyM) {
+            $start = microtime(true);
+           Yii::error(["start_{.$kii}"=>$start]);
             $key="actionPopularsports_{$tourneyM->sportid}";
             $data = $cache->get($key);
             if ($data === false) {
@@ -105,6 +107,7 @@ class DefaultController extends Controller
             if(!empty($data)){
                 $data2[]=$data;
             }
+            Yii::error(["end_{.$kii}"=>round(microtime(true) - $start, 4).' сек.']);
 
         }
 
