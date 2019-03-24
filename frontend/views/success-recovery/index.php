@@ -1,67 +1,193 @@
 <?php
 
-/* @var $this \yii\web\View */
-/* @var $content string */
+use app\copmonents\widgets\addbet\AddbetWidget;
+use app\copmonents\widgets\showuser\ShowuserWidget;
+use app\modules\statistic\widgets\LastBets;
+use app\modules\statistic\widgets\LastWeekWinnersWidg;
+use common\models\helpers\ConstantsHelper;
+use common\models\helpers\HtmlGenerator;
+use common\models\overiden\User;
+use dvizh\cart\widgets\BuyButton;
+use frontend\assets\BetAsset;
+use frontend\assets\BetDinotableAsset;
+use yii\grid\GridView;
+use yii\helpers\Url;
+use yii\widgets\LinkPager;
 
-use dektrium\user\widgets\Connect;
-use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
-use frontend\assets\AppAsset;
-use common\widgets\Alert;
-AppAsset::register($this);
-
+BetAsset::register($this);
+//BetDinotableAsset::register($this);
 ?>
-<?php $this->beginPage() ?>
-<!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
-<head>
-    <meta charset="<?= Yii::$app->charset ?>">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="/images/favicon.png" type="image/png">
-    <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
-    <?php $this->head() ?>
-</head>
-<body>
-<?php $this->beginBody() ?>
+<body class="home-page footer-login-page">
+
+<header class="header-main front-header">
+    <div class="header-inner">
+        <div class="logo-block">
+            <a href="/">
+                <img src="/images/logo.svg" alt="Look My bet">
+            </a>
+        </div>
+        <div class="search-block">
+            <a href="#" class="close-search">
+                <span class="icon-close2"></span>
+            </a>
+            <div class="search-inner">
+                <form action="#">
+                    <button type="submit"><span class="icon-search"></span></button>
+                    <input type="text" placeholder="ПОИСК">
+                </form>
+            </div>
+        </div>
 
 
-<?= $content ?>
+        <!--   вход выход  пользователя   -->
+        <?= ShowuserWidget::widget(['userdata' => [],'view'=>'other']) ?>
 
 
 
-<?php $this->endBody() ?>
 
-<style>
-   .social-login>.soc-login .auth-clients{
-        display: flex;
-    }
-   .social-login>.soc-login .auth-icon{
-        position: relative;
-        top: 23px;
-    }
-   .soc-login li a.facebook.auth-link:hover {
-       color: #fff;
-       background: #3B5997;
-   }
-   .soc-login li a.vkontakte.auth-link:hover {
-       color: #fff;
-       background: #5371A0;
-   }
+    </div>
+</header>
+
+<div class="main-background">
+    <div id="scene">
+        <div data-depth="0.2" class="background-image" style="background-image: url(images/back-body.jpg)"></div>
+    </div>
+</div>
+<div class="front-page-wrapper">
+    <div class="front-page-inner">
+        <div class="content-container">
+
+            <?php if(1){ ?>
+                <div class="row table-row">
+                    <div class="column-12">
+                        <div class="table-wrapper table-winner">
+                            <div class="table-inner">
+                                <div class="table-body">
+                                    <div class="head-bets-slider text-center" >
+                                        <h3 style="font-size: large;" >Все отлично</h3>
 
 
-   .soc-login li a.google.auth-link:hover {
-       color: #fff;
-       background: #EA4336;
-   }
-   .modal-backdrop.in{
-       background-color:  transparent;
-   }
-</style>
+                                    </div>
+                                    <div class="bets-slider2">
+                                        <div class="column-12 text-center" style="padding: 1em;">
 
+
+                                            <div class="input-row">
+                                                <p>Ваш аккаунт успешно востановлен.</p>
+                                            </div>
+                                            <div class="input-row">
+                                                <p>Уведомление выслано на указаный вами адрес.</p>
+                                            </div>
+                                            <div class="input-row">
+                                                <p>Желаем вам приятного времяпрепровождения</p>
+                                            </div>
+                                            <div class="input-row pull-right2">
+                                                <a href="/matches" class="btn btn-primary btn-hover">
+                                                    +  <i>Продолжить</i>
+                                                    <span ></span>
+                                                </a>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-footer">
+                                    <div class="pagination slider-navigation" id="bets-nav">
+                                        <div class="slider-navigation-inner">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+
+
+            
+            
+            
+        </div>
+    </div>
+</div>
+<footer class="main-footer front-footer">
+    <div class="main-footer-inner">
+        <div class="logo-footer">
+            <a href="/">
+                <img src="/images/logo.svg" alt="Look My Bet">
+            </a>
+        </div>
+        <div class="menu-footer">
+            <ul class="bottom-menu">
+                <li><a href="conf.html">политика конфиденциальности</a></li>
+                <li><a href="term.html">Условия использования сайта</a></li>
+                <li><a href="help.html">Помощь</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
+        </div>
+        <div class="btn-footer">
+            <div class="btn-shared">
+                <div class="shared-block">
+                    <button class="shared">
+                        <span class="icon-network"></span>
+                    </button>
+                    <div class="drop-shared">
+                        <ul class="shared-social">
+                            <li>
+                                <a href="https://twitter.com/home?status=http%3A//test6.tino.com.ua/account.html" target="_blank">
+                                    <span class="icon-tw"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//test6.tino.com.ua/account.html" target="_blank">
+                                    <span class="icon-fb"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://plus.google.com/share?url=https%3A//www.facebook.com/sharer/sharer.php?u=http%253A//test6.tino.com.ua/account.html" target="_blank">
+                                    <span class="icon-gp"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fixed-footer-inner">
+            <div class="social-block">
+                <ul class="social-list">
+                    <li>
+                        <a href="#" target="_blank">
+                            <span class="icon-youtube"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">
+                            <span class="icon-telegram"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">
+                            <span class="icon-mail"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="copy-footer">
+                <p>&copy; 2018 Look My Bet</p>
+            </div>
+            <div class="media-block">
+                <a href="#" class="btn btn-default btn-hover" data-toggle="modal" data-target="#modal-feedback">оставить отзыв <span></span></a>
+                <a href="#" class="btn btn-default hover-btn btn-hover">реклама <span></span></a>
+            </div>
+            <div class="arrow-top">
+                <a href="#" id="top-btn"><span class="icon-arrow_up"></span></a>
+            </div>
+        </div>
+    </div>
+</footer>
 <div class="modal-wrapper user-modal" id="modal-auth">
     <div class="modal-inner">
         <div class="modal-content">
@@ -75,70 +201,85 @@ AppAsset::register($this);
                             <div class="left-side-inner register-inner">
                                 <h2>Стань частью Look My Bet</h2>
                                 <div class="social-login">
-
                                     <ul class="soc-login">
-
-                                        <?= Connect::widget([
-                                            'baseAuthUrl' => ['/user/security/auth'],
-                                        ]) ?>
-
+                                        <li><a href="#" class="soc-tw"><span class="icon-tw"></span></a></li>
+                                        <li><a href="#" class="soc-fb"><span class="icon-fb"></span></a></li>
+                                        <li><a href="#" class="soc-gp"><span class="icon-G"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="line-text">
                                     <span>или создайте аккаунт с помощью e-mail</span>
                                 </div>
-
-
-                                <div class="form-wrapper" id="formWrapperRegister">
-
+                                <div class="form-wrapper">
+                                    <div class="form-inner">
+                                        <form action="#">
+                                            <div class="input-row">
+                                                <input type="text">
+                                                <label class="placeholder">Ваше Имя</label>
+                                            </div>
+                                            <div class="input-row">
+                                                <input type="text">
+                                                <label class="placeholder">Никнейм</label>
+                                            </div>
+                                            <div class="input-row">
+                                                <input type="email">
+                                                <label class="placeholder">Email</label>
+                                            </div>
+                                            <div class="input-row">
+                                                <input type="text">
+                                                <label class="placeholder">Пароль - <span>минимум 6 символов</span></label>
+                                            </div>
+                                            <div class="checkbox-row">
+                                                <input type="checkbox" id="konf">
+                                                <label for="konf" class="check-text">
+                                                    Я прочитал <a href="#">Политику Конфиденциальности</a> сервиса Look My Bet
+                                                </label>
+                                            </div>
+                                            <div class="input-row btn-row">
+                                                <button type="submit" class="btn big-btn btn-primary btn-hover">
+                                                    СОЗДАТЬ АККАУНТ
+                                                    <span></span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
-
-
-
-
                             </div>
                             <div class="left-side-inner login-inner">
                                 <h2>Авторизируйтесь</h2>
                                 <div class="social-login">
                                     <ul class="soc-login">
-                                        <?= Connect::widget([
-                                            'baseAuthUrl' => ['/user/security/auth'],
-                                        ]) ?>
+                                        <li><a href="#" class="soc-tw"><span class="icon-tw"></span></a></li>
+                                        <li><a href="#" class="soc-fb"><span class="icon-fb"></span></a></li>
+                                        <li><a href="#" class="soc-gp"><span class="icon-G"></span></a></li>
                                     </ul>
                                 </div>
-                                <div class="line-text innerEmail ">
+                                <div class="line-text">
                                     <span>или войдите с помощью e-mail</span>
                                 </div>
-
-                                <div class="form-wrapper" id="formWrapperLogin">
-                                </div>
-
-                                <?php if(0): ?>
-                                    <div class="form-wrapper">
-                                        <div class="form-inner">
-                                            <form action="#">
-                                                <div class="input-row">
-                                                    <input type="email">
-                                                    <label class="placeholder">Email</label>
-                                                </div>
-                                                <div class="input-row">
-                                                    <input type="text">
-                                                    <label class="placeholder">Пароль</label>
-                                                </div>
-                                                <div class="input-row btn-row">
-                                                    <button type="submit" class="btn big-btn btn-primary btn-hover">
-                                                        ВОЙТИ
-                                                        <span></span>
-                                                    </button>
-                                                </div>
-                                                <div class="input-row text-center text-row">
-                                                    <a href="#" class="forgot-btn">Забыли пароль?</a>
-                                                </div>
-                                            </form>
-                                        </div>
+                                <div class="form-wrapper">
+                                    <div class="form-inner">
+                                        <form action="#">
+                                            <div class="input-row">
+                                                <input type="email">
+                                                <label class="placeholder">Email</label>
+                                            </div>
+                                            <div class="input-row">
+                                                <input type="text">
+                                                <label class="placeholder">Пароль</label>
+                                            </div>
+                                            <div class="input-row btn-row">
+                                                <button type="submit" class="btn big-btn btn-primary btn-hover">
+                                                    ВОЙТИ
+                                                    <span></span>
+                                                </button>
+                                            </div>
+                                            <div class="input-row text-center text-row">
+                                                <a href="#" class="forgot-btn">Забыли пароль?</a>
+                                            </div>
+                                        </form>
                                     </div>
-                                <?php endif; ?>
-
+                                </div>
                             </div>
                             <div class="left-side-inner forgot-inner">
                                 <h2>Забыли Пароль?</h2>
@@ -170,7 +311,7 @@ AppAsset::register($this);
                         <div class="right-side-login small-side-login">
                             <div class="right-side-inner">
                                 <div class="logo-popup">
-                                    <img src="images/logo_red.svg" alt="">
+                                    <img src="/images/logo_red.svg" alt="">
                                 </div>
                                 <div class="text-left">
                                     <p>Look My Bet - Первая социальная сеть в СНГ для
@@ -208,8 +349,508 @@ AppAsset::register($this);
         </div>
     </div>
 </div>
+<div class="modal-wrapper bet-modal modal-860" id="bet1">
+    <div class="modal-inner">
+        <div class="modal-content">
+            <div class="modal-content-inner">
+                <div class="header-modal">
+                    <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
+                </div>
+                <div class="body-modal">
+                    <div class="bet-modal-inner">
+                        <div class="head-bets">
+                            <div class="row-ava">
+                                <div class="rate-avatar">
+                                    <div class="circle-wrapper" data-ptc="90">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <div class="avatar-user">
+                                        <img src="/images/ava3.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="user-info">
+                                    <h4 class="name-r">john.baklan</h4>
+                                    <div class="level-user level-user-label">
+                                        <div class="level-text">Уровень 68</div>
+                                        <span class="label-user label-user-pro">pro</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="body-bets">
+                            <div class="table-bets">
+                                <div class="table-bets-row">
+                                    <div class="count-row__t">1</div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">Футбол</div>
+                                        <div class="value__t">Реал Мадрид - Ливерпуль</div>
+                                    </div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">26.05.2018</div>
+                                        <div class="value__t">Тотал Больше 3.5 - x 1.67</div>
+                                    </div>
+                                </div>
+                                <div class="table-bets-row">
+                                    <div class="count-row__t">2</div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">Теннис</div>
+                                        <div class="value__t">М. Шарапова - Р. Агнешка</div>
+                                    </div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">26.05.2018</div>
+                                        <div class="value__t">Победа 1 - x 2.85</div>
+                                    </div>
+                                </div>
+                                <div class="table-bets-row">
+                                    <div class="count-row__t">3</div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">Футбол</div>
+                                        <div class="value__t">Реал Мадрид - Ливерпуль</div>
+                                    </div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">26.05.2018</div>
+                                        <div class="value__t">Тотал Больше 3.5 - x 1.67</div>
+                                    </div>
+                                </div>
+                                <div class="table-bets-row">
+                                    <div class="count-row__t">4</div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">Теннис</div>
+                                        <div class="value__t">М. Шарапова - Р. Агнешка</div>
+                                    </div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">26.05.2018</div>
+                                        <div class="value__t">Победа 1 - x 2.85</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-bets">
+                            <div class="text-footer-bets">
+                                <div class="text-bets">
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                                        totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+                                        dicta sunt explicabo.</p>
+                                </div>
+                                <div class="static-footer-bets">
+                                    <div class="static-footer-bets-title">Экспресс</div>
+                                    <div class="static-footer-bets-value">7,200 р. - <span>9 %</span></div>
+                                </div>
+                            </div>
+                            <div class="shared-block">
+                                <div class="btn-shared">
+                                    <button class="like"></button>
+                                    <button class="shared">
+                                        <span class="icon-network"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-wrapper bet-modal modal-860" id="bet2">
+    <div class="modal-inner">
+        <div class="modal-content">
+            <div class="modal-content-inner">
+                <div class="header-modal">
+                    <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
+                </div>
+                <div class="body-modal">
+                    <div class="bet-modal-inner">
+                        <div class="head-bets">
+                            <div class="row-ava">
+                                <div class="rate-avatar">
+                                    <div class="circle-wrapper" data-ptc="45">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <div class="avatar-user">
+                                        <img src="/images/ava1.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="user-info">
+                                    <h4 class="name-r">john.baklan</h4>
+                                    <div class="level-user level-user-label">
+                                        <div class="level-text">Уровень 68</div>
+                                        <span class="label-user label-user-pro">pro</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="body-bets">
+                            <div class="table-bets">
+                                <div class="table-bets-row">
+                                    <div class="count-row__t">1</div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">Футбол</div>
+                                        <div class="value__t">Реал Мадрид - Ливерпуль</div>
+                                    </div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">26.05.2018</div>
+                                        <div class="value__t">Тотал Больше 3.5 - x 1.67</div>
+                                    </div>
+                                </div>
+                                <div class="table-bets-row">
+                                    <div class="count-row__t">2</div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">Теннис</div>
+                                        <div class="value__t">М. Шарапова - Р. Агнешка</div>
+                                    </div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">26.05.2018</div>
+                                        <div class="value__t">Победа 1 - x 2.85</div>
+                                    </div>
+                                </div>
+                                <div class="table-bets-row">
+                                    <div class="count-row__t">3</div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">Футбол</div>
+                                        <div class="value__t">Реал Мадрид - Ливерпуль</div>
+                                    </div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">26.05.2018</div>
+                                        <div class="value__t">Тотал Больше 3.5 - x 1.67</div>
+                                    </div>
+                                </div>
+                                <div class="table-bets-row">
+                                    <div class="count-row__t">4</div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">Теннис</div>
+                                        <div class="value__t">М. Шарапова - Р. Агнешка</div>
+                                    </div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">26.05.2018</div>
+                                        <div class="value__t">Победа 1 - x 2.85</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-bets">
+                            <div class="text-footer-bets">
+                                <div class="text-bets">
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                                        totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+                                        dicta sunt explicabo.</p>
+                                </div>
+                                <div class="static-footer-bets">
+                                    <div class="static-footer-bets-title">Экспресс</div>
+                                    <div class="static-footer-bets-value">7,200 р. - <span>9 %</span></div>
+                                </div>
+                            </div>
+                            <div class="shared-block">
+                                <div class="btn-shared">
+                                    <button class="like"></button>
+                                    <button class="shared">
+                                        <span class="icon-network"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-wrapper bet-modal modal-860" id="bet3">
+    <div class="modal-inner">
+        <div class="modal-content">
+            <div class="modal-content-inner">
+                <div class="header-modal">
+                    <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
+                </div>
+                <div class="body-modal">
+                    <div class="bet-modal-inner">
+                        <div class="head-bets">
+                            <div class="row-ava">
+                                <div class="rate-avatar">
+                                    <div class="circle-wrapper" data-ptc="68">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <div class="avatar-user">
+                                        <img src="/images/ava5.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="user-info">
+                                    <h4 class="name-r">john.baklan</h4>
+                                    <div class="level-user level-user-label">
+                                        <div class="level-text">Уровень 68</div>
+                                        <span class="label-user label-user-pro">pro</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="body-bets">
+                            <div class="table-bets">
+                                <div class="table-bets-row">
+                                    <div class="count-row__t">1</div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">Футбол</div>
+                                        <div class="value__t">Реал Мадрид - Ливерпуль</div>
+                                    </div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">26.05.2018</div>
+                                        <div class="value__t">Тотал Больше 3.5 - x 1.67</div>
+                                    </div>
+                                </div>
+                                <div class="table-bets-row">
+                                    <div class="count-row__t">2</div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">Теннис</div>
+                                        <div class="value__t">М. Шарапова - Р. Агнешка</div>
+                                    </div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">26.05.2018</div>
+                                        <div class="value__t">Победа 1 - x 2.85</div>
+                                    </div>
+                                </div>
+                                <div class="table-bets-row">
+                                    <div class="count-row__t">3</div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">Футбол</div>
+                                        <div class="value__t">Реал Мадрид - Ливерпуль</div>
+                                    </div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">26.05.2018</div>
+                                        <div class="value__t">Тотал Больше 3.5 - x 1.67</div>
+                                    </div>
+                                </div>
+                                <div class="table-bets-row">
+                                    <div class="count-row__t">4</div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">Теннис</div>
+                                        <div class="value__t">М. Шарапова - Р. Агнешка</div>
+                                    </div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">26.05.2018</div>
+                                        <div class="value__t">Победа 1 - x 2.85</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-bets">
+                            <div class="text-footer-bets">
+                                <div class="text-bets">
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                                        totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+                                        dicta sunt explicabo.</p>
+                                </div>
+                                <div class="static-footer-bets">
+                                    <div class="static-footer-bets-title">Экспресс</div>
+                                    <div class="static-footer-bets-value">7,200 р. - <span>9 %</span></div>
+                                </div>
+                            </div>
+                            <div class="shared-block">
+                                <div class="btn-shared">
+                                    <button class="like"></button>
+                                    <button class="shared">
+                                        <span class="icon-network"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-wrapper bet-modal modal-860" id="bet4">
+    <div class="modal-inner">
+        <div class="modal-content">
+            <div class="modal-content-inner">
+                <div class="header-modal">
+                    <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
+                </div>
+                <div class="body-modal">
+                    <div class="bet-modal-inner">
+                        <div class="head-bets">
+                            <div class="row-ava">
+                                <div class="rate-avatar">
+                                    <div class="circle-wrapper" data-ptc="27">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <div class="avatar-user">
+                                        <img src="/images/ava1.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="user-info">
+                                    <h4 class="name-r">john.baklan</h4>
+                                    <div class="level-user level-user-label">
+                                        <div class="level-text">Уровень 27</div>
+                                        <span class="label-user label-user-pro">pro</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="body-bets">
+                            <div class="table-bets">
+                                <div class="table-bets-row">
+                                    <div class="count-row__t">1</div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">Футбол</div>
+                                        <div class="value__t">Реал Мадрид - Ливерпуль</div>
+                                    </div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">26.05.2018</div>
+                                        <div class="value__t">Тотал Больше 3.5 - x 1.67</div>
+                                    </div>
+                                </div>
+                                <div class="table-bets-row">
+                                    <div class="count-row__t">2</div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">Теннис</div>
+                                        <div class="value__t">М. Шарапова - Р. Агнешка</div>
+                                    </div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">26.05.2018</div>
+                                        <div class="value__t">Победа 1 - x 2.85</div>
+                                    </div>
+                                </div>
+                                <div class="table-bets-row">
+                                    <div class="count-row__t">3</div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">Футбол</div>
+                                        <div class="value__t">Реал Мадрид - Ливерпуль</div>
+                                    </div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">26.05.2018</div>
+                                        <div class="value__t">Тотал Больше 3.5 - x 1.67</div>
+                                    </div>
+                                </div>
+                                <div class="table-bets-row">
+                                    <div class="count-row__t">4</div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">Теннис</div>
+                                        <div class="value__t">М. Шарапова - Р. Агнешка</div>
+                                    </div>
+                                    <div class="item-tbl-row-bts">
+                                        <div class="title__t">26.05.2018</div>
+                                        <div class="value__t">Победа 1 - x 2.85</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-bets">
+                            <div class="text-footer-bets">
+                                <div class="text-bets">
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                                        totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+                                        dicta sunt explicabo.</p>
+                                </div>
+                                <div class="static-footer-bets">
+                                    <div class="static-footer-bets-title">Экспресс</div>
+                                    <div class="static-footer-bets-value">7,200 р. - <span>9 %</span></div>
+                                </div>
+                            </div>
+                            <div class="shared-block">
+                                <div class="btn-shared">
+                                    <button class="like"></button>
+                                    <button class="shared">
+                                        <span class="icon-network"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
+
+<!-- modad add bet -->
+<?= AddbetWidget ::widget([]); ?>
+
+
+
+
+
+
+
+<div class="modal-wrapper video-modal" id="main-video">
+    <div class="modal-inner">
+        <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
+        <div class="modal-content">
+            <div class="modal-content-inner">
+                <div class="body-modal">
+                    <div class="video-wrapper">
+                        <div class="video-wrapper-border">
+                            <span class="left-top"></span>
+                            <span class="left-bottom"></span>
+                            <span class="right-bottom"></span>
+                            <span class="right-top"></span>
+                            <?php if(0){ // for example ?>
+
+                                <iframe width="100%" src="https://www.youtube.com/embed/Hbd8ghFICJk?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            <?php  } ?>
+                            <iframe width="1280" height="720" src="https://www.youtube.com/embed/TxsqgQJLyi0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="text-video-modal">
+                        <h2>Первая социальная сеть в СНГ </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto laborum libero ratione suscipit vitae? Amet dolores eaque minima, nesciunt optio quae quaerat rerum sit! Ab dolor eligendi illo ipsam tempore.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto laborum libero ratione suscipit vitae? Amet dolores eaque minima, nesciunt optio quae quaerat rerum sit! Ab dolor eligendi illo ipsam tempore.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-wrapper bet-modal modal-640" id="modal-feedback">
+    <div class="modal-inner">
+        <div class="modal-content">
+            <div class="modal-content-inner">
+                <div class="header-modal">
+                    <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
+                </div>
+                <div class="body-modal">
+                    <div class="choose-bet-wrapper">
+                        <div class="choose-bet-inner">
+                            <div class="head-choose">
+                                <h2>Отзыв</h2>
+                                <p>Напишите отзыв</p>
+                            </div>
+                            <div class="complain-form">
+                                <form action="#">
+                                    <div class="feedback-form-inner">
+                                        <div class="input-row">
+                                            <div class="input-row-inner">
+                                                <input type="text" placeholder="">
+                                                <label class="placeholder">Имя</label>
+                                            </div>
+                                        </div>
+                                        <div class="input-row textarea-row">
+                                            <div class="input-row-inner">
+                                                <textarea placeholder=""></textarea>
+                                                <label class="placeholder">Сообщение</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="btn-block-choose justify-end">
+                                <button class="btn btn-hover btn-primary save-btn">
+                                    <i class="text-show">Отправить</i>
+                                    <i class="text-hide">Отправлено</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="modal-wrapper chat-modal" id="modal-chat">
     <div class="modal-inner">
         <div class="modal-content">
@@ -249,7 +890,7 @@ AppAsset::register($this);
                                                     <div class="avatar-chat">
                                                         <div class="count-message-chat">5</div>
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -282,7 +923,7 @@ AppAsset::register($this);
                                                 <div data-toggle="#chat2" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -315,7 +956,7 @@ AppAsset::register($this);
                                                 <div data-toggle="#chat3" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -349,7 +990,7 @@ AppAsset::register($this);
 
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -382,7 +1023,7 @@ AppAsset::register($this);
                                                 <div data-toggle="#chat5" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -415,7 +1056,7 @@ AppAsset::register($this);
                                                 <div data-toggle="#chat6" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -448,7 +1089,7 @@ AppAsset::register($this);
                                                 <div data-toggle="#chat7" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -481,7 +1122,7 @@ AppAsset::register($this);
                                                 <div data-toggle="#chat8" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -514,7 +1155,7 @@ AppAsset::register($this);
                                                 <div data-toggle="#chat9" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -547,7 +1188,7 @@ AppAsset::register($this);
                                                 <div data-toggle="#chat10" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -580,7 +1221,7 @@ AppAsset::register($this);
                                                 <div data-toggle="#chat11" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -613,7 +1254,7 @@ AppAsset::register($this);
                                                 <div data-toggle="#chat12" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -646,7 +1287,7 @@ AppAsset::register($this);
                                                 <div data-toggle="#chat13" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -679,7 +1320,7 @@ AppAsset::register($this);
                                                 <div data-toggle="#chat14" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -712,7 +1353,7 @@ AppAsset::register($this);
                                                 <div data-toggle="#chat15" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -745,7 +1386,7 @@ AppAsset::register($this);
                                                 <div data-toggle="#chat16" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -778,7 +1419,7 @@ AppAsset::register($this);
                                                 <div data-toggle="#chat17" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -811,7 +1452,7 @@ AppAsset::register($this);
                                                 <div data-toggle="#chat18" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -844,7 +1485,7 @@ AppAsset::register($this);
                                                 <div data-toggle="#chat19" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -877,7 +1518,7 @@ AppAsset::register($this);
                                                 <div data-toggle="#chat20" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -918,7 +1559,7 @@ AppAsset::register($this);
                                     </div>
                                     <div class="chanel-info">
                                         <div class="icon-chanel-info">
-                                            <img src="images/chat.svg" alt="">
+                                            <img src="/images/chat.svg" alt="">
                                         </div>
                                         <h4>Что Такое группа?</h4>
                                         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
@@ -943,7 +1584,7 @@ AppAsset::register($this);
                                     </div>
                                     <div class="chanel-info">
                                         <div class="icon-chanel-info">
-                                            <img src="images/message-chanel.svg" alt="">
+                                            <img src="/images/message-chanel.svg" alt="">
                                         </div>
                                         <h4>Что Такое канал?</h4>
                                         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
@@ -973,7 +1614,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -990,7 +1631,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1006,7 +1647,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1023,7 +1664,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1039,7 +1680,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1056,7 +1697,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1072,7 +1713,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1089,7 +1730,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1105,7 +1746,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1122,7 +1763,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1138,7 +1779,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1155,7 +1796,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1171,7 +1812,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1188,7 +1829,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1204,7 +1845,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1221,7 +1862,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1237,7 +1878,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1254,7 +1895,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1289,7 +1930,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1306,7 +1947,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1322,7 +1963,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1339,7 +1980,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1355,7 +1996,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1372,7 +2013,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1388,7 +2029,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1405,7 +2046,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1421,7 +2062,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1438,7 +2079,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1454,7 +2095,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1471,7 +2112,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1487,7 +2128,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1504,7 +2145,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1520,7 +2161,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1537,7 +2178,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1553,7 +2194,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1570,7 +2211,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1604,7 +2245,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1621,7 +2262,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1637,7 +2278,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1654,7 +2295,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1670,7 +2311,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1687,7 +2328,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1703,7 +2344,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1720,7 +2361,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1736,7 +2377,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1753,7 +2394,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1769,7 +2410,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1786,7 +2427,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1802,7 +2443,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1819,7 +2460,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1835,7 +2476,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1852,7 +2493,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1868,7 +2509,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1885,7 +2526,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1919,7 +2560,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1936,7 +2577,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1952,7 +2593,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1969,7 +2610,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1985,7 +2626,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2002,7 +2643,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2018,7 +2659,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2035,7 +2676,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2051,7 +2692,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2068,7 +2709,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2084,7 +2725,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2101,7 +2742,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2117,7 +2758,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2134,7 +2775,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2150,7 +2791,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2167,7 +2808,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2183,7 +2824,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2200,7 +2841,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2234,7 +2875,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2251,7 +2892,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2267,7 +2908,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2284,7 +2925,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2300,7 +2941,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2317,7 +2958,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2333,7 +2974,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2350,7 +2991,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2366,7 +3007,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2383,7 +3024,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2399,7 +3040,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2416,7 +3057,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2432,7 +3073,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2449,7 +3090,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2465,7 +3106,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2482,7 +3123,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2498,7 +3139,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2515,7 +3156,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2549,7 +3190,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2566,7 +3207,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2582,7 +3223,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2599,7 +3240,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2615,7 +3256,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2632,7 +3273,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2648,7 +3289,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2665,7 +3306,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2681,7 +3322,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2698,7 +3339,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2714,7 +3355,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2731,7 +3372,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2747,7 +3388,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2764,7 +3405,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2780,7 +3421,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2797,7 +3438,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2813,7 +3454,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2830,7 +3471,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2864,7 +3505,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2881,7 +3522,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2897,7 +3538,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2914,7 +3555,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2930,7 +3571,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2947,7 +3588,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2963,7 +3604,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2980,7 +3621,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2996,7 +3637,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3013,7 +3654,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3029,7 +3670,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3046,7 +3687,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3062,7 +3703,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3079,7 +3720,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3095,7 +3736,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3112,7 +3753,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3128,7 +3769,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3145,7 +3786,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3179,7 +3820,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3196,7 +3837,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3212,7 +3853,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3229,7 +3870,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3245,7 +3886,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3262,7 +3903,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3278,7 +3919,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3295,7 +3936,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3311,7 +3952,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3328,7 +3969,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3344,7 +3985,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3361,7 +4002,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3377,7 +4018,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3394,7 +4035,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3410,7 +4051,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3427,7 +4068,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3443,7 +4084,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3460,7 +4101,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3494,7 +4135,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3511,7 +4152,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3527,7 +4168,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3544,7 +4185,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3560,7 +4201,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3577,7 +4218,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3593,7 +4234,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3610,7 +4251,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3626,7 +4267,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3643,7 +4284,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3659,7 +4300,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3676,7 +4317,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3692,7 +4333,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3709,7 +4350,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3725,7 +4366,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3742,7 +4383,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3758,7 +4399,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3775,7 +4416,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3809,7 +4450,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3826,7 +4467,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3842,7 +4483,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3859,7 +4500,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3875,7 +4516,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3892,7 +4533,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3908,7 +4549,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3925,7 +4566,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3941,7 +4582,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3958,7 +4599,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3974,7 +4615,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3991,7 +4632,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4007,7 +4648,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4024,7 +4665,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4040,7 +4681,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4057,7 +4698,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4073,7 +4714,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4090,7 +4731,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4124,7 +4765,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4141,7 +4782,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4157,7 +4798,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4174,7 +4815,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4190,7 +4831,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4207,7 +4848,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4223,7 +4864,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4240,7 +4881,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4256,7 +4897,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4273,7 +4914,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4289,7 +4930,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4306,7 +4947,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4322,7 +4963,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4339,7 +4980,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4355,7 +4996,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4372,7 +5013,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4388,7 +5029,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4405,7 +5046,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4439,7 +5080,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4456,7 +5097,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4472,7 +5113,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4489,7 +5130,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4505,7 +5146,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4522,7 +5163,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4538,7 +5179,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4555,7 +5196,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4571,7 +5212,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4588,7 +5229,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4604,7 +5245,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4621,7 +5262,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4637,7 +5278,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4654,7 +5295,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4670,7 +5311,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4687,7 +5328,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4703,7 +5344,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4720,7 +5361,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4754,7 +5395,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4771,7 +5412,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4787,7 +5428,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4804,7 +5445,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4820,7 +5461,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4837,7 +5478,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4853,7 +5494,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4870,7 +5511,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4886,7 +5527,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4903,7 +5544,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4919,7 +5560,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4936,7 +5577,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4952,7 +5593,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4969,7 +5610,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4985,7 +5626,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5002,7 +5643,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5018,7 +5659,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5035,7 +5676,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5069,7 +5710,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5086,7 +5727,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5102,7 +5743,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5119,7 +5760,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5135,7 +5776,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5152,7 +5793,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5168,7 +5809,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5185,7 +5826,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5201,7 +5842,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5218,7 +5859,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5234,7 +5875,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5251,7 +5892,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5267,7 +5908,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5284,7 +5925,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5300,7 +5941,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5317,7 +5958,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5333,7 +5974,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5350,7 +5991,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5384,7 +6025,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5401,7 +6042,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5417,7 +6058,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5434,7 +6075,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5450,7 +6091,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5467,7 +6108,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5483,7 +6124,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5500,7 +6141,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5516,7 +6157,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5533,7 +6174,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5549,7 +6190,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5566,7 +6207,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5582,7 +6223,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5599,7 +6240,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5615,7 +6256,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5632,7 +6273,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5648,7 +6289,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5665,7 +6306,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5699,7 +6340,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5716,7 +6357,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5732,7 +6373,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5749,7 +6390,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5765,7 +6406,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5782,7 +6423,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5798,7 +6439,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5815,7 +6456,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5831,7 +6472,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5848,7 +6489,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5864,7 +6505,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5881,7 +6522,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5897,7 +6538,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5914,7 +6555,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5930,7 +6571,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5947,7 +6588,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5963,7 +6604,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5980,7 +6621,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6014,7 +6655,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6031,7 +6672,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6047,7 +6688,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6064,7 +6705,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6080,7 +6721,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6097,7 +6738,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6113,7 +6754,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6130,7 +6771,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6146,7 +6787,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6163,7 +6804,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6179,7 +6820,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6196,7 +6837,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6212,7 +6853,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6229,7 +6870,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6245,7 +6886,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6262,7 +6903,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6278,7 +6919,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6295,7 +6936,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6329,7 +6970,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6346,7 +6987,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6362,7 +7003,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6379,7 +7020,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6395,7 +7036,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6412,7 +7053,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6428,7 +7069,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6445,7 +7086,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6461,7 +7102,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6478,7 +7119,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6494,7 +7135,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6511,7 +7152,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6527,7 +7168,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6544,7 +7185,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6560,7 +7201,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6577,7 +7218,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6593,7 +7234,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6610,7 +7251,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6644,7 +7285,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6661,7 +7302,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6677,7 +7318,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6694,7 +7335,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6710,7 +7351,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6727,7 +7368,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6743,7 +7384,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6760,7 +7401,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6776,7 +7417,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6793,7 +7434,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6809,7 +7450,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6826,7 +7467,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6842,7 +7483,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6859,7 +7500,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6875,7 +7516,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6892,7 +7533,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6908,7 +7549,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6925,7 +7566,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6959,7 +7600,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6976,7 +7617,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6992,7 +7633,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7009,7 +7650,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7025,7 +7666,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7042,7 +7683,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7058,7 +7699,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7075,7 +7716,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7091,7 +7732,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7108,7 +7749,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7124,7 +7765,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7141,7 +7782,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7157,7 +7798,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7174,7 +7815,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7190,7 +7831,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7207,7 +7848,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7223,7 +7864,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7240,7 +7881,7 @@ AppAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7271,1710 +7912,6 @@ AppAsset::register($this);
         </div>
     </div>
 </div>
-
-<div class="modal-wrapper bet-modal modal-945" id="modal-faq">
-    <div class="modal-inner">
-        <div class="modal-content">
-            <div class="modal-content-inner">
-                <div class="header-modal">
-                    <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
-                </div>
-                <div class="body-modal">
-                    <div class="choose-bet-wrapper">
-                        <div class="choose-bet-inner">
-                            <div class="head-choose faq-title">
-                                <h2>F.A.Q.</h2>
-                            </div>
-                            <div class="faq-wrapper">
-                                <div class="faq-list collapse-wrapper">
-                                    <div class="collapse-item">
-                                        <div class="collapse-item-head">
-                                            <a href="#faq1" data-toggle="collap">Для чего нужен наш сервис?</a>
-                                        </div>
-                                        <div class="collapse-item-body" id="faq1">
-                                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
-                                                ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                                                sit aspernatur aut odit aut fugit, sed quia consequuntur</p>
-                                        </div>
-                                    </div>
-                                    <div class="collapse-item">
-                                        <div class="collapse-item-head">
-                                            <a href="#faq2" data-toggle="collap">Как написать другим пользователям сообщение?</a>
-                                        </div>
-                                        <div class="collapse-item-body" id="faq2">
-                                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
-                                                ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                                                sit aspernatur aut odit aut fugit, sed quia consequuntur</p>
-                                        </div>
-                                    </div>
-                                    <div class="collapse-item">
-                                        <div class="collapse-item-head">
-                                            <a href="#faq3" data-toggle="collap">Как дать прогноз?</a>
-                                        </div>
-                                        <div class="collapse-item-body" id="faq3">
-                                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
-                                                ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                                                sit aspernatur aut odit aut fugit, sed quia consequuntur</p>
-                                        </div>
-                                    </div>
-                                    <div class="collapse-item">
-                                        <div class="collapse-item-head">
-                                            <a href="#faq4" data-toggle="collap">Как посмотреть свои прогнозы?</a>
-                                        </div>
-                                        <div class="collapse-item-body" id="faq4">
-                                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
-                                                ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                                                sit aspernatur aut odit aut fugit, sed quia consequuntur</p>
-                                        </div>
-                                    </div>
-                                    <div class="collapse-item">
-                                        <div class="collapse-item-head">
-                                            <a href="#faq5" data-toggle="collap">Как поменять имя пользователя?</a>
-                                        </div>
-                                        <div class="collapse-item-body" id="faq5">
-                                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
-                                                ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                                                sit aspernatur aut odit aut fugit, sed quia consequuntur</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-<div id="modalWrapper" class="modal fade" tabindex="-1" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Modal</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            </div>
-            <div class="modal-body">
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-
-<!-- Новые модалки -->
-<div class="modal-wrapper bet-modal modal-640" id="edit_bet">
-    <div class="modal-inner">
-        <div class="modal-content">
-            <div class="modal-content-inner">
-                <div class="header-modal">
-                    <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
-                </div>
-                <div class="body-modal">
-                    <div class="choose-bet-wrapper">
-                        <div class="choose-bet-inner">
-                            <div class="head-choose">
-                                <h2>Мои Подписки <span class="muted-text">356</span></h2>
-                            </div>
-                            <div class="search-subscribe">
-                                <div class="search-subscribe-inner">
-                                    <input type="text" placeholder="ПОИСК">
-                                </div>
-                            </div>
-                            <div class="list-block-subscribe">
-                                <div class="list-block-subscribe-inner" data-simplebar data-simplebar-auto-hide="true">
-                                    <div class="for-scroll">
-                                        <?php if(0){ ?>
-
-                                        <div class="subscribe-item">
-                                            <div class="rate-avatar">
-                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                    <div class="circle"></div>
-                                                </div>
-                                                <div class="count-rate-av">
-                                                    <span>5</span>
-                                                </div>
-                                                <div class="avatar-user">
-                                                    <img src="images/ava3.png" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="name-block">
-                                                <h5><a href="">Alexandr</a></h5>
-                                            </div>
-                                            <div class="btn-subscibe-block">
-                                                <a href="#" class="btn-subscribe">
-                                                    <span class="shown-text">Отписаться</span>
-                                                    <span class="hidden-text">Подписаться</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="subscribe-item">
-                                            <div class="rate-avatar">
-                                                <div class="circle-wrapper grey-null-full" data-ptc="11">
-                                                    <div class="circle"></div>
-                                                </div>
-                                                <div class="avatar-user">
-                                                    <img src="images/ava2.png" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="name-block">
-                                                <h5><a href="">Valentin Real</a></h5>
-                                            </div>
-                                            <div class="btn-subscibe-block">
-                                                <a href="#" class="btn-subscribe">
-                                                    <span class="shown-text">Отписаться</span>
-                                                    <span class="hidden-text">Подписаться</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="subscribe-item">
-                                            <div class="rate-avatar">
-                                                <div class="circle-wrapper grey-null-full" data-ptc="10">
-                                                    <div class="circle"></div>
-                                                </div>
-                                                <div class="avatar-user">
-                                                    <img src="images/ava2.png" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="name-block">
-                                                <h5><a href="">Babu</a></h5>
-                                            </div>
-                                            <div class="btn-subscibe-block">
-                                                <a href="#" class="btn-subscribe">
-                                                    <span class="shown-text">Отписаться</span>
-                                                    <span class="hidden-text">Подписаться</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="subscribe-item">
-                                            <div class="rate-avatar">
-                                                <div class="circle-wrapper grey-null-full" data-ptc="9">
-                                                    <div class="circle"></div>
-                                                </div>
-                                                <div class="avatar-user">
-                                                    <img src="images/ava2.png" alt="">
-                                                </div>
-                                                <div class="count-rate-av">
-                                                    <span>5</span>
-                                                </div>
-                                            </div>
-                                            <div class="name-block">
-                                                <h5><a href="">Valentin Real</a></h5>
-                                            </div>
-                                            <div class="btn-subscibe-block">
-                                                <a href="#" class="btn-subscribe">
-                                                    <span class="shown-text">Отписаться</span>
-                                                    <span class="hidden-text">Подписаться</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="subscribe-item">
-                                            <div class="rate-avatar">
-                                                <div class="circle-wrapper grey-null-full" data-ptc="8">
-                                                    <div class="circle"></div>
-                                                </div>
-                                                <div class="avatar-user">
-                                                    <img src="images/ava2.png" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="name-block">
-                                                <h5><a href="">Babu</a></h5>
-                                            </div>
-                                            <div class="btn-subscibe-block">
-                                                <a href="#" class="btn-subscribe">
-                                                    <span class="shown-text">Отписаться</span>
-                                                    <span class="hidden-text">Подписаться</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="subscribe-item">
-                                            <div class="rate-avatar">
-                                                <div class="circle-wrapper grey-null-full" data-ptc="7">
-                                                    <div class="circle"></div>
-                                                </div>
-                                                <div class="avatar-user">
-                                                    <img src="images/ava2.png" alt="">
-                                                </div>
-                                                <div class="count-rate-av">
-                                                    <span>5</span>
-                                                </div>
-                                            </div>
-                                            <div class="name-block">
-                                                <h5><a href="">Alexandr</a></h5>
-                                            </div>
-                                            <div class="btn-subscibe-block">
-                                                <a href="#" class="btn-subscribe">
-                                                    <span class="shown-text">Отписаться</span>
-                                                    <span class="hidden-text">Подписаться</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="subscribe-item">
-                                            <div class="rate-avatar">
-                                                <div class="circle-wrapper grey-null-full" data-ptc="6">
-                                                    <div class="circle"></div>
-                                                </div>
-                                                <div class="avatar-user">
-                                                    <img src="images/ava2.png" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="name-block">
-                                                <h5><a href="">Babu</a></h5>
-                                            </div>
-                                            <div class="btn-subscibe-block">
-                                                <a href="#" class="btn-subscribe">
-                                                    <span class="shown-text">Отписаться</span>
-                                                    <span class="hidden-text">Подписаться</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="subscribe-item">
-                                            <div class="rate-avatar">
-                                                <div class="circle-wrapper grey-null-full" data-ptc="5">
-                                                    <div class="circle"></div>
-                                                </div>
-                                                <div class="avatar-user">
-                                                    <img src="images/ava2.png" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="name-block">
-                                                <h5><a href="">Dmitriy</a></h5>
-                                            </div>
-                                            <div class="btn-subscibe-block">
-                                                <a href="#" class="btn-subscribe">
-                                                    <span class="shown-text">Отписаться</span>
-                                                    <span class="hidden-text">Подписаться</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="subscribe-item">
-                                            <div class="rate-avatar">
-                                                <div class="circle-wrapper grey-null-full" data-ptc="4">
-                                                    <div class="circle"></div>
-                                                </div>
-                                                <div class="avatar-user">
-                                                    <img src="images/ava2.png" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="name-block">
-                                                <h5><a href="">Jon Doe</a></h5>
-                                            </div>
-                                            <div class="btn-subscibe-block">
-                                                <a href="#" class="btn-subscribe">
-                                                    <span class="shown-text">Отписаться</span>
-                                                    <span class="hidden-text">Подписаться</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="subscribe-item">
-                                            <div class="rate-avatar">
-                                                <div class="circle-wrapper grey-null-full" data-ptc="3">
-                                                    <div class="circle"></div>
-                                                </div>
-                                                <div class="avatar-user">
-                                                    <img src="images/ava2.png" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="name-block">
-                                                <h5><a href="">Grisha Goga</a></h5>
-                                            </div>
-                                            <div class="btn-subscibe-block">
-                                                <a href="#" class="btn-subscribe">
-                                                    <span class="shown-text">Отписаться</span>
-                                                    <span class="hidden-text">Подписаться</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="subscribe-item">
-                                            <div class="rate-avatar">
-                                                <div class="circle-wrapper grey-null-full" data-ptc="2">
-                                                    <div class="circle"></div>
-                                                </div>
-                                                <div class="avatar-user">
-                                                    <img src="images/ava2.png" alt="">
-                                                </div>
-                                                <div class="count-rate-av">
-                                                    <span>5</span>
-                                                </div>
-                                            </div>
-                                            <div class="name-block">
-                                                <h5><a href="">Zizu</a></h5>
-                                            </div>
-                                            <div class="btn-subscibe-block">
-                                                <a href="#" class="btn-subscribe">
-                                                    <span class="shown-text">Отписаться</span>
-                                                    <span class="hidden-text">Подписаться</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="subscribe-item">
-                                            <div class="rate-avatar">
-                                                <div class="circle-wrapper grey-null-full" data-ptc="1">
-                                                    <div class="circle"></div>
-                                                </div>
-                                                <div class="avatar-user">
-                                                    <img src="images/ava2.png" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="name-block">
-                                                <h5><a href="">Alexandr</a></h5>
-                                            </div>
-                                            <div class="btn-subscibe-block">
-                                                <a href="#" class="btn-subscribe">
-                                                    <span class="shown-text">Отписаться</span>
-                                                    <span class="hidden-text">Подписаться</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <?php } ?>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Этот текст выводим когда идет подгрузка контента -->
-                            <!--<div class="load-subscriber-text">-->
-                            <!--<span>…   Загрузка</span>-->
-                            <!--</div>-->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<div class="modal-wrapper bet-modal modal-edit-subscriber modal-960" id="edit_subscriber">
-    <div class="modal-inner">
-        <div class="modal-content">
-            <div class="modal-content-inner">
-                <div class="header-modal">
-                    <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
-                </div>
-                <div class="body-modal">
-<!--load ajax...-->
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-<div class="modal-wrapper bet-modal modal-edit-subscriber modal-960" id="edit_subscriberDEL_OR">
-    <div class="modal-inner">
-        <div class="modal-content">
-            <div class="modal-content-inner">
-                <div class="header-modal">
-                    <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
-                </div>
-                <div class="body-modal">
-                    <div class="choose-bet-wrapper">
-                        <div class="choose-bet-inner">
-                            <div class="head-choose">
-                                <div class="tabs-modal-trigger">
-                                    <ul class="tabs-nav">
-                                        <li class="active">
-                                            <a href="#tab1">Я открыл <span class="text-muted">19</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="#tab2">Мне открыли <span class="text-muted">8</span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="tabs-modal-block">
-                                <div class="tabs-modal-block-inner">
-                                    <div class="tabs-item active" id="tab1">
-                                        <div class="tabs-item-inner">
-                                            <div class="list-block-subscribe">
-                                                <div class="list-block-subscribe-inner" data-simplebar data-simplebar-auto-hide="true">
-                                                    <div class="for-scroll">
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tabs-item" id="tab2">
-                                        <div class="tabs-item-inner">
-                                            <div class="list-block-subscribe">
-                                                <div class="list-block-subscribe-inner" data-simplebar data-simplebar-auto-hide="true">
-                                                    <div class="for-scroll">
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Этот текст выводим когда идет подгрузка контента -->
-                            <!--<div class="load-subscriber-text">-->
-                            <!--<span>…   Загрузка</span>-->
-                            <!--</div>-->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+<script src="/js/script.min.js"></script>
 </body>
-</html>
 
-
-<?php $this->endPage() ?>

@@ -26,7 +26,7 @@ use yii\web\Response;
 /**
  * Site controller
  */
-class SuccessController extends Controller
+class SuccessRecoveryController extends Controller
 {
 
 

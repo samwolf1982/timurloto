@@ -80,7 +80,7 @@ BetAsset::register($this);
                                             </div>
 
                                             <div class="input-row">
-                                                <p>Уведомление выслано на указаный вами адресс.</p>
+                                                <p>Уведомление выслано на указаный вами адрес.</p>
                                             </div>
 
 
@@ -89,7 +89,7 @@ BetAsset::register($this);
                                             </div>
                                             <div class="input-row pull-right2">
                                                 <a href="/matches" class="btn btn-primary btn-hover">
-                                                    +  <i>Продолжыть</i>
+                                                    +  <i>Продолжить</i>
                                                     <span ></span>
                                                 </a>
                                             </div>

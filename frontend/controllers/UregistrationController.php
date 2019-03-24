@@ -78,12 +78,7 @@ class UregistrationController  extends OverriddeneRegistrationController
 //            \Yii::$app->response->format = Response::FORMAT_JSON;
 //            return ['success' => 'sssss'];
             Yii::$app->response->redirect(Url::toRoute(['/success']));
-//            return  ['status'=>'success','data'=>   $this->renderAjax('@app/views/account/overriden/registration/registerok', [
-//                'module' => $this->module,])];
-//            return $this->render('@app/views/account/overriden/message', [
-//                'title'  => \Yii::t('user', 'Ваш аккант был создан'),
-//                'module' => $this->module,
-//            ]);
+
         }
 
         return $this->renderAjax('@app/views/account/overriden/registration/register', [

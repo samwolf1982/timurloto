@@ -287,6 +287,49 @@ var UserReg={
             }
 
         });
+        return false;
+    },
+    loadFormLogin: function () {
+        var dataFormReg = {};
+        dataFormReg[this.csrf_param] = this.csrf;
+        $.ajax({
+            url: '/usecurity/login',
+            type: "POST",
+            // data:  $('#formPeto input[type=\'text\']', '#formPeto input[type=\'hidden\']'), // ???? NOT work
+            data:  dataFormReg,
+            // dataType: "json",
+            success: function (data) {
+
+                $('#formWrapperLogin').html(data);
+                $('.innerEmail').show();
+                inputFocusUpdate();
+                // console.log(data);
+                // if (json) {
+                //     Peto.render(json.status);
+                // } else {
+                //     console.log(json);
+                // }
+            }
+
+        });
+        return false;
+    },
+    loadForgotForm: function () {
+        var dataFormReg = {};
+        dataFormReg[this.csrf_param] = this.csrf;
+        $.ajax({
+            url: '/urecovery/request',
+            type: "POST",
+            data:  dataFormReg,
+            // dataType: "json",
+            success: function (data) {
+
+                $('#formWrapperLogin').html(data);
+                $('.innerEmail').hide();
+                inputFocusUpdate();
+            }
+
+        });
     },
 
 
@@ -316,9 +359,9 @@ var UserReg={
 
 // регистрация и вход грузим из бека
 $(function () {
-    $(document).on("click", "#openMadaInner", function(e) {
-            console.log('sssss');
-    });
+    // $(document).on("click", "#openMadaInner", function(e) {
+    //         console.log('sssss');
+    // });
 
     $('[data-toggle="modal-reg"]').on('click',function () {
 
@@ -411,6 +454,7 @@ $(function () {
 
 
         UserReg.loadFormReg();
+        UserReg.loadFormLogin();
         return false;
     });
 
@@ -453,7 +497,11 @@ $(function () {
 
 
 
-
+function loadForgotForm() {
+    UserReg.loadForgotForm();
+    console.log('loadForgotForm')
+    return false;
+}
 
 
 

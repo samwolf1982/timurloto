@@ -24,7 +24,54 @@ $this->title = Yii::t('user', 'Sign in');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<?= $this->render('/_alert', ['module' => Yii::$app->getModule('user')]) ?>
+<?php // $this->render('/_alert', ['module' => Yii::$app->getModule('user')]) ?>
+
+
+
+<div class="form-inner">
+
+    <?php $form = ActiveForm::begin([
+        'id' => 'login-form',
+        'enableAjaxValidation' => true,
+        'enableClientValidation' => false,
+        'validateOnBlur' => false,
+        'validateOnType' => false,
+        'validateOnChange' => false,
+    ]) ?>
+        <div class="input-row">
+            <?= $form->field($model, 'login',
+                ['inputOptions' => ['autofocus' => 'autofocus', 'class' => 'form-control', 'tabindex' => '1']]
+            )->label('Логин',['class'=>'placeholder']);
+            // todo set email
+            ?>
+        </div>
+        <div class="input-row">
+            <?= $form->field(
+                $model,
+                'password',
+                ['inputOptions' => ['class' => 'form-control', 'tabindex' => '2']])
+                ->passwordInput()
+                ->label('Пароль',['class'=>'placeholder']) ?>
+        </div>
+
+
+        <div class="input-row btn-row">
+            <?= Html::submitButton(
+               'ВОЙТИ',
+                ['class' => 'btn big-btn btn-primary btn-hover', 'tabindex' => '4']
+            ) ?>
+        </div>
+
+        <div class="input-row text-center text-row">
+            <a href="#" onclick="loadForgotForm();" class="forgot-btn">Забыли пароль?</a>
+        </div>
+    <?php ActiveForm::end(); ?>
+
+</div>
+
+
+<?php if(0): ?>
+
 
 <div class="row">
     <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
@@ -106,3 +153,4 @@ $this->params['breadcrumbs'][] = $this->title;
         ]) ?>
     </div>
 </div>
+<?php endif;  ?>

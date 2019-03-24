@@ -109,6 +109,12 @@ return [
                 '/user/registration/register'=>'/user/registration/register',
                 '/uregistration/index'=>'/uregistration/index',
                 '/uregistration/register'=>'/uregistration/register',
+                '/usecurity/login'=>'/usecurity/login',
+                '/urecovery/request'=>'/urecovery/request',
+
+                // delete
+                '/user/security/login'=>'/user/security/login',
+                '/user/recovery/request'=>'/user/recovery/request',
 
 
 
@@ -223,7 +229,9 @@ return [
             'class' => 'dektrium\user\Module',
             'controllerMap' => [
                 'settings' => '\frontend\controllers\overriden\SettingsController',
-                'uregistration' => '\frontend\controllers\UregistrationController'
+                'uregistration' => '\frontend\controllers\UregistrationController',
+                'usecurity' => '\frontend\controllers\UsecurityController',
+                'urecovery' => '\frontend\controllers\UrecoveryController',
             ],
             'modelMap' => [
                 'User' => 'common\models\overiden\User',

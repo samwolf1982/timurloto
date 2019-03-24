@@ -21,25 +21,55 @@ use yii\widgets\ActiveForm;
 $this->title = Yii::t('user', 'Recover your password');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="row">
-    <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title"><?= Html::encode($this->title) ?></h3>
+
+        <div class="form-inner">
+            <h2 class="text-center">Забыли Пароль?</h2>
+            <div class="line-text">
+                <p style="    color: black; font-size: large;">Введите почту, на которую зарегистрирован ваш аккаунт, и получите дальнейшие инструкци.</p>
             </div>
-            <div class="panel-body">
-                <?php $form = ActiveForm::begin([
-                    'id' => 'password-recovery-form',
-                    'enableAjaxValidation' => true,
-                    'enableClientValidation' => false,
-                ]); ?>
+            <?php $form = ActiveForm::begin([
+                'id' => 'password-recovery-form',
+                'enableAjaxValidation' => true,
+                'enableClientValidation' => false,
+            ]); ?>
+                <div class="input-row">
+                    <?= $form->field($model, 'email')->textInput(['autofocus' => true])->label('Email',['class'=>'placeholder']) ?>
+                </div>
+                <div class="input-row btn-row">
+                    <?= Html::submitButton('Восстановить', ['class' => 'btn big-btn btn-primary btn-hover']) ?>
+                </div>
+                <div class="input-row text-center text-row">
+                    <a href="#" onclick="UserReg.loadFormLogin();" class="auth-btn">Вернуться к авторизации</a>
+                </div>
+            <?php ActiveForm::end(); ?>
+        </div>
 
-                <?= $form->field($model, 'email')->textInput(['autofocus' => true]) ?>
 
-                <?= Html::submitButton(Yii::t('user', 'Continue'), ['class' => 'btn btn-primary btn-block']) ?><br>
 
-                <?php ActiveForm::end(); ?>
+<?php if(0): ?>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><?= Html::encode($this->title) ?></h3>
+                </div>
+                <div class="panel-body">
+                    <?php $form = ActiveForm::begin([
+                        'id' => 'password-recovery-form',
+                        'enableAjaxValidation' => true,
+                        'enableClientValidation' => false,
+                    ]); ?>
+
+                    <?= $form->field($model, 'email')->textInput(['autofocus' => true]) ?>
+
+                    <?= Html::submitButton(Yii::t('user', 'Continue'), ['class' => 'btn btn-primary btn-block']) ?><br>
+
+                    <?php ActiveForm::end(); ?>
+                </div>
             </div>
         </div>
     </div>
-</div>
+<?php endif; ?>
+
+
+
