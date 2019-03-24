@@ -19,29 +19,29 @@ use yii\helpers\Html;
  */
 ?>
 <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6; font-weight: normal; margin: 0 0 10px; padding: 0;">
-    <?= Yii::t('user', 'Hello') ?>,
+    <?= Yii::t('user', 'Добрый день') ?>,
 </p>
 
 <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6; font-weight: normal; margin: 0 0 10px; padding: 0;">
-    <?= Yii::t('user', 'Your account 22 on {0} has been created', Yii::$app->name) ?>.
+    <?= Yii::t('user', 'Ваш аккаунт в первой социальной сети для любителей ставок на спорт "{0}", был создан', Yii::$app->name) ?>.
     <?php if ($showPassword || $module->enableGeneratingPassword): ?>
-        <?= Yii::t('user', 'We have generated a password for you') ?>: <strong><?= $user->password ?></strong>
+        <?= Yii::t('user', 'Мы сгенерировали для вас пароль') ?>: <strong><?= $user->password ?></strong>
     <?php endif ?>
 
 </p>
 
 <?php if ($token !== null): ?>
     <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6; font-weight: normal; margin: 0 0 10px; padding: 0;">
-        <?= Yii::t('user', 'In order to complete your registration, please click the link below') ?>.
+        <?= Yii::t('user', 'Для завершения регистрации перейдите по ссылке ниже') ?>.
     </p>
     <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6; font-weight: normal; margin: 0 0 10px; padding: 0;">
         <?= Html::a(Html::encode($token->url), $token->url); ?>
     </p>
     <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6; font-weight: normal; margin: 0 0 10px; padding: 0;">
-        <?= Yii::t('user', 'If you cannot click the link, please try pasting the text into your browser') ?>.
+        <?= Yii::t('user', 'Если вы не можете нажать на ссылку, тогда скопируйте ёё и вставьте в ваш браузер.') ?>.
     </p>
 <?php endif ?>
 
 <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6; font-weight: normal; margin: 0 0 10px; padding: 0;">
-    <?= Yii::t('user', 'If you did not make this request you can ignore this email') ?>.
+    <?= Yii::t('user', 'Если вы не создавали данный запрос просто проигнорируйте его.') ?>.
 </p>

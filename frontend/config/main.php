@@ -13,6 +13,7 @@ $params = array_merge(
 
 return [
     'id' => 'app-frontend',
+    'name' => 'LOOK MY BET',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log',
         'dvizh\cart\Bootstrap'
