@@ -116,6 +116,7 @@ return [
 
                 '/usecurity/login'=>'/usecurity/login',
                 '/urecovery/request'=>'/urecovery/request',
+                '/urecovery/reset/<id:(.*?)>/<code:(.*?)>'=>'/urecovery/reset',
                 // delete
                 '/user/security/login'=>'/user/security/login',
                 '/user/recovery/request'=>'/user/recovery/request',
