@@ -107,7 +107,7 @@ class UregistrationController  extends OverriddeneRegistrationController
         $user->attemptConfirmation($code);
 
         $this->trigger(self::EVENT_AFTER_CONFIRM, $event);
-
+        Yii::$app->response->redirect(Url::toRoute(['/success-confirm']));
         return $this->render('/message', [
             'title'  => \Yii::t('user', 'Account confirmation'),
             'module' => $this->module,
