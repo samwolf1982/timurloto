@@ -87,7 +87,7 @@ class DefaultController extends Controller
     public function actionPopularsports($tourneyId=0)
     {
         $cache=\Yii::$app->cache;
-        if(YII_ENV !='prod') $this->cacheLive=10;
+        if(YII_ENV !='prod') $this->cacheLive=60;
         Yii::error(['show env'=>YII_ENV]);
         $data2=[];
 //        $listSportId=[12341,12348];
