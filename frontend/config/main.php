@@ -238,6 +238,10 @@ return [
                 'User' => 'common\models\overiden\User',
             ],
 
+            'mailer' => [
+                'viewPath' => '@app/views/account/overriden/mail',
+            ],
+
 
 //            'enableUnconfirmedLogin' => true,
 //            'confirmWithin' => 21600,
