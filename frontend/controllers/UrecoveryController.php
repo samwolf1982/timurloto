@@ -54,7 +54,7 @@ class UrecoveryController  extends OverriddeneUrecoveryController
         $this->trigger(self::EVENT_BEFORE_REQUEST, $event);
         if ($model->load(\Yii::$app->request->post()) && $model->sendRecoveryMessage()) {
             $this->trigger(self::EVENT_AFTER_REQUEST, $event);
-            Yii::$app->response->redirect(Url::toRoute(['/success-recovery']));
+            Yii::$app->response->redirect(Url::toRoute(['/success-reset']));
             return $this->render('/message', [
                 'title'  => \Yii::t('user', 'Recovery message sent'),
                 'module' => $this->module,
