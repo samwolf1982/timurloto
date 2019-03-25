@@ -20,7 +20,7 @@ use yii\widgets\ActiveForm;
  * @var dektrium\user\models\RecoveryForm $model
  */
 
-$this->title = Yii::t('user', 'Востановить пароль');
+$this->title = Yii::t('user', 'Для востановления пароля');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
@@ -72,19 +72,20 @@ $this->params['breadcrumbs'][] = $this->title;
                             <div class="table-inner">
                                 <div class="table-body">
                                     <div class="head-bets-slider text-center" >
-                                        <h3 style="font-size: large;" >Все отлично</h3>
+                                        <h3 style="font-size: large;" >Забыли Пароль?</h3>
 
 
                                     </div>
                                     <div class="bets-slider2">
                                         <div class="column-12 text-center " style="padding: 1em;">
 
-<div class="wrapFormreset">
-                                            <div class="form-inner">
-                                                <h2 class="text-center">Забыли Пароль?</h2>
-                                                <div class="line-text">
-                                                    <p style="    color: black; font-size: large;">Введите почту, на которую зарегистрирован ваш аккаунт, и получите дальнейшие инструкци.</p>
-                                                </div>
+<div class="wrapFormreset text-center" style="    display: flex; justify-content: center;">
+    <div class="panel panel-default" style="width: 50%;">
+        <div class="panel-heading">
+            <h3 class="panel-title"><?= Html::encode($this->title) ?></h3>
+            <h3 class="panel-title">Введите почту, на которую зарегистрирован ваш аккаунт, и получите дальнейшие инструкци.</h3>
+        </div>
+                                            <div class="panel-body">
                                                 <?php $form = ActiveForm::begin([
                                                     'id' => 'password-recovery-form',
                                                     'enableAjaxValidation' => true,
@@ -96,44 +97,18 @@ $this->params['breadcrumbs'][] = $this->title;
                                                 <div class="input-row btn-row">
                                                     <?= Html::submitButton('Восстановить', ['class' => 'btn big-btn btn-primary btn-hover']) ?>
                                                 </div>
-                                                <div class="input-row text-center text-row">
-                                                    <a href="#" onclick="UserReg.loadFormLogin();" class="auth-btn">Вернуться к авторизации</a>
-                                                </div>
                                                 <?php ActiveForm::end(); ?>
                                             </div>
+    </div>
 </div>
 
-
-
-                                            <div class="wrapFormreset text-center">
-                                                    <div class="panel panel-default" style="width: 50%;">
-                                                        <div class="panel-heading">
-                                                            <h3 class="panel-title"><?= Html::encode($this->title) ?></h3>
-                                                        </div>
-                                                        <div class="panel-body">
-                                                            <?php $form = ActiveForm::begin([
-                                                                'id' => 'password-recovery-form',
-                                                                'enableAjaxValidation' => true,
-                                                                'enableClientValidation' => false,
-                                                            ]); ?>
-
-                                                            <?= $form->field($model, 'password')->passwordInput() ?>
-
-                                                            <?= Html::submitButton(Yii::t('user', 'Finish'), ['class' => 'btn btn-success btn-block']) ?><br>
-
-                                                            <?php ActiveForm::end(); ?>
-                                                        </div>
-                                                    </div>
-                                            </div>
-
-
-
                                             <div class="input-row pull-right2">
-                                                <a href="/matches" class="btn btn-primary btn-hover">
-                                                    +  <i>Продолжить</i>
+                                                <a href="/" class="btn btn-primary btn-hover">
+                                                    +  <i>На главную</i>
                                                     <span ></span>
                                                 </a>
                                             </div>
+                                            
 
 
                                         </div>
