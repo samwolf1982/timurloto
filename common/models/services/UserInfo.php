@@ -33,7 +33,16 @@ class UserInfo
 
   function loadUser($id){
       /** @var common\models\overiden\User $user */ // фикс раньше был  ektrium\user\models\User;
-      return User::find()->where(['id'=>$id])->cache(1*24*60*60)->one();
+
+
+
+      $user = Yii::$app->cache->getOrSet(ConstantsHelper::USER_CACHE_FULL.$id, function () use ($id) {
+          return User::find()->where(['id'=>$id])->one();
+      },(1*24*60*60));
+
+
+      return $user;
+    //  return User::find()->where(['id'=>$id])->cache(1*24*60*60)->one();
   }
     /**
      * @return mixed

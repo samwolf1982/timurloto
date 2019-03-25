@@ -72,7 +72,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             <div class="table-inner">
                                 <div class="table-body">
                                     <div class="head-bets-slider text-center" >
-                                        <h3 style="font-size: large;" >Новий пароль</h3>
+                                        <h3 style="font-size: large;" >Новый пароль</h3>
 
 
                                     </div>

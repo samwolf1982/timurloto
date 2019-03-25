@@ -371,7 +371,7 @@ class Wager extends \yii\db\ActiveRecord
 
         if($user_owm && $current_user ){
 //         'user_own_id', 'user_sub_id'
-            Yii::error(['qwert',$user_sub_id, $current_user_id]);
+         //   Yii::error(['qwert',$user_sub_id, $current_user_id]);
             //   $subscriber=Subscriber::find()->where(['user_sub_id'=>(integer)$user_sub_id,'user_own_id'=>$current_user_id])->one();
             $subscriber=Subscriber::find()->where(['user_sub_id'=>$current_user_id,'user_own_id'=>$user_sub_id])->one();
 

@@ -4,6 +4,7 @@
 namespace frontend\controllers\overriden;
 
 use common\models\DTO\usersetting\UserDataSetting;
+use common\models\helpers\ConstantsHelper;
 use dektrium\user\controllers\SettingsController as BaseSettingsControllerDectrim;
 use dektrium\user\models\SettingsForm;
 use Yii;
@@ -16,6 +17,8 @@ class SettingsController extends BaseSettingsControllerDectrim
 
     public function actionProfile()
     {
+
+
         // Profile Model
         $modelProfile = $this->finder->findProfileById(\Yii::$app->user->identity->getId());
         if ($modelProfile == null) {
@@ -37,13 +40,13 @@ class SettingsController extends BaseSettingsControllerDectrim
 
 
         $this->trigger(self::EVENT_BEFORE_PROFILE_UPDATE, $eventProfile);
-       // $this->trigger(self::EVENT_BEFORE_ACCOUNT_UPDATE, $eventAccount);
-
-
-
 
         if ($modelProfile->load(\Yii::$app->request->post()) && $modelUser->load(Yii::$app->request->post())){
 //            $modelAccount->save();
+
+            // чистим пользователя в кеше
+            Yii::$app->cache->delete(ConstantsHelper::USER_CACHE_FULL.Yii::$app->user->identity->getId());
+
             // если  попытки поменят пароль все поплану иначе
 
             //обновка как в админке
@@ -76,7 +79,9 @@ class SettingsController extends BaseSettingsControllerDectrim
 
         }
 
-        $modelUser->aboutInfo=$modelUser->userinfo->about_me;
+        $modelUser->aboutInfo='';
+        if(!empty($modelUser->userinfo))$modelUser->aboutInfo=$modelUser->userinfo->about_me;
+
 //        todo  обэденить проверки
 //        if ($modelProfile->load(\Yii::$app->request->post()) && $modelProfile->save()) {
 //            \Yii::$app->getSession()->setFlash('success', \Yii::t('user', 'Your profile has been updated'));

@@ -42,8 +42,10 @@ $userInfo;
                         <div class="big-circle-wrapper" data-ptc="<?=$userInfo->getUserLevelNumber() ?>">
                             <div class="big-circle"><canvas width="160" height="160"></canvas></div>
                         </div>
-                        <div class="big-avatar-user">
-                            <img src="/images/avatar-placeholder.svg" alt="">
+                        <div class="big-avatar-user" style="    top: -9px; left: -9px; position: relative;">
+
+                            <img style="border-radius: 50%;     width: 140px;" src="/<?=$userInfo->getUserImage();?>" alt="<?=$userInfoAccount->getName();?>">
+
                         </div>
                     </div>
                 </div>
