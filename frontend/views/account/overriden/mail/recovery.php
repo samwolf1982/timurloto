@@ -17,18 +17,22 @@ use yii\helpers\Html;
  */
 ?>
 <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6; font-weight: normal; margin: 0 0 10px; padding: 0;">
-    <?= Yii::t('user', 'Hello') ?>,
+    <?= Yii::t('user', 'Добрый день') ?>,
 </p>
 <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6; font-weight: normal; margin: 0 0 10px; padding: 0;">
-    <?= Yii::t('user', 'We have received a request to reset the password for your account on {0}', Yii::$app->name) ?>.
-    <?= Yii::t('user', 'Please click the link below to complete your password reset') ?>.
+    <?= Yii::t('user', 'Mы отправили запрос на востановление пароля на сайте {0}', Yii::$app->name) ?>.
+    <?= Yii::t('user', 'Пожалуйста перейдите по ссылке ниже') ?>.
 </p>
 <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6; font-weight: normal; margin: 0 0 10px; padding: 0;">
-    <?= Html::a(Html::encode($token->url), $token->url); ?>
+    <?php // смена урла для подтверждения для переопределения/ самый простой способ
+    $rUrl=Html::a(Html::encode($token->url), $token->url);
+    $rUrl= str_replace('/user/recover/','/urecovery/reset/',$rUrl);
+    ?>
+    <?= $rUrl ?>
 </p>
 <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6; font-weight: normal; margin: 0 0 10px; padding: 0;">
-    <?= Yii::t('user', 'If you cannot click the link, please try pasting the text into your browser') ?>.
+    <?= Yii::t('user', 'Если вы не можете нажать на ссылку, тогда скопируйте ёё и вставьте в ваш браузер.') ?>.
 </p>
 <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6; font-weight: normal; margin: 0 0 10px; padding: 0;">
-    <?= Yii::t('user', 'If you did not make this request you can ignore this email') ?>.
+    <?= Yii::t('user', 'Если вы не создавали данный запрос просто проигнорируйте его.') ?>.
 </p>

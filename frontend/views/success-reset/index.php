@@ -1,30 +1,22 @@
 <?php
 
-/*
- * This file is part of the Dektrium project.
- *
- * (c) Dektrium project <http://github.com/dektrium>
- *
- * For the full copyright and license information, please view the LICENSE.md
- * file that was distributed with this source code.
- */
-
 use app\copmonents\widgets\addbet\AddbetWidget;
 use app\copmonents\widgets\showuser\ShowuserWidget;
-use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use app\modules\statistic\widgets\LastBets;
+use app\modules\statistic\widgets\LastWeekWinnersWidg;
+use common\models\helpers\ConstantsHelper;
+use common\models\helpers\HtmlGenerator;
+use common\models\overiden\User;
+use dvizh\cart\widgets\BuyButton;
+use frontend\assets\BetAsset;
+use frontend\assets\BetDinotableAsset;
+use yii\grid\GridView;
+use yii\helpers\Url;
+use yii\widgets\LinkPager;
 
-/**
- * @var yii\web\View $this
- * @var yii\widgets\ActiveForm $form
- * @var dektrium\user\models\RecoveryForm $model
- */
-
-$this->title = Yii::t('user', 'Новый пароль');
-$this->params['breadcrumbs'][] = $this->title;
+BetAsset::register($this);
+//BetDinotableAsset::register($this);
 ?>
-
-
 <body class="home-page footer-login-page">
 
 <header class="header-main front-header">
@@ -72,43 +64,26 @@ $this->params['breadcrumbs'][] = $this->title;
                             <div class="table-inner">
                                 <div class="table-body">
                                     <div class="head-bets-slider text-center" >
-                                        <h3 style="font-size: large;" >Новий пароль</h3>
+                                        <h3 style="font-size: large;" >Все отлично</h3>
 
 
                                     </div>
                                     <div class="bets-slider2">
-                                        <div class="column-12 text-center " style="padding: 1em;">
+                                        <div class="column-12 text-center" style="padding: 1em;">
 
 
-
-
-
-                                            <div class="wrapFormreset text-center" style="display: flex; justify-content: center;">
-                                                    <div class="panel panel-default" style="width: 50%;">
-                                                        <div class="panel-heading">
-                                                            <h3 class="panel-title"> </h3>
-                                                        </div>
-                                                        <div class="panel-body">
-                                                            <?php $form = ActiveForm::begin([
-                                                                'id' => 'password-recovery-form',
-                                                                'enableAjaxValidation' => true,
-                                                                'enableClientValidation' => false,
-                                                            ]); ?>
-
-                                                            <?= $form->field($model, 'password')->passwordInput()->label('Введите новый пароль') ?>
-
-                                                            <?= Html::submitButton(Yii::t('user', 'Продолжить'), ['class' => 'btn big-btn btn-primary btn-hover']) ?><br>
-
-                                                            <?php ActiveForm::end(); ?>
-                                                        </div>
-                                                    </div>
+                                            <div class="input-row">
+                                                <p>Ваш аккаунт успешно востановлен.</p>
                                             </div>
-
-
-
+                                            <div class="input-row">
+                                                <p>Уведомление выслано на указаный вами адрес.</p>
+                                            </div>
+                                            <div class="input-row">
+                                                <p>Желаем вам приятного времяпрепровождения</p>
+                                            </div>
                                             <div class="input-row pull-right2">
-                                                <a href="/" class="btn btn-primary btn-hover">
-                                                    +  <i>Главная</i>
+                                                <a href="/matches" class="btn btn-primary btn-hover">
+                                                    +  <i>Продолжить</i>
                                                     <span ></span>
                                                 </a>
                                             </div>
@@ -131,9 +106,9 @@ $this->params['breadcrumbs'][] = $this->title;
             <?php } ?>
 
 
-
-
-
+            
+            
+            
         </div>
     </div>
 </div>
@@ -7940,31 +7915,3 @@ $this->params['breadcrumbs'][] = $this->title;
 <script src="/js/script.min.js"></script>
 </body>
 
-
-
-<?php if(0): ?>
-
-    <div class="row">
-        <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><?= Html::encode($this->title) ?></h3>
-                </div>
-                <div class="panel-body">
-                    <?php $form = ActiveForm::begin([
-                        'id' => 'password-recovery-form',
-                        'enableAjaxValidation' => true,
-                        'enableClientValidation' => false,
-                    ]); ?>
-
-                    <?= $form->field($model, 'password')->passwordInput() ?>
-
-                    <?= Html::submitButton(Yii::t('user', 'Finish'), ['class' => 'btn btn-success btn-block']) ?><br>
-
-                    <?php ActiveForm::end(); ?>
-                </div>
-            </div>
-        </div>
-    </div>
-
-<?php endif; ?>

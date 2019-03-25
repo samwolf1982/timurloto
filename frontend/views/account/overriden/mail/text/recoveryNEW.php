@@ -21,10 +21,9 @@
 
 <?php // смена урла для подтверждения для переопределения/ самый простой способ
 $rUrl=$token->url;
-$rUrl= str_replace('/user/recover/','/urecovery/reset/',$rUrl);
+$rUrl= str_replace('/user/recover/','/uregistration/recover/',$rUrl);
 ?>
 <?= $rUrl ?>
-
 
 <?= Yii::t('user', 'Если вы не можете нажать на ссылку, тогда скопируйте ёё и вставьте в ваш браузер.') ?>.
 

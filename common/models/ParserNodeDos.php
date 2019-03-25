@@ -204,6 +204,7 @@ class ParserNodeDos extends \yii\base\BaseObject
 
 
         if(empty($data)) {  yii::error(['getTabsTourneyGames is EMPTY ', 'url'=>$this->initiator->getTourneyGamesTypeUrl($tourneyId)]);   return []; }
+//        yii::error($data->data);
         $res=[];
         $sportId=$data->data[0]->relationships->sport->data->id;
         $gameCollector=[];

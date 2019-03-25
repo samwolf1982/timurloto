@@ -6,6 +6,8 @@ namespace frontend\controllers;
 
 
 use common\models\overiden\RegistrationForm;
+use common\models\services\DoSome;
+use common\models\User;
 use dektrium\user\Finder;
 //use dektrium\user\models\RegistrationForm;
 use dektrium\user\models\LoginForm;
@@ -118,11 +120,23 @@ class UrecoveryController  extends OverriddeneUrecoveryController
         $this->trigger(self::EVENT_BEFORE_RESET, $event);
 
         if ($model->load(\Yii::$app->getRequest()->post()) && $model->resetPassword($token)) {
+            //
+                DoSome::createBalance($id); // cлучай когда не подвердили и сразу востанов
+
             $this->trigger(self::EVENT_AFTER_RESET, $event);
-            return $this->render('/message', [
-                'title'  => \Yii::t('user', 'Password has been changed'),
-                'module' => $this->module,
-            ]);
+     // login and redirect
+
+            // логиним пользователя
+            $identity=User::find()->where(['id'=>$id])->one();
+            Yii::$app->user->login($identity);
+            Yii::$app->response->redirect(Url::toRoute(['/success-recovery']));
+
+
+
+            //            return $this->render('/message', [
+//                'title'  => \Yii::t('user', 'Password has been changed'),
+//                'module' => $this->module,
+//            ]);
         }
 
         return $this->render('@app/views/account/overriden/recovery/reset', [
