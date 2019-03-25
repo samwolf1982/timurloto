@@ -862,8 +862,7 @@ BetAsset::register($this);
 
             <?php if(1){ // верстка для посл ставок  ?>
 
-
-                <?=LastBets::widget(['user_id'=>yii::$app->user->identity->id]); ?>
+                <?=LastBets::widget(['user_id'=>( empty(yii::$app->user->identity)?null: yii::$app->user->identity->id) ]); ?>
 
 
             <?php } ?>

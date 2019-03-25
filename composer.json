@@ -27,7 +27,8 @@
         "phpunit/phpunit": "^6.5",
         "yiisoft/yii2-jui": "^2.0",
        "yiisoft/yii2-authclient": "~2.1.7",
-        "yiisoft/yii2-imagine": "~2.1.0"
+        "yiisoft/yii2-imagine": "~2.1.0",
+        "wadeshuler/yii2-ckeditor-cdn": "~1.0"
 
     },
     "require-dev": {
