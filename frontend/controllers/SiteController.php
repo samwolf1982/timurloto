@@ -21,6 +21,7 @@ use frontend\models\ContactForm;
  */
 class SiteController extends Controller
 {
+
     /**
      * {@inheritdoc}
      */
@@ -67,6 +68,8 @@ class SiteController extends Controller
             ],
         ];
     }
+
+
 
     /**
      * Displays homepage.

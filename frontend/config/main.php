@@ -46,7 +46,9 @@ return [
             ],
         ],
         'errorHandler' => [
-            'errorAction' => 'site/error',
+            'errorAction' => YII_ENV!='prod'? 'site/error':'/error-page',
+           // 'errorAction' => '/error-page',
+          //  'errorAction' => 'site/error',
         ],
 
         'urlManager' => [

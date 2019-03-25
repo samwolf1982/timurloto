@@ -31,7 +31,7 @@ class ShowuserWidget extends Widget
         $userimage='https://avatars0.githubusercontent.com/u/8706421?s=40&v=40';
        // $userimage=Yii::$app->user->identity->imageurl;
 
-        if(empty($username))
+        if(empty($username)){}
         if(Yii::$app->user->isGuest) {
             $userimage='/images/avatar-placeholder.svg';
         }else{

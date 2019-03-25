@@ -92,6 +92,7 @@ class UregistrationController  extends OverriddeneRegistrationController
      */
     public function actionConfirm($id, $code)
     {
+
         ///uregistration/register
         $this->module=Yii::$app->getModule('user');
         $user = $this->finder->findUserById($id);
@@ -104,10 +105,22 @@ class UregistrationController  extends OverriddeneRegistrationController
 
         $this->trigger(self::EVENT_BEFORE_CONFIRM, $event);
 
-        $user->attemptConfirmation($code);
 
-        $this->trigger(self::EVENT_AFTER_CONFIRM, $event);
-        Yii::$app->response->redirect(Url::toRoute(['/success-confirm']));
+   $statusConfirm=     $user->attemptConfirmation($code);
+
+   yii::error(['$statusConfirm'=>$statusConfirm]);
+
+
+
+        if($statusConfirm){
+            $this->trigger(self::EVENT_AFTER_CONFIRM, $event);
+            Yii::$app->response->redirect(Url::toRoute(['/account',['id'=>$id]]));
+        }else{
+
+        }
+
+        //exit();
+        //Yii::$app->response->redirect(Url::toRoute(['/success-confirm']));
         return $this->render('/message', [
             'title'  => \Yii::t('user', 'Account confirmation'),
             'module' => $this->module,
