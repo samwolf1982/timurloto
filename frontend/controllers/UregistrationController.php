@@ -5,6 +5,7 @@ namespace frontend\controllers;
 
 
 use common\models\overiden\RegistrationForm;
+use common\models\overiden\User;
 use dektrium\user\Finder;
 //use dektrium\user\models\RegistrationForm;
 use Yii;
@@ -49,7 +50,7 @@ class UregistrationController  extends OverriddeneRegistrationController
             if(empty($model->username))  $model->username='some_name_' .rand();
             if(empty($model->fullname))  $model->fullname='some fullname ' .rand();
             if(empty($model->email))  $model->email='mail'.rand().'@mail.ru';
-            if(empty($model->password))  $model->password=rand(111111,9999999);
+            if(empty($model->password)) $model->password=111111;//  $model->password=rand(111111,9999999);
         }
 
 
@@ -65,11 +66,17 @@ class UregistrationController  extends OverriddeneRegistrationController
 
         if ($model->load(\Yii::$app->request->post()) && $model->register()) {
 //            Yii::$app->mailer->viewPath="@frontend/views/account/overriden/mail";
-//            Yii::error(Yii::$app->mailer->viewPath );
             $this->trigger(self::EVENT_AFTER_REGISTER, $event);
-//            \Yii::$app->response->format = Response::FORMAT_JSON;
-//            return ['success' => 'sssss'];
-            Yii::$app->response->redirect(Url::toRoute(['/success']));
+            Yii::error($model->newusero->id);
+            if(!empty($model->newusero->id)){ // login go to account
+
+                Yii::$app->user->login($model->newusero);
+                Yii::$app->response->redirect(Url::toRoute(['/account','id'=>$model->newusero->id]));
+            }else{
+                Yii::$app->response->redirect(Url::toRoute(['/success']));
+            }
+
+
 
         }
 

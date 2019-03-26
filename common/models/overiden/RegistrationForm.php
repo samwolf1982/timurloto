@@ -19,6 +19,7 @@ class RegistrationForm extends BaseRegistrationForm
      * @var string
      */
     public $fullname;
+    public $user;
 
     /**
      * @inheritdoc
@@ -41,11 +42,18 @@ class RegistrationForm extends BaseRegistrationForm
         return $labels;
     }
 
+
+    public function getNewusero()
+    {
+        return $this->user;
+    }
+
     /**
      * @inheritdoc
      */
     public function loadAttributes(User $user)
     {
+        $this->user=$user;
         // here is the magic happens
         $user->setAttributes([
             'email'    => $this->email,

@@ -14,6 +14,7 @@ $params = array_merge(
 return [
     'id' => 'app-frontend',
     'name' => 'LOOK MY BET',
+    'language' => 'ru',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log',
         'dvizh\cart\Bootstrap'
@@ -299,7 +300,7 @@ return [
 //                ],
 //            ],
 
-            'enableUnconfirmedLogin' => true,
+            'enableUnconfirmedLogin' => true,    // можно не подтвержденнным
             'confirmWithin' => 21600,
             'cost' => 12,
             'admins' => ['admin']

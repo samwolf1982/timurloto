@@ -41,8 +41,9 @@ $userInfo;
                         <div class="big-circle-wrapper" data-ptc="<?=$userInfo->getUserLevelNumber() ?>">
                             <div class="big-circle"><canvas width="160" height="160"></canvas></div>
                         </div>
-                        <div class="big-avatar-user">
-                            <img src="<?=$userInfoAccount->getPhoto();?>" alt="">
+                        <div class="big-avatar-user" style="    top: -9px; left: -9px; position: relative;">
+                            <img style="border-radius: 50%;     width: 140px;" src="/<?=$userInfo->getUserImage();?>" alt="<?=$userInfoAccount->getName();?>">
+
                         </div>
                     </div>
                 </div>
@@ -113,7 +114,12 @@ $userInfo;
                 </div>
                 <!-- Добавлена ссылка и класс j-center -->
                 <div class="link-acc j-center">
-                    <a href="#" data-toggle="modal" data-target="#modal-complaint">Пожаловаться</a>
+                    <?php if(!Yii::$app->user->isGuest){ ?>
+                        <a href="#" data-toggle="modal" data-target="#modal-complaint">Пожаловаться</a>
+                    <?php }else{ ?>
+                        <a href="#"  id="openMadaInner" data-toggle="modal-reg" data-target="#modal-auth">Пожаловаться</a>
+                    <?php } ?>
+
 
                     <?php if(!Yii::$app->user->isGuest){ ?>
                         <div class="drop-open-block  <?= $user->isSubscriberfront()?'locked-bet':'' ?> ">

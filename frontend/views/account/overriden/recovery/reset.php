@@ -48,7 +48,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
         <!--   вход выход  пользователя   -->
-        <?= ShowuserWidget::widget(['userdata' => [],'view'=>'other']) ?>
+        <?php  if(Yii::$app->user->isGuest){   ?>
+            <?= ShowuserWidget::widget(['userdata' => [],'view'=>'index']) ?>
+        <?php }else{ ?>
+            <?= ShowuserWidget::widget(['userdata' => [],'view'=>'other']) ?>
+        <?php }  ?>
+
 
 
 
@@ -213,167 +218,8 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 </footer>
-<div class="modal-wrapper user-modal" id="modal-auth">
-    <div class="modal-inner">
-        <div class="modal-content">
-            <div class="modal-content-inner">
-                <div class="header-modal">
-                    <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
-                </div>
-                <div class="body-modal">
-                    <div class="body-modal-inner">
-                        <div class="left-side-login big-side-login">
-                            <div class="left-side-inner register-inner">
-                                <h2>Стань частью Look My Bet</h2>
-                                <div class="social-login">
-                                    <ul class="soc-login">
-                                        <li><a href="#" class="soc-tw"><span class="icon-tw"></span></a></li>
-                                        <li><a href="#" class="soc-fb"><span class="icon-fb"></span></a></li>
-                                        <li><a href="#" class="soc-gp"><span class="icon-G"></span></a></li>
-                                    </ul>
-                                </div>
-                                <div class="line-text">
-                                    <span>или создайте аккаунт с помощью e-mail</span>
-                                </div>
-                                <div class="form-wrapper">
-                                    <div class="form-inner">
-                                        <form action="#">
-                                            <div class="input-row">
-                                                <input type="text">
-                                                <label class="placeholder">Ваше Имя</label>
-                                            </div>
-                                            <div class="input-row">
-                                                <input type="text">
-                                                <label class="placeholder">Никнейм</label>
-                                            </div>
-                                            <div class="input-row">
-                                                <input type="email">
-                                                <label class="placeholder">Email</label>
-                                            </div>
-                                            <div class="input-row">
-                                                <input type="text">
-                                                <label class="placeholder">Пароль - <span>минимум 6 символов</span></label>
-                                            </div>
-                                            <div class="checkbox-row">
-                                                <input type="checkbox" id="konf">
-                                                <label for="konf" class="check-text">
-                                                    Я прочитал <a href="#">Политику Конфиденциальности</a> сервиса Look My Bet
-                                                </label>
-                                            </div>
-                                            <div class="input-row btn-row">
-                                                <button type="submit" class="btn big-btn btn-primary btn-hover">
-                                                    СОЗДАТЬ АККАУНТ
-                                                    <span></span>
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="left-side-inner login-inner">
-                                <h2>Авторизируйтесь</h2>
-                                <div class="social-login">
-                                    <ul class="soc-login">
-                                        <li><a href="#" class="soc-tw"><span class="icon-tw"></span></a></li>
-                                        <li><a href="#" class="soc-fb"><span class="icon-fb"></span></a></li>
-                                        <li><a href="#" class="soc-gp"><span class="icon-G"></span></a></li>
-                                    </ul>
-                                </div>
-                                <div class="line-text">
-                                    <span>или войдите с помощью e-mail</span>
-                                </div>
-                                <div class="form-wrapper">
-                                    <div class="form-inner">
-                                        <form action="#">
-                                            <div class="input-row">
-                                                <input type="email">
-                                                <label class="placeholder">Email</label>
-                                            </div>
-                                            <div class="input-row">
-                                                <input type="text">
-                                                <label class="placeholder">Пароль</label>
-                                            </div>
-                                            <div class="input-row btn-row">
-                                                <button type="submit" class="btn big-btn btn-primary btn-hover">
-                                                    ВОЙТИ
-                                                    <span></span>
-                                                </button>
-                                            </div>
-                                            <div class="input-row text-center text-row">
-                                                <a href="#" class="forgot-btn">Забыли пароль?</a>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="left-side-inner forgot-inner">
-                                <h2>Забыли Пароль?</h2>
-                                <div class="line-text">
-                                    <p>Введите почту, на которую зарегистрирован ваш аккаунт,
-                                        и получите дальнейшие инструкци.</p>
-                                </div>
-                                <div class="form-wrapper">
-                                    <div class="form-inner">
-                                        <form action="#">
-                                            <div class="input-row">
-                                                <input type="email">
-                                                <label class="placeholder">Email</label>
-                                            </div>
-                                            <div class="input-row btn-row">
-                                                <button type="submit" class="btn big-btn btn-primary btn-hover">
-                                                    Восстановить
-                                                    <span></span>
-                                                </button>
-                                            </div>
-                                            <div class="input-row text-center text-row">
-                                                <a href="#" class="auth-btn">Вернуться к авторизации</a>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="right-side-login small-side-login">
-                            <div class="right-side-inner">
-                                <div class="logo-popup">
-                                    <img src="/images/logo_red.svg" alt="">
-                                </div>
-                                <div class="text-left">
-                                    <p>Look My Bet - Первая социальная сеть в СНГ для
-                                        любителей ставок на спорт</p>
-                                </div>
-                                <div class="from-block">
-                                    <h3>Для чего нужна авторизация?</h3>
-                                    <ul class="list-answer">
-                                        <li>Lorem ipsum dolor sit amet, consectetur</li>
-                                        <li>Sed do eiusmod tempor incididunt ut labore</li>
-                                        <li>Duis aute irure dolor in reprehenderit in</li>
-                                    </ul>
-                                </div>
-                                <div class="toggle-type-block">
-                                    <div class="login-block active">
-                                        <h2>Есть Аккаунт?</h2>
-                                        <a href="#" class="btn btn-default btn-hover" id="show-login">
-                                            <b>Войти</b>
-                                            <span></span>
-                                        </a>
-                                    </div>
-                                    <div class="register-block">
-                                        <h2>Нет Аккаунта?</h2>
-                                        <a href="#" class="btn btn-default btn-hover" id="show-register">
-                                            <b>РЕГИСТРАЦИЯ</b>
-                                            <span></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+
 <div class="modal-wrapper bet-modal modal-860" id="bet1">
     <div class="modal-inner">
         <div class="modal-content">

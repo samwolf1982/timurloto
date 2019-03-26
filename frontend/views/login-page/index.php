@@ -68,26 +68,24 @@ BetAsset::register($this);
                             <div class="table-inner">
                                 <div class="table-body">
                                     <div class="head-bets-slider text-center" >
-                                        <h3 style="font-size: large;" >Все отлично</h3>
-
-
+                                        <h3 style="font-size: large;" >Для получения доступа вам нужно войти в свой аккаунт</h3>
                                     </div>
                                     <div class="bets-slider2">
                                         <div class="column-12 text-center" style="padding: 1em;">
 
+                                            <img src="/images/error/404-error.png" alt="404 error">
+                                            <br>
 
-                                            <div class="input-row">
-                                                <p>Ваш аккаунт успешно востановлен.</p>
-                                            </div>
-                                            <div class="input-row">
-                                                <p>Уведомление выслано на указаный вами адрес.</p>
-                                            </div>
-                                            <div class="input-row">
-                                                <p>Желаем вам приятного времяпрепровождения</p>
-                                            </div>
-                                            <div class="input-row pull-right2">
-                                                <a href="/matches" class="btn btn-primary btn-hover">
-                                                    +  <i>Продолжить</i>
+
+                                            <?php if( Yii::$app->params['showErrorOnPage404'] ): ?>
+                                                <div class="wraperrormessage">
+                                                    <?= Yii::$app->errorHandler->exception; ?>
+                                                </div>
+                                            <?php endif; ?>
+
+                                            <div class="input-row pull-right2" style="padding-top: 1em;">
+                                                <a href="#" class="btn btn-small btn-primary" id="openMadaInner" data-toggle="modal-reg" data-target="#modal-auth">
+                                                    +  <i>Войти</i>
                                                     <span ></span>
                                                 </a>
                                             </div>
@@ -192,6 +190,7 @@ BetAsset::register($this);
         </div>
     </div>
 </footer>
+
 
 
 <div class="modal-wrapper bet-modal modal-860" id="bet1">

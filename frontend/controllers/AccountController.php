@@ -6,12 +6,15 @@ use common\models\helpers\ConstantsHelper;
 use common\models\Playlist;
 use common\models\search\BalancestatisticsSearch;
 use common\models\services\AccessInfo;
+use common\models\services\DoSome;
 use common\models\Subscriber;
 use common\models\User;
+use Exception;
 use frontend\modules\subscribers\SubscriberModule;
 use komer45\balance\models\Score;
 use Yii;
 use yii\base\InvalidParamException;
+use yii\helpers\Url;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -39,22 +42,23 @@ class AccountController extends Controller
             'access' => [
                 'class' => AccessControl::className(),
                 'only' => ['index','addsubscriber', 'view','messages','chart','add-mail-subscriber','remove-mail-subscriber','open-access','autocomplete-comment'],
+                'denyCallback' => function ($rule, $action) {
+                    $this->redirect( Url::toRoute(['/login-page']),302);
+//                    throw new Exception('У вас нет доступа к этой странице');
+                },
                 'rules' => [
                     [
                         'allow' => true,
                         'actions' => ['view','chart'],
                         'roles' => ['?','@'],
                     ],
-//                    [
-//                        'allow' => true,
-//                        'actions' => ['open-access'],
-//                        'roles' => ['?'],
-//                    ],
-
                     [
                         'allow' => true,
                         'actions' => ['index','messages','open-access','autocomplete-comment'],
                         'roles' => ['@'],
+//                        'matchCallback' => function ($rule, $action) {
+//                            return date('d-m') === '31-10';
+//                        }
                     ],
                     [
                         'allow' => true,
@@ -74,6 +78,10 @@ class AccountController extends Controller
      */
     public function actionIndex()
     {
+
+        // сюда можно попасть и без кошелька fix если нету тогда создаем
+        if(!empty( Yii::$app->user->id)) DoSome::createBalance( Yii::$app->user->id);
+
         $b= Score::find()->where(['user_id' => Yii::$app->user->id])->one()->balance;
         $balance  = number_format($b, 0, '', ',');
 
@@ -326,6 +334,7 @@ class AccountController extends Controller
 
     public function beforeAction($action)
     {
+
         if(in_array($action->id,$this->actionJsonList))  Yii::$app->response->format = Response::FORMAT_JSON;
 
         if(!Yii::$app->user->isGuest) {
@@ -339,6 +348,10 @@ class AccountController extends Controller
 
             }
         }
+
+
+
+
         return parent::beforeAction($action);
     }
 
