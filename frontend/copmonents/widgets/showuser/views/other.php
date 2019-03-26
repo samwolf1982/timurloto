@@ -55,7 +55,7 @@
            </div>
 
 
-           <div class="notif-block drop-menu">
+           <div class="notif-block drop-menu hidden">
                <a href="#" class="notification has-notification drop-menu-trigger">
                    <span class="icon-notification"></span>
                </a>
@@ -107,7 +107,7 @@
                    </div>
                </div>
            </div>
-           <div class="message-block drop-menu">
+           <div class="message-block drop-menu hidden">
                <a href="#" class="message has-message drop-menu-trigger">
                    <span class="icon-message"></span>
                    <i class="count-message">8</i>
