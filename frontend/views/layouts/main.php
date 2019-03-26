@@ -73,7 +73,7 @@ AppAsset::register($this);
                     <div class="body-modal-inner">
                         <div class="left-side-login big-side-login">
                             <div class="left-side-inner register-inner">
-                                <h2>Стань частью Look My Bet</h2>
+                                <h2>Стань частью Look My Bet2</h2>
                                 <div class="social-login">
 
                                     <ul class="soc-login">
@@ -179,9 +179,11 @@ AppAsset::register($this);
                                 <div class="from-block">
                                     <h3>Для чего нужна авторизация?</h3>
                                     <ul class="list-answer">
-                                        <li>Lorem ipsum dolor sit amet, consectetur</li>
-                                        <li>Sed do eiusmod tempor incididunt ut labore</li>
-                                        <li>Duis aute irure dolor in reprehenderit in</li>
+                                        <li>турниры</li>
+                                        <li> бесплатные прогнозы</li>
+                                        <li>прозрачная статистика</li>
+                                        <li>заработок</li>
+                                        <li>неограниченные возможности</li>
                                     </ul>
                                 </div>
                                 <div class="toggle-type-block">

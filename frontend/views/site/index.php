@@ -6,7 +6,6 @@ use frontend\assets\MainAsset;
 use yii\helpers\Url;
 
 $this->title='LOOK MY BET';
-
 MainAsset::register($this);
 ?>
 

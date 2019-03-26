@@ -101,8 +101,9 @@ $userInfo;
                         </a>
 
                     <?php }else{  ?>
-                        <a href="#" onclick="openModaleMoreDetail(this);"  data-target='<?=Url::to(['/subscribers/default/send-messageguest','id'=>Yii::$app->user->id])?>' data-toggle="modaleAjax" data-target="#edit_subscriber"  class="btn btn-hover btn-primary no-before">
-                            <i class="icon-mail"></i>Сообщение гостевое
+
+                        <a href="#" class="btn btn-small btn-primary" id="openMadaInner" data-toggle="modal-reg" data-target="#modal-auth">
+                            <i class="icon-mail"></i>Сообщение
                             <span></span>
                         </a>
 

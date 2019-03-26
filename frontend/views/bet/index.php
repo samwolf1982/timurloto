@@ -40,7 +40,13 @@ BetAsset::register($this);
 
 
         <!--   вход выход  пользователя   -->
-        <?= ShowuserWidget::widget(['userdata' => [],'view'=>'other']) ?>
+        <?php // ShowuserWidget::widget(['userdata' => [],'view'=>'other']) ?>
+
+        <?php  if(Yii::$app->user->isGuest){   ?>
+            <?= ShowuserWidget::widget(['userdata' => [],'view'=>'index']) ?>
+        <?php }else{ ?>
+            <?= ShowuserWidget::widget(['userdata' => [],'view'=>'other']) ?>
+        <?php }  ?>
 
 
 
@@ -1678,7 +1684,11 @@ BetAsset::register($this);
         </div>
     </div>
 </footer>
-<div class="modal-wrapper user-modal" id="modal-auth">
+
+
+<?php if(0):   // delete ?>
+
+<div class="modal-wrapper user-modal" id="modal-auth2">
     <div class="modal-inner">
         <div class="modal-content">
             <div class="modal-content-inner">
@@ -1839,6 +1849,9 @@ BetAsset::register($this);
         </div>
     </div>
 </div>
+
+<?php endif; ?>
+
 <div class="modal-wrapper bet-modal modal-860" id="bet1">
     <div class="modal-inner">
         <div class="modal-content">

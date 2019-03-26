@@ -13,6 +13,14 @@
 
             <div class="user-inner">
 
+                <div class="add-block">
+
+                    <a href="<?=Url::to(['/matches']) ?>" class="btn btn-primary btn-hover">
+                        +  <i>Дать Прогноз</i>
+                        <span></span>
+                    </a>
+
+                </div>
                 <div class="user-status">
 
                     <div class="faq-block_2">
