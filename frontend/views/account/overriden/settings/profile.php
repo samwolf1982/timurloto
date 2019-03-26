@@ -122,7 +122,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <?= $form->field($modelUser, 'aboutInfo')->textInput(['class' => 'emptyClassField'])->label(false); ?>
                                 <label class="placeholder">Описание</label>
                             </div>
-                            <div class="input-row">
+                            <div class="input-row hidden">
                                 <label class="title-row">Часто используемые букмекеры</label>
                                 <div class="select-book-row">
                                     <div class="selected-book">

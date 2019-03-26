@@ -65,11 +65,8 @@ class UregistrationController  extends OverriddeneRegistrationController
 
 
         if ($model->load(\Yii::$app->request->post()) && $model->register()) {
-//            Yii::$app->mailer->viewPath="@frontend/views/account/overriden/mail";
             $this->trigger(self::EVENT_AFTER_REGISTER, $event);
-            Yii::error($model->newusero->id);
             if(!empty($model->newusero->id)){ // login go to account
-
                 Yii::$app->user->login($model->newusero);
                 Yii::$app->response->redirect(Url::toRoute(['/account','id'=>$model->newusero->id]));
             }else{
@@ -113,12 +110,7 @@ class UregistrationController  extends OverriddeneRegistrationController
         $this->trigger(self::EVENT_BEFORE_CONFIRM, $event);
 
 
-   $statusConfirm=     $user->attemptConfirmation($code);
-
-   yii::error(['$statusConfirm'=>$statusConfirm]);
-
-
-
+        $statusConfirm=     $user->attemptConfirmation($code);
         if($statusConfirm){
             $this->trigger(self::EVENT_AFTER_CONFIRM, $event);
             Yii::$app->response->redirect(Url::toRoute(['/account',['id'=>$id]]));

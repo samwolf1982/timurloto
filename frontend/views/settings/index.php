@@ -235,6 +235,8 @@
                                 <input type="text" value="Я с 52 лет занимаюсь проффессиональным футболом.">
                                 <label class="placeholder">Описание</label>
                             </div>
+
+                            
                             <div class="input-row">
                                 <label class="title-row">Часто используемые букмекеры</label>
                                 <div class="select-book-row">
@@ -248,6 +250,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="input-row text-center btn-row">
                                 <button class="btn btn-hover btn-primary save-btn">
                                     <i class="text-show">Применить</i>
