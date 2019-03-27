@@ -3,7 +3,7 @@
 use app\copmonents\widgets\addbet\AddbetWidget;
 use app\copmonents\widgets\showuser\ShowuserWidget;
 use app\modules\statistic\widgets\LastBets;
-use app\modules\statistic\widgets\LastWeekWinnersWidg;
+use app\modules\statistic\widgets\LastWeekWinners;
 use common\models\helpers\ConstantsHelper;
 use common\models\helpers\HtmlGenerator;
 use common\models\overiden\User;
@@ -40,11 +40,7 @@ BetAsset::register($this);
 
 
         <!--   вход выход  пользователя   -->
-        <?php  if(Yii::$app->user->isGuest){   ?>
-            <?= ShowuserWidget::widget(['userdata' => [],'view'=>'index']) ?>
-        <?php }else{ ?>
-            <?= ShowuserWidget::widget(['userdata' => [],'view'=>'other']) ?>
-        <?php }  ?>
+        <?= ShowuserWidget::widget(['userdata' => [],'view'=>'other']) ?>
 
 
 
@@ -61,51 +57,138 @@ BetAsset::register($this);
     <div class="front-page-inner">
         <div class="content-container">
 
-            <?php if(1){ ?>
-                <div class="row table-row">
-                    <div class="column-12">
-                        <div class="table-wrapper table-winner">
-                            <div class="table-inner">
-                                <div class="table-body">
-                                    <div class="head-bets-slider text-center" >
-                                        <h3 style="font-size: large;" >Для получения доступа вам нужно войти в свой аккаунт</h3>
-                                    </div>
-                                    <div class="bets-slider2">
-                                        <div class="column-12 text-center" style="padding: 1em;">
-
-                                            <img class="img-responsive" src="/images/error/404-error.png" alt="404 error">
-                                            <br>
 
 
-                                            <?php if( Yii::$app->params['showErrorOnPage404'] ): ?>
-                                                <div class="wraperrormessage">
-                                                    <?= Yii::$app->errorHandler->exception; ?>
-                                                </div>
-                                            <?php endif; ?>
-
-                                            <div class="input-row pull-right2" style="padding-top: 1em;">
-                                                <a href="#" class="btn btn-small btn-primary" id="openMadaInner" data-toggle="modal-reg" data-target="#modal-auth">
-                                                    +  <i>Войти</i>
-                                                    <span ></span>
-                                                </a>
-                                            </div>
 
 
-                                        </div>
-                                    </div>
+            <div class="row table-row" >
+                <div class="column-3">
+                    <div class="table-wrapper">
+                        <div class="table-inner">
+                            <div class="table-head">
+                                <div class="tbl-icon">
+                                    <img src="/images/champ.svg2" alt="">
                                 </div>
-                                <div class="table-footer">
-                                    <div class="pagination slider-navigation" id="bets-nav">
-                                        <div class="slider-navigation-inner">
+                                <div class="left-head-text">
+                                    <a href="<?=Url::toRoute(['/news'])?>">
 
-                                        </div>
-                                    </div>
+                                        <span class="text-head">Новости</span>
+                                    </a>
                                 </div>
                             </div>
+                            <script>
+
+
+                            </script>
+                            <div class="table-body  tableTop100">
+
+
+                                <ul>
+
+                                    <?php foreach ($treeQueryFlevel as $item) { ?>
+                                        <li style="color:white;"><?=$item->name?></li>
+                                   <?php  } ?>
+                                </ul>
+                            </div>
+                            
+                            
+                            <?php if(0){ ?>
+                            <div class="table-footer">
+                                <div class="pagination">
+                                    <ul class="pagination-list">
+                                        <li class="first-pag">
+                                            <a href="#"><span class="icon-arrow_left-small"></span></a>
+                                        </li>
+                                        <li class="active"><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#" class="no-num-pag">...</a></li>
+                                        <li><a href="#">10</a></li>
+                                        <li class="last-pag">
+                                            <a href="#"><span class="icon-arrow_right-small"></span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <?php } ?>
+                            
                         </div>
+                        
+                        
+                        
                     </div>
                 </div>
-            <?php } ?>
+
+                <div class="column-9">
+                    <div class="table-wrapper">
+                        <div class="table-inner">
+                            <div class="table-head">
+                                <div class="tbl-icon">
+                                    <img src="/images/champ.svg" alt="">
+                                </div>
+                                <div class="left-head-text">
+                                    <span class="text-head"><?=$model->title?></span>
+                                </div>
+                            </div>
+                            <script>
+
+
+                            </script>
+                            <div class="table-body  tableTop100">
+
+                                
+
+                                <div class="newsWrap">
+                                   <section style="color:white; padding: 1em;">
+                                       <?=$model->description?>
+                                   </section>
+
+                                </div>
+                         
+                                
+
+
+                            </div>
+                            
+                            
+                            
+                            
+                            
+                            <?php if(0){ ?>
+                                <div class="table-footer">
+                                    <div class="pagination">
+                                        <ul class="pagination-list">
+                                            <li class="first-pag">
+                                                <a href="#"><span class="icon-arrow_left-small"></span></a>
+                                            </li>
+                                            <li class="active"><a href="#">1</a></li>
+                                            <li><a href="#">2</a></li>
+                                            <li><a href="#">3</a></li>
+                                            <li><a href="#" class="no-num-pag">...</a></li>
+                                            <li><a href="#">10</a></li>
+                                            <li class="last-pag">
+                                                <a href="#"><span class="icon-arrow_right-small"></span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            <?php } ?>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
 
 
             
@@ -190,9 +273,167 @@ BetAsset::register($this);
         </div>
     </div>
 </footer>
-
-
-
+<div class="modal-wrapper user-modal" id="modal-auth">
+    <div class="modal-inner">
+        <div class="modal-content">
+            <div class="modal-content-inner">
+                <div class="header-modal">
+                    <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
+                </div>
+                <div class="body-modal">
+                    <div class="body-modal-inner">
+                        <div class="left-side-login big-side-login">
+                            <div class="left-side-inner register-inner">
+                                <h2>Стань частью Look My Bet</h2>
+                                <div class="social-login">
+                                    <ul class="soc-login">
+                                        <li><a href="#" class="soc-tw"><span class="icon-tw"></span></a></li>
+                                        <li><a href="#" class="soc-fb"><span class="icon-fb"></span></a></li>
+                                        <li><a href="#" class="soc-gp"><span class="icon-G"></span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="line-text">
+                                    <span>или создайте аккаунт с помощью e-mail</span>
+                                </div>
+                                <div class="form-wrapper">
+                                    <div class="form-inner">
+                                        <form action="#">
+                                            <div class="input-row">
+                                                <input type="text">
+                                                <label class="placeholder">Ваше Имя</label>
+                                            </div>
+                                            <div class="input-row">
+                                                <input type="text">
+                                                <label class="placeholder">Никнейм</label>
+                                            </div>
+                                            <div class="input-row">
+                                                <input type="email">
+                                                <label class="placeholder">Email</label>
+                                            </div>
+                                            <div class="input-row">
+                                                <input type="text">
+                                                <label class="placeholder">Пароль - <span>минимум 6 символов</span></label>
+                                            </div>
+                                            <div class="checkbox-row">
+                                                <input type="checkbox" id="konf">
+                                                <label for="konf" class="check-text">
+                                                    Я прочитал <a href="#">Политику Конфиденциальности</a> сервиса Look My Bet
+                                                </label>
+                                            </div>
+                                            <div class="input-row btn-row">
+                                                <button type="submit" class="btn big-btn btn-primary btn-hover">
+                                                    СОЗДАТЬ АККАУНТ
+                                                    <span></span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="left-side-inner login-inner">
+                                <h2>Авторизируйтесь</h2>
+                                <div class="social-login">
+                                    <ul class="soc-login">
+                                        <li><a href="#" class="soc-tw"><span class="icon-tw"></span></a></li>
+                                        <li><a href="#" class="soc-fb"><span class="icon-fb"></span></a></li>
+                                        <li><a href="#" class="soc-gp"><span class="icon-G"></span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="line-text">
+                                    <span>или войдите с помощью e-mail</span>
+                                </div>
+                                <div class="form-wrapper">
+                                    <div class="form-inner">
+                                        <form action="#">
+                                            <div class="input-row">
+                                                <input type="email">
+                                                <label class="placeholder">Email</label>
+                                            </div>
+                                            <div class="input-row">
+                                                <input type="text">
+                                                <label class="placeholder">Пароль</label>
+                                            </div>
+                                            <div class="input-row btn-row">
+                                                <button type="submit" class="btn big-btn btn-primary btn-hover">
+                                                    ВОЙТИ
+                                                    <span></span>
+                                                </button>
+                                            </div>
+                                            <div class="input-row text-center text-row">
+                                                <a href="#" class="forgot-btn">Забыли пароль?</a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="left-side-inner forgot-inner">
+                                <h2>Забыли Пароль?</h2>
+                                <div class="line-text">
+                                    <p>Введите почту, на которую зарегистрирован ваш аккаунт,
+                                        и получите дальнейшие инструкци.</p>
+                                </div>
+                                <div class="form-wrapper">
+                                    <div class="form-inner">
+                                        <form action="#">
+                                            <div class="input-row">
+                                                <input type="email">
+                                                <label class="placeholder">Email</label>
+                                            </div>
+                                            <div class="input-row btn-row">
+                                                <button type="submit" class="btn big-btn btn-primary btn-hover">
+                                                    Восстановить
+                                                    <span></span>
+                                                </button>
+                                            </div>
+                                            <div class="input-row text-center text-row">
+                                                <a href="#" class="auth-btn">Вернуться к авторизации</a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-side-login small-side-login">
+                            <div class="right-side-inner">
+                                <div class="logo-popup">
+                                    <img src="/images/logo_red.svg" alt="">
+                                </div>
+                                <div class="text-left">
+                                    <p>Look My Bet - Первая социальная сеть в СНГ для
+                                        любителей ставок на спорт</p>
+                                </div>
+                                <div class="from-block">
+                                    <h3>Для чего нужна авторизация?</h3>
+                                    <ul class="list-answer">
+                                        <li>Lorem ipsum dolor sit amet, consectetur</li>
+                                        <li>Sed do eiusmod tempor incididunt ut labore</li>
+                                        <li>Duis aute irure dolor in reprehenderit in</li>
+                                    </ul>
+                                </div>
+                                <div class="toggle-type-block">
+                                    <div class="login-block active">
+                                        <h2>Есть Аккаунт?</h2>
+                                        <a href="#" class="btn btn-default btn-hover" id="show-login">
+                                            <b>Войти</b>
+                                            <span></span>
+                                        </a>
+                                    </div>
+                                    <div class="register-block">
+                                        <h2>Нет Аккаунта?</h2>
+                                        <a href="#" class="btn btn-default btn-hover" id="show-register">
+                                            <b>РЕГИСТРАЦИЯ</b>
+                                            <span></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="modal-wrapper bet-modal modal-860" id="bet1">
     <div class="modal-inner">
         <div class="modal-content">

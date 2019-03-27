@@ -10,4 +10,13 @@ return [
             'class' => 'yii\caching\FileCache',
         ],
     ],
+    'modules' => [
+        'treemanager' =>  [
+            'class' => '\kartik\tree\Module',
+            // other module settings, refer detailed documentation
+        ],
+        'newsb' => [
+            'class' => 'snapget\news\Module',
+        ],
+    ],
 ];

@@ -74,7 +74,7 @@ BetAsset::register($this);
                                     </div>
                                     <div class="bets-slider2">
                                         <div class="column-12 text-center" style="padding: 1em;">
-                                            <img src="/images/error/404-error.png" alt="404 error">
+                                            <img class="img-responsive" src="/images/error/404-error.png" alt="404 error">
                                             <br>
 
 

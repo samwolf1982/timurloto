@@ -97,6 +97,7 @@ return [
                 'subscribers/default/add-message'=>'subscribers/default/add-message',
                 'subscribers/default/send-message'=>'subscribers/default/send-message',
                 'account/addsubscriber'=>'account/addsubscriber',
+//                'news/index'=>'news/index',
 
                 // доступы
 
@@ -107,7 +108,6 @@ return [
                 // cтавки  http://localhost35/bet/index
                 'bet/index'=>'bet',
                 '/bet/nextload'=>'/bet/nextload',
-
 
                 // регистрации
                 '/user/registration/register'=>'/user/registration/register',
@@ -125,13 +125,18 @@ return [
                 '/user/recovery/request'=>'/user/recovery/request',
 
 
+                // новости
+                '/news/view?<id:(.*?)>'=>'/news/view/<id>',
 
 
 
-            // модули удалить default мешают для аутентификации через соцсети
+
+                // модули удалить default мешают для аутентификации через соцсети
                 '<module:\w+>/<action:\w+>/<id:(.*?)>' => '<module>/default/<action>/<id>',
+                '<module:\w+>/<action:\w+>/<id:(.*?)>' => '<module>/<action>/<id>',
                 '<module:\w+>/<action:\w+>/<tourneyId:(.*?)>' => '<module>/default/<action>/<tourneyId>',
                 '<module:\w+>/<action:\w+>' => '<module>/default/<action>',
+//                '<module:\w+>/<action:\w+>' => '<module>/<action>',
 
                 //'<module:\w+>/<action:\w+>/<id:(.*?)>' => '<module>/default/<action>/<id>',
 
@@ -247,16 +252,20 @@ return [
                 'User' => 'common\models\overiden\User',
             ],
 
-//            'components' => [
+
+
+            'mailer' => [
+                'viewPath' => '@frontend//views/account/overriden/mail',
+            ],
+
+
+
+            //            'components' => [
 //                'mailer' => [
 //                    'class' => 'app\components\Mailer'
 //                    // 'viewPath' => '@app/views/account/overriden/mail',
 //                ]
 //            ],
-
-            'mailer' => [
-                'viewPath' => '@frontend//views/account/overriden/mail',
-            ],
 //            'mailer' => [
 //                'viewPath' => '@frontend/views/account/overriden/mail',
 //            ],
@@ -307,6 +316,20 @@ return [
             'cost' => 12,
             'admins' => ['admin']
         ],
+
+        'new2' => [
+            // following line will restrict access to `admin-news-category` and `admin-news` controllers from frontend application
+            'as frontend' => 'snapget\news\filters\FrontendFilter',
+
+//            'baseImageUrl' => 'http://news/upload/news',    // needs here absolute url
+            'baseImageUrl' => YII_ENV!='prod'?   'http://localhost35/upload/news/':   'https://lookmybets.com/upload/news/',    // needs here absolute url
+        ],
+
+//        'news' => [
+//            'class' => 'eugenekei\news\Module',
+//            'controllerNamespace' => 'eugenekei\news\controllers\frontend',
+//        ],
+
         'balance' => [
             'class' => 'komer45\balance\Module',
             'adminRoles' => ['admin'],

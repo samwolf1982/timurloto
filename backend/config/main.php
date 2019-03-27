@@ -83,6 +83,17 @@ return [
         ],
         'rbac' => 'dektrium\rbac\RbacWebModule',
 
+        'newsb' => [
+            // following line will restrict access to `news` controller from frontend application
+//            'class' => 'snapget\news\Module',
+            'as backend' => 'snapget\news\filters\BackendFilter',
+            'baseImageUrl' => YII_ENV!='prod'?   'http://localhost35/upload/news/':   'https://lookmybets.com/upload/news/',    // needs here absolute url
+        ],
+//        'news' => [
+//            'class' => 'eugenekei\news\Module',
+//            'controllerNamespace' => 'eugenekei\news\controllers\backend',
+//            'imageGetUrl' =>    YII_ENV!='prod'?   'http://localhost35/images/news/':   'https://lookmybets.com/images/news/',
+//        ],
     ],
 
     'params' => $params,

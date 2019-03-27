@@ -81,9 +81,10 @@ BetAsset::register($this);
 
 
                                 <ul>
-                                    <li>Новость 1</li>
-                                    <li>Новость 2</li>
-                                    <li>Новость 3</li>
+
+                                    <?php foreach ($treeQueryFlevel as $item) { ?>
+                                        <li style="color:white;"><?=$item->name?></li>
+                                   <?php  } ?>
                                 </ul>
                             </div>
                             
@@ -123,7 +124,7 @@ BetAsset::register($this);
                                     <img src="/images/champ.svg" alt="">
                                 </div>
                                 <div class="left-head-text">
-                                    <span class="text-head">Заговолок новости</span>
+                                    <span class="text-head">Последние новости</span>
                                 </div>
                             </div>
                             <script>
@@ -134,15 +135,56 @@ BetAsset::register($this);
 
 
                                 <div class="newsWrap">
+                                   <p style="color: white;">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, amet blanditiis quasi rem sint soluta. Ab blanditiis cum, deserunt ea ipsa laboriosam magnam molestiae pariatur repellendus saepe, tempore totam voluptas!
+                                   </p>
+
+                                    <style>
+
+                                       .wNews {
+                                           display: flex;
+                                           align-items: flex-end;
+                                           justify-content: space-between;
+                                           flex-wrap: wrap
+                                       }
+
+                                       .wrapShortNews{
+                                           width: 30%;
+                                       }
+                                        .wNews .wrapShortNews img   {
+                                            max-width: 220px;
+                                        }
+                                        
+                                    </style>
+                                    <div class="wNews">
+                                        
+
+                                    <?php  foreach ($dataProvider->models as $ki=> $item) { ?>
+                                        <div class="wrapShortNews">
+                                            <a href="<?=Url::toRoute(['/news/view','id'=>$item->id])?>">
+                                                <img src="<?=Yii::$app->params['baseImageUrl']. $item->image?>" alt="">
+                                                <p><?=$item->title?></p>
+                                            </a>
+                                        </div>
+
+                                    <?php  } ?>
+                                    </div>
+
+                                    <?php if($ki%3==0): ?>
+                                        <div class="clearfix"><br></div>
+                                    <?php endif; ?>
+
                                 </div>
                          
                                 
 
 
                             </div>
-
-
+                            
+                            
+                            
+                            
+                            
                             <?php if(0){ ?>
                                 <div class="table-footer">
                                     <div class="pagination">

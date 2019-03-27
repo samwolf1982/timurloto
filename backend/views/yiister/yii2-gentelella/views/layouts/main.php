@@ -121,6 +121,25 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                                         ],
                                     ],
 
+                                    [
+                                        // "label" => "Баланс пользователей",
+                                        "label" => "Новости",
+                                        "icon" => "microchip",
+                                        "url" => "#",
+                                        "items" => [
+
+                                            ["label" => "Новости", "url" => "#", "items"=>[
+                                                ['label'=>'Категории новостей',"url"=>['/newsb/admin-news-category']],
+                                                ['label'=>'Новости',"url"=>['/newsb/admin-news']],
+//                                                ['label'=>'Категории',"url"=>['/news/admin-news-category']],
+
+                                            ]
+                                            ] ,
+//                                            ["label" => "Транзакции", "url" => [Url::to(['/balance/transaction/index','sort'=>'-id'])]],
+//                                            ["label" => "DEV", "url" => ["/balance"]],
+                                        ],
+                                    ],
+
 
 
                                     [
