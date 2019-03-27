@@ -171,14 +171,21 @@ and also iPads specifically.
 .avatar__user-block .avatar__user-inner img {
   border-radius: 100%;
 }
-.header-inner .user-block {
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 0 500px;
-  -moz-box-flex: 0;
-  -ms-flex: 0 0 500px;
-  flex: 0 0 500px;
-  max-width: 500px;
-  padding-left: 30px;
+@media screen and (min-width: 760px) {
+  .header-inner .user-block {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 500px;
+    -moz-box-flex: 0;
+    -ms-flex: 0 0 500px;
+    flex: 0 0 500px;
+    max-width: 500px;
+    padding-left: 30px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .hide-btn-search-block {
+    display: none;
+  }
 }
 .header-inner .menu-block {
   -webkit-box-flex: 0;
