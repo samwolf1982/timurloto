@@ -35,7 +35,14 @@ Event::on('dektrium\user\controllers\SecurityController', SecurityController::EV
     yii::error($e->account->data->email);
     yii::error($e->account->data->username);
     yii::error($jsone->email);
-    yii::error($jsone->username);
+     $resparse=  explode('@',$jsone->email);
+      $uName=uniqid('name_');
+     if(!empty($resparse[0])) $uName=$resparse[0];
+    $e->account->email=$jsone->email; //
+    $e->account->username=$uName; //
+    $e->account->save();
+
+//    yii::error($jsone->name);
 
     // we are using switch here, because all networks provide different sets of data
 //    switch ($e->client->getName()) {
