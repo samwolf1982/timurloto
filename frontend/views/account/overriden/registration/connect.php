@@ -131,7 +131,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                                                                         <?= $form->field($model, 'username')->label('Никнейм',['class'=>'placeholder']) ?>
 
-                                                                        <?= Html::submitButton(Yii::t('user', 'Continue'), ['class' => 'btn big-btn btn-primary btn-hover']) ?>
+                                                                        <?= Html::submitButton('Подтвердить', ['class' => 'btn big-btn btn-primary btn-hover']) ?>
 
                                                                         <?php ActiveForm::end(); ?>
                                                                     <?php } ?>
