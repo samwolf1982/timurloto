@@ -297,9 +297,12 @@ MainAsset::register($this);
 
                                 </div>
                                 <div class="column-12 btn-block">
+
+                                    <?php   if(Yii::$app->user->isGuest) { ?>
                                     <a href="#" class="btn-round btn-primary" data-toggle="modal-reg" data-target="#modal-auth">
                                         <span class="icon-man"></span>
                                     </a>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div>
@@ -499,10 +502,13 @@ MainAsset::register($this);
                                     </div>
                                 </div>
                                 <div class="column-12 btn-block">
+
+                                    <?php   if(Yii::$app->user->isGuest) { ?>
                                     <a href="#" class="btn-round btn-primary" data-toggle="modal-reg" data-target="#modal-auth">
                                         <span class="icon-man"></span>
                                     </a>
                                     <div class="arrow-review"></div>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div>
@@ -539,9 +545,12 @@ MainAsset::register($this);
                             </ul>
                         </div>
                         <div class="btn-footer">
+
+                            <?php   if(Yii::$app->user->isGuest) { ?>
                             <a href="#" class="user-btn" data-toggle="modal-reg" data-target="#modal-auth">
                                 <span class="icon-man"></span>
                             </a>
+                            <?php } ?>
                             <a href="#" class="shared-btn">
                                 <span class="icon-network"></span>
                             </a>

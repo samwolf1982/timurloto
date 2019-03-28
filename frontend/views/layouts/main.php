@@ -7363,7 +7363,7 @@ AppAsset::register($this);
                                             <a href="#faq5" data-toggle="collap">Какие призовые в турнире?</a>
                                         </div>
                                         <div class="collapse-item-body" id="faq5">
-                                            <p>----------</p>
+                                            <p>У нас ты имеешь уникальную возможность заработать на ставках, при этом ничего не вложив. Каждую неделю ты можешь участвовать в турнирах и побороться за 25 000 руб.</p>
                                         </div>
                                     </div>
                                     <div class="collapse-item">
