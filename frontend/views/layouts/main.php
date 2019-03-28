@@ -70,7 +70,12 @@ AppAsset::register($this);
                     <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
                 </div>
                 <div class="body-modal">
-                    <div class="body-modal-inner">
+                    <div class="body-modal-inner padding-left-form">
+
+
+
+
+                        
                         <div class="left-side-login big-side-login">
                             <div class="left-side-inner register-inner">
                                 <h2>Стань частью Look My Bet2</h2>
@@ -89,9 +94,7 @@ AppAsset::register($this);
                                 </div>
 
 
-                                <div class="form-wrapper" id="formWrapperRegister">
-
-                                </div>
+                                <div class="form-wrapper" id="formWrapperRegister"></div>
 
 
 
@@ -110,8 +113,7 @@ AppAsset::register($this);
                                     <span>или войдите с помощью e-mail</span>
                                 </div>
 
-                                <div class="form-wrapper" id="formWrapperLogin">
-                                </div>
+                                <div class="form-wrapper" id="formWrapperLogin"></div>
 
                                 <?php if(0): ?>
                                     <div class="form-wrapper">
@@ -167,7 +169,8 @@ AppAsset::register($this);
                                 </div>
                             </div>
                         </div>
-                        <div class="right-side-login small-side-login">
+
+                        <div class="right-side-login small-side-login login-show">
                             <div class="right-side-inner">
                                 <div class="logo-popup">
                                     <img src="images/logo_red.svg" alt="">
@@ -187,14 +190,14 @@ AppAsset::register($this);
                                     </ul>
                                 </div>
                                 <div class="toggle-type-block">
-                                    <div class="login-block active">
+                                    <div class="login-block">
                                         <h2>Есть Аккаунт?</h2>
                                         <a href="#" class="btn btn-default btn-hover" id="show-login">
                                             <b>Войти</b>
                                             <span></span>
                                         </a>
                                     </div>
-                                    <div class="register-block">
+                                    <div class="register-block active">
                                         <h2>Нет Аккаунта?</h2>
                                         <a href="#" class="btn btn-default btn-hover" id="show-register">
                                             <b>РЕГИСТРАЦИЯ</b>
@@ -204,6 +207,25 @@ AppAsset::register($this);
                                 </div>
                             </div>
                         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     </div>
                 </div>
             </div>
