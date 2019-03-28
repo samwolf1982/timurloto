@@ -21,6 +21,8 @@ Event::on('dektrium\user\controllers\SecurityController', SecurityController::EV
     $client = $e->getClient(); // $client is one of the Da\User\AuthClient\ clients
     $e->account->email=$e->account->data->email; //
     $e->account->username=$e->account->data->username; //
+//    $e->account->save();
+    $e->account->email='ddddd@mmmmm';
     $account = $e->account;
     yii::error('dektrium\user\controllers\SecurityController2222222');
     yii::error($client);
