@@ -109,6 +109,8 @@ use common\models\Wagerelements;
                                     <div class="static-footer-bets-value fill-all">Ставка: <?=$model->getTotalAndPercent()?></div>
 
                                     <div class="static-footer-bets-value fill-all">Выигрыш : <?=$model->geFormatedWin()?> </div>
+
+                                    <div class="static-footer-bets-value fill-all">Коефициент : <?=  $model->getFormatedFullCoef() ?> </div>
                                 </div>
 
 

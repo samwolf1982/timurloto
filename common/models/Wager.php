@@ -139,6 +139,10 @@ class Wager extends \yii\db\ActiveRecord
     }
 
 
+    public function getFormatedFullCoef()
+    {
+      return  sprintf(' %.2f', ($this->coef));
+    }
 
 
     public function getTypeWager(){
@@ -225,13 +229,6 @@ class Wager extends \yii\db\ActiveRecord
             }
             if($returno){  $status = self::STATUS_RETURN_BET; $gate= false; }
         }
-
-//        //todohere stop???
-//        foreach ($this->wagerelements as $item) {
-//            if($item->id == 11 || $item->id==12 ){
-//                yii::error(['id'=>$item->id,'stat'=>$item->status]);
-//            }
-//        }
 
         // цикл проверок
         // 4 на присутсвие  STATUS_RETURN_BET STATUS_ENTERED // все исходы  ставка прошла но может быть один возврать
