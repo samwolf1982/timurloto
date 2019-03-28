@@ -12,36 +12,42 @@ use yii\base\Event;
 
 
 Event::on('dektrium\user\controllers\SecurityController', SecurityController::EVENT_BEFORE_AUTHENTICATE, function (\dektrium\user\events\AuthEvent $e) {
-//    yii::error(['zzz',$e->client->getUserAttributes()]);
-    // if user account was not created we should not continue
-//    if ($e->account->user === null) {
-//        return;
-//    }
-
-    yii::error(get_class($e->getClient()));
-    $client = $e->getClient(); // $client is one of the Da\User\AuthClient\ clients
-    $e->account->email=$e->account->data->email; //
-    $e->account->username=$e->account->data->username; //
 
 
+    if('dektrium\user\clients\Google'==get_class($e->getClient())){// гугл нужно парсить значение из json
+       if(empty($e->account->email) && empty($e->account->username)){
+           $jsone=json_decode($e->account->data);
+           $resparse=  explode('@',$jsone->email);
+           $uName=uniqid('name_');
+           if(!empty($resparse[0])) $uName=$resparse[0];
+           $e->account->email=$jsone->email; //
+           $e->account->username=$uName; //
+           $e->account->save();
+       }
+    }
+//    $client = $e->getClient(); // $client is one of the Da\User\AuthClient\ clients
+//    $e->account->email=$e->account->data->email; //
+//    $e->account->username=$e->account->data->username; //
+//
+//
+////    $e->account->save();
+////    $e->account->email='ddddd@mmmmm';
 //    $e->account->save();
-//    $e->account->email='ddddd@mmmmm';
-    $e->account->save();
-    $account = $e->account;
-    yii::error('dektrium\user\controllers\SecurityController2222222');
-    yii::error($client);
-    yii::error($account);
-    yii::error($e->account->data);
-    $jsone=json_decode($e->account->data);
-    yii::error($e->account->data->email);
-    yii::error($e->account->data->username);
-    yii::error($jsone->email);
-     $resparse=  explode('@',$jsone->email);
-      $uName=uniqid('name_');
-     if(!empty($resparse[0])) $uName=$resparse[0];
-    $e->account->email=$jsone->email; //
-    $e->account->username=$uName; //
-    $e->account->save();
+//    $account = $e->account;
+//    yii::error('dektrium\user\controllers\SecurityController2222222');
+//    yii::error($client);
+//    yii::error($account);
+//    yii::error($e->account->data);
+//    $jsone=json_decode($e->account->data);
+//    yii::error($e->account->data->email);
+//    yii::error($e->account->data->username);
+//    yii::error($jsone->email);
+//     $resparse=  explode('@',$jsone->email);
+//     $uName=uniqid('name_');
+//     if(!empty($resparse[0])) $uName=$resparse[0];
+//    $e->account->email=$jsone->email; //
+//    $e->account->username=$uName; //
+//    $e->account->save();
 
 //    yii::error($jsone->name);
 
