@@ -22,7 +22,7 @@ Event::on('dektrium\user\controllers\SecurityController', SecurityController::EV
     $e->account->email=$e->account->data->email; //
     $e->account->username=$e->account->data->username; //
 //    $e->account->save();
-    $e->account->email='ddddd@mmmmm';
+//    $e->account->email='ddddd@mmmmm';
     $e->account->save();
     $account = $e->account;
     yii::error('dektrium\user\controllers\SecurityController2222222');
