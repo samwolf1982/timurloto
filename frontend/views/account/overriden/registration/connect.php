@@ -121,10 +121,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                 </div>
                                                                 <p class="text-center">
 
-                                                                    <a href="#" class="btn btn-small btn-primary" id="openMadaInner" data-toggle="modal-reg" data-target="#modal-auth"><i class="icon-user"></i> <span><?=  Yii::t(
-                                                                                'user',
-                                                                                'If you already registered, sign in and connect this account on settings page');
-                                                                        ?></span></a>
+
 
                                                                 </p>
 
@@ -136,10 +133,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
                                             <div class="input-row pull-right2">
-                                                <a href="/" class="btn btn-primary btn-hover">
-                                                    +  <i>Главная</i>
-                                                    <span ></span>
-                                                </a>
+                                                <a href="#" class="btn btn-small btn-primary" id="openMadaInner" data-toggle="modal-reg" data-target="#modal-auth"><i class="icon-user"></i> <span><?=  Yii::t(
+                                                            'user',
+                                                            'If you already registered, sign in and connect this account on settings page');
+                                                        ?></span></a>
                                             </div>
 
 
