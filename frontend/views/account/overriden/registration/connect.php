@@ -96,8 +96,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                                     </div>
                                                     <div class="panel-body">
 
-                                                                <div class="panel panel-default">
-                                                                    <div class="panel-body">
+                                                                <div class="form-inner">
+
                                                                         <div class="alert alert-info">
                                                                             <p>
                                                                                 <?= Yii::t(
@@ -110,14 +110,14 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                             'id' => 'connect-account-form',
                                                                         ]); ?>
 
-                                                                        <?= $form->field($model, 'email') ?>
+                                                                        <?= $form->field($model, 'email')->label('Email',['class'=>'placeholder'])  ?>
 
-                                                                        <?= $form->field($model, 'username') ?>
+                                                                        <?= $form->field($model, 'username')->label('Никнейм',['class'=>'placeholder']) ?>
 
-                                                                        <?= Html::submitButton(Yii::t('user', 'Continue'), ['class' => 'btn btn-success btn-block']) ?>
+                                                                        <?= Html::submitButton(Yii::t('user', 'Continue'), ['class' => 'btn big-btn btn-primary btn-hover']) ?>
 
                                                                         <?php ActiveForm::end(); ?>
-                                                                    </div>
+
                                                                 </div>
                                                                 <p class="text-center">
                                                                     <?= Html::a(
