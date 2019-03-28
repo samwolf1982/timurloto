@@ -394,6 +394,12 @@ class Wager extends \yii\db\ActiveRecord
     }
 
 
+    public function getUsermodel()
+    {
+        return $this->hasOne(User::className(), ['id' => 'user_id']);
+    }
+
+
 
 
 

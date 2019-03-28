@@ -99,14 +99,13 @@ class WagerStatisticManager
        /** @var Wager $wager */
        foreach ($modelsWagers as $wager){
 
-           $wagerelements=$wager->wagerelements;
+             if(empty($wager->usermodel)){ continue; }
+             $wagerelements=$wager->wagerelements;
              $type=$this->getTypeWager($wagerelements);
              $prepare_elements=$this->prepareWager($wagerelements);
              if(empty($prepare_elements)){
 
                  //yii::error(['empty elements wager id:', $wager->id]);
-
-
                  continue; }
 //             var_dump($prepare_elements); die();
            //  $frontElement=new WagerInfoFrontSingle($wager->id,$type,$prepare_elements,$wager->coef,$wager->total,$wager->created_at,$wager->fronttypebet,$wager->select_coef);
