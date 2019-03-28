@@ -7313,52 +7313,203 @@ AppAsset::register($this);
                                 <div class="faq-list collapse-wrapper">
                                     <div class="collapse-item">
                                         <div class="collapse-item-head">
-                                            <a href="#faq1" data-toggle="collap">Для чего нужен наш сервис?</a>
+                                            <a href="#faq1" data-toggle="collap">Что такое lookmybets.com?</a>
                                         </div>
                                         <div class="collapse-item-body" id="faq1">
-                                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
-                                                ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                                                sit aspernatur aut odit aut fugit, sed quia consequuntur</p>
+                                            <p>
+                                                lookmybets.com - это социальная сеть как для новичков, так и для профиссоналов в сфере ставок на спорт. Общение, заработок, обучение и многое другое вы можете получить без вложений
+                                            </p>
                                         </div>
                                     </div>
+
+
+
                                     <div class="collapse-item">
                                         <div class="collapse-item-head">
-                                            <a href="#faq2" data-toggle="collap">Как написать другим пользователям сообщение?</a>
+                                            <a href="#faq2" data-toggle="collap">Что я могу делать на сайте?</a>
                                         </div>
                                         <div class="collapse-item-body" id="faq2">
-                                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
-                                                ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                                                sit aspernatur aut odit aut fugit, sed quia consequuntur</p>
+                                            <p>
+                                                Условия использования созданы таким образом, что здесь место себе найдет каждый. Вы можете:
+                                            </p>
+
+                                            <p> найти друзей</p>
+                                            <p> участвовать в турнире с еженедельным денежным призом</p>
+                                            <p> проверять свои силы в сфере ставок на спорт без вложений</p>
+                                            <p> находить ТОП аналитика и следовать его примеру</p>
+                                            <p> предоставлять свои услуги аналитика ограниченному количеству пользователей</p>
+
                                         </div>
                                     </div>
                                     <div class="collapse-item">
                                         <div class="collapse-item-head">
-                                            <a href="#faq3" data-toggle="collap">Как дать прогноз?</a>
+                                            <a href="#faq3" data-toggle="collap">Как зарегестрироваться в турнире?</a>
                                         </div>
                                         <div class="collapse-item-body" id="faq3">
-                                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
-                                                ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                                                sit aspernatur aut odit aut fugit, sed quia consequuntur</p>
+                                            <p>Для этого, все что нужно сделать - это зарегестрироваться на сайте и просто оставить свой первый прогноз.</p>
                                         </div>
                                     </div>
                                     <div class="collapse-item">
                                         <div class="collapse-item-head">
-                                            <a href="#faq4" data-toggle="collap">Как посмотреть свои прогнозы?</a>
+                                            <a href="#faq4" data-toggle="collap">Сколько я смогу зарабатывать на сайте?</a>
                                         </div>
                                         <div class="collapse-item-body" id="faq4">
-                                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
-                                                ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                                                sit aspernatur aut odit aut fugit, sed quia consequuntur</p>
+                                            <p>Главным фактором является то, что весь заработок на сайте происходит без вложений. Для каждой категории пользователей доход будет индивидуальным.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="collapse-item">
+                                        <div class="collapse-item-head">
+                                            <a href="#faq5" data-toggle="collap">Какие призовые в турнире?</a>
+                                        </div>
+                                        <div class="collapse-item-body" id="faq5">
+                                            <p>----------</p>
                                         </div>
                                     </div>
                                     <div class="collapse-item">
                                         <div class="collapse-item-head">
-                                            <a href="#faq5" data-toggle="collap">Как поменять имя пользователя?</a>
+                                            <a href="#faq6" data-toggle="collap">Какие виды турниров есть?</a>
                                         </div>
-                                        <div class="collapse-item-body" id="faq5">
-                                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
-                                                ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                                                sit aspernatur aut odit aut fugit, sed quia consequuntur</p>
+                                        <div class="collapse-item-body" id="faq6">
+
+                                            <p> + На сайте для оптимальности и удобства представлены два вида турнира:</p>
+                                            <p>  - для новичков - сумма призовых в неделю равна 5 000 руб. В данном турнире принимают участие пользователи с профитом от -99% до +7,5%</p>
+                                            <p> - для профессионалов - сумма призовых в неделю равна 20 000 руб. В даннос турнире принимают участие пользователи с профитом от +7,5%</p>
+
+                                        </div>
+                                    </div>
+                                    <div class="collapse-item">
+                                        <div class="collapse-item-head">
+                                            <a href="#faq7" data-toggle="collap">Как получить уровень выше?</a>
+                                        </div>
+                                        <div class="collapse-item-body" id="faq7">
+                                            <p>+ Пользователь должен сделать минимум 10 прогнозов, для определения уровня. Уровень аккаунта зависит от вашего профита и имеет 21 показтель</p>
+
+                                            <p>  уровень от -100% до 0%</p>
+                                            <p>  уровень от 0,001% до 2,5%</p>
+                                            <p>  уровень от 2,501% до 7,5%</p>
+                                            <p>  уровень от 7,501% до 11,5%</p>
+                                            <p>  уровень от 11,501% до 25%</p>
+                                            <p>  уровень от 25,001% до 40%</p>
+                                            <p>  уровень от 40,001% до 60%</p>
+                                            <p>  уровень от 60,001% до 100%</p>
+                                            <p>  уровень от 100,001% до 150%</p>
+                                            <p>   уровень от 150,001% до 220%</p>
+                                            <p>  уровень от 220,001% до 300%</p>
+                                            <p>   уровень от 300,001% до 400%</p>
+                                            <p>   уровень от 400,001% до 520%</p>
+                                            <p>   уровень от 520,001% до 650%</p>
+                                            <p>   уровень от 650,001% до 800%</p>
+                                            <p>   уровень от 800,001% до 1000%</p>
+                                            <p>   уровень от 1000,001% до 1200%</p>
+                                            <p>   уровень от 1200,001% до 1450%</p>
+                                            <p>   уровень от 1450,001% до 1700%</p>
+                                            <p>   уровень от 1700,001% до 2000%</p>
+                                            <p>   уровень от 2000,001%</p>
+
+
+
+                                        </div>
+                                    </div>
+                                    <div class="collapse-item">
+                                        <div class="collapse-item-head">
+                                            <a href="#faq8" data-toggle="collap">Какие прогнозы есть на сайте?</a>
+                                        </div>
+                                        <div class="collapse-item-body" id="faq8">
+                                            <p>+ Представлены 2 вида прогнозов:</p>
+
+                                           <p> - открытый - это тип прогноза, который доступен всем пользователям на сайте и возможность использования появляется после регистрации.</p>
+                                           <p> - закрытый - это тип прогноза, который доступен только вам и людям, которым вы открыли доступ для просмотра. Возможность использования появляется при достижении 6 уровня аккаунта ( от 25,001% профита )</p>
+                                        </div>
+                                    </div>
+                                    <div class="collapse-item">
+                                        <div class="collapse-item-head">
+                                            <a href="#faq9" data-toggle="collap">Как получить доступ к закрытым прогнозам других пользователей?</a>
+                                        </div>
+                                        <div class="collapse-item-body" id="faq9">
+                                            <p>+ В этом случае, вы связываетесь на прямую с человеком у которого хотите получить доступ к закрытым прогнозам.</p>
+                                        </div>
+                                    </div>
+                                    <div class="collapse-item">
+                                        <div class="collapse-item-head">
+                                            <a href="#faq10" data-toggle="collap">На сколько я могу получить / дать доступ к закрытым прогнозам?</a>
+                                        </div>
+                                        <div class="collapse-item-body" id="faq10">
+
+
+                                           <p> Доступ предоставляется на:</p>
+
+                                           <p> 1 день</p>
+
+                                           <p> 2 дня</p>
+
+                                           <p> 3 дня</p>
+
+                                           <p> 5 дней</p>
+
+                                           <p> 1 неделя</p>
+
+                                           <p> 2 недели</p>
+
+                                           <p> 1 месяц</p>
+
+                                           <p> 3 месяца</p>
+
+                                           <p> навсегда</p>
+                                           <p> Отсчет времени начинается с того момента, как был открыт доступ.</p>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="collapse-item">
+                                        <div class="collapse-item-head">
+                                            <a href="#faq11" data-toggle="collap">Когда я смогу получить статус PRO ?</a>
+                                        </div>
+                                        <div class="collapse-item-body" id="faq11">
+                                            <p>+ Пользователь 7 уровня и выше получает статус PRO, который будет отображаться у него в личном кабинете.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="collapse-item">
+                                        <div class="collapse-item-head">
+                                            <a href="#faq12" data-toggle="collap">Что такое личный прогноз?</a>
+                                        </div>
+                                        <div class="collapse-item-body" id="faq12">
+                                            <p>+ Личный прогноз - это ставка, которая будет видна только вам и таким образом вы можете тестировать различные виды ставок, проверять стратегии, наработки и данные прогнозы никто не увидит.r</p>
+                                        </div>
+                                    </div>
+                                    <div class="collapse-item">
+                                        <div class="collapse-item-head">
+                                            <a href="#faq13" data-toggle="collap"> Как мне быстро найти нужное событие?</a>
+                                        </div>
+                                        <div class="collapse-item-body" id="faq13">
+                                            <p>+ На сайте присутствует поиск, с помощью которого, вы можете очень быстро найти нужный вам турнир, команду, на которую вам необходим прогноз.</p>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="collapse-item">
+                                        <div class="collapse-item-head">
+                                            <a href="#faq14" data-toggle="collap">Сколько процентов я могу поставить?</a>
+                                        </div>
+                                        <div class="collapse-item-body" id="faq14">
+                                            <p>При открытии купона, вы получаете возможность выбора от 1% до 10% на ставку. В зависимости от коэффциента процент от банка может меняться:
+                                                </p>
+                                            <p> - коэффцииент 2 и ниже до 10%</p>
+                                            <p> - коэффициент 3 и ниже до 7%</p>
+                                            <p> - коэффициент 5 и ниже до 5%</p>
+                                            <p> - коэффцииент 10 и ниже до 3%</p>
+                                            <p> - коэффициент 10 и выше до 2%</p>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="collapse-item">
+                                        <div class="collapse-item-head">
+                                            <a href="#faq15" data-toggle="collap">Как получить закрытый прогноз ?</a>
+                                        </div>
+                                        <div class="collapse-item-body" id="faq15">
+                                            <p> Каждый день рандомным образом будут представлены 3 прогноза от пользователей PRO</p>
                                         </div>
                                     </div>
                                 </div>

@@ -202,7 +202,12 @@
                            <div class="link-drop-list">
                                <ul class="drop-list">
                                    <li><a href="<?=Url::to(['/account'])?>">перейти в кабинет</a></li>
-                                   <li><a href="#" data-toggle="modal" data-target="#modal-chat">сообщения</a></li>
+
+                                   <?php if(YII_ENV!='prod'): ?>
+                                       <li><a href="#" data-toggle="modal" data-target="#modal-chat">сообщения local</a></li>
+                                   <?php endif; ?>
+
+
                                    <li><a href="#" data-toggle="modal" data-target="#modal-faq">FAQ</a></li>
                                    <li><a href="<?=Url::to(['/settings'])?>" target="_blank">Настройки</a></li>
                                    <li>

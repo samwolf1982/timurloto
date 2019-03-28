@@ -109,7 +109,7 @@ MainAsset::register($this);
                                             Присоединиться
                                             <span></span>
                                         </a>
-                                        <a href="<?=Url::toRoute(['/matches'])?>" class="btn big-btn btn-primary btn-hover" data-toggle="modal" data-target="#modal-auth">
+                                        <a href="<?=Url::toRoute(['/matches'])?>" class="btn big-btn btn-primary btn-hover" >
                                             <i class="icon-network"></i>
                                             Дать прогноз
                                             <span></span>
@@ -141,15 +141,16 @@ MainAsset::register($this);
                                                 <span class="left-bottom"></span>
                                                 <span class="right-bottom"></span>
                                                 <span class="right-top"></span>
-                                                <iframe width="100%" src="https://www.youtube.com/embed/Hbd8ghFICJk?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                                <iframe width="100%" src="https://www.youtube.com/embed/a6ZX88897cI?rel=0&amp;fs=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="column-4 video-text">
-                                    <p>The complexity of mining crypto currency is growing rapidly, and many
-                                        crypto-currencies initially use POS or plan to switch to POW instead.
-                                        The financial well-being of miners is under threat.</p>
+                                    <p>
+                                        Look My Bet - первое и единственное сообщество в мире, созданное, как для новичков в мире ставок, так и для профессионалов.
+                                        Наша идея продуманна и реализована так, чтобы принести максимальную пользу, как для людей для которых ставки и спортивный анализ занимает внушительную часть их жизни, так и для людей для ,которых данный вид деятельности является хобби или же началом каперского пути
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -170,28 +171,35 @@ MainAsset::register($this);
                                             <li class="active">
                                                 <a href="#" data-target="#tab1" class="btn-tab btn-hover">
                                                     <i class="icon-arrow_right"></i>
-                                                    Как Пользоваться?
+                                                    ТУРНИРЫ
                                                     <span></span>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#" data-target="#tab2" class="btn-tab btn-hover">
                                                     <i class="icon-arrow_right"></i>
-                                                    общение
+                                                    БЕСПЛАТНЫЕ ПРОГНОЗЫ
                                                     <span></span>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#" data-target="#tab3" class="btn-tab btn-hover">
                                                     <i class="icon-arrow_right"></i>
-                                                    заработок
+                                                    ПРОЗРАЧНАЯ СТАТИСТИКА
                                                     <span></span>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#" data-target="#tab4" class="btn-tab btn-hover">
                                                     <i class="icon-arrow_right"></i>
-                                                    контроль
+                                                    ПРОСТОТА И УДОБСТВО
+                                                    <span></span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" data-target="#tab5" class="btn-tab btn-hover">
+                                                    <i class="icon-arrow_right"></i>
+                                                    ШИРОКИЕ ВОЗМОЖНОСТИ
                                                     <span></span>
                                                 </a>
                                             </li>
@@ -203,102 +211,93 @@ MainAsset::register($this);
                                         <div class="tab-panel active" id="tab1">
                                             <div class="toggle-tabs-mobile active">
                                                 <h4 class="h2">
-                                                    Как Пользоваться?
+                                                    ТУРНИРЫ
                                                     <i class="icon-arrow_down"></i>
                                                 </h4>
                                             </div>
                                             <div class="tab-panel-inner">
-                                                <p>
-                                                    The complexity of mining crypto currency is growing rapidly, and many crypto-currencies
-                                                    initially use POS or plan to switch to POW instead. The financial well-being of miners is under
-                                                    threat.
-                                                </p>
-                                                <p>
-                                                    MARK.SPACE means hundreds of thousands of high-end renders, which requires terabytes
-                                                    of content to create. We have created a protocol for decentralized rendering and data
-                                                    storage. Miners will be able to download our program to perform the rendering. For data
-                                                    storage they will receive rewards in the form of MRK tokens. In addition, our ecosystem
-                                                    implies a great number of transactions.
-                                                </p>
-                                                <p>
-                                                    The complexity of mining crypto currency is growing rapidly, and many crypto-currencies
-                                                    initially use POS or plan to switch to POW instead.
-                                                </p>
+
+
+                                                <p>  Хорошо разбираешься в ставках на спорт?</p>
+                                                <p>  Чувствуешь в себе силы посостязаться с другими?</p>
+                                                <p>  Тогда ты там, где нужно.</p>
+                                                <p>  У нас ты имеешь уникальную возможность заработать на ставках, при этом ничего не вложив. Каждую неделю ты можешь участвовать в турнирах и побороться за 25 000 руб.</p>
+
                                             </div>
                                         </div>
                                         <div class="tab-panel" id="tab2">
                                             <div class="toggle-tabs-mobile">
                                                 <h4 class="h2">
-                                                    общение
+                                                    БЕСПЛАТНЫЕ ПРОГНОЗЫ
                                                     <i class="icon-arrow_down"></i>
                                                 </h4>
                                             </div>
                                             <div class="tab-panel-inner">
-                                                <p>
-                                                    The complexity of mining crypto currency is growing rapidly, and many crypto-currencies
-                                                    initially use POS or plan to switch to POW instead. The financial well-being of miners is under
-                                                    threat.
-                                                </p>
-                                                <p>
-                                                    MARK.SPACE means hundreds of thousands of high-end renders, which requires terabytes
-                                                    of content to create. We have created a protocol for decentralized rendering and data
-                                                    storage. Miners will be able to download our program to perform the rendering. For data
-                                                    storage they will receive rewards in the form of MRK tokens. In addition, our ecosystem
-                                                    implies a great number of transactions.
-                                                </p>
+
+
+                                                <p>Надоели постоянные впаривания платных прогнозов, непонятных закрытых групп?</p>
+                                                <p>Здесь ты обретёшь то, чего нет ни на одной площадке.</p>
+                                                <p>Ежедневно, лучшие аналитики будут публиковать свои прогнозы абсолютно бесплатно.</p>
+                                                <p>Твоя задача, найти себе подходящего аналитика и подписаться на него.</p>
+
                                             </div>
                                         </div>
                                         <div class="tab-panel" id="tab3">
                                             <div class="toggle-tabs-mobile">
                                                 <h4 class="h2">
-                                                    заработок
+                                                    ПРОЗРАЧНАЯ СТАТИСТИКА
                                                     <i class="icon-arrow_down"></i>
                                                 </h4>
                                             </div>
                                             <div class="tab-panel-inner">
-                                                <p>
-                                                    The complexity of mining crypto currency is growing rapidly, and many crypto-currencies
-                                                    initially use POS or plan to switch to POW instead. The financial well-being of miners is under
-                                                    threat.
-                                                </p>
-                                                <p>
-                                                    MARK.SPACE means hundreds of thousands of high-end renders, which requires terabytes
-                                                    of content to create. We have created a protocol for decentralized rendering and data
-                                                    storage. Miners will be able to download our program to perform the rendering. For data
-                                                    storage they will receive rewards in the form of MRK tokens. In addition, our ecosystem
-                                                    implies a great number of transactions.
-                                                </p>
-                                                <p>
-                                                    The complexity of mining crypto currency is growing rapidly, and many crypto-currencies
-                                                    initially use POS or plan to switch to POW instead.
-                                                </p>
+
+
+                                                <p>Я делаю 1500% каждый месяц, у меня ни одного проигрышного прогноза, знакомо?<p>
+                                                <p>Наша площадка позволит навсегда забыть об этом.<p>
+                                                <p>Все дело в открытой статистике и мошенник попросту не сможет обмануть человека из-за статистики, которая находится в общем доступе.<p>
                                             </div>
                                         </div>
                                         <div class="tab-panel" id="tab4">
                                             <div class="toggle-tabs-mobile">
                                                 <h4 class="h2">
-                                                    контроль
+                                                    ПРОСТОТА И УДОБСТВО
                                                     <i class="icon-arrow_down"></i>
                                                 </h4>
                                             </div>
                                             <div class="tab-panel-inner">
-                                                <p>
-                                                    MARK.SPACE means hundreds of thousands of high-end renders, which requires terabytes
-                                                    of content to create. We have created a protocol for decentralized rendering and data
-                                                    storage. Miners will be able to download our program to perform the rendering. For data
-                                                    storage they will receive rewards in the form of MRK tokens. In addition, our ecosystem
-                                                    implies a great number of transactions.
-                                                </p>
-                                                <p>
-                                                    The complexity of mining crypto currency is growing rapidly, and many crypto-currencies
-                                                    initially use POS or plan to switch to POW instead.
-                                                </p>
+                                               <p> Все что тебе нужно - это просто зарегестрироваться.</p>
+                                               <p> Нет никакой воды. Не нужно ломать себе голову и придумывать объяснение ставки.</p>
+                                               <p> Ищешь грамотных людей в этой сфере?</p>
+                                               <p> Просто подпишись на рассылку и все.</p>
+                                               <p> Нет никого в окружении кто бы интересовался твоим хобби?</p>
+                                              <p> Так же не проблема, наша социальная сеть в твоём распоряжении.</p>
+                                               <p> Находи друзей, обсуждает предстоящие матчи и не только.</p>
+                                               <p> Для регистрации в турнире нужно всего лишь дать первую ставку.</p>
                                             </div>
                                         </div>
+                                        <div class="tab-panel" id="tab5">
+                                            <div class="toggle-tabs-mobile">
+                                                <h4 class="h2">
+                                                    ШИРОКИЕ ВОЗМОЖНОСТИ
+                                                    <i class="icon-arrow_down"></i>
+                                                </h4>
+                                            </div>
+                                            <div class="tab-panel-inner">
+
+                                               <p> Площадка создавалась с предпочтениями абсолютно каждого человека.</p>
+                                               <p> Профи смогут участвовать в турнирах и бороться за денежный приз.</p>
+                                               <p> Есть возможность предоставление свои лучших прогнозов для ограниченного количества пользователей.</p>
+                                              <p>  Игроки среднего уровня и новички без особых проблем найдут себе профессионалов и будут следовать их советам и пользоваться их прогнозами.</p>
+                                              <p>  Отслеживай успешность своих ставках по видам спорта, чемпионатам, исходам и по многим другим показателям.</p>
+                                             </div>
+                                        </div>
                                     </div>
+
+
+
                                 </div>
                                 <div class="column-12 btn-block">
-                                    <a href="#" class="btn-round btn-primary" data-toggle="modal" data-target="#modal-auth">
+                                    <a href="#" class="btn-round btn-primary" data-toggle="modal-reg" data-target="#modal-auth">
                                         <span class="icon-man"></span>
                                     </a>
                                 </div>
@@ -500,7 +499,7 @@ MainAsset::register($this);
                                     </div>
                                 </div>
                                 <div class="column-12 btn-block">
-                                    <a href="#" class="btn-round btn-primary" data-toggle="modal" data-target="#modal-auth">
+                                    <a href="#" class="btn-round btn-primary" data-toggle="modal-reg" data-target="#modal-auth">
                                         <span class="icon-man"></span>
                                     </a>
                                     <div class="arrow-review"></div>
@@ -540,7 +539,7 @@ MainAsset::register($this);
                             </ul>
                         </div>
                         <div class="btn-footer">
-                            <a href="#" class="user-btn" data-toggle="modal" data-target="#modal-auth">
+                            <a href="#" class="user-btn" data-toggle="modal-reg" data-target="#modal-auth">
                                 <span class="icon-man"></span>
                             </a>
                             <a href="#" class="shared-btn">
@@ -556,6 +555,9 @@ MainAsset::register($this);
         </div>
     </div>
 </div>
+
+
+
 <div class="fixed-footer">
     <div class="fixed-footer-inner">
         <div class="social-block">
