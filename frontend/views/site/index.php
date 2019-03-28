@@ -30,9 +30,7 @@ MainAsset::register($this);
                         <a href="#reviewScreen">Отзывы</a>
                     </li>
 
-                    <li data-menuanchor="reviewScreen">
-                        <a href="<?=Url::to('/dashboard')?>">Дать прогноз</a>
-                    </li>
+
 
 
 
@@ -105,14 +103,15 @@ MainAsset::register($this);
                                     <p>Создай команду единомышленников и зарабатывай</p>
                                     <?php   if(Yii::$app->user->isGuest) { ?>
                                     <div class="button-block">
-                                        <a href="#" class="btn big-btn btn-primary btn-hover" data-toggle="modal" data-target="#modal-auth">
+
+                                        <a href="#" id="openMadaInner2" class="btn big-btn btn-primary btn-hover"  data-toggle="modal-reg"  data-target="#modal-auth">
                                             <i class="icon-man"></i>
                                             Присоединиться
                                             <span></span>
                                         </a>
-                                        <a href="#" class="btn big-btn btn-default btn-hover" data-toggle="modal" data-target="#modal-auth">
+                                        <a href="<?=Url::toRoute(['/matches'])?>" class="btn big-btn btn-primary btn-hover" data-toggle="modal" data-target="#modal-auth">
                                             <i class="icon-network"></i>
-                                            Войти Через Соцсеть
+                                            Дать прогноз
                                             <span></span>
                                         </a>
                                     </div>

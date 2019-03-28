@@ -24,7 +24,7 @@ use yii\helpers\Url;
             <div class="wins-slider">
 
 
-                <?php foreach ($models as $ii => $model) { ?>
+                <?php foreach ($models as $ii => $model) { if(empty($model->user)) continue;  ?>
                     <div class="wins-item">
                         <div class="wins-item-inner">
                             <div class="date-wins"><?=$model->getPeriod($ii)?> </div>

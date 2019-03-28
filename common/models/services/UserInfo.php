@@ -77,7 +77,12 @@ class UserInfo
         $key='ulevel_'.$this->user_id;
         $data = Yii::$app->cache->get($key);
         if ($data === false) {
-            $balance = Score::find()->where(['user_id' => $this->user_id])->one()->balance;
+            $bb=Score::find()->where(['user_id' => $this->user_id])->one();
+            if(empty($bb)){
+                DoSome::createBalance($this->user_id);
+                $bb=Score::find()->where(['user_id' => $this->user_id])->one();
+            }
+            $balance = $bb->balance;
             $data=  $this-> calculateLevel($balance);
             $time_cache=1;
             if(YII_ENV=='prod') $time_cache=5*60;
