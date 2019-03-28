@@ -1,6 +1,7 @@
 <?php
 
 use common\models\helpers\ConstantsHelper;
+use common\models\overiden\User;
 use dektrium\user\controllers\RegistrationController;
 use dektrium\user\controllers\SecurityController;
 use dvizh\cart\Cart;
