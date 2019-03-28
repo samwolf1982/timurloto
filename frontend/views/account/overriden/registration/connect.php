@@ -78,7 +78,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             <div class="table-inner">
                                 <div class="table-body">
                                     <div class="head-bets-slider text-center" >
-                                        <h3 style="font-size: large;" >Новый пароль</h3>
+                                        <h3 style="font-size: large;" ><?= Html::encode($this->title) ?></h3>
 
 
                                     </div>
@@ -95,17 +95,41 @@ $this->params['breadcrumbs'][] = $this->title;
                                                         <h3 class="panel-title"> </h3>
                                                     </div>
                                                     <div class="panel-body">
-                                                        <?php $form = ActiveForm::begin([
-                                                            'id' => 'password-recovery-form',
-                                                            'enableAjaxValidation' => true,
-                                                            'enableClientValidation' => false,
-                                                        ]); ?>
 
-                                                        <?= $form->field($model, 'password')->passwordInput()->label('Введите новый пароль') ?>
+                                                                <div class="panel panel-default">
+                                                                    <div class="panel-body">
+                                                                        <div class="alert alert-info">
+                                                                            <p>
+                                                                                <?= Yii::t(
+                                                                                    'user',
+                                                                                    'In order to finish your registration, we need you to enter following fields'
+                                                                                ) ?>:
+                                                                            </p>
+                                                                        </div>
+                                                                        <?php $form = ActiveForm::begin([
+                                                                            'id' => 'connect-account-form',
+                                                                        ]); ?>
 
-                                                        <?= Html::submitButton(Yii::t('user', 'Продолжить'), ['class' => 'btn big-btn btn-primary btn-hover']) ?><br>
+                                                                        <?= $form->field($model, 'email') ?>
 
-                                                        <?php ActiveForm::end(); ?>
+                                                                        <?= $form->field($model, 'username') ?>
+
+                                                                        <?= Html::submitButton(Yii::t('user', 'Continue'), ['class' => 'btn btn-success btn-block']) ?>
+
+                                                                        <?php ActiveForm::end(); ?>
+                                                                    </div>
+                                                                </div>
+                                                                <p class="text-center">
+                                                                    <?= Html::a(
+                                                                        Yii::t(
+                                                                            'user',
+                                                                            'If you already registered, sign in and connect this account on settings page'
+                                                                        ),
+                                                                        ['/user/settings/networks']
+                                                                    ) ?>.
+                                                                </p>
+
+
                                                     </div>
                                                 </div>
                                             </div>
