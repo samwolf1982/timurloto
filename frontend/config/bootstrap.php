@@ -1,7 +1,6 @@
 <?php
 
 use common\models\helpers\ConstantsHelper;
-use common\models\overiden\User;
 use dektrium\user\controllers\RegistrationController;
 use dektrium\user\controllers\SecurityController;
 use dvizh\cart\Cart;
@@ -24,31 +23,6 @@ Event::on('dektrium\user\controllers\SecurityController', SecurityController::EV
            $e->account->email=$jsone->email; //
            $e->account->username=$uName; //
            $e->account->save();
-
-
-           /** @var User $user */
-           $user = \Yii::createObject([
-               'class'    => User::className(),
-               'scenario' => 'connect',
-               'username' => $e->account->username,
-               'email'    => $e->account->email,
-           ]);
-           Yii::$app->response->redirect(Url::to('/zzzz'));
-           die();
-//        if(empty($user->email)) $user->email=$account->email;
-//           $event = $this->getConnectEvent($account, $user);
-           Yii::createObject(['class' => ConnectEvent::className(), 'account' => $e->account, 'user' => $user]);
-
-//           $this->trigger(self::EVENT_BEFORE_CONNECT, $event);
-
-           if ($user->load(\Yii::$app->request->post()) && $user->create()) {
-               $e->account->connect($user);
-//               $this->trigger(self::EVENT_AFTER_CONNECT, $event);
-               \Yii::$app->user->login($user, $this->module->rememberFor);
-             die('222');
-           }
-           die('11');
-
        }
     }
 //    $client = $e->getClient(); // $client is one of the Da\User\AuthClient\ clients
