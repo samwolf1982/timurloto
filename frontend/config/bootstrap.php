@@ -19,7 +19,7 @@ Event::on('dektrium\user\controllers\SecurityController', SecurityController::EV
 //    }
 
     $client = $e->getClient(); // $client is one of the Da\User\AuthClient\ clients
-    $account = $e->getAccount(); // $account is a Da\User\Model\SocialNetworkAccount
+    $account = $e->account; // $account is a Da\User\Model\SocialNetworkAccount
 
     yii::error('dektrium\user\controllers\SecurityController2222222');
     yii::error($client);
