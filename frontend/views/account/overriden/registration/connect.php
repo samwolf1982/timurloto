@@ -19,45 +19,85 @@ use yii\widgets\ActiveForm;
  * @var dektrium\user\models\Account $account
  */
 
-$this->title = 'Подвязать профиль';
+$this->title = Yii::t('user', 'Sign in');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="row">
-    <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title"><?= Html::encode($this->title) ?></h3>
-            </div>
-            <div class="panel-body">
-                <div class="alert alert-info">
-                    <p>
-                        <?= Yii::t(
-                            'user',
-                            'In order to finish your registration, we need you to enter following fields'
-                        ) ?>:
-                    </p>
-                </div>
-                <?php $form = ActiveForm::begin([
-                    'id' => 'connect-account-form',
-                ]); ?>
 
-                <?= $form->field($model, 'email') ?>
 
-                <?= $form->field($model, 'username') ?>
 
-                <?= Html::submitButton(Yii::t('user', 'Continue'), ['class' => 'btn btn-success btn-block']) ?>
-
-                <?php ActiveForm::end(); ?>
-            </div>
-        </div>
-        <p class="text-center">
-            <?= Html::a(
-                Yii::t(
-                    'user',
-                    'If you already registered, sign in and connect this account on settings page'
-                ),
-                ['/user/settings/networks']
-            ) ?>.
-        </p>
+<div class="form-inner">
+    <?php $form = ActiveForm::begin([
+        'id' => 'registration-form',
+        'enableAjaxValidation' => true,
+        'method'=>'post',
+        'enableClientValidation' => false,
+//        'placeholdersFromLabels' => true
+    ]); ?>
+    <div class="input-row">
+        <?= $form->field($model, 'fullname')->label('Имя',['class'=>'placeholder']) ?>
     </div>
+    <div class="input-row">
+        <?= $form->field($model, 'username')->label('Никнейм',['class'=>'placeholder']) ?>
+    </div>
+    <div class="input-row">
+        <?= $form->field($model, 'email')->label('Email',['class'=>'placeholder']) ?>
+    </div>
+    <div class="input-row">
+        <?php if ($module->enableGeneratingPassword == false): ?>
+            <?= $form->field($model, 'password')->passwordInput()->label('Пароль - минимум 6 символов',['class'=>'placeholder']) ?>
+        <?php endif ?>
+    </div>
+
+    <div class="checkbox-row">
+        <?php //$form->field($model, 'readconfirm')->checkbox([ 'value' => '1', 'checked ' => true])->label(''); ?>
+    </div>
+    <div class="input-row btn-row">
+        <?= Html::submitButton(Yii::t('user', 'СОЗДАТЬ АККАУНТ'), ['class' => 'btn big-btn btn-primary btn-hover']) ?>
+    </div>
+    <?php ActiveForm::end(); ?>
+
 </div>
+
+<?php if(0){ ?>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><?= Html::encode($this->title) ?></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="alert alert-info">
+                        <p>
+                            <?= Yii::t(
+                                'user',
+                                'In order to finish your registration, we need you to enter following fields'
+                            ) ?>:
+                        </p>
+                    </div>
+                    <?php $form = ActiveForm::begin([
+                        'id' => 'connect-account-form',
+                    ]); ?>
+
+                    <?= $form->field($model, 'email') ?>
+
+                    <?= $form->field($model, 'username') ?>
+
+                    <?= Html::submitButton(Yii::t('user', 'Continue'), ['class' => 'btn btn-success btn-block']) ?>
+
+                    <?php ActiveForm::end(); ?>
+                </div>
+            </div>
+            <p class="text-center">
+                <?= Html::a(
+                    Yii::t(
+                        'user',
+                        'If you already registered, sign in and connect this account on settings page'
+                    ),
+                    ['/user/settings/networks']
+                ) ?>.
+            </p>
+        </div>
+    </div>
+<?php  } ?>
+
+
