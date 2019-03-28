@@ -157,7 +157,7 @@ ProfileUserAsset::register($this);
                             </div>
                             <div class="input-row">
                                 <?= $form->field($modelUser, 'social_yt')->textInput(['maxlength' => 255, 'class' => 'emptyClassField'])->label(false); ?>
-                                <label class="placeholder">Youtube</label>
+                                <label class="placeholder">Telegram</label>
                             </div>
 
 

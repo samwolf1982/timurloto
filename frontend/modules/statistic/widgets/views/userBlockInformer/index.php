@@ -77,13 +77,13 @@ $userInfo;
                             <li><a href="<?=$userInfo->getSocial_vk()?>"><span class="icon-vk"></span></a></li>
                         <?php  endif;  ?>
                         <?php  if($userInfo->getSocial_fb()):  ?>
-                            <li><a href="<?=$userInfo->getSocial_fb()?>"><span class="icon-insta"></span></a></li>
+                            <li><a href="<?=$userInfo->getSocial_fb()?>"><span class="icon-fb"></span></a></li>
                         <?php  endif;  ?>
                         <?php  if($userInfo->getSocial_in()):  ?>
-                            <li><a href="<?=$userInfo->getSocial_in()?>"><span class="icon-tw"></span></a></li>
+                            <li><a href="<?=$userInfo->getSocial_in()?>"><span class="icon-insta"></span></a></li>
                         <?php  endif;  ?>
                         <?php  if($userInfo->getSocial_tv()):  ?>
-                            <li><a href="<?=$userInfo->getSocial_tv()?>"><span class="icon-fb"></span></a></li>
+                            <li><a href="<?=$userInfo->getSocial_tv()?>"><span class="icon-tw"></span></a></li>
                         <?php  endif;  ?>
                         <?php  if($userInfo->getSocial_yt()):  ?>
                             <li><a href="<?=$userInfo->getSocial_yt()?>"><span class="icon-telegram"></span></a></li>
