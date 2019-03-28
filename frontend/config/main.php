@@ -120,6 +120,14 @@ return [
                 '/usecurity/login'=>'/usecurity/login',
                 '/urecovery/request'=>'/urecovery/request',
                 '/urecovery/reset/<id:(.*?)>/<code:(.*?)>'=>'/urecovery/reset',
+
+
+                // первая регистрация через соцсеть
+
+                '/uregistration/connect/<id:(.*?)>/<code:(.*?)>'=>'/user/registration/connect',
+
+
+
                 // delete
                 '/user/security/login'=>'/user/security/login',
                 '/user/recovery/request'=>'/user/recovery/request',
