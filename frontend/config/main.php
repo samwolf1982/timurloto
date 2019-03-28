@@ -124,7 +124,7 @@ return [
 
                 // первая регистрация через соцсеть
 
-                '/uregistration/connect/<id:(.*?)>/<code:(.*?)>'=>'/user/registration/connect',
+                '/uregistration/connect/<code:(.*?)>'=>'/user/registration/connect',
 
 
 
