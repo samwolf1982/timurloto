@@ -43,9 +43,9 @@ Event::on('dektrium\user\controllers\SecurityController', SecurityController::EV
                $e->account->connect($user);
 //               $this->trigger(self::EVENT_AFTER_CONNECT, $event);
                \Yii::$app->user->login($user, $this->module->rememberFor);
-               return $this->goBack();
+             die('222');
            }
-
+           die('11');
 
        }
     }
