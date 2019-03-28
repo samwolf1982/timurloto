@@ -35,7 +35,7 @@ class UregistrationController  extends OverriddeneRegistrationController
      */
     public function actionConnect($code)
     {
-        die('qqq');
+
         $account = $this->finder->findAccount()->byCode($code)->one();
 
         if ($account === null || $account->getIsConnected()) {

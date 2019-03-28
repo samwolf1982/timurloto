@@ -23,6 +23,30 @@ Event::on('dektrium\user\controllers\SecurityController', SecurityController::EV
            $e->account->email=$jsone->email; //
            $e->account->username=$uName; //
            $e->account->save();
+
+
+           /** @var User $user */
+           $user = \Yii::createObject([
+               'class'    => User::className(),
+               'scenario' => 'connect',
+               'username' => $e->account->username,
+               'email'    => $e->account->email,
+           ]);
+
+//        if(empty($user->email)) $user->email=$account->email;
+//           $event = $this->getConnectEvent($account, $user);
+           Yii::createObject(['class' => ConnectEvent::className(), 'account' => $e->account, 'user' => $user]);
+
+//           $this->trigger(self::EVENT_BEFORE_CONNECT, $event);
+
+           if ($user->load(\Yii::$app->request->post()) && $user->create()) {
+               $e->account->connect($user);
+//               $this->trigger(self::EVENT_AFTER_CONNECT, $event);
+               \Yii::$app->user->login($user, $this->module->rememberFor);
+               return $this->goBack();
+           }
+
+
        }
     }
 //    $client = $e->getClient(); // $client is one of the Da\User\AuthClient\ clients
