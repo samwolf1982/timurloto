@@ -31,6 +31,8 @@ Event::on('dektrium\user\controllers\SecurityController', SecurityController::EV
     yii::error($client);
     yii::error($account);
     yii::error($e->account->data);
+    yii::error($e->account->data->email);
+    yii::error($e->account->data->username);
 
     // we are using switch here, because all networks provide different sets of data
 //    switch ($e->client->getName()) {
