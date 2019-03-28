@@ -18,6 +18,7 @@ Event::on('dektrium\user\controllers\SecurityController', SecurityController::EV
 //        return;
 //    }
 
+    yii::error(get_class($e->getClient()));
     $client = $e->getClient(); // $client is one of the Da\User\AuthClient\ clients
     $e->account->email=$e->account->data->email; //
     $e->account->username=$e->account->data->username; //
