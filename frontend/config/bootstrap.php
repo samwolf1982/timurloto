@@ -33,7 +33,8 @@ Event::on('dektrium\user\controllers\SecurityController', SecurityController::EV
                'username' => $e->account->username,
                'email'    => $e->account->email,
            ]);
-           Yii::$app->response->redirect(Url::to('/zzzz')); die();
+           Yii::$app->response->redirect(Url::to('/zzzz'));
+           die();
 //        if(empty($user->email)) $user->email=$account->email;
 //           $event = $this->getConnectEvent($account, $user);
            Yii::createObject(['class' => ConnectEvent::className(), 'account' => $e->account, 'user' => $user]);
