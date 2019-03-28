@@ -26,6 +26,49 @@ class UregistrationController  extends OverriddeneRegistrationController
 
 
     /**
+     * Displays page where user can create new account that will be connected to social account.
+     *
+     * @param string $code
+     *
+     * @return string
+     * @throws NotFoundHttpException
+     */
+    public function actionConnect($code)
+    {
+        $account = $this->finder->findAccount()->byCode($code)->one();
+
+        if ($account === null || $account->getIsConnected()) {
+            throw new NotFoundHttpException();
+        }
+
+        /** @var User $user */
+        $user = \Yii::createObject([
+            'class'    => User::className(),
+            'scenario' => 'connect',
+            'username' => $account->username,
+            'email'    => $account->email,
+        ]);
+
+        $event = $this->getConnectEvent($account, $user);
+
+        $this->trigger(self::EVENT_BEFORE_CONNECT, $event);
+
+        if ($user->load(\Yii::$app->request->post()) && $user->create()) {
+            $account->connect($user);
+            $this->trigger(self::EVENT_AFTER_CONNECT, $event);
+            \Yii::$app->user->login($user, $this->module->rememberFor);
+            return $this->goBack();
+        }
+
+        return $this->render('connect465', [
+            'model'   => $user,
+            'account' => $account,
+        ]);
+    }
+
+
+
+    /**
      * Displays the registration page.
      * After successful registration if enableConfirmation is enabled shows info message otherwise
      * redirects to home page.
