@@ -108,7 +108,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                         </div>
 
 
-                                                                    <?php if(1){  ?>
+                                                                    <?php if(0){  ?>
                                                                     <?php $form = ActiveForm::begin([
                                                                         'id' => 'connect-account-form',
                                                                     ]); ?>
