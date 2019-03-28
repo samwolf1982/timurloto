@@ -83,7 +83,7 @@ class SettingsController extends BaseSettingsControllerDectrim
         $modelUser->aboutInfo='';
         if(!empty($modelUser->userinfo))$modelUser->aboutInfo=$modelUser->userinfo->about_me;
         $modelUser->social_vk='';
-        if(!empty($modelUser->userinfo))$modelUser->social_vk=$modelUser->userinfo->social_vk;
+        if(!empty($modelUser->social_vk))$modelUser->social_vk=$modelUser->userinfo->social_vk;
         $modelUser->social_fb='';
         if(!empty($modelUser->social_fb))$modelUser->social_fb=$modelUser->userinfo->social_fb;
         $modelUser->social_in='';

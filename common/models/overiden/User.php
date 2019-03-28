@@ -123,7 +123,6 @@ public $social_yt;
         $ui->social_in=$this->social_in;
         $ui->social_tv=$this->social_tv;
         $ui->social_yt=$this->social_yt;
-
         $ui->about_me= $this->aboutInfo;
 //var_dump($this->aboutInfo); die();
         if(!$ui->validate()){
