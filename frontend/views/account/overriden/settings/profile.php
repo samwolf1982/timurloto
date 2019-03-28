@@ -124,6 +124,49 @@ ProfileUserAsset::register($this);
                                 <?= $form->field($modelUser, 'aboutInfo')->textInput(['class' => 'emptyClassField'])->label(false); ?>
                                 <label class="placeholder">Описание</label>
                             </div>
+
+
+
+
+
+
+
+
+
+
+                            <div class="input-row">
+                                <h3 class="text-center">Ссылки на соцсети</h3>
+                            </div>
+
+
+                            <div class="input-row">
+                                <?= $form->field($modelUser, 'social_vk')->textInput(['maxlength' => 255, 'class' => 'emptyClassField'])->label(false); ?>
+                                <label class="placeholder">VK</label>
+                            </div>
+                            <div class="input-row">
+                                <?= $form->field($modelUser, 'social_fb')->textInput(['maxlength' => 255, 'class' => 'emptyClassField'])->label(false); ?>
+                                <label class="placeholder">Facebook</label>
+                            </div>
+                            <div class="input-row">
+                                <?= $form->field($modelUser, 'social_in')->textInput(['maxlength' => 255, 'class' => 'emptyClassField'])->label(false); ?>
+                                <label class="placeholder">Instagram</label>
+                            </div>
+                            <div class="input-row">
+                                <?= $form->field($modelUser, 'social_tv')->textInput(['maxlength' => 255, 'class' => 'emptyClassField'])->label(false); ?>
+                                <label class="placeholder">Twitter</label>
+                            </div>
+                            <div class="input-row">
+                                <?= $form->field($modelUser, 'social_yt')->textInput(['maxlength' => 255, 'class' => 'emptyClassField'])->label(false); ?>
+                                <label class="placeholder">Youtube</label>
+                            </div>
+
+
+
+
+
+
+
+
                             <div class="input-row hidden">
                                 <label class="title-row">Часто используемые букмекеры</label>
                                 <div class="select-book-row">

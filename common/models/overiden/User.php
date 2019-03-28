@@ -21,6 +21,12 @@ class User extends BaseUser
     public $avatarUser;
     public $aboutInfo;
 
+    public $social_vk;
+public $social_fb;
+public $social_in;
+public $social_tv;
+public $social_yt;
+
     /** @inheritdoc */
     public function rules()
     {
@@ -52,7 +58,7 @@ class User extends BaseUser
             'passwordRequired' => ['password', 'required', 'on' => ['register']],
 //            'passwordLength'   => ['password', 'string', 'min' => 6, 'max' => 72, 'on' => ['register', 'create']],
             'passwordLength'   => ['password', 'string', 'min' => 6, 'max' => 72,],
-            [['aboutInfo',], 'string'],
+            [['aboutInfo','social_vk', 'social_fb', 'social_in', 'social_tv', 'social_yt'], 'string'],
         ];
     }
 
@@ -114,6 +120,15 @@ class User extends BaseUser
         if(!$ui->validate()){
             var_dump($ui->errors); die();
         }
+
+
+//        ,'social_vk', 'social_fb', 'social_in', 'social_tv', 'social_yt'
+            $ui->social_vk=$this->social_vk;
+            $ui->social_fb=$this->social_fb;
+            $ui->social_in=$this->social_in;
+            $ui->social_tv=$this->social_tv;
+            $ui->social_yt=$this->social_yt;
+
         $ui->about_me= $this->aboutInfo;
         $ui->save();
 

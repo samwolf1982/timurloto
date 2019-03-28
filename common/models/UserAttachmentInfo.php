@@ -29,7 +29,7 @@ class UserAttachmentInfo extends \yii\db\ActiveRecord
         return [
             [['uid'], 'required'],
             [['uid'], 'integer'],
-            [['about_me'], 'string'],
+            [['about_me','social_vk', 'social_fb', 'social_in', 'social_tv', 'social_yt'], 'string'],
         ];
     }
 
@@ -42,6 +42,11 @@ class UserAttachmentInfo extends \yii\db\ActiveRecord
             'id' => 'ID',
             'uid' => 'id пользователя',
             'about_me' => 'описание про человека ',
+           'social_vk'=>"VK",
+           'social_fb'=>"Facebook",
+           'social_in'=>"Instagram",
+           'social_tv'=>"Twitter",
+           'social_yt'=>"Youtube",
         ];
     }
 }

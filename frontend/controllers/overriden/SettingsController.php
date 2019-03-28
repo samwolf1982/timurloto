@@ -37,7 +37,7 @@ class SettingsController extends BaseSettingsControllerDectrim
 
         // User LIke adminPanel
          $modelUser= $this->findModelUser(Yii::$app->user->identity->getId());
-
+         Yii::error(get_class($modelUser));
 
         $this->trigger(self::EVENT_BEFORE_PROFILE_UPDATE, $eventProfile);
 
@@ -137,27 +137,5 @@ class SettingsController extends BaseSettingsControllerDectrim
          return false;
     }
 
-
-
-
-    public function actionAccountDELETE()
-    {
-        /** @var SettingsForm $model */
-        $model = Yii::createObject(SettingsForm::className());
-        $event = $this->getFormEvent($model);
-
-        $this->performAjaxValidation($model);
-
-        $this->trigger(self::EVENT_BEFORE_ACCOUNT_UPDATE, $event);
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->session->setFlash('success', Yii::t('user', 'Your account details have been updated'));
-            $this->trigger(self::EVENT_AFTER_ACCOUNT_UPDATE, $event);
-            return $this->refresh();
-        }
-
-        return $this->render('account', [
-            'model' => $model,
-        ]);
-    }
 
 }
