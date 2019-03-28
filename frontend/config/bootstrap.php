@@ -18,7 +18,12 @@ Event::on('dektrium\user\controllers\SecurityController', SecurityController::EV
 //        return;
 //    }
 
+    $client = $e->getClient(); // $client is one of the Da\User\AuthClient\ clients
+    $account = $e->getAccount(); // $account is a Da\User\Model\SocialNetworkAccount
+
     yii::error('dektrium\user\controllers\SecurityController2222222');
+    yii::error($client);
+    yii::error($account);
 
     // we are using switch here, because all networks provide different sets of data
 //    switch ($e->client->getName()) {
