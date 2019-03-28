@@ -401,3 +401,34 @@ and also iPads specifically.
   border-radius: 3px;
   margin: 0 auto;
 }
+.hide-btn-search-block {
+  display: none;
+}
+@media screen and (min-width: 767px) {
+  .faq-block_2.v2,
+  .faq-block.v2 {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .faq-block_2.v2,
+  .faq-block.v2 {
+    display: initial;
+  }
+}
+@media screen and (max-width: 767px) {
+  .header-inner .logo-block a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: url(/images/logo_white.svg) center center no-repeat;
+  }
+  .header-inner .logo-block a img {
+    width: 1%;
+  }
+}
+@media screen and (max-width: 420px) {
+  .add-block {
+    padding-right: 10px;
+  }
+}

@@ -10,6 +10,8 @@
  */
 
 use app\copmonents\widgets\showuser\ShowuserWidget;
+use frontend\assets\AccountAsset;
+use frontend\assets\ProfileUserAsset;
 use yii\helpers\Html;
 use dektrium\user\helpers\Timezone;
 use yii\widgets\ActiveForm;
@@ -23,7 +25,7 @@ use yii\helpers\ArrayHelper;
 
 $this->title = Yii::t('user', 'Profile settings');
 $this->params['breadcrumbs'][] = $this->title;
-
+ProfileUserAsset::register($this);
 ?>
 
 <?= $this->render('/_alert', ['module' => Yii::$app->getModule('user')]) ?>
@@ -86,8 +88,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             <div class="avatar-row">
                                 <div class="avatar-inner">
                                     
-                                    <div class="round-avatar" style="background-image: url(/<?=$modelUser->imageurl;?>);"></div>
-
+                                    <div class="round-avatar" id="roundAvatarEdit" style="background-image: url(/<?=$modelUser->imageurl;?>);"></div>
                                     <div class="edit-avatar">
 
                                         <?= $form->field($modelUser, 'avatarUser')->fileInput(['id'=>'avatr-edit'])->label(false); ?>

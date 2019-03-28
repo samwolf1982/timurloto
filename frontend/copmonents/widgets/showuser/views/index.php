@@ -105,6 +105,16 @@
 
 
                 </div>
+
+
+                <div class="faq-block_2 v2">
+                    <a href="<?=Url::to(['/bet']) ?>" data-toggle="no-modal" data-target="#modal-faq"><i class="faq-icon"></i><span>Турниры</span></a>
+                </div>
+                <div class="faq-block v2">
+                    <a href="#" data-toggle="modal" data-target="#modal-faq"><i class="faq-icon"></i><span>FAQ</span></a>
+                </div>
+
+
                 <?php     if (Yii::$app->user->isGuest) { ?>
                     <div class="user-btn">
                         <a href="#" class="btn btn-small btn-primary"  id="openMadaInner" data-toggle="modal-reg" data-target="#modal-auth"><i class="icon-user"></i> <span>ВОЙТИ</span></a>
