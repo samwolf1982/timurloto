@@ -11,6 +11,36 @@ use yii\base\Event;
 
 
 
+Event::on('dektrium\user\controllers\SecurityController', SecurityController::EVENT_BEFORE_AUTHENTICATE, function (\dektrium\user\events\AuthEvent $e) {
+//    yii::error(['zzz',$e->client->getUserAttributes()]);
+    // if user account was not created we should not continue
+//    if ($e->account->user === null) {
+//        return;
+//    }
+
+    yii::error('dektrium\user\controllers\SecurityController2222222');
+
+    // we are using switch here, because all networks provide different sets of data
+//    switch ($e->client->getName()) {
+//        case 'facebook':
+//
+//            $e->account->user->profile->updateAttributes([
+//                'name' => $e->client->getUserAttributes()['name'],
+//            ]);
+//        case 'vkontakte':
+//            // some different logic
+//        case 'github':
+//            $cart = yii::$app->cart;
+//            // перенос данных
+//            $cart->getCart()->fromTmpToCurrentCart();
+////        $session = yii::$app->session;
+////            yii::error(['some error EVENT',yii::$app->user->id,$session->get('tmp_user_id')]);
+//
+//    }
+    // after saving all user attributes will be stored under account model
+    // Yii::$app->identity->user->accounts['facebook']->decodedData
+});
+//-------------
 
 
 //Event::on(SecurityController::class, SecurityController::EVENT_AFTER_AUTHENTICATE, function (AuthEvent $e) {
