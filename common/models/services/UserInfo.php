@@ -242,4 +242,28 @@ class UserInfo
         return $this->user_image;
     }
 
+
+
+    public function getSocial_vk()
+    {
+        return $this->user->userinfo->social_vk;
+    }
+    public function getSocial_fb()
+    {
+        return $this->user->userinfo->social_fb;
+    }
+    public function getSocial_in()
+    {
+        return $this->user->userinfo->social_in;
+    }
+    public function getSocial_tv()
+    {
+        return $this->user->userinfo->social_tv;
+    }
+    public function getSocial_yt()
+    {
+        return $this->user->userinfo->social_yt;
+    }
+
+
 }

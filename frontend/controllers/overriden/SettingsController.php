@@ -38,6 +38,7 @@ class SettingsController extends BaseSettingsControllerDectrim
         // User LIke adminPanel
          $modelUser= $this->findModelUser(Yii::$app->user->identity->getId());
          Yii::error(get_class($modelUser));
+         Yii::error($modelUser->social_vk);
 
         $this->trigger(self::EVENT_BEFORE_PROFILE_UPDATE, $eventProfile);
 
@@ -81,6 +82,16 @@ class SettingsController extends BaseSettingsControllerDectrim
 
         $modelUser->aboutInfo='';
         if(!empty($modelUser->userinfo))$modelUser->aboutInfo=$modelUser->userinfo->about_me;
+        $modelUser->social_vk='';
+        if(!empty($modelUser->userinfo))$modelUser->social_vk=$modelUser->userinfo->social_vk;
+        $modelUser->social_fb='';
+        if(!empty($modelUser->social_fb))$modelUser->social_fb=$modelUser->userinfo->social_fb;
+        $modelUser->social_in='';
+        if(!empty($modelUser->social_in))$modelUser->social_in=$modelUser->userinfo->social_in;
+        $modelUser->social_tv='';
+        if(!empty($modelUser->social_tv))$modelUser->social_tv=$modelUser->userinfo->social_tv;
+        $modelUser->social_yt='';
+        if(!empty($modelUser->social_yt))$modelUser->social_yt=$modelUser->userinfo->social_yt;
 
 //        todo  обэденить проверки
 //        if ($modelProfile->load(\Yii::$app->request->post()) && $modelProfile->save()) {

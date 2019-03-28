@@ -71,16 +71,26 @@ $userInfo;
 
                 <div class="user-acc-social">
                     <ul class="social-user">
-                        <li><a href="#"><span class="icon-vk"></span></a></li>
-                        <li><a href="#"><span class="icon-insta"></span></a></li>
-                        <li><a href="#"><span class="icon-tw"></span></a></li>
-                        <li><a href="#"><span class="icon-fb"></span></a></li>
-                        <li><a href="#"><span class="icon-telegram"></span></a></li>
-                        <li class="add-soc">
-                            <a href="#" class="select-btn-plus" data-toggle="modal" data-target="#modal-choose-bet">
-                                <span class="icon-add-plus"></span>
-                            </a>
-                        </li>
+
+
+                        <?php  if($userInfo->getSocial_vk()):?>
+                            <li><a href="<?=$userInfo->getSocial_vk()?>"><span class="icon-vk"></span></a></li>
+                        <?php  endif;  ?>
+                        <?php  if($userInfo->getSocial_fb()):  ?>
+                            <li><a href="<?=$userInfo->getSocial_fb()?>"><span class="icon-insta"></span></a></li>
+                        <?php  endif;  ?>
+                        <?php  if($userInfo->getSocial_in()):  ?>
+                            <li><a href="<?=$userInfo->getSocial_in()?>"><span class="icon-tw"></span></a></li>
+                        <?php  endif;  ?>
+                        <?php  if($userInfo->getSocial_tv()):  ?>
+                            <li><a href="<?=$userInfo->getSocial_tv()?>"><span class="icon-fb"></span></a></li>
+                        <?php  endif;  ?>
+                        <?php  if($userInfo->getSocial_yt()):  ?>
+                            <li><a href="<?=$userInfo->getSocial_yt()?>"><span class="icon-telegram"></span></a></li>
+                        <?php  endif;  ?>
+
+
+
                     </ul>
                 </div>
 

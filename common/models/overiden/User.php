@@ -116,21 +116,24 @@ public $social_yt;
             $ui =new   UserAttachmentInfo();
             $ui->uid=$this->id;
         }
+        yii::error($ui->social_vk);
+//        ,'social_vk', 'social_fb', 'social_in', 'social_tv', 'social_yt'
+//        $ui->social_vk=$this->social_vk;
+//        $ui->social_fb=$this->social_fb;
+//        $ui->social_in=$this->social_in;
+//        $ui->social_tv=$this->social_tv;
+//        $ui->social_yt=$this->social_yt;
+
+        $ui->about_me= $this->aboutInfo;
 //var_dump($this->aboutInfo); die();
         if(!$ui->validate()){
             var_dump($ui->errors); die();
         }
 
 
-//        ,'social_vk', 'social_fb', 'social_in', 'social_tv', 'social_yt'
-            $ui->social_vk=$this->social_vk;
-            $ui->social_fb=$this->social_fb;
-            $ui->social_in=$this->social_in;
-            $ui->social_tv=$this->social_tv;
-            $ui->social_yt=$this->social_yt;
 
-        $ui->about_me= $this->aboutInfo;
-        $ui->save();
+
+        $ui->save(false);
 
     }
 
