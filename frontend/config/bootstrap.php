@@ -21,6 +21,9 @@ Event::on('dektrium\user\controllers\SecurityController', SecurityController::EV
     if ($e->account->user === null) {
         return;
     }
+
+    yii::error('dektrium\user\controllers\SecurityController1111111111');
+
     // we are using switch here, because all networks provide different sets of data
     switch ($e->client->getName()) {
         case 'facebook':

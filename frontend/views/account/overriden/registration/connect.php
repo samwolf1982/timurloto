@@ -106,6 +106,23 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                                 ) ?>:
                                                                             </p>
                                                                         </div>
+
+
+                                                                    <?php if(1){  ?>
+                                                                    <?php $form = ActiveForm::begin([
+                                                                        'id' => 'connect-account-form',
+                                                                    ]); ?>
+
+                                                                    <?= $form->field($model, 'email') ?>
+
+                                                                    <?= $form->field($model, 'username') ?>
+
+                                                                    <?= Html::submitButton(Yii::t('user', 'Continue'), ['class' => 'btn btn-success btn-block']) ?>
+
+                                                                    <?php ActiveForm::end(); ?>
+                                                                    <?php } ?>
+
+                                                                    <?php if(1){  ?>
                                                                         <?php $form = ActiveForm::begin([
                                                                             'id' => 'connect-account-form',
                                                                         ]); ?>
@@ -117,6 +134,11 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                         <?= Html::submitButton(Yii::t('user', 'Continue'), ['class' => 'btn big-btn btn-primary btn-hover']) ?>
 
                                                                         <?php ActiveForm::end(); ?>
+                                                                    <?php } ?>
+
+
+
+
 
                                                                 </div>
                                                                 <p class="text-center">
