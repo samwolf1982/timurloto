@@ -85,13 +85,13 @@ class SettingsController extends BaseSettingsControllerDectrim
         $modelUser->social_vk='';
         if(!empty($modelUser->userinfo->social_vk))$modelUser->social_vk=$modelUser->userinfo->social_vk;
         $modelUser->social_fb='';
-        if(!empty($modelUser->social_fb->social_fb))$modelUser->social_fb=$modelUser->userinfo->social_fb;
+        if(!empty($modelUser->userinfo->social_fb))$modelUser->social_fb=$modelUser->userinfo->social_fb;
         $modelUser->social_in='';
-        if(!empty($modelUser->social_in->social_in))$modelUser->social_in=$modelUser->userinfo->social_in;
+        if(!empty($modelUser->userinfo->social_in))$modelUser->social_in=$modelUser->userinfo->social_in;
         $modelUser->social_tv='';
-        if(!empty($modelUser->social_tv->social_tv))$modelUser->social_tv=$modelUser->userinfo->social_tv;
+        if(!empty($modelUser->userinfo->social_tv))$modelUser->social_tv=$modelUser->userinfo->social_tv;
         $modelUser->social_yt='';
-        if(!empty($modelUser->social_yt->social_yt))$modelUser->social_yt=$modelUser->userinfo->social_yt;
+        if(!empty($modelUser->userinfo->social_yt))$modelUser->social_yt=$modelUser->userinfo->social_yt;
 
 //        todo  обэденить проверки
 //        if ($modelProfile->load(\Yii::$app->request->post()) && $modelProfile->save()) {
