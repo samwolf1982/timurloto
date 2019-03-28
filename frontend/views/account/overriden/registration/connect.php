@@ -120,13 +120,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
                                                                 </div>
                                                                 <p class="text-center">
-                                                                    <?= Html::a(
-                                                                        Yii::t(
-                                                                            'user',
-                                                                            'If you already registered, sign in and connect this account on settings page'
-                                                                        ),
-                                                                        ['/user/settings/networks']
-                                                                    ) ?>.
+
+                                                                    <a href="#" class="btn btn-small btn-primary" id="openMadaInner" data-toggle="modal-reg" data-target="#modal-auth"><i class="icon-user"></i> <span><?=  Yii::t(
+                                                                                'user',
+                                                                                'If you already registered, sign in and connect this account on settings page'
+                                                                        ?></span></a>
+
                                                                 </p>
 
 
