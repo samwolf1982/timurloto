@@ -507,8 +507,8 @@ MainAsset::register($this);
                                     <a href="#" class="btn-round btn-primary" data-toggle="modal-reg" data-target="#modal-auth">
                                         <span class="icon-man"></span>
                                     </a>
-                                    <div class="arrow-review"></div>
                                     <?php } ?>
+                                    <div class="arrow-review"></div>
                                 </div>
                             </div>
                         </div>
