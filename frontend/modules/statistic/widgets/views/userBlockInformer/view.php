@@ -3,6 +3,7 @@
 
 use common\models\DTO\UserInfoAccount;
 use common\models\helpers\ConstantsHelper;
+use common\models\services\UserInfo;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
@@ -68,12 +69,24 @@ $userInfo;
                 <!-- Добавляем блок с соц сетями -->
                 <div class="user-acc-social">
                     <ul class="social-user">
-                        <li><a href="#"><span class="icon-vk"></span></a></li>
-                        <li><a href="#"><span class="icon-insta"></span></a></li>
-                        <li><a href="#"><span class="icon-tw"></span></a></li>
-                        <li><a href="#"><span class="icon-fb"></span></a></li>
-                        <li><a href="#"><span class="icon-telegram"></span></a></li>
-                        <li><a href="#"><span class="icon-youtube"></span></a></li>
+
+
+                        <?php  if($userInfo->getSocial_vk()):?>
+                            <li><a href="<?=$userInfo->getSocial_vk()?>"><span class="icon-vk"></span></a></li>
+                        <?php  endif;  ?>
+                        <?php  if($userInfo->getSocial_fb()):  ?>
+                            <li><a href="<?=$userInfo->getSocial_fb()?>"><span class="icon-fb"></span></a></li>
+                        <?php  endif;  ?>
+                        <?php  if($userInfo->getSocial_in()):  ?>
+                            <li><a href="<?=$userInfo->getSocial_in()?>"><span class="icon-insta"></span></a></li>
+                        <?php  endif;  ?>
+                        <?php  if($userInfo->getSocial_tv()):  ?>
+                            <li><a href="<?=$userInfo->getSocial_tv()?>"><span class="icon-tw"></span></a></li>
+                        <?php  endif;  ?>
+                        <?php  if($userInfo->getSocial_yt()):  ?>
+                            <li><a href="<?=$userInfo->getSocial_yt()?>"><span class="icon-telegram"></span></a></li>
+                        <?php  endif;  ?>
+
                     </ul>
                 </div>
                 <div class="user-acc-btn mt-0">

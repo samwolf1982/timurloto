@@ -251,23 +251,28 @@ class UserInfo
 
     public function getSocial_vk()
     {
-        return $this->user->userinfo->social_vk;
+        if(!empty($this->user->userinfo->social_vk)) return $this->user->userinfo->social_vk;
+        return '';
     }
     public function getSocial_fb()
     {
-        return $this->user->userinfo->social_fb;
+        if(!empty($this->user->userinfo->social_fb)) return $this->user->userinfo->social_fb;
+        return '';
     }
     public function getSocial_in()
     {
-        return $this->user->userinfo->social_in;
+        if(!empty($this->user->userinfo->social_in)) return $this->user->userinfo->social_in;
+        return '';
     }
     public function getSocial_tv()
     {
-        return $this->user->userinfo->social_tv;
+        if(!empty($this->user->userinfo->social_tv)) return $this->user->userinfo->social_tv;
+        return '';
     }
     public function getSocial_yt()
     {
-        return $this->user->userinfo->social_yt;
+        if(!empty($this->user->userinfo->social_yt)) return $this->user->userinfo->social_yt;
+        return '';
     }
 
 
