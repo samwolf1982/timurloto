@@ -43,7 +43,7 @@ use yii\helpers\Url;
                                 <div class="user-info">
                                     <a href="<?=Url::toRoute(['/account/view','id'=>$model->user->id])?>"> <h4 class="name-r"><?=$model->user->username ?></h4> </a>
                                     <div class="level-user level-user-label">
-                                        <div class="level-text">Место <?=$model->level; ?></div>
+                                        <div class="level-text"><?=$model->level; ?> место </div>
                                         <?php if( $model->userinfo->getisPro() ){ ?>
                                             <span class="label-user label-user-pro">pro</span>
                                         <?php } ?>
