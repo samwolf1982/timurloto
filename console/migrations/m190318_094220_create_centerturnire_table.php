@@ -12,14 +12,17 @@ class m190318_094220_create_centerturnire_table extends Migration
      */
     public function safeUp()
     {
-        $this->createTable('centerturnire', [
-            'id' => $this->primaryKey(),
-            'sportid' => $this->text(),
-            'sort' => $this->integer(),
-            'status' => $this->integer(),
-            'name' => $this->text(),
+        if (!$this->tableExists('centerturnire')){
+            $this->createTable('centerturnire', [
+                'id' => $this->primaryKey(),
+                'sportid' => $this->text(),
+                'sort' => $this->integer(),
+                'status' => $this->integer(),
+                'name' => $this->text(),
 
-        ]);
+            ]);
+        }
+
     }
 
     /**
@@ -28,5 +31,17 @@ class m190318_094220_create_centerturnire_table extends Migration
     public function safeDown()
     {
         $this->dropTable('centerturnire');
+    }
+    private function tableExists($tableName, $db = null)
+    {
+        if ($db)
+            $dbConnect = \Yii::$app->get($db);
+        else
+            $dbConnect = \Yii::$app->get('db');
+
+        if (!($dbConnect instanceof \yii\db\Connection))
+            throw new \yii\base\InvalidParamException;
+
+        return in_array($tableName, $dbConnect->schema->getTableNames());
     }
 }

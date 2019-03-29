@@ -23,10 +23,6 @@ class LastWeekWinnersWidg extends \yii\base\Widget
     public function init()
     {
         parent::init();
-
-      //  WidgetAsset::register($this->getView());
-
-
         
         if ($this->text === NULL) {
             $this->text = 'ПОБЕДИТЕЛИ ПРЕДЫДУЩИХ НЕДЕЛЬ';

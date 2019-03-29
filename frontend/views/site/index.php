@@ -1,5 +1,6 @@
 <?php
 
+use app\copmonents\widgets\commentusers\CommentusersWidget;
 use app\copmonents\widgets\showuser\ShowuserWidget;
 use dektrium\user\widgets\Connect;
 use frontend\assets\MainAsset;
@@ -309,212 +310,14 @@ MainAsset::register($this);
                     </div>
                 </div>
             </div>
-            <div class="section review-section">
-                <div class="content-block">
-                    <div class="content-block-inner">
-                        <div class="content-container">
-                            <div class="row">
-                                <div class="column-12">
-                                    <h2 class="h1">Отзывы Пользователей</h2>
-                                </div>
-                                <div class="slider-rev-block column-10">
-                                    <div class="rev-slider">
-                                        <div class="item-rev">
-                                            <div class="review-inner">
-                                                <div class="avatar-block">
-                                                    <div class="avatar">
-                                                        <img src="images/ava1.png" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="text-review">
-                                                    <h4>john.wick.49</h4>
-                                                    <p>Уже 47 лет зависаю на look my bet. Очень крутая
-                                                        социальная сеть, где можно заработать денег,
-                                                        не рискуя своими.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item-rev">
-                                            <div class="review-inner">
-                                                <div class="avatar-block">
-                                                    <div class="avatar">
-                                                        <img src="images/ava2.png" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="text-review">
-                                                    <h4>john.wick.49</h4>
-                                                    <p>Уже 47 лет зависаю на look my bet. Очень крутая
-                                                        социальная сеть, где можно заработать денег,
-                                                        не рискуя своими.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item-rev">
-                                            <div class="review-inner">
-                                                <div class="avatar-block">
-                                                    <div class="avatar">
-                                                        <img src="images/ava3.png" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="text-review">
-                                                    <h4>john.wick.49</h4>
-                                                    <p>Уже 47 лет зависаю на look my bet. Очень крутая
-                                                        социальная сеть, где можно заработать денег,
-                                                        не рискуя своими.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item-rev">
-                                            <div class="review-inner">
-                                                <div class="avatar-block">
-                                                    <div class="avatar">
-                                                        <img src="images/ava4.png" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="text-review">
-                                                    <h4>john.wick.49</h4>
-                                                    <p>Уже 47 лет зависаю на look my bet. Очень крутая
-                                                        социальная сеть, где можно заработать денег,
-                                                        не рискуя своими.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item-rev">
-                                            <div class="review-inner">
-                                                <div class="avatar-block">
-                                                    <div class="avatar">
-                                                        <img src="images/ava3.png" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="text-review">
-                                                    <h4>john.wick.49</h4>
-                                                    <p>Уже 47 лет зависаю на look my bet. Очень крутая
-                                                        социальная сеть, где можно заработать денег,
-                                                        не рискуя своими.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item-rev">
-                                            <div class="review-inner">
-                                                <div class="avatar-block">
-                                                    <div class="avatar">
-                                                        <img src="images/ava2.png" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="text-review">
-                                                    <h4>john.wick.49</h4>
-                                                    <p>Уже 47 лет зависаю на look my bet. Очень крутая
-                                                        социальная сеть, где можно заработать денег,
-                                                        не рискуя своими.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item-rev">
-                                            <div class="review-inner">
-                                                <div class="avatar-block">
-                                                    <div class="avatar">
-                                                        <img src="images/ava1.png" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="text-review">
-                                                    <h4>john.wick.49</h4>
-                                                    <p>Уже 47 лет зависаю на look my bet. Очень крутая
-                                                        социальная сеть, где можно заработать денег,
-                                                        не рискуя своими.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item-rev">
-                                            <div class="review-inner">
-                                                <div class="avatar-block">
-                                                    <div class="avatar">
-                                                        <img src="images/ava4.png" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="text-review">
-                                                    <h4>john.wick.49</h4>
-                                                    <p>Уже 47 лет зависаю на look my bet. Очень крутая
-                                                        социальная сеть, где можно заработать денег,
-                                                        не рискуя своими.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item-rev">
-                                            <div class="review-inner">
-                                                <div class="avatar-block">
-                                                    <div class="avatar">
-                                                        <img src="images/ava1.png" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="text-review">
-                                                    <h4>john.wick.49</h4>
-                                                    <p>Уже 47 лет зависаю на look my bet. Очень крутая
-                                                        социальная сеть, где можно заработать денег,
-                                                        не рискуя своими.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item-rev">
-                                            <div class="review-inner">
-                                                <div class="avatar-block">
-                                                    <div class="avatar">
-                                                        <img src="images/ava4.png" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="text-review">
-                                                    <h4>john.wick.49</h4>
-                                                    <p>Уже 47 лет зависаю на look my bet. Очень крутая
-                                                        социальная сеть, где можно заработать денег,
-                                                        не рискуя своими.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item-rev">
-                                            <div class="review-inner">
-                                                <div class="avatar-block">
-                                                    <div class="avatar">
-                                                        <img src="images/ava3.png" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="text-review">
-                                                    <h4>john.wick.49</h4>
-                                                    <p>Уже 47 лет зависаю на look my bet. Очень крутая
-                                                        социальная сеть, где можно заработать денег,
-                                                        не рискуя своими.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item-rev">
-                                            <div class="review-inner">
-                                                <div class="avatar-block">
-                                                    <div class="avatar">
-                                                        <img src="images/ava2.png" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="text-review">
-                                                    <h4>john.wick.49</h4>
-                                                    <p>Уже 47 лет зависаю на look my bet. Очень крутая
-                                                        социальная сеть, где можно заработать денег,
-                                                        не рискуя своими.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="column-12 btn-block">
 
-                                    <?php   if(Yii::$app->user->isGuest) { ?>
-                                    <a href="#" class="btn-round btn-primary" data-toggle="modal-reg" data-target="#modal-auth">
-                                        <span class="icon-man"></span>
-                                    </a>
-                                    <?php } ?>
-                                    <div class="arrow-review"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+
+
+<!--            Отзывы Пользователей-->
+            <?=CommentusersWidget::widget(); ?>
+
+
             <div class="section footer-section fp-auto-height">
                 <div class="footer-block">
                     <div class="content-container">
@@ -529,6 +332,8 @@ MainAsset::register($this);
                         </div>
                     </div>
                 </div>
+
+
                 <footer class="main-footer">
                     <div class="main-footer-inner">
                         <div class="logo-footer">
@@ -538,10 +343,10 @@ MainAsset::register($this);
                         </div>
                         <div class="menu-footer">
                             <ul class="bottom-menu">
-                                <li><a href="conf.html">политика конфиденциальности</a></li>
-                                <li><a href="term.html">Условия использования сайта</a></li>
-                                <li><a href="help.html">Помощь</a></li>
-                                <li><a href="contact.html">Контакты</a></li>
+                                <li><a href="<?=Url::toRoute(['/privacy-policy']) ?>">политика конфиденциальности</a></li>
+                                <li><a href="<?=Url::toRoute(['/terms-of-use']) ?>">Условия использования сайта</a></li>
+                                <li><a href="<?=Url::toRoute(['/help']) ?>">Помощь</a></li>
+                                <li><a href="<?=Url::toRoute(['/contact']) ?>">Контакты</a></li>
                             </ul>
                         </div>
                         <div class="btn-footer">
@@ -556,10 +361,13 @@ MainAsset::register($this);
                             </a>
                         </div>
                         <div class="copy-footer">
-                            <p>&copy; 2018 Look My Bet</p>
+                            <p>&copy; 2019 Look My Bet</p>
                         </div>
                     </div>
                 </footer>
+
+
+
             </div>
         </div>
     </div>

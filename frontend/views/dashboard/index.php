@@ -124,82 +124,9 @@ use frontend\assets\DashboardAsset;
         </div>
     </div>
 </div>
-<footer class="main-footer front-footer">
-    <div class="main-footer-inner">
-        <div class="logo-footer">
-            <a href="/">
-                <img src="images/logo.svg" alt="Look My Bet">
-            </a>
-        </div>
-        <div class="menu-footer">
-            <ul class="bottom-menu">
-                <li><a href="conf.html">политика конфиденциальности</a></li>
-                <li><a href="term.html">Условия использования сайта</a></li>
-                <li><a href="help.html">Помощь</a></li>
-                <li><a href="contact.html">Контакты</a></li>
-            </ul>
-        </div>
-        <div class="btn-footer">
-            <div class="btn-shared">
-                <div class="shared-block">
-                    <button class="shared">
-                        <span class="icon-network"></span>
-                    </button>
-                    <div class="drop-shared">
-                        <ul class="shared-social">
-                            <li>
-                                <a href="https://twitter.com/home?status=http%3A//test6.tino.com.ua/account.html" target="_blank">
-                                    <span class="icon-tw"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//test6.tino.com.ua/account.html" target="_blank">
-                                    <span class="icon-fb"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://plus.google.com/share?url=https%3A//www.facebook.com/sharer/sharer.php?u=http%253A//test6.tino.com.ua/account.html" target="_blank">
-                                    <span class="icon-gp"></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="fixed-footer-inner">
-            <div class="social-block">
-                <ul class="social-list">
-                    <li>
-                        <a href="#" target="_blank">
-                            <span class="icon-youtube"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <span class="icon-telegram"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <span class="icon-mail"></span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="copy-footer">
-                <p>&copy; 2018 Look My Bet</p>
-            </div>
-            <div class="media-block">
-                <a href="#" class="btn btn-default btn-hover" data-toggle="modal" data-target="#modal-feedback">оставить отзыв <span></span></a>
-                <a href="#" class="btn btn-default hover-btn btn-hover">реклама <span></span></a>
-            </div>
-            <div class="arrow-top">
-                <a href="#" id="top-btn"><span class="icon-arrow_up"></span></a>
-            </div>
-        </div>
-    </div>
-</footer>
+
+<?= $this->render('@app/views/layouts/footer');?>
+
 
 
 <div class="modal-wrapper bet-modal modal-860" id="bet1">

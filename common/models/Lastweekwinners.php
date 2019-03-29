@@ -33,6 +33,7 @@ class Lastweekwinners extends \yii\db\ActiveRecord
         return [
             [['uid', 'sort', 'status'], 'required'],
             [['uid', 'sort', 'status'], 'integer'],
+            [['level', 'period'], 'string'],
         ];
     }
 
@@ -46,6 +47,8 @@ class Lastweekwinners extends \yii\db\ActiveRecord
             'uid' => 'Uid',
             'sort' => 'Sort',
             'status' => 'Status',
+            'level' => 'Уровень',
+            'period' => 'Период ( 02-24 03-03 )',
         ];
     }
 

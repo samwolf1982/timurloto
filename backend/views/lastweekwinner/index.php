@@ -62,6 +62,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 }
             ],
             'sort',
+            'period',
 
 
             ['class' => 'yii\grid\ActionColumn'],

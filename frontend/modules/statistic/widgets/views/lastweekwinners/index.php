@@ -24,10 +24,11 @@ use yii\helpers\Url;
             <div class="wins-slider">
 
 
+
                 <?php foreach ($models as $ii => $model) { if(empty($model->user)) continue;  ?>
                     <div class="wins-item">
                         <div class="wins-item-inner">
-                            <div class="date-wins"><?=$model->getPeriod($ii)?> </div>
+                            <div class="date-wins"><?=$model->period?> </div>
                             <div class="row-ava">
                                 <div class="rate-avatar-column">
                                     <div class="rate-avatar">
@@ -35,14 +36,14 @@ use yii\helpers\Url;
                                             <a href="<?=Url::toRoute(['/account/view','id'=>$model->user->id])?>">    <div class="circle"></div>  </a>
                                         </div>
                                         <div class="avatar-user">
-                                               <img src="/<?=$model->user->imageurl?>  " alt="<?=$model->user->username ?>">
+                                            <img src="/<?=$model->user->imageurl?>  " alt="<?=$model->user->username ?>">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="user-info">
                                     <a href="<?=Url::toRoute(['/account/view','id'=>$model->user->id])?>"> <h4 class="name-r"><?=$model->user->username ?></h4> </a>
                                     <div class="level-user level-user-label">
-                                        <div class="level-text">Уровень <?=$model->userinfo->getUserLevelNumber() ?></div>
+                                        <div class="level-text">Уровень <?=$model->level; ?></div>
                                         <?php if( $model->userinfo->getisPro() ){ ?>
                                             <span class="label-user label-user-pro">pro</span>
                                         <?php } ?>
@@ -53,6 +54,45 @@ use yii\helpers\Url;
                         </div>
                     </div>
                 <?php } ?>
+
+                <?php  if(0) { //старый код можно удалить если не нунжно
+                    foreach ($models as $ii => $model) {
+                        if (empty($model->user)) continue; ?>
+                        <div class="wins-item">
+                            <div class="wins-item-inner">
+                                <div class="date-wins"><?= $model->getPeriod($ii) ?> </div>
+                                <div class="row-ava">
+                                    <div class="rate-avatar-column">
+                                        <div class="rate-avatar">
+                                            <div class="circle-wrapper"
+                                                 data-ptc="<?= $model->userinfo->getUserLevelNumber() ?>">
+                                                <a href="<?= Url::toRoute(['/account/view', 'id' => $model->user->id]) ?>">
+                                                    <div class="circle"></div>
+                                                </a>
+                                            </div>
+                                            <div class="avatar-user">
+                                                <img src="/<?= $model->user->imageurl ?>  "
+                                                     alt="<?= $model->user->username ?>">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="user-info">
+                                        <a href="<?= Url::toRoute(['/account/view', 'id' => $model->user->id]) ?>"><h4
+                                                    class="name-r"><?= $model->user->username ?></h4></a>
+                                        <div class="level-user level-user-label">
+                                            <div class="level-text">
+                                                Уровень <?= $model->userinfo->getUserLevelNumber() ?></div>
+                                            <?php if ($model->userinfo->getisPro()) { ?>
+                                                <span class="label-user label-user-pro">pro</span>
+                                            <?php } ?>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php }
+                }  ?>
 
 
 

@@ -50,6 +50,18 @@ use yii\jui\AutoComplete2; // Указываете путь до библиот�
         <div class="col-md-4">
             <?= $form->field($model, 'status')->dropDownList(['вкл','выкл'],['options' =>[ '0' => ['Selected' => true]]]); ?>
         </div>
+
+        <div class="clearfix"></div>
+        <div class="col-md-4">
+            <?= $form->field($model, 'level')->textInput() ?>
+        </div>
+        <div class="col-md-4">
+            <?= $form->field($model, 'period')->textInput() ?>
+        </div>
+
+
+
+
     </div>
 
 
