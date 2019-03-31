@@ -5,6 +5,7 @@
  * @var \yii\web\View $this
  */
 
+use common\models\helpers\ConstantsHelper;
 use common\models\Wagerelements;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -74,9 +75,9 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                                         "icon" => "table",
                                         "items" => [
                                             [
-                                                "label" => "Матчи",
-                                                "url" => "/wagers",
-                                                "badge" => rand(1,500)  ,
+                                                "label" => "Исходы -4ч.",
+                                                "url" => "/wagerelementslost",
+                                                "badge" => Wagerelements::getCounteventsActiveLost(ConstantsHelper::LOST_TIME_HOURS_NOT_CONFIRM)  ,
                                             ],
                                             [
                                                 "label" => "Исходы",

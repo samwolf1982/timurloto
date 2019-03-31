@@ -131,6 +131,11 @@ class Wagerelements extends \yii\db\ActiveRecord
         return Wagerelements::find()->where(['status' => Wager::STATUS_NEW])->count();
 
     }
+    public function getCounteventsActiveLost($hour=4)
+    {
+        return Wagerelements::find()->where(['status' => Wager::STATUS_NEW])->count();
+
+    }
 
 
 

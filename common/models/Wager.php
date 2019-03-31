@@ -83,6 +83,17 @@ class Wager extends \yii\db\ActiveRecord
         return $arr;
     }
 
+    public static function getStatusNamesIshodLost(){
+        $arr=[
+            self::STATUS_NEW=>'Новая',
+//            self::STATUS_ENTERED=>'Прошла',
+//            self::STATUS_NOT_ENTERD=>'Не прошла',
+//            self::STATUS_RETURN_BET=>'Возврат',
+            self::STATUS_MANUAL_BET=>'Ручное подтверждение',
+        ];
+        return $arr;
+    }
+
 
 
 

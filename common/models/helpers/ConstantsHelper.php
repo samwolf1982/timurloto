@@ -233,6 +233,8 @@ class ConstantsHelper
     const  USER_CACHE_FULL ='user_cache_full_';
 
 
+    // время на поиск потеряных ставко в часах
+    const LOST_TIME_HOURS_NOT_CONFIRM = 4;
 
 
 
