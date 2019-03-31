@@ -3,6 +3,7 @@
 namespace common\models;
 
 use common\models\DTO\WagerInfoStringResult;
+use common\models\helpers\ConstantsHelper;
 use Yii;
 
 /**
@@ -133,7 +134,9 @@ class Wagerelements extends \yii\db\ActiveRecord
     }
     public function getCounteventsActiveLost($hour=4)
     {
-        return Wagerelements::find()->where(['status' => Wager::STATUS_NEW])->count();
+        $nextWeek = time() - (ConstantsHelper::LOST_TIME_HOURS_NOT_CONFIRM * 60 * 60);   // 4*60*60    - 4 часа
+        return '-';
+        return Wagerelements::find()->where(['status' => Wager::STATUS_NEW])->andWhere(['<','startgame',$nextWeek]) ->count();
 
     }
 
