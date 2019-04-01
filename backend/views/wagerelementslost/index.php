@@ -9,7 +9,7 @@ use yii2mod\editable\EditableColumn;
 /* @var $searchModel app\models\WagerelementsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Исходы';
+$this->title = 'Исходы без ответа';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="wagerelements-index">

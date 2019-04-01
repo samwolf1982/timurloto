@@ -15,7 +15,15 @@ use yii\base\ErrorException;
 class ParserNodeDos extends \yii\base\BaseObject
 {
    private  $initiator;
+ private  $additional_games;
 
+    /**
+     * @return mixed
+     */
+    public function getAdditionalGames()
+    {
+        return $this->additional_games;
+    }
     /**
      * Dos constructor.
      */
@@ -105,6 +113,7 @@ class ParserNodeDos extends \yii\base\BaseObject
         $res=[];
         //  var_dump($this->initiator->lastUrl); die();
         //  var_dump($data); die();
+        $this->additional_games=$data->data[0]->attributes->{'additional-games'};
 
         $eventsCollector=[];
         if (empty($data->included)) { yii::error("getEventsByGameId    gameId :    {$gameId}");  return ['errors'=>['some error see log file']];  }

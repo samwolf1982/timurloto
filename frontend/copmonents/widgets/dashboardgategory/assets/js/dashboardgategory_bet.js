@@ -14,6 +14,9 @@ $(document).ready(function () {
         return false;
     });
 
+
+
+
      // step 3
     $(document).on("click", ".trigger-sub-collapse", function(e) {
 
@@ -59,6 +62,14 @@ $(document).ready(function () {
 
 });
 
+
+function changePeriodGame(el) {
+    // console.log(12345)
+
+    DashboardCategory.sendData(this,{id : el.value},'/provider/events');
+   // DashboardCategory.sendData(this,$(this).data(),'/provider/events');
+}
+
 var DashboardCategory={
     csrf:null,
     csrf_param:null,
@@ -67,6 +78,7 @@ var DashboardCategory={
           this.csrf_param = jQuery('meta[name=csrf-param]').attr("content");
       },
     sendData: function (el,data, link) {
+        // DashboardCategory.sendData(this,$(this).data(),'/provider/events');
         if (!link) {
             link = '/dashboard/get-by-country';
         }
@@ -86,7 +98,9 @@ var DashboardCategory={
                     }else if(json.meta.type==='gamesTab') {
                         DashboardCategory.renderTabsGames(el, json.data);
                     }else if(json.meta.type==='event') {
-                        DashboardCategory.renderEvents(el, json);
+                        // DashboardCategory.renderEvents(el, json);
+                        currentId=data['id'];
+                        DashboardCategory.renderEvents(el, json,currentId);
                     }else{
                         DashboardCategory.render(el,json); // not using
                     }
@@ -133,7 +147,6 @@ var DashboardCategory={
         $('#child_colapse_'+$(el).data('id')).html(json.html);
         $(el).parents('.collapsed-type').toggleClass('active_coll_main').find('.collapse-block').stop().slideToggle(400);
     },
-
     // 1
     renderSport: function (el,data) {
         if(data.length)  $('.preloaderSport').fadeOut(100, function() {
@@ -151,7 +164,6 @@ var DashboardCategory={
         });
         console.log('renderSport');
     },
-
     // 2
     renderTourney: function (el,data) {
         $('#child_colapse_'+$(el).data('id')).html('');
@@ -176,7 +188,6 @@ var DashboardCategory={
         $(el).parents('.collapsed-type').toggleClass('active_coll_main').find('.collapse-block').stop().slideToggle(400);
     console.log('renderTourney');
 },
-
         // 3
         renderGames: function (el,data) {
             $('#child_sub_colapse_'+$(el).data('id')).html("");
@@ -187,17 +198,17 @@ var DashboardCategory={
             $(el).parent().toggleClass('active_coll').find('.sub-collapse').stop().slideToggle(400);
             console.log('renderGames');
         },
-
     // 4
-     renderEvents: function (el,data) {
+     renderEvents: function (el,data,currentId) {
 
+        console.log(currentId);
         fullgamename=data.meta.attr[0].attributes['team-1-user-locale-lng-name']+' - '+data.meta.attr[0].attributes['team-2-user-locale-lng-name']
          starteTime=timeConverter(data.meta.attr[0].attributes['start']);
 
          $('.main_center_block').fadeOut(400);
         openline =  $('.open_line_center_block');
         openline.html('');
-         openline.append('<a href="bet-dashboard.html" class="head-pink"> <h3>'+data.meta.attr[0].attributes['league-user-locale-lng-name']+'</h3> </a>');
+        openline.append('<a href="bet-dashboard.html" class="head-pink"> <h3>'+data.meta.attr[0].attributes['league-user-locale-lng-name']+'</h3> </a>');
 
 
 
@@ -208,13 +219,29 @@ var DashboardCategory={
              '                                        </div>\n' +
              '                                    </div>\n' +
              '                </div>');
-         openBetWrapperInner=$('.open-bet-wrapper-inner[data-parents="'+data.meta.id+'"]')
+         openBetWrapperInner=$('.open-bet-wrapper-inner[data-parents="'+data.meta.id+'"]');
+
+         optionForSSelect='';
+         $.each(data.addGames,function (id,el) {
+             selected_sdf='';
+             console.log([parseInt(currentId),el.id])
+             if( currentId.toString()  ===  el.id.toString() ){
+                 optionForSSelect+='<option  selected  value="'+el.id+'">'+el.name+'</option>';
+             }else{
+                 optionForSSelect+='<option  value="'+el.id+'">'+el.name+'</option>';
+             }
+
+
+         });
+
          openBetWrapperInner.append('<div class="head-open-bet">\n' +
              '                                                <div class="icon-open-bet">\n' +
              '                                                    <span class="icon-football"></span>\n' +
              '                                                </div>\n' +
              '                                                <div class="title-open-bet">\n' +
-             '                                                    <h3>'+fullgamename+'</h3>\n' +
+             '                                                    <h3>'+fullgamename+'</h3>     <select id="addGamesTypeSelect" onchange="changePeriodGame(this);">\n' +
+             optionForSSelect+
+             '   </select>   \n' +
              '                                                </div>\n' +
              '                                                <div class="date-open-icon">'+starteTime+'</div>\n' +
              '                                                <a href="bet-dashboard.html" class="total show-all-bets closeLine">'+data.meta.count+'</a>\n' +
@@ -249,7 +276,7 @@ var DashboardCategory={
              rowbetsstats=$('<div class="row-bets-stats"></div>');
 
              $.each(eld,function (k1,eldIn) {
-                  console.log(eldIn);
+                //  console.log(eldIn);
                 //  dParent=eldIn.id.split('-')[0]  + '_'+eldIn.id.split('-')[2];  // группа фора и тд
                   dParent=eldIn.id.split('-')[0];  // группа фора и тд
                  rowbetsstats.append( '<div class="column4">\n' +
@@ -284,9 +311,14 @@ var DashboardCategory={
         });
         $(el).parent().toggleClass('active_coll').find('.sub-collapse').stop().slideToggle(400);
         console.log('render Event Game');
+        DashboardCategory.renderDropForEventPeriod([]);
+
         SmartCart.backlight();
     },
 
+    renderDropForEventPeriod:function (arr) {
+        console.log('render renderDropForEventPeriod');
+    },
 
     renderTabsGames: function (el,data,activeStatus) {
 

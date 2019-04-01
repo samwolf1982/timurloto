@@ -126,7 +126,8 @@ class DefaultController extends Controller
         if(!empty($_POST['id'])) $gameId=$_POST['id'];
         $dos=new ParserNodeDos();
         $data= $dos->getEventsByGameId($gameId);
-        return  [ 'meta'=>['type'=>'event','count'=>count($data['data']),'id'=>$gameId,'attr'=> $data['attr']] ,'data'=>$data['data']];
+        $addGames=$dos->getAdditionalGames();
+        return  ['addGames'=>$addGames, 'meta'=>['type'=>'event','count'=>count($data['data']),'id'=>$gameId,'attr'=> $data['attr']] ,'data'=>$data['data']];
 
     }
 
