@@ -24,6 +24,20 @@ class ParserNodeDos extends \yii\base\BaseObject
     {
         return $this->additional_games;
     }
+
+    /**
+     * cклейка из идшек дополнтельных игр
+     * @return string
+     */
+    public function getAdditionalGamesText()
+    {
+        $res='';
+        foreach ($this->additional_games as $additional_game) {
+            $res.=$additional_game->id;
+        }
+        return $res;
+    }
+
     /**
      * Dos constructor.
      */

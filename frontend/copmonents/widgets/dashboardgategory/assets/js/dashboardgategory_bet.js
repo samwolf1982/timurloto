@@ -275,10 +275,13 @@ var DashboardCategory={
 
              rowbetsstats=$('<div class="row-bets-stats"></div>');
 
+
+             dParent=data.meta.attr[0].attributes['main-game-id'];  // группа фора и тд
              $.each(eld,function (k1,eldIn) {
                 //  console.log(eldIn);
                 //  dParent=eldIn.id.split('-')[0]  + '_'+eldIn.id.split('-')[2];  // группа фора и тд
-                  dParent=eldIn.id.split('-')[0];  // группа фора и тд
+               //   dParent=eldIn.id.split('-')[0];  // группа фора и тд
+                //  dParent=data.addGames;  // группа фора и тд // cлепок из аддишионал геймс
                  rowbetsstats.append( '<div class="column4">\n' +
                      '<button class="bets-val" data-id="'+eldIn.id+'" data-parent="'+dParent+'"  data-text1="'+fullgamename+'" data-text2="'+eldIn.eventName+'"  data-text3="'+eldIn.marketName+'"  data-coof="'+eldIn.cf+'">\n' +
                      '<span class="mobile-name">'+eldIn.eventName+'</span>\n' +
@@ -310,7 +313,10 @@ var DashboardCategory={
                 ' data-id="' + e.id + '" >' + e.name + ' <span class="count-block">'+e.count+'</span></a></li>');
         });
         $(el).parent().toggleClass('active_coll').find('.sub-collapse').stop().slideToggle(400);
+
+
         console.log('render Event Game');
+
         DashboardCategory.renderDropForEventPeriod([]);
 
         SmartCart.backlight();
