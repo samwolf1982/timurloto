@@ -363,6 +363,7 @@ if(0){
         }
 
 
+
         // проход по ставкам и если еще доступные тогда +
         $gate=true;
 //        foreach ($cart->elements as $element) {
