@@ -336,7 +336,7 @@ if(0){
 
 
 
-        if(YII_ENV == 'prod' || 1){
+        if(YII_ENV == 'prod'){
             $isRepeatBet=   WagerManager::checkManyBets($user_id,$listIdBets);
             if($isRepeatBet)  { $e='На каждое событие можно ставить не более '.ConstantsHelper::MAX_BET_TODO.' раз'; $errorLocalLog[]=$e; yii::error([$e]); return false; };
         }

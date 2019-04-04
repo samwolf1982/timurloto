@@ -68,6 +68,11 @@ class DefaultController extends Controller
 
 
 
+    /**
+     *
+     * Подтверждение
+     *
+     */
     public function actionKonfirmi()
     {
 
@@ -96,12 +101,13 @@ class DefaultController extends Controller
          $typeName=Yii::$app->request->post('typeName'); // Single   Multiple
 
         $testVal=11;
+
+        $bet= Yii::$app->request->post('bet');
+        $bet_id=Yii::$app->request->post('bet_id');
+        $user_id=Yii::$app->request->post('user_id');
+        $wager=Wager::find()->where(['user_id' =>$user_id,'bid'=>$bet_id])->one();
         // обработчик для мануала
         if($typeName=="manual"){
-            $bet= Yii::$app->request->post('bet');
-            $bet_id=Yii::$app->request->post('bet_id');
-            $user_id=Yii::$app->request->post('user_id');
-            $wager=Wager::find()->where(['user_id' =>$user_id,'bid'=>$bet_id])->one();
             if($wager){
                 $wager->status=Wager::STATUS_MANUAL_BET;
                 if($wager->validate()){
@@ -115,17 +121,10 @@ class DefaultController extends Controller
 
         // обработчик для single
         if($typeName=="Single"){
-          $bet= Yii::$app->request->post('bet');
-          $bet_id=Yii::$app->request->post('bet_id');
-          $user_id=Yii::$app->request->post('user_id');
-
-          $wager=Wager::find()->where(['user_id' =>$user_id,'bid'=>$bet_id])->one();
             $testVal=12;
           if($wager){
               $testVal=13;
               $newStatus=-11;
-//              if ($statusName === 'win' || $statusName === 'return') { STATUS_NOT_ENTERD STATUS_NOT_ENTERD STATUS_RETURN_BET
-
 
               $postStatus=Yii::$app->request->post('statusName');
                   if($postStatus=='win') $newStatus=Wager::STATUS_ENTERED;  //6
@@ -133,7 +132,17 @@ class DefaultController extends Controller
                   elseif ($postStatus=='lost') $newStatus=Wager::STATUS_NOT_ENTERD; // 7
                   elseif ($postStatus=='manual') $newStatus=Wager::STATUS_MANUAL_BET; // 11 // not use
 
-                  $wager->status=$newStatus;
+
+                  // проверка на совпадение по мейнид. случай с играми из других евентов
+                  // todo если будем делат разработку для потверждения например угловых - фора... тогда здесь сделать сверку по видам обработчкика (еще не реализовано)
+              foreach ($wager->wagerelements as $wagerelement) {
+                    $eventId =  explode('-',$wagerelement->event_id)[0];
+                  if( trim($eventId)!= trim($wagerelement->outcome_id)){// если не равно тогда  статус будет  мануал      // здесь можно делать подвтерждение длл видов обработчика
+                      $newStatus=Wager::STATUS_MANUAL_BET;
+                  }
+              }
+              $wager->status=$newStatus;
+
 
                   if($wager->validate()){
                       $testVal=14;
@@ -183,10 +192,6 @@ class DefaultController extends Controller
           }
 
         }elseif($typeName=="Multiple"){      // обработчик для мульти
-            $bet= Yii::$app->request->post('bet');
-            $bet_id=Yii::$app->request->post('bet_id');
-            $user_id=Yii::$app->request->post('user_id');
-            $wager=Wager::find()->where(['user_id' =>$user_id,'bid'=>$bet_id])->one();
             $testVal=12;
 
 
@@ -196,6 +201,16 @@ class DefaultController extends Controller
                 if($postStatus=='win') $newStatus=Wager::STATUS_ENTERED;  //6
                 elseif ($postStatus=='return') $newStatus=Wager::STATUS_RETURN_BET; // 10
                 elseif ($postStatus=='lost') $newStatus=Wager::STATUS_NOT_ENTERD; // 7
+
+
+                // проверка на совпадение по мейнид. случай с играми из других евентов
+                // todo если будем делат разработку для потверждения например угловых - фора... тогда здесь сделать сверку по видам обработчкика (еще не реализовано)
+                foreach ($wager->wagerelements as $wagerelement) {
+                    $eventId =  explode('-',$wagerelement->event_id)[0];
+                    if( trim($eventId)!= trim($wagerelement->outcome_id)){// если не равно тогда  статус будет  мануал      // здесь можно делать подвтерждение длл видов обработчика
+                        $newStatus=Wager::STATUS_MANUAL_BET;
+                    }
+                }
 
                 $wager->status=$newStatus;
 
@@ -235,11 +250,6 @@ class DefaultController extends Controller
                     $stm= new  StatisticsManagerCommon($wager);
                     $stm->calculateStatistics();
                 }
-
-
-
-
-
                 Yii::error(['user_id' => $user_id,'bid'=>$bet_id,'nowager'=>0,'status'=>$wager->status]);
 
             }else{
