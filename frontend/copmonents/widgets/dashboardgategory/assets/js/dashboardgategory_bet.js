@@ -228,7 +228,6 @@ var DashboardCategory={
          addPeriodText="";
          $.each(data.addGames,function (id,el) {
              selected_sdf='';
-             console.log([parseInt(currentId),el.id])
              if( currentId.toString()  ===  el.id.toString() ){
                  if(el.name=="Regular Time"){
                      el.name='Основное время';

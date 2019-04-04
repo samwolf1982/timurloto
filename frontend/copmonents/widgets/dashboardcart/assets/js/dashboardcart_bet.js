@@ -125,8 +125,9 @@ var SmartCart={
         $('#modal-success-bet .close').on('click', function (e) {
             console.log('Close modal');
             if(SmartCart.devStatus === false ) SmartCart.deleteAll();
-            $('.dashboard-row .dash-right-col').hide();
-            location.reload(true);
+            SmartCart.backlight(); //
+            // $('.dashboard-row .dash-right-col').hide();
+            //location.reload(true);
         });
         console.log('Init SmartCart');
     },
