@@ -202,6 +202,9 @@ var DashboardCategory={
      renderEvents: function (el,data,currentId) {
 
         console.log(currentId);
+
+
+
         fullgamename=data.meta.attr[0].attributes['team-1-user-locale-lng-name']+' - '+data.meta.attr[0].attributes['team-2-user-locale-lng-name']
          starteTime=timeConverter(data.meta.attr[0].attributes['start']);
 
@@ -222,16 +225,22 @@ var DashboardCategory={
          openBetWrapperInner=$('.open-bet-wrapper-inner[data-parents="'+data.meta.id+'"]');
 
          optionForSSelect='';
+         addPeriodText="";
          $.each(data.addGames,function (id,el) {
              selected_sdf='';
              console.log([parseInt(currentId),el.id])
              if( currentId.toString()  ===  el.id.toString() ){
+                 if(el.name=="Regular Time"){
+                     el.name='Основное время';
+                     addPeriodText="";
+                 }else{
+                     addPeriodText=el.name;
+                 }
                  optionForSSelect+='<option  selected  value="'+el.id+'">'+el.name+'</option>';
+
              }else{
                  optionForSSelect+='<option  value="'+el.id+'">'+el.name+'</option>';
              }
-
-
          });
 
          openBetWrapperInner.append('<div class="head-open-bet">\n' +
@@ -268,7 +277,11 @@ var DashboardCategory={
          $.each(grouppedArray, function( k, eld ) {    // e.id e.name e.count
 
              collapseOpenBet=$('<div class="collapse-open-bet"></div>');
-             collapseOpenBet.append('<div class="collapse-open-bet-head"><button class="collapse-open-bet-trigger active">'+k+'</button></div>')
+
+
+
+             collapseOpenBet.append('<div class="collapse-open-bet-head"><button class="collapse-open-bet-trigger active">' + addPeriodText + ' ' + k + '</button></div>')
+
 
              collapseopenbetcontent=$('<div class="collapse-open-bet-content"></div>');
              collapseopenbetitem=$('<div class="collapse-open-bet-item"></div>');
@@ -283,7 +296,7 @@ var DashboardCategory={
                //   dParent=eldIn.id.split('-')[0];  // группа фора и тд
                 //  dParent=data.addGames;  // группа фора и тд // cлепок из аддишионал геймс
                  rowbetsstats.append( '<div class="column4">\n' +
-                     '<button class="bets-val" data-id="'+eldIn.id+'" data-parent="'+dParent+'"  data-text1="'+fullgamename+'" data-text2="'+eldIn.eventName+'"  data-text3="'+eldIn.marketName+'"  data-coof="'+eldIn.cf+'">\n' +
+                     '<button class="bets-val" data-id="'+eldIn.id+'" data-parent="'+dParent+'"  data-text1="'+fullgamename+'" data-text2="'+ addPeriodText + ' ' +  eldIn.eventName+'"  data-text3="'+eldIn.marketName+'"  data-coof="'+eldIn.cf+'">\n' +
                      '<span class="mobile-name">'+eldIn.eventName+'</span>\n' +
                      '<span class="name-b">'+eldIn.eventName+'</span>\n' +
                      '<span class="coefficient-b">'+eldIn.cf+'</span>\n' +
