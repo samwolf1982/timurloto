@@ -1,7 +1,12 @@
 <?php
 
+if(YII_ENV=='prod'){
+    throw  new  ErrorException('no users fields ');
+}else{
+    //throw  new  ErrorException('no users fields ');
+}
 
-//throw  new  ErrorException('no users fields ');
+
 
 $params = array_merge(
     require __DIR__ . '/../../common/config/params.php',
