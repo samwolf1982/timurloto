@@ -152,6 +152,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 //------ coment
                 'outcome_id',
+                'startgame:datetime',
 //                'sport_id',
                 //------ coment
 
