@@ -8555,80 +8555,9 @@ $accessInfoAccount;
         </div>
     </div>
 </div>
-<div class="modal-wrapper bet-modal modal-945" id="modal-faq">
-    <div class="modal-inner">
-        <div class="modal-content">
-            <div class="modal-content-inner">
-                <div class="header-modal">
-                    <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
-                </div>
-                <div class="body-modal">
-                    <div class="choose-bet-wrapper">
-                        <div class="choose-bet-inner">
-                            <div class="head-choose faq-title">
-                                <h2>F.A.Q.</h2>
-                            </div>
-                            <div class="faq-wrapper">
-                                <div class="faq-list collapse-wrapper">
-                                    <div class="collapse-item">
-                                        <div class="collapse-item-head">
-                                            <a href="#faq1" data-toggle="collap">Для чего нужен наш сервис?</a>
-                                        </div>
-                                        <div class="collapse-item-body" id="faq1">
-                                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
-                                                ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                                                sit aspernatur aut odit aut fugit, sed quia consequuntur</p>
-                                        </div>
-                                    </div>
-                                    <div class="collapse-item">
-                                        <div class="collapse-item-head">
-                                            <a href="#faq2" data-toggle="collap">Как написать другим пользователям сообщение?</a>
-                                        </div>
-                                        <div class="collapse-item-body" id="faq2">
-                                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
-                                                ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                                                sit aspernatur aut odit aut fugit, sed quia consequuntur</p>
-                                        </div>
-                                    </div>
-                                    <div class="collapse-item">
-                                        <div class="collapse-item-head">
-                                            <a href="#faq3" data-toggle="collap">Как дать прогноз?</a>
-                                        </div>
-                                        <div class="collapse-item-body" id="faq3">
-                                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
-                                                ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                                                sit aspernatur aut odit aut fugit, sed quia consequuntur</p>
-                                        </div>
-                                    </div>
-                                    <div class="collapse-item">
-                                        <div class="collapse-item-head">
-                                            <a href="#faq4" data-toggle="collap">Как посмотреть свои прогнозы?</a>
-                                        </div>
-                                        <div class="collapse-item-body" id="faq4">
-                                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
-                                                ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                                                sit aspernatur aut odit aut fugit, sed quia consequuntur</p>
-                                        </div>
-                                    </div>
-                                    <div class="collapse-item">
-                                        <div class="collapse-item-head">
-                                            <a href="#faq5" data-toggle="collap">Как поменять имя пользователя?</a>
-                                        </div>
-                                        <div class="collapse-item-body" id="faq5">
-                                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
-                                                ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                                                sit aspernatur aut odit aut fugit, sed quia consequuntur</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+
+
 <div class="modal-wrapper bet-modal modal-640" id="modal-feedback">
     <div class="modal-inner">
         <div class="modal-content">

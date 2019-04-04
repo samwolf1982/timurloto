@@ -123,6 +123,7 @@ var SmartCart={
             // баг с закрытием
             $('body').removeClass('modal-open');
             $('body').removeClass('noScroll');
+            $('.notification-calculate').text('');
         });
         console.log('Init SmartCart');
 
