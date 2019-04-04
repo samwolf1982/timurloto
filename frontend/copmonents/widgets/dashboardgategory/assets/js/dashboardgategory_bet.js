@@ -238,6 +238,9 @@ var DashboardCategory={
                  optionForSSelect+='<option  selected  value="'+el.id+'">'+el.name+'</option>';
 
              }else{
+                 if(el.name=="Regular Time"){
+                     el.name='Основное время';
+                 }
                  optionForSSelect+='<option  value="'+el.id+'">'+el.name+'</option>';
              }
          });
