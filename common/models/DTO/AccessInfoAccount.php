@@ -62,7 +62,7 @@ class AccessInfoAccount
     private $top100;
 
     /**
-     * ОТКРЫТЫЕ ДОСТУПЫ 27 ПОДПИСКИ 358 ПОДПИСЧИКИ 2,389 ПРОГНОЗЫ 357 WEEK 1 #4 TOP - 100 #13
+     * ОТКРЫТЫЕ ДОСТУПЫ 27 ПОДПИСКИ 358 ПОДПИСЧИКИ 2,389 ПРОГНОЗЫ 357 WEEK 1 #4 РЕЙТИНГ #13
      * AccessInfoAccount constructor.
      * @param $countTotalOpenAccess
      * @param $countSubscribe

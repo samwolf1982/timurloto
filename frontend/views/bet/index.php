@@ -636,7 +636,7 @@ BetAsset::register($this);
                                     <img src="/images/champ.svg" alt="">
                                 </div>
                                 <div class="left-head-text">
-                                    <span class="text-head">топ-100 пользователей</span>
+                                    <span class="text-head">рейтинг пользователей</span>
                                 </div>
                                 <div class="right-head-tab" id="tope100">
                                     <div class="for-mobile-drop">

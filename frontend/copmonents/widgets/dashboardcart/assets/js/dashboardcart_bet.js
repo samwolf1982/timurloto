@@ -1,14 +1,9 @@
 var tottal_coeficient=1;
 
-
 $(document).ready(function () {
     SmartCart.init();
     SmartCart.getFromCart(); // update cart
-
-
-
 });
-// console.log({'devStatus': devStatus});
 statusBet=localStorage.getItem('statusBet'); // public  private
 if(statusBet === null) {statusBet='public'; localStorage.setItem('statusBet',statusBet);}
 var SmartCart={
@@ -62,7 +57,6 @@ var SmartCart={
             console.log('percent change val: '+this.value);
             SmartCart.currentCooeficientDrop=this.value.replace("%", "");
             SmartCart.updateCoefficient(SmartCart.currentCooeficientDrop);
-            // SmartCart.getFromCart();
         });
 
 
@@ -124,12 +118,14 @@ var SmartCart={
 // закрытие модального для корзины
         $('#modal-success-bet .close').on('click', function (e) {
             console.log('Close modal');
-            if(SmartCart.devStatus === false ) SmartCart.deleteAll();
+           if(SmartCart.devStatus === false ) SmartCart.deleteAll();
             SmartCart.backlight(); //
-            // $('.dashboard-row .dash-right-col').hide();
-            //location.reload(true);
+            // баг с закрытием
+            $('body').removeClass('modal-open');
+            $('body').removeClass('noScroll');
         });
         console.log('Init SmartCart');
+
     },
 
 
@@ -175,9 +171,6 @@ var SmartCart={
         // data-text1="Манчестер Юнайтед - ПСЖ" data-text2="П1" data-coof="3.11"
         var data = {};
         data.CartElement = {};
-        // data.CartElement.group_item_id = $(el).data("id").split('-')[0]; // parent id
-      //  data.CartElement.group_item_id = $(el).data("id").split('-')[0]+'_'+$(el).data("id").split('-')[2]; // parent id   // группа фора и тд
-        //data.CartElement.group_item_id = $(el).data("id").split('-')[0]; // parent id   // группа фора и тд
         data.CartElement.group_item_id = $(el).data("parent"); // parent id   // группа фора и тд
         data.CartElement.item_id = $(el).data("id");
         data.CartElement.gamersName = $(el).data("text1");

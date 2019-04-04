@@ -210,7 +210,7 @@ AccountAsset::register($this);
             <li><a href="#" class=""><span class="stat-title">Подписчики</span> <span class="stat-val">2,389</span></a></li>
             <li><a href="#my-bet" class="ancor"><span class="stat-title">Прогнозы</span> <span class="stat-val">357</span></a></li>
             <li><a href="#" class=""><span class="stat-title">week 1</span> <span class="stat-val">#4</span></a></li>
-            <li><a href="#stat-block" class="ancor"><span class="stat-title">TOP - 100</span> <span class="stat-val">#13</span></a></li>
+            <li><a href="#stat-block" class="ancor"><span class="stat-title">РЕЙТИНГ</span> <span class="stat-val">#13</span></a></li>
         </ul>
     </div>
 </div>
