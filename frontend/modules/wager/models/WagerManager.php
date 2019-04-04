@@ -120,56 +120,35 @@ class WagerManager
 //    'coef' => '4.80',
 //        var_dump($this->cart);
         foreach ($this->cart as $i=> $element) {
-//            yii::error($element);
-//            var_dump($this->wagerInfo->getResulto($i)); die();
             $outcomeCoefficient=(float)$element['coef'];
-          //if($element->status)   continue;
           if(empty($outcomeCoefficient) ||  $outcomeCoefficient<=1)continue;
             $total_coef *= $outcomeCoefficient;
-
             $this->addWagerElement($element,$this->wagerInfo->getResulto($i));
-
          }
          return $total_coef;
     }
 
     private function addWagerElement($element,$ob){
 
-
-//        var_dump([$element->item_id]); die();
-//        var_dump([$this->wagerInfo->getStarttimeGameById($element['item_id']),$ob]); die();
             $wagerelement= new Wagerelements();
             $wagerelement->wager_id=$this->wager_id;
-           // $wagerelement->event_id=  (string) OutcomeParser::getId($element);
             $wagerelement->event_id=  (string) $element['item_id'];
-            $wagerelement->outcome_id= (string) '-';
-//            $wagerelement->coef= $element->coof;
             $wagerelement->coef= $element['coef'];
             $wagerelement->status=Wager::STATUS_NEW;
-//            $wagerelement->name=$element->name_full;
-            //$wagerelement->name=sprintf('%s %s %s',$element->current_market_name,$element->result_type_name,$element->gamers_name);
             $wagerelement->name=$element['name'];
              $wagerelement->info_name=   $element['gamersName'];
             $wagerelement->sub_category_id=(string)'0';
-//            $wagerelement->sub_category_id=(string)$element->category_id;
-
             $wagerelement->info_main_cat_name=  $element['mname']; // marketname  фора
 
 //        'current_market_name' => 'current_market_name from json',
 //            'result_type_name' => 'result type name ',
 //            'gamers_name' => 'gamers name',
 // todo сверитьт с предыдущейй верстисее
-            //$wagerelement->info_name=   $element->name;
-
-//            $wagerelement->info_name_full=sprintf('%s %s %s',$element->current_market_name,$element->result_type_name,$element->gamers_name);
             $wagerelement->info_name_full=$ob->{'team-1-name_ru'} .' - '.$ob->{'team-2-name_ru'} ;
-
-
-//            $wagerelement->info_cat_name=$element->cat_name;
-//            $wagerelement->info_cat_name= $element->result_type_name;
             $wagerelement->info_cat_name=$element['name'];
             $wagerelement->created_at=date('Y-m-d H:i:s');
             $wagerelement->startgame=$this->wagerInfo->getStarttimeGameById($element['item_id']);
+            $wagerelement->outcome_id=$this->wagerInfo->getGroupItemIdById($element['item_id']);
 
 if(0){
     $info_about_turnire=$this->searchSportNameCategoryName($element);
@@ -357,7 +336,7 @@ if(0){
 
 
 
-        if(YII_ENV == 'prod'){
+        if(YII_ENV == 'prod' || 1){
             $isRepeatBet=   WagerManager::checkManyBets($user_id,$listIdBets);
             if($isRepeatBet)  { $e='На каждое событие можно ставить не более '.ConstantsHelper::MAX_BET_TODO.' раз'; $errorLocalLog[]=$e; yii::error([$e]); return false; };
         }
@@ -506,11 +485,13 @@ if(0){
         $wageroList=implode(',',$wageroList );
         if(!empty($wageroList)){ // when no wagers
 
-            $sql="SELECT wagerelements.event_id FROM wagerelements WHERE wager_id in ({$wageroList});";
+            $sql="SELECT wagerelements.event_id , wagerelements.outcome_id   FROM wagerelements WHERE wager_id in ({$wageroList});";
             $parseIdList=[];
             foreach (Yii::$app->db->createCommand($sql)->queryAll() as $wagero ) {
                 $idd=explode('-',$wagero['event_id']);
-                $parseIdList[]= $idd[0];
+//                $parseIdList[]= $idd[0];
+                $parseIdList[]= $wagero['outcome_id'];
+
             };
                 foreach ($parseIdList as $idElId) {
                        $idd=explode('-',$idElId);
@@ -518,7 +499,7 @@ if(0){
 
 
                 $resDiff=(array_diff(array_count_values($parseIdList),$bet_id_list));
-//            yii::error((array_diff(array_count_values($parseIdList),$bet_id_list)));
+           yii::error((array_diff(array_count_values($parseIdList),$bet_id_list)));
 
             foreach ($bet_id_list as $item) {
                        if(isset($resDiff[$item])){

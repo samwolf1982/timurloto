@@ -147,5 +147,20 @@ class WagerInfo
     }
 
 
+    /**
+     * group_item_id   для уника по ид игры
+     * @param $id
+     * @return int
+     */
+    public function getGroupItemIdById($id)
+    {
+        foreach ($this->time_list as $el) {
+            $r = explode('-',$id);
+            if($r[0]==$el->id) return $el->group_item_id;
+        }
+        return 0;
+    }
+
+
 
 }

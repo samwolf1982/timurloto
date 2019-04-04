@@ -326,8 +326,11 @@ class DefaultController extends Controller
 
 //            $result=  WagerManager::makeBet(Yii::$app->user->identity->getId(),Yii::$app->request->post(),$total_sum);  // рабочик
             $clearPost=WagerManager::clearPost(Yii::$app->request->post());
-            $result=  WagerManager::makeBet(Yii::$app->user->identity->getId(),$clearPost,$total_sum);
 
+            $result=  WagerManager::makeBet(Yii::$app->user->identity->getId(),$clearPost,$total_sum);
+            yii::error($result);
+//            'group_item_id' => '241476682', ???
+//                'item_id' => '241476683-1-12341-0',
             if(empty($result)) {   $e='Ошибка на сервере'; $errorLocalLog[]=$e; yii::error([$e, 'own post'=>Yii::$app->request->post(), 'uid'=>Yii::$app->user->identity->getId()]);  return ['status'=>0,'code'=>'text','message'=>$errorLocalLog];    }
 
             if($result->status===1){ // снятие баланса подтверждение

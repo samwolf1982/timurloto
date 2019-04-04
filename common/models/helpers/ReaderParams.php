@@ -104,7 +104,8 @@ class ReaderParams extends \yii\base\BaseObject
         "type"=> "line",
         "is_main_game"=> true,
         "overtime"=> $dataParser->attributes->{'overtime'},
-        'full_id'=>$b['item_id']
+        'full_id'=>$b['item_id'],
+        'group_item_id'=>$b['group_item_id']
         ,];
 
         return $res;
@@ -186,7 +187,8 @@ class ReaderParams extends \yii\base\BaseObject
                 "type"=> "line",
                 "is_main_game"=> true,
                 "overtime"=> $dataParser->attributes->{'overtime'},
-                'full_id'=>$b['item_id']
+                'full_id'=>$b['item_id'],
+                'group_item_id'=>$b['group_item_id']
                 ,];
 
         }
