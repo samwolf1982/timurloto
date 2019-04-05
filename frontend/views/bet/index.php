@@ -151,6 +151,7 @@ BetAsset::register($this);
                                             </div>
                                         </div>
                                         <div class="wins-item">
+
                                             <div class="wins-item-inner">
                                                 <div class="row-ava">
                                                     <div class="rate-avatar-column">
@@ -168,6 +169,8 @@ BetAsset::register($this);
                                                     </div>
                                                 </div>
                                             </div>
+
+
                                         </div>
                                         <div class="wins-item">
                                             <div class="wins-item-inner">
@@ -393,6 +396,7 @@ BetAsset::register($this);
                                     <span class="text-head text-muted">25,000 ₽</span>
                                 </div>
 
+                                <h1>widget</h1>
 
 
 
