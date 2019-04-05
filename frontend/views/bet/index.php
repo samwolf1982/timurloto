@@ -71,33 +71,6 @@ BetAsset::register($this);
                                 <div class="table-body">
                                     <div class="head-bets-slider">
                                         <h3>Ставки на спорт от команды прогнозистов</h3>
-
-
-
-
-
-
-
-
-
-
-                                        <?php if(0){ ?>
-                                            <section>
-                                                <p>button</p>
-                                                <?= BuyButton::widget([
-                                                    'model' => $model,
-                                                    'text' => 'Заказать',
-                                                    'htmlTag' => 'a',
-                                                    'cssClass' => 'custom_class'
-                                                ]) ?>
-                                            </section>
-
-                                        <?php   }     ?>
-
-
-
-
-
                                         <a href="#" class="label-promoution">РЕКЛАМА</a>
                                     </div>
                                     <div class="bets-slider">
@@ -419,6 +392,10 @@ BetAsset::register($this);
                                     <span class="text-head">Еженедельный Турнир</span>
                                     <span class="text-head text-muted">25,000 ₽</span>
                                 </div>
+
+
+
+
                             </div>
                             <script>
 
