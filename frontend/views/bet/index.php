@@ -396,10 +396,12 @@ BetAsset::register($this);
                                     <span class="text-head text-muted">25,000 ₽</span>
                                 </div>
 
-                                <select  onchange="if (this.value) window.location.href=this.value" >
-                                    <option value="<?=Url::toRoute(['/bet'])?>">Турнир текущий</option>
-                                    <option value="<?=Url::toRoute(['/bet','dtop'=>'2019-03-31'])?>">2019-03-31 - 1 Турнир</option>
-                                    <option value="<?=Url::toRoute(['/bet','dtop'=>'2019-03-24'])?>">2019-03-24 - 2 Турнир</option>
+
+                                <?php $dtop= Yii::$app->request->get('dtop') ?> ?>
+                                    <select  onchange="if (this.value) window.location.href=this.value" >
+                                    <option     value="<?=Url::toRoute(['/bet'])?>">Турнир текущий</option>
+                                    <option <?=$dtop=='2019-03-31'?'selected':'' ?> value="<?=Url::toRoute(['/bet','dtop'=>'2019-03-31'])?>">2019-03-31 - 1 Турнир</option>
+                                    <option <?=$dtop=='2019-03-24'?'selected':'' ?> value="<?=Url::toRoute(['/bet','dtop'=>'2019-03-24'])?>">2019-03-24 - 2 Турнир</option>
 
 
 
