@@ -396,8 +396,12 @@ BetAsset::register($this);
                                     <span class="text-head text-muted">25,000 ₽</span>
                                 </div>
 
-                                <h1>widget</h1>
 
+                                <select >
+                                    <option value="t1">2019-03-24 - 1 Турнир</option>
+                                    <option value="t2">2019-03-31 - 2 Турнир</option>
+                                    <option value="t3">2019-04-07 - Турнир текущий</option>
+                                </select>
 
 
                             </div>
