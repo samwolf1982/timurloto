@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Html;
+use yii\helpers\Url;
 
 
 ?>
@@ -66,7 +67,7 @@ use yii\helpers\Html;
                             <a href="#" class="trig-filter">За месяц</a>
                             <ul class="head-tabs">
                                 <li>
-                                    <a href="#">Неделя</a>
+                                    <a href="<?=Url2::toRoute(['/account','id'=>$user_id,'stat-period'=>'week'])?>">Неделя</a>
                                 </li>
                                 <li class="active">
                                     <a href="#">За месяц</a>
