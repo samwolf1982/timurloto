@@ -84,6 +84,7 @@ use yii\helpers\Url;
                             </ul>
                         </div>
                     </div>
+
                 </div>
                 <div class="table-body">
                     <div class="stats-tbl-wrapper">
