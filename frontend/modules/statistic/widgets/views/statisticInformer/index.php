@@ -1,4 +1,6 @@
 <?php
+
+use common\models\helpers\ConstantsHelper;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
@@ -62,24 +64,25 @@ use yii\helpers\Url;
 
                     </div>
 
+
                     <div class="right-head-tab">
                         <div class="for-mobile-drop">
                             <a href="#" class="trig-filter">За месяц</a>
                             <ul class="head-tabs">
-                                <li>
-                                    <a href="<?=Url2::toRoute(['/account','id'=>$user_id,'stat-period'=>'week'])?>">Неделя</a>
+                                <li class="<?=Yii::$app->request->get('stat-period')==ConstantsHelper::STATTICTIC_FILTER_PREIOD_WEEK?'active':''?> ">
+                                    <a href="<?=Url::toRoute(['/account/view','stat-period'=>ConstantsHelper::STATTICTIC_FILTER_PREIOD_WEEK,'id'=>$user_id])?>">Неделя</a>
                                 </li>
-                                <li class="active">
-                                    <a href="#">За месяц</a>
+                                <li class="<?=Yii::$app->request->get('stat-period')==ConstantsHelper::STATTICTIC_FILTER_PREIOD_MONTH?'active':''?> ">
+                                    <a href="<?=Url::toRoute(['/account/view','id'=>$user_id,'stat-period'=>ConstantsHelper::STATTICTIC_FILTER_PREIOD_MONTH])?>">За месяц</a>
                                 </li>
-                                <li>
-                                    <a href="#">3 месяца</a>
+                                <li  class="<?=Yii::$app->request->get('stat-period')==ConstantsHelper::STATTICTIC_FILTER_PREIOD_3_MONTH?'active':''?> " >
+                                    <a href="<?=Url::toRoute(['/account/view','id'=>$user_id,'stat-period'=>ConstantsHelper::STATTICTIC_FILTER_PREIOD_3_MONTH])?>">3 месяца</a>
                                 </li>
-                                <li>
-                                    <a href="#">Год</a>
+                                <li  class="<?=Yii::$app->request->get('stat-period')==ConstantsHelper::STATTICTIC_FILTER_PREIOD_YEAR?'active':''?> ">
+                                    <a href="<?=Url::toRoute(['/account/view','id'=>$user_id,'stat-period'=>ConstantsHelper::STATTICTIC_FILTER_PREIOD_YEAR])?>">Год</a>
                                 </li>
-                                <li>
-                                    <a href="#">За все время</a>
+                                <li  class="<?= empty( Yii::$app->request->get('stat-period'))?'active':''?> ">
+                                    <a href="<?=Url::toRoute(['/account/view','id'=>$user_id])?>">За все время</a>
                                 </li>
                             </ul>
                         </div>

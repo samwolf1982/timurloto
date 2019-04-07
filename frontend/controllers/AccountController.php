@@ -78,21 +78,14 @@ class AccountController extends Controller
      */
     public function actionIndex()
     {
-
+        // todo убрать возможно (g)
         // сюда можно попасть и без кошелька fix если нету тогда создаем
         if(!empty( Yii::$app->user->id)) DoSome::createBalance( Yii::$app->user->id);
 
         $b= Score::find()->where(['user_id' => Yii::$app->user->id])->one()->balance;
         $balance  = number_format($b, 0, '', ',');
-
-
-
-
-
         $accessInfo=new  AccessInfo(Yii::$app->user->id);
-
         $accessInfoAccount=$accessInfo->getData();
-
         $weekNum=$accessInfo->getWeekNum(Yii::$app->user->id);
         $top100=$accessInfo->getTop100(Yii::$app->user->id);
 
@@ -108,15 +101,27 @@ class AccountController extends Controller
     public function actionView($id)
     {
 // todo для несуществующего сюда попадать не должны
-//        var_dump($id); die();
-        $b= Score::find()->where(['user_id' => $id])->one()->balance;
-        $balance  = number_format($b, 0, '', ',');
-        $accessInfo=new  AccessInfo($id);
-        $accessInfoAccount=$accessInfo->getData();
-        $weekNum=$accessInfo->getWeekNum($id);
-        $top100=$accessInfo->getTop100($id);
 
-        return $this->render('view',['balance'=>$balance,'accessInfoAccount'=>$accessInfoAccount,'weekNum'=>$weekNum,'top100'=>$top100]);
+        if($id==Yii::$app->user->id){
+            // сюда можно попасть и без кошелька fix если нету тогда создаем
+            if(!empty( Yii::$app->user->id)) DoSome::createBalance( Yii::$app->user->id);
+            $b= Score::find()->where(['user_id' => Yii::$app->user->id])->one()->balance;
+            $balance  = number_format($b, 0, '', ',');
+            $accessInfo=new  AccessInfo(Yii::$app->user->id);
+            $accessInfoAccount=$accessInfo->getData();
+            $weekNum=$accessInfo->getWeekNum(Yii::$app->user->id);
+            $top100=$accessInfo->getTop100(Yii::$app->user->id);
+            return $this->render('index',['balance'=>$balance,'accessInfoAccount'=>$accessInfoAccount,'weekNum'=>$weekNum,'top100'=>$top100] );
+        }else{
+            $b= Score::find()->where(['user_id' => $id])->one()->balance;
+            $balance  = number_format($b, 0, '', ',');
+            $accessInfo=new  AccessInfo($id);
+            $accessInfoAccount=$accessInfo->getData();
+            $weekNum=$accessInfo->getWeekNum($id);
+            $top100=$accessInfo->getTop100($id);
+            return $this->render('view',['balance'=>$balance,'accessInfoAccount'=>$accessInfoAccount,'weekNum'=>$weekNum,'top100'=>$top100]);
+        }
+
 
     }
 
@@ -340,11 +345,12 @@ class AccountController extends Controller
         if(!Yii::$app->user->isGuest) {
 
             if(Yii::$app->user->id == Yii::$app->request->get('id') && !is_null(Yii::$app->request->get('id')) ){
+                // todo hz
 //                var_dump([Yii::$app->user->id , Yii::$app->request->get('id')]);
                 // если не chart// назвал переменую для чарта ид и получилась колизия. будет время поправлю
-                if($action->id!='chart'){
-                    $this->redirect('/account',302);
-                }
+//                if($action->id!='chart'){
+//                    $this->redirect('/account',302);
+//                }
 
             }
         }

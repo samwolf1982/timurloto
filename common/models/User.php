@@ -215,6 +215,25 @@ class User extends ActiveRecord implements IdentityInterface
       $baseCalc= ConstantsHelper::DEFAULT_USER_CALCULATE_BALANCE_FOR_LEVEL;
         return ($b*100/$baseCalc)-100;
     }
+    public function getNewprofitPeriod($period)
+    {
+       // todo  пока за основу берем баланс невозомжно высчтитать профит за период.
+        //yii::error(['ji'=>$this->userbalance->id]);
+        //SELECT * FROM `balance_transaction` WHERE `id` = ( SELECT max(r2.id) FROM balance_transaction r2 WHERE r2.balance_id = 68 and r2.date < '2019-04-02 00:00:00' );
+      //  $sql="SELECT  SUM(profit) as `profit`,SUM(`penetration`)/ COUNT(`penetration`)*100 as `penetration`, SUM(`middle_coef`) / COUNT(`middle_coef`)  as `middle_coef`, SUM(`roi`) / COUNT(`roi`) * 100 as `roi` ,SUM(`plus`) as `plus`,SUM(`minus`) as `minus`  FROM `balancestatistics` WHERE user_id = :u_id";
+
+
+//        $sql="SELECT * FROM `balance_transaction` WHERE `id` = ( SELECT max(r2.id) FROM balance_transaction r2 WHERE r2.balance_id =  :u_balance_id and r2.date < '2019-04-02 00:00:00' )";
+//        $result =   yii::$app->db->createCommand($sql, [
+//            ':u_balance_id' => $this->userbalance->id,
+//        ])->queryOne();
+
+        $b=  $this->userbalance->balance;
+        $baseCalc= ConstantsHelper::DEFAULT_USER_CALCULATE_BALANCE_FOR_LEVEL;
+        return ($b*100/$baseCalc)-100;
+    }
+
+
 
 
     public function isSubscriber(){

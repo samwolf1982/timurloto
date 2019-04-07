@@ -221,7 +221,7 @@ class ParserNodeDos extends \yii\base\BaseObject
     public function getTabsTourneyGames($tourneyId)
     {
 
-//        yii::error($this->initiator->getTourneyGamesTypeUrl($tourneyId));
+        yii::error($this->initiator->getTourneyGamesTypeUrl($tourneyId));
 
         $data= $this->parse($this->initiator->getTourneyGamesTypeUrl($tourneyId)); //http://157.230.134.85:8081/lineSport/131927/ru/j_zaxscdvfq1w2e3r4
 

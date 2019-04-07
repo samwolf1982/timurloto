@@ -77,6 +77,13 @@ class ConstantsHelper
 
 
 
+    const STATTICTIC_FILTER_PREIOD_WEEK='week'; //
+    const STATTICTIC_FILTER_PREIOD_MONTH='month'; //
+    const STATTICTIC_FILTER_PREIOD_3_MONTH='3-month'; //
+    const STATTICTIC_FILTER_PREIOD_YEAR='year'; //
+
+
+
 // длина текста в кометах в открытых пользователях число
  const LENGTH_COMMENT_ACCESS_USER=160; //
 

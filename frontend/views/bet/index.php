@@ -7,6 +7,7 @@ use app\modules\statistic\widgets\LastWeekWinnersWidg;
 use common\models\helpers\ConstantsHelper;
 use common\models\helpers\HtmlGenerator;
 use common\models\overiden\User;
+use common\models\search\BalancestatisticsSearch;
 use dvizh\cart\widgets\BuyButton;
 use frontend\assets\BetAsset;
 use frontend\assets\BetDinotableAsset;
@@ -717,7 +718,9 @@ BetAsset::register($this);
                                                 'headerOptions'=>['class'=>'text-center'],
                                                 'format' => 'raw',
                                                 'content'=>function($data){
-                                                    return  sprintf("%01.2f", $data['ro']);  ;
+                                                   $lv= BalancestatisticsSearch::generateLastWeekParams();
+                                                    return  sprintf("%01.2f", BalancestatisticsSearch::newRoiCalk($data['user_id'],$lv['lastWeek'],$lv['lastLastWeek']));  ;
+//                                                    return  sprintf("%01.2f", $data['ro']);
                                                 },
                                             ],
                                             [
@@ -727,7 +730,11 @@ BetAsset::register($this);
                                                 'headerOptions'=>['class'=>'text-center'],
                                                 'format' => 'raw',
                                                 'content'=>function($data){
-                                                    return  $data['pluse']; 
+                                                    $period=ConstantsHelper::STATTICTIC_FILTER_PREIOD_MONTH;
+                                                    if(Yii::$app->request->get('period')=='3m')$period=ConstantsHelper::STATTICTIC_FILTER_PREIOD_3_MONTH;
+                                                    if(Yii::$app->request->get('period')=='all')$period='all';
+                                                    $lv= BalancestatisticsSearch::searchCountPeroiod($data['user_id'],$period);
+                                                    return  $lv['plus'];
                                                 },
                                             ],
                                             [
@@ -737,7 +744,12 @@ BetAsset::register($this);
                                                 'headerOptions'=>['class'=>'text-center'],
                                                 'format' => 'raw',
                                                 'content'=>function($data){
-                                                    return  empty( $data['minuse']) ? 0:$data['minuse'];
+                                                    $period=ConstantsHelper::STATTICTIC_FILTER_PREIOD_MONTH;
+                                                    if(Yii::$app->request->get('period')=='3m')$period=ConstantsHelper::STATTICTIC_FILTER_PREIOD_3_MONTH;
+                                                    if(Yii::$app->request->get('period')=='all')$period='all';
+                                                    $lv= BalancestatisticsSearch::searchCountPeroiod($data['user_id'],$period);
+                                                    return  $lv['minus'];
+
                                                 },
                                             ],
 

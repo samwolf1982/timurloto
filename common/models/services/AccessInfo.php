@@ -20,13 +20,18 @@ class AccessInfo
 
     private $u_id;
     private $user;
+//    private $params;
+//    private $period; //период из запросоа stat-period stat-period=week  month  3-month year
 
     public function __construct($u_id)
     {
       $this->user=User::find()->where(['id'=>$u_id])->one();
-
-
+//      $this->params=$params;
+//      $this->period=$this->setPeriodfield($params);
+//        yii::error($this->period);
     }
+
+
 
 
     public function getData()
