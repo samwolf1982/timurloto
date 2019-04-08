@@ -187,8 +187,8 @@ return [
 
                 'facebook' => [
                     'class'        => 'dektrium\user\clients\Facebook',
-                    'clientId'     => 'APP_ID',
-                    'clientSecret' => 'APP_SECRET',
+                    'clientId'     => '1056597404526732',
+                    'clientSecret' => 'a2fb93edb96cc3ce3ce96dbdaa375110',
                 ],
 
 
