@@ -121,8 +121,13 @@ var DashboardCategory={
                     if(json.meta.type==='popularsports'){
                         // DashboardCategory.renderTabsGames(el, json.data);
                         $.each(json.data, function( index, value ) {
-                            if(index===0)  DashboardCategory.renderTabsGames(el, value,'active'); //массив елементов
-                            else DashboardCategory.renderTabsGames(el, value,''); //массив елементов
+                          //  console.log(value)
+                            // if(index===0)  DashboardCategory.renderTabsGames(el, value,'active'); //массив елементов
+                            // else DashboardCategory.renderTabsGames(el, value,''); //массив елементов
+                            if(index===0)  DashboardCategory.renderTabsGamesLikePopular(el, value,'active'); //массив елементов
+                            else DashboardCategory.renderTabsGamesLikePopular(el, value,''); //массив елементов
+
+
                         });
 
                         $('#dashboard_center_block_tab_blocks .tab-block').hide();
@@ -233,14 +238,23 @@ var DashboardCategory={
                      el.name='Основное время';
                      addPeriodText="";
                  }else{
+                     if (typeof el.name === 'undefined') {
+                         el.name='с ОТ';
+                     }
                      addPeriodText=el.name;
                  }
+
+
                  optionForSSelect+='<option  selected  value="'+el.id+'">'+el.name+'</option>';
 
              }else{
                  if(el.name=="Regular Time"){
                      el.name='Основное время';
                  }
+                 if (typeof el.name === 'undefined') {
+                     el.name='с ОТ';
+                 }
+
                  optionForSSelect+='<option  value="'+el.id+'">'+el.name+'</option>';
              }
          });
@@ -293,6 +307,7 @@ var DashboardCategory={
 
              dParent=data.meta.attr[0].attributes['main-game-id'];  // группа фора и тд
              $.each(eld,function (k1,eldIn) {
+
                 //  console.log(eldIn);
                 //  dParent=eldIn.id.split('-')[0]  + '_'+eldIn.id.split('-')[2];  // группа фора и тд
                //   dParent=eldIn.id.split('-')[0];  // группа фора и тд
@@ -311,12 +326,7 @@ var DashboardCategory={
 
              collapseopenbetcontent.append(collapseopenbetitem);
              collapseOpenBet.append(collapseopenbetcontent);
-
-
-
              openCollapsedWrapper.append(collapseOpenBet);
-
-
 
          });
          $('.open_line_center_block').fadeIn(400);
@@ -347,9 +357,7 @@ var DashboardCategory={
       if(tabeUp.length===0){
           var sportName='';
           if(data[0].data[0].attributes['user-locale-lng-name'].length){
-
               sportName=data[0].data[0].attributes['user-locale-lng-name'];
-              // sportName=data[0].data[0].attributesuser-locale-lng-name;
           }
           $('#sporttabsNavigation').append('<li>\n' +
               '                <a href="#tab_'+data[0].sport_id+'" id="sp_'+data[0].sport_id+'" class="'+activeStatus+' tab-trigger" data-toggle="tabs"><span class="icon-football"></span> '+sportName+'</a>\n' +
@@ -385,7 +393,6 @@ var DashboardCategory={
         $.each(data[0].data, function( index, value ) {
             mainGameId = value.attributes['main-game-id'];
             if (listmg.indexOf(mainGameId) === -1) {  // fix for period games
-            //     mainGameId=value;
             console.log(mainGameId);
             listmg.push(mainGameId);
             fullNamePlayers = value.attributes['team-1-user-locale-lng-name'] + ' - ' + value.attributes['team-2-user-locale-lng-name'];
@@ -402,8 +409,6 @@ var DashboardCategory={
 
             colapseLine = colapsetabInner.find('.row-collapse-inner[data-parents="' + mainGameId + '"]');
             $.each(value.events['12341'], function (indexEv, valueEv) {  //value.events['12341'] из маркета одна или вторая команда
-                // colapseLine.append('zzzz '+indexEv)
-                // colapseLine.append(valueEv)
                 eventNameLoop = valueEv.attributes['event-name'];
                 eventCooef = valueEv.attributes['odd'];
                 mName = valueEv.attributes['market-name'];
@@ -417,19 +422,88 @@ var DashboardCategory={
                     '                                </button></div> ');
             });
             // todo count here
-            colapseLine.append('<a href="bet-dashboard-open.html" class="total show-all-bets do_open_line" data-id="' + mainGameId + '">'+' '+'</a>');
+            colapseLine.append('<a href="bet-dashboard-open.html" class="total show-all-bets do_open_line" data-id="' + mainGameId + '">'+value.attributes['event-count']+'</a>');
         }
         });
-        console.log(listmg);
+    },
+    renderTabsGamesLikePopular: function (el,data2,activeStatus) {
+        // console.log(data2[0])
+       $.each(data2, function( index, data ) {
+           if(index>10) return;
+            var tabeUp = $('#sp_'+data.sport_id);//tabs
+            if(tabeUp.length===0){
+                var sportName='';
+                if(data.data[0].attributes['user-locale-lng-name'].length){
+                    sportName=data.data[0].attributes['user-locale-lng-name'];
+                }
+                $('#sporttabsNavigation').append('<li>\n' +
+                    '                <a href="#tab_'+data.sport_id+'" id="sp_'+data.sport_id+'" class="'+activeStatus+' tab-trigger" data-toggle="tabs"><span class="icon-football"></span> '+sportName+'</a>\n' +
+                    '            </li>');
+            }
+            var tabeBody = $('#tab_'+data.sport_id);// body tabs
+            if(tabeBody.length===0){
+                $('.tab-block').hide();
+                $('#dashboard_center_block_tab_blocks').append('<div style="display: block;" class="tab-block" id="tab_'+data.sport_id+'">\n' + '<div class="tab-block-inner">\n' + '</div>\n' + '</div>');
+                tabeBody = $('#tab_'+data.sport_id);// body tabs
+            }
 
 
-        // $('#child_sub_colapse_'+$(el).data('id')).html("");
-        // $.each(data, function( k, e ) {    // e.id e.name e.count
-        //     $('#child_sub_colapse_'+$(el).data('id')).append(' <li><a href="#" class="turnire_fin"' +
-        //         ' data-id="' + e.id + '" >' + e.name + ' <span class="count-block">'+e.count+'</span></a></li>');
-        // });
-        // $(el).parent().toggleClass('active_coll').find('.sub-collapse').stop().slideToggle(400);
-        // console.log('renderGames');
+            var colapsetab=$('#tab-collapse-tournire_'+data.id);// body tabs // турнир название синея линия
+            console.log(data.id);
+            if(colapsetab.length===0){
+                tabeBody.append('<div class="tab-collapse" id="tab-collapse-tournire_'+data.id+'">\n' +
+                    '                <div class="tab-collapse-head">\n' +
+                    '                    <button class="trigger-tab-collapse active">'+data.name+'</button>\n' +
+                    '                </div><div class="tab-collapse-content-inner"></div>\n' +
+                    '                \n' +
+                    '            </div>');
+
+            }
+
+            colapsetabInner=$('#tab-collapse-tournire_'+data.id);// тело таблиц
+            colapsetabInner.children('.tab-collapse-content-inner').html('');
+
+            listmg=[];
+            $.each(data.data, function( index, value ) {
+                mainGameId = value.attributes['main-game-id'];
+                if (listmg.indexOf(mainGameId) === -1) {  // fix for period games
+                    //     mainGameId=value;
+                    console.log(mainGameId);
+                    listmg.push(mainGameId);
+                    fullNamePlayers = value.attributes['team-1-user-locale-lng-name'] + ' - ' + value.attributes['team-2-user-locale-lng-name'];
+                    timeStartMatch = timeConverter(value.attributes['start'])
+                    colapsetabInner.children('.tab-collapse-content-inner').append('<div class="row-collapse">\n' +
+                        '                            <div class="row-collapse-inner" data-parents="' + mainGameId + '">\n' +
+                        '                                <div class="icon-bet"><span class="icon-football"></span></div>\n' +
+                        '                                <a class="info-bet do_open_line" data-id="' + mainGameId + '"  href="bet-dashboard-open.html">\n' +
+                        '                                    <div class="title-bet">' + timeStartMatch + '</div>\n' +
+                        '                                    <div class="value-bet">' + fullNamePlayers + '</div>\n' +
+                        '                                </a>' +
+                        '                            </div>\n' +
+                        '                        </div>');
+
+                    colapseLine = colapsetabInner.find('.row-collapse-inner[data-parents="' + mainGameId + '"]');
+                    $.each(value.events['12341'], function (indexEv, valueEv) {  //value.events['12341'] из маркета одна или вторая команда
+                        eventNameLoop = valueEv.attributes['event-name'];
+                        eventCooef = valueEv.attributes['odd'];
+                        mName = valueEv.attributes['market-name'];
+                        eventId = valueEv.id;
+                        spid = valueEv.id;
+                        colapseLine.append('<div class="team">\n' +
+                            '                                <button class="bet-parent-val" data-id="' + eventId + '" data-parent="' + mainGameId + '"  data-text1="' + fullNamePlayers + '" data-text2="' + eventNameLoop + '" data-text3="' + mName + '"  data-coof="' + eventCooef + '" >\n' +
+                            '                                    <div class="title-bet">' + eventNameLoop + '</div>\n' +
+                            '                                    <div class="value-bet">' + eventCooef + '</div>\n' +
+                            '                                </button></div> ');
+                    });
+                    // todo count here
+                    colapseLine.append('<a href="bet-dashboard-open.html" class="total show-all-bets do_open_line" data-id="' + mainGameId + '">'+ value.attributes['event-count'] +'</a>');
+                }
+            });
+          //  console.log(listmg);
+       });
+
+
+
     },
 
 

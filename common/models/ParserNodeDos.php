@@ -122,7 +122,7 @@ class ParserNodeDos extends \yii\base\BaseObject
     public function getEventsByGameId($gameId)
     {
 
-//        Yii::error($this->initiator->getEventsTypeUrl($gameId));
+        Yii::error($this->initiator->getEventsTypeUrl($gameId));
         $data= $this->parse($this->initiator->getEventsTypeUrl($gameId));
         $res=[];
         //  var_dump($this->initiator->lastUrl); die();
