@@ -12,11 +12,14 @@ class m190328_191107_add_some_column_to_userAtt_table extends Migration
      */
     public function safeUp()
     {
-        $this->addColumn('user_attachment_info', 'social_vk', $this->string());
-        $this->addColumn('user_attachment_info', 'social_fb', $this->string());
-        $this->addColumn('user_attachment_info', 'social_in', $this->string());
-        $this->addColumn('user_attachment_info', 'social_tv', $this->string());
-        $this->addColumn('user_attachment_info', 'social_yt', $this->string());
+        if(0){
+            $this->addColumn('user_attachment_info', 'social_vk', $this->string());
+            $this->addColumn('user_attachment_info', 'social_fb', $this->string());
+            $this->addColumn('user_attachment_info', 'social_in', $this->string());
+            $this->addColumn('user_attachment_info', 'social_tv', $this->string());
+            $this->addColumn('user_attachment_info', 'social_yt', $this->string());
+        }
+
 
 //        $this->addColumn('user_attachment_info', 'social_6', $this->string());
 //        $this->addColumn('user_attachment_info', 'social_7', $this->string());

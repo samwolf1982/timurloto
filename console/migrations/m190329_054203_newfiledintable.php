@@ -12,8 +12,11 @@ class m190329_054203_newfiledintable extends Migration
      */
     public function safeUp()
     {
-        $this->addColumn('lastweekwinners', 'level', $this->string());
-        $this->addColumn('lastweekwinners', 'period', $this->string());
+        if(0){
+            $this->addColumn('lastweekwinners', 'level', $this->string());
+            $this->addColumn('lastweekwinners', 'period', $this->string());
+        }
+
     }
 
 
