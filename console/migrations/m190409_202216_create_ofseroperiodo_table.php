@@ -14,8 +14,8 @@ class m190409_202216_create_ofseroperiodo_table extends Migration
     {
         $this->createTable('ofseroperiodo', [
             'id' => $this->primaryKey(),
-            'period_id' => $this->string()->comment('спорт ид'),
-            'created_at' => $this->dateTime()->comment("время начала"),
+            'period_name' => $this->string()->comment('исход название'),
+           // 'created_at' => $this->dateTime()->comment("время начала"),
         ]);
     }
 

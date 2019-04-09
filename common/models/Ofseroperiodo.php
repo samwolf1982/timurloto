@@ -8,8 +8,7 @@ use Yii;
  * This is the model class for table "ofseroperiodo".
  *
  * @property int $id
- * @property string $period_id спорт ид
- * @property string $created_at время начала
+ * @property string $period_name исход название
  */
 class Ofseroperiodo extends \yii\db\ActiveRecord
 {
@@ -27,8 +26,7 @@ class Ofseroperiodo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['created_at'], 'safe'],
-            [['period_id'], 'string', 'max' => 255],
+            [['period_name'], 'string', 'max' => 255],
         ];
     }
 
@@ -39,8 +37,7 @@ class Ofseroperiodo extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'period_id' => 'спорт ид',
-            'created_at' => 'время начала',
+            'period_name' => 'исход название',
         ];
     }
 }

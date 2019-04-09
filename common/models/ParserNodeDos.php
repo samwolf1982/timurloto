@@ -124,7 +124,23 @@ class ParserNodeDos extends \yii\base\BaseObject
         $res=[];
         //  var_dump($this->initiator->lastUrl); die();
         //  var_dump($data); die();
-        $this->additional_games=$data->data[0]->attributes->{'additional-games'};
+
+        $ofsetPeriodo=Ofseroperiodo::find()->where(1)->asArray()->all();
+        if(!empty($ofsetPeriodo)){
+            $ofsetPeriodo = ArrayHelper::getColumn($ofsetPeriodo, 'period_name');
+        }
+        yii::error($ofsetPeriodo);
+        $this->additional_games=[];
+        foreach ($data->data[0]->attributes->{'additional-games'} as $adg) {
+            yii::error($adg->name);
+            if (!in_array(trim($adg->name),$ofsetPeriodo) )$this->additional_games[]=$adg;
+        }
+//        $this->additional_games=$data->data[0]->attributes->{'additional-games'};
+
+
+//        yii::error($this->additional_games);
+
+
 
         $eventsCollector=[];
         if (empty($data->included)) { yii::error("getEventsByGameId    gameId :    {$gameId}");  return ['errors'=>['some error see log file']];  }

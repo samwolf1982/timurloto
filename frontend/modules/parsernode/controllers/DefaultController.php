@@ -3,8 +3,10 @@
 namespace app\modules\parsernode\controllers;
 
 use common\models\Centerturnire;
+use common\models\Ofseroperiodo;
 use common\models\ParserNodeDos;
 use Yii;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\Response;
 
@@ -126,7 +128,9 @@ class DefaultController extends Controller
         $dos=new ParserNodeDos();
         $data= $dos->getEventsByGameId($gameId);
         $addGames=$dos->getAdditionalGames();
-        return  ['addGames'=>$addGames, 'meta'=>['type'=>'event','count'=>count($data['data']),'id'=>$gameId,'attr'=> $data['attr']] ,'data'=>$data['data']];
+
+
+        return  ['addGames'=>$addGames,   'meta'=>['type'=>'event','count'=>count($data['data']),'id'=>$gameId,'attr'=> $data['attr']] ,'data'=>$data['data']];
 
     }
 
