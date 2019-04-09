@@ -341,11 +341,20 @@ $count=Yii::$app->db->createCommand("select COUNT(subquery.user_id) FROM
       }
         Yii::error([$lastWeek,$lastLastWeek]);
 
-    $sql1="select COUNT(subquery.user_id) FROM
+    if(0){ // старый код не работало сортировка в турнирах
+        $sql1="select COUNT(subquery.user_id) FROM
 ( SELECT user_id, sum(profit) as sume, created_own  FROM `balancestatistics`  WHERE created_own BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume) AS subquery  WHERE 1";
         $count=Yii::$app->db->createCommand($sql1,[':status' => 1])->queryScalar();
-  $sql2= "SELECT user_id, sum(profit) as sume, (SUM(`penetration`)/ COUNT(`penetration`)*100) as penet, ( SUM(`middle_coef`) / COUNT(`middle_coef`))    as mdc, (SUM(`roi`) / COUNT(`roi`)) as ro, created_own 
+        $sql2= "SELECT user_id, sum(profit) as sume, (SUM(`penetration`)/ COUNT(`penetration`)*100) as penet, ( SUM(`middle_coef`) / COUNT(`middle_coef`))    as mdc, (SUM(`roi`) / COUNT(`roi`)) as ro, created_own 
                         FROM `balancestatistics`  WHERE created_own BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume DESC ";
+    }else{ // новый код не работало сортировка в турнирах (не проверено)
+        $sql1="select COUNT(subquery.user_id) FROM
+( SELECT user_id, sum(profit) as sume, created_own  FROM `balancestatistics`  WHERE created_at BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume) AS subquery  WHERE 1";
+        $count=Yii::$app->db->createCommand($sql1,[':status' => 1])->queryScalar();
+        $sql2= "SELECT user_id, sum(profit) as sume, (SUM(`penetration`)/ COUNT(`penetration`)*100) as penet, ( SUM(`middle_coef`) / COUNT(`middle_coef`))    as mdc, (SUM(`roi`) / COUNT(`roi`)) as ro, created_own 
+                        FROM `balancestatistics`  WHERE created_at BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume DESC ";
+    }
+
 
         $dataProvider = new SqlDataProvider([
             'sql' =>$sql2,
