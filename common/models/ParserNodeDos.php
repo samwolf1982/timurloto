@@ -10,6 +10,7 @@ use common\models\DTO\GameS3;
 use GuzzleHttp\Client;
 use Yii;
 use yii\base\ErrorException;
+use yii\helpers\ArrayHelper;
 
 
 class ParserNodeDos extends \yii\base\BaseObject
@@ -53,31 +54,27 @@ class ParserNodeDos extends \yii\base\BaseObject
         $res=[];
         foreach ($data->data as $datum) {
             $res[]=['id'=>$datum->id,'name'=>$datum->attributes->{'user-locale-lng-name'},'count'=>$datum->attributes->{'count'}];
-        //  echo      sprintf('id) %s count) %s name) %s',$datum->id,$datum->attributes->{'count'},$datum->attributes->{'user-locale-lng-name'}).PHP_EOL;
-
-//            var_dump($datum->id);
-//            var_dump($datum->attributes->{'count'});
-//            var_export($datum->attributes->{'user-locale-lng-name'});
         }
         return $res;
-
     }
 
     public function getTourney($tourneyId)
     {
         $data= $this->parse($this->initiator->getTourneyTypeUrl($tourneyId));
         $res=[];
-//        var_dump($data); die();
-        foreach ($data as $datum_L1) {
-            foreach ($datum_L1 as $datum){
-               // var_dump($datum); die();
-                $res[]=['id'=>$datum->{'league-id'},'name'=>$datum->{'league-name'},'count'=>$datum->{'games-count'}];
+        $ids=[];
+        $spId=$data->data[0]->{'sport-id'};
+        if(is_numeric($spId)){
+            $offseto =   Ofsetosturniro::find()->select(['turnir_id'])->where(['sport_id'=>  (string)$spId])->asArray()->all();
+            if(!empty($offseto)){
+                $ids = ArrayHelper::getColumn($offseto, 'turnir_id');
             }
 
-            //  echo      sprintf('id) %s count) %s name) %s',$datum->id,$datum->attributes->{'count'},$datum->attributes->{'user-locale-lng-name'}).PHP_EOL;
-//            var_dump($datum->id);
-//            var_dump($datum->attributes->{'count'});
-//            var_export($datum->attributes->{'user-locale-lng-name'});
+        }
+        foreach ($data as $datum_L1) {
+            foreach ($datum_L1 as $datum){
+                if(!in_array($datum->{'league-id'},$ids))  $res[]=['id'=>$datum->{'league-id'},'name'=>$datum->{'league-name'},'count'=>$datum->{'games-count'}];
+            }
         }
         return $res;
 
