@@ -452,8 +452,10 @@ BetAsset::register($this);
                                             'attribute'=>'sume',
                                              'format' => 'raw',
                                              'content'=>function($data){
-//                                              return  sprintf("%01.2f %%", $data['sume']);  ;
-                                              return  sprintf("%01.2f %%", 44);  ;
+                                    // todo here
+
+                                              return  sprintf("%01.2f %%", $data['sume']);  ;
+                                              //return  sprintf("%01.2f %%", 44);  ;
                                             },
                                             'label'=>'Profit',
 
