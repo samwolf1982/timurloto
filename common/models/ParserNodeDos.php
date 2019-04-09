@@ -119,12 +119,9 @@ class ParserNodeDos extends \yii\base\BaseObject
     public function getEventsByGameId($gameId)
     {
 
-        Yii::error($this->initiator->getEventsTypeUrl($gameId));
+//        Yii::error($this->initiator->getEventsTypeUrl($gameId));
         $data= $this->parse($this->initiator->getEventsTypeUrl($gameId));
         $res=[];
-        //  var_dump($this->initiator->lastUrl); die();
-        //  var_dump($data); die();
-
         $ofsetPeriodo=Ofseroperiodo::find()->where(1)->asArray()->all();
         if(!empty($ofsetPeriodo)){
             $ofsetPeriodo = ArrayHelper::getColumn($ofsetPeriodo, 'period_name');
@@ -132,7 +129,7 @@ class ParserNodeDos extends \yii\base\BaseObject
         yii::error($ofsetPeriodo);
         $this->additional_games=[];
         foreach ($data->data[0]->attributes->{'additional-games'} as $adg) {
-            yii::error($adg->name);
+//            yii::error($adg->name);
             if (!in_array(trim($adg->name),$ofsetPeriodo) )$this->additional_games[]=$adg;
         }
 //        $this->additional_games=$data->data[0]->attributes->{'additional-games'};
