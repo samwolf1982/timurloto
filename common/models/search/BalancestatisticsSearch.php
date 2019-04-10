@@ -354,7 +354,7 @@ $count=Yii::$app->db->createCommand("select COUNT(subquery.user_id) FROM
         $sql2= "SELECT user_id, sum(profit) as sume, (SUM(`penetration`)/ COUNT(`penetration`)*100) as penet, ( SUM(`middle_coef`) / COUNT(`middle_coef`))    as mdc, (SUM(`roi`) / COUNT(`roi`)) as ro, created_own 
                         FROM `balancestatistics`  WHERE created_at BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume DESC ";
     }
-yii::error($sql2);
+yii::error(['ss'=>$sql2]);
 
         $dataProvider = new SqlDataProvider([
             'sql' =>$sql2,
