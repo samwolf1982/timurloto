@@ -187,8 +187,10 @@ return [
 
                 'facebook' => [
                     'class'        => 'dektrium\user\clients\Facebook',
-                    'clientId'     => '1056597404526732',
-                    'clientSecret' => 'ea6c1f9eef5d161fc45dd79b8fec439f',
+                   // 'clientId'     => '1056597404526732',
+                    'clientId'     => '2163911647024298',
+                    //'clientSecret' => 'ea6c1f9eef5d161fc45dd79b8fec439f',
+                    'clientSecret' => 'da9ba944ebaec21ca07f46fd56fc8cac',
                 ],
 
 
