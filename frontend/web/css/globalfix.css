@@ -442,3 +442,8 @@ and also iPads specifically.
     overflow: initial;
   }
 }
+@media screen and (max-width: 767px) {
+  .chart-wrapper {
+    padding: 0;
+  }
+}

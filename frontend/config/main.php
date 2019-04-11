@@ -212,8 +212,8 @@ return [
 
                 'vkontakte' => [
                     'class'        => 'dektrium\user\clients\VKontakte',
-                    'clientId'     => 'CLIENT_ID',
-                    'clientSecret' => 'CLIENT_SECRET',
+                    'clientId'     => '6940986',
+                    'clientSecret' => 'PsvKyfIOYGZm1w6zx2dl',
                 ],
 //                'yandex' => [
 //                    'class'        => 'dektrium\user\clients\Yandex',
