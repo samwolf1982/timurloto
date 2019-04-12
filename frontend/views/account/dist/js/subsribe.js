@@ -16,7 +16,6 @@ var timeoutId;
 $(document.body).on('input propertychange change','textarea.add-notification',function (el) {
   // $('textarea.add-notification').on('input propertychange change', function() {
     var gl_this=this;
-
     clearTimeout(timeoutId);
     timeoutId = setTimeout(function() {
         // Runs 1 second (1000 ms) after the last change
@@ -29,23 +28,7 @@ $(document.body).on('click','#subscribersModalBlock .TabOpenMe .btn-subscribe',f
     UserSubscriber.removeSubscriberFromModal(this);
 });
 
-
 $(function () {
-
-    // ОТКРЫТЫЕ ДОСТУПЫ
-
-    // Fill modal with content from link href
-    // $("#edit_subscriber").on("show.bs.modal", function(e) {
-    //     console.log('aadfdasf111')
-    //     var link = $(e.relatedTarget);
-    //     $(this).find(".modal-body").load(link.attr("href"));
-    //     console.log('aadfdasf')
-    // });
-    // ОТКРЫТЫЕ ДОСТУПЫ end
-
-
-    //Listen to your custom event Load modale
-
 
     $('.event-subscribe-btn').on('click', function () {
       // subscriberMail
@@ -58,20 +41,6 @@ $(function () {
         return false;
     });
 
-
-    // $('.trig-val').on('click', function () {
-    //     $(this).parents().find('.drop-list').stop().fadeOut(400);
-    //     if ($(this).parents('.drop-open-block').hasClass('locked-bet')) {
-    //         $(this).parents('.drop-open-block').removeClass('locked-bet');
-    //     } else {
-    //         $(this).parents('.drop-open-block').addClass('locked-bet');
-    //     }
-    //     return false;
-    // });
-    // $('.btn-subscribe').on('click', function () {
-    //     $(this).toggleClass('subscribed');
-    //     return false;
-    // });
 })
 
 
@@ -91,9 +60,6 @@ var UserSubscriber={
             if($(this).parent().hasClass('locked-bet')){
                 UserSubscriber.test('is locked hide on prod');
                 UserSubscriber.removeSubscriber(this);
-
-
-
                 // UserSubscriber.showPop(this);
             }else{
                 UserSubscriber.test('is Open');
@@ -106,7 +72,7 @@ var UserSubscriber={
         $(document).on("click", ".trig-val", function(e) {
 
             UserSubscriber.addSubscriber(this);
-            UserSubscriber.showOpen(this);
+           UserSubscriber.showOpen(this);
             e.preventDefault();
             return false;
         });
@@ -190,8 +156,6 @@ var UserSubscriber={
             success: function (json) {
                 if (json) {
                     UserSubscriber.unSubscribeMailShow();
-                    // UserSubscriber.test(json);
-                    //  SmartCart.getFromCart(); // update cart
                 } else {
                     UserSubscriber.test('No json');
                 }
@@ -201,9 +165,12 @@ var UserSubscriber={
 
   showPop:function (el) {
       $(el).parents('.drop-open-block').find('.drop-list').stop().fadeToggle(400);
+
   },
     showOpen:function (el) {
-          $(el).parents().find('.drop-list').stop().fadeOut(400);
+          // $(el).parents().find('.drop-list').stop().fadeOut(400);
+           // fix c панелью входа в аккаунте
+           $(el).parent().parent().parent().parent().find('.drop-list').stop().fadeOut(400);
         if ($(el).parents('.drop-open-block').hasClass('locked-bet')) {
             $(el).parents('.drop-open-block').removeClass('locked-bet');
         } else {
@@ -250,8 +217,6 @@ var UserSubscriber={
         $('#subscriberMail').append('<i class="text-show subscribeMail">Подписаться</i>');
     },
     autoSaveSubscriberComment:function (el) {
-        console.log('Textarea     autoSaveSubscriberComment');
-        console.log(el);
         // autocomplete-comment
         var data = {};
         data.Subscriber = {};
@@ -297,13 +262,6 @@ var UserSubscriber={
 
     },
 };
-
-
-
-
-
-
-
 
 function showNotification(message) {
 

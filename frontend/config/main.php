@@ -61,6 +61,11 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                // роутинг для новостей по слагу категория категория ... новость
+                ['class'=>'app\copmonents\routing\ExtNewsCatUrlRule'],
+                ['class'=>'app\copmonents\routing\ExtNewsPageUrlRule'],
+
+//                'news/default/index'=>'news/index',
                 'account/'=>'account/index',
                 'settings/'=>'user/settings',
                 'account/<id:\d+>' => 'account/view',
@@ -140,8 +145,9 @@ return [
 
 
                 // новости
+//                '/news/view?<id:(.*?)>'=>'/news/view/<id>',
                 '/news/view?<id:(.*?)>'=>'/news/view/<id>',
-
+                '/news/index?<id:(.*?)>'=>'/news/index/<id>',
 
 
 
@@ -151,10 +157,7 @@ return [
                 '<module:\w+>/<action:\w+>/<tourneyId:(.*?)>' => '<module>/default/<action>/<tourneyId>',
                 '<module:\w+>/<action:\w+>' => '<module>/default/<action>',
 //                '<module:\w+>/<action:\w+>' => '<module>/<action>',
-
                 //'<module:\w+>/<action:\w+>/<id:(.*?)>' => '<module>/default/<action>/<id>',
-
-
                 ],
         ],
 
@@ -162,28 +165,11 @@ return [
             'class'   => \yii\authclient\Collection::className(),
             'clients' => [
                 // here is the list of clients you want to use
-                // you can read more in the "Available clients" section
 //                'github' => [
 //                    'class'        => 'dektrium\user\clients\GitHub',
-//                    'clientId'     => '2035d003b9cdf93aeeca',
-//                    'clientSecret' => '7e5b6ab5b8eeab5261b7edde23cbe3b0a4be276b',
+//                    'clientId'     => ISLOCAL ? '2035d003b9cdf93aeeca' :  '3d5c6c9d7aefac8e63a4',
+//                    'clientSecret' => ISLOCAL ? '7e5b6ab5b8eeab5261b7edde23cbe3b0a4be276b' :  '6ce246227883fd55b212cf76ab94b809eec178a7',
 //                ],
-
-
-            // comento
-//                'github' => [
-//                    'class'        => 'dektrium\user\clients\GitHub',
-//                    'clientId'     => YII_ENV=='dev' ? '2035d003b9cdf93aeeca' :  '25151b54c968b94152f0',
-//                    'clientSecret' => YII_ENV=='dev' ? '7e5b6ab5b8eeab5261b7edde23cbe3b0a4be276b' :  'b1420391d72fd5d50f38a5611c8c72729a4b3426',
-//                ],
-
-
-                'github' => [
-                    'class'        => 'dektrium\user\clients\GitHub',
-                    'clientId'     => ISLOCAL ? '2035d003b9cdf93aeeca' :  '3d5c6c9d7aefac8e63a4',
-                    'clientSecret' => ISLOCAL ? '7e5b6ab5b8eeab5261b7edde23cbe3b0a4be276b' :  '6ce246227883fd55b212cf76ab94b809eec178a7',
-                ],
-
 
                 'facebook' => [
                     'class'        => 'dektrium\user\clients\Facebook',
@@ -193,20 +179,15 @@ return [
                     'clientSecret' => 'da9ba944ebaec21ca07f46fd56fc8cac',
                 ],
 
-
-
                 'google' => [
                     'class'        => 'dektrium\user\clients\Google',
                   //own //  'clientId'     => '1011370333812-pb8qcuc01ves6bavav1hciafk6g60cnk.apps.googleusercontent.com',
                     'clientId'     => '602134147548-udkk32mg3v5rvjgtnbla1a1e0u9gve37.apps.googleusercontent.com',
                  //own //    'clientSecret' => 'Lsx7FJfrnPeKqBDltaALWBSS',
                     'clientSecret' => 'zEb1M5ojCOmR2D8sF5CGHvZX',
-
-
 //                    'returnUrl' => 'https://bet.domashka.in.ua/user/auth?authclient=google',
                   // own//  'returnUrl' => 'https://bet.domashka.in.ua/user/security/auth?authclient=google',
 
-                    //??
                     'returnUrl' => 'https://lookmybets.com/user/security/auth?authclient=google',
                 ],
 
@@ -215,11 +196,7 @@ return [
                     'clientId'     => '6940986',
                     'clientSecret' => 'PsvKyfIOYGZm1w6zx2dl',
                 ],
-//                'yandex' => [
-//                    'class'        => 'dektrium\user\clients\Yandex',
-//                    'clientId'     => 'CLIENT_ID',
-//                    'clientSecret' => 'CLIENT_SECRET'
-//                ],
+
 
             ],
         ],

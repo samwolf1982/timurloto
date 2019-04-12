@@ -224,7 +224,7 @@
                                        }
                                    </style>
                                    <div class="user-btn w100">
-                                       <a href="#" class="btn btn-primary send-bets"  data-toggle="modal" data-target="#modal-auth"><i class="icon-user"></i> <span>ВОЙТИ</span></a>
+                                       <a href="#" class="btn btn-primary send-bets"  data-toggle="modal-reg" data-target="#modal-auth"><i class="icon-user"></i> <span>ВОЙТИ</span></a>
                                    </div>
                                <?php }else{ ?>
                                    <style>

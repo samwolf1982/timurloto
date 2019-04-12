@@ -28,8 +28,13 @@
         "yiisoft/yii2-jui": "^2.0",
        "yiisoft/yii2-authclient": "~2.1.7",
         "yiisoft/yii2-imagine": "~2.1.0",
-        "snapget/yii2-news": "*",
-        "mohorev/yii2-upload-behavior": "*"
+        "mohorev/yii2-upload-behavior": "*",
+        "kartik-v/yii2-widget-select2": "^2.1",
+        "kartik-v/yii2-widget-fileinput": "^1.0",
+        "kartik-v/yii2-tree-manager": "^1.0",
+        "kartik-v/yii2-widget-alert": "^1.1",
+        "vova07/yii2-imperavi-widget": "^2.0",
+        "zelenin/yii2-slug-behavior": "~1.5.1"
 
 
 
@@ -57,7 +62,8 @@
     "autoload": {
         "psr-4": {
             "dvizh\\cart\\": "copmonents/cart/src",
-            "kl83\\widgets\\": "copmonents/kl83/widget/"
+            "kl83\\widgets\\": "copmonents/kl83/widget/",
+            "snapget\\news\\": "copmonents/yii2newsmaster/"
         }
     }
 

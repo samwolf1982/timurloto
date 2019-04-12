@@ -16,6 +16,51 @@ use yii\widgets\LinkPager;
 
 BetAsset::register($this);
 //BetDinotableAsset::register($this);
+
+
+
+$current_cat=$model;
+//var_dump($current_cat); die();
+$this->title = $current_cat->title;
+if(!empty($current_cat)){
+
+    if(!$title = $current_cat->h1) {
+        $title =  $current_cat->title;
+    }
+    if(!$description_seo = $current_cat->meta_desc) {
+        $description_seo = $current_cat->title;
+    }
+    if(!$keywords = $current_cat->meta_key) {
+        $keywords = $current_cat->title;
+    }
+
+    if(!$seo_h1 = $current_cat->h1) {
+        $seo_h1 = '';
+    }
+    if(!$keywords = $current_cat->h1) {
+        $keywords = $current_cat->title;
+    }
+
+    $fb_image='upload/news/'.$current_cat->image;
+    if(empty( $current_cat->image)) $fb_image='/images/logo.svg';
+
+
+    $this->registerMetaTag([
+        'name' => 'description',
+        'content' => $description_seo,
+    ]);
+    $this->registerMetaTag([ 'name' => 'keywords', 'content' => $keywords, ]);
+// facebook
+    $this->registerMetaTag([ 'name' => 'og:url', 'content' => Yii::$app->request->url , ]);
+    $this->registerMetaTag([ 'name' => 'og:type', 'content' => 'article', ]);
+    $this->registerMetaTag([ 'name' => 'og:title', 'content' => $title, ]);
+    $this->registerMetaTag([ 'name' => 'og:description', 'content' => $description_seo, ]);
+    $this->registerMetaTag([ 'name' => 'og:image', 'content' =>'http://lookmybets.com/'. $fb_image, ]);
+    $this->title = $title;;
+}
+
+
+
 ?>
 <body class="home-page footer-login-page">
 
@@ -76,41 +121,16 @@ BetAsset::register($this);
                                     </a>
                                 </div>
                             </div>
-                            <script>
-
-
-                            </script>
                             <div class="table-body  tableTop100">
-
-
                                 <ul>
-
                                     <?php foreach ($treeQueryFlevel as $item) { ?>
-                                        <li style="color:white;"><?=$item->name?></li>
-                                   <?php  } ?>
+                                        <li style="color:white;"><a href="<?=Url::toRoute(['/news/index','id'=>$item->id])?>"> <?=$item->name?></a> </li>
+                                    <?php  } ?>
                                 </ul>
                             </div>
                             
                             
-                            <?php if(0){ ?>
-                            <div class="table-footer">
-                                <div class="pagination">
-                                    <ul class="pagination-list">
-                                        <li class="first-pag">
-                                            <a href="#"><span class="icon-arrow_left-small"></span></a>
-                                        </li>
-                                        <li class="active"><a href="#">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#" class="no-num-pag">...</a></li>
-                                        <li><a href="#">10</a></li>
-                                        <li class="last-pag">
-                                            <a href="#"><span class="icon-arrow_right-small"></span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <?php } ?>
+
                             
                         </div>
                         

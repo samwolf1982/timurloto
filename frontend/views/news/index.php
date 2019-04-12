@@ -16,6 +16,46 @@ use yii\widgets\LinkPager;
 
 BetAsset::register($this);
 //BetDinotableAsset::register($this);
+
+
+/* @var $this yii\web\View */
+$this->title = $current_cat->name;
+if(!empty($current_cat)){
+
+    if(!$title = $current_cat->h1) {
+        $title =  $current_cat->name;
+    }
+    if(!$description_seo = $current_cat->meta_desc) {
+        $description_seo = $current_cat->name;
+    }
+    if(!$keywords = $current_cat->meta_key) {
+        $keywords = $current_cat->name;
+    }
+
+    if(!$seo_h1 = $current_cat->h1) {
+        $seo_h1 = '';
+    }
+    if(!$keywords = $current_cat->h1) {
+        $keywords = $current_cat->name;
+    }
+
+
+    if(empty( $fb_image)) $fb_image='/images/logo.svg';
+
+
+    $this->registerMetaTag([
+        'name' => 'description',
+        'content' => $description_seo,
+    ]);
+    $this->registerMetaTag([ 'name' => 'keywords', 'content' => $keywords, ]);
+// facebook
+    $this->registerMetaTag([ 'name' => 'og:url', 'content' => Yii::$app->request->url , ]);
+    $this->registerMetaTag([ 'name' => 'og:type', 'content' => 'article', ]);
+    $this->registerMetaTag([ 'name' => 'og:title', 'content' => $title, ]);
+    $this->registerMetaTag([ 'name' => 'og:description', 'content' => $description_seo, ]);
+    $this->registerMetaTag([ 'name' => 'og:image', 'content' =>'http://lookmybets.com/'. $fb_image, ]);
+    $this->title = $title;;
+}
 ?>
 <body class="home-page footer-login-page">
 
@@ -70,7 +110,7 @@ BetAsset::register($this);
                                     <img src="/images/champ.svg2" alt="">
                                 </div>
                                 <div class="left-head-text">
-                                    <span class="text-head">Новости</span>
+                                    <a href="/news">   <span class="text-head">Новости</span></a>
                                 </div>
                             </div>
                             <script>
@@ -83,7 +123,7 @@ BetAsset::register($this);
                                 <ul>
 
                                     <?php foreach ($treeQueryFlevel as $item) { ?>
-                                        <li style="color:white;"><?=$item->name?></li>
+                                        <li style="color:white;"><a href="<?=Url::toRoute(['/news/index','id'=>$item->id])?>"> <?=$item->name?></a> </li>
                                    <?php  } ?>
                                 </ul>
                             </div>
@@ -124,11 +164,12 @@ BetAsset::register($this);
                                     <img src="/images/champ.svg" alt="">
                                 </div>
                                 <div class="left-head-text">
-                                    <span class="text-head">Последние новости</span>
+                                    <span class="text-head">
+                                        <?=$current_cat->name?>
+                                    </span>
                                 </div>
                             </div>
                             <script>
-
 
                             </script>
                             <div class="table-body  tableTop100">
@@ -159,7 +200,7 @@ BetAsset::register($this);
                                     <div class="wNews">
                                         
 
-                                    <?php  foreach ($dataProvider->models as $ki=> $item) { ?>
+                                    <?php  foreach ($dataProvider as $ki=> $item) {  ?>
                                         <div class="wrapShortNews">
                                             <a href="<?=Url::toRoute(['/news/view','id'=>$item->id])?>">
                                                 <img src="<?=Yii::$app->params['baseImageUrl']. $item->image?>" alt="">
@@ -167,16 +208,27 @@ BetAsset::register($this);
                                             </a>
                                         </div>
 
-                                    <?php  } ?>
+
                                     </div>
 
                                     <?php if($ki%3==0): ?>
                                         <div class="clearfix"><br></div>
                                     <?php endif; ?>
+                                    <?php  } ?>
 
                                 </div>
-                         
-                                
+
+                                <?php
+                                // отображаем постраничную разбивку
+                                echo LinkPager::widget([
+                                    'pagination' => $pages,
+                                    'registerLinkTags' => true,
+//                                    'params' => [
+//                                        'page' => Yii::$app->request->get('page'),
+//                                    ],
+                                ]);
+                                ?>
+
 
 
                             </div>
