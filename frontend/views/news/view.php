@@ -45,6 +45,7 @@ if(!empty($current_cat)){
     if(empty( $current_cat->image)) $fb_image='/images/logo.svg';
 
 
+
     $this->registerMetaTag([
         'name' => 'description',
         'content' => $description_seo,
