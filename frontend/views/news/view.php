@@ -86,7 +86,12 @@ if(!empty($current_cat)){
 
 
         <!--   вход выход  пользователя   -->
-        <?= ShowuserWidget::widget(['userdata' => [],'view'=>'other']) ?>
+        <?php  if(Yii::$app->user->isGuest){   ?>
+            <?= ShowuserWidget::widget(['userdata' => [],'view'=>'index']) ?>
+        <?php }else{ ?>
+            <?= ShowuserWidget::widget(['userdata' => [],'view'=>'other']) ?>
+        <?php }  ?>
+
 
 
 
