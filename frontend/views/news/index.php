@@ -208,7 +208,7 @@ if(!empty($current_cat)){
                                     <?php  foreach ($dataProvider as $ki=> $item) {  ?>
                                         <div class="wrapShortNews">
                                             <a href="<?=Url::toRoute(['/news/view','id'=>$item->id])?>">
-                                                <img style="width: 33%;" src="<?=Yii::$app->params['baseImageUrl']. $item->image?>" alt="<?=$item->title?>">
+                                                <img style="width: 100%;" src="<?=Yii::$app->params['baseImageUrl']. $item->image?>" alt="<?=$item->title?>">
                                                 <p><?=$item->title?></p>
                                             </a>
                                         </div>
