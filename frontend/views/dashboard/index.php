@@ -248,7 +248,7 @@ use frontend\assets\DashboardAsset;
                                         <div class="circle"></div>
                                     </div>
                                     <div class="avatar-user">
-                                        <img src="images/ava1.png" alt="">
+                                        <img src="/images/ava1.png" alt="">
                                     </div>
                                 </div>
                                 <div class="user-info">
@@ -454,7 +454,7 @@ use frontend\assets\DashboardAsset;
                                         <div class="circle"></div>
                                     </div>
                                     <div class="avatar-user">
-                                        <img src="images/ava1.png" alt="">
+                                        <img src="/images/ava1.png" alt="">
                                     </div>
                                 </div>
                                 <div class="user-info">
@@ -558,7 +558,7 @@ use frontend\assets\DashboardAsset;
                                         <div class="circle"></div>
                                     </div>
                                     <div class="avatar-user">
-                                        <img src="images/ava1.png" alt="">
+                                        <img src="/images/ava1.png" alt="">
                                     </div>
                                 </div>
                                 <div class="user-info">

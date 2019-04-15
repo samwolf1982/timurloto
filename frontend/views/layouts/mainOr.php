@@ -311,7 +311,7 @@
                                                 <div class="review-inner">
                                                     <div class="avatar-block">
                                                         <div class="avatar">
-                                                            <img src="images/ava1.png" alt="">
+                                                            <img src="/images/ava1.png" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="text-review">
@@ -401,7 +401,7 @@
                                                 <div class="review-inner">
                                                     <div class="avatar-block">
                                                         <div class="avatar">
-                                                            <img src="images/ava1.png" alt="">
+                                                            <img src="/images/ava1.png" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="text-review">
@@ -431,7 +431,7 @@
                                                 <div class="review-inner">
                                                     <div class="avatar-block">
                                                         <div class="avatar">
-                                                            <img src="images/ava1.png" alt="">
+                                                            <img src="/images/ava1.png" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="text-review">

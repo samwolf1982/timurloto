@@ -2136,7 +2136,7 @@ AccountAsset::register($this);
                                     </div>
                                     <div class="chanel-info">
                                         <div class="icon-chanel-info">
-                                            <img src="images/chat.svg" alt="">
+                                            <img src="/images/chat.svg" alt="">
                                         </div>
                                         <h4>Что Такое группа?</h4>
                                         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
@@ -9193,7 +9193,7 @@ AccountAsset::register($this);
                                         <div class="circle"></div>
                                     </div>
                                     <div class="avatar-user">
-                                        <img src="images/ava1.png" alt="">
+                                        <img src="/images/ava1.png" alt="">
                                     </div>
                                 </div>
                                 <div class="user-info">
@@ -9441,7 +9441,7 @@ AccountAsset::register($this);
                                         <div class="circle"></div>
                                     </div>
                                     <div class="avatar-user">
-                                        <img src="images/ava1.png" alt="">
+                                        <img src="/images/ava1.png" alt="">
                                     </div>
                                 </div>
                                 <div class="user-info">

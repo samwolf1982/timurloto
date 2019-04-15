@@ -946,7 +946,7 @@ AppAsset::register($this);
                                     </div>
                                     <div class="chanel-info">
                                         <div class="icon-chanel-info">
-                                            <img src="images/chat.svg" alt="">
+                                            <img src="/images/chat.svg" alt="">
                                         </div>
                                         <h4>Что Такое группа?</h4>
                                         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
@@ -7919,7 +7919,7 @@ AppAsset::register($this);
                                                                     <div class="circle"></div>
                                                                 </div>
                                                                 <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
+                                                                    <img src="/images/ava1.png" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="name-block">
@@ -7944,109 +7944,7 @@ AppAsset::register($this);
                                                                     <div class="circle"></div>
                                                                 </div>
                                                                 <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
+                                                                    <img src="/images/ava1.png" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="name-block">
@@ -8123,7 +8021,7 @@ AppAsset::register($this);
                                                                     <div class="circle"></div>
                                                                 </div>
                                                                 <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
+                                                                    <img src="/images/ava1.png" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="name-block">
@@ -8148,109 +8046,7 @@ AppAsset::register($this);
                                                                     <div class="circle"></div>
                                                                 </div>
                                                                 <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe">
-                                                                    <span class="shown-text">Закрыть Доступ</span>
-                                                                    <span class="hidden-text">Открыть Доступ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
+                                                                    <img src="/images/ava1.png" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="name-block">
@@ -8327,7 +8123,7 @@ AppAsset::register($this);
                                                                     <div class="circle"></div>
                                                                 </div>
                                                                 <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
+                                                                    <img src="/images/ava1.png" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="name-block">
@@ -8352,7 +8148,7 @@ AppAsset::register($this);
                                                                     <div class="circle"></div>
                                                                 </div>
                                                                 <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
+                                                                    <img src="/images/ava1.png" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="name-block">
@@ -8429,7 +8225,7 @@ AppAsset::register($this);
                                                                     <div class="circle"></div>
                                                                 </div>
                                                                 <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
+                                                                    <img src="/images/ava1.png" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="name-block">
@@ -8454,7 +8250,211 @@ AppAsset::register($this);
                                                                     <div class="circle"></div>
                                                                 </div>
                                                                 <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
+                                                                    <img src="/images/ava1.png" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="name-block">
+                                                                <div class="left-name-b">
+                                                                    <h5><a href="">john.baklan</a></h5>
+                                                                    <div class="date-b">17 дней осталось</div>
+                                                                </div>
+                                                                <div class="right-name-b">
+                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="btn-subscibe-block">
+                                                                <a href="#" class="btn-subscribe">
+                                                                    <span class="shown-text">Закрыть Доступ</span>
+                                                                    <span class="hidden-text">Открыть Доступ</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="subscribe-item user-access-item">
+                                                            <div class="rate-avatar">
+                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
+                                                                    <div class="circle"></div>
+                                                                </div>
+                                                                <div class="avatar-user">
+                                                                    <img src="images/ava3.png" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="name-block">
+                                                                <div class="left-name-b">
+                                                                    <h5><a href="">Alexandr</a></h5>
+                                                                    <div class="date-b">17 дней осталось</div>
+                                                                </div>
+                                                                <div class="right-name-b">
+                                                                    <p>The complexity of mining crypto currency is growing rapidly,
+                                                                        and many crypto-currencies.</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="btn-subscibe-block">
+                                                                <a href="#" class="btn-subscribe">
+                                                                    <span class="shown-text">Закрыть Доступ</span>
+                                                                    <span class="hidden-text">Открыть Доступ</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="subscribe-item user-access-item">
+                                                            <div class="rate-avatar">
+                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
+                                                                    <div class="circle"></div>
+                                                                </div>
+                                                                <div class="avatar-user">
+                                                                    <img src="images/ava3.png" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="name-block">
+                                                                <div class="left-name-b">
+                                                                    <h5><a href="">Alexandr</a></h5>
+                                                                    <div class="date-b">17 дней осталось</div>
+                                                                </div>
+                                                                <div class="right-name-b">
+                                                                    <p>The complexity of mining crypto currency is growing rapidly,
+                                                                        and many crypto-currencies.</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="btn-subscibe-block">
+                                                                <a href="#" class="btn-subscribe">
+                                                                    <span class="shown-text">Закрыть Доступ</span>
+                                                                    <span class="hidden-text">Открыть Доступ</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="subscribe-item user-access-item">
+                                                            <div class="rate-avatar">
+                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
+                                                                    <div class="circle"></div>
+                                                                </div>
+                                                                <div class="avatar-user">
+                                                                    <img src="/images/ava1.png" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="name-block">
+                                                                <div class="left-name-b">
+                                                                    <h5><a href="">john.baklan</a></h5>
+                                                                    <div class="date-b">17 дней осталось</div>
+                                                                </div>
+                                                                <div class="right-name-b">
+                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="btn-subscibe-block">
+                                                                <a href="#" class="btn-subscribe">
+                                                                    <span class="shown-text">Закрыть Доступ</span>
+                                                                    <span class="hidden-text">Открыть Доступ</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="subscribe-item user-access-item">
+                                                            <div class="rate-avatar">
+                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
+                                                                    <div class="circle"></div>
+                                                                </div>
+                                                                <div class="avatar-user">
+                                                                    <img src="/images/ava1.png" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="name-block">
+                                                                <div class="left-name-b">
+                                                                    <h5><a href="">john.baklan</a></h5>
+                                                                    <div class="date-b">17 дней осталось</div>
+                                                                </div>
+                                                                <div class="right-name-b">
+                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="btn-subscibe-block">
+                                                                <a href="#" class="btn-subscribe">
+                                                                    <span class="shown-text">Закрыть Доступ</span>
+                                                                    <span class="hidden-text">Открыть Доступ</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="subscribe-item user-access-item">
+                                                            <div class="rate-avatar">
+                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
+                                                                    <div class="circle"></div>
+                                                                </div>
+                                                                <div class="avatar-user">
+                                                                    <img src="images/ava3.png" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="name-block">
+                                                                <div class="left-name-b">
+                                                                    <h5><a href="">Alexandr</a></h5>
+                                                                    <div class="date-b">17 дней осталось</div>
+                                                                </div>
+                                                                <div class="right-name-b">
+                                                                    <p>The complexity of mining crypto currency is growing rapidly,
+                                                                        and many crypto-currencies.</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="btn-subscibe-block">
+                                                                <a href="#" class="btn-subscribe">
+                                                                    <span class="shown-text">Закрыть Доступ</span>
+                                                                    <span class="hidden-text">Открыть Доступ</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="subscribe-item user-access-item">
+                                                            <div class="rate-avatar">
+                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
+                                                                    <div class="circle"></div>
+                                                                </div>
+                                                                <div class="avatar-user">
+                                                                    <img src="images/ava3.png" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="name-block">
+                                                                <div class="left-name-b">
+                                                                    <h5><a href="">Alexandr</a></h5>
+                                                                    <div class="date-b">17 дней осталось</div>
+                                                                </div>
+                                                                <div class="right-name-b">
+                                                                    <p>The complexity of mining crypto currency is growing rapidly,
+                                                                        and many crypto-currencies.</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="btn-subscibe-block">
+                                                                <a href="#" class="btn-subscribe">
+                                                                    <span class="shown-text">Закрыть Доступ</span>
+                                                                    <span class="hidden-text">Открыть Доступ</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="subscribe-item user-access-item">
+                                                            <div class="rate-avatar">
+                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
+                                                                    <div class="circle"></div>
+                                                                </div>
+                                                                <div class="avatar-user">
+                                                                    <img src="/images/ava1.png" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="name-block">
+                                                                <div class="left-name-b">
+                                                                    <h5><a href="">john.baklan</a></h5>
+                                                                    <div class="date-b">17 дней осталось</div>
+                                                                </div>
+                                                                <div class="right-name-b">
+                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="btn-subscibe-block">
+                                                                <a href="#" class="btn-subscribe">
+                                                                    <span class="shown-text">Закрыть Доступ</span>
+                                                                    <span class="hidden-text">Открыть Доступ</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="subscribe-item user-access-item">
+                                                            <div class="rate-avatar">
+                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
+                                                                    <div class="circle"></div>
+                                                                </div>
+                                                                <div class="avatar-user">
+                                                                    <img src="/images/ava1.png" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="name-block">
@@ -8541,7 +8541,7 @@ AppAsset::register($this);
                                                                     <div class="circle"></div>
                                                                 </div>
                                                                 <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
+                                                                    <img src="/images/ava1.png" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="name-block">
@@ -8566,109 +8566,7 @@ AppAsset::register($this);
                                                                     <div class="circle"></div>
                                                                 </div>
                                                                 <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
+                                                                    <img src="/images/ava1.png" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="name-block">
@@ -8745,7 +8643,7 @@ AppAsset::register($this);
                                                                     <div class="circle"></div>
                                                                 </div>
                                                                 <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
+                                                                    <img src="/images/ava1.png" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="name-block">
@@ -8770,109 +8668,7 @@ AppAsset::register($this);
                                                                     <div class="circle"></div>
                                                                 </div>
                                                                 <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava3.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">Alexandr</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <p>The complexity of mining crypto currency is growing rapidly,
-                                                                        and many crypto-currencies.</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="name-block">
-                                                                <div class="left-name-b">
-                                                                    <h5><a href="">john.baklan</a></h5>
-                                                                    <div class="date-b">17 дней осталось</div>
-                                                                </div>
-                                                                <div class="right-name-b">
-                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-subscibe-block">
-                                                                <a href="#" class="btn-subscribe opening-succes">
-                                                                    <span class="shown-text">Открыть в ответ</span>
-                                                                    <span class="hidden-text">Открыто</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="subscribe-item user-access-item">
-                                                            <div class="rate-avatar">
-                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
-                                                                    <div class="circle"></div>
-                                                                </div>
-                                                                <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
+                                                                    <img src="/images/ava1.png" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="name-block">
@@ -8949,7 +8745,7 @@ AppAsset::register($this);
                                                                     <div class="circle"></div>
                                                                 </div>
                                                                 <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
+                                                                    <img src="/images/ava1.png" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="name-block">
@@ -8974,7 +8770,7 @@ AppAsset::register($this);
                                                                     <div class="circle"></div>
                                                                 </div>
                                                                 <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
+                                                                    <img src="/images/ava1.png" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="name-block">
@@ -9051,7 +8847,7 @@ AppAsset::register($this);
                                                                     <div class="circle"></div>
                                                                 </div>
                                                                 <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
+                                                                    <img src="/images/ava1.png" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="name-block">
@@ -9076,7 +8872,211 @@ AppAsset::register($this);
                                                                     <div class="circle"></div>
                                                                 </div>
                                                                 <div class="avatar-user">
-                                                                    <img src="images/ava1.png" alt="">
+                                                                    <img src="/images/ava1.png" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="name-block">
+                                                                <div class="left-name-b">
+                                                                    <h5><a href="">john.baklan</a></h5>
+                                                                    <div class="date-b">17 дней осталось</div>
+                                                                </div>
+                                                                <div class="right-name-b">
+                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="btn-subscibe-block">
+                                                                <a href="#" class="btn-subscribe opening-succes">
+                                                                    <span class="shown-text">Открыть в ответ</span>
+                                                                    <span class="hidden-text">Открыто</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="subscribe-item user-access-item">
+                                                            <div class="rate-avatar">
+                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
+                                                                    <div class="circle"></div>
+                                                                </div>
+                                                                <div class="avatar-user">
+                                                                    <img src="images/ava3.png" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="name-block">
+                                                                <div class="left-name-b">
+                                                                    <h5><a href="">Alexandr</a></h5>
+                                                                    <div class="date-b">17 дней осталось</div>
+                                                                </div>
+                                                                <div class="right-name-b">
+                                                                    <p>The complexity of mining crypto currency is growing rapidly,
+                                                                        and many crypto-currencies.</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="btn-subscibe-block">
+                                                                <a href="#" class="btn-subscribe opening-succes">
+                                                                    <span class="shown-text">Открыть в ответ</span>
+                                                                    <span class="hidden-text">Открыто</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="subscribe-item user-access-item">
+                                                            <div class="rate-avatar">
+                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
+                                                                    <div class="circle"></div>
+                                                                </div>
+                                                                <div class="avatar-user">
+                                                                    <img src="images/ava3.png" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="name-block">
+                                                                <div class="left-name-b">
+                                                                    <h5><a href="">Alexandr</a></h5>
+                                                                    <div class="date-b">17 дней осталось</div>
+                                                                </div>
+                                                                <div class="right-name-b">
+                                                                    <p>The complexity of mining crypto currency is growing rapidly,
+                                                                        and many crypto-currencies.</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="btn-subscibe-block">
+                                                                <a href="#" class="btn-subscribe opening-succes">
+                                                                    <span class="shown-text">Открыть в ответ</span>
+                                                                    <span class="hidden-text">Открыто</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="subscribe-item user-access-item">
+                                                            <div class="rate-avatar">
+                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
+                                                                    <div class="circle"></div>
+                                                                </div>
+                                                                <div class="avatar-user">
+                                                                    <img src="/images/ava1.png" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="name-block">
+                                                                <div class="left-name-b">
+                                                                    <h5><a href="">john.baklan</a></h5>
+                                                                    <div class="date-b">17 дней осталось</div>
+                                                                </div>
+                                                                <div class="right-name-b">
+                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="btn-subscibe-block">
+                                                                <a href="#" class="btn-subscribe opening-succes">
+                                                                    <span class="shown-text">Открыть в ответ</span>
+                                                                    <span class="hidden-text">Открыто</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="subscribe-item user-access-item">
+                                                            <div class="rate-avatar">
+                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
+                                                                    <div class="circle"></div>
+                                                                </div>
+                                                                <div class="avatar-user">
+                                                                    <img src="/images/ava1.png" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="name-block">
+                                                                <div class="left-name-b">
+                                                                    <h5><a href="">john.baklan</a></h5>
+                                                                    <div class="date-b">17 дней осталось</div>
+                                                                </div>
+                                                                <div class="right-name-b">
+                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="btn-subscibe-block">
+                                                                <a href="#" class="btn-subscribe opening-succes">
+                                                                    <span class="shown-text">Открыть в ответ</span>
+                                                                    <span class="hidden-text">Открыто</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="subscribe-item user-access-item">
+                                                            <div class="rate-avatar">
+                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
+                                                                    <div class="circle"></div>
+                                                                </div>
+                                                                <div class="avatar-user">
+                                                                    <img src="images/ava3.png" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="name-block">
+                                                                <div class="left-name-b">
+                                                                    <h5><a href="">Alexandr</a></h5>
+                                                                    <div class="date-b">17 дней осталось</div>
+                                                                </div>
+                                                                <div class="right-name-b">
+                                                                    <p>The complexity of mining crypto currency is growing rapidly,
+                                                                        and many crypto-currencies.</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="btn-subscibe-block">
+                                                                <a href="#" class="btn-subscribe opening-succes">
+                                                                    <span class="shown-text">Открыть в ответ</span>
+                                                                    <span class="hidden-text">Открыто</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="subscribe-item user-access-item">
+                                                            <div class="rate-avatar">
+                                                                <div class="circle-wrapper grey-null-full" data-ptc="15">
+                                                                    <div class="circle"></div>
+                                                                </div>
+                                                                <div class="avatar-user">
+                                                                    <img src="images/ava3.png" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="name-block">
+                                                                <div class="left-name-b">
+                                                                    <h5><a href="">Alexandr</a></h5>
+                                                                    <div class="date-b">17 дней осталось</div>
+                                                                </div>
+                                                                <div class="right-name-b">
+                                                                    <p>The complexity of mining crypto currency is growing rapidly,
+                                                                        and many crypto-currencies.</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="btn-subscibe-block">
+                                                                <a href="#" class="btn-subscribe opening-succes">
+                                                                    <span class="shown-text">Открыть в ответ</span>
+                                                                    <span class="hidden-text">Открыто</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="subscribe-item user-access-item">
+                                                            <div class="rate-avatar">
+                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
+                                                                    <div class="circle"></div>
+                                                                </div>
+                                                                <div class="avatar-user">
+                                                                    <img src="/images/ava1.png" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="name-block">
+                                                                <div class="left-name-b">
+                                                                    <h5><a href="">john.baklan</a></h5>
+                                                                    <div class="date-b">17 дней осталось</div>
+                                                                </div>
+                                                                <div class="right-name-b">
+                                                                    <textarea class="add-notification" placeholder="Добавить заметку до 100 символов"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="btn-subscibe-block">
+                                                                <a href="#" class="btn-subscribe opening-succes">
+                                                                    <span class="shown-text">Открыть в ответ</span>
+                                                                    <span class="hidden-text">Открыто</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="subscribe-item user-access-item">
+                                                            <div class="rate-avatar">
+                                                                <div class="circle-wrapper grey-null-full" data-ptc="21">
+                                                                    <div class="circle"></div>
+                                                                </div>
+                                                                <div class="avatar-user">
+                                                                    <img src="/images/ava1.png" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="name-block">
