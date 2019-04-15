@@ -1,22 +1,6 @@
-«А вы все-таки пишите... возьмите хорошенькое перышко, хорошенько его очините, 
-положите перед собой лист бумаги и начните таким образом: «мне сегодня что-то не пишется».
- Напишите это много раз кряду, и вдруг вам придет хорошая мысль в голову!
-  За ней другая, третья, ведь иначе никто не пишет, и люди, обуреваемые постоянным вдохновением, редки, username!»
-  
-  
- пока не пофиксил ВАЖНО
-  после компосера нужно менять в 
- 1)
-  vendor/snapget/yii2-news/models/News.php 
- //use mongosoft\file\UploadBehavior;
- use mohorev\file\UploadBehavior; 
+
+
  
- 2)
-   C:/OSPanel/domains/atimur/loto/lotoproduction/vendor/snapget/yii2-news/models/NewsCategory.php
-   добавит поле
-   public $child_allowed=true;
- 
-  
   
 --- перезиписовано
 http://localhost35/uregistration/register   // форма регистрации  
