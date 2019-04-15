@@ -333,7 +333,7 @@ $count=Yii::$app->db->createCommand("select COUNT(subquery.user_id) FROM
         $lastLastWeek= date('Y-m-d H:i:s',strtotime('last monday'));
         // fix если щас понедельник
         yii::error(['w22'=>date('w')]);
-        if(date('w')===1)    $lastLastWeek= date("Y-m-d 00:00:00");
+        if(date('w')==='1')    $lastLastWeek= date("Y-m-d 00:00:00");
         //          2019-04-05
     if(isset($params['dtop'])){
         $lastWeek = $params['dtop'];
