@@ -1167,7 +1167,7 @@ $accessInfoAccount;
                                     </div>
                                     <div class="chanel-info">
                                         <div class="icon-chanel-info">
-                                            <img src="images/message-chanel.svg" alt="">
+                                            <img src="/images/message-chanel.svg" alt="">
                                         </div>
                                         <h4>Что Такое канал?</h4>
                                         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
