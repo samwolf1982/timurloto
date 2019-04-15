@@ -1,7 +1,5 @@
 
-test
-test 2
- 
+
   
 --- перезиписано
 http://localhost35/uregistration/register   // форма регистрации  
