@@ -269,7 +269,7 @@ use yii\helpers\Url;
 
                             <?php } ?>
                             <iframe width="560" height="315" src="https://www.youtube.com/embed/TxsqgQJLyi0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <div class="cover-video__t" style="background-image: url(images/video-1@2x.png2)">
+                            <div class="cover-video__t" style="background-image: url(/images/video-1@2x.png)">
                                 <a href="#" class="round-play" data-toggle="modal" data-target="#main-video">
                                     <span class="icon-play"></span>
                                 </a>
