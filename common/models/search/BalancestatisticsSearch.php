@@ -239,7 +239,7 @@ class BalancestatisticsSearch extends Balancestatistics
 //        2020-08-22 01:19:58
         $lastWeek    = date('Y-m-d H:i:s',strtotime('last monday'));
         $lastLastWeek= date('Y-m-d H:i:s',strtotime('last monday -7 days'));
-die();
+
         // fix если щас понедельник
         //if(date('w')===1)   { $lastWeek= date("Y-m-d 00:00:00");   }
 
@@ -332,6 +332,7 @@ $count=Yii::$app->db->createCommand("select COUNT(subquery.user_id) FROM
         $lastWeek    = date('Y-m-d H:i:s');
         $lastLastWeek= date('Y-m-d H:i:s',strtotime('last monday'));
         // fix если щас понедельник
+        yii::error(['w22'=>date('w')]);
         if(date('w')===1)    $lastLastWeek= date("Y-m-d 00:00:00");
         //          2019-04-05
     if(isset($params['dtop'])){
