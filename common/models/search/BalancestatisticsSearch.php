@@ -239,7 +239,7 @@ class BalancestatisticsSearch extends Balancestatistics
 //        2020-08-22 01:19:58
         $lastWeek    = date('Y-m-d H:i:s',strtotime('last monday'));
         $lastLastWeek= date('Y-m-d H:i:s',strtotime('last monday -7 days'));
-
+die();
         // fix если щас понедельник
         //if(date('w')===1)   { $lastWeek= date("Y-m-d 00:00:00");   }
 
