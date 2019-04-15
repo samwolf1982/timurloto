@@ -396,7 +396,7 @@ $accessInfoAccount;
                         <div class="right-side-login small-side-login">
                             <div class="right-side-inner">
                                 <div class="logo-popup">
-                                    <img src="images/logo_red.svg" alt="">
+                                    <img src="/images/logo_red.svg" alt="">
                                 </div>
                                 <div class="text-left">
                                     <p>Look My Bet - Первая социальная сеть в СНГ для
