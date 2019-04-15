@@ -2,7 +2,7 @@
 
  
   
---- перезиписавано
+--- перезиписано
 http://localhost35/uregistration/register   // форма регистрации  
   
   
