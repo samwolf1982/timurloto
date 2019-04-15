@@ -67,7 +67,7 @@ $accessInfoAccount
 
 <div class="main-background">
     <div id="scene">
-        <div data-depth="0.2" class="background-image" style="background-image: url(images/back-body.jpg)"></div>
+        <div data-depth="0.2" class="background-image" style="background-image: url(/images/back-body.jpg)"></div>
     </div>
 </div>
 
