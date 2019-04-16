@@ -79,6 +79,7 @@ BetAsset::register($this);
 
 
                                             <?php if( Yii::$app->params['showErrorOnPage404'] ): ?>
+                <!--  отображение ошыбок на сайте только для администратора или быстрого дебага  -->
                                                 <div class="wraperrormessage">
                                                     <?= Yii::$app->errorHandler->exception; ?>
                                                 </div>
