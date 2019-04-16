@@ -17,14 +17,14 @@ class AppAsset extends AssetBundle
         'css/main.min.css',
         'css/globalfix.css',
         'js/libs/custombox-master/custombox-master/dist/custombox.min.css',
+        'css/somefile.css'
     ];
     public $js = [
-      //  '//cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js'
-        //'js/libs/sticky-js-master/sticky-js-master/dist/sticky.min.js',
-      //  'js/libs/sticky-master/sticky-master/jquery.sticky.js',
+
         'js/libs/custombox-master/custombox-master/dist/custombox.min.js',
         'js/libs/loadModalAjax.js',
         '//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js',
+        'js/some.js',
         ];
     public $depends = [
         'yii\web\YiiAsset',
