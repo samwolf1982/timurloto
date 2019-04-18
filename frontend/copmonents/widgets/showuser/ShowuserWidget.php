@@ -40,9 +40,6 @@ class ShowuserWidget extends Widget
 
         }
 
-//var_dump(        $username=Yii::$app->user->identity); die();
-
-//var_dump($this->view); die();
         return       $this->render($this->view, ['username' => $username,'userimage'=>$userimage,'isGuest'=>Yii::$app->user->isGuest,'useremail'=>$useremail]);
       //  return       $this->render('index', array('username' => $username,'userimage'=>$userimage));
     }
