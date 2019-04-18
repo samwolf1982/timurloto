@@ -24,7 +24,7 @@ use frontend\assets\DashboardAsset;
         </div>
         <div class="logo-block">
             <a href="/">
-                <img src="images/logo.svg" alt="Look My bet">
+                <img src="/images/logo.svg" alt="Look My bet">
             </a>
         </div>
         <div class="search-block">
@@ -145,7 +145,7 @@ use frontend\assets\DashboardAsset;
                                         <div class="circle"></div>
                                     </div>
                                     <div class="avatar-user">
-                                        <img src="images/ava3.png" alt="">
+                                        <img src="/images/ava3.png" alt="">
                                     </div>
                                 </div>
                                 <div class="user-info">
@@ -351,7 +351,7 @@ use frontend\assets\DashboardAsset;
                                         <div class="circle"></div>
                                     </div>
                                     <div class="avatar-user">
-                                        <img src="images/ava5.png" alt="">
+                                        <img src="/images/ava5.png" alt="">
                                     </div>
                                 </div>
                                 <div class="user-info">

@@ -36,7 +36,7 @@
                            <div class="top-item-inner">
                                <div class="image-block" style="background-image: url(images/top-list-1.png)">
                                    <div class="label-ligue">
-                                       <img src="images/ligue-img1.png" alt="">
+                                       <img src="/images/ligue-img1.png" alt="">
                                    </div>
                                </div>
                                <div class="content-top-block" data-parents="ps1">
@@ -78,7 +78,7 @@
                            <div class="top-item-inner">
                                <div class="image-block" style="background-image: url(images/top-list-2.png)">
                                    <div class="label-ligue">
-                                       <img src="images/ligue-img2.png" alt="">
+                                       <img src="/images/ligue-img2.png" alt="">
                                    </div>
                                </div>
                                <div class="content-top-block" data-parents="ps2">
@@ -115,7 +115,7 @@
                            <div class="top-item-inner">
                                <div class="image-block" style="background-image: url(images/top-list-3.png)">
                                    <div class="label-ligue">
-                                       <img src="images/ligue-img3.png" alt="">
+                                       <img src="/images/ligue-img3.png" alt="">
                                    </div>
                                </div>
                                <div class="content-top-block" data-parents="ps3">
@@ -157,7 +157,7 @@
                            <div class="top-item-inner">
                                <div class="image-block" style="background-image: url(images/top-list-1.png)">
                                    <div class="label-ligue">
-                                       <img src="images/ligue-img1.png" alt="">
+                                       <img src="/images/ligue-img1.png" alt="">
                                    </div>
                                </div>
                                <div class="content-top-block" data-parents="ps1">
@@ -199,7 +199,7 @@
                            <div class="top-item-inner">
                                <div class="image-block" style="background-image: url(images/top-list-2.png)">
                                    <div class="label-ligue">
-                                       <img src="images/ligue-img2.png" alt="">
+                                       <img src="/images/ligue-img2.png" alt="">
                                    </div>
                                </div>
                                <div class="content-top-block" data-parents="ps2">
@@ -236,7 +236,7 @@
                            <div class="top-item-inner">
                                <div class="image-block" style="background-image: url(images/top-list-3.png)">
                                    <div class="label-ligue">
-                                       <img src="images/ligue-img3.png" alt="">
+                                       <img src="/images/ligue-img3.png" alt="">
                                    </div>
                                </div>
                                <div class="content-top-block" data-parents="ps3">
@@ -278,7 +278,7 @@
                            <div class="top-item-inner">
                                <div class="image-block" style="background-image: url(images/top-list-1.png)">
                                    <div class="label-ligue">
-                                       <img src="images/ligue-img1.png" alt="">
+                                       <img src="/images/ligue-img1.png" alt="">
                                    </div>
                                </div>
                                <div class="content-top-block" data-parents="ps1">
@@ -320,7 +320,7 @@
                            <div class="top-item-inner">
                                <div class="image-block" style="background-image: url(images/top-list-2.png)">
                                    <div class="label-ligue">
-                                       <img src="images/ligue-img2.png" alt="">
+                                       <img src="/images/ligue-img2.png" alt="">
                                    </div>
                                </div>
                                <div class="content-top-block" data-parents="ps2">
@@ -357,7 +357,7 @@
                            <div class="top-item-inner">
                                <div class="image-block" style="background-image: url(images/top-list-3.png)">
                                    <div class="label-ligue">
-                                       <img src="images/ligue-img3.png" alt="">
+                                       <img src="/images/ligue-img3.png" alt="">
                                    </div>
                                </div>
                                <div class="content-top-block" data-parents="ps3">
@@ -399,7 +399,7 @@
                            <div class="top-item-inner">
                                <div class="image-block" style="background-image: url(images/top-list-1.png)">
                                    <div class="label-ligue">
-                                       <img src="images/ligue-img1.png" alt="">
+                                       <img src="/images/ligue-img1.png" alt="">
                                    </div>
                                </div>
                                <div class="content-top-block" data-parents="ps1">
@@ -441,7 +441,7 @@
                            <div class="top-item-inner">
                                <div class="image-block" style="background-image: url(images/top-list-2.png)">
                                    <div class="label-ligue">
-                                       <img src="images/ligue-img2.png" alt="">
+                                       <img src="/images/ligue-img2.png" alt="">
                                    </div>
                                </div>
                                <div class="content-top-block" data-parents="ps2">
@@ -478,7 +478,7 @@
                            <div class="top-item-inner">
                                <div class="image-block" style="background-image: url(images/top-list-3.png)">
                                    <div class="label-ligue">
-                                       <img src="images/ligue-img3.png" alt="">
+                                       <img src="/images/ligue-img3.png" alt="">
                                    </div>
                                </div>
                                <div class="content-top-block" data-parents="ps3">

@@ -42,7 +42,7 @@ class HtmlGenerator
             $res.='<li class="">
                                 <a href="#" class="trigger-sub-collapse" data-id="'.$el->category_id.'">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                     '.$el->category_name.'
                                 </a>

@@ -13,7 +13,7 @@
         <div class="header-inner">
             <div class="logo-block">
                 <a href="/">
-                    <img src="images/logo.svg" alt="Look My bet">
+                    <img src="/images/logo.svg" alt="Look My bet">
                 </a>
             </div>
             <div class="menu-block">
@@ -326,7 +326,7 @@
                                                 <div class="review-inner">
                                                     <div class="avatar-block">
                                                         <div class="avatar">
-                                                            <img src="images/ava2.png" alt="">
+                                                            <img src="/images/ava2.png" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="text-review">
@@ -341,7 +341,7 @@
                                                 <div class="review-inner">
                                                     <div class="avatar-block">
                                                         <div class="avatar">
-                                                            <img src="images/ava3.png" alt="">
+                                                            <img src="/images/ava3.png" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="text-review">
@@ -356,7 +356,7 @@
                                                 <div class="review-inner">
                                                     <div class="avatar-block">
                                                         <div class="avatar">
-                                                            <img src="images/ava4.png" alt="">
+                                                            <img src="/images/ava4.png" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="text-review">
@@ -371,7 +371,7 @@
                                                 <div class="review-inner">
                                                     <div class="avatar-block">
                                                         <div class="avatar">
-                                                            <img src="images/ava3.png" alt="">
+                                                            <img src="/images/ava3.png" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="text-review">
@@ -386,37 +386,7 @@
                                                 <div class="review-inner">
                                                     <div class="avatar-block">
                                                         <div class="avatar">
-                                                            <img src="images/ava2.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="text-review">
-                                                        <h4>john.wick.49</h4>
-                                                        <p>Уже 47 лет зависаю на look my bet. Очень крутая
-                                                            социальная сеть, где можно заработать денег,
-                                                            не рискуя своими.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item-rev">
-                                                <div class="review-inner">
-                                                    <div class="avatar-block">
-                                                        <div class="avatar">
-                                                            <img src="/images/ava1.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="text-review">
-                                                        <h4>john.wick.49</h4>
-                                                        <p>Уже 47 лет зависаю на look my bet. Очень крутая
-                                                            социальная сеть, где можно заработать денег,
-                                                            не рискуя своими.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item-rev">
-                                                <div class="review-inner">
-                                                    <div class="avatar-block">
-                                                        <div class="avatar">
-                                                            <img src="images/ava4.png" alt="">
+                                                            <img src="/images/ava2.png" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="text-review">
@@ -446,7 +416,7 @@
                                                 <div class="review-inner">
                                                     <div class="avatar-block">
                                                         <div class="avatar">
-                                                            <img src="images/ava4.png" alt="">
+                                                            <img src="/images/ava4.png" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="text-review">
@@ -461,7 +431,7 @@
                                                 <div class="review-inner">
                                                     <div class="avatar-block">
                                                         <div class="avatar">
-                                                            <img src="images/ava3.png" alt="">
+                                                            <img src="/images/ava1.png" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="text-review">
@@ -476,7 +446,37 @@
                                                 <div class="review-inner">
                                                     <div class="avatar-block">
                                                         <div class="avatar">
-                                                            <img src="images/ava2.png" alt="">
+                                                            <img src="/images/ava4.png" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-review">
+                                                        <h4>john.wick.49</h4>
+                                                        <p>Уже 47 лет зависаю на look my bet. Очень крутая
+                                                            социальная сеть, где можно заработать денег,
+                                                            не рискуя своими.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item-rev">
+                                                <div class="review-inner">
+                                                    <div class="avatar-block">
+                                                        <div class="avatar">
+                                                            <img src="/images/ava3.png" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-review">
+                                                        <h4>john.wick.49</h4>
+                                                        <p>Уже 47 лет зависаю на look my bet. Очень крутая
+                                                            социальная сеть, где можно заработать денег,
+                                                            не рискуя своими.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item-rev">
+                                                <div class="review-inner">
+                                                    <div class="avatar-block">
+                                                        <div class="avatar">
+                                                            <img src="/images/ava2.png" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="text-review">
@@ -518,7 +518,7 @@
                         <div class="main-footer-inner">
                             <div class="logo-footer">
                                 <a href="/">
-                                    <img src="images/logo.svg" alt="Look My Bet">
+                                    <img src="/images/logo.svg" alt="Look My Bet">
                                 </a>
                             </div>
                             <div class="menu-footer">

@@ -3,7 +3,7 @@
     <div class="header-inner">
         <div class="logo-block">
             <a href="/">
-                <img src="images/logo.svg" alt="Look My bet">
+                <img src="/images/logo.svg" alt="Look My bet">
             </a>
         </div>
         <div class="search-block">
@@ -49,7 +49,7 @@
                                     <a href="#" class="drop-link">
                                         <div class="drop-avatar">
                                             <div class="drop-avatar-inner">
-                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                <img src="/images/avatar-placeholder.svg" alt="">
                                             </div>
                                         </div>
                                         <div class="drop-item-info">
@@ -67,7 +67,7 @@
                                     <a href="#" class="drop-link">
                                         <div class="drop-avatar">
                                             <div class="drop-avatar-inner">
-                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                <img src="/images/avatar-placeholder.svg" alt="">
                                             </div>
                                         </div>
                                         <div class="drop-item-info">
@@ -108,7 +108,7 @@
                                         <div class="drop-avatar">
                                             <span class="count-massage">5</span>
                                             <div class="drop-avatar-inner">
-                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                <img src="/images/avatar-placeholder.svg" alt="">
                                             </div>
                                         </div>
                                         <div class="drop-item-info">
@@ -128,7 +128,7 @@
                                         <div class="drop-avatar">
                                             <span class="count-massage">3</span>
                                             <div class="drop-avatar-inner">
-                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                <img src="/images/avatar-placeholder.svg" alt="">
                                             </div>
                                         </div>
                                         <div class="drop-item-info">
@@ -150,7 +150,7 @@
                 <div class="avatar__user-block drop-menu">
                     <a href="#" class="avatar__user drop-menu-trigger">
                             <span class="avatar__user-inner">
-                                <img src="images/ava_top@2x.png" alt="">
+                                <img src="/images/ava_top@2x.png" alt="">
                             </span>
                     </a>
                     <div class="drop-wrapper drop-wrapper-small">
@@ -160,7 +160,7 @@
                                     <div class="drop-link">
                                         <div class="drop-avatar">
                                             <div class="drop-avatar-inner">
-                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                <img src="/images/avatar-placeholder.svg" alt="">
                                             </div>
                                         </div>
                                         <div class="drop-item-info">
@@ -241,9 +241,9 @@
                                 <label class="title-row">Часто используемые букмекеры</label>
                                 <div class="select-book-row">
                                     <div class="selected-book">
-                                        <img src="images/1xbet.png" alt="">
-                                        <img src="images/leon.png" alt="">
-                                        <img src="images/parimatch.png" alt="">
+                                        <img src="/images/1xbet.png" alt="">
+                                        <img src="/images/leon.png" alt="">
+                                        <img src="/images/parimatch.png" alt="">
                                     </div>
                                     <div class="select-book-btn">
                                         <a href="#" class="select-btn-plus" data-toggle="modal" data-target="#modal-choose-bet"></a>
@@ -270,7 +270,7 @@
     <div class="main-footer-inner">
         <div class="logo-footer">
             <a href="/">
-                <img src="images/logo.svg" alt="Look My Bet">
+                <img src="/images/logo.svg" alt="Look My Bet">
             </a>
         </div>
         <div class="menu-footer">
@@ -361,7 +361,7 @@
                                                     <div class="avatar-chat">
                                                         <div class="count-message-chat">5</div>
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -394,7 +394,7 @@
                                                 <div data-toggle="#chat2" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -427,7 +427,7 @@
                                                 <div data-toggle="#chat3" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -461,7 +461,7 @@
 
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -494,7 +494,7 @@
                                                 <div data-toggle="#chat5" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -527,7 +527,7 @@
                                                 <div data-toggle="#chat6" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -560,7 +560,7 @@
                                                 <div data-toggle="#chat7" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -593,7 +593,7 @@
                                                 <div data-toggle="#chat8" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -626,7 +626,7 @@
                                                 <div data-toggle="#chat9" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -659,7 +659,7 @@
                                                 <div data-toggle="#chat10" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -692,7 +692,7 @@
                                                 <div data-toggle="#chat11" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -725,7 +725,7 @@
                                                 <div data-toggle="#chat12" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -758,7 +758,7 @@
                                                 <div data-toggle="#chat13" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -791,7 +791,7 @@
                                                 <div data-toggle="#chat14" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -824,7 +824,7 @@
                                                 <div data-toggle="#chat15" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -857,7 +857,7 @@
                                                 <div data-toggle="#chat16" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -890,7 +890,7 @@
                                                 <div data-toggle="#chat17" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -923,7 +923,7 @@
                                                 <div data-toggle="#chat18" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -956,7 +956,7 @@
                                                 <div data-toggle="#chat19" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -989,7 +989,7 @@
                                                 <div data-toggle="#chat20" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -1085,7 +1085,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1102,7 +1102,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1118,7 +1118,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1135,7 +1135,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1151,7 +1151,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1168,7 +1168,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1184,7 +1184,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1201,7 +1201,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1217,7 +1217,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1234,7 +1234,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1250,7 +1250,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1267,7 +1267,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1283,7 +1283,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1300,7 +1300,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1316,7 +1316,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1333,7 +1333,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1349,7 +1349,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1366,7 +1366,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1401,7 +1401,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1418,7 +1418,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1434,7 +1434,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1451,7 +1451,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1467,7 +1467,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1484,7 +1484,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1500,7 +1500,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1517,7 +1517,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1533,7 +1533,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1550,7 +1550,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1566,7 +1566,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1583,7 +1583,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1599,7 +1599,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1616,7 +1616,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1632,7 +1632,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1649,7 +1649,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1665,7 +1665,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1682,7 +1682,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1716,7 +1716,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1733,7 +1733,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1749,7 +1749,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1766,7 +1766,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1782,7 +1782,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1799,7 +1799,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1815,7 +1815,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1832,7 +1832,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1848,7 +1848,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1865,7 +1865,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1881,7 +1881,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1898,7 +1898,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1914,7 +1914,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1931,7 +1931,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1947,7 +1947,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1964,7 +1964,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1980,7 +1980,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1997,7 +1997,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2031,7 +2031,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2048,7 +2048,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2064,7 +2064,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2081,7 +2081,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2097,7 +2097,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2114,7 +2114,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2130,7 +2130,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2147,7 +2147,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2163,7 +2163,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2180,7 +2180,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2196,7 +2196,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2213,7 +2213,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2229,7 +2229,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2246,7 +2246,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2262,7 +2262,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2279,7 +2279,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2295,7 +2295,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2312,7 +2312,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2346,7 +2346,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2363,7 +2363,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2379,7 +2379,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2396,7 +2396,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2412,7 +2412,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2429,7 +2429,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2445,7 +2445,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2462,7 +2462,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2478,7 +2478,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2495,7 +2495,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2511,7 +2511,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2528,7 +2528,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2544,7 +2544,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2561,7 +2561,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2577,7 +2577,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2594,7 +2594,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2610,7 +2610,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2627,7 +2627,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2661,7 +2661,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2678,7 +2678,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2694,7 +2694,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2711,7 +2711,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2727,7 +2727,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2744,7 +2744,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2760,7 +2760,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2777,7 +2777,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2793,7 +2793,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2810,7 +2810,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2826,7 +2826,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2843,7 +2843,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2859,7 +2859,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2876,7 +2876,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2892,7 +2892,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2909,7 +2909,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2925,7 +2925,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2942,7 +2942,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2976,7 +2976,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2993,7 +2993,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3009,7 +3009,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3026,7 +3026,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3042,7 +3042,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3059,7 +3059,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3075,7 +3075,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3092,7 +3092,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3108,7 +3108,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3125,7 +3125,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3141,7 +3141,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3158,7 +3158,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3174,7 +3174,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3191,7 +3191,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3207,7 +3207,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3224,7 +3224,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3240,7 +3240,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3257,7 +3257,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3291,7 +3291,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3308,7 +3308,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3324,7 +3324,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3341,7 +3341,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3357,7 +3357,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3374,7 +3374,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3390,7 +3390,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3407,7 +3407,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3423,7 +3423,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3440,7 +3440,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3456,7 +3456,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3473,7 +3473,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3489,7 +3489,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3506,7 +3506,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3522,7 +3522,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3539,7 +3539,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3555,7 +3555,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3572,7 +3572,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3606,7 +3606,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3623,7 +3623,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3639,7 +3639,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3656,7 +3656,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3672,7 +3672,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3689,7 +3689,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3705,7 +3705,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3722,7 +3722,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3738,7 +3738,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3755,7 +3755,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3771,7 +3771,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3788,7 +3788,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3804,7 +3804,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3821,7 +3821,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3837,7 +3837,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3854,7 +3854,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3870,7 +3870,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3887,7 +3887,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3921,7 +3921,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3938,7 +3938,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3954,7 +3954,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3971,7 +3971,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3987,7 +3987,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4004,7 +4004,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4020,7 +4020,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4037,7 +4037,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4053,7 +4053,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4070,7 +4070,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4086,7 +4086,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4103,7 +4103,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4119,7 +4119,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4136,7 +4136,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4152,7 +4152,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4169,7 +4169,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4185,7 +4185,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4202,7 +4202,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4236,7 +4236,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4253,7 +4253,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4269,7 +4269,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4286,7 +4286,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4302,7 +4302,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4319,7 +4319,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4335,7 +4335,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4352,7 +4352,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4368,7 +4368,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4385,7 +4385,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4401,7 +4401,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4418,7 +4418,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4434,7 +4434,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4451,7 +4451,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4467,7 +4467,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4484,7 +4484,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4500,7 +4500,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4517,7 +4517,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4551,7 +4551,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4568,7 +4568,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4584,7 +4584,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4601,7 +4601,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4617,7 +4617,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4634,7 +4634,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4650,7 +4650,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4667,7 +4667,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4683,7 +4683,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4700,7 +4700,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4716,7 +4716,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4733,7 +4733,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4749,7 +4749,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4766,7 +4766,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4782,7 +4782,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4799,7 +4799,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4815,7 +4815,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4832,7 +4832,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4866,7 +4866,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4883,7 +4883,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4899,7 +4899,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4916,7 +4916,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4932,7 +4932,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4949,7 +4949,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4965,7 +4965,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4982,7 +4982,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4998,7 +4998,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5015,7 +5015,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5031,7 +5031,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5048,7 +5048,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5064,7 +5064,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5081,7 +5081,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5097,7 +5097,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5114,7 +5114,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5130,7 +5130,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5147,7 +5147,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5181,7 +5181,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5198,7 +5198,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5214,7 +5214,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5231,7 +5231,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5247,7 +5247,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5264,7 +5264,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5280,7 +5280,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5297,7 +5297,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5313,7 +5313,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5330,7 +5330,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5346,7 +5346,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5363,7 +5363,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5379,7 +5379,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5396,7 +5396,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5412,7 +5412,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5429,7 +5429,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5445,7 +5445,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5462,7 +5462,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5496,7 +5496,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5513,7 +5513,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5529,7 +5529,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5546,7 +5546,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5562,7 +5562,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5579,7 +5579,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5595,7 +5595,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5612,7 +5612,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5628,7 +5628,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5645,7 +5645,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5661,7 +5661,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5678,7 +5678,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5694,7 +5694,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5711,7 +5711,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5727,7 +5727,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5744,7 +5744,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5760,7 +5760,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5777,7 +5777,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5811,7 +5811,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5828,7 +5828,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5844,7 +5844,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5861,7 +5861,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5877,7 +5877,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5894,7 +5894,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5910,7 +5910,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5927,7 +5927,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5943,7 +5943,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5960,7 +5960,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5976,7 +5976,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5993,7 +5993,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6009,7 +6009,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6026,7 +6026,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6042,7 +6042,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6059,7 +6059,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6075,7 +6075,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6092,7 +6092,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6126,7 +6126,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6143,7 +6143,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6159,7 +6159,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6176,7 +6176,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6192,7 +6192,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6209,7 +6209,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6225,7 +6225,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6242,7 +6242,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6258,7 +6258,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6275,7 +6275,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6291,7 +6291,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6308,7 +6308,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6324,7 +6324,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6341,7 +6341,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6357,7 +6357,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6374,7 +6374,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6390,7 +6390,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6407,7 +6407,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6441,7 +6441,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6458,7 +6458,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6474,7 +6474,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6491,7 +6491,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6507,7 +6507,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6524,7 +6524,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6540,7 +6540,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6557,7 +6557,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6573,7 +6573,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6590,7 +6590,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6606,7 +6606,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6623,7 +6623,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6639,7 +6639,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6656,7 +6656,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6672,7 +6672,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6689,7 +6689,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6705,7 +6705,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6722,7 +6722,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6756,7 +6756,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6773,7 +6773,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6789,7 +6789,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6806,7 +6806,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6822,7 +6822,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6839,7 +6839,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6855,7 +6855,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6872,7 +6872,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6888,7 +6888,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6905,7 +6905,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6921,7 +6921,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6938,7 +6938,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6954,7 +6954,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6971,7 +6971,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6987,7 +6987,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7004,7 +7004,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7020,7 +7020,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7037,7 +7037,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7071,7 +7071,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7088,7 +7088,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7104,7 +7104,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7121,7 +7121,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7137,7 +7137,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7154,7 +7154,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7170,7 +7170,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7187,7 +7187,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7203,7 +7203,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7220,7 +7220,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7236,7 +7236,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7253,7 +7253,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7269,7 +7269,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7286,7 +7286,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7302,7 +7302,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7319,7 +7319,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7335,7 +7335,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7352,7 +7352,7 @@
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7565,7 +7565,7 @@
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b1">
                                                 <label for="b1">
-                                                    <img src="images/b1.png" alt="">
+                                                    <img src="/images/b1.png" alt="">
                                                     <span>1x bet</span>
                                                 </label>
                                             </div>
@@ -7574,7 +7574,7 @@
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b2">
                                                 <label for="b2">
-                                                    <img src="images/b2.png" alt="">
+                                                    <img src="/images/b2.png" alt="">
                                                     <span>БК Leon</span>
                                                 </label>
                                             </div>
@@ -7583,7 +7583,7 @@
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b3">
                                                 <label for="b3">
-                                                    <img src="images/b3.png" alt="">
+                                                    <img src="/images/b3.png" alt="">
                                                     <span>Пари Матч</span>
                                                 </label>
                                             </div>
@@ -7592,7 +7592,7 @@
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b4">
                                                 <label for="b4">
-                                                    <img src="images/b1.png" alt="">
+                                                    <img src="/images/b1.png" alt="">
                                                     <span>1x bet</span>
                                                 </label>
                                             </div>
@@ -7601,7 +7601,7 @@
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b5">
                                                 <label for="b5">
-                                                    <img src="images/b2.png" alt="">
+                                                    <img src="/images/b2.png" alt="">
                                                     <span>БК Leon</span>
                                                 </label>
                                             </div>
@@ -7610,7 +7610,7 @@
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b6">
                                                 <label for="b6">
-                                                    <img src="images/b3.png" alt="">
+                                                    <img src="/images/b3.png" alt="">
                                                     <span>Пари Матч</span>
                                                 </label>
                                             </div>
@@ -7621,7 +7621,7 @@
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b111">
                                                 <label for="b111">
-                                                    <img src="images/b1.png" alt="">
+                                                    <img src="/images/b1.png" alt="">
                                                     <span>1x bet</span>
                                                 </label>
                                             </div>
@@ -7630,7 +7630,7 @@
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b112">
                                                 <label for="b112">
-                                                    <img src="images/b2.png" alt="">
+                                                    <img src="/images/b2.png" alt="">
                                                     <span>БК Leon</span>
                                                 </label>
                                             </div>
@@ -7639,7 +7639,7 @@
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b113">
                                                 <label for="b113">
-                                                    <img src="images/b3.png" alt="">
+                                                    <img src="/images/b3.png" alt="">
                                                     <span>Пари Матч</span>
                                                 </label>
                                             </div>
@@ -7648,7 +7648,7 @@
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b114">
                                                 <label for="b114">
-                                                    <img src="images/b1.png" alt="">
+                                                    <img src="/images/b1.png" alt="">
                                                     <span>1x bet</span>
                                                 </label>
                                             </div>
@@ -7657,7 +7657,7 @@
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b115">
                                                 <label for="b115">
-                                                    <img src="images/b2.png" alt="">
+                                                    <img src="/images/b2.png" alt="">
                                                     <span>БК Leon</span>
                                                 </label>
                                             </div>
@@ -7666,7 +7666,7 @@
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b116">
                                                 <label for="b116">
-                                                    <img src="images/b3.png" alt="">
+                                                    <img src="/images/b3.png" alt="">
                                                     <span>Пари Матч</span>
                                                 </label>
                                             </div>
@@ -7677,7 +7677,7 @@
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b121">
                                                 <label for="b121">
-                                                    <img src="images/b1.png" alt="">
+                                                    <img src="/images/b1.png" alt="">
                                                     <span>1x bet</span>
                                                 </label>
                                             </div>
@@ -7686,7 +7686,7 @@
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b122">
                                                 <label for="b122">
-                                                    <img src="images/b2.png" alt="">
+                                                    <img src="/images/b2.png" alt="">
                                                     <span>БК Leon</span>
                                                 </label>
                                             </div>
@@ -7695,7 +7695,7 @@
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b123">
                                                 <label for="b123">
-                                                    <img src="images/b3.png" alt="">
+                                                    <img src="/images/b3.png" alt="">
                                                     <span>Пари Матч</span>
                                                 </label>
                                             </div>
@@ -7704,7 +7704,7 @@
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b124">
                                                 <label for="b124">
-                                                    <img src="images/b1.png" alt="">
+                                                    <img src="/images/b1.png" alt="">
                                                     <span>1x bet</span>
                                                 </label>
                                             </div>

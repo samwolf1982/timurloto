@@ -176,7 +176,7 @@ var DashboardCategory={
             $('#child_colapse_'+$(el).data('id')).append('    <li class="">\n' +
                 '            <a href="#" class="trigger-sub-collapse flevel" data-id="'+e.id+'">\n' +
                 '            <span class="flag">\n' +
-                '            <img src="images/ua.png" alt="">\n' +
+                '            <img src="/images/ua.png" alt="">\n' +
              //   '            </span>\n' + e.name.substr(0, 26) +'        </a>\n' +
                 '            </span>\n' + e.name +'        </a>\n' +
                 '        <div class="sub-collapse">\n' +

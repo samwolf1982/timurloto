@@ -13,7 +13,7 @@ use yii\helpers\Url;
             <div class="table-inner">
                 <div class="table-head head-with-tabs head-w_playlist">
                     <div class="tbl-icon">
-                        <img src="images/stats.svg" alt="">
+                        <img src="/images/stats.svg" alt="">
                     </div>
                     <div class="left-head-text">
                         <span class="text-head">Статистика</span>

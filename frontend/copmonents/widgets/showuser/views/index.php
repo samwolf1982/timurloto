@@ -6,9 +6,6 @@
 
    ?>
 
-
-
-
         <div class="user-block">
 
             <div class="user-inner">

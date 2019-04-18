@@ -28,7 +28,7 @@ class AccountIndexAsset extends AssetBundle
         'dist/js/subsribe.min.js',// открыть доступ закрыть
     ];
     public $depends = [
-      // 'frontend\assets\AppAsset',
+       'frontend\assets\AppAsset',
        //'yii\web\JqueryAsset',
        // 'yii\web\YiiAsset',
         // 'frontend\assets\AppAssetjsendpage',

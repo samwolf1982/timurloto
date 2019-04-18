@@ -57,7 +57,7 @@
                        <li class="">
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Европа
                            </a>
@@ -75,7 +75,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Южная Америка
                            </a>
@@ -92,7 +92,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/en.png" alt="">
+                                                        <img src="/images/en.png" alt="">
                                                     </span>
                                Азия
                            </a>
@@ -109,7 +109,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Украина
                            </a>
@@ -126,7 +126,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Испания
                            </a>
@@ -143,7 +143,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/en.png" alt="">
+                                                        <img src="/images/en.png" alt="">
                                                     </span>
                                Англия
                            </a>
@@ -160,7 +160,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/fr.png" alt="">
+                                                        <img src="/images/fr.png" alt="">
                                                     </span>
                                Франция
                            </a>
@@ -177,7 +177,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Италия
                            </a>
@@ -194,7 +194,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Германия
                            </a>
@@ -211,7 +211,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ru.png" alt="">
+                                                        <img src="/images/ru.png" alt="">
                                                     </span>
                                Россия
                            </a>
@@ -228,7 +228,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/fr.png" alt="">
+                                                        <img src="/images/fr.png" alt="">
                                                     </span>
                                Аргентина
                            </a>
@@ -245,7 +245,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/au.png" alt="">
+                                                        <img src="/images/au.png" alt="">
                                                     </span>
                                Австралия
                            </a>
@@ -271,7 +271,7 @@
                        <li class="">
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Европа
                            </a>
@@ -288,7 +288,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Южная Америка
                            </a>
@@ -305,7 +305,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/en.png" alt="">
+                                                        <img src="/images/en.png" alt="">
                                                     </span>
                                Азия
                            </a>
@@ -322,7 +322,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Украина
                            </a>
@@ -339,7 +339,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Испания
                            </a>
@@ -356,7 +356,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/en.png" alt="">
+                                                        <img src="/images/en.png" alt="">
                                                     </span>
                                Англия
                            </a>
@@ -373,7 +373,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/fr.png" alt="">
+                                                        <img src="/images/fr.png" alt="">
                                                     </span>
                                Франция
                            </a>
@@ -390,7 +390,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Италия
                            </a>
@@ -407,7 +407,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Германия
                            </a>
@@ -424,7 +424,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ru.png" alt="">
+                                                        <img src="/images/ru.png" alt="">
                                                     </span>
                                Россия
                            </a>
@@ -441,7 +441,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/fr.png" alt="">
+                                                        <img src="/images/fr.png" alt="">
                                                     </span>
                                Аргентина
                            </a>
@@ -458,7 +458,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/au.png" alt="">
+                                                        <img src="/images/au.png" alt="">
                                                     </span>
                                Австралия
                            </a>
@@ -484,7 +484,7 @@
                        <li class="">
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Европа
                            </a>
@@ -501,7 +501,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Южная Америка
                            </a>
@@ -518,7 +518,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/en.png" alt="">
+                                                        <img src="/images/en.png" alt="">
                                                     </span>
                                Азия
                            </a>
@@ -535,7 +535,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Украина
                            </a>
@@ -552,7 +552,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Испания
                            </a>
@@ -569,7 +569,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/en.png" alt="">
+                                                        <img src="/images/en.png" alt="">
                                                     </span>
                                Англия
                            </a>
@@ -586,7 +586,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/fr.png" alt="">
+                                                        <img src="/images/fr.png" alt="">
                                                     </span>
                                Франция
                            </a>
@@ -603,7 +603,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Италия
                            </a>
@@ -620,7 +620,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Германия
                            </a>
@@ -637,7 +637,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ru.png" alt="">
+                                                        <img src="/images/ru.png" alt="">
                                                     </span>
                                Россия
                            </a>
@@ -654,7 +654,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/fr.png" alt="">
+                                                        <img src="/images/fr.png" alt="">
                                                     </span>
                                Аргентина
                            </a>
@@ -671,7 +671,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/au.png" alt="">
+                                                        <img src="/images/au.png" alt="">
                                                     </span>
                                Австралия
                            </a>
@@ -697,7 +697,7 @@
                        <li class="">
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Европа
                            </a>
@@ -714,7 +714,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Южная Америка
                            </a>
@@ -731,7 +731,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/en.png" alt="">
+                                                        <img src="/images/en.png" alt="">
                                                     </span>
                                Азия
                            </a>
@@ -748,7 +748,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Украина
                            </a>
@@ -765,7 +765,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Испания
                            </a>
@@ -782,7 +782,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/en.png" alt="">
+                                                        <img src="/images/en.png" alt="">
                                                     </span>
                                Англия
                            </a>
@@ -799,7 +799,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/fr.png" alt="">
+                                                        <img src="/images/fr.png" alt="">
                                                     </span>
                                Франция
                            </a>
@@ -816,7 +816,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Италия
                            </a>
@@ -833,7 +833,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Германия
                            </a>
@@ -850,7 +850,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ru.png" alt="">
+                                                        <img src="/images/ru.png" alt="">
                                                     </span>
                                Россия
                            </a>
@@ -867,7 +867,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/fr.png" alt="">
+                                                        <img src="/images/fr.png" alt="">
                                                     </span>
                                Аргентина
                            </a>
@@ -884,7 +884,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/au.png" alt="">
+                                                        <img src="/images/au.png" alt="">
                                                     </span>
                                Австралия
                            </a>
@@ -910,7 +910,7 @@
                        <li class="">
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Европа
                            </a>
@@ -927,7 +927,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Южная Америка
                            </a>
@@ -944,7 +944,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/en.png" alt="">
+                                                        <img src="/images/en.png" alt="">
                                                     </span>
                                Азия
                            </a>
@@ -961,7 +961,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Украина
                            </a>
@@ -978,7 +978,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Испания
                            </a>
@@ -995,7 +995,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/en.png" alt="">
+                                                        <img src="/images/en.png" alt="">
                                                     </span>
                                Англия
                            </a>
@@ -1012,7 +1012,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/fr.png" alt="">
+                                                        <img src="/images/fr.png" alt="">
                                                     </span>
                                Франция
                            </a>
@@ -1029,7 +1029,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Италия
                            </a>
@@ -1046,7 +1046,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Германия
                            </a>
@@ -1063,7 +1063,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ru.png" alt="">
+                                                        <img src="/images/ru.png" alt="">
                                                     </span>
                                Россия
                            </a>
@@ -1080,7 +1080,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/fr.png" alt="">
+                                                        <img src="/images/fr.png" alt="">
                                                     </span>
                                Аргентина
                            </a>
@@ -1097,7 +1097,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/au.png" alt="">
+                                                        <img src="/images/au.png" alt="">
                                                     </span>
                                Австралия
                            </a>
@@ -1123,7 +1123,7 @@
                        <li class="">
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Европа
                            </a>
@@ -1140,7 +1140,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Южная Америка
                            </a>
@@ -1157,7 +1157,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/en.png" alt="">
+                                                        <img src="/images/en.png" alt="">
                                                     </span>
                                Азия
                            </a>
@@ -1174,7 +1174,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Украина
                            </a>
@@ -1191,7 +1191,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Испания
                            </a>
@@ -1208,7 +1208,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/en.png" alt="">
+                                                        <img src="/images/en.png" alt="">
                                                     </span>
                                Англия
                            </a>
@@ -1225,7 +1225,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/fr.png" alt="">
+                                                        <img src="/images/fr.png" alt="">
                                                     </span>
                                Франция
                            </a>
@@ -1242,7 +1242,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Италия
                            </a>
@@ -1259,7 +1259,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Германия
                            </a>
@@ -1276,7 +1276,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ru.png" alt="">
+                                                        <img src="/images/ru.png" alt="">
                                                     </span>
                                Россия
                            </a>
@@ -1293,7 +1293,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/fr.png" alt="">
+                                                        <img src="/images/fr.png" alt="">
                                                     </span>
                                Аргентина
                            </a>
@@ -1310,7 +1310,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/au.png" alt="">
+                                                        <img src="/images/au.png" alt="">
                                                     </span>
                                Австралия
                            </a>
@@ -1336,7 +1336,7 @@
                        <li class="">
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Европа
                            </a>
@@ -1353,7 +1353,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Южная Америка
                            </a>
@@ -1370,7 +1370,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/en.png" alt="">
+                                                        <img src="/images/en.png" alt="">
                                                     </span>
                                Азия
                            </a>
@@ -1387,7 +1387,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Украина
                            </a>
@@ -1404,7 +1404,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Испания
                            </a>
@@ -1421,7 +1421,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/en.png" alt="">
+                                                        <img src="/images/en.png" alt="">
                                                     </span>
                                Англия
                            </a>
@@ -1438,7 +1438,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/fr.png" alt="">
+                                                        <img src="/images/fr.png" alt="">
                                                     </span>
                                Франция
                            </a>
@@ -1455,7 +1455,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Италия
                            </a>
@@ -1472,7 +1472,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Германия
                            </a>
@@ -1489,7 +1489,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ru.png" alt="">
+                                                        <img src="/images/ru.png" alt="">
                                                     </span>
                                Россия
                            </a>
@@ -1506,7 +1506,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/fr.png" alt="">
+                                                        <img src="/images/fr.png" alt="">
                                                     </span>
                                Аргентина
                            </a>
@@ -1523,7 +1523,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/au.png" alt="">
+                                                        <img src="/images/au.png" alt="">
                                                     </span>
                                Австралия
                            </a>
@@ -1549,7 +1549,7 @@
                        <li class="">
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Европа
                            </a>
@@ -1566,7 +1566,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Южная Америка
                            </a>
@@ -1583,7 +1583,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/en.png" alt="">
+                                                        <img src="/images/en.png" alt="">
                                                     </span>
                                Азия
                            </a>
@@ -1600,7 +1600,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Украина
                            </a>
@@ -1617,7 +1617,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Испания
                            </a>
@@ -1634,7 +1634,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/en.png" alt="">
+                                                        <img src="/images/en.png" alt="">
                                                     </span>
                                Англия
                            </a>
@@ -1651,7 +1651,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/fr.png" alt="">
+                                                        <img src="/images/fr.png" alt="">
                                                     </span>
                                Франция
                            </a>
@@ -1668,7 +1668,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Италия
                            </a>
@@ -1685,7 +1685,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Германия
                            </a>
@@ -1702,7 +1702,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ru.png" alt="">
+                                                        <img src="/images/ru.png" alt="">
                                                     </span>
                                Россия
                            </a>
@@ -1719,7 +1719,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/fr.png" alt="">
+                                                        <img src="/images/fr.png" alt="">
                                                     </span>
                                Аргентина
                            </a>
@@ -1736,7 +1736,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/au.png" alt="">
+                                                        <img src="/images/au.png" alt="">
                                                     </span>
                                Австралия
                            </a>
@@ -1762,7 +1762,7 @@
                        <li class="">
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Европа
                            </a>
@@ -1779,7 +1779,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Южная Америка
                            </a>
@@ -1796,7 +1796,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/en.png" alt="">
+                                                        <img src="/images/en.png" alt="">
                                                     </span>
                                Азия
                            </a>
@@ -1813,7 +1813,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Украина
                            </a>
@@ -1830,7 +1830,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Испания
                            </a>
@@ -1847,7 +1847,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/en.png" alt="">
+                                                        <img src="/images/en.png" alt="">
                                                     </span>
                                Англия
                            </a>
@@ -1864,7 +1864,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/fr.png" alt="">
+                                                        <img src="/images/fr.png" alt="">
                                                     </span>
                                Франция
                            </a>
@@ -1881,7 +1881,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Италия
                            </a>
@@ -1898,7 +1898,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Германия
                            </a>
@@ -1915,7 +1915,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ru.png" alt="">
+                                                        <img src="/images/ru.png" alt="">
                                                     </span>
                                Россия
                            </a>
@@ -1932,7 +1932,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/fr.png" alt="">
+                                                        <img src="/images/fr.png" alt="">
                                                     </span>
                                Аргентина
                            </a>
@@ -1949,7 +1949,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/au.png" alt="">
+                                                        <img src="/images/au.png" alt="">
                                                     </span>
                                Австралия
                            </a>
@@ -1975,7 +1975,7 @@
                        <li class="">
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Европа
                            </a>
@@ -1992,7 +1992,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Южная Америка
                            </a>
@@ -2009,7 +2009,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/en.png" alt="">
+                                                        <img src="/images/en.png" alt="">
                                                     </span>
                                Азия
                            </a>
@@ -2026,7 +2026,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Украина
                            </a>
@@ -2043,7 +2043,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Испания
                            </a>
@@ -2060,7 +2060,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/en.png" alt="">
+                                                        <img src="/images/en.png" alt="">
                                                     </span>
                                Англия
                            </a>
@@ -2077,7 +2077,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/fr.png" alt="">
+                                                        <img src="/images/fr.png" alt="">
                                                     </span>
                                Франция
                            </a>
@@ -2094,7 +2094,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Италия
                            </a>
@@ -2111,7 +2111,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Германия
                            </a>
@@ -2128,7 +2128,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ru.png" alt="">
+                                                        <img src="/images/ru.png" alt="">
                                                     </span>
                                Россия
                            </a>
@@ -2145,7 +2145,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/fr.png" alt="">
+                                                        <img src="/images/fr.png" alt="">
                                                     </span>
                                Аргентина
                            </a>
@@ -2162,7 +2162,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/au.png" alt="">
+                                                        <img src="/images/au.png" alt="">
                                                     </span>
                                Австралия
                            </a>
@@ -2188,7 +2188,7 @@
                        <li class="">
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Европа
                            </a>
@@ -2205,7 +2205,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Южная Америка
                            </a>
@@ -2222,7 +2222,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/en.png" alt="">
+                                                        <img src="/images/en.png" alt="">
                                                     </span>
                                Азия
                            </a>
@@ -2239,7 +2239,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Украина
                            </a>
@@ -2256,7 +2256,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Испания
                            </a>
@@ -2273,7 +2273,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/en.png" alt="">
+                                                        <img src="/images/en.png" alt="">
                                                     </span>
                                Англия
                            </a>
@@ -2290,7 +2290,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/fr.png" alt="">
+                                                        <img src="/images/fr.png" alt="">
                                                     </span>
                                Франция
                            </a>
@@ -2307,7 +2307,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Италия
                            </a>
@@ -2324,7 +2324,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Германия
                            </a>
@@ -2341,7 +2341,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ru.png" alt="">
+                                                        <img src="/images/ru.png" alt="">
                                                     </span>
                                Россия
                            </a>
@@ -2358,7 +2358,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/fr.png" alt="">
+                                                        <img src="/images/fr.png" alt="">
                                                     </span>
                                Аргентина
                            </a>
@@ -2375,7 +2375,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/au.png" alt="">
+                                                        <img src="/images/au.png" alt="">
                                                     </span>
                                Австралия
                            </a>
@@ -2401,7 +2401,7 @@
                        <li class="">
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Европа
                            </a>
@@ -2418,7 +2418,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Южная Америка
                            </a>
@@ -2435,7 +2435,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/en.png" alt="">
+                                                        <img src="/images/en.png" alt="">
                                                     </span>
                                Азия
                            </a>
@@ -2452,7 +2452,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Украина
                            </a>
@@ -2469,7 +2469,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Испания
                            </a>
@@ -2486,7 +2486,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/en.png" alt="">
+                                                        <img src="/images/en.png" alt="">
                                                     </span>
                                Англия
                            </a>
@@ -2503,7 +2503,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/fr.png" alt="">
+                                                        <img src="/images/fr.png" alt="">
                                                     </span>
                                Франция
                            </a>
@@ -2520,7 +2520,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Италия
                            </a>
@@ -2537,7 +2537,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Германия
                            </a>
@@ -2554,7 +2554,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ru.png" alt="">
+                                                        <img src="/images/ru.png" alt="">
                                                     </span>
                                Россия
                            </a>
@@ -2571,7 +2571,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/fr.png" alt="">
+                                                        <img src="/images/fr.png" alt="">
                                                     </span>
                                Аргентина
                            </a>
@@ -2588,7 +2588,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/au.png" alt="">
+                                                        <img src="/images/au.png" alt="">
                                                     </span>
                                Австралия
                            </a>
@@ -2614,7 +2614,7 @@
                        <li class="">
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Европа
                            </a>
@@ -2631,7 +2631,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Южная Америка
                            </a>
@@ -2648,7 +2648,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/en.png" alt="">
+                                                        <img src="/images/en.png" alt="">
                                                     </span>
                                Азия
                            </a>
@@ -2665,7 +2665,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Украина
                            </a>
@@ -2682,7 +2682,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Испания
                            </a>
@@ -2699,7 +2699,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/en.png" alt="">
+                                                        <img src="/images/en.png" alt="">
                                                     </span>
                                Англия
                            </a>
@@ -2716,7 +2716,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/fr.png" alt="">
+                                                        <img src="/images/fr.png" alt="">
                                                     </span>
                                Франция
                            </a>
@@ -2733,7 +2733,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ua.png" alt="">
+                                                        <img src="/images/ua.png" alt="">
                                                     </span>
                                Италия
                            </a>
@@ -2750,7 +2750,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/sp.png" alt="">
+                                                        <img src="/images/sp.png" alt="">
                                                     </span>
                                Германия
                            </a>
@@ -2767,7 +2767,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/ru.png" alt="">
+                                                        <img src="/images/ru.png" alt="">
                                                     </span>
                                Россия
                            </a>
@@ -2784,7 +2784,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/fr.png" alt="">
+                                                        <img src="/images/fr.png" alt="">
                                                     </span>
                                Аргентина
                            </a>
@@ -2801,7 +2801,7 @@
                        <li>
                            <a href="#" class="trigger-sub-collapse">
                                                     <span class="flag">
-                                                        <img src="images/au.png" alt="">
+                                                        <img src="/images/au.png" alt="">
                                                     </span>
                                Австралия
                            </a>

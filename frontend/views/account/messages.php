@@ -17,7 +17,7 @@ AccountAsset::register($this);
     <div class="header-inner">
         <div class="logo-block">
             <a href="/">
-                <img src="images/logo.svg" alt="Look My bet">
+                <img src="/images/logo.svg" alt="Look My bet">
             </a>
         </div>
         <div class="search-block">
@@ -63,7 +63,7 @@ AccountAsset::register($this);
                                     <a href="#" class="drop-link">
                                         <div class="drop-avatar">
                                             <div class="drop-avatar-inner">
-                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                <img src="/images/avatar-placeholder.svg" alt="">
                                             </div>
                                         </div>
                                         <div class="drop-item-info">
@@ -81,7 +81,7 @@ AccountAsset::register($this);
                                     <a href="#" class="drop-link">
                                         <div class="drop-avatar">
                                             <div class="drop-avatar-inner">
-                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                <img src="/images/avatar-placeholder.svg" alt="">
                                             </div>
                                         </div>
                                         <div class="drop-item-info">
@@ -122,7 +122,7 @@ AccountAsset::register($this);
                                         <div class="drop-avatar">
                                             <span class="count-massage">5</span>
                                             <div class="drop-avatar-inner">
-                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                <img src="/images/avatar-placeholder.svg" alt="">
                                             </div>
                                         </div>
                                         <div class="drop-item-info">
@@ -142,7 +142,7 @@ AccountAsset::register($this);
                                         <div class="drop-avatar">
                                             <span class="count-massage">3</span>
                                             <div class="drop-avatar-inner">
-                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                <img src="/images/avatar-placeholder.svg" alt="">
                                             </div>
                                         </div>
                                         <div class="drop-item-info">
@@ -164,7 +164,7 @@ AccountAsset::register($this);
                 <div class="avatar__user-block drop-menu">
                     <a href="#" class="avatar__user drop-menu-trigger">
                             <span class="avatar__user-inner">
-                                <img src="images/ava_top@2x.png" alt="">
+                                <img src="/images/ava_top@2x.png" alt="">
                             </span>
                     </a>
                     <div class="drop-wrapper drop-wrapper-small">
@@ -174,7 +174,7 @@ AccountAsset::register($this);
                                     <div class="drop-link">
                                         <div class="drop-avatar">
                                             <div class="drop-avatar-inner">
-                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                <img src="/images/avatar-placeholder.svg" alt="">
                                             </div>
                                         </div>
                                         <div class="drop-item-info">
@@ -256,7 +256,7 @@ AccountAsset::register($this);
                                                 <div class="big-circle"><canvas width="160" height="160"></canvas></div>
                                             </div>
                                             <div class="big-avatar-user">
-                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                <img src="/images/avatar-placeholder.svg" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -293,7 +293,7 @@ AccountAsset::register($this);
                         <div class="table-inner">
                             <div class="table-head head-with-tabs">
                                 <div class="tbl-icon">
-                                    <img src="images/stats.svg" alt="">
+                                    <img src="/images/stats.svg" alt="">
                                 </div>
                                 <div class="left-head-text">
                                     <span class="text-head">Доходность</span>
@@ -323,7 +323,7 @@ AccountAsset::register($this);
                             </div>
                             <div class="table-body">
                                 <div class="chart-wrapper">
-                                    <img src="images/charts.png" alt="">
+                                    <img src="/images/charts.png" alt="">
                                 </div>
                             </div>
                         </div>
@@ -352,21 +352,21 @@ AccountAsset::register($this);
                                             <div class="favorite-item has-value">
                                                 <div class="favorite-item-inner" data-toggle="tooltip" data-placement="top" title="Баскетбол">
                                                     <div class="fav-con">
-                                                        <img src="images/basket.svg" alt="">
+                                                        <img src="/images/basket.svg" alt="">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="favorite-item has-value">
                                                 <div class="favorite-item-inner" data-toggle="tooltip" data-placement="top" title="Футбол">
                                                     <div class="fav-con">
-                                                        <img src="images/footbol.svg" alt="">
+                                                        <img src="/images/footbol.svg" alt="">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="favorite-item has-value">
                                                 <div class="favorite-item-inner" data-toggle="tooltip" data-placement="top" title="Большой Тенис">
                                                     <div class="fav-con">
-                                                        <img src="images/tenis.svg" alt="">
+                                                        <img src="/images/tenis.svg" alt="">
                                                     </div>
                                                 </div>
                                             </div>
@@ -490,7 +490,7 @@ AccountAsset::register($this);
                         <div class="table-inner">
                             <div class="table-head head-with-tabs head-w_playlist">
                                 <div class="tbl-icon">
-                                    <img src="images/stats.svg" alt="">
+                                    <img src="/images/stats.svg" alt="">
                                 </div>
                                 <div class="left-head-text">
                                     <span class="text-head">Статистика</span>
@@ -623,7 +623,7 @@ AccountAsset::register($this);
                         <div class="table-inner table-transparent">
                             <div class="table-head head-with-tabs head-w_playlist">
                                 <div class="tbl-icon">
-                                    <img src="images/soccer-ball.svg" alt="">
+                                    <img src="/images/soccer-ball.svg" alt="">
                                 </div>
                                 <div class="left-head-text">
                                     <span class="text-head">Мои Ставки <sup>357</sup></span>
@@ -1195,7 +1195,7 @@ AccountAsset::register($this);
     <div class="main-footer-inner">
         <div class="logo-footer">
             <a href="/">
-                <img src="images/logo.svg" alt="Look My Bet">
+                <img src="/images/logo.svg" alt="Look My Bet">
             </a>
         </div>
         <div class="menu-footer">
@@ -1467,7 +1467,7 @@ AccountAsset::register($this);
                                                     <div class="avatar-chat">
                                                         <div class="count-message-chat">5</div>
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -1500,7 +1500,7 @@ AccountAsset::register($this);
                                                 <div data-toggle="#chat2" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -1533,7 +1533,7 @@ AccountAsset::register($this);
                                                 <div data-toggle="#chat3" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -1567,7 +1567,7 @@ AccountAsset::register($this);
 
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -1600,7 +1600,7 @@ AccountAsset::register($this);
                                                 <div data-toggle="#chat5" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -1633,7 +1633,7 @@ AccountAsset::register($this);
                                                 <div data-toggle="#chat6" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -1666,7 +1666,7 @@ AccountAsset::register($this);
                                                 <div data-toggle="#chat7" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -1699,7 +1699,7 @@ AccountAsset::register($this);
                                                 <div data-toggle="#chat8" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -1732,7 +1732,7 @@ AccountAsset::register($this);
                                                 <div data-toggle="#chat9" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -1765,7 +1765,7 @@ AccountAsset::register($this);
                                                 <div data-toggle="#chat10" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -1798,7 +1798,7 @@ AccountAsset::register($this);
                                                 <div data-toggle="#chat11" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -1831,7 +1831,7 @@ AccountAsset::register($this);
                                                 <div data-toggle="#chat12" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -1864,7 +1864,7 @@ AccountAsset::register($this);
                                                 <div data-toggle="#chat13" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -1897,7 +1897,7 @@ AccountAsset::register($this);
                                                 <div data-toggle="#chat14" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -1930,7 +1930,7 @@ AccountAsset::register($this);
                                                 <div data-toggle="#chat15" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -1963,7 +1963,7 @@ AccountAsset::register($this);
                                                 <div data-toggle="#chat16" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -1996,7 +1996,7 @@ AccountAsset::register($this);
                                                 <div data-toggle="#chat17" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -2029,7 +2029,7 @@ AccountAsset::register($this);
                                                 <div data-toggle="#chat18" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -2062,7 +2062,7 @@ AccountAsset::register($this);
                                                 <div data-toggle="#chat19" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -2095,7 +2095,7 @@ AccountAsset::register($this);
                                                 <div data-toggle="#chat20" class="chat-tab-trigger">
                                                     <div class="avatar-chat">
                                                         <div class="avatar-chat-inner">
-                                                            <img src="images/avatar-placeholder.svg" alt="">
+                                                            <img src="/images/avatar-placeholder.svg" alt="">
                                                         </div>
                                                     </div>
                                                     <div class="chat-info">
@@ -2191,7 +2191,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2208,7 +2208,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2224,7 +2224,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2241,7 +2241,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2257,7 +2257,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2274,7 +2274,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2290,7 +2290,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2307,7 +2307,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2323,7 +2323,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2340,7 +2340,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2356,7 +2356,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2373,7 +2373,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2389,7 +2389,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2406,7 +2406,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2422,7 +2422,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2439,7 +2439,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2455,7 +2455,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2472,7 +2472,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2507,7 +2507,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2524,7 +2524,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2540,7 +2540,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2557,7 +2557,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2573,7 +2573,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2590,7 +2590,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2606,7 +2606,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2623,7 +2623,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2639,7 +2639,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2656,7 +2656,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2672,7 +2672,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2689,7 +2689,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2705,7 +2705,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2722,7 +2722,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2738,7 +2738,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2755,7 +2755,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2771,7 +2771,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2788,7 +2788,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2822,7 +2822,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2839,7 +2839,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2855,7 +2855,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2872,7 +2872,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2888,7 +2888,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2905,7 +2905,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2921,7 +2921,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2938,7 +2938,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2954,7 +2954,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2971,7 +2971,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2987,7 +2987,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3004,7 +3004,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3020,7 +3020,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3037,7 +3037,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3053,7 +3053,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3070,7 +3070,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3086,7 +3086,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3103,7 +3103,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3137,7 +3137,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3154,7 +3154,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3170,7 +3170,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3187,7 +3187,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3203,7 +3203,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3220,7 +3220,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3236,7 +3236,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3253,7 +3253,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3269,7 +3269,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3286,7 +3286,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3302,7 +3302,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3319,7 +3319,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3335,7 +3335,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3352,7 +3352,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3368,7 +3368,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3385,7 +3385,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3401,7 +3401,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3418,7 +3418,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3452,7 +3452,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3469,7 +3469,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3485,7 +3485,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3502,7 +3502,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3518,7 +3518,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3535,7 +3535,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3551,7 +3551,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3568,7 +3568,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3584,7 +3584,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3601,7 +3601,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3617,7 +3617,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3634,7 +3634,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3650,7 +3650,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3667,7 +3667,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3683,7 +3683,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3700,7 +3700,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3716,7 +3716,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3733,7 +3733,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3767,7 +3767,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3784,7 +3784,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3800,7 +3800,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3817,7 +3817,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3833,7 +3833,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3850,7 +3850,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3866,7 +3866,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3883,7 +3883,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3899,7 +3899,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3916,7 +3916,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3932,7 +3932,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3949,7 +3949,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3965,7 +3965,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3982,7 +3982,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3998,7 +3998,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4015,7 +4015,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4031,7 +4031,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4048,7 +4048,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4082,7 +4082,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4099,7 +4099,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4115,7 +4115,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4132,7 +4132,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4148,7 +4148,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4165,7 +4165,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4181,7 +4181,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4198,7 +4198,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4214,7 +4214,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4231,7 +4231,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4247,7 +4247,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4264,7 +4264,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4280,7 +4280,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4297,7 +4297,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4313,7 +4313,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4330,7 +4330,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4346,7 +4346,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4363,7 +4363,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4397,7 +4397,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4414,7 +4414,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4430,7 +4430,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4447,7 +4447,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4463,7 +4463,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4480,7 +4480,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4496,7 +4496,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4513,7 +4513,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4529,7 +4529,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4546,7 +4546,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4562,7 +4562,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4579,7 +4579,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4595,7 +4595,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4612,7 +4612,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4628,7 +4628,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4645,7 +4645,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4661,7 +4661,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4678,7 +4678,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4712,7 +4712,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4729,7 +4729,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4745,7 +4745,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4762,7 +4762,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4778,7 +4778,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4795,7 +4795,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4811,7 +4811,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4828,7 +4828,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4844,7 +4844,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4861,7 +4861,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4877,7 +4877,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4894,7 +4894,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4910,7 +4910,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4927,7 +4927,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4943,7 +4943,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4960,7 +4960,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4976,7 +4976,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4993,7 +4993,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5027,7 +5027,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5044,7 +5044,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5060,7 +5060,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5077,7 +5077,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5093,7 +5093,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5110,7 +5110,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5126,7 +5126,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5143,7 +5143,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5159,7 +5159,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5176,7 +5176,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5192,7 +5192,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5209,7 +5209,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5225,7 +5225,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5242,7 +5242,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5258,7 +5258,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5275,7 +5275,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5291,7 +5291,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5308,7 +5308,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5342,7 +5342,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5359,7 +5359,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5375,7 +5375,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5392,7 +5392,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5408,7 +5408,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5425,7 +5425,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5441,7 +5441,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5458,7 +5458,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5474,7 +5474,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5491,7 +5491,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5507,7 +5507,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5524,7 +5524,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5540,7 +5540,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5557,7 +5557,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5573,7 +5573,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5590,7 +5590,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5606,7 +5606,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5623,7 +5623,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5657,7 +5657,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5674,7 +5674,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5690,7 +5690,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5707,7 +5707,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5723,7 +5723,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5740,7 +5740,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5756,7 +5756,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5773,7 +5773,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5789,7 +5789,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5806,7 +5806,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5822,7 +5822,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5839,7 +5839,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5855,7 +5855,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5872,7 +5872,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5888,7 +5888,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5905,7 +5905,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5921,7 +5921,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5938,7 +5938,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5972,7 +5972,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -5989,7 +5989,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6005,7 +6005,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6022,7 +6022,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6038,7 +6038,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6055,7 +6055,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6071,7 +6071,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6088,7 +6088,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6104,7 +6104,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6121,7 +6121,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6137,7 +6137,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6154,7 +6154,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6170,7 +6170,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6187,7 +6187,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6203,7 +6203,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6220,7 +6220,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6236,7 +6236,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6253,7 +6253,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6287,7 +6287,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6304,7 +6304,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6320,7 +6320,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6337,7 +6337,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6353,7 +6353,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6370,7 +6370,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6386,7 +6386,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6403,7 +6403,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6419,7 +6419,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6436,7 +6436,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6452,7 +6452,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6469,7 +6469,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6485,7 +6485,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6502,7 +6502,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6518,7 +6518,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6535,7 +6535,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6551,7 +6551,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6568,7 +6568,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6602,7 +6602,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6619,7 +6619,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6635,7 +6635,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6652,7 +6652,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6668,7 +6668,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6685,7 +6685,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6701,7 +6701,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6718,7 +6718,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6734,7 +6734,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6751,7 +6751,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6767,7 +6767,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6784,7 +6784,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6800,7 +6800,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6817,7 +6817,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6833,7 +6833,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6850,7 +6850,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6866,7 +6866,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6883,7 +6883,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6917,7 +6917,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6934,7 +6934,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6950,7 +6950,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6967,7 +6967,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -6983,7 +6983,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7000,7 +7000,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7016,7 +7016,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7033,7 +7033,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7049,7 +7049,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7066,7 +7066,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7082,7 +7082,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7099,7 +7099,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7115,7 +7115,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7132,7 +7132,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7148,7 +7148,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7165,7 +7165,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7181,7 +7181,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7198,7 +7198,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7232,7 +7232,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7249,7 +7249,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7265,7 +7265,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7282,7 +7282,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7298,7 +7298,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7315,7 +7315,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7331,7 +7331,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7348,7 +7348,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7364,7 +7364,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7381,7 +7381,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7397,7 +7397,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7414,7 +7414,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7430,7 +7430,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7447,7 +7447,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7463,7 +7463,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7480,7 +7480,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7496,7 +7496,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7513,7 +7513,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7547,7 +7547,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7564,7 +7564,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7580,7 +7580,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7597,7 +7597,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7613,7 +7613,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7630,7 +7630,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7646,7 +7646,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7663,7 +7663,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7679,7 +7679,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7696,7 +7696,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7712,7 +7712,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7729,7 +7729,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7745,7 +7745,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7762,7 +7762,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7778,7 +7778,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7795,7 +7795,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7811,7 +7811,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7828,7 +7828,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7862,7 +7862,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7879,7 +7879,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7895,7 +7895,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7912,7 +7912,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7928,7 +7928,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7945,7 +7945,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7961,7 +7961,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7978,7 +7978,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -7994,7 +7994,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8011,7 +8011,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8027,7 +8027,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8044,7 +8044,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8060,7 +8060,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8077,7 +8077,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8093,7 +8093,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8110,7 +8110,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8126,7 +8126,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8143,7 +8143,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8177,7 +8177,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8194,7 +8194,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8210,7 +8210,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8227,7 +8227,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8243,7 +8243,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8260,7 +8260,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8276,7 +8276,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8293,7 +8293,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8309,7 +8309,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8326,7 +8326,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8342,7 +8342,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8359,7 +8359,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8375,7 +8375,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8392,7 +8392,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8408,7 +8408,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8425,7 +8425,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8441,7 +8441,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8458,7 +8458,7 @@ AccountAsset::register($this);
                                                     <div class="user-message-avatar">
                                                         <div class="message-avatar-inner">
                                                             <div class="message-avatar">
-                                                                <img src="images/avatar-placeholder.svg" alt="">
+                                                                <img src="/images/avatar-placeholder.svg" alt="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -8566,7 +8566,7 @@ AccountAsset::register($this);
                                             <input type="checkbox" name="sport-check" id="s1">
                                             <label for="s1">
                                                     <span class="sport-icon">
-                                                        <img src="images/s1.svg" alt="">
+                                                        <img src="/images/s1.svg" alt="">
                                                     </span>
                                                 <span class="title-sport">Баскетбол</span>
                                             </label>
@@ -8577,7 +8577,7 @@ AccountAsset::register($this);
                                             <input type="checkbox" name="sport-check" id="s2">
                                             <label for="s2">
                                                     <span class="sport-icon">
-                                                        <img src="images/s2.svg" alt="">
+                                                        <img src="/images/s2.svg" alt="">
                                                     </span>
                                                 <span class="title-sport">Футбол</span>
                                             </label>
@@ -8588,7 +8588,7 @@ AccountAsset::register($this);
                                             <input type="checkbox" name="sport-check" id="s3">
                                             <label for="s3">
                                                     <span class="sport-icon">
-                                                        <img src="images/s3.svg" alt="">
+                                                        <img src="/images/s3.svg" alt="">
                                                     </span>
                                                 <span class="title-sport">Большой теннис</span>
                                             </label>
@@ -8599,7 +8599,7 @@ AccountAsset::register($this);
                                             <input type="checkbox" name="sport-check" id="s4">
                                             <label for="s4">
                                                     <span class="sport-icon">
-                                                        <img src="images/s3.svg" alt="">
+                                                        <img src="/images/s3.svg" alt="">
                                                     </span>
                                                 <span class="title-sport">Баскетбол</span>
                                             </label>
@@ -8610,7 +8610,7 @@ AccountAsset::register($this);
                                             <input type="checkbox" name="sport-check" id="s5">
                                             <label for="s5">
                                                     <span class="sport-icon">
-                                                        <img src="images/s3.svg" alt="">
+                                                        <img src="/images/s3.svg" alt="">
                                                     </span>
                                                 <span class="title-sport">Большой теннис</span>
                                             </label>
@@ -8621,7 +8621,7 @@ AccountAsset::register($this);
                                             <input type="checkbox" name="sport-check" id="s6">
                                             <label for="s6">
                                                     <span class="sport-icon">
-                                                        <img src="images/s3.svg" alt="">
+                                                        <img src="/images/s3.svg" alt="">
                                                     </span>
                                                 <span class="title-sport">Баскетбол</span>
                                             </label>
@@ -8632,7 +8632,7 @@ AccountAsset::register($this);
                                             <input type="checkbox" name="sport-check" id="s7">
                                             <label for="s7">
                                                     <span class="sport-icon">
-                                                        <img src="images/s3.svg" alt="">
+                                                        <img src="/images/s3.svg" alt="">
                                                     </span>
                                                 <span class="title-sport">Футбол</span>
                                             </label>
@@ -8643,7 +8643,7 @@ AccountAsset::register($this);
                                             <input type="checkbox" name="sport-check" id="s8">
                                             <label for="s8">
                                                     <span class="sport-icon">
-                                                        <img src="images/s3.svg" alt="">
+                                                        <img src="/images/s3.svg" alt="">
                                                     </span>
                                                 <span class="title-sport">Большой теннис</span>
                                             </label>
@@ -8654,7 +8654,7 @@ AccountAsset::register($this);
                                             <input type="checkbox" name="sport-check" id="s9">
                                             <label for="s9">
                                                     <span class="sport-icon">
-                                                        <img src="images/s3.svg" alt="">
+                                                        <img src="/images/s3.svg" alt="">
                                                     </span>
                                                 <span class="title-sport">Баскетбол</span>
                                             </label>
@@ -8665,7 +8665,7 @@ AccountAsset::register($this);
                                             <input type="checkbox" name="sport-check" id="s10">
                                             <label for="s10">
                                                     <span class="sport-icon">
-                                                        <img src="images/s3.svg" alt="">
+                                                        <img src="/images/s3.svg" alt="">
                                                     </span>
                                                 <span class="title-sport">Футбол</span>
                                             </label>
@@ -8676,7 +8676,7 @@ AccountAsset::register($this);
                                             <input type="checkbox" name="sport-check" id="s11">
                                             <label for="s11">
                                                     <span class="sport-icon">
-                                                        <img src="images/s3.svg" alt="">
+                                                        <img src="/images/s3.svg" alt="">
                                                     </span>
                                                 <span class="title-sport">Большой теннис</span>
                                             </label>
@@ -8687,7 +8687,7 @@ AccountAsset::register($this);
                                             <input type="checkbox" name="sport-check" id="s12">
                                             <label for="s12">
                                                     <span class="sport-icon">
-                                                        <img src="images/s3.svg" alt="">
+                                                        <img src="/images/s3.svg" alt="">
                                                     </span>
                                                 <span class="title-sport">Баскетбол</span>
                                             </label>
@@ -8698,7 +8698,7 @@ AccountAsset::register($this);
                                             <input type="checkbox" name="sport-check" id="s13">
                                             <label for="s13">
                                                     <span class="sport-icon">
-                                                        <img src="images/s3.svg" alt="">
+                                                        <img src="/images/s3.svg" alt="">
                                                     </span>
                                                 <span class="title-sport">Большой теннис</span>
                                             </label>
@@ -8740,7 +8740,7 @@ AccountAsset::register($this);
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b1">
                                                 <label for="b1">
-                                                    <img src="images/b1.png" alt="">
+                                                    <img src="/images/b1.png" alt="">
                                                     <span>1x bet</span>
                                                 </label>
                                             </div>
@@ -8749,7 +8749,7 @@ AccountAsset::register($this);
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b2">
                                                 <label for="b2">
-                                                    <img src="images/b2.png" alt="">
+                                                    <img src="/images/b2.png" alt="">
                                                     <span>БК Leon</span>
                                                 </label>
                                             </div>
@@ -8758,7 +8758,7 @@ AccountAsset::register($this);
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b3">
                                                 <label for="b3">
-                                                    <img src="images/b3.png" alt="">
+                                                    <img src="/images/b3.png" alt="">
                                                     <span>Пари Матч</span>
                                                 </label>
                                             </div>
@@ -8767,7 +8767,7 @@ AccountAsset::register($this);
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b4">
                                                 <label for="b4">
-                                                    <img src="images/b1.png" alt="">
+                                                    <img src="/images/b1.png" alt="">
                                                     <span>1x bet</span>
                                                 </label>
                                             </div>
@@ -8776,7 +8776,7 @@ AccountAsset::register($this);
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b5">
                                                 <label for="b5">
-                                                    <img src="images/b2.png" alt="">
+                                                    <img src="/images/b2.png" alt="">
                                                     <span>БК Leon</span>
                                                 </label>
                                             </div>
@@ -8785,7 +8785,7 @@ AccountAsset::register($this);
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b6">
                                                 <label for="b6">
-                                                    <img src="images/b3.png" alt="">
+                                                    <img src="/images/b3.png" alt="">
                                                     <span>Пари Матч</span>
                                                 </label>
                                             </div>
@@ -8796,7 +8796,7 @@ AccountAsset::register($this);
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b111">
                                                 <label for="b111">
-                                                    <img src="images/b1.png" alt="">
+                                                    <img src="/images/b1.png" alt="">
                                                     <span>1x bet</span>
                                                 </label>
                                             </div>
@@ -8805,7 +8805,7 @@ AccountAsset::register($this);
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b112">
                                                 <label for="b112">
-                                                    <img src="images/b2.png" alt="">
+                                                    <img src="/images/b2.png" alt="">
                                                     <span>БК Leon</span>
                                                 </label>
                                             </div>
@@ -8814,7 +8814,7 @@ AccountAsset::register($this);
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b113">
                                                 <label for="b113">
-                                                    <img src="images/b3.png" alt="">
+                                                    <img src="/images/b3.png" alt="">
                                                     <span>Пари Матч</span>
                                                 </label>
                                             </div>
@@ -8823,7 +8823,7 @@ AccountAsset::register($this);
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b114">
                                                 <label for="b114">
-                                                    <img src="images/b1.png" alt="">
+                                                    <img src="/images/b1.png" alt="">
                                                     <span>1x bet</span>
                                                 </label>
                                             </div>
@@ -8832,7 +8832,7 @@ AccountAsset::register($this);
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b115">
                                                 <label for="b115">
-                                                    <img src="images/b2.png" alt="">
+                                                    <img src="/images/b2.png" alt="">
                                                     <span>БК Leon</span>
                                                 </label>
                                             </div>
@@ -8841,7 +8841,7 @@ AccountAsset::register($this);
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b116">
                                                 <label for="b116">
-                                                    <img src="images/b3.png" alt="">
+                                                    <img src="/images/b3.png" alt="">
                                                     <span>Пари Матч</span>
                                                 </label>
                                             </div>
@@ -8852,7 +8852,7 @@ AccountAsset::register($this);
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b121">
                                                 <label for="b121">
-                                                    <img src="images/b1.png" alt="">
+                                                    <img src="/images/b1.png" alt="">
                                                     <span>1x bet</span>
                                                 </label>
                                             </div>
@@ -8861,7 +8861,7 @@ AccountAsset::register($this);
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b122">
                                                 <label for="b122">
-                                                    <img src="images/b2.png" alt="">
+                                                    <img src="/images/b2.png" alt="">
                                                     <span>БК Leon</span>
                                                 </label>
                                             </div>
@@ -8870,7 +8870,7 @@ AccountAsset::register($this);
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b123">
                                                 <label for="b123">
-                                                    <img src="images/b3.png" alt="">
+                                                    <img src="/images/b3.png" alt="">
                                                     <span>Пари Матч</span>
                                                 </label>
                                             </div>
@@ -8879,7 +8879,7 @@ AccountAsset::register($this);
                                             <div class="chose-item-inner">
                                                 <input type="checkbox" name="bookmaker" id="b124">
                                                 <label for="b124">
-                                                    <img src="images/b1.png" alt="">
+                                                    <img src="/images/b1.png" alt="">
                                                     <span>1x bet</span>
                                                 </label>
                                             </div>
@@ -9069,7 +9069,7 @@ AccountAsset::register($this);
                                         <div class="circle"></div>
                                     </div>
                                     <div class="avatar-user">
-                                        <img src="images/ava3.png" alt="">
+                                        <img src="/images/ava3.png" alt="">
                                     </div>
                                 </div>
                                 <div class="user-info">
@@ -9317,7 +9317,7 @@ AccountAsset::register($this);
                                         <div class="circle"></div>
                                     </div>
                                     <div class="avatar-user">
-                                        <img src="images/ava5.png" alt="">
+                                        <img src="/images/ava5.png" alt="">
                                     </div>
                                 </div>
                                 <div class="user-info">

@@ -26,7 +26,7 @@ use yii\widgets\LinkPager;
             <div class="table-inner table-transparent">
                 <div class="table-head head-with-tabs head-w_playlist">
                     <div class="tbl-icon">
-                        <img src="images/soccer-ball.svg" alt="">
+                        <img src="/images/soccer-ball.svg" alt="">
                     </div>
                     <div class="left-head-text">
                         <span class="text-head"><?=$text?> <sup><?=$wagerManager->getCountAllElements()?></sup></span>
@@ -843,7 +843,7 @@ use yii\widgets\LinkPager;
                 <div class="table-inner table-transparent">
                     <div class="table-head head-with-tabs head-w_playlist">
                         <div class="tbl-icon">
-                            <img src="images/soccer-ball.svg" alt="">
+                            <img src="/images/soccer-ball.svg" alt="">
                         </div>
                         <div class="left-head-text">
                             <span class="text-head">Мои Ставки <sup><?=$wagerManager->getCountAllElements()?></sup></span>

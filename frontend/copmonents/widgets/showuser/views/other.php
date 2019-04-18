@@ -72,7 +72,7 @@
                                <a href="#" class="drop-link">
                                    <div class="drop-avatar">
                                        <div class="drop-avatar-inner">
-                                           <img src="images/avatar-placeholder.svg" alt="">
+                                           <img src="/images/avatar-placeholder.svg" alt="">
                                        </div>
                                    </div>
                                    <div class="drop-item-info">
@@ -90,7 +90,7 @@
                                <a href="#" class="drop-link">
                                    <div class="drop-avatar">
                                        <div class="drop-avatar-inner">
-                                           <img src="images/avatar-placeholder.svg" alt="">
+                                           <img src="/images/avatar-placeholder.svg" alt="">
                                        </div>
                                    </div>
                                    <div class="drop-item-info">
@@ -131,7 +131,7 @@
                                    <div class="drop-avatar">
                                        <span class="count-massage">5</span>
                                        <div class="drop-avatar-inner">
-                                           <img src="images/avatar-placeholder.svg" alt="">
+                                           <img src="/images/avatar-placeholder.svg" alt="">
                                        </div>
                                    </div>
                                    <div class="drop-item-info">
@@ -151,7 +151,7 @@
                                    <div class="drop-avatar">
                                        <span class="count-massage">3</span>
                                        <div class="drop-avatar-inner">
-                                           <img src="images/avatar-placeholder.svg" alt="">
+                                           <img src="/images/avatar-placeholder.svg" alt="">
                                        </div>
                                    </div>
                                    <div class="drop-item-info">

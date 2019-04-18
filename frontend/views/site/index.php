@@ -15,7 +15,7 @@ MainAsset::register($this);
     <div class="header-inner">
         <div class="logo-block">
             <a href="/">
-                <img src="images/logo.svg" alt="Look My bet">
+                <img src="/images/logo.svg" alt="Look My bet">
             </a>
         </div>
         <div class="menu-block">
@@ -338,7 +338,7 @@ MainAsset::register($this);
                     <div class="main-footer-inner">
                         <div class="logo-footer">
                             <a href="/">
-                                <img src="images/logo.svg" alt="Look My Bet">
+                                <img src="/images/logo.svg" alt="Look My Bet">
                             </a>
                         </div>
                         <div class="menu-footer">
