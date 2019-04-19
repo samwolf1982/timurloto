@@ -7,6 +7,7 @@ $(function () {
     $.getJSON(userChartUrl, function (data) {
 // Create chart instance
         var chart = am4core.create("containerChart", am4charts.XYChart);
+
         chart.language.locale = am4lang_ru_RU;
 // Add data
         chart.data = generatechartData(data);
@@ -19,8 +20,33 @@ $(function () {
             "count": 1
         };
         dateAxis.tooltipDateFormat = "HH:mm, d MMMM";
+        dateAxis.renderer.labels.template.fill = am4core.color("white");
+        dateAxis.renderer.labels.template.fontSize = 20;
+
+
+
+
 // Create value axis
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+        // Configure labels
+        valueAxis.renderer.labels.template.fill = am4core.color("white");
+        valueAxis.renderer.labels.template.fontSize = 20;
+        // valueAxis.renderer.labelColor=am4core.color("#8DB055");
+
+        // Create axes
+        // var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+        // categoryAxis.renderer.labels.template.fill =am4core.color("#8DB055");
+
+
+        // var categoryAxis = chart.xAxes.push(new am4charts.Valu);
+        // categoryAxis.renderer.labels.template.fill = am4core.color("#8DB055");
+        // categoryAxis.renderer.labels.template.fontSize = 20;
+
+        // chart.xAxis.labelColor=am4core.color("#8DB055");
+
+        // var valueAxisx = chart.xAxes.push(new am4charts.ValueAxis());
+        // valueAxisx.renderer.labels.template.fill = am4core.color("#8DB055");
+        // valueAxisx.renderer.labels.template.fontSize = 20;
 // Create series
         var series = chart.series.push(new am4charts.LineSeries());
         series.dataFields.valueY = "visits";
@@ -28,16 +54,28 @@ $(function () {
         series.dataFields.dateX = "date";
         series.strokeWidth = 3;
         series.tooltipText = "Прибыль: {valueY.value}";
-        series.fillOpacity = 0.1;
+        series.fillOpacity = 0.4; // top
+        // series.fillOpacity = 0.1;
+        series.propertyFields.stroke = "lineColor";
+        series.propertyFields.fill = "lineColorFill";
 
 // Create a range to change stroke for values below 0
         var range = valueAxis.createSeriesRange(series);
         range.value = 0;
         range.endValue = -1000;
-        range.contents.stroke = chart.colors.getIndex(4);
+
+        range.contents.stroke = 'red';
         range.contents.fill = range.contents.stroke;
         range.contents.strokeOpacity = 0.7;
         range.contents.fillOpacity = 0.1;
+        range.contents.fillOpacity = 0.2; // bottom
+        // range.contents.stroke = chart.colors.getIndex(4);
+        // range.contents.fill = range.contents.stroke;
+        // range.contents.strokeOpacity = 0.7;
+        // range.contents.fillOpacity = 0.1;
+
+
+
 
 // Add cursor
         chart.cursor = new am4charts.XYCursor();
@@ -45,6 +83,9 @@ $(function () {
         chart.scrollbarX = new am4core.Scrollbar();
         // chart.dateFormatter.dateFormat
          chart.dateFormatter.dateFormat = "yyyy-MM-dd";
+
+
+
 
 
 
@@ -62,11 +103,19 @@ $(function () {
 function generatechartData(json) {
     var chartData = [];
     $.each(json,function (i,el) {
-        console.log( new Date(el[0]))
+        // console.log( new Date(el[0]))
+        colore='#8DB055';
+        // if(el[1]<0) colore='#373b30';
+         coloreFill='#b9cd98';
+         coloreFill='#8DB055';
+
         chartData.push( {
             date: new Date(el[0]) ,
            // date: el[0] ,
-            visits: el[1]
+            visits: el[1],
+            lineColor:colore,
+            lineColorFill:coloreFill
+
         } );
     }) ;
     return chartData;

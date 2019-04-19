@@ -72,7 +72,14 @@ echo  $hr;
 
 
                 <?php if($countChart>1){  ?>
-                    <div id="containerChart" style="height: 400px; min-width: 100%">
+
+                    <style>
+                        #containerChart{
+                            height: 422px;
+                            min-width: 100%;
+                        }
+                    </style>
+                    <div id="containerChart">
 
                     </div>
                <?php  }else{ ?>
