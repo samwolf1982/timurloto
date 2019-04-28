@@ -68,7 +68,7 @@ $(function () {
         range.contents.fill = range.contents.stroke;
         range.contents.strokeOpacity = 0.7;
         range.contents.fillOpacity = 0.1;
-        range.contents.fillOpacity = 0.2; // bottom
+        range.contents.fillOpacity = 0.7;  //bottom
         // range.contents.stroke = chart.colors.getIndex(4);
         // range.contents.fill = range.contents.stroke;
         // range.contents.strokeOpacity = 0.7;
