@@ -25,15 +25,7 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-
-
-<?php      // для второй верски
-//$wrapBodyClass='';
-//if('site'==Yii::$app->controller->id) $wrapBodyClass=' home-page ';
-?>
-
-
-
+<body>
 <?php $this->beginBody() ?>
 
 
@@ -9160,7 +9152,7 @@ AppAsset::register($this);
 
 
 
-
+</body>
 </html>
 
 

@@ -93,6 +93,7 @@ class SiteController extends Controller
 //        }
 
         $test=123;
+
         return $this->render('index',compact('test') );
     }
 

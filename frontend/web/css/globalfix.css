@@ -447,3 +447,27 @@ and also iPads specifically.
     padding: 0;
   }
 }
+.list-answer li {
+  line-height: 10px;
+}
+.btn-default {
+  background-color: transparent;
+}
+.btn-default:hover {
+  background-color: initial;
+}
+.btn-primary:active:hover,
+.btn-primary.active:hover,
+.open > .dropdown-toggle.btn-primary:hover,
+.btn-primary:active:focus,
+.btn-primary.active:focus,
+.open > .dropdown-toggle.btn-primary:focus,
+.btn-primary:active.focus,
+.btn-primary.active.focus,
+.open > .dropdown-toggle.btn-primary.focus {
+  background-color: initial;
+}
+.btn-primary:focus,
+.btn-primary.focus {
+  background-color: #D00069;
+}

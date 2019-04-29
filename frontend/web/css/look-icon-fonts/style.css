@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?w33lxw');
-  src:  url('fonts/icomoon.eot?w33lxw#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?w33lxw') format('truetype'),
-    url('fonts/icomoon.woff?w33lxw') format('woff'),
-    url('fonts/icomoon.svg?w33lxw#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?bw312u');
+  src:  url('fonts/icomoon.eot?bw312u#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?bw312u') format('truetype'),
+    url('fonts/icomoon.woff?bw312u') format('woff'),
+    url('fonts/icomoon.svg?bw312u#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -149,4 +149,22 @@
 }
 .icon-betcoin-logo:before {
   content: "\e929";
+}
+.icon-hockey:before {
+  content: "\e92a";
+}
+.icon-volleyball:before {
+  content: "\e92b";
+}
+.icon-gamepad:before {
+  content: "\e92c";
+}
+.icon-boxing:before {
+  content: "\e92d";
+}
+.icon-baseball:before {
+  content: "\e92e";
+}
+.icon-karate:before {
+  content: "\e92f";
 }
