@@ -22,12 +22,13 @@ class DashboardAsset extends AssetBundle
 
     ];
     public $js = [
-         'dist/js/script.min.js',
-         'dist/js/bet.js',
+//         'dist/js/script.min.js',
+//         'dist/js/bet.js',
+         'dist/js/select2.full.min.js',
     ];
 
     public $depends = [
-      // 'frontend\assets\AppAsset',
+       'frontend\assets\AppAsset',
        //'yii\web\JqueryAsset',
        // 'yii\web\YiiAsset',
         // 'frontend\assets\AppAssetjsendpage',

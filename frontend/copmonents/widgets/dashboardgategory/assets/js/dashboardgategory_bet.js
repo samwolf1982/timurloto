@@ -4,7 +4,6 @@ $(document).ready(function () {
     DashboardCategory.getPopularSports();
     // DashboardCategory.test();
 
-
     // $('.trigger-collapse').on('click',function (e) {
     // step 2
         $(document).on("click", ".trigger-collapse", function(e) {
@@ -15,11 +14,8 @@ $(document).ready(function () {
     });
 
 
-
-
      // step 3
     $(document).on("click", ".trigger-sub-collapse", function(e) {
-
         DashboardCategory.sendData(this,$(this).data(),'/provider/tourneygame');
         DashboardCategory.sendData(this,$(this).data(),'/provider/updatetabstourneygame');
          e.preventDefault();
@@ -73,6 +69,26 @@ function changePeriodGame(el) {
 var DashboardCategory={
     csrf:null,
     csrf_param:null,
+    icons_sports:{
+        '12341':'icon-football',
+        '12354':'icon-football',// футзал
+        '12365':'icon-football',// пляжный футбол
+        '12445':'icon-football',// стритбол
+        '12343':'icon-basketball',
+        '12344':'icon-tenis',
+        '12342':'icon-hockey',
+        '12367':'icon-hockey', // хокей на траве
+        '12346':'icon-volleyball',
+        '12380':'icon-gamepad',
+        '12389':'icon-gamepad',// нетбол
+        'xxx':'icon-baseball',
+        '12349':'icon-boxing',
+        '12529':'icon-boxing', //ufc
+        '12542':'icon-boxing', // политика
+        '12396':'icon-karate',
+        '12397':'icon-karate' // атлетика
+    },
+
       init:function () {
           this.csrf = jQuery('meta[name=csrf-token]').attr("content");
           this.csrf_param = jQuery('meta[name=csrf-param]').attr("content");
@@ -156,9 +172,13 @@ var DashboardCategory={
     renderSport: function (el,data) {
         if(data.length)  $('.preloaderSport').fadeOut(100, function() {
             $.each(data, function( k, e ) {    // e.id e.name e.count
+                var sportIconCurrent='icon-football';
+                if(DashboardCategory.icons_sports[e.id]){
+                    sportIconCurrent=DashboardCategory.icons_sports[e.id];
+                }
                 $('#sportTypeSidebar').append('<div class="collapsed-type">\n' +
                     '                    <div class="collapse-head">\n' +
-                    '                        <button class="trigger-collapse" data-id="'+e.id +'"><span class="icon-football"></span>'+e.name +'</button>\n' +
+                    '                        <button class="trigger-collapse" data-id="'+e.id +'"><span class="' + sportIconCurrent + '"></span>'+e.name +'</button>\n' +
                     '                    </div>\n' +
                     '                    <div class="collapse-block" >\n' +
                     '                        <ul class="collapse-list" id="child_colapse_'+e.id+'" >\n' +
@@ -254,7 +274,6 @@ var DashboardCategory={
                  if (typeof el.name === 'undefined') {
                      el.name='с ОТ';
                  }
-
                  optionForSSelect+='<option  value="'+el.id+'">'+el.name+'</option>';
              }
          });
@@ -264,9 +283,9 @@ var DashboardCategory={
              '                                                    <span class="icon-football"></span>\n' +
              '                                                </div>\n' +
              '                                                <div class="title-open-bet">\n' +
-             '                                                    <h3>'+fullgamename+'</h3>     <select id="addGamesTypeSelect" onchange="changePeriodGame(this);">\n' +
+             '                                                    <h3>'+fullgamename+'</h3> <div class="select-type-block"> <div class="select-type-block-inner">    <select id="addGamesTypeSelect" class="single-select" onchange="changePeriodGame(this);">\n' +
              optionForSSelect+
-             '   </select>   \n' +
+             '   </select> </div> </div>  \n' +
              '                                                </div>\n' +
              '                                                <div class="date-open-icon">'+starteTime+'</div>\n' +
              '                                                <a href="bet-dashboard.html" class="total show-all-bets closeLine">'+data.meta.count+'</a>\n' +
@@ -329,6 +348,7 @@ var DashboardCategory={
              openCollapsedWrapper.append(collapseOpenBet);
 
          });
+         $('.single-select').select2();
          $('.open_line_center_block').fadeIn(400);
 
 
@@ -359,8 +379,13 @@ var DashboardCategory={
           if(data[0].data[0].attributes['user-locale-lng-name'].length){
               sportName=data[0].data[0].attributes['user-locale-lng-name'];
           }
+          var sportIconCurrent='icon-football';
+          if(DashboardCategory.icons_sports[data[0].sport_id]){
+              sportIconCurrent=DashboardCategory.icons_sports[data[0].sport_id];
+          }
+
           $('#sporttabsNavigation').append('<li>\n' +
-              '                <a href="#tab_'+data[0].sport_id+'" id="sp_'+data[0].sport_id+'" class="'+activeStatus+' tab-trigger" data-toggle="tabs"><span class="icon-football"></span> '+sportName+'</a>\n' +
+              '                <a href="#tab_'+data[0].sport_id+'" id="sp_'+data[0].sport_id+'" class="'+activeStatus+' tab-trigger" data-toggle="tabs"><span class="'+sportIconCurrent+'"></span> '+sportName+'</a>\n' +
               '            </li>');
       }
 
@@ -430,14 +455,20 @@ var DashboardCategory={
         // console.log(data2[0])
        $.each(data2, function( index, data ) {
            if(index>10) return;
+           var sportIconCurrent='icon-football';
+           if(DashboardCategory.icons_sports[data.sport_id]){
+               sportIconCurrent=DashboardCategory.icons_sports[data.sport_id];
+           }
             var tabeUp = $('#sp_'+data.sport_id);//tabs
             if(tabeUp.length===0){
                 var sportName='';
                 if(data.data[0].attributes['user-locale-lng-name'].length){
                     sportName=data.data[0].attributes['user-locale-lng-name'];
                 }
+
+
                 $('#sporttabsNavigation').append('<li>\n' +
-                    '                <a href="#tab_'+data.sport_id+'" id="sp_'+data.sport_id+'" class="'+activeStatus+' tab-trigger" data-toggle="tabs"><span class="icon-football"></span> '+sportName+'</a>\n' +
+                    '                <a href="#tab_'+data.sport_id+'" id="sp_'+data.sport_id+'" class="'+activeStatus+' tab-trigger" data-toggle="tabs"><span class="'+sportIconCurrent+'"></span> '+sportName+'</a>\n' +
                     '            </li>');
             }
             var tabeBody = $('#tab_'+data.sport_id);// body tabs
@@ -449,7 +480,7 @@ var DashboardCategory={
 
 
             var colapsetab=$('#tab-collapse-tournire_'+data.id);// body tabs // турнир название синея линия
-            console.log(data.id);
+            // console.log(data.id);
             if(colapsetab.length===0){
                 tabeBody.append('<div class="tab-collapse" id="tab-collapse-tournire_'+data.id+'">\n' +
                     '                <div class="tab-collapse-head">\n' +
@@ -474,7 +505,7 @@ var DashboardCategory={
                     timeStartMatch = timeConverter(value.attributes['start'])
                     colapsetabInner.children('.tab-collapse-content-inner').append('<div class="row-collapse">\n' +
                         '                            <div class="row-collapse-inner" data-parents="' + mainGameId + '">\n' +
-                        '                                <div class="icon-bet"><span class="icon-football"></span></div>\n' +
+                        '                                <div class="icon-bet"><span class="'+sportIconCurrent+'"></span></div>\n' +
                         '                                <a class="info-bet do_open_line" data-id="' + mainGameId + '"  href="bet-dashboard-open.html">\n' +
                         '                                    <div class="title-bet">' + timeStartMatch + '</div>\n' +
                         '                                    <div class="value-bet">' + fullNamePlayers + '</div>\n' +

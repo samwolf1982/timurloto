@@ -2,6 +2,7 @@
 
 use app\copmonents\widgets\addbet\AddbetWidget;
 use app\copmonents\widgets\showuser\ShowuserWidget;
+use app\copmonents\widgets\topusers\TopusersWidget;
 use app\modules\statistic\widgets\LastBets;
 use app\modules\statistic\widgets\LastWeekWinnersWidg;
 use common\models\helpers\ConstantsHelper;
@@ -384,118 +385,112 @@ BetAsset::register($this);
 
 
 
-<!--            dino1-->
-            <div class="row table-row" >
-                <div class="column-12">
-                    <div class="table-wrapper">
-                        <div class="table-inner">
-                            <div class="table-head">
-                                <div class="tbl-icon">
-                                    <img src="/images/champ.svg" alt="">
-                                </div>
-                                <div class="left-head-text">
-                                    <span class="text-head">Еженедельный Турнир</span>
-                                    <span class="text-head text-muted">25,000 ₽</span>
-                                </div>
+            <?php if(0){ ?>
+                <!--            dino1-->
+                <div class="row table-row" >
+                    <div class="column-12">
+                        <div class="table-wrapper">
+                            <div class="table-inner">
+                                <div class="table-head">
+                                    <div class="tbl-icon">
+                                        <img src="/images/champ.svg" alt="">
+                                    </div>
+                                    <div class="left-head-text">
+                                        <span class="text-head">Еженедельный Турнир</span>
+                                        <span class="text-head text-muted">25,000 ₽</span>
+                                    </div>
 
 
-                                <?php $dtop= Yii::$app->request->get('dtop') ?> ?>
+                                    <?php $dtop= Yii::$app->request->get('dtop') ?> ?>
                                     <select  onchange="if (this.value) window.location.href=this.value" >
-                                    <option     value="<?=Url::toRoute(['/bet'])?>">Турнир текущий</option>
-                                    <option <?=$dtop=='2019-03-31'?'selected':'' ?> value="<?=Url::toRoute(['/bet','dtop'=>'2019-03-31'])?>">1 Турнир -(2019-03-31)</option>
-                                    <option <?=$dtop=='2019-03-24'?'selected':'' ?> value="<?=Url::toRoute(['/bet','dtop'=>'2019-03-24'])?>">2 Турнир - (2019-03-24)</option>
+                                        <option     value="<?=Url::toRoute(['/bet'])?>">Турнир текущий</option>
+                                        <option <?=$dtop=='2019-03-31'?'selected':'' ?> value="<?=Url::toRoute(['/bet','dtop'=>'2019-03-31'])?>">1 Турнир -(2019-03-31)</option>
+                                        <option <?=$dtop=='2019-03-24'?'selected':'' ?> value="<?=Url::toRoute(['/bet','dtop'=>'2019-03-24'])?>">2 Турнир - (2019-03-24)</option>
+                                    </select>
 
 
-
-                                </select>
-
-
-                            </div>
-                            <script>
+                                </div>
+                                <script>
 
 
-                            </script>
-                            <div class="table-body  tableTop100">
+                                </script>
+                                <div class="table-body  tableTop100">
+                                    <?= GridView::widget([
 
-
-
-
-                                <?= GridView::widget([
-
-                                    'dataProvider' => $dataProvider,
+                                        'dataProvider' => $dataProvider,
                                         'layout' => " <div class='wrap_commercial_top'>  {items} <div class='commercial'> <div class='in_commercial' >  </div> </div>  </div>  <div class='clearfix'></div> \n <div class='table-footer'><div class='pagination'> <ul>  {pager}  </ul> </div></div>",
-                                    'tableOptions'=>['class'=>'table table-striped table-bordered clearTableBorder'],
-                                    'summary' => '',
-                                    'columns' => [
+                                        'tableOptions'=>['class'=>'table table-striped table-bordered clearTableBorder'],
+                                        'summary' => '',
+                                        'columns' => [
 
-                                        [   'class' => 'yii\grid\SerialColumn',
-                                            'contentOptions' => ['class' => 'numberClass'],
-                                            'headerOptions'=>['class'=>'fNumberHeader']
-                                         ],
-
-                                        [
-                                            'attribute'=>'user_id',
-                                            'label'=>'',
-                                            'contentOptions' =>function ($model, $key, $index, $column){
-                                                return ['class' => 'name '];
-                                            },
-                                            'format' => 'raw',
-                                            'content'=>function($data){
-//                                    var_dump($data); die();
-                                                /** @var common\models\overiden\User $user */
-                                                $user=User::find()->where(['id'=>$data['user_id']])->one();
-                                             return   HtmlGenerator::top100UserFace($user);
-
-                                            }
-                                        ],
+                                            [   'class' => 'yii\grid\SerialColumn',
+                                                'contentOptions' => ['class' => 'numberClass'],
+                                                'headerOptions'=>['class'=>'fNumberHeader']
+                                            ],
 
                                             [
-                                            'attribute'=>'sume',
-                                             'format' => 'raw',
-                                             'content'=>function($data){
-                                    // todo here
+                                                'attribute'=>'user_id',
+                                                'label'=>'',
+                                                'contentOptions' =>function ($model, $key, $index, $column){
+                                                    return ['class' => 'name '];
+                                                },
+                                                'format' => 'raw',
+                                                'content'=>function($data){
+//                                    var_dump($data); die();
+                                                    /** @var common\models\overiden\User $user */
+                                                    $user=User::find()->where(['id'=>$data['user_id']])->one();
+                                                    return   HtmlGenerator::top100UserFace($user);
 
-                                              return  sprintf("%01.2f %%", $data['sume']);  ;
-                                              //return  sprintf("%01.2f %%", 44);  ;
-                                            },
-                                            'label'=>'Profit',
+                                                }
+                                            ],
+
+                                            [
+                                                'attribute'=>'sume',
+                                                'format' => 'raw',
+                                                'content'=>function($data){
+                                                    // todo here
+
+                                                    return  sprintf("%01.2f %%", $data['sume']);  ;
+                                                    //return  sprintf("%01.2f %%", 44);  ;
+                                                },
+                                                'label'=>'Profit',
 
                                                 'contentOptions' => ['class' => 'text-center cellTable'],
                                                 'headerOptions'=>['class'=>'text-center']
                                             ],
-                                        [
-                                            'attribute'=>'penet',
-                                            'format' => 'raw',
-                                            'content'=>function($data){
-                                                return  sprintf("%01.2f %%", $data['penet']);  ;
-                                            },
-                                            'label'=>'Проходимость',
-                                            'contentOptions' => ['class' => 'text-center cellTable'],
-                                            'headerOptions'=>['class'=>'text-center']
-                                         
+                                            [
+                                                'attribute'=>'penet',
+                                                'format' => 'raw',
+                                                'content'=>function($data){
+                                                    return  sprintf("%01.2f %%", $data['penet']);  ;
+                                                },
+                                                'label'=>'Проходимость',
+                                                'contentOptions' => ['class' => 'text-center cellTable'],
+                                                'headerOptions'=>['class'=>'text-center']
 
-                                        ],
-                                        [
-                                            'attribute'=>'mdc',
-                                            'label'=>'Коэффициент',
-                                            'contentOptions' => ['class' => 'text-center cellTable'],
-                                            'headerOptions'=>['class'=>'text-center'],
-                                            'format' => 'raw',
-                                            'content'=>function($data){
-                                                return  sprintf("%01.2f", $data['mdc']);  ;
-                                            },
 
-                                        ],
-                                        [
-                                            'attribute'=>'ro',
-                                            'label'=>'ROI',
-                                            'contentOptions' => ['class' => 'text-center cellTable'],
-                                            'headerOptions'=>['class'=>'text-center'],
-                                            'format' => 'raw',
-                                            'content'=>function($data){
-                                                return  sprintf("%01.2f", $data['ro']);  ;
-                                            },
-                                        ],
+                                            ],
+                                            [
+                                                'attribute'=>'mdc',
+                                                'label'=>'Коэффициент',
+                                                'contentOptions' => ['class' => 'text-center cellTable'],
+                                                'headerOptions'=>['class'=>'text-center'],
+                                                'format' => 'raw',
+                                                'content'=>function($data){
+                                                    return  sprintf("%01.2f", $data['mdc']);  ;
+                                                },
+
+                                            ],
+                                            [
+                                                'attribute'=>'ro',
+                                                'label'=>'ROI',
+                                                'contentOptions' => ['class' => 'text-center cellTable'],
+                                                'headerOptions'=>['class'=>'text-center'],
+                                                'format' => 'raw',
+                                                'content'=>function($data){
+                                                    return  sprintf("%01.2f", $data['ro']);  ;
+                                                },
+                                            ],
 
 
 
@@ -504,45 +499,265 @@ BetAsset::register($this);
 //                                        'name:ntext',
 //                                        'url:ntext',
 //                                        'category_image:ntext',
-                                        // 'created_at',
-                                        // 'updated_at',
-                                       // ['class' => 'yii\grid\ActionColumn'],
-                                    ],
-                                    'pager' => [
-                                        
-                                       // 'view'=>'wwwwddde',
+                                            // 'created_at',
+                                            // 'updated_at',
+                                            // ['class' => 'yii\grid\ActionColumn'],
+                                        ],
+                                        'pager' => [
+
+                                            // 'view'=>'wwwwddde',
 
 //                                        'firstPageLabel' => 'first',
 //                                        'lastPageLabel' => 'last',
-                                        'prevPageLabel' => '<',
-                                        'nextPageLabel' => '>',
+                                            'prevPageLabel' => '<',
+                                            'nextPageLabel' => '>',
 
-                                        'maxButtonCount' => 4,
+                                            'maxButtonCount' => 4,
 
-                                        // Customzing options for pager container tag
-                                        'options' => [
-                                            'tag' => 'div',
-                                            'class' => [ 'class'=> 'pagination-list'],
-                                            'id' => 'pager-container',
+                                            // Customzing options for pager container tag
+                                            'options' => [
+                                                'tag' => 'div',
+                                                'class' => [ 'class'=> 'pagination-list'],
+                                                'id' => 'pager-container',
+                                            ],
+
+                                            // Customzing CSS class for pager link
+                                            'linkOptions' => ['class' => 'mylink'],
+                                            'activePageCssClass' => 'active',
+                                            'disabledPageCssClass' => 'mydisable',
+
+                                            // Customzing CSS class for navigating link
+                                            'prevPageCssClass' => 'first-pag',
+                                            'nextPageCssClass' => 'pnext',
+                                            'firstPageCssClass' => 'first-pag2',
+                                            'lastPageCssClass' => 'last-pag',
                                         ],
+                                    ]); ?>
 
-                                        // Customzing CSS class for pager link
-                                        'linkOptions' => ['class' => 'mylink'],
-                                        'activePageCssClass' => 'active',
-                                        'disabledPageCssClass' => 'mydisable',
+                                </div>
 
-                                        // Customzing CSS class for navigating link
-                                        'prevPageCssClass' => 'first-pag',
-                                        'nextPageCssClass' => 'pnext',
-                                        'firstPageCssClass' => 'first-pag2',
-                                        'lastPageCssClass' => 'last-pag',
-                                    ],
-                                ]); ?>
+
+                                <?php if(0){ ?>
+                                    <div class="table-footer">
+                                        <div class="pagination">
+                                            <ul class="pagination-list">
+                                                <li class="first-pag">
+                                                    <a href="#"><span class="icon-arrow_left-small"></span></a>
+                                                </li>
+                                                <li class="active"><a href="#">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#" class="no-num-pag">...</a></li>
+                                                <li><a href="#">10</a></li>
+                                                <li class="last-pag">
+                                                    <a href="#"><span class="icon-arrow_right-small"></span></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                <?php } ?>
 
                             </div>
-                            
-                            
-                            <?php if(0){ ?>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            <?php }  ?>
+
+
+
+            <?php if(0){ ?>
+            <div class="row table-row">
+                <div class="column-12">
+                    <div class="table-wrapper top-user-table">
+                        <div class="table-inner">
+                            <div class="table-head head-with-tabs head-custom-tabs">
+                                <div class="tbl-icon tbl-icon-select">
+                                    <img src="/images/champ.svg" alt="">
+                                </div>
+                                <div class="left-head-text">
+                                    <div class="title-w-select">топ-100 пользователей</div>
+                                    <div class="select-type-block">
+                                        <div class="select-type-block-inner">
+
+                                            <?php $dtop= Yii::$app->request->get('dtop') ?> 
+                                            <select class="single-select"  onchange="if (this.value) window.location.href=this.value" >
+                                                <option     value="<?=Url::toRoute(['/bet'])?>">Турнир текущий</option>
+                                                <option <?=$dtop=='2019-03-31'?'selected':'' ?> value="<?=Url::toRoute(['/bet','dtop'=>'2019-03-31'])?>">1 Турнир -(2019-03-31)</option>
+                                                <option <?=$dtop=='2019-03-24'?'selected':'' ?> value="<?=Url::toRoute(['/bet','dtop'=>'2019-03-24'])?>">2 Турнир - (2019-03-24)</option>
+                                            </select>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right-head-tab">
+                                    <div class="for-mobile-drop desinbtn-drop">
+                                        <a href="#" class="trig-filter">За месяц</a>
+                                        <ul class="head-tabs">
+                                            <li class="active">
+                                                <a href="#">За месяц</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">3 месяца</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">За все время</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="table-body">
+                                <div class="table-block-rating">
+                                    <div class="table-block-rating-inner">
+                                        <div class="hr table-head">
+                                            <div class="td table-cell td-count">#</div>
+                                            <div class="td table-cell td-user"></div>
+                                            <div class="td table-cell td-profit">Profit</div>
+                                            <div class="td table-cell td-passability">Проходимость</div>
+                                            <div class="td table-cell td-coeficient">Коэффициент</div>
+                                            <div class="td table-cell td-roi">ROI</div>
+                                        </div>
+
+                                        <div class="hr table-row">
+                                            <div class="td table-cell td-count">1</div>
+                                            <div class="td table-cell td-user">
+                                                <div class="row-ava">
+                                                    <div class="rate-avatar">
+                                                        <div class="circle-wrapper" data-ptc="19">
+                                                            <div class="circle"></div>
+                                                        </div>
+                                                        <div class="avatar-user">
+                                                            <img src="/images/ava1.png" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-info">
+                                                        <h4 class="name-r">john.baklan</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="td table-cell td-profit">7399.36 %</div>
+                                            <div class="td table-cell td-passability">88.46 %</div>
+                                            <div class="td table-cell td-coeficient">38.46</div>
+                                            <div class="td table-cell td-roi">8755.25</div>
+                                        </div>
+                                        <div class="hr table-row">
+                                            <div class="td table-cell td-count">2</div>
+                                            <div class="td table-cell td-user">
+                                                <div class="row-ava">
+                                                    <div class="rate-avatar">
+                                                        <div class="circle-wrapper" data-ptc="3">
+                                                            <div class="circle"></div>
+                                                        </div>
+                                                        <div class="avatar-user">
+                                                            <img src="/images/ava2.png" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-info">
+                                                        <h4 class="name-r">rodrigo_pes</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="td table-cell td-profit">323.36 %</div>
+                                            <div class="td table-cell td-passability">33.46 %</div>
+                                            <div class="td table-cell td-coeficient">43.46</div>
+                                            <div class="td table-cell td-roi">3333.25</div>
+                                        </div>
+                                        <div class="hr table-row">
+                                            <div class="td table-cell td-count">3</div>
+                                            <div class="td table-cell td-user">
+                                                <div class="row-ava">
+                                                    <div class="rate-avatar">
+                                                        <div class="circle-wrapper" data-ptc="13">
+                                                            <div class="circle"></div>
+                                                        </div>
+                                                        <div class="avatar-user">
+                                                            <img src="/images/ava3.png" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-info">
+                                                        <h4 class="name-r">Andrjulik</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="td table-cell td-profit">323.36 %</div>
+                                            <div class="td table-cell td-passability">66.46 %</div>
+                                            <div class="td table-cell td-coeficient">43.46</div>
+                                            <div class="td table-cell td-roi">7777.25</div>
+                                        </div>
+                                        <div class="hr table-row">
+                                            <div class="td table-cell td-count">4</div>
+                                            <div class="td table-cell td-user">
+                                                <div class="row-ava">
+                                                    <div class="rate-avatar">
+                                                        <div class="circle-wrapper" data-ptc="10">
+                                                            <div class="circle"></div>
+                                                        </div>
+                                                        <div class="avatar-user">
+                                                            <img src="/images/ava5.png" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-info">
+                                                        <h4 class="name-r">anton2</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="td table-cell td-profit">7399.36 %</div>
+                                            <div class="td table-cell td-passability">88.46 %</div>
+                                            <div class="td table-cell td-coeficient">38.46</div>
+                                            <div class="td table-cell td-roi">8755.25</div>
+                                        </div>
+                                        <div class="hr table-row">
+                                            <div class="td table-cell td-count">5</div>
+                                            <div class="td table-cell td-user">
+                                                <div class="row-ava">
+                                                    <div class="rate-avatar">
+                                                        <div class="circle-wrapper" data-ptc="19">
+                                                            <div class="circle"></div>
+                                                        </div>
+                                                        <div class="avatar-user">
+                                                            <img src="/images/ava2.png" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-info">
+                                                        <h4 class="name-r">lmb</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="td table-cell td-profit">7399.36 %</div>
+                                            <div class="td table-cell td-passability">88.46 %</div>
+                                            <div class="td table-cell td-coeficient">38.46</div>
+                                            <div class="td table-cell td-roi">8755.25</div>
+                                        </div>
+                                        <div class="hr table-row">
+                                            <div class="td table-cell td-count">6</div>
+                                            <div class="td table-cell td-user">
+                                                <div class="row-ava">
+                                                    <div class="rate-avatar">
+                                                        <div class="circle-wrapper" data-ptc="19">
+                                                            <div class="circle"></div>
+                                                        </div>
+                                                        <div class="avatar-user">
+                                                            <img src="/images/ava1.png" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-info">
+                                                        <h4 class="name-r">john.baklan</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="td table-cell td-profit">7399.36 %</div>
+                                            <div class="td table-cell td-passability">88.46 %</div>
+                                            <div class="td table-cell td-coeficient">38.46</div>
+                                            <div class="td table-cell td-roi">8755.25</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="table-footer">
                                 <div class="pagination">
                                     <ul class="pagination-list">
@@ -560,20 +775,363 @@ BetAsset::register($this);
                                     </ul>
                                 </div>
                             </div>
-                            <?php } ?>
-                            
+
                         </div>
-                        
-                        
-                        
                     </div>
                 </div>
+                <div class="column-12 block-bnr">
+                    <a href="#">
+                        <img src="/images/ad@3x.jpg" alt="">
+                    </a>
+                </div>
             </div>
+            <?php }  ?>
+
+            <?php if(0){ ?>
+                <div class="row table-row">
+                    <div class="column-12">
+                        <div class="table-wrapper top-user-table">
+                            <div class="table-inner">
+                                <div class="table-head head-with-tabs head-custom-tabs">
+                                    <div class="tbl-icon tbl-icon-select">
+                                        <img src="/images/champ.svg" alt="">
+                                    </div>
+                                    <div class="left-head-text">
+                                        <div class="title-w-select">топ-100 пользователей</div>
+                                        <div class="select-type-block">
+                                            <div class="select-type-block-inner">
+
+                                                <?php $dtop= Yii::$app->request->get('dtop') ?>
+                                                <select class="single-select"  onchange="if (this.value) window.location.href=this.value" >
+                                                    <option     value="<?=Url::toRoute(['/bet'])?>">Турнир текущий</option>
+                                                    <option <?=$dtop=='2019-03-31'?'selected':'' ?> value="<?=Url::toRoute(['/bet','dtop'=>'2019-03-31'])?>">1 Турнир -(2019-03-31)</option>
+                                                    <option <?=$dtop=='2019-03-24'?'selected':'' ?> value="<?=Url::toRoute(['/bet','dtop'=>'2019-03-24'])?>">2 Турнир - (2019-03-24)</option>
+                                                </select>
 
 
-           
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="right-head-tab">
+                                        <div class="for-mobile-drop desinbtn-drop">
+                                            <a href="#" class="trig-filter">За месяц</a>
+                                            <ul class="head-tabs">
+                                                <li class="active">
+                                                    <a href="#">За месяц</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">3 месяца</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">За все время</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="table-body">
+                                    <div class="table-block-rating">
 
 
+
+                                            <?= GridView::widget([
+
+                                                'dataProvider' => $dataProvider,
+                                                'layout' => "  {items}  \n <div class='table-footer'><div class='pagination'> <ul>  {pager}  </ul> </div>",
+                                                'tableOptions'=>['class'=>'table-block-rating-inner'],
+                                                'summary' => '',
+                                                'columns' => [
+
+                                                    [   'class' => 'yii\grid\SerialColumn',
+                                                        'contentOptions' => ['class' => 'numberClass'],
+                                                        'headerOptions'=>['class'=>'fNumberHeader']
+                                                    ],
+
+                                                    [
+                                                        'attribute'=>'user_id',
+                                                        'label'=>'',
+                                                        'contentOptions' =>function ($model, $key, $index, $column){
+                                                            return ['class' => 'name '];
+                                                        },
+                                                        'format' => 'raw',
+                                                        'content'=>function($data){
+//                                    var_dump($data); die();
+                                                            /** @var common\models\overiden\User $user */
+                                                            $user=User::find()->where(['id'=>$data['user_id']])->one();
+                                                            return   HtmlGenerator::top100UserFace($user);
+
+                                                        }
+                                                    ],
+
+                                                    [
+                                                        'attribute'=>'sume',
+                                                        'format' => 'raw',
+                                                        'content'=>function($data){
+                                                            // todo here
+
+                                                            return  sprintf("%01.2f %%", $data['sume']);  ;
+                                                            //return  sprintf("%01.2f %%", 44);  ;
+                                                        },
+                                                        'label'=>'Profit',
+
+                                                        'contentOptions' => ['class' => 'text-center cellTable'],
+                                                        'headerOptions'=>['class'=>'text-center']
+                                                    ],
+                                                    [
+                                                        'attribute'=>'penet',
+                                                        'format' => 'raw',
+                                                        'content'=>function($data){
+                                                            return  sprintf("%01.2f %%", $data['penet']);  ;
+                                                        },
+                                                        'label'=>'Проходимость',
+                                                        'contentOptions' => ['class' => 'text-center cellTable'],
+                                                        'headerOptions'=>['class'=>'text-center']
+
+
+                                                    ],
+                                                    [
+                                                        'attribute'=>'mdc',
+                                                        'label'=>'Коэффициент',
+                                                        'contentOptions' => ['class' => 'text-center cellTable'],
+                                                        'headerOptions'=>['class'=>'text-center'],
+                                                        'format' => 'raw',
+                                                        'content'=>function($data){
+                                                            return  sprintf("%01.2f", $data['mdc']);  ;
+                                                        },
+
+                                                    ],
+                                                    [
+                                                        'attribute'=>'ro',
+                                                        'label'=>'ROI',
+                                                        'contentOptions' => ['class' => 'text-center cellTable'],
+                                                        'headerOptions'=>['class'=>'text-center'],
+                                                        'format' => 'raw',
+                                                        'content'=>function($data){
+                                                            return  sprintf("%01.2f", $data['ro']);  ;
+                                                        },
+                                                    ],
+
+
+
+//                                        'id',
+//                                        'parent_id',
+//                                        'name:ntext',
+//                                        'url:ntext',
+//                                        'category_image:ntext',
+                                                    // 'created_at',
+                                                    // 'updated_at',
+                                                    // ['class' => 'yii\grid\ActionColumn'],
+                                                ],
+                                                'pager' => [
+
+                                                    // 'view'=>'wwwwddde',
+
+//                                        'firstPageLabel' => 'first',
+//                                        'lastPageLabel' => 'last',
+                                                    'prevPageLabel' => '<',
+                                                    'nextPageLabel' => '>',
+
+                                                    'maxButtonCount' => 4,
+
+                                                    // Customzing options for pager container tag
+                                                    'options' => [
+                                                        'tag' => 'div',
+                                                        'class' => [ 'class'=> 'pagination-list'],
+                                                        'id' => 'pager-container',
+                                                    ],
+
+                                                    // Customzing CSS class for pager link
+                                                    'linkOptions' => ['class' => 'mylink'],
+                                                    'activePageCssClass' => 'active',
+                                                    'disabledPageCssClass' => 'mydisable',
+
+                                                    // Customzing CSS class for navigating link
+                                                    'prevPageCssClass' => 'first-pag',
+                                                    'nextPageCssClass' => 'pnext',
+                                                    'firstPageCssClass' => 'first-pag2',
+                                                    'lastPageCssClass' => 'last-pag',
+                                                ],
+                                            ]); ?>
+
+
+
+                                        <div class="table-block-rating-inner">
+                                            <div class="hr table-head">
+                                                <div class="td table-cell td-count">#</div>
+                                                <div class="td table-cell td-user"></div>
+                                                <div class="td table-cell td-profit">Profit</div>
+                                                <div class="td table-cell td-passability">Проходимость</div>
+                                                <div class="td table-cell td-coeficient">Коэффициент</div>
+                                                <div class="td table-cell td-roi">ROI</div>
+                                            </div>
+                                            <div class="hr table-row">
+                                                <div class="td table-cell td-count">1</div>
+                                                <div class="td table-cell td-user">
+                                                    <div class="row-ava">
+                                                        <div class="rate-avatar">
+                                                            <div class="circle-wrapper" data-ptc="19">
+                                                                <div class="circle"></div>
+                                                            </div>
+                                                            <div class="avatar-user">
+                                                                <img src="/images/ava1.png" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="user-info">
+                                                            <h4 class="name-r">john.baklan</h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="td table-cell td-profit">7399.36 %</div>
+                                                <div class="td table-cell td-passability">88.46 %</div>
+                                                <div class="td table-cell td-coeficient">38.46</div>
+                                                <div class="td table-cell td-roi">8755.25</div>
+                                            </div>
+                                            <div class="hr table-row">
+                                                <div class="td table-cell td-count">2</div>
+                                                <div class="td table-cell td-user">
+                                                    <div class="row-ava">
+                                                        <div class="rate-avatar">
+                                                            <div class="circle-wrapper" data-ptc="3">
+                                                                <div class="circle"></div>
+                                                            </div>
+                                                            <div class="avatar-user">
+                                                                <img src="/images/ava2.png" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="user-info">
+                                                            <h4 class="name-r">rodrigo_pes</h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="td table-cell td-profit">323.36 %</div>
+                                                <div class="td table-cell td-passability">33.46 %</div>
+                                                <div class="td table-cell td-coeficient">43.46</div>
+                                                <div class="td table-cell td-roi">3333.25</div>
+                                            </div>
+                                            <div class="hr table-row">
+                                                <div class="td table-cell td-count">3</div>
+                                                <div class="td table-cell td-user">
+                                                    <div class="row-ava">
+                                                        <div class="rate-avatar">
+                                                            <div class="circle-wrapper" data-ptc="13">
+                                                                <div class="circle"></div>
+                                                            </div>
+                                                            <div class="avatar-user">
+                                                                <img src="/images/ava3.png" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="user-info">
+                                                            <h4 class="name-r">Andrjulik</h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="td table-cell td-profit">323.36 %</div>
+                                                <div class="td table-cell td-passability">66.46 %</div>
+                                                <div class="td table-cell td-coeficient">43.46</div>
+                                                <div class="td table-cell td-roi">7777.25</div>
+                                            </div>
+                                            <div class="hr table-row">
+                                                <div class="td table-cell td-count">4</div>
+                                                <div class="td table-cell td-user">
+                                                    <div class="row-ava">
+                                                        <div class="rate-avatar">
+                                                            <div class="circle-wrapper" data-ptc="10">
+                                                                <div class="circle"></div>
+                                                            </div>
+                                                            <div class="avatar-user">
+                                                                <img src="/images/ava5.png" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="user-info">
+                                                            <h4 class="name-r">anton2</h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="td table-cell td-profit">7399.36 %</div>
+                                                <div class="td table-cell td-passability">88.46 %</div>
+                                                <div class="td table-cell td-coeficient">38.46</div>
+                                                <div class="td table-cell td-roi">8755.25</div>
+                                            </div>
+                                            <div class="hr table-row">
+                                                <div class="td table-cell td-count">5</div>
+                                                <div class="td table-cell td-user">
+                                                    <div class="row-ava">
+                                                        <div class="rate-avatar">
+                                                            <div class="circle-wrapper" data-ptc="19">
+                                                                <div class="circle"></div>
+                                                            </div>
+                                                            <div class="avatar-user">
+                                                                <img src="/images/ava2.png" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="user-info">
+                                                            <h4 class="name-r">lmb</h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="td table-cell td-profit">7399.36 %</div>
+                                                <div class="td table-cell td-passability">88.46 %</div>
+                                                <div class="td table-cell td-coeficient">38.46</div>
+                                                <div class="td table-cell td-roi">8755.25</div>
+                                            </div>
+                                            <div class="hr table-row">
+                                                <div class="td table-cell td-count">6</div>
+                                                <div class="td table-cell td-user">
+                                                    <div class="row-ava">
+                                                        <div class="rate-avatar">
+                                                            <div class="circle-wrapper" data-ptc="19">
+                                                                <div class="circle"></div>
+                                                            </div>
+                                                            <div class="avatar-user">
+                                                                <img src="/images/ava1.png" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="user-info">
+                                                            <h4 class="name-r">john.baklan</h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="td table-cell td-profit">7399.36 %</div>
+                                                <div class="td table-cell td-passability">88.46 %</div>
+                                                <div class="td table-cell td-coeficient">38.46</div>
+                                                <div class="td table-cell td-roi">8755.25</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-footer">
+                                    <div class="pagination">
+                                        <ul class="pagination-list">
+                                            <li class="first-pag">
+                                                <a href="#"><span class="icon-arrow_left-small"></span></a>
+                                            </li>
+                                            <li class="active"><a href="#">1</a></li>
+                                            <li><a href="#">2</a></li>
+                                            <li><a href="#">3</a></li>
+                                            <li><a href="#" class="no-num-pag">...</a></li>
+                                            <li><a href="#">10</a></li>
+                                            <li class="last-pag">
+                                                <a href="#"><span class="icon-arrow_right-small"></span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column-12 block-bnr">
+                        <a href="#">
+                            <img src="/images/ad@3x.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+            <?php }  ?>
+
+
+
+            <?= TopusersWidget::widget(['dataProvider'=>$dataProvider]); ?>
 
 
             <div class="row table-row">

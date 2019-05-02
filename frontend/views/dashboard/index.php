@@ -885,6 +885,7 @@ $this->title='Дать прогноз';
         'baseAuthUrl' => ['/user/security/auth'],
     ]) ?>
 </div>
+
 <!--<script src="js/script.min.js"></script>-->
 <!-- Клики на меню -->
 <!--<script src="js/bet.js"></script>-->

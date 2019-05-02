@@ -52,73 +52,42 @@ BetAsset::register($this);
     </div>
 </header>
 
-<div class="main-background">
-    <div id="scene">
-        <div data-depth="0.2" class="background-image" style="background-image: url(/images/back-body.jpg)"></div>
-    </div>
-</div>
-<div class="front-page-wrapper">
-    <div class="front-page-inner">
+<!--<div class="main-background">-->
+<!--    <div id="scene">-->
+<!--        <div data-depth="0.2" class="background-image" style="background-image: url(/images/bg-player.jpg)"></div>-->
+<!--    </div>-->
+<!--</div>-->
+<div class="page-404-wrapper">
+    <div class="page-404-inner">
         <div class="content-container">
-
             <?php if(1){ ?>
-                <div class="row table-row">
-                    <div class="column-12">
-                        <div class="table-wrapper table-winner">
-                            <div class="table-inner">
-                                <div class="table-body">
-                                    <div class="head-bets-slider text-center" >
-                                        <h3 style="font-size: large;" >Мы уже работаем над этим</h3>
-
-
-                                    </div>
-                                    <div class="bets-slider2">
-                                        <div class="column-12 text-center" style="padding: 1em;">
-                                            <img class="img-responsive" style="display: initial;" src="/images/error/404-error.png" alt="404 error">
-                                            <br>
-
-
-                                            <?php if( Yii::$app->params['showErrorOnPage404'] ): ?>
-                <!--  отображение ошыбок на сайте только для администратора или быстрого дебага  -->
-                                                <div class="wraperrormessage">
-                                                    <?= Yii::$app->errorHandler->exception; ?>
-                                                </div>
-                                            <?php endif; ?>
-
-
-                                            <div class="input-row pull-right2" style="padding-top: 1em;">
-                                                <a href="/matches" class="btn btn-primary btn-hover">
-                                                    +  <i>Продолжить</i>
-                                                    <span ></span>
-                                                </a>
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="table-footer">
-                                    <div class="pagination slider-navigation" id="bets-nav">
-                                        <div class="slider-navigation-inner">
-
-                                        </div>
-                                    </div>
-                                </div>
+                <div class="content-404">
+                    <div class="content-404-inner">
+                        <h3 style="font-size: large;" >Мы уже работаем над этим</h3>
+                        <div class="img-404">
+                            <img class="img-responsive" style="display: initial;" src="/images/404.png" alt="404 error">
+                        </div>
+                        <?php if( Yii::$app->params['showErrorOnPage404'] ): ?>
+                            <!--  отображение ошыбок на сайте только для администратора или быстрого дебага  -->
+                            <div class="wraperrormessage">
+                                <?= Yii::$app->errorHandler->exception; ?>
                             </div>
+                        <?php endif; ?>
+                        <div class="btn-404">
+                            <a href="/matches" class="btn btn-primary btn-hover">
+                                +  <i>Продолжить</i>
+                                <span ></span>
+                            </a>
                         </div>
                     </div>
                 </div>
             <?php } ?>
-
-
-            
-            
-            
         </div>
     </div>
 </div>
-
-<?= $this->render('@app/views/layouts/footer');?>
+<div class="footer-404-wrapper">
+    <?= $this->render('@app/views/layouts/footer');?>
+</div>
 
 
 

@@ -124,13 +124,11 @@ class DefaultController extends Controller
      */
     public function actionEvents($gameId=0)
     {
-        if(!empty($_POST['id'])) $gameId=$_POST['id'];
-        $dos=new ParserNodeDos();
-        $data= $dos->getEventsByGameId($gameId);
-        $addGames=$dos->getAdditionalGames();
-
-
-        return  ['addGames'=>$addGames,   'meta'=>['type'=>'event','count'=>count($data['data']),'id'=>$gameId,'attr'=> $data['attr']] ,'data'=>$data['data']];
+        if (!empty($_POST['id'])) $gameId = $_POST['id'];
+        $dos = new ParserNodeDos();
+        $data = $dos->getEventsByGameId($gameId);
+        $addGames = $dos->getAdditionalGames();
+        return ['addGames' => $addGames, 'meta' => ['type' => 'event', 'count' => count($data['data']), 'id' => $gameId, 'attr' => $data['attr']], 'data' => $data['data']];
 
     }
 

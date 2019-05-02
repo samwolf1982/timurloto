@@ -332,14 +332,14 @@ $count=Yii::$app->db->createCommand("select COUNT(subquery.user_id) FROM
         $lastWeek    = date('Y-m-d H:i:s');
         $lastLastWeek= date('Y-m-d H:i:s',strtotime('last monday'));
         // fix если щас понедельник
-        yii::error(['w22'=>date('w')]);
+//        yii::error(['w22'=>date('w')]);
         if(date('w')==='1')    $lastLastWeek= date("Y-m-d 00:00:00");
         //          2019-04-05
     if(isset($params['dtop'])){
         $lastWeek = $params['dtop'];
         $lastLastWeek =  date('Y-m-d H:i:s', (strtotime($params['dtop']) - 7*24*60*60) );
       }
-        Yii::error([$lastWeek,$lastLastWeek]);
+//        Yii::error([$lastWeek,$lastLastWeek]);
 
     if(0){ // старый код не работало сортировка в турнирах
         $sql1="select COUNT(subquery.user_id) FROM
@@ -354,7 +354,7 @@ $count=Yii::$app->db->createCommand("select COUNT(subquery.user_id) FROM
         $sql2= "SELECT user_id, sum(profit) as sume, (SUM(`penetration`)/ COUNT(`penetration`)*100) as penet, ( SUM(`middle_coef`) / COUNT(`middle_coef`))    as mdc, (SUM(`roi`) / COUNT(`roi`)) as ro, created_own 
                         FROM `balancestatistics`  WHERE created_at BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume DESC ";
     }
-yii::error(['ss'=>$sql2]);
+//yii::error(['ss'=>$sql2]);
 
         $dataProvider = new SqlDataProvider([
             'sql' =>$sql2,
