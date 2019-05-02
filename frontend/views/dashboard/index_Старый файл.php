@@ -14,8 +14,6 @@ use frontend\assets\DashboardAsset;
 
     DashboardAsset::register($this);
     WidgetAsset::register($this);
-
-$this->title='Дать прогноз';
 ?>
 
 <body class="home-page footer-login-page dasboard-page">
