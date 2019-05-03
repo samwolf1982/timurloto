@@ -12,12 +12,13 @@ use common\models\search\BalancestatisticsSearch;
 use dvizh\cart\widgets\BuyButton;
 use frontend\assets\BetAsset;
 use frontend\assets\BetDinotableAsset;
+use frontend\assets\BettabsAsset;
 use yii\grid\GridView;
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
 
 BetAsset::register($this);
-//BetDinotableAsset::register($this);
+
 ?>
 <body class="home-page footer-login-page">
 

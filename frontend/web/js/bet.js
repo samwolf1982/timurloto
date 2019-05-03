@@ -1,3 +1,6 @@
+
+
+
 $(document).ready(function () {
     $('.type-list').on('click',function () {
         $(this).find('span').toggleClass('show');
@@ -21,18 +24,7 @@ $(document).ready(function () {
         $(this).toggleClass('active');
         return false;
     });
-    $('.tab-trigger').on('click',function () {
-        var id_tabs_b = $(this).attr('href');
-        if(!$(this).hasClass('active')) {
-            $('.tab-trigger').removeClass('active');
-            $(this).addClass('active');
-            $('.tab-block').fadeOut(200);
-            setTimeout(function () {
-                $(id_tabs_b).fadeIn(400);
-            },201);
-        }
-        return false;
-    });
+
     // $('.coupon-trigger').on('click',function () {
     //     var id_tabs_b = $(this).attr('href');
     //     if(!$(this).hasClass('active')) {
@@ -270,5 +262,73 @@ $(document).ready(function () {
             $('.no-bet-selected-text').fadeIn(400);
         },210);
         return false;
+    });
+});
+
+
+
+$(document).on("click", ".tab-trigger", function(e) {
+    var id_tabs_b = $(this).attr('href');
+    $('.tab-trigger').removeClass('active');
+    if(!$(this).hasClass('active')) {
+        $(this).addClass('active');
+        $('.tab-block').fadeOut(200);
+        setTimeout(function () {
+            $(id_tabs_b).fadeIn(400);
+        },201);
+    }
+    return false;
+});
+
+
+
+$(document).on('keyup', $(".livesearcheform"), function(el) {
+    var filtero =$(el.target).val().toLowerCase();
+    $('.collapse-open-bet-trigger').each(function (i,elem) {
+        // проход по детям
+        // dt=   $(elem).parent().next().find('.bets-val .mobile-name').html();
+        countChech=0;
+        $(elem).parent().next().find('.bets-val .mobile-name').each(function (j,chelem) {
+            dt=$(chelem).html();
+
+            if(dt.toLowerCase().indexOf(filtero) + 1) {
+                console.log('ok1 '+ dt)
+                $(chelem).parent().fadeIn();
+                countChech++;
+                $(elem).parent().parent().fadeIn();
+            }else{
+                $(chelem).parent().fadeOut();
+                // $(elem).parent().parent().fadeOut();
+            }
+
+
+        });
+        console.log('countChech '+countChech);
+        if(countChech>0){ // если пусто тогда скрываем
+            $(elem).parent().parent().fadeIn();
+        }else{
+            $(elem).parent().parent().fadeOut();
+        }
+
+
+
+        // if($(elem).html().toLowerCase().indexOf(filtero) + 1) {
+        //     console.log('ok1 '+  $(elem).html())
+        //     $(elem).parent().parent().fadeIn();
+        // }else{
+        //     $(elem).parent().parent().fadeOut();
+        // }
+    });
+});
+// фильтр старый по заголовкам
+$(document).on('keyup2', $(".livesearcheform"), function(el) {
+    var filtero =$(el.target).val().toLowerCase();
+    $('.collapse-open-bet-trigger').each(function (i,elem) {
+        if($(elem).html().toLowerCase().indexOf(filtero) + 1) {
+            console.log('ok1 '+  $(elem).html())
+            $(elem).parent().parent().fadeIn();
+        }else{
+            $(elem).parent().parent().fadeOut();
+        }
     });
 });

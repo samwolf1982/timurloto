@@ -18,6 +18,5 @@ class MainAsset extends AssetBundle
     ];
     public $depends = [
         'frontend\assets\AppAsset',
-
     ];
 }

@@ -10,10 +10,12 @@ use app\copmonents\widgets\showuser\ShowuserWidget;
 use app\modules\statistic\assets\WidgetAsset;
 use dektrium\user\widgets\Connect;
 use dvizh\cart\widgets\BuyButton;
+use frontend\assets\BettabsAsset;
 use frontend\assets\DashboardAsset;
 
     DashboardAsset::register($this);
     WidgetAsset::register($this);
+BettabsAsset::register($this); // табы
 
 $this->title='Дать прогноз';
 ?>

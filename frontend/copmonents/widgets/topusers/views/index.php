@@ -34,8 +34,7 @@
 
                                </div>
                            </div>
-
-
+                           
                        </div>
                        <div class="right-head-tab">
                            <div class="for-mobile-drop desinbtn-drop">
