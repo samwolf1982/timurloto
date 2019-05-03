@@ -471,3 +471,6 @@ and also iPads specifically.
 .btn-primary.focus {
   background-color: #D00069;
 }
+.tab-collapse .icon-bet {
+  max-width: 59px;
+}
