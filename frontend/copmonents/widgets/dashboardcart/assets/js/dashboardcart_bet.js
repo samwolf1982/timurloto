@@ -386,6 +386,33 @@ var SmartCart={
 
     },
 
+
+    renderAddDELETEOLD: function (id_for_bets,data_parent,name_competition,name_bet,coefficient_bet,status_select_bet) {
+
+        $('li[data-child="'+data_parent+'"]').remove();
+        is_checked= '';
+        console.log(status_select_bet);
+        console.log('aaaz');
+        if(status_select_bet==='true'){
+            is_checked= 'checked="checked"';
+        }
+
+        $('.bet-coup-list').append('<li class="'+id_for_bets+'" data-child="'+data_parent+'">' +
+            '<div class="bet-coup-info">' +
+            '<div class="bet-coup-icon">' +
+            ' <input type="checkbox" id="'+id_for_bets+'" '+is_checked+'>' +
+            ' <label for="'+id_for_bets+'"></label>' +
+            '</div>' +
+            '<div class="bet-coup-text">'+name_competition+'</div>' +
+            '<button class="delete-item" ><span class="icon-close2"></span></button>' +
+            '</div>' +
+            '<div class="bet-calc-row">' +
+            '<div class="title-bet-calc">'+name_bet+'</div>' +
+            '<div class="percent-bet-calc">x <span class="perc-for-calc">'+coefficient_bet+'</span></div>' +
+            '</div>' +
+            '</li>');
+    },
+
     renderAdd: function (id_for_bets,data_parent,name_competition,name_bet,coefficient_bet,status_select_bet) {
 
         $('li[data-child="'+data_parent+'"]').remove();

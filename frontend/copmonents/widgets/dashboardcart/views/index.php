@@ -104,7 +104,71 @@
                                </div>
                                <div class="notification-calculate">Максимальный процент на этот коэфициент 10</div>
                            </div>
+
+
                            <div class="more-bets-info">
+                               <div class="playlist">
+                                   <div class="summ-block">
+                                       <div class="sub-label">Сумма ставки</div>
+                                       <div class="sum-val"><span class="icon-betcoin-logo"></span> 2970</div>
+                                   </div>
+                                   <!--<div class="custom-dropdown">-->
+                                   <!--<div class="custom-dropdown-inner">-->
+                                   <!--<div class="val-drop">-->
+                                   <!--<button class="val-drop-btn">Плейлист #A</button>-->
+                                   <!--</div>-->
+                                   <!--<div class="dropdown-list">-->
+                                   <!--<div class="play-list">-->
+                                   <!--<div class="drop-item">-->
+                                   <!--<div class="check-drop">-->
+                                   <!--<input name="playlist" type="radio" id="playlist145" checked="checked" value="Плейлист #A">-->
+                                   <!--<label for="playlist145">Плейлист #A</label>-->
+                                   <!--</div>-->
+                                   <!--</div>-->
+                                   <!--<div class="drop-item">-->
+                                   <!--<div class="check-drop">-->
+                                   <!--<input name="playlist" type="radio" id="playlist245" value="Лига Чемпионов">-->
+                                   <!--<label for="playlist245">Лига Чемпионов</label>-->
+                                   <!--</div>-->
+                                   <!--</div>-->
+                                   <!--<div class="drop-item">-->
+                                   <!--<div class="check-drop">-->
+                                   <!--<input name="playlist" type="radio" id="playlist345" value="НБА">-->
+                                   <!--<label for="playlist345">НБА</label>-->
+                                   <!--</div>-->
+                                   <!--</div>-->
+                                   <!--</div>-->
+                                   <!--<div class="drop-item">-->
+                                   <!--<div class="create-playlist">-->
+                                   <!--<div class="input-create">-->
+                                   <!--<input type="text" placeholder="Новый плейлист">-->
+                                   <!--</div>-->
+                                   <!--<div class="btn-create">-->
+                                   <!--<button class="btn-primary btn btn-hover create-btn">Создать</button>-->
+                                   <!--</div>-->
+                                   <!--</div>-->
+                                   <!--</div>-->
+                                   <!--</div>-->
+                                   <!--</div>-->
+                                   <!--</div>-->
+                               </div>
+                               <button class="type-list">
+                                                        <span class="show">
+                                                            <i class="icon-open"></i> Открытый
+                                                        </span>
+                                   <span class="">
+                                                            <i class="icon-lock"></i> Закрытый
+                                                        </span>
+                               </button>
+                               <button data-target="#modal-success-bet" type="submit" class="btn btn-primary send-bets" data-toggle="modal">Сделать Ставку</button>
+                               <!--<p>The complexity of mining crypto currency.</p>-->
+                               <div class="balance-block">
+                                   <div class="label-balance">Баланс</div>
+                                   <div class="value-balance"><span class="icon-betcoin-logo"></span> 99070</div>
+                               </div>
+                           </div>
+
+                           <div class="more-bets-info hidden OLDDELETE">
 
                                <style>
                                    .wrap_buttons{
@@ -236,6 +300,7 @@
                                    <button id="smartCartButton"  class="btn btn-primary send-bets" onclick="SmartCart.createBet(this);" >Сделать Ставку</button>
                                    <button hidden   id="smartCartButtonModal"  class="btn btn-primary send-bets hidden" data-toggle="modal" data-target="#modal-success-bet">Сделать Ставку Модальное</button>
                                <?php } ?>
+
 
                                <p class="balanceText" style=" text-align: right;      -ms-text-align: right; -moz-text-align: right; -o-text-align: right; -webkit-text-align: right;  " >Баланс: <span id="currentBalance"><?= $total_balance ?> </span> <span class="icon-betcoin-logo wl"></span></p>
                                <p class="hidden">Сумма ставки: <span id="betSum">0</span> <span> betcoins</span></p>
@@ -380,7 +445,12 @@
                                    </div>
                                    <div class="notification-calculate">---</div>
                                </div>
+
+
+
+
                                <div class="more-bets-info">
+
                                    <div class="playlist">
                                        <div class="custom-dropdown">
                                            <div class="custom-dropdown-inner">

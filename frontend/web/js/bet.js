@@ -1,7 +1,7 @@
 
 
 
-$(document).ready(function () {
+$(document).ready(function () { // 1раз
     $('.type-list').on('click',function () {
         $(this).find('span').toggleClass('show');
         return false;
@@ -263,7 +263,7 @@ $(document).ready(function () {
         },210);
         return false;
     });
-});
+});  // 1раз
 
 
 
