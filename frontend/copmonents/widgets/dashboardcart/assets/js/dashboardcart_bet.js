@@ -820,7 +820,7 @@ var SmartCart={
                     }
                 }else if(json.status===1){
                     if(!SmartCart.devStatus){
-                      //  $('#smartCartButtonModal').trigger('click');// чистка корзыни
+                        $('#smartCartButtonModal').trigger('click');// чистка корзыни
                        // $('#smartCartButtonModal').trigger('click');// чистка корзыни
                     }
                 }
