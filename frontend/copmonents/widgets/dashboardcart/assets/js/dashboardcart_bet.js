@@ -135,7 +135,8 @@ var SmartCart={
             // $('#modal-success-bet').removeAttr( 'style' );
             // $('#modal-success-bet').fadeOut(500).removeClass('active');
 
-            $('body').removeClass('noScroll');
+          //  $('body').removeClass('noScroll');
+            $('body').removeClass('modal-open');
             $('.notification-calculate').text('');
         });
 
