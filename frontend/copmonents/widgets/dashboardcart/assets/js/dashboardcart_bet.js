@@ -135,7 +135,7 @@ var SmartCart={
             // $('#modal-success-bet').removeAttr( 'style' );
             // $('#modal-success-bet').fadeOut(500).removeClass('active');
 
-            //$('body').removeClass('noScroll');
+            $('body').removeClass('noScroll');
             $('.notification-calculate').text('');
         });
 
@@ -738,7 +738,6 @@ var SmartCart={
             data: data,
             dataType: "json",
             success: function (json) {
-
                 if(json.html_block){
                     SmartCart.showLine(json.html_block);
                 }
@@ -794,14 +793,14 @@ var SmartCart={
 
             },
             complete: function () {
-                //setTimeout(function () { // штучная задержка
+                setTimeout(function () { // штучная задержка если очень быстрый ответ от сервера но еще не сработали фады на 400
                     $('#ajax-button-confirm').removeClass('preloader');
                     $('.load-coupon-wrapper').fadeOut();
                     // $('#ordinator').removeClass('preloader');
                     $('#ordinator .preloaderCart').delay(1).fadeOut(function () {
                         $('#ordinator .coupon-tab-content').show();
                     });
-                //},500);
+                },500);
             },
             success: function (json) {
                 console.log(json);
@@ -847,17 +846,17 @@ var SmartCart={
             console.log(count_items)
             if (count_items >= 1) {
                 $('.load-coupon-wrapper').fadeIn();
-                $('.no-bet-selected-text').fadeOut(800);
+                $('.no-bet-selected-text').fadeOut(300);
                 $('.round-load').addClass('loadin-coupons');
                 setTimeout(function () {
-                    $('.load-coupon-wrapper').fadeIn(800);
-                    $('.coupon-tabs-wrapper-inner').fadeIn(800);
-                }, 810);
+                    $('.load-coupon-wrapper').fadeIn(300);
+                    $('.coupon-tabs-wrapper-inner').fadeIn(300);
+                }, 310);
             } else {
-                $('.coupon-tabs-wrapper-inner').fadeOut(800);
+                $('.coupon-tabs-wrapper-inner').fadeOut(300);
                 setTimeout(function () {
-                    $('.no-bet-selected-text').fadeIn(800);
-                }, 810);
+                    $('.no-bet-selected-text').fadeIn(300);
+                }, 310);
             }
             if (count_items > 1) {
                 $('.ordinator').removeClass('active');
