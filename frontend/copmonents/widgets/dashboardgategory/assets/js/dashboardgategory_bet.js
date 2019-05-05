@@ -418,7 +418,7 @@ var DashboardCategory={
         $.each(data[0].data, function( index, value ) {
             mainGameId = value.attributes['main-game-id'];
             if (listmg.indexOf(mainGameId) === -1) {  // fix for period games
-            console.log(mainGameId);
+         //   console.log(mainGameId);
             listmg.push(mainGameId);
             fullNamePlayers = value.attributes['team-1-user-locale-lng-name'] + ' - ' + value.attributes['team-2-user-locale-lng-name'];
             timeStartMatch = timeConverter(value.attributes['start'])
@@ -499,7 +499,7 @@ var DashboardCategory={
                 mainGameId = value.attributes['main-game-id'];
                 if (listmg.indexOf(mainGameId) === -1) {  // fix for period games
                     //     mainGameId=value;
-                    console.log(mainGameId);
+                   // console.log(mainGameId);
                     listmg.push(mainGameId);
                     fullNamePlayers = value.attributes['team-1-user-locale-lng-name'] + ' - ' + value.attributes['team-2-user-locale-lng-name'];
                     timeStartMatch = timeConverter(value.attributes['start'])

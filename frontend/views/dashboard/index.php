@@ -849,6 +849,39 @@ $this->title='Дать прогноз';
         </div>
     </div>
 </div>
+
+<div class="modal-wrapper bet-modal modal-640" id="modal-success-bet22">
+    <div class="modal-inner">
+        <div class="modal-content">
+            <div class="modal-content-inner">
+                <div class="header-modal">
+                    <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
+                </div>
+                <div class="body-modal">
+                    <div class="choose-bet-wrapper">
+                        <div class="choose-bet-inner">
+                            <div class="success-bets">
+                                <h4>Твой прогноз принят</h4>
+                                <p>Поздравляем, теперь вы лучше Виктора Файзулина. <br> Ведь вы в игре!</p>
+                                <div class="shared-bet-social">
+                                    <h5>Поделитесь прогнозом</h5>
+                                    <ul class="social">
+                                        <li><a href="#"><span class="icon-fb"></span></a></li>
+                                        <li><a href="#"><span class="icon-gp"></span></a></li>
+                                        <li><a href="#"><span class="icon-tw"></span></a></li>
+                                        <li><a href="#"><span class="icon-vk"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="modal-wrapper bet-modal modal-640" id="modal-success-bet">
     <div class="modal-inner">
         <div class="modal-content">

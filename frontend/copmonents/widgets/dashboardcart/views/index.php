@@ -30,13 +30,12 @@
        <div class="head-pink">
            <h3>Купон</h3>
        </div>
-       <div class="coupon-tabs-wrapper">
+       <div class="coupon-tabs-wrapper loading-coupont-info">
            <div class="no-bet-selected-text">
                <div class="no-bet-selected-text-inner">
                    <h4>Пока ничего не выбрано</h4>
                </div>
            </div>
-
 
            <div class="coupon-tabs-wrapper-inner">
                <ul class="coupon-tabs-nav">
@@ -47,8 +46,25 @@
                        <a href="" class="coupon-trigger express">Экспресс</a>
                    </li>
                </ul>
-               <div class="coupon-tabs-body">
 
+
+               <div class="load-coupon-wrapper" style="display: none;">
+                   <div class="load-coupon-inner">
+                       <div class="round-load">
+                           <div class="progress-load">
+                               <svg width="160" height="160">
+                                   <circle r="75" cx="80" cy="80" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="5" />
+                                   <circle class="load-circle" r="75" cx="80" cy="80" fill="none" stroke="#d00069" stroke-width="5" />
+                               </svg>
+                           </div>
+                           <div class="center-icon-clock">
+                               <span class="icon-sand-clock"></span>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="coupon-tabs-body">
                    <div class="coupon-tab-item active" id="ordinator">
 
                        <div class="coupon-tab-content">
@@ -64,16 +80,20 @@
                            <div class="bet-info-calc">
                                <div class="bet-calc-row calculator-bet">
                                    <div class="calculator-bet-inner">
+
+
                                        <div class="plus-minus-block">
                                            <!--<button class="plus">+</button>-->
                                            <!--<button class="minus">-</button>-->
                                            <!--<input type="text"  class="value-bet" data-val="1" value="1%" readonly>-->
+
+
                                            <div class="custom-dropdown">
                                                <div class="custom-dropdown-inner">
                                                    <div class="val-drop">
                                                        <button class="val-drop-btn currentCooeficientDrop"><?=$currentCooeficientDrop?>%</button>
                                                    </div>
-                                                   <div class="dropdown-list">
+                                                   <div class="dropdown-list drop-percent">
                                                        <div class="play-list" id="currentCooeficientDropList">
                                                            <?php foreach (range(1,$max_coeficientDrop) as $keyItem) { ?>
                                                                <div class="drop-item">
@@ -84,7 +104,7 @@
                                                                        <?php }else{ ?>
                                                                            <input name="playlistPercent" type="radio" id="playlistPercent_<?=$keyItem?>"  value="<?=$keyItem?>%">
                                                                            <label for="playlistPercent_<?=$keyItem?>"><?=$keyItem?>%</label>
-                                                                      <?php  } ?>
+                                                                       <?php  } ?>
 
 
                                                                    </div>
@@ -94,8 +114,44 @@
                                                    </div>
                                                </div>
                                            </div>
+
+
+                                           <?php if(0){ // delete ?>
+                                               <div class="custom-dropdown hidden OLD">
+                                                   <div class="custom-dropdown-inner">
+                                                       <div class="val-drop">
+                                                           <button class="val-drop-btn currentCooeficientDrop"><?=$currentCooeficientDrop?>%</button>
+                                                       </div>
+                                                       <div class="dropdown-list">
+                                                           <div class="play-list" id="currentCooeficientDropList_ЩДВ">
+                                                               <?php foreach (range(1,$max_coeficientDrop) as $keyItem) { ?>
+                                                                   <div class="drop-item">
+                                                                       <div class="check-drop">
+                                                                           <?php if($keyItem==$currentCooeficientDrop){ ?>
+                                                                               <input name="playlistPercent" type="radio" id="playlistPercent_<?=$keyItem?>" checked="checked" value="<?=$keyItem?>%">
+                                                                               <label for="playlistPercent_<?=$keyItem?>"><?=$keyItem?>%</label>
+                                                                           <?php }else{ ?>
+                                                                               <input name="playlistPercent" type="radio" id="playlistPercent_<?=$keyItem?>"  value="<?=$keyItem?>%">
+                                                                               <label for="playlistPercent_<?=$keyItem?>"><?=$keyItem?>%</label>
+                                                                           <?php  } ?>
+
+
+                                                                       </div>
+                                                                   </div>
+                                                               <?php  } ?>
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                               </div>
+                                           <?php  } ?>
+
+
                                            <span class="title-calc-botif">от банка</span>
+
                                        </div>
+
+
+
                                        <div class="result-block">
                                            <div class="placeholder-text">Выигрыш</div>
                                            <div class="value-text"><span class="icon-betcoin-logo"></span>  <span id="maybeWin"> 335.00 </span></div>
@@ -110,7 +166,7 @@
                                <div class="playlist">
                                    <div class="summ-block">
                                        <div class="sub-label">Сумма ставки</div>
-                                       <div class="sum-val"><span class="icon-betcoin-logo"></span> 2970</div>
+                                       <div class="sum-val"><span class="icon-betcoin-logo"></span>  <span id="betSum">0</span></div>
                                    </div>
                                    <!--<div class="custom-dropdown">-->
                                    <!--<div class="custom-dropdown-inner">-->
@@ -152,21 +208,30 @@
                                    <!--</div>-->
                                    <!--</div>-->
                                </div>
-                               <button class="type-list">
-                                                        <span class="show">
-                                                            <i class="icon-open"></i> Открытый
-                                                        </span>
-                                   <span class="">
-                                                            <i class="icon-lock"></i> Закрытый
-                                                        </span>
+
+                               <button class="type-list" id="statusBetPuPr">
+                                   <?php if($currentStatus==ConstantsHelper::STATUS_PUBLIC_BET){   ?>
+                                       <span class="show"><i class="icon-open"></i> Открытый</span>
+                                       <span class=""><i class="icon-lock"></i> Закрытый</span>
+                                   <?php }else{ ?>
+                                       <span class=""><i class="icon-open"></i> Открытый</span>
+                                       <span class="show"><i class="icon-lock"></i> Закрытый</span>
+                                   <?      }  ?>
                                </button>
-                               <button data-target="#modal-success-bet" type="submit" class="btn btn-primary send-bets" data-toggle="modal">Сделать Ставку</button>
+
+                               <button id="smartCartButton"  class="btn btn-primary send-bets" onclick="SmartCart.createBet(this);" >Сделать Ставку</button>
+                               <button    id="smartCartButtonModal"  class="btn btn-primary send-bets " data-toggle="modal" data-target="#modal-success-bet">Сделать Ставку Модальное</button>
+
+
                                <!--<p>The complexity of mining crypto currency.</p>-->
                                <div class="balance-block">
                                    <div class="label-balance">Баланс</div>
-                                   <div class="value-balance"><span class="icon-betcoin-logo"></span> 99070</div>
+                                   <div class="value-balance"><span class="icon-betcoin-logo"></span> <span id="currentBalance"><?= $total_balance ?> </span> </div>
                                </div>
                            </div>
+
+
+                           <?php if(0){ ?>
 
                            <div class="more-bets-info hidden OLDDELETE">
 
@@ -298,7 +363,7 @@
                                        }
                                    </style>
                                    <button id="smartCartButton"  class="btn btn-primary send-bets" onclick="SmartCart.createBet(this);" >Сделать Ставку</button>
-                                   <button hidden   id="smartCartButtonModal"  class="btn btn-primary send-bets hidden" data-toggle="modal" data-target="#modal-success-bet">Сделать Ставку Модальное</button>
+                                   <button hidden   id="smartCartButtonModal22"  class="btn btn-primary send-bets hidden" data-toggle="modal" data-target="#modal-success-bet">Сделать Ставку Модальное</button>
                                <?php } ?>
 
 
@@ -307,8 +372,10 @@
 
 
                            </div>
+                           <?php } ?>
+
                        </div>
-                       <div class="preloaderCart" style="display: none;"></div>
+
 
                    </div>
                </div>
@@ -368,8 +435,6 @@
                                                        </div>
                                                        <div class="dropdown-list">
                                                            <div class="play-list">
-
-
                                                                <div class="drop-item">
                                                                    <div class="check-drop">
                                                                        <input name="playlist" type="radio" id="playlist14521" checked="checked" value="1%">

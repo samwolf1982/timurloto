@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?bw312u');
-  src:  url('fonts/icomoon.eot?bw312u#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?bw312u') format('truetype'),
-    url('fonts/icomoon.woff?bw312u') format('woff'),
-    url('fonts/icomoon.svg?bw312u#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?tb0hid');
+  src:  url('fonts/icomoon.eot?tb0hid#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?tb0hid') format('truetype'),
+    url('fonts/icomoon.woff?tb0hid') format('woff'),
+    url('fonts/icomoon.svg?tb0hid#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -167,4 +167,10 @@
 }
 .icon-karate:before {
   content: "\e92f";
+}
+.icon-sand-clock:before {
+  content: "\e930";
+}
+.icon-like:before {
+  content: "\e931";
 }

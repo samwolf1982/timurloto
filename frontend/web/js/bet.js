@@ -2,10 +2,7 @@
 
 
 $(document).ready(function () { // 1раз
-    $('.type-list').on('click',function () {
-        $(this).find('span').toggleClass('show');
-        return false;
-    });
+
     $('.trigger-sub-collapse').on('click',function () {
         $(this).parent().toggleClass('active_coll').find('.sub-collapse').stop().slideToggle(400);
         return false;
@@ -42,6 +39,7 @@ $(document).ready(function () { // 1раз
         $(this).toggleClass('active');
         return false;
     });
+
     $('.bets-val').on('click',function () {
         var id_for_bets = $(this).attr('data-id');
         var icon_sport = $(this).parents('.open-bet-wrapper-inner').find('.icon-open-bet').find('span').attr('class');
@@ -224,7 +222,7 @@ $(document).ready(function () { // 1раз
         $('.bets-val[data-id="'+id_bet+'"]').removeClass('selected');
         $('.bet-parent-val[data-id="'+id_bet+'"]').removeClass('selected');
         $(this).parents('li').remove();
-        return false;
+
     });
     $('.plus-minus-block .plus').on('click',function () {
         var val_perc = $('.plus-minus-block input').attr('data-val');
@@ -251,6 +249,8 @@ $(document).ready(function () { // 1раз
         }
         return false;
     });
+
+
     $('.delete-all-bets').on('click',function () {
         $('.bet-coup-list li').remove();
         $('.bet-parent-val,.bets-val').removeClass('selected');
@@ -277,6 +277,13 @@ $(document).on("click", ".tab-trigger", function(e) {
             $(id_tabs_b).fadeIn(400);
         },201);
     }
+    return false;
+});
+
+
+
+$(document).on('click','.type-list',function () {
+    $(this).find('span').toggleClass('show');
     return false;
 });
 

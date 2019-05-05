@@ -121,10 +121,32 @@ var SmartCart={
            if(SmartCart.devStatus === false ) SmartCart.deleteAll();
             SmartCart.backlight(); //
             // баг с закрытием
-            $('body').removeClass('modal-open');
-            $('body').removeClass('noScroll');
+           // $('body').removeClass('modal-open');
+           //   $(this).parents('.modal-wrapper').fadeOut(500).removeClass('active');
+             $(this).parents('.modal-wrapper').fadeOut().removeClass('active');
+
+          //  $('#modal-success-bet').fadeOut(500).removeClass('active');
+
+            // setTimeout(function () { // фикс для окон
+            //   //  $('#modal-success-bet').removeAttr( 'style' );
+            //     $('#modal-success-bet').css("display","none");
+            // },600)
+
+            // $('#modal-success-bet').removeAttr( 'style' );
+            // $('#modal-success-bet').fadeOut(500).removeClass('active');
+
+            //$('body').removeClass('noScroll');
             $('.notification-calculate').text('');
         });
+
+
+// кооефициент
+        $('.val-drop-btn').on('click',function (e) {
+            $(this).parents('.custom-dropdown').toggleClass('active-drop');
+            $(this).parents('.custom-dropdown').find('.dropdown-list').stop().fadeToggle(400);
+            e.preventDefault();
+        });
+
         console.log('Init SmartCart');
 
     },
@@ -738,10 +760,6 @@ var SmartCart={
 
     createBet:function (el) {
         console.log('createBet 78');
-        // var data = {};
-        // data[jQuery("meta[name=csrf-param]").attr("content")]=jQuery("meta[name=csrf-token]").attr("content");
-        // console.log(data);
-
 //--------------
         var data = {};
         data.CartElement = {};
@@ -762,25 +780,28 @@ var SmartCart={
             data:data,
             dataType: "json",
             beforeSend: function () {
-                $('#ajax-button-confirm').addClass('preloader');
-                // $('#ordinator').addClass('preloader');
-                $('#ordinator .coupon-tab-content').delay(1).fadeOut(function () {
-                    $('#ordinator .preloaderCart').show();
-                });
+
+                if (0) {
+                    $('#ajax-button-confirm').addClass('preloader');
+                    $('#ordinator .coupon-tab-content').delay(1).fadeOut(function () {
+                        $('#ordinator .preloaderCart').show();
+                    });
+                }
+
+                SmartCart.runPreloader();
 
 
 
             },
             complete: function () {
-                setTimeout(function () { // штучная задержка
+                //setTimeout(function () { // штучная задержка
                     $('#ajax-button-confirm').removeClass('preloader');
+                    $('.load-coupon-wrapper').fadeOut();
                     // $('#ordinator').removeClass('preloader');
                     $('#ordinator .preloaderCart').delay(1).fadeOut(function () {
                         $('#ordinator .coupon-tab-content').show();
                     });
-                },500);
-
-
+                //},500);
             },
             success: function (json) {
                 console.log(json);
@@ -798,17 +819,11 @@ var SmartCart={
                       // showNotification(json.message);
                     }
                 }else if(json.status===1){
-
                     if(!SmartCart.devStatus){
-                        $('#smartCartButtonModal').trigger('click');// чистка корзыни
+                      //  $('#smartCartButtonModal').trigger('click');// чистка корзыни
+                       // $('#smartCartButtonModal').trigger('click');// чистка корзыни
                     }
-
-
                 }
-
-                // $('#ajax-button-confirm').removeClass('preloader');
-                // $('#ordinator').removeClass('preloader');
-
             }
         });
 
@@ -825,8 +840,40 @@ var SmartCart={
     test:function () {
         console.log(this.csrf)
         console.log(this.csrf_param)
+    },
+    runPreloader:function () {
+
+            var count_items = $('.bet-coup-list li').length;
+            console.log(count_items)
+            if (count_items >= 1) {
+                $('.load-coupon-wrapper').fadeIn();
+                $('.no-bet-selected-text').fadeOut(800);
+                $('.round-load').addClass('loadin-coupons');
+                setTimeout(function () {
+                    $('.load-coupon-wrapper').fadeIn(800);
+                    $('.coupon-tabs-wrapper-inner').fadeIn(800);
+                }, 810);
+            } else {
+                $('.coupon-tabs-wrapper-inner').fadeOut(800);
+                setTimeout(function () {
+                    $('.no-bet-selected-text').fadeIn(800);
+                }, 810);
+            }
+            if (count_items > 1) {
+                $('.ordinator').removeClass('active');
+                $('.express').addClass('active');
+                $('.all-coeficient,.delete-block').slideDown(400);
+            } else {
+                $('.ordinator').addClass('active');
+                $('.express').removeClass('active');
+                $('.all-coeficient,.delete-block').slideUp(400);
+            }
+
     }
+
 };
+
+
 
 function showNotification(message) {
 
