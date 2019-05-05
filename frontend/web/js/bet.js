@@ -278,6 +278,21 @@ $(document).on('click','.open-coupon',function () {
     return false;
 });
 
+// $('.right-sidebar-close,.overlay-sidebar-right').click(function () {
+$(document).on('click','.right-sidebar-close,.overlay-sidebar-right',function () {
+    $('.dash-right-col').removeClass('active-sidebar');
+    $('body').removeClass('no-scroll');
+    $('.overlay-sidebar-right').fadeOut(400);
+    $('.open-coupon').fadeIn(400);
+    setTimeout(function () {
+        $('.dasboard-page .header-main').css({
+            'z-index':'100'
+        });
+    },400);
+    return false;
+});
+
+
 $(document).on("click", ".tab-trigger", function(e) {
     var id_tabs_b = $(this).attr('href');
     $('.tab-trigger').removeClass('active');
