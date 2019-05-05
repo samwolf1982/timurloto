@@ -791,14 +791,14 @@ var SmartCart={
 
             },
             complete: function () {
-                setTimeout(function () { // штучная задержка если очень быстрый ответ от сервера но еще не сработали фады на 400
+                //setTimeout(function () { // штучная задержка если очень быстрый ответ от сервера но еще не сработали фады на 400
                     $('#ajax-button-confirm').removeClass('preloader');
                     $('.load-coupon-wrapper').fadeOut();
                     // $('#ordinator').removeClass('preloader');
                     $('#ordinator .preloaderCart').delay(1).fadeOut(function () {
                         $('#ordinator .coupon-tab-content').show();
                     });
-                },500);
+              //  },500);
             },
             success: function (json) {
                 console.log(json);
