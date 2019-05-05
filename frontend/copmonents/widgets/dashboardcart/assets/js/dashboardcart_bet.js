@@ -789,8 +789,6 @@ var SmartCart={
 
                 SmartCart.runPreloader();
 
-
-
             },
             complete: function () {
                 setTimeout(function () { // штучная задержка если очень быстрый ответ от сервера но еще не сработали фады на 400

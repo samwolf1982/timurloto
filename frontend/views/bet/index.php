@@ -1135,6 +1135,8 @@ BetAsset::register($this);
             <?= TopusersWidget::widget(['dataProvider'=>$dataProvider]); ?>
 
 
+
+
             <div class="row table-row">
                 <div class="column-4">
                     <div class="table-wrapper">
@@ -1209,8 +1211,8 @@ BetAsset::register($this);
                                 </div>
                             </div>
 
-                                <div class="table-body  tableTop100">
 
+                                <div class="table-body  tableTop100">
 
                                     <?= GridView::widget([
                                         'dataProvider' => $dataProvider2,

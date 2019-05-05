@@ -48,8 +48,6 @@ class BetController extends Controller
     public function actionIndex()
     {
 
-
-       // $type_game=Typegamename::find()->where(1)->all();
         $model=new Typegamename();
         $model->name='some name';
         $model->line='line';

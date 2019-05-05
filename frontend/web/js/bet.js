@@ -267,6 +267,17 @@ $(document).ready(function () { // 1раз
 
 
 
+$(document).on('click','.open-coupon',function () {
+    $(this).fadeOut(400);
+    $('.overlay-sidebar-right').fadeIn(400);
+    $('body').removeClass('no-scroll');
+    $('.dash-right-col').addClass('active-sidebar');
+    $('.dasboard-page .header-main').css({
+        'z-index':'9'
+    });
+    return false;
+});
+
 $(document).on("click", ".tab-trigger", function(e) {
     var id_tabs_b = $(this).attr('href');
     $('.tab-trigger').removeClass('active');
