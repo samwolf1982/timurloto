@@ -1,6 +1,7 @@
 <?php
 
 use app\copmonents\widgets\addbet\AddbetWidget;
+use app\copmonents\widgets\raitusers\RaitusersWidget;
 use app\copmonents\widgets\showuser\ShowuserWidget;
 use app\copmonents\widgets\topusers\TopusersWidget;
 use app\modules\statistic\widgets\LastBets;
@@ -1178,6 +1179,14 @@ BetAsset::register($this);
 
                 </div>
             </div>
+
+
+
+
+
+        <?= RaitusersWidget::widget(['dataProvider'=>$dataProvider2,'periodOne'=>$periodOne]); ?>
+
+
 
 
             <div class="row table-row" >

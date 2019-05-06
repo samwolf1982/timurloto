@@ -1,5 +1,6 @@
    <?php
 
+   use common\models\helpers\ConstantsHelper;
    use common\models\helpers\HtmlGenerator;
    use common\models\overiden\User;
    use common\models\services\UserInfo;
@@ -18,28 +19,29 @@
                            <img src="/images/champ.svg" alt="">
                        </div>
                        <div class="left-head-text">
-                           <div class="title-w-select">Еженедельный Турнир  25,000 ₽ </div>
-
-                           <div class="select-type-block">
-                               <div class="select-type-block-inner">
-
-                                   <?php $dtop= Yii::$app->request->get('dtop') ?>
-                                   <select class="single-select"  onchange="if (this.value) window.location.href=this.value" >
-                                       <option     value="<?=Url::toRoute(['/bet'])?>">Турнир текущий</option>
-                                       <option <?=$dtop=='2019-03-31'?'selected':'' ?> value="<?=Url::toRoute(['/bet','dtop'=>'2019-03-31'])?>">1 Турнир -(2019-03-31)</option>
-                                       <option <?=$dtop=='2019-03-24'?'selected':'' ?> value="<?=Url::toRoute(['/bet','dtop'=>'2019-03-24'])?>">2 Турнир - (2019-03-24)</option>
-                                   </select>
+                           <div class="title-w-select"> РЕЙТИНГ ПОЛЬЗОВАТЕЛЕЙ 2</div>
 
 
-                               </div>
-                           </div>
                            
                        </div>
-                       <div class="right-head-tab">
-                           <div class="for-mobile-drop desinbtn-drop">
 
+                           <div class="right-head-tab" id="tope100">
+                               <div class="for-mobile-drop">
+                                   <a href="#" class="trig-filter">За месяц</a>
+                                   <ul class="head-tabs">
+                                       <li class="<?=$periodOne?>">
+                                           <a href="<?=Url::to(['/bet']);?>">За месяц</a>
+                                       </li>
+                                       <li class="<?=$period3m?>">
+                                           <a href="<?=Url::to(['/bet','period'=>ConstantsHelper::PERIOD_3_M]);?>">3 месяца</a>
+                                       </li>
+                                       <li class="<?=$periodAll?>">
+                                           <a href="<?=Url::to(['/bet','period'=>ConstantsHelper::PERIOD_ALL]);?>">За все время</a>
+                                       </li>
+                                   </ul>
+                               </div>
                            </div>
-                       </div>
+
                    </div>
 
                    <div class="table-body">
@@ -52,6 +54,7 @@
                                    <div class="td table-cell td-passability">Проходимость</div>
                                    <div class="td table-cell td-coeficient">Коэффициент</div>
                                    <div class="td table-cell td-roi">ROI</div>
+                                   <div class="td table-cell td-roi">Плюс</div>
                                </div>
 
                                <?php
@@ -89,6 +92,7 @@
                                    <div class="td table-cell td-passability">'.$penet.'</div>
                                    <div class="td table-cell td-coeficient">'.$coef.'</div>
                                    <div class="td table-cell td-roi">'.$roi.'</div>
+                                    <div class="td table-cell td-roi">'.$roi.'</div>
                                </div>';
                                }
 

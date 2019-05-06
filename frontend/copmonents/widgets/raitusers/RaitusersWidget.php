@@ -15,8 +15,11 @@ class RaitusersWidget extends Widget
 {
 
     public $dataProvider;// провайдер данных как для грида
+    public $periodOne;//
+    public $period3m;//
+    public $periodAll;//
     public function run(){
-        return       $this->render('index', ['dataProvider'=>$this->dataProvider]);
+        return       $this->render('index', ['dataProvider'=>$this->dataProvider,'periodOne'=>$this->periodOne,'period3m'=>$this->period3m, 'periodAll'=>$this->periodAll]);
     }
     public function init(){
         parent::init();
