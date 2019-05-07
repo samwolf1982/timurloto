@@ -10,6 +10,7 @@
 
    ?>
 
+
    <div class="row table-row">
        <div class="column-12">
            <div class="table-wrapper top-user-table">
