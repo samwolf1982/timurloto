@@ -1188,7 +1188,7 @@ BetAsset::register($this);
 
 
 
-
+        <?php if(0){ ?>
             <div class="row table-row" >
                 <div class="column-12">
                     <div class="table-wrapper top-user-table">
@@ -1221,111 +1221,111 @@ BetAsset::register($this);
                             </div>
 
 
-                                <div class="table-body  tableTop100">
+                            <div class="table-body  tableTop100">
 
-                                    <?= GridView::widget([
-                                        'dataProvider' => $dataProvider2,
-                                        'layout' => " <div class='wrap_commercial_top'>  {items}   </div>  <div class='clearfix'></div> \n <div class='table-footer'><div class='pagination'> <ul>  {pager}  </ul> </div></div>",
-                                        'tableOptions'=>['class'=>'table table-striped table-bordered clearTableBorder'],
-                                        'summary' => '',
-                                        'columns' => [
+                                <?= GridView::widget([
+                                    'dataProvider' => $dataProvider2,
+                                    'layout' => " <div class='wrap_commercial_top'>  {items}   </div>  <div class='clearfix'></div> \n <div class='table-footer'><div class='pagination'> <ul>  {pager}  </ul> </div></div>",
+                                    'tableOptions'=>['class'=>'table table-striped table-bordered clearTableBorder'],
+                                    'summary' => '',
+                                    'columns' => [
 
-                                            [   'class' => 'yii\grid\SerialColumn',
-                                                'contentOptions' => ['class' => 'numberClass'],
-                                                'headerOptions'=>['class'=>'fNumberHeader']
-                                            ],
+                                        [   'class' => 'yii\grid\SerialColumn',
+                                            'contentOptions' => ['class' => 'numberClass'],
+                                            'headerOptions'=>['class'=>'fNumberHeader']
+                                        ],
 
-                                            [
-                                                'attribute'=>'user_id',
-                                                'label'=>'',
-                                                'contentOptions' =>function ($model, $key, $index, $column){
-                                                    return ['class' => 'name '];
-                                                },
-                                                'format' => 'raw',
-                                                'content'=>function($data){
+                                        [
+                                            'attribute'=>'user_id',
+                                            'label'=>'',
+                                            'contentOptions' =>function ($model, $key, $index, $column){
+                                                return ['class' => 'name '];
+                                            },
+                                            'format' => 'raw',
+                                            'content'=>function($data){
 //                                    var_dump($data); die();
-                                                    /** @var common\models\overiden\User $user */
-                                                    $user=User::find()->where(['id'=>$data['user_id']])->one();
-                                                    return   HtmlGenerator::top100UserFace($user);
+                                                /** @var common\models\overiden\User $user */
+                                                $user=User::find()->where(['id'=>$data['user_id']])->one();
+                                                return   HtmlGenerator::top100UserFace($user);
 
-                                                }
-                                            ],
+                                            }
+                                        ],
 
-                                            [
-                                                'attribute'=>'sume',
-                                                'format' => 'raw',
-                                                'content'=>function($data){
-                                                    return  sprintf("%01.2f %%", $data['sume']);  ;
-                                                },
-                                                'label'=>'Profit',
+                                        [
+                                            'attribute'=>'sume',
+                                            'format' => 'raw',
+                                            'content'=>function($data){
+                                                return  sprintf("%01.2f %%", $data['sume']);  ;
+                                            },
+                                            'label'=>'Profit',
 
-                                                'contentOptions' => ['class' => 'text-center cellTable'],
-                                                'headerOptions'=>['class'=>'text-center']
-                                            ],
-                                            [
-                                                'attribute'=>'penet',
-                                                'format' => 'raw',
-                                                'content'=>function($data){
-                                                    return  sprintf("%01.2f %%", $data['penet']);  ;
-                                                },
-                                                'label'=>'Проходимость',
-                                                'contentOptions' => ['class' => 'text-center cellTable'],
-                                                'headerOptions'=>['class'=>'text-center']
+                                            'contentOptions' => ['class' => 'text-center cellTable'],
+                                            'headerOptions'=>['class'=>'text-center']
+                                        ],
+                                        [
+                                            'attribute'=>'penet',
+                                            'format' => 'raw',
+                                            'content'=>function($data){
+                                                return  sprintf("%01.2f %%", $data['penet']);  ;
+                                            },
+                                            'label'=>'Проходимость',
+                                            'contentOptions' => ['class' => 'text-center cellTable'],
+                                            'headerOptions'=>['class'=>'text-center']
 
 
-                                            ],
-                                            [
-                                                'attribute'=>'mdc',
-                                                'label'=>'Коэффициент',
-                                                'contentOptions' => ['class' => 'text-center cellTable'],
-                                                'headerOptions'=>['class'=>'text-center'],
-                                                'format' => 'raw',
-                                                'content'=>function($data){
-                                                    return  sprintf("%01.2f", $data['mdc']);  ;
-                                                },
+                                        ],
+                                        [
+                                            'attribute'=>'mdc',
+                                            'label'=>'Коэффициент',
+                                            'contentOptions' => ['class' => 'text-center cellTable'],
+                                            'headerOptions'=>['class'=>'text-center'],
+                                            'format' => 'raw',
+                                            'content'=>function($data){
+                                                return  sprintf("%01.2f", $data['mdc']);  ;
+                                            },
 
-                                            ],
-                                            [
-                                                'attribute'=>'ro',
-                                                'label'=>'ROI',
-                                                'contentOptions' => ['class' => 'text-center cellTable'],
-                                                'headerOptions'=>['class'=>'text-center'],
-                                                'format' => 'raw',
-                                                'content'=>function($data){
-                                                   $lv= BalancestatisticsSearch::generateLastWeekParams();
-                                                    return  sprintf("%01.2f", BalancestatisticsSearch::newRoiCalk($data['user_id'],$lv['lastWeek'],$lv['lastLastWeek']));  ;
+                                        ],
+                                        [
+                                            'attribute'=>'ro',
+                                            'label'=>'ROI',
+                                            'contentOptions' => ['class' => 'text-center cellTable'],
+                                            'headerOptions'=>['class'=>'text-center'],
+                                            'format' => 'raw',
+                                            'content'=>function($data){
+                                                $lv= BalancestatisticsSearch::generateLastWeekParams();
+                                                return  sprintf("%01.2f", BalancestatisticsSearch::newRoiCalk($data['user_id'],$lv['lastWeek'],$lv['lastLastWeek']));  ;
 //                                                    return  sprintf("%01.2f", $data['ro']);
-                                                },
-                                            ],
-                                            [
-                                                'attribute'=>'pluse',
-                                                'label'=>'Плюс',
-                                                'contentOptions' => ['class' => 'text-center cellTable'],
-                                                'headerOptions'=>['class'=>'text-center'],
-                                                'format' => 'raw',
-                                                'content'=>function($data){
-                                                    $period=ConstantsHelper::STATTICTIC_FILTER_PREIOD_MONTH;
-                                                    if(Yii::$app->request->get('period')=='3m')$period=ConstantsHelper::STATTICTIC_FILTER_PREIOD_3_MONTH;
-                                                    if(Yii::$app->request->get('period')=='all')$period='all';
-                                                    $lv= BalancestatisticsSearch::searchCountPeroiod($data['user_id'],$period);
-                                                    return  $lv['plus'];
-                                                },
-                                            ],
-                                            [
-                                                'attribute'=>'minuse',
-                                                'label'=>'Минус',
-                                                'contentOptions' => ['class' => 'text-center cellTable'],
-                                                'headerOptions'=>['class'=>'text-center'],
-                                                'format' => 'raw',
-                                                'content'=>function($data){
-                                                    $period=ConstantsHelper::STATTICTIC_FILTER_PREIOD_MONTH;
-                                                    if(Yii::$app->request->get('period')=='3m')$period=ConstantsHelper::STATTICTIC_FILTER_PREIOD_3_MONTH;
-                                                    if(Yii::$app->request->get('period')=='all')$period='all';
-                                                    $lv= BalancestatisticsSearch::searchCountPeroiod($data['user_id'],$period);
-                                                    return  $lv['minus'];
+                                            },
+                                        ],
+                                        [
+                                            'attribute'=>'pluse',
+                                            'label'=>'Плюс',
+                                            'contentOptions' => ['class' => 'text-center cellTable'],
+                                            'headerOptions'=>['class'=>'text-center'],
+                                            'format' => 'raw',
+                                            'content'=>function($data){
+                                                $period=ConstantsHelper::STATTICTIC_FILTER_PREIOD_MONTH;
+                                                if(Yii::$app->request->get('period')=='3m')$period=ConstantsHelper::STATTICTIC_FILTER_PREIOD_3_MONTH;
+                                                if(Yii::$app->request->get('period')=='all')$period='all';
+                                                $lv= BalancestatisticsSearch::searchCountPeroiod($data['user_id'],$period);
+                                                return  $lv['plus'];
+                                            },
+                                        ],
+                                        [
+                                            'attribute'=>'minuse',
+                                            'label'=>'Минус',
+                                            'contentOptions' => ['class' => 'text-center cellTable'],
+                                            'headerOptions'=>['class'=>'text-center'],
+                                            'format' => 'raw',
+                                            'content'=>function($data){
+                                                $period=ConstantsHelper::STATTICTIC_FILTER_PREIOD_MONTH;
+                                                if(Yii::$app->request->get('period')=='3m')$period=ConstantsHelper::STATTICTIC_FILTER_PREIOD_3_MONTH;
+                                                if(Yii::$app->request->get('period')=='all')$period='all';
+                                                $lv= BalancestatisticsSearch::searchCountPeroiod($data['user_id'],$period);
+                                                return  $lv['minus'];
 
-                                                },
-                                            ],
+                                            },
+                                        ],
 
 
 
@@ -1337,42 +1337,42 @@ BetAsset::register($this);
 //                                        'name:ntext',
 //                                        'url:ntext',
 //                                        'category_image:ntext',
-                                            // 'created_at',
-                                            // 'updated_at',
-                                            // ['class' => 'yii\grid\ActionColumn'],
-                                        ],
-                                        'pager' => [
+                                        // 'created_at',
+                                        // 'updated_at',
+                                        // ['class' => 'yii\grid\ActionColumn'],
+                                    ],
+                                    'pager' => [
 
-                                            // 'view'=>'wwwwddde',
+                                        // 'view'=>'wwwwddde',
 
 //                                        'firstPageLabel' => 'first',
 //                                        'lastPageLabel' => 'last',
-                                            'prevPageLabel' => '<',
-                                            'nextPageLabel' => '>',
+                                        'prevPageLabel' => '<',
+                                        'nextPageLabel' => '>',
 
-                                            'maxButtonCount' => 4,
+                                        'maxButtonCount' => 4,
 
-                                            // Customzing options for pager container tag
-                                            'options' => [
-                                                'tag' => 'div',
-                                                'class' => [ 'class'=> 'pagination-list'],
-                                                'id' => 'pager-container',
-                                            ],
-
-                                            // Customzing CSS class for pager link
-                                            'linkOptions' => ['class' => 'mylink'],
-                                            'activePageCssClass' => 'active',
-                                            'disabledPageCssClass' => 'mydisable',
-
-                                            // Customzing CSS class for navigating link
-                                            'prevPageCssClass' => 'first-pag',
-                                            'nextPageCssClass' => 'pnext',
-                                            'firstPageCssClass' => 'first-pag2',
-                                            'lastPageCssClass' => 'last-pag',
+                                        // Customzing options for pager container tag
+                                        'options' => [
+                                            'tag' => 'div',
+                                            'class' => [ 'class'=> 'pagination-list'],
+                                            'id' => 'pager-container',
                                         ],
-                                    ]); ?>
 
-                                </div>
+                                        // Customzing CSS class for pager link
+                                        'linkOptions' => ['class' => 'mylink'],
+                                        'activePageCssClass' => 'active',
+                                        'disabledPageCssClass' => 'mydisable',
+
+                                        // Customzing CSS class for navigating link
+                                        'prevPageCssClass' => 'first-pag',
+                                        'nextPageCssClass' => 'pnext',
+                                        'firstPageCssClass' => 'first-pag2',
+                                        'lastPageCssClass' => 'last-pag',
+                                    ],
+                                ]); ?>
+
+                            </div>
 
 
 
@@ -1381,6 +1381,8 @@ BetAsset::register($this);
                     </div>
                 </div>
             </div>
+        <?php } ?>
+
 
 
 

@@ -483,3 +483,31 @@ and also iPads specifically.
 .modal-640 .modal-content {
   margin-top: 20%;
 }
+.top-user-table.raite-table .table-block-rating .table-cell.td-coeficient,
+.top-user-table.raite-table .table-block-rating .table-cell.td-passability,
+.top-user-table.raite-table .table-block-rating .table-cell.td-profit,
+.top-user-table.raite-table .table-block-rating .table-cell.td-roi {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 -webkit-calc(10%);
+  -moz-box-flex: 0;
+  -ms-flex: 0 0 calc(60% / 6);
+  flex: 0 0 calc(60% / 6);
+  max-width: -webkit-calc(10%);
+  max-width: -moz-calc(10%);
+  max-width: calc(60% / 6);
+}
+@media (max-width: 767px) {
+  .top-user-table.raite-table .table-block-rating .table-cell.td-coeficient,
+  .top-user-table.raite-table .table-block-rating .table-cell.td-passability,
+  .top-user-table.raite-table .table-block-rating .table-cell.td-profit,
+  .top-user-table.raite-table .table-block-rating .table-cell.td-roi {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 -webkit-calc(12%);
+    -moz-box-flex: 0;
+    -ms-flex: 0 0 calc(60% / 5);
+    flex: 0 0 calc(60% / 5);
+    max-width: -webkit-calc(12%);
+    max-width: -moz-calc(12%);
+    max-width: calc(60% / 5);
+  }
+}

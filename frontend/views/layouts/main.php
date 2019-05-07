@@ -9151,8 +9151,167 @@ AppAsset::register($this);
 
 
 
+<!--новые 4 версия-->
 
-
+<!-- New Modals -->
+<div class="modal-wrapper bet-modal modal-640" id="modal-gracc">
+    <div class="modal-inner">
+        <div class="modal-content">
+            <div class="modal-content-inner">
+                <div class="header-modal">
+                    <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
+                </div>
+                <div class="body-modal">
+                    <div class="info-modal-wrapper">
+                        <div class="info-modal-inner">
+                            <h2 class="h1">Поздравляем!</h2>
+                            <div class="text-block-modal">Ваш аккаунт успешно зарегистрирован.</div>
+                            <div class="muted-text-modal">
+                                <p>Для того, чтобы начать игру, подтвердите Вашу электронную почту. Уведомление выслано на указанный Вами адрес. Желаем Вам приятного времяпровождения! </p>
+                            </div>
+                            <div class="btn-block-choose justify-center">
+                                <button class="btn btn-hover btn-primary">
+                                    +  Продолжить
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-wrapper bet-modal modal-640" id="modal-best">
+    <div class="modal-inner">
+        <div class="modal-content">
+            <div class="modal-content-inner">
+                <div class="header-modal">
+                    <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
+                </div>
+                <div class="body-modal">
+                    <div class="info-modal-wrapper">
+                        <div class="info-modal-inner">
+                            <div class="modal-icon-block">
+                                <img src="images/check-symbol.svg" alt="">
+                            </div>
+                            <h2 class="h1">Все отлично!</h2>
+                            <div class="text-block-modal">Ваш аккаунт был успешно подтвержден.</div>
+                            <div class="muted-text-modal">
+                                <p>Спасибо за регистрацию! Давайте начнем делать ставки. </p>
+                            </div>
+                            <div class="btn-block-choose justify-center">
+                                <button class="btn btn-hover btn-primary">
+                                    +  Начать делать ставки
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-wrapper bet-modal modal-640" id="modal-reset-cong">
+    <div class="modal-inner">
+        <div class="modal-content">
+            <div class="modal-content-inner">
+                <div class="header-modal">
+                    <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
+                </div>
+                <div class="body-modal">
+                    <div class="info-modal-wrapper">
+                        <div class="info-modal-inner">
+                            <div class="modal-icon-block">
+                                <img src="images/check-symbol.svg" alt="">
+                            </div>
+                            <h2 class="h1">Все отлично!</h2>
+                            <div class="text-block-modal">Ваш пароль успешно изменен.</div>
+                            <div class="muted-text-modal">
+                                <p>Желаем Вам приятного времяпровождения! </p>
+                            </div>
+                            <div class="btn-block-choose justify-center">
+                                <button class="btn btn-hover btn-primary">
+                                    +  Продолжить
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-wrapper bet-modal modal-640" id="modal-reset-password">
+    <div class="modal-inner">
+        <div class="modal-content">
+            <div class="modal-content-inner">
+                <div class="header-modal">
+                    <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
+                </div>
+                <div class="body-modal">
+                    <div class="info-modal-wrapper">
+                        <div class="info-modal-inner">
+                            <h2 class="h1">Новый пароль</h2>
+                            <div class="text-block-modal muted-text">Введите новый пароль</div>
+                            <form action="#">
+                                <div class="form-modal">
+                                    <div class="form-row">
+                                        <input type="password" placeholder="Пароль - минимум 6 символов">
+                                    </div>
+                                </div>
+                                <div class="btn-block-choose justify-center">
+                                    <button class="btn btn-hover btn-primary">
+                                        +  Продолжить
+                                    </button>
+                                    <div class="form-link">
+                                        <a href="#">Вернуться на главную</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-wrapper bet-modal modal-640" id="modal-login">
+    <div class="modal-inner">
+        <div class="modal-content">
+            <div class="modal-content-inner">
+                <div class="header-modal">
+                    <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
+                </div>
+                <div class="body-modal">
+                    <div class="info-modal-wrapper">
+                        <div class="info-modal-inner">
+                            <h2 class="h1">Авторизируйтесь</h2>
+                            <div class="text-block-modal muted-text">Чтобы закончить регистрацию, Вы должны заполнить следующие поля</div>
+                            <form action="#">
+                                <div class="form-modal">
+                                    <div class="form-row">
+                                        <input type="email" placeholder="Email">
+                                    </div>
+                                    <div class="form-row">
+                                        <input type="text" placeholder="Никнейм">
+                                    </div>
+                                </div>
+                                <div class="btn-block-choose justify-center">
+                                    <button class="btn btn-hover btn-primary">
+                                        +  Продолжить
+                                    </button>
+                                    <div class="form-link">
+                                        <a href="#">Вернуться на главную</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 

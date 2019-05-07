@@ -3,6 +3,7 @@
    use common\models\helpers\ConstantsHelper;
    use common\models\helpers\HtmlGenerator;
    use common\models\overiden\User;
+   use common\models\search\BalancestatisticsSearch;
    use common\models\services\UserInfo;
    use yii\helpers\Html;
    use yii\helpers\Url;
@@ -12,14 +13,14 @@
 
    <div class="row table-row">
        <div class="column-12">
-           <div class="table-wrapper top-user-table">
+           <div class="table-wrapper top-user-table raite-table">
                <div class="table-inner">
                    <div class="table-head head-with-tabs head-custom-tabs">
                        <div class="tbl-icon tbl-icon-select">
                            <img src="/images/champ.svg" alt="">
                        </div>
                        <div class="left-head-text">
-                           <div class="title-w-select"> РЕЙТИНГ ПОЛЬЗОВАТЕЛЕЙ 2</div>
+                           <div class="title-w-select"> РЕЙТИНГ ПОЛЬЗОВАТЕЛЕЙ</div>
 
 
                            
@@ -55,6 +56,7 @@
                                    <div class="td table-cell td-coeficient">Коэффициент</div>
                                    <div class="td table-cell td-roi">ROI</div>
                                    <div class="td table-cell td-roi">Плюс</div>
+                                   <div class="td table-cell td-roi">Минус</div>
                                </div>
 
                                <?php
@@ -68,7 +70,25 @@
                                  $profite=  sprintf("%01.2f %%", $model['sume']);
                                  $penet=  sprintf("%01.2f %%", $model['penet']);
                                  $coef=sprintf("%01.2f", $model['mdc']);
-                                   $roi=sprintf("%01.2f", $model['ro']);
+
+
+                                   $lv= BalancestatisticsSearch::generateLastWeekParams();
+                                   $roi=sprintf("%01.2f", BalancestatisticsSearch::newRoiCalk($model['user_id'],$lv['lastWeek'],$lv['lastLastWeek']));  ;
+                                   //$roi=sprintf("%01.2f", $model['ro']);
+
+                                   $period=ConstantsHelper::STATTICTIC_FILTER_PREIOD_MONTH;
+                                   if(Yii::$app->request->get('period')=='3m')$period=ConstantsHelper::STATTICTIC_FILTER_PREIOD_3_MONTH;
+                                   if(Yii::$app->request->get('period')=='all')$period='all';
+                                   $lv= BalancestatisticsSearch::searchCountPeroiod($model['user_id'],$period);
+                                   $lv_plus = $lv['plus'];
+
+
+                                   $period=ConstantsHelper::STATTICTIC_FILTER_PREIOD_MONTH;
+                                   if(Yii::$app->request->get('period')=='3m')$period=ConstantsHelper::STATTICTIC_FILTER_PREIOD_3_MONTH;
+                                   if(Yii::$app->request->get('period')=='all')$period='all';
+                                   $lv= BalancestatisticsSearch::searchCountPeroiod($model['user_id'],$period);
+                                   $lv_minus=  $lv['minus'];
+
                                    echo '         <div class="hr table-row">
                                    <div class="td table-cell td-count">'.($index+1).'</div>
                                    <div class="td table-cell td-user">
@@ -92,7 +112,8 @@
                                    <div class="td table-cell td-passability">'.$penet.'</div>
                                    <div class="td table-cell td-coeficient">'.$coef.'</div>
                                    <div class="td table-cell td-roi">'.$roi.'</div>
-                                    <div class="td table-cell td-roi">'.$roi.'</div>
+                                    <div class="td table-cell td-roi">'.$lv_plus.'</div>
+                                    <div class="td table-cell td-roi">'.$lv_minus.'</div>
                                </div>';
                                }
 
