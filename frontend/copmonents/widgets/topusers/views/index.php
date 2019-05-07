@@ -21,6 +21,7 @@
                        <div class="left-head-text">
                            <div class="title-w-select">Еженедельный Турнир  25,000 ₽ </div>
                            <div class="select-type-block">
+
                                <div class="select-type-block-inner">
                                    <?php $dtop= Yii::$app->request->get('dtop') ?>
                                    <select class="single-select"  onchange="if (this.value) window.location.href=this.value" >
