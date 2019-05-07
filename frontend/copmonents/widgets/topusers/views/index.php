@@ -27,6 +27,9 @@
                                        <option     value="<?=Url::toRoute(['/bet'])?>">&nbsp;Турнир текущий &nbsp;&nbsp;&nbsp;</option>
                                        <option <?=$dtop==$prewWeek_1?'selected':'' ?> value="<?=Url::toRoute(['/bet','dtop'=>$prewWeek_1])?>">1 Турнир (<?=$prewWeek_1?>)</option>
                                        <option <?=$dtop==$prewWeek_2?'selected':'' ?> value="<?=Url::toRoute(['/bet','dtop'=>$prewWeek_2])?>">2 Турнир (<?=$prewWeek_2?>)</option>
+                                       <option <?=$dtop==$prewWeek_3?'selected':'' ?> value="<?=Url::toRoute(['/bet','dtop'=>$prewWeek_3])?>">2 Турнир (<?=$prewWeek_3?>)</option>
+                                       <option <?=$dtop==$prewWeek_4?'selected':'' ?> value="<?=Url::toRoute(['/bet','dtop'=>$prewWeek_4])?>">2 Турнир (<?=$prewWeek_4?>)</option>
+                                       <option <?=$dtop==$prewWeek_5?'selected':'' ?> value="<?=Url::toRoute(['/bet','dtop'=>$prewWeek_5])?>">2 Турнир (<?=$prewWeek_5?>)</option>
                                    </select>
                                </div>
                            </div>

@@ -137,7 +137,7 @@ var SmartCart={
 
          //  $('body').removeClass('noScroll');
 
-          //   $('body').removeClass('modal-open');
+             $('body').removeClass('modal-open');
             $('.notification-calculate').text('');
             SmartCart.backlight(); //
             return true;
