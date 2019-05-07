@@ -16,5 +16,6 @@ class BettabsAsset extends AssetBundle
     public $js = [
         'js/bet.min.js',
     ];
-//    public $depends = ['yii\web\YiiAsset', 'yii\bootstrap\BootstrapAsset',];
+    public $depends = ['frontend\assets\AppAsset',];
+
 }

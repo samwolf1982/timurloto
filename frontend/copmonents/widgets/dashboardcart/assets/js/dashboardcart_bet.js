@@ -116,10 +116,11 @@ var SmartCart={
         });
 
 // закрытие модального для корзины
-        $('#modal-success-bet .close2').on('click', function (e) {
+        $('#modal-success-bet .close').on('click', function (e) {
             console.log('Close modal');
            if(SmartCart.devStatus === false ) SmartCart.deleteAll();
 
+        // class="close" data-toggle="modal-dismiss"
             // баг с закрытием
            // $('body').removeClass('modal-open');
            //   $(this).parents('.modal-wrapper').fadeOut(500).removeClass('active');
@@ -137,10 +138,16 @@ var SmartCart={
 
          //  $('body').removeClass('noScroll');
 
-             $('body').removeClass('modal-open');
-            $('.notification-calculate').text('');
+
+            // $('.notification-calculate').text('');
+            $(this).parents('.modal-wrapper').fadeOut(500).removeClass('active');
+            setTimeout(function () { // фикс для окон
+                $('body').removeClass('modal-open');
+                $('body').removeAttr( 'style' );
+            },600)
+           //$('body').removeClass('noScroll');
             SmartCart.backlight(); //
-            return true;
+            return false;
         });
 
 

@@ -263,6 +263,56 @@ $(document).ready(function () { // 1раз
         },210);
         return false;
     });
+
+    $('#show-register').on('click',function (e) {
+        $('.right-side-login').removeClass('login-show');
+        $('.body-modal-inner').removeClass('padding-left-form');
+        $('.login-block').addClass('active');
+        $('.register-block').removeClass('active');
+        e.preventDefault();
+    });
+
+    $('#show-login').on('click',function (e) {
+        $('.right-side-login').addClass('login-show');
+        $('.body-modal-inner').addClass('padding-left-form');
+        $('.login-block').removeClass('active');
+        $('.register-block').addClass('active');
+        e.preventDefault();
+    });
+
+    $('[data-toggle="modal-dismiss"]').on('click',function () {
+        $(this).parents('.modal-wrapper').fadeOut(500).removeClass('active');
+        $('body').removeClass('noScroll');
+        return false;
+    });
+    $('.drop-menu-trigger').on('click',function () {
+        $('.drop-wrapper').stop().fadeOut(400);
+        $(this).parents('.drop-menu').find('.drop-wrapper').stop().fadeToggle(400);
+        return false;
+    });
+
+
+    $('.left-sidebar-trigger').on('click',function () {
+        $('.dash-left-col').addClass('active-sidebar');
+        $('body').addClass('no-scroll');
+        $('.overlay-sidebar').fadeIn(400);
+        $('.dasboard-page .header-main').css({
+            'z-index':'9'
+        });
+        return false;
+    });
+    $('.left-sidebar-close,.overlay-sidebar').click(function () {
+        $('.dash-left-col').removeClass('active-sidebar');
+        $('body').removeClass('no-scroll');
+        $('.overlay-sidebar').fadeOut(400);
+        setTimeout(function () {
+            $('.dasboard-page .header-main').css({
+                'z-index':'100'
+            });
+        },400);
+        return false;
+    });
+
 });  // 1раз
 
 
@@ -365,3 +415,6 @@ $(document).on('keyup2', $(".livesearcheform"), function(el) {
         }
     });
 });
+
+
+

@@ -48,6 +48,7 @@
                </ul>
 
 
+<!--               загрузка корзина-->
                <div class="load-coupon-wrapper" style="display: none;">
                    <div class="load-coupon-inner">
                        <div class="round-load">
@@ -219,8 +220,27 @@
                                    <?      }  ?>
                                </button>
 
-                               <button id="smartCartButton"  class="btn btn-primary send-bets" onclick="SmartCart.createBet(this);" >Сделать Ставку</button>
-                               <button    id="smartCartButtonModal"  class="btn btn-primary send-bets " data-toggle="modal" data-target="#modal-success-bet">Сделать Ставку Модальное</button>
+
+
+                               <?php     if (Yii::$app->user->isGuest) { ?>
+                                   <style>
+                                       .user-btn.w100,.send-bets{
+                                           width: 100%;
+                                       }
+                                       .calculator-bet-inner .custom-dropdown .dropdown-list{
+                                           height: auto !important;
+                                           max-height: 240px;
+                                       }
+                                   </style>
+
+                                   <div class="user-btn w100">
+                                       <a href="#" class="btn btn-primary send-bets"  data-toggle="modal-reg" data-target="#modal-auth"><i class="icon-user"></i> <span>ВОЙТИ</span></a>
+                                   </div>
+
+                               <?php }else{ ?>
+                                   <button id="smartCartButton"  class="btn btn-primary send-bets" onclick="SmartCart.createBet(this);" >Сделать Ставку</button>
+                                   <button    id="smartCartButtonModal"  class="btn btn-primary send-bets " data-toggle="modal" data-target="#modal-success-bet">Сделать Ставку Модальное</button>
+                               <?php } ?>
 
 
                                <!--<p>The complexity of mining crypto currency.</p>-->

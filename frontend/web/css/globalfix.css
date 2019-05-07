@@ -511,3 +511,11 @@ and also iPads specifically.
     max-width: calc(60% / 5);
   }
 }
+.select-type-block {
+  min-width: 160px;
+}
+a:hover,
+a:focus {
+  color: white;
+  text-decoration: underline;
+}

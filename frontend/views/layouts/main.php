@@ -9157,7 +9157,7 @@ AppAsset::register($this);
         <div class="modal-content">
             <div class="modal-content-inner">
                 <div class="header-modal">
-                    <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
+                    <button class="close" data-toggle="modal-dismiss2"><span class="icon-close2"></span></button>
                 </div>
                 <div class="body-modal">
                     <div class="choose-bet-wrapper">
@@ -9276,40 +9276,8 @@ AppAsset::register($this);
         </div>
     </div>
 </div>
-<div class="modal-wrapper bet-modal modal-640" id="modal-reset-password">
-    <div class="modal-inner">
-        <div class="modal-content">
-            <div class="modal-content-inner">
-                <div class="header-modal">
-                    <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
-                </div>
-                <div class="body-modal">
-                    <div class="info-modal-wrapper">
-                        <div class="info-modal-inner">
-                            <h2 class="h1">Новый пароль</h2>
-                            <div class="text-block-modal muted-text">Введите новый пароль</div>
-                            <form action="#">
-                                <div class="form-modal">
-                                    <div class="form-row">
-                                        <input type="password" placeholder="Пароль - минимум 6 символов">
-                                    </div>
-                                </div>
-                                <div class="btn-block-choose justify-center">
-                                    <button class="btn btn-hover btn-primary">
-                                        +  Продолжить
-                                    </button>
-                                    <div class="form-link">
-                                        <a href="#">Вернуться на главную</a>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+
 <div class="modal-wrapper bet-modal modal-640" id="modal-login">
     <div class="modal-inner">
         <div class="modal-content">

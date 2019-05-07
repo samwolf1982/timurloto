@@ -20,20 +20,33 @@ use yii\helpers\Url;
                     <div class="left-head-text">
                         <span class="text-head">Последние Ставки</span>
                     </div>
+
+
+
+
                     <div class="right-head-tab">
-                        <ul class="head-tabs">
+                        <div class="for-mobile-drop desinbtn-drop">
+                            <?php if(!$proLevel){ ?>
+                                <a href="#" class="trig-filter">Все Прогнозы</a>
+                            <?php }else{ ?>
+                                <a href="#" class="trig-filter">Только PRO</a>
+                            <?php } ?>
 
+                            <ul class="head-tabs">
 
-                            <li class="<?= (!$proLevel?'active':'');?>">
-                                <a href="<?=Url::toRoute(['/bet'])?>">Все Прогнозы</a>
-                            </li>
+                                <li class="<?= (!$proLevel?'active':'');?>">
+                                    <a onclick="window.location='<?=Url::to(['/bet']);?>'" href="<?=Url::toRoute(['/bet'])?>">Все Прогнозы</a>
+                                </li>
 
-                            <li class="<?= ($proLevel?'active':'');?>" >
-                                <a href="<?=Url::toRoute(['/bet','level'=>'pro'])?>">Только PRO</a>
-                            </li>
+                                <li class="<?= ($proLevel?'active':'');?>" >
+                                    <a onclick="window.location='<?=Url::to(['/bet','level'=>'pro']);?>'" href="<?=Url::toRoute(['/bet','level'=>'pro'])?>">Только PRO</a>
+                                </li>
 
-                        </ul>
+                            </ul>
+                        </div>
                     </div>
+
+
                 </div>
 
 

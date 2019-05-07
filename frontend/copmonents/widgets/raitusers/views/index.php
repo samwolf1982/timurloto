@@ -26,22 +26,28 @@
                            
                        </div>
 
+
+
                            <div class="right-head-tab" id="tope100">
-                               <div class="for-mobile-drop">
+                               <div class="for-mobile-drop desinbtn-drop">
                                    <a href="#" class="trig-filter">За месяц</a>
                                    <ul class="head-tabs">
                                        <li class="<?=$periodOne?>">
-                                           <a href="<?=Url::to(['/bet']);?>">За месяц</a>
+                                           <a onclick="window.location='<?=Url::to(['/bet']);?>'" href="<?=Url::to(['/bet']);?>">За месяц</a>
                                        </li>
                                        <li class="<?=$period3m?>">
-                                           <a href="<?=Url::to(['/bet','period'=>ConstantsHelper::PERIOD_3_M]);?>">3 месяца</a>
+                                           <a onclick="window.location='<?=Url::to(['/bet','period'=>ConstantsHelper::PERIOD_3_M]);?>'" href="<?=Url::to(['/bet','period'=>ConstantsHelper::PERIOD_3_M]);?>">3 месяца</a>
                                        </li>
                                        <li class="<?=$periodAll?>">
-                                           <a href="<?=Url::to(['/bet','period'=>ConstantsHelper::PERIOD_ALL]);?>">За все время</a>
+                                           <a onclick="window.location='<?=Url::to(['/bet','period'=>ConstantsHelper::PERIOD_ALL]);?>'" href="<?=Url::to(['/bet','period'=>ConstantsHelper::PERIOD_ALL]);?>">За все время</a>
                                        </li>
                                    </ul>
                                </div>
                            </div>
+
+
+
+
 
                    </div>
 

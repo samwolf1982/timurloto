@@ -25,9 +25,9 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 
-<body class="home-page footer-login-page">
+<body class="footer-login-page">
 
-<header class="header-main front-header">
+<header class="header-main front-header static-header">
     <div class="header-inner">
         <div class="logo-block">
             <a href="/">
@@ -61,11 +61,40 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 </header>
 
-<div class="main-background">
-    <div id="scene">
-        <div data-depth="0.2" class="background-image" style="background-image: url(/images/back-body.jpg)"></div>
+
+<style>
+    .modal-640 .modal-content {
+        margin-top: initial;
+    }
+</style>
+
+<section class="modal-s-wrap">
+    <div class="modal-s-wrap-inner">
+        <a href="#" class="btn btn-primary btn-hover" data-toggle="modal" data-target="#modal-gracc">
+            модальное окно поздравляем
+            <span></span>
+        </a>
+        <a href="#" class="btn btn-primary btn-hover" data-toggle="modal" data-target="#modal-best">
+            модальное Все отлично!
+            <span></span>
+        </a>
+        <a href="#" class="btn btn-primary btn-hover" data-toggle="modal" data-target="#modal-reset-cong">
+            модальное Все отлично! Сброс пароля
+            <span></span>
+        </a>
+        <a href="#" class="btn btn-primary btn-hover" data-toggle="modal" data-target="#modal-reset-password">
+           Сбросить пароль
+            <span></span>
+        </a>
+        <a href="#" class="btn btn-primary btn-hover" data-toggle="modal" data-target="#modal-login">
+            модальное Логин
+            <span></span>
+        </a>
     </div>
-</div>
+</section>
+
+
+<?php if(0){ ?>
 <div class="front-page-wrapper">
     <div class="front-page-inner">
         <div class="content-container">
@@ -86,6 +115,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
 
+
+
+                                            <a href="#" class="btn btn-primary btn-hover" data-toggle="modal" data-target="#modal-reset-password">
+                                                модальное Сброс пароля
+                                                <span></span>
+                                            </a>
 
 
                                             <div class="wrapFormreset text-center" style="display: flex; justify-content: center;">
@@ -142,6 +177,59 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 </div>
+<?php } ?>
+
+
+<!--сброс пароля модалка-->
+<div class="modal-wrapper bet-modal modal-640" id="modal-reset-password">
+    <div class="modal-inner">
+        <div class="modal-content">
+            <div class="modal-content-inner">
+                <div class="header-modal">
+                    <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
+                </div>
+                <div class="body-modal">
+                    <div class="info-modal-wrapper">
+                        <div class="info-modal-inner">
+                            <h2 class="h1">Новый пароль</h2>
+                            <div class="text-block-modal muted-text">Введите новый пароль</div>
+                            <form action="#" hidden>
+                                <div class="form-modal">
+                                    <div class="form-row">
+                                        <input type="password" placeholder="Пароль - минимум 6 символов">
+                                    </div>
+                                </div>
+                                <div class="btn-block-choose justify-center">
+                                    <button class="btn btn-hover btn-primary">
+                                        +  Продолжить
+                                    </button>
+                                    <div class="form-link">
+                                        <a href="#">Вернуться на главную</a>
+                                    </div>
+                                </div>
+                            </form>
+
+
+                            <?php $form = ActiveForm::begin([
+                                'id' => 'password-recovery-form',
+                                'enableAjaxValidation' => true,
+                                'enableClientValidation' => false,
+                            ]); ?>
+
+                            <?= $form->field($model, 'password')->passwordInput()->label(false) ?>
+                            <div class="btn-block-choose justify-center">
+                            <?= Html::submitButton(Yii::t('user', 'Продолжить'), ['class' => 'btn btn-hover btn-primary']) ?><br>
+                            </div>
+                            <?php ActiveForm::end(); ?>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <footer class="main-footer front-footer">
     <div class="main-footer-inner">
         <div class="logo-footer">
@@ -637,6 +725,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <!-- modad add bet -->
 <?= AddbetWidget ::widget([]); ?>
+
 
 
 
@@ -7783,7 +7872,9 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 </div>
+
 <script src="/js/script.min.js"></script>
+
 </body>
 
 
