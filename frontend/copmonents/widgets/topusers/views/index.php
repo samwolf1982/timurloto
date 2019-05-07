@@ -20,18 +20,14 @@
                        </div>
                        <div class="left-head-text">
                            <div class="title-w-select">Еженедельный Турнир  25,000 ₽ </div>
-
                            <div class="select-type-block">
                                <div class="select-type-block-inner">
-
                                    <?php $dtop= Yii::$app->request->get('dtop') ?>
                                    <select class="single-select"  onchange="if (this.value) window.location.href=this.value" >
-                                       <option     value="<?=Url::toRoute(['/bet'])?>">Турнир текущий</option>
-                                       <option <?=$dtop=='2019-03-31'?'selected':'' ?> value="<?=Url::toRoute(['/bet','dtop'=>'2019-03-31'])?>">1 Турнир -(2019-03-31)</option>
-                                       <option <?=$dtop=='2019-03-24'?'selected':'' ?> value="<?=Url::toRoute(['/bet','dtop'=>'2019-03-24'])?>">2 Турнир - (2019-03-24)</option>
+                                       <option     value="<?=Url::toRoute(['/bet'])?>">&nbsp;Турнир текущий &nbsp;&nbsp;&nbsp;</option>
+                                       <option <?=$dtop==$prewWeek_1?'selected':'' ?> value="<?=Url::toRoute(['/bet','dtop'=>$prewWeek_1])?>">1 Турнир (<?=$prewWeek_1?>)</option>
+                                       <option <?=$dtop==$prewWeek_2?'selected':'' ?> value="<?=Url::toRoute(['/bet','dtop'=>$prewWeek_2])?>">2 Турнир (<?=$prewWeek_2?>)</option>
                                    </select>
-
-
                                </div>
                            </div>
                            
