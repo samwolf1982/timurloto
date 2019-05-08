@@ -39,7 +39,7 @@ use yii\helpers\Html;
                                                 <td width="600" valign="top" align="center" style="padding:0;Margin:0;">
                                                     <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;">
                                                         <tr style="border-collapse:collapse;">
-                                                            <td align="center" style="padding:0;Margin:0;"> <a target="_blank" href="https://lookmybets.com/" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;font-size:14px;text-decoration:underline;color:#FFFFFF;"> <img class="adapt-img" src="images/53961555751172814.png" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;" width="200"> </a> </td>
+                                                            <td align="center" style="padding:0;Margin:0;"> <a target="_blank" href="https://lookmybets.com/" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;font-size:14px;text-decoration:underline;color:#FFFFFF;"> <img class="adapt-img" src="https://lookmybets.com/images/53961555751172814.png" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;" width="200"> </a> </td>
                                                         </tr>
                                                     </table> </td>
                                             </tr>
@@ -75,8 +75,21 @@ use yii\helpers\Html;
                                                         <tr style="border-collapse:collapse;">
                                                             <td align="center" style="padding:0;Margin:0;padding-top:10px;padding-bottom:20px;"> <span class="es-button-border es-button-border-2" style="border-style:solid;border-color:#26A4D3;background:#CD0F6A;border-width:0px;display:inline-block;border-radius:50px;width:auto;">
 
+<?php if ($token !== null): ?>
 
-                          <a href="https://viewstripo.email/" class="es-button es-button-1" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;transition:all 100ms ease-in;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:14px;color:#FFFFFF;border-style:solid;border-color:#CD0F6A;border-width:15px 30px 15px 30px;display:inline-block;background:#CD0F6A;border-radius:50px;font-weight:bold;font-style:normal;line-height:17px;width:auto;text-align:center;">Активировать</a>
+        <?php // смена урла для подтверждения для переопределения/ самый простой способ
+        $rUrl=Html::a(Html::encode($token->url), $token->url);
+        $rUrl= str_replace('/user/confirm/','/uregistration/confirm/',$rUrl);
+
+        $fullUrl= str_replace('/user/confirm/','/uregistration/confirm/',$token->url);
+
+        ?>
+        <?= $rUrl ?>
+    <a href="<?=$fullUrl?>" class="es-button es-button-1" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;transition:all 100ms ease-in;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:14px;color:#FFFFFF;border-style:solid;border-color:#CD0F6A;border-width:15px 30px 15px 30px;display:inline-block;background:#CD0F6A;border-radius:50px;font-weight:bold;font-style:normal;line-height:17px;width:auto;text-align:center;">Активировать</a>
+<?php endif ?>
+
+
+
 
 
                       </span> </td>
@@ -113,9 +126,9 @@ use yii\helpers\Html;
                                                             <td class="es-m-txt-c" align="center" style="padding:0;Margin:0;">
                                                                 <table class="es-table-not-adapt es-social" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;">
                                                                     <tr style="border-collapse:collapse;">
-                                                                        <td valign="top" align="center" style="padding:0;Margin:0;padding-right:10px;"> <a target="_blank" href="https://www.instagram.com/lookmybet/" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;font-size:15px;text-decoration:underline;color:#26A4D3;"><img title="Telegram" src="images/instagram-circle-black-bordered.png" alt="Inst" width="32" height="32" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;"></a> </td>
-                                                                        <td valign="top" align="center" style="padding:0;Margin:0;padding-right:10px;"> <a target="_blank" href="https://www.youtube.com/channel/UCw9BOXOTaRzoMAZVBpkzBvA/videos?view_as=subscriber" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;font-size:15px;text-decoration:underline;color:#26A4D3;"><img title="Youtube" src="images/youtube-circle-black-bordered.png" alt="Yt" width="32" height="32" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;"></a> </td>
-                                                                        <td valign="top" align="center" style="padding:0;Margin:0;"> <a target="_blank" href="https://tglink.ru/lookmybets" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;font-size:15px;text-decoration:underline;color:#26A4D3;"><img title="Telegram" src="images/telegram-circle-black-bordered.png" alt="Telegram" width="32" height="32" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;"></a> </td>
+                                                                        <td valign="top" align="center" style="padding:0;Margin:0;padding-right:10px;"> <a target="_blank" href="https://www.instagram.com/lookmybet/" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;font-size:15px;text-decoration:underline;color:#26A4D3;"><img title="Telegram" src="https://lookmybets.com/images/instagram-circle-black-bordered.png" alt="Inst" width="32" height="32" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;"></a> </td>
+                                                                        <td valign="top" align="center" style="padding:0;Margin:0;padding-right:10px;"> <a target="_blank" href="https://www.youtube.com/channel/UCw9BOXOTaRzoMAZVBpkzBvA/videos?view_as=subscriber" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;font-size:15px;text-decoration:underline;color:#26A4D3;"><img title="Youtube" src="https://lookmybets.com/images/youtube-circle-black-bordered.png" alt="Yt" width="32" height="32" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;"></a> </td>
+                                                                        <td valign="top" align="center" style="padding:0;Margin:0;"> <a target="_blank" href="https://tglink.ru/lookmybets" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;font-size:15px;text-decoration:underline;color:#26A4D3;"><img title="Telegram" src="https://lookmybets.com/images/telegram-circle-black-bordered.png" alt="Telegram" width="32" height="32" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;"></a> </td>
                                                                     </tr>
                                                                 </table> </td>
                                                         </tr>
@@ -131,20 +144,6 @@ use yii\helpers\Html;
 </div>
 </body>
 
-<?php if ($token !== null): ?>
-    <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6; font-weight: normal; margin: 0 0 10px; padding: 0;">
-        <?= Yii::t('user', 'Для завершения регистрации перейдите по ссылке ниже') ?>.
-    </p>
-    <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6; font-weight: normal; margin: 0 0 10px; padding: 0;">
-        <?php // смена урла для подтверждения для переопределения/ самый простой способ
-             $rUrl=Html::a(Html::encode($token->url), $token->url);
-             $rUrl= str_replace('/user/confirm/','/uregistration/confirm/',$rUrl);
-         ?>
-        <?= $rUrl ?>
-    </p>
-    <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6; font-weight: normal; margin: 0 0 10px; padding: 0;">
-        <?= Yii::t('user', 'Если вы не можете нажать на ссылку, тогда скопируйте ёё и вставьте в ваш браузер.') ?>.
-    </p>
-<?php endif ?>
+
 
 
