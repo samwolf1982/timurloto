@@ -502,13 +502,13 @@ and also iPads specifically.
   .top-user-table.raite-table .table-block-rating .table-cell.td-profit,
   .top-user-table.raite-table .table-block-rating .table-cell.td-roi {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 -webkit-calc(12%);
+    -webkit-flex: 0 0 -webkit-calc(13.33333333%);
     -moz-box-flex: 0;
-    -ms-flex: 0 0 calc(60% / 5);
-    flex: 0 0 calc(60% / 5);
-    max-width: -webkit-calc(12%);
-    max-width: -moz-calc(12%);
-    max-width: calc(60% / 5);
+    -ms-flex: 0 0 calc(60% / 4.5);
+    flex: 0 0 calc(60% / 4.5);
+    max-width: -webkit-calc(13.33333333%);
+    max-width: -moz-calc(13.33333333%);
+    max-width: calc(60% / 4.5);
   }
 }
 .select-type-block {

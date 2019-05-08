@@ -11,10 +11,12 @@
 
 
    <div class="content-center-block  main_center_block">
+       <?php if(0): ?>
        <div class="head-pink">
            <h3>Реклама</h3>
            <div class="arrows-carousel-nav" id="top-game"></div>
        </div>
+       <?php endif; ?>
        <div class="content-bg">
            <div class="top-carousel-wrapper">
                <a href="/" target="_blank">   <img src="/images/error/fon.png" alt="comercical" class="img-responsive"></a>
