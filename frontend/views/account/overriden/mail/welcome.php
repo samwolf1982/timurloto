@@ -84,7 +84,7 @@ use yii\helpers\Html;
         $fullUrl= str_replace('/user/confirm/','/uregistration/confirm/',$token->url);
 
         ?>
-        <?= $rUrl ?>
+
     <a href="<?=$fullUrl?>" class="es-button es-button-1" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;transition:all 100ms ease-in;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:14px;color:#FFFFFF;border-style:solid;border-color:#CD0F6A;border-width:15px 30px 15px 30px;display:inline-block;background:#CD0F6A;border-radius:50px;font-weight:bold;font-style:normal;line-height:17px;width:auto;text-align:center;">Активировать</a>
 <?php endif ?>
 
