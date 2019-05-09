@@ -86,7 +86,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </a>
     </div>
 
-    <?php if(1){ ?>
+    <?php if(0){ ?>
         <div class="row table-row hidden">
             <div class="column-12">
                 <div class="table-wrapper table-winner">
@@ -231,7 +231,6 @@ $this->params['breadcrumbs'][] = $this->title;
                             <hr>
                             <?php $form = ActiveForm::begin([
                                 'id' => 'connect-account-form',
-                                'enableAjaxValidation' => true,
                             ]); ?>
 
                             <?= $form->field($model, 'email')->label('Email',['class'=>'placeholder'])  ?>
