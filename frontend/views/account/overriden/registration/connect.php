@@ -100,7 +100,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="body-modal">
                     <div class="info-modal-wrapper">
                         <div class="info-modal-inner">
-                            <h2 class="h1">Авторизируйтесь</h2>
+                            <h2 style="font-size: 28px;" class="h1">Авторизируйтесь</h2>
                             <div class="text-block-modal muted-text">Чтобы закончить регистрацию, Вы должны заполнить следующие поля</div>
                             <?php $form = ActiveForm::begin([
                                 'id' => 'connect-account-form',
