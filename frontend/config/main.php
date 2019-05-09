@@ -240,6 +240,7 @@ return [
                 'uregistration' => '\frontend\controllers\UregistrationController',
                 'usecurity' => '\frontend\controllers\UsecurityController',
                 'urecovery' => '\frontend\controllers\UrecoveryController',
+                'registration' => '\frontend\controllers\UregistrationController',
             ],
             'modelMap' => [
                 'User' => 'common\models\overiden\User',
