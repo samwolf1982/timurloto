@@ -17,8 +17,8 @@ Event::on('dektrium\user\controllers\SecurityController', SecurityController::EV
     if('dektrium\user\clients\Google'==get_class($e->getClient())){// гугл нужно парсить значение из json
        if(empty($e->account->email) && empty($e->account->username)){
 
-           // уведомление модальное что аккаунт подтверджен // первый раз человек регается
-           yii::$app->session->addFlash(ConstantsHelper::SHOW_MODAL_AFRER_LOAD_PAGE, ConstantsHelper::SHOW_MODAL_SUCCESS_NEW_USER_CONFIRM_MODAL, true);
+           // уведомление модальное что аккаунт подтверджен // первый раз человек регается через соцсеть
+           yii::$app->session->addFlash(ConstantsHelper::SHOW_MODAL_AFRER_LOAD_PAGE, ConstantsHelper::SHOW_MODAL_SUCCESS_NEW_USER_LOGIN_FORM_FILL_FIELDS_MODAL, true);
 
            $jsone=json_decode($e->account->data);
            $resparse=  explode('@',$jsone->email);

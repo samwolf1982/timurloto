@@ -139,6 +139,7 @@ class ConstantsHelper
     const SHOW_MODAL_SUCCESS_RESET_MODAL='#modal-reset-cong-mail'; // востановить пароль забили пароль
     const SHOW_MODAL_SUCCESS_NEW_USER_MODAL='#modal-gracc'; // новый пользователь
     const SHOW_MODAL_SUCCESS_NEW_USER_CONFIRM_MODAL='#modal-best'; // новый пользователь подтвердить из письма
+    const SHOW_MODAL_SUCCESS_NEW_USER_LOGIN_FORM_FILL_FIELDS_MODAL='#modal-login'; // новый пользователь первый раз зашел через соцсеть
 
 
 
