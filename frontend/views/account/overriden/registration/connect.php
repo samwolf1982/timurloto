@@ -63,7 +63,7 @@ $this->params['breadcrumbs'][] = $this->title;
 </header>
 
 <section class="modal-s-wrap">
-    <div class="modal-s-wrap-inner hidden">
+    <div class="modal-s-wrap-inner text-center">
     <img src="/images/logo.svg" class="text-center" alt="logo">
     </div>
     <div class="modal-s-wrap-inner hidden">
@@ -88,12 +88,6 @@ $this->params['breadcrumbs'][] = $this->title;
             <span></span>
         </a>
     </div>
-
-
-
-
-
-
 </section>
 
 <div class="modal-wrapper bet-modal modal-640" id="modal-login">

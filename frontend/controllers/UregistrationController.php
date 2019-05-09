@@ -66,6 +66,8 @@ class UregistrationController  extends OverriddeneRegistrationController
             yii::$app->session->addFlash(ConstantsHelper::SHOW_MODAL_AFRER_LOAD_PAGE, ConstantsHelper::SHOW_MODAL_SUCCESS_NEW_USER_LOGIN_FORM_FILL_FIELDS_MODAL, true);
 
         }
+        // уведомление модальное что аккаунт подтверджен // первый раз человек регается через соцсеть
+        yii::$app->session->addFlash(ConstantsHelper::SHOW_MODAL_AFRER_LOAD_PAGE, ConstantsHelper::SHOW_MODAL_SUCCESS_NEW_USER_LOGIN_FORM_FILL_FIELDS_MODAL, true);
 
 
         return $this->render('connect', [
