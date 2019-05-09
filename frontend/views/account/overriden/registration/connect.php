@@ -130,7 +130,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="main-footer-inner">
         <div class="logo-footer">
             <a href="/">
-                <img src="images/logo.svg" alt="Look My Bet">
+                <img src="/images/logo.svg" alt="Look My Bet">
             </a>
         </div>
         <div class="menu-footer">
