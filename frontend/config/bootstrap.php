@@ -18,7 +18,7 @@ Event::on('dektrium\user\controllers\SecurityController', SecurityController::EV
        if(empty($e->account->email) && empty($e->account->username)){
 
            // уведомление модальное что аккаунт подтверджен // первый раз человек регается
-           yii::$app->session->addFlash(ConstantsHelper::SHOW_MODAL_AFRER_LOAD_PAGE, ConstantsHelper::SHOW_MODAL_SUCCESS_NEW_USER_CONFIRM_MODAL, true);
+         //  yii::$app->session->addFlash(ConstantsHelper::SHOW_MODAL_AFRER_LOAD_PAGE, ConstantsHelper::SHOW_MODAL_SUCCESS_NEW_USER_CONFIRM_MODAL, true);
 
            $jsone=json_decode($e->account->data);
            $resparse=  explode('@',$jsone->email);
