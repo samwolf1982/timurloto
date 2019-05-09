@@ -5,6 +5,7 @@ namespace frontend\controllers;
 
 
 
+use common\models\helpers\ConstantsHelper;
 use common\models\overiden\RegistrationForm;
 use dektrium\user\Finder;
 //use dektrium\user\models\RegistrationForm;
@@ -54,14 +55,25 @@ class UsecurityController  extends OverriddeneSecurityController
             return $this->goBack();
         }
 
-        return $this->renderAjax('@app/views/account/overriden/security/login', [
-            'model'  => $model,
-            'module' => $this->module,
-        ]);
-        return $this->render('login', [
-            'model'  => $model,
-            'module' => $this->module,
-        ]);
+
+        if(Yii::$app->request->isAjax){
+            return $this->renderAjax('@app/views/account/overriden/security/login', [
+                'model'  => $model,
+                'module' => $this->module,
+            ]);
+        }else{
+
+            // redirect на главную с отображением формы для входа
+            yii::$app->session->addFlash(ConstantsHelper::SHOW_MODAL_AFRER_LOAD_PAGE, ConstantsHelper::SHOW_MODAL_USER_LOGIN_MAIN_FORM, true);
+
+ return $this->redirect(Url::to(['/']));
+//            return $this->render('login', [
+//                'model'  => $model,
+//                'module' => $this->module,
+//            ]);
+        }
+
+
     }
 
 

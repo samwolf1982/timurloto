@@ -43,7 +43,10 @@ class AccountController extends Controller
                 'class' => AccessControl::className(),
                 'only' => ['index','addsubscriber', 'view','messages','chart','add-mail-subscriber','remove-mail-subscriber','open-access','autocomplete-comment'],
                 'denyCallback' => function ($rule, $action) {
-                    $this->redirect( Url::toRoute(['/login-page']),302);
+                    // redirect на главную с отображением формы для входа
+                    yii::$app->session->addFlash(ConstantsHelper::SHOW_MODAL_AFRER_LOAD_PAGE, ConstantsHelper::SHOW_MODAL_USER_LOGIN_MAIN_FORM, true);
+                    $this->redirect( Url::toRoute(['/']));
+                 //   $this->redirect( Url::toRoute(['/login-page']),302);
 //                    throw new Exception('У вас нет доступа к этой странице');
                 },
                 'rules' => [

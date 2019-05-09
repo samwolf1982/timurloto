@@ -4,6 +4,10 @@ $(function () {
             console.log('show mee afterMODALE');
             console.log(shonModalAfterLoad);
         showModaleAfterLoad(shonModalAfterLoad)
+        if(shonModalAfterLoad==='#modal-auth'){ //если нужно вызвать форму главную
+            UserReg.loadFormReg();
+            UserReg.loadFormLogin();
+        }
         console.log('show mee afterMODALE');
    }
 
