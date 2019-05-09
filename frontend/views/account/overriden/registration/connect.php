@@ -87,7 +87,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 
     <?php if(1){ ?>
-        <div class="row table-row">
+        <div class="row table-row hidden">
             <div class="column-12">
                 <div class="table-wrapper table-winner">
                     <div class="table-inner">
