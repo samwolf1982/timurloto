@@ -238,7 +238,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
                             <?= $form->field($model, 'username')->label('Никнейм',['class'=>'placeholder']) ?>
 
-                            <?= Html::submitButton('Подтвердить', ['class' => 'btn big-btn btn-primary btn-hover']) ?>
+                            <div class="btn-block-choose justify-center">
+                            <?= Html::submitButton('Подтвердить', ['class' => 'btn btn-hover btn-primary']) ?>
+                                <div class="form-link" >
+                                    <a href="/">Вернуться на главную</a>
+                                </div>
+                            </div>
+
 
                             <?php ActiveForm::end(); ?>
 
