@@ -14,6 +14,7 @@ use yii\base\Event;
 Event::on('dektrium\user\controllers\SecurityController', SecurityController::EVENT_BEFORE_AUTHENTICATE, function (\dektrium\user\events\AuthEvent $e) {
 
 
+
     if('dektrium\user\clients\Google'==get_class($e->getClient())){// гугл нужно парсить значение из json
        if(empty($e->account->email) && empty($e->account->username)){
 
