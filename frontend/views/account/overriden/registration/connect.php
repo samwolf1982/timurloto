@@ -62,7 +62,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 </header>
 
-<section class="modal-s-wrap" style="height: 100%;">
+<section class="modal-s-wrap">
     <div class="modal-s-wrap-inner">
         <a href="#" class="btn btn-primary btn-hover" data-toggle="modal" data-target="#modal-gracc">
             модальное окно поздравляем
@@ -86,7 +86,112 @@ $this->params['breadcrumbs'][] = $this->title;
         </a>
     </div>
 
+    <?php if(1){ ?>
+        <div class="row table-row">
+            <div class="column-12">
+                <div class="table-wrapper table-winner">
+                    <div class="table-inner">
+                        <div class="table-body">
+                            <div class="head-bets-slider text-center" >
+                                <h3 style="font-size: large;" ><?= Html::encode($this->title) ?></h3>
 
+
+                            </div>
+                            <div class="bets-slider2">
+                                <div class="column-12 text-center " style="padding: 1em;">
+
+
+
+
+
+                                    <div class="wrapFormreset text-center" style="display: flex; justify-content: center;">
+                                        <div class="panel panel-default" style="width: 50%;">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title"> </h3>
+                                            </div>
+                                            <div class="panel-body">
+
+                                                <div class="form-inner">
+
+                                                    <div class="alert alert-info">
+                                                        <p>
+                                                            <?= Yii::t(
+                                                                'user',
+                                                                'In order to finish your registration, we need you to enter following fields'
+                                                            ) ?>:
+                                                        </p>
+                                                    </div>
+
+
+                                                    <?php if(0){  ?>
+                                                        <?php $form = ActiveForm::begin([
+                                                            'id' => 'connect-account-form',
+                                                        ]); ?>
+
+                                                        <?= $form->field($model, 'email') ?>
+
+                                                        <?= $form->field($model, 'username') ?>
+
+                                                        <?= Html::submitButton(Yii::t('user', 'Continue'), ['class' => 'btn btn-success btn-block']) ?>
+
+                                                        <?php ActiveForm::end(); ?>
+                                                    <?php } ?>
+
+                                                    <?php if(1){  ?>
+                                                        <?php $form = ActiveForm::begin([
+                                                            'id' => 'connect-account-form',
+                                                        ]); ?>
+
+                                                        <?= $form->field($model, 'email')->label('Email',['class'=>'placeholder'])  ?>
+
+                                                        <?= $form->field($model, 'username')->label('Никнейм',['class'=>'placeholder']) ?>
+
+                                                        <?= Html::submitButton('Подтвердить', ['class' => 'btn big-btn btn-primary btn-hover']) ?>
+
+                                                        <?php ActiveForm::end(); ?>
+                                                    <?php } ?>
+
+
+
+
+
+                                                </div>
+                                                <p class="text-center">
+
+
+
+                                                </p>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="input-row pull-right2">
+                                        <a href="#" class="btn btn-small btn-primary" id="openMadaInner" data-toggle="modal-reg" data-target="#modal-auth"><i class="icon-user"></i> <span><?=  Yii::t(
+                                                    'user',
+                                                    'If you already registered, sign in and connect this account on settings page');
+                                                ?></span></a>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-footer">
+                            <div class="pagination slider-navigation" id="bets-nav">
+                                <div class="slider-navigation-inner">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php } ?>
 
 
 
