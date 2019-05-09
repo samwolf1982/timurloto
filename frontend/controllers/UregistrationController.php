@@ -59,13 +59,11 @@ class UregistrationController  extends OverriddeneRegistrationController
             $account->connect($user);
             $this->trigger(self::EVENT_AFTER_CONNECT, $event);
             \Yii::$app->user->login($user, $this->module->rememberFor);
+                yii::$app->session->addFlash(ConstantsHelper::SHOW_MODAL_AFRER_LOAD_PAGE, ConstantsHelper::SHOW_MODAL_SUCCESS_NEW_USER_CONFIRM_MODAL, true);
             return $this->goBack();
         }
 
-        if(Yii::$app->request->post()){ // если пост и не прошла валидация тогда  модалка снова
-            yii::$app->session->addFlash(ConstantsHelper::SHOW_MODAL_AFRER_LOAD_PAGE, ConstantsHelper::SHOW_MODAL_SUCCESS_NEW_USER_LOGIN_FORM_FILL_FIELDS_MODAL, true);
 
-        }
         // уведомление модальное что аккаунт подтверджен // первый раз человек регается через соцсеть
         yii::$app->session->addFlash(ConstantsHelper::SHOW_MODAL_AFRER_LOAD_PAGE, ConstantsHelper::SHOW_MODAL_SUCCESS_NEW_USER_LOGIN_FORM_FILL_FIELDS_MODAL, true);
 
