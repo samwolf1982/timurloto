@@ -9326,43 +9326,7 @@ EOT_JS_CODE
 </div>
 
 
-<div class="modal-wrapper bet-modal modal-640" id="modal-login">
-    <div class="modal-inner">
-        <div class="modal-content">
-            <div class="modal-content-inner">
-                <div class="header-modal">
-                    <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
-                </div>
-                <div class="body-modal">
-                    <div class="info-modal-wrapper">
-                        <div class="info-modal-inner">
-                            <h2 class="h1">Авторизируйтесь</h2>
-                            <div class="text-block-modal muted-text">Чтобы закончить регистрацию, Вы должны заполнить следующие поля</div>
-                            <form action="#">
-                                <div class="form-modal">
-                                    <div class="form-row">
-                                        <input type="email" placeholder="Email">
-                                    </div>
-                                    <div class="form-row">
-                                        <input type="text" placeholder="Никнейм">
-                                    </div>
-                                </div>
-                                <div class="btn-block-choose justify-center">
-                                    <button class="btn btn-hover btn-primary" >
-                                        +  Продолжить
-                                    </button>
-                                    <div class="form-link" >
-                                        <a href="/">Вернуться на главную</a>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 
 

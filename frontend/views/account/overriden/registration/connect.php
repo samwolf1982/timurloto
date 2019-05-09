@@ -193,7 +193,62 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     <?php } ?>
 
+
+
+
 </section>
+
+<div class="modal-wrapper bet-modal modal-640" id="modal-login">
+    <div class="modal-inner">
+        <div class="modal-content">
+            <div class="modal-content-inner">
+                <div class="header-modal">
+                    <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
+                </div>
+                <div class="body-modal">
+                    <div class="info-modal-wrapper">
+                        <div class="info-modal-inner">
+                            <h2 class="h1">Авторизируйтесь</h2>
+                            <div class="text-block-modal muted-text">Чтобы закончить регистрацию, Вы должны заполнить следующие поля</div>
+                            <form action="#">
+                                <div class="form-modal">
+                                    <div class="form-row">
+                                        <input type="email" placeholder="Email">
+                                    </div>
+                                    <div class="form-row">
+                                        <input type="text" placeholder="Никнейм">
+                                    </div>
+                                </div>
+                                <div class="btn-block-choose justify-center">
+                                    <button class="btn btn-hover btn-primary" >
+                                        +  Продолжить
+                                    </button>
+                                    <div class="form-link" >
+                                        <a href="/">Вернуться на главную</a>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <hr>
+                            <?php $form = ActiveForm::begin([
+                                'id' => 'connect-account-form',
+                            ]); ?>
+
+                            <?= $form->field($model, 'email')->label('Email',['class'=>'placeholder'])  ?>
+
+                            <?= $form->field($model, 'username')->label('Никнейм',['class'=>'placeholder']) ?>
+
+                            <?= Html::submitButton('Подтвердить', ['class' => 'btn big-btn btn-primary btn-hover']) ?>
+
+                            <?php ActiveForm::end(); ?>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <footer class="main-footer front-footer">
     <div class="main-footer-inner">
