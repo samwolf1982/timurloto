@@ -237,10 +237,16 @@ return [
             'class' => 'dektrium\user\Module',
             'controllerMap' => [
                 'settings' => '\frontend\controllers\overriden\SettingsController',
+
                 'uregistration' => '\frontend\controllers\UregistrationController', // один класс
-                'usecurity' => '\frontend\controllers\UsecurityController',
-                'urecovery' => '\frontend\controllers\UrecoveryController',
                 'registration' => '\frontend\controllers\UregistrationController',  // один класс
+
+                'usecurity' => '\frontend\controllers\UsecurityController',// один класс
+                'security' => '\frontend\controllers\UsecurityController',// один класс
+
+
+                'urecovery' => '\frontend\controllers\UrecoveryController',
+
             ],
             'modelMap' => [
                 'User' => 'common\models\overiden\User',
