@@ -86,112 +86,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </a>
     </div>
 
-    <?php if(0){ ?>
-        <div class="row table-row hidden">
-            <div class="column-12">
-                <div class="table-wrapper table-winner">
-                    <div class="table-inner">
-                        <div class="table-body">
-                            <div class="head-bets-slider text-center" >
-                                <h3 style="font-size: large;" ><?= Html::encode($this->title) ?></h3>
 
-
-                            </div>
-                            <div class="bets-slider2">
-                                <div class="column-12 text-center " style="padding: 1em;">
-
-
-
-
-
-                                    <div class="wrapFormreset text-center" style="display: flex; justify-content: center;">
-                                        <div class="panel panel-default" style="width: 50%;">
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title"> </h3>
-                                            </div>
-                                            <div class="panel-body">
-
-                                                <div class="form-inner">
-
-                                                    <div class="alert alert-info">
-                                                        <p>
-                                                            <?= Yii::t(
-                                                                'user',
-                                                                'In order to finish your registration, we need you to enter following fields'
-                                                            ) ?>:
-                                                        </p>
-                                                    </div>
-
-
-                                                    <?php if(0){  ?>
-                                                        <?php $form = ActiveForm::begin([
-                                                            'id' => 'connect-account-form',
-                                                        ]); ?>
-
-                                                        <?= $form->field($model, 'email') ?>
-
-                                                        <?= $form->field($model, 'username') ?>
-
-                                                        <?= Html::submitButton(Yii::t('user', 'Continue'), ['class' => 'btn btn-success btn-block']) ?>
-
-                                                        <?php ActiveForm::end(); ?>
-                                                    <?php } ?>
-
-                                                    <?php if(1){  ?>
-                                                        <?php $form = ActiveForm::begin([
-                                                            'id' => 'connect-account-form',
-                                                        ]); ?>
-
-                                                        <?= $form->field($model, 'email')->label('Email',['class'=>'placeholder'])  ?>
-
-                                                        <?= $form->field($model, 'username')->label('Никнейм',['class'=>'placeholder']) ?>
-
-                                                        <?= Html::submitButton('Подтвердить', ['class' => 'btn big-btn btn-primary btn-hover']) ?>
-
-                                                        <?php ActiveForm::end(); ?>
-                                                    <?php } ?>
-
-
-
-
-
-                                                </div>
-                                                <p class="text-center">
-
-
-
-                                                </p>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-                                    <div class="input-row pull-right2">
-                                        <a href="#" class="btn btn-small btn-primary" id="openMadaInner" data-toggle="modal-reg" data-target="#modal-auth"><i class="icon-user"></i> <span><?=  Yii::t(
-                                                    'user',
-                                                    'If you already registered, sign in and connect this account on settings page');
-                                                ?></span></a>
-                                    </div>
-
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="table-footer">
-                            <div class="pagination slider-navigation" id="bets-nav">
-                                <div class="slider-navigation-inner">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <?php } ?>
 
 
 
@@ -203,32 +98,13 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="modal-content">
             <div class="modal-content-inner">
                 <div class="header-modal">
-                    <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
+                    <button class="close" data-toggle="modal-dismissNO"><span class="icon-close2"></span></button>
                 </div>
                 <div class="body-modal">
                     <div class="info-modal-wrapper">
                         <div class="info-modal-inner">
                             <h2 class="h1">Авторизируйтесь</h2>
                             <div class="text-block-modal muted-text">Чтобы закончить регистрацию, Вы должны заполнить следующие поля</div>
-                            <form action="#">
-                                <div class="form-modal">
-                                    <div class="form-row">
-                                        <input type="email" placeholder="Email">
-                                    </div>
-                                    <div class="form-row">
-                                        <input type="text" placeholder="Никнейм">
-                                    </div>
-                                </div>
-                                <div class="btn-block-choose justify-center">
-                                    <button class="btn btn-hover btn-primary" >
-                                        +  Продолжить
-                                    </button>
-                                    <div class="form-link" >
-                                        <a href="/">Вернуться на главную</a>
-                                    </div>
-                                </div>
-                            </form>
-                            <hr>
                             <?php $form = ActiveForm::begin([
                                 'id' => 'connect-account-form',
                             ]); ?>
@@ -243,8 +119,6 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <a href="/">Вернуться на главную</a>
                                 </div>
                             </div>
-
-
                             <?php ActiveForm::end(); ?>
 
                         </div>
