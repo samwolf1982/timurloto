@@ -62,7 +62,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 </header>
 
-<section class="modal-s-wrap">
+<section class="modal-s-wrap" style="height: 100%;">
     <div class="modal-s-wrap-inner">
         <a href="#" class="btn btn-primary btn-hover" data-toggle="modal" data-target="#modal-gracc">
             модальное окно поздравляем
