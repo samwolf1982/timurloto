@@ -95,7 +95,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="modal-content">
             <div class="modal-content-inner">
                 <div class="header-modal">
-                    <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
+                    <button class="close" data-toggle="modal-dismissNO"><span class="icon-close2"></span></button>
                 </div>
                 <div class="body-modal">
                     <div class="info-modal-wrapper">
