@@ -62,7 +62,7 @@ class UregistrationController  extends OverriddeneRegistrationController
             return $this->goBack();
         }
 
-            die('dd');
+
         return $this->render('connect', [
             'model'   => $user,
             'account' => $account,

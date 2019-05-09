@@ -228,10 +228,10 @@ $this->params['breadcrumbs'][] = $this->title;
                                     </div>
                                 </div>
                             </form>
-
                             <hr>
                             <?php $form = ActiveForm::begin([
                                 'id' => 'connect-account-form',
+                                'enableAjaxValidation' => true,
                             ]); ?>
 
                             <?= $form->field($model, 'email')->label('Email',['class'=>'placeholder'])  ?>
