@@ -32,7 +32,6 @@ class SuccessController extends Controller
 
     /**
      * Displays homepage OWN.
-     *
      * @return mixed
      */
     public function actionIndex()

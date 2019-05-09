@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 
 
+use common\models\helpers\ConstantsHelper;
 use common\models\overiden\RegistrationForm;
 use common\models\overiden\User;
 use dektrium\user\Finder;
@@ -107,16 +108,17 @@ class UregistrationController  extends OverriddeneRegistrationController
         $this->performAjaxValidation($model);
 
 
-
         if ($model->load(\Yii::$app->request->post()) && $model->register()) {
             $this->trigger(self::EVENT_AFTER_REGISTER, $event);
-            if(!empty($model->newusero->id)){ // login go to account
+            if (!empty($model->newusero->id)) { // login go to account
                 Yii::$app->user->login($model->newusero);
-                Yii::$app->response->redirect(Url::toRoute(['/account','id'=>$model->newusero->id]));
-            }else{
+                // уведомление модальное
+                yii::$app->session->addFlash(ConstantsHelper::SHOW_MODAL_AFRER_LOAD_PAGE, ConstantsHelper::SHOW_MODAL_SUCCESS_NEW_USER_MODAL, true);
+                Yii::$app->response->redirect(Url::toRoute(['/account', 'id' => $model->newusero->id]));
+            } else {
+
                 Yii::$app->response->redirect(Url::toRoute(['/success']));
             }
-
 
 
         }
@@ -157,7 +159,10 @@ class UregistrationController  extends OverriddeneRegistrationController
         $statusConfirm=     $user->attemptConfirmation($code);
         if($statusConfirm){
             $this->trigger(self::EVENT_AFTER_CONFIRM, $event);
-            Yii::$app->response->redirect(Url::toRoute(['/account',['id'=>$id]]));
+            // уведомление модальное что аккаунт подтверджен
+            yii::$app->session->addFlash(ConstantsHelper::SHOW_MODAL_AFRER_LOAD_PAGE, ConstantsHelper::SHOW_MODAL_SUCCESS_NEW_USER_CONFIRM_MODAL, true);
+            return $this->redirect(Url::toRoute(['/account','id'=>$id]));
+         //   Yii::$app->response->redirect(Url::toRoute(['/account','id'=>$id]));
         }else{
 
         }

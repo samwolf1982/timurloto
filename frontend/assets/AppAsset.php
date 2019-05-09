@@ -24,6 +24,7 @@ class AppAsset extends AssetBundle
         'js/libs/custombox-master/custombox-master/dist/custombox.min.js',
         'js/libs/loadModalAjax.js',
         '//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js',
+        'js/loadmodallikemessage.js', // модалки после загрузки как флеш сообщения
         'js/some.js',
         ];
     public $depends = [

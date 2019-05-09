@@ -3,6 +3,7 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
+use common\models\helpers\ConstantsHelper;
 use dektrium\user\widgets\Connect;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
@@ -73,6 +74,21 @@ AppAsset::register($this);
        background-color:  transparent;
    }
 </style>
+
+
+
+<!--показывать модалки-->
+<?php
+ $show_modal = Yii::$app->session->getFlash(ConstantsHelper::SHOW_MODAL_AFRER_LOAD_PAGE);
+ yii::error($show_modal);
+ if(!empty($show_modal)){
+$this->registerJs( <<< EOT_JS_CODE
+var shonModalAfterLoad='{$show_modal[0]}'; 
+EOT_JS_CODE
+     , yii\web\View::POS_HEAD);
+ }
+?>
+
 
 <div class="modal-wrapper user-modal" id="modal-auth">
     <div class="modal-inner">
@@ -9205,7 +9221,7 @@ AppAsset::register($this);
                                 <p>Для того, чтобы начать игру, подтвердите Вашу электронную почту. Уведомление выслано на указанный Вами адрес. Желаем Вам приятного времяпровождения! </p>
                             </div>
                             <div class="btn-block-choose justify-center">
-                                <button class="btn btn-hover btn-primary">
+                                <button class="btn btn-hover btn-primary" data-toggle="modal-dismiss">
                                     +  Продолжить
                                 </button>
                             </div>
@@ -9246,6 +9262,7 @@ AppAsset::register($this);
         </div>
     </div>
 </div>
+
 <div class="modal-wrapper bet-modal modal-640" id="modal-reset-cong">
     <div class="modal-inner">
         <div class="modal-content">
@@ -9266,6 +9283,37 @@ AppAsset::register($this);
                             </div>
                             <div class="btn-block-choose justify-center">
                                 <button class="btn btn-hover btn-primary">
+                                    +  Продолжить
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-wrapper bet-modal modal-640" id="modal-reset-cong-mail">
+    <div class="modal-inner">
+        <div class="modal-content">
+            <div class="modal-content-inner">
+                <div class="header-modal">
+                    <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
+                </div>
+                <div class="body-modal">
+                    <div class="info-modal-wrapper">
+                        <div class="info-modal-inner">
+                            <div class="modal-icon-block">
+                                <img src="images/check-symbol.svg" alt="">
+                            </div>
+                            <h2 class="h1">Все отлично!</h2>
+                            <div class="text-block-modal">Ваш аккаунт успешно востановлен.</div>
+                            <div class="text-block-modal">Уведомление выслано на указаный вами адрес.</div>
+                            <div class="muted-text-modal">
+                                <p>Желаем Вам приятного времяпровождения! </p>
+                            </div>
+                            <div class="btn-block-choose justify-center" data-toggle="modal-dismiss">
+                                <button  class="btn btn-hover btn-primary">
                                     +  Продолжить
                                 </button>
                             </div>
@@ -9300,11 +9348,11 @@ AppAsset::register($this);
                                     </div>
                                 </div>
                                 <div class="btn-block-choose justify-center">
-                                    <button class="btn btn-hover btn-primary">
+                                    <button class="btn btn-hover btn-primary" >
                                         +  Продолжить
                                     </button>
-                                    <div class="form-link">
-                                        <a href="#">Вернуться на главную</a>
+                                    <div class="form-link" >
+                                        <a href="/">Вернуться на главную</a>
                                     </div>
                                 </div>
                             </form>

@@ -134,7 +134,11 @@ class ConstantsHelper
     // обновка корзины
     const PARSE_SINGLE_BET='/?getEventResolveInfo/%s/%s/%s/%s/en/j_zaxscdvfq1w2e3r4';  // http://104.248.229.40/?getEventResolveInfo/233861820/12342/7/-2.5/en/j_zaxscdvfq1w2e3r4
 
-
+    // для активации модалок после загрузки страницы
+    const SHOW_MODAL_AFRER_LOAD_PAGE='SHOW_MODAL_AFRER_LOAD_PAGE'; //
+    const SHOW_MODAL_SUCCESS_RESET_MODAL='#modal-reset-cong-mail'; // востановить пароль забили пароль
+    const SHOW_MODAL_SUCCESS_NEW_USER_MODAL='#modal-gracc'; // новый пользователь
+    const SHOW_MODAL_SUCCESS_NEW_USER_CONFIRM_MODAL='#modal-best'; // новый пользователь подтвердить из письма
 
 
 
