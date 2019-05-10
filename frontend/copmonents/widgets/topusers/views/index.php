@@ -63,6 +63,9 @@
                                $rows = [];
                                foreach ($models as $index => $model) {
                                    $user=User::find()->where(['id'=>$model['user_id']])->one();
+                                   if(!empty($user)){
+
+
                                    $useeInfo=new UserInfo($user->id);
                                    $pathToUser=Url::toRoute(['/account/view','id'=>$user->id]);
                                  $profite=  sprintf("%01.2f %%", $model['sume']);
@@ -93,6 +96,7 @@
                                    <div class="td table-cell td-coeficient">'.$coef.'</div>
                                    <div class="td table-cell td-roi">'.$roi.'</div>
                                </div>';
+                               }
                                }
 
                                ?>
