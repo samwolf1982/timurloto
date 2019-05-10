@@ -9221,8 +9221,8 @@ EOT_JS_CODE
                                 <p>Спасибо за регистрацию! Давайте начнем делать ставки. </p>
                             </div>
                             <div class="btn-block-choose justify-center">
-                                <button class="btn btn-hover btn-primary">
-                                    +  Начать делать ставки
+                                <button class="btn btn-hover btn-primary " data-toggle="modal-dismiss">
+                                    Продолжить
                                 </button>
                             </div>
                         </div>
