@@ -19,7 +19,7 @@ use yii\helpers\Url;
                     <div class="left-head-text">
                         <span class="text-head">Статистика</span>
                     </div>
-                    <div class="play-list-drop">
+                    <div class="play-list-drop ">
                         <div class="custom-dropdown">
                             <div class="custom-dropdown-inner">
                                 <div class="val-drop">
@@ -79,7 +79,7 @@ use yii\helpers\Url;
                     </div>
                 </div>
                 <div class="mobile-tab-block">
-                    <div class="play-list-drop">
+                    <div class="play-list-drop" >
                         <div class="custom-dropdown">
                             <div class="custom-dropdown-inner">
                                 <div class="val-drop">
@@ -156,12 +156,25 @@ use yii\helpers\Url;
                                                     <?php if(0){ //старый профит относительно ставки НЕ баланса ?>
                                                         <?=$search_result['profit']?> <sup>%</sup>
                                                     <?php } ?>
-                                                    <?=$search_result['profit']?> <sup>%</sup>
+                                    <?=$newProfit?> <sup>%</sup>
+
                                                 </span>
                                 <span class="list-stats-tbl-title">
                                                     Прибыль
                                                 </span>
                             </li>
+                            <li>
+                                <a class="question-btn" data-toggle="tooltip" data-placement="top" title="Sed ut perspiciatis unde omnisiste natus error sit">
+                                    <span>?</span>
+                                </a>
+                                <span class="list-stats-tbl-val up-val">
+                                                      <?=$search_result['profit']?><sup>%</sup>
+                                                </span>
+                                <span class="list-stats-tbl-title">
+                                                    Турнирная Прибыль
+                                                </span>
+                            </li>
+
                             <li>
                                 <a class="question-btn" data-toggle="tooltip" data-placement="top" title="Sed ut perspiciatis unde omnisiste natus error sit">
                                     <span>?</span>
