@@ -53,8 +53,6 @@ return [
         ],
         'errorHandler' => [
             'errorAction' => YII_ENV!='prod'? 'site/error':'/error-page',
-           // 'errorAction' => '/error-page',
-          //  'errorAction' => 'site/error',
         ],
 
         'urlManager' => [
@@ -225,6 +223,19 @@ return [
             'currencyPosition' => 'after', //after или before (позиция значка валюты относительно цены)
             'priceFormat' => [2,'.', ''], //Форма цены
         ],
+
+
+//            'assetManager' => [
+//                'bundles' => [
+//                    'yii\bootstrap\BootstrapAsset' => [
+//                        'css' => [],
+//                    ],
+//                    'yii\bootstrap\BootstrapPluginAsset' => [
+//                        'js'=>[]
+//                    ],
+//                ],
+//            ],
+
 
 
 

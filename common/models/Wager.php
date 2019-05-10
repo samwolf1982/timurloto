@@ -165,6 +165,16 @@ class Wager extends \yii\db\ActiveRecord
       return   sprintf('%.2f р. - <span>%s %%</span>',$this->total,$this->select_coef);
 
     }
+    public function getTotalFormatted_V4(){
+
+        return   sprintf('%.2f р.',$this->total);
+
+    }
+    public function getFormatedCoefBank_V4(){
+
+        return   sprintf('%s %%</span>',$this->select_coef);
+
+    }
 
     public function geFormatedWin(){
 

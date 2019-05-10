@@ -99,52 +99,86 @@ use common\models\Wagerelements;
                                 <?php  } ?>
                             </div>
                         </div>
+
+
                         <div class="footer-bets">
                             <div class="text-footer-bets">
                                 <div class="text-bets">
-                                    <p><?=$model->comment ?></p>
+                                    <div class="text-bets-title">Итоговый коэффициент</div>
+                                    <div class="text-bets-val">x <?=  $model->getFormatedFullCoef() ?></div>
+                                </div>
+                                <div class="text-bets">
+                                    <div class="text-bets-title">Ставка</div>
+                                    <div class="text-bets-val"><?=$model->getTotalFormatted_V4()?></div>
+                                </div>
+                                <div class="text-bets">
+                                    <div class="text-bets-title">Процент</div>
+                                    <div class="text-bets-val"><?=  $model->getFormatedCoefBank_V4() ?></div>
                                 </div>
                                 <div class="static-footer-bets">
-                                    <div class="static-footer-bets-title"><?=$model->getTypeWager() ?></div>
-                                    <div class="static-footer-bets-value fill-all">Ставка: <?=$model->getTotalAndPercent()?></div>
-
-                                    <div class="static-footer-bets-value fill-all">Выигрыш : <?=$model->geFormatedWin()?> </div>
-
-                                    <div class="static-footer-bets-value fill-all">Коефициент : <?=  $model->getFormatedFullCoef() ?> </div>
+                                    <div class="static-footer-bets-title">Выигрыш</div>
+                                    <div class="static-footer-bets-value"><?=$model->geFormatedWin()?></div>
                                 </div>
-
-
                             </div>
-                            <div class="shared-block-modal">
+                            <div class="shared-block">
                                 <div class="btn-shared">
                                     <button class="like"></button>
-                                    <div class="shared-block">
-                                        <button class="shared">
-                                            <span class="icon-network"></span>
-                                        </button>
-                                        <div class="drop-shared">
-                                            <ul class="shared-social">
-                                                <li>
-                                                    <a href="https://twitter.com/home?status=http%3A//test6.tino.com.ua/account.html" target="_blank">
-                                                        <span class="icon-tw"></span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//test6.tino.com.ua/account.html" target="_blank">
-                                                        <span class="icon-fb"></span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="https://plus.google.com/share?url=https%3A//www.facebook.com/sharer/sharer.php?u=http%253A//test6.tino.com.ua/account.html" target="_blank">
-                                                        <span class="icon-gp"></span>
-                                                    </a>
-                                                </li>
-                                            </ul>
+                                    <button class="shared">
+                                        <span class="icon-network"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <?php if(0){ ?>
+                            <div class="footer-bets">
+                                <div class="text-footer-bets">
+                                    <div class="text-bets">
+                                        <p><?=$model->comment ?></p>
+                                    </div>
+                                    <div class="static-footer-bets">
+                                        <div class="static-footer-bets-title"><?=$model->getTypeWager() ?></div>
+                                        <div class="static-footer-bets-value fill-all">Ставка: <?=$model->getTotalAndPercent()?></div>
+
+                                        <div class="static-footer-bets-value fill-all">Выигрыш : <?=$model->geFormatedWin()?> </div>
+
+                                        <div class="static-footer-bets-value fill-all">Коефициент : <?=  $model->getFormatedFullCoef() ?> </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="shared-block-modal">
+                                    <div class="btn-shared">
+                                        <button class="like"></button>
+                                        <div class="shared-block">
+                                            <button class="shared">
+                                                <span class="icon-network"></span>
+                                            </button>
+                                            <div class="drop-shared">
+                                                <ul class="shared-social">
+                                                    <li>
+                                                        <a href="https://twitter.com/home?status=http%3A//test6.tino.com.ua/account.html" target="_blank">
+                                                            <span class="icon-tw"></span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//test6.tino.com.ua/account.html" target="_blank">
+                                                            <span class="icon-fb"></span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://plus.google.com/share?url=https%3A//www.facebook.com/sharer/sharer.php?u=http%253A//test6.tino.com.ua/account.html" target="_blank">
+                                                            <span class="icon-gp"></span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        <?php } ?>
+
                     </div>
                 </div>
             </div>

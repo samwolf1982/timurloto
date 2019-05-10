@@ -54,13 +54,17 @@ $accessInfoAccount;
 
 <div class="account-statistic">
     <div class="content-container">
-        <ul class="list-static">
+        <ul class="list-static two-row-list-table">
 
-            <li><a href="/account/open-access" data-toggle="modal" data-target="#edit_subscriber" class=""><span class="stat-title">Открытые Доступы</span> <span class="stat-val"><?=$accessInfoAccount->getCountTotalOpenAccess()?></span></a></li>
-            <li><a href="/account/my-subscriptions" data-toggle="modal" data-target="#edit_bet" class=""><span class="stat-title">Подписки</span> <span class="stat-val"><?=$accessInfoAccount->getCountSubscribe()?></span></a></li>
-            <li><a href="/account/my-subscribers" data-toggle="modal" data-target="#edit_bet" class=""><span class="stat-title">Подписчики</span> <span class="stat-val"><?=$accessInfoAccount->getCountSubscribers()?></span></a></li>
+            <li>
+                <a href="/account/open-access"    data-toggle="edit_subscriber" data-target="#edit_subscriber" class=""><span class="stat-title">Открытые Доступы</span> <span class="stat-val"><?=$accessInfoAccount->getCountTotalOpenAccess()?></span></a>
+            </li>
+
+
+            <li><a href="/account/my-subscriptions"  data-toggle="edit_bet" data-target="#edit_bet" class=""><span class="stat-title">Подписки</span> <span class="stat-val"><?=$accessInfoAccount->getCountSubscribe()?></span></a></li>
+            <li><a href="/account/my-subscribers" data-toggle="edit_bet" data-target="#edit_bet" class=""><span class="stat-title">Подписчики</span> <span class="stat-val"><?=$accessInfoAccount->getCountSubscribers()?></span></a></li>
             <li><a href="#my-bet" class="ancor"><span class="stat-title">Прогнозы</span> <span class="stat-val"><?=$accessInfoAccount->getCountWagers()?></span></a></li>
-            <li><a href="<?=Url::toRoute(['/bet'])?>" class=""><span class="stat-title">week </span> <span class="stat-val">#<?=$weekNum?> </span></a></li>
+            <li><a href="<?=Url::toRoute(['/bet'])?>" class=""><span class="stat-title">Турниры </span> <span class="stat-val">#<?=$weekNum?> </span></a></li>
             <li><a href="<?=Url::toRoute(['/bet'])?>" class="ancor"><span class="stat-title">РЕЙТИНГ</span> <span class="stat-val">#<?=$top100?></span></a></li>
 
 

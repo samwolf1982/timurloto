@@ -15,7 +15,7 @@ use frontend\assets\DashboardAsset;
 
     DashboardAsset::register($this);
     WidgetAsset::register($this);
-BettabsAsset::register($this); // табы
+    BettabsAsset::register($this); // табы
 
 $this->title='Дать прогноз';
 ?>
@@ -69,15 +69,13 @@ $this->title='Дать прогноз';
     <i class="count-coup">0</i>
     <span class="icon-coupon"></span>
 </button>
+
+
 <div class="front-page-wrapper dashboard-page">
     <div class="front-page-inner">
         <div class="dashboard-bets">
             <div class="dashboard-bets-inner">
                 <div class="dashboard-row">
-
-
-
-
 
 
                     <div class="dash-col dash-left-col">
@@ -546,7 +544,41 @@ $this->title='Дать прогноз';
         </div>
     </div>
 </div>
+
+
+<div class="modal-wrapper bet-modal modal-640" id="modal-success-bet">
+    <div class="modal-inner">
+        <div class="modal-content">
+            <div class="modal-content-inner">
+                <div class="header-modal">
+                    <button class="close" data-toggle="modal-dismiss2"><span class="icon-close2"></span></button>
+                </div>
+                <div class="body-modal">
+                    <div class="choose-bet-wrapper">
+                        <div class="choose-bet-inner">
+                            <div class="success-bets">
+                                <h4>Твой прогноз принят</h4>
+
+                                <div class="shared-bet-social">
+                                    <h5>Поделитесь прогнозом</h5>
+                                    <ul class="social">
+                                        <li><a href="#"><span class="icon-fb"></span></a></li>
+                                        <li><a href="#"><span class="icon-gp"></span></a></li>
+                                        <li><a href="#"><span class="icon-tw"></span></a></li>
+                                        <li><a href="#"><span class="icon-vk"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!--Модальное окно Показать Экспресс-->
+
 <div class="modal-wrapper bet-modal modal-860" id="bet20">
     <div class="modal-inner">
         <div class="modal-content">
@@ -654,7 +686,6 @@ $this->title='Дать прогноз';
         </div>
     </div>
 </div>
-
 <div class="modal-wrapper bet-modal modal-945" id="modal-add-prognoz">
     <div class="modal-inner">
         <div class="modal-content">
@@ -800,8 +831,6 @@ $this->title='Дать прогноз';
         </div>
     </div>
 </div>
-
-
 <div class="modal-wrapper bet-modal modal-640" id="modal-feedback">
     <div class="modal-inner">
         <div class="modal-content">
@@ -847,10 +876,6 @@ $this->title='Дать прогноз';
         </div>
     </div>
 </div>
-
-
-
-
 
 
 

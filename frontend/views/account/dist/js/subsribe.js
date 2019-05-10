@@ -1,7 +1,7 @@
 
 // cвои модалки. делаю через события и привязку к данным из елемента если есть какойто параметр тогда что-то делаю.  e.th -this e.modal_block -> модальное ид
 $(window).on('loadeModale', function (e) {
-
+    console.log('loadeModale vent');
     if($(e.th).data('target') === '#edit_subscriber' || $(e.th).data('target') ===  '#edit_bet'){
         console.log('printer state changed', e.th);
         console.log('printer state changed', e.modal_block);
@@ -9,7 +9,6 @@ $(window).on('loadeModale', function (e) {
 
     }
 });
-console.log('ssssssssss');
 
 // aвтосохранялки
 var timeoutId;

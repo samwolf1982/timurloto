@@ -56,7 +56,7 @@ $accessInfoAccount
 </header>
 <div class="account-statistic">
     <div class="content-container">
-        <ul class="list-static">
+        <ul class="list-static two-row-list-table">
             <li><a href="#" class=""><span class="stat-title">Подписчики</span> <span class="stat-val"><?=$accessInfoAccount->getCountSubscribers()?></span></a></li>
             <li><a href="#my-bet" class="ancor"><span class="stat-title">Прогнозы</span> <span class="stat-val"><?=$accessInfoAccount->getCountWagers()?></span></a></li>
             <li><a href="<?=Url::toRoute(['/bet'])?>" class=""><span class="stat-title">week </span> <span class="stat-val">#<?=$weekNum?></span></a></li>
