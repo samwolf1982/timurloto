@@ -91,6 +91,7 @@ class DefaultController extends Controller
         $cache=\Yii::$app->cache;
         if(YII_ENV !='prod') $this->cacheLive=10;
         if(YII_ENV !='prod') $this->cacheLive=100000000; // todo delete here
+       // $cache->flush();
         Yii::error(['show env'=>YII_ENV]);
         $data2=[];
 //        $listSportId=[12341,12348];

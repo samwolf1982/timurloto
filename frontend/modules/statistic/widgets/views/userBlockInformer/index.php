@@ -14,7 +14,7 @@ $userInfoAccount;
 $userInfo;
 ?>
 
-<div class="table-wrapper transparent-bg">
+<div class="table-wrapper transparent-bg" style="background-color: #37226A;">
     <div class="table-inner">
         <div class="table-body">
             <div class="user-block-acc">

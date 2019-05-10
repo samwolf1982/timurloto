@@ -528,3 +528,24 @@ a:focus {
     max-width: 100%;
   }
 }
+.rate-column .value_rate_c {
+  max-width: 290px;
+}
+.search-bets-block-inner input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: grey;
+  opacity: 1;
+  /* Firefox */
+}
+.search-bets-block-inner input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: grey;
+}
+.search-bets-block-inner input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: grey;
+}
+.tabs-navigation {
+  align-items: center;
+  justify-content: space-evenly;
+}

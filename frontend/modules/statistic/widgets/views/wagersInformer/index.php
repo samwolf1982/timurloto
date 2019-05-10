@@ -24,7 +24,7 @@ use yii\widgets\LinkPager;
     <div class="column-12" id="bets">
         <div class="table-wrapper stats-table tbl-width-pl table-transparent my-bet">
             <div class="table-inner table-transparent">
-                <div class="table-head head-with-tabs head-w_playlist">
+                <div class="table-head head-with-tabs head-w_playlist head_w-statistic">
                     <div class="tbl-icon">
                         <img src="/images/soccer-ball.svg" alt="">
                     </div>
@@ -106,9 +106,12 @@ use yii\widgets\LinkPager;
                         </div>
                     </div>
 
-                    <div class="left-head-text" style="padding-left: 1em;">
-                        <span class="text-head" > Не разыграно  <span class="user-money"> <?=$wagerManager->getFormatedNotPlaySum()?> </span> <span class="currency">betcoins</span></span>
+
+                    <div class="statistic-block">
+                        <div class="statistic-block-title">Не разыграно</div>
+                        <div class="statistic-block-value"><?=$wagerManager->getFormatedNotPlaySum()?><span>betcoins</span></div>
                     </div>
+
 
 
                     <div class="right-head-tab">
@@ -130,7 +133,63 @@ use yii\widgets\LinkPager;
                         </div>
                     </div>
                 </div>
+                <div class="mobile-tab-block">
+                    <div class="play-list-drop">
+                        <div class="custom-dropdown">
+                            <div class="custom-dropdown-inner">
+                                <div class="val-drop">
+                                    <?php foreach ($playlists as $playlist) {  //<?=$playlist->id //$playlist->name ?>
+                                        <?php  if($pageInfo->getPlayPeriodPlaylist() == PageInfo::PLAYLIST_NOT_SELECTED  ){  echo '<button class="val-drop-btn">Плейлисты</button>';   break;  } ?>
+                                        <?php  if($pageInfo->getPlayPeriodPlaylist() == $playlist->id  ){  echo '<button class="val-drop-btn">'.$playlist->name.'</button>';   break;  } ?>
 
+                                    <?php  }  ?>
+                                </div>
+                                <div class="dropdown-list">
+                                    <div class="play-list">
+
+                                        <?php foreach ($playlists as $playlist) {  ?>
+                                            <div class="drop-item">
+                                                <div class="check-drop">
+                                                    <input name="playlist" data-type="game" type="radio" id="playlist_game_<?=$playlist->id?>" checked="checked" data-value="<?=$playlist->id?>" value="<?=$playlist->name?>">
+                                                    <label for="playlist_game_<?=$playlist->id?>"><?=$playlist->name?></label>
+                                                </div>
+                                            </div>
+                                        <?php  }  ?>
+
+                                    </div>
+                                    <div class="drop-item">
+                                        <div class="create-playlist">
+                                            <div class="input-create">
+                                                <input type="text" placeholder="Новый плейлист">
+                                            </div>
+                                            <div class="btn-create">
+                                                <button class="btn-primary btn btn-hover create-btn">Создать</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-head-tab">
+                        <div class="for-mobile-drop">
+                            <a href="#" class="trig-filter">За месяц</a>
+                            <ul class="head-tabs">
+
+                                <li class="<?= $pageInfo->getPlayPeriod()==PageInfo::PERIOD_ONE_MONTH ?'active':''; ?>">
+                                    <a onclick="window.location='<?=Url::to(['/account','play-period'=>1,'#'=>'bets'])?>'"  href="<?=Url::to(['/account','play-period'=>1,'#'=>'bets'])?>">За месяц</a>
+                                </li>
+                                <li class="<?= $pageInfo->getPlayPeriod()==PageInfo::PERIOD_THREE_MONTH ?'active':''; ?>">
+                                    <a onclick="window.location='<?=Url::to(['/account','play-period'=>3,'#'=>'bets'])?>'" href="<?=Url::to(['/account','play-period'=>3,'#'=>'bets'])?>">3 месяца</a>
+                                </li>
+                                <li class="<?= $pageInfo->getPlayPeriod()==PageInfo::PERIOD_ALL_MONTH ? 'active':''; ?>">
+                                    <a onclick="window.location='<?=Url::to(['/account','#'=>'bets'])?>'" href="<?=Url::to(['/account','#'=>'bets'])?>">За все время</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="table-body">
                     <div class="row">
