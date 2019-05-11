@@ -221,6 +221,18 @@ use yii\helpers\Url;
                                                     Количество Минусов
                                                 </span>
                             </li>
+
+                            <li>
+                                <a class="question-btn" data-toggle="tooltip" data-placement="top" title="Sed ut perspiciatis unde omnisiste natus error sit">
+                                    <span>?</span>
+                                </a>
+                                <span class="list-stats-tbl-val up-val">
+                                                      <?=$search_result['profit']?><sup>%</sup>
+                                                </span>
+                                <span class="list-stats-tbl-title">
+                                                    Недельный профит
+                                                </span>
+                            </li>
                             <?php if(0){ ?>
                                 <li>
                                                 <span class="list-stats-tbl-val up-val">
