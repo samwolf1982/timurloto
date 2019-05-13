@@ -373,38 +373,42 @@ if(0){
 
 
         $reader=new ReaderParams($post);
+
 //        var_dump($reader->getSingleBet());
 //        var_dump($total_sum);
 //        die();
 
-//        die();
 
 
 
 
 
-        if(0){ // single
-            $betData =[
-                "events"=>$reader->getSingleBet() // arr
-                ,
-                "user_id"=> $user_id,
-                "type"=> "Single",
-                "stake"=> $total_sum,
-//            "stake"=> 150,
-                "option"=> null,
-                "ApiKEY"=> "j_zaxscdvfq1w2e3t7",
-            ];
-        }
+
+//        if(0){ // single
+//            $betData =[
+//                "events"=>$reader->getSingleBet() // arr
+//                ,
+//                "user_id"=> $user_id,
+//                "type"=> "Single",
+//                "stake"=> $total_sum,
+////            "stake"=> 150,
+//                "option"=> null,
+//                "ApiKEY"=> "j_zaxscdvfq1w2e3t7",
+//            ];
+//        }
 
 
 
+
+
+        $evento=$reader->getBetelements(); // arr
 
 
 
         // Multiple
         $betData =[
            // "events"=>$reader->getMultiBet() // arr
-            "events"=>$reader->getBetelements() // arr
+            "events"=>$evento
             ,
             "user_id"=> $user_id,
            // "type"=> "Multiple",

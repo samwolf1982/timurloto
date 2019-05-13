@@ -27,6 +27,7 @@ class ReaderParams extends \yii\base\BaseObject
             }
         }
 
+
     }
 
 
@@ -51,6 +52,7 @@ class ReaderParams extends \yii\base\BaseObject
      */
     public function getBetelements()
     {
+
         if(count($this->bets) > 1) return $this->getMultiBet();
         else  return $this->getSingleBet();
     }
@@ -69,6 +71,7 @@ class ReaderParams extends \yii\base\BaseObject
     {
 
        $b = $this->bets[0];
+
 //       var_dump($b['coef']); die();
         $valueArr=  explode('-',$b['item_id']);
     // sport_id=valueArr[2]
@@ -80,6 +83,7 @@ class ReaderParams extends \yii\base\BaseObject
     $base=$this->getBaseInvariant($b['item_id']); // invariant
 
       $dataParser=$this->getInfoAboutGame($game_id);
+       // var_dump($dataParser); die();  // todo here
       //  var_dump($dataParser->attributes->{'short-id'}); die();
 
         $res= [

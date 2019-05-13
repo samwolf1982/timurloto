@@ -78,13 +78,13 @@ class DefaultController extends Controller
 
 
 //         Yii::error(  Yii::$app->request->post());
-         Yii::error(  Yii::$app->request->post('typeName'));
+        // Yii::error(  Yii::$app->request->post('typeName'));
         $bet= Yii::$app->request->post('bet');
         $bet_id=Yii::$app->request->post('bet_id');
         $user_id=Yii::$app->request->post('user_id');
-         Yii::error( ['bet'=>$bet] );
-         Yii::error(  $bet_id);
-         Yii::error(  $user_id);
+//         Yii::error( ['bet'=>$bet] );
+//         Yii::error(  $bet_id);
+//         Yii::error(  $user_id);
 
 
         $log =
@@ -322,6 +322,7 @@ class DefaultController extends Controller
     public function actionAdd()
     {
 
+
         $result=[];
         $errorLocalLog=[]; // LOg ошыбок
 
@@ -333,12 +334,13 @@ class DefaultController extends Controller
             $total_sum =  WagerManager::calculateTotalSumForBet(Yii::$app->user->identity->getId(),(integer)Yii::$app->request->post('currentCooeficientDrop'),false); // ручнную сумму еще нужно доделать
 
 
-
 //            $result=  WagerManager::makeBet(Yii::$app->user->identity->getId(),Yii::$app->request->post(),$total_sum);  // рабочик
             $clearPost=WagerManager::clearPost(Yii::$app->request->post());
 
+            // здесь обрыв при ставке на прошлую игру
             $result=  WagerManager::makeBet(Yii::$app->user->identity->getId(),$clearPost,$total_sum);
-            yii::error($result);
+
+         //   yii::error(['sss'=>$result]);
 //            'group_item_id' => '241476682', ???
 //                'item_id' => '241476683-1-12341-0',
             if(empty($result)) {   $e='Ошибка на сервере'; $errorLocalLog[]=$e; yii::error([$e, 'own post'=>Yii::$app->request->post(), 'uid'=>Yii::$app->user->identity->getId()]);  return ['status'=>0,'code'=>'text','message'=>$errorLocalLog];    }
