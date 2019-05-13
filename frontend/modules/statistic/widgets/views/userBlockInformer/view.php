@@ -49,7 +49,7 @@ $userInfo;
                     </div>
                 </div>
                 <div class="user-acc-name">
-                    <h3><span> <?=$userInfoAccount->getName();?></span>
+                    <h3><span> <?=$userInfoAccount->getName();?>  <img class="userimge" src="/images/checkOk1.png" alt="check ok"></span>
                         <?php if($userInfo->getisPro()) { ?>
                             <span class="label-user-pro">pro</span>
                         <?php  } ?>

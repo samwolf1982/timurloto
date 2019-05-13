@@ -79,15 +79,10 @@ $accessInfoAccount
 
             <div class="row table-row">
                 <div class="column-4">
-
                     <?=UserBlockInformer::widget(['user_id'=>yii::$app->request->get('id'),'view'=>'userBlockInformer/view']) ?>
-
                 </div>
-
                 <div class="column-8">
-
                     <?=UserChartInformer::widget(['user_id'=>yii::$app->request->get('id')]) ?>
-
                 </div>
 
             </div>

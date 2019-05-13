@@ -51,6 +51,11 @@ class UserBlockInformer extends \yii\base\Widget
         $playlists=Playlist::find()->where(['user_id'=>$this->user_id, 'status'=>Playlist::STATUS_ON])->all();
         $search=new   BalancestatisticsSearch();
      $user=   User::find()->where(['id'=>$this->user_id])->one();
+       $ui= \common\models\overiden\User::find()->where(['id'=>$this->user_id])->one();
+       $isConfirmed=false;
+       if($ui){
+           $isConfirmed=$ui->isConfirmed;
+       }
      /**@var  Score $balance**/
      $balance = number_format($user->userbalance->balance, 0, '', ',');
      $social_links=['/vk','/fb'];
@@ -63,7 +68,7 @@ class UserBlockInformer extends \yii\base\Widget
         $userInfo= new UserInfo($this->user_id);
 
 
-        return $this->render($this->view,['search_result'=>$search_result,'userInfoAccount'=>$userInfoAccount,'user'=>$user,'userInfo'=>$userInfo] );
+        return $this->render($this->view,['search_result'=>$search_result,'userInfoAccount'=>$userInfoAccount,'user'=>$user,'userInfo'=>$userInfo,'isConfirmed'=>$isConfirmed] );
 
     }
 }

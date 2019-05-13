@@ -197,16 +197,17 @@ EOT_JS_CODE
                             </div>
                         </div>
 
+
                         <div class="right-side-login small-side-login login-show">
                             <div class="right-side-inner">
-                                <div class="logo-popup">
+                                <div class="logo-popup hidden-sm-own">
                                     <img src="/images/logo_red.svg" alt="">
                                 </div>
-                                <div class="text-left">
+                                <div class="text-left hidden-sm-own">
                                     <p>Look My Bet - Первая социальная сеть в СНГ для
                                         любителей ставок на спорт</p>
                                 </div>
-                                <div class="from-block">
+                                <div class="from-block hidden-sm-own">
                                     <h3>Для чего нужна авторизация?</h3>
                                     <ul class="list-answer">
                                         <li>турниры</li>
@@ -218,7 +219,7 @@ EOT_JS_CODE
                                 </div>
                                 <div class="toggle-type-block">
                                     <div class="login-block">
-                                        <h2>Есть Аккаунт?</h2>
+                                        <h2 class="hidden-sm-own">Есть Аккаунт?</h2>
                                         <a href="#" class="btn btn-default btn-hover" id="show-login">
                                             <b>Войти</b>
                                             <span></span>
@@ -259,6 +260,7 @@ EOT_JS_CODE
         </div>
     </div>
 </div>
+
 
 
 <div class="modal-wrapper chat-modal" id="modal-chat">

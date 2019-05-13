@@ -549,3 +549,56 @@ a:focus {
   align-items: center;
   justify-content: space-evenly;
 }
+.userimge {
+  position: relative;
+  left: 10px;
+}
+@media (max-width: 576px) {
+  .hidden-sm-own {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .hidden-sm-own {
+    display: none;
+  }
+}
+@media (min-width: 576px) {
+  .show-sm-own {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .show-sm-own {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .right-side-inner {
+    padding-top: 0!important;
+  }
+}
+@media (max-width: 768px) {
+  .left-side-login {
+    padding-bottom: 0!important;
+  }
+}
+@media screen and (max-width: 990px) {
+  .btn.btn-primary.btn-hover.mobilarge {
+    display: block;
+    font-size: 60%;
+    width: 100px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .btn.btn-primary.btn-hover.mobilarge i {
+    display: initial;
+  }
+  .faq-block_2 a {
+    padding-right: 7px;
+  }
+}
+.icon-open-bet.closeLine {
+  position: absolute;
+  top: 63px;
+}

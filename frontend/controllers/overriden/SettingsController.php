@@ -43,8 +43,6 @@ class SettingsController extends BaseSettingsControllerDectrim
         $this->trigger(self::EVENT_BEFORE_PROFILE_UPDATE, $eventProfile);
 
         if ($modelProfile->load(\Yii::$app->request->post()) && $modelUser->load(Yii::$app->request->post())){
-//            $modelAccount->save();
-
             // чистим пользователя в кеше
             Yii::$app->cache->delete(ConstantsHelper::USER_CACHE_FULL.Yii::$app->user->identity->getId());
 
@@ -107,6 +105,13 @@ class SettingsController extends BaseSettingsControllerDectrim
 //            return $this->refresh();
 //        }
 
+        // замена сообщения
+        Yii::error(Yii::$app->getSession()->getAllFlashes());
+// если не подтвержден и тогда постоянно уведомление
+        if(!$modelUser->isConfirmed){
+            Yii::$app->getSession()->setFlash('info',"Ваш аккаунт был создан и сообщение с подтверждениям аккаунта отправлено на ваш email");
+            //info
+        }
 
 
 

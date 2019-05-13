@@ -1184,7 +1184,8 @@ BetAsset::register($this);
 
 
 
-        <?= RaitusersWidget::widget(['dataProvider'=>$dataProvider2,'periodOne'=>$periodOne]); ?>
+<!--        РЕЙТИНГ ПОЛЬЗОВАТЕЛЕЙ-->
+        <?= RaitusersWidget::widget(['dataProvider'=>$dataProvider2,'periodOne'=>$periodOne,'periodAll'=>$periodAll,'period3m'=>$period3m,]); ?>
 
 
 

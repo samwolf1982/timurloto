@@ -44,13 +44,18 @@ $userInfo;
                         </div>
                         <div class="big-avatar-user" style="    top: -9px; left: -9px; position: relative;">
 
-                            <img style="border-radius: 50%;     width: 140px;" src="/<?=$userInfo->getUserImage();?>" alt="<?=$userInfoAccount->getName();?>">
+                            <img id="userimge" style="border-radius: 50%;     width: 140px;" src="/<?=$userInfo->getUserImage();?>" alt="<?=$userInfoAccount->getName();?>">
 
                         </div>
                     </div>
                 </div>
                 <div class="user-acc-name">
-                    <h3><span> <?=$userInfoAccount->getName();?></span>
+                    <h3><span> <?=$userInfoAccount->getName();?>       </span>
+                             <?php if($isConfirmed){ ?>
+                                 <img style="bottom: 4px;" class="userimge" src="/images/checkOk1.png" alt="check ok">
+                             <?php } ?>
+
+
                         <?php if($userInfo->getisPro()) { ?>
                             <span class="label-user-pro">pro</span>
                         <?php  } ?>

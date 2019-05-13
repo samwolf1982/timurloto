@@ -15,7 +15,7 @@
            </div>
            <div class="add-block">
 
-               <a href="<?=Url::to(['/matches']) ?>" class="btn btn-primary btn-hover">
+               <a href="<?=Url::to(['/matches']) ?>" class="btn btn-primary btn-hover mobilarge">
                    +  <i>Дать Прогноз</i>
                    <span></span>
                </a>

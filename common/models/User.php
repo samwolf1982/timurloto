@@ -340,14 +340,6 @@ class User extends ActiveRecord implements IdentityInterface
 
 
 
-
-
-//    public function getSubscribers()
-//    {
-//        return $this->hasMany(Subscriber::className(), ['user_own_id' => 'id']);
-//    }
-
-
     public function getImageurl()
     {
 

@@ -30,7 +30,16 @@
 
                            <div class="right-head-tab" id="tope100">
                                <div class="for-mobile-drop desinbtn-drop">
-                                   <a href="#" class="trig-filter">За месяц</a>
+
+
+
+                                   <?php  if( $period3m == 'active'){  ?>
+                                       <a href="#" class="trig-filter">3 месяца</a>
+                                   <?php  }elseif ($periodAll == 'active'){   ?>
+                                       <a href="#" class="trig-filter">За все время</a>
+                                   <?php  }else{   ?>
+                                       <a href="#" class="trig-filter">За месяц</a>
+                                   <?php } ?>
                                    <ul class="head-tabs">
                                        <li class="<?=$periodOne?>">
                                            <a onclick="window.location='<?=Url::to(['/bet']);?>'" href="<?=Url::to(['/bet']);?>">За месяц</a>
@@ -58,8 +67,8 @@
                                    <div class="td table-cell td-count">#</div>
                                    <div class="td table-cell td-user"></div>
                                    <div class="td table-cell td-profit">Profit</div>
-                                   <div class="td table-cell td-passability">Проходимость</div>
-                                   <div class="td table-cell td-coeficient">Коэффициент</div>
+                                   <div class="td table-cell td-passability">Проход<span class="show-sm-own" >.</span><span class="hidden-sm-own">имость</span></div>
+                                   <div class="td table-cell td-coeficient">Коэф<span class="show-sm-own" >.</span><span class="hidden-sm-own">фициент</span></div>
                                    <div class="td table-cell td-roi">ROI</div>
                                    <div class="td table-cell td-roi">Плюс</div>
                                    <div class="td table-cell td-roi">Минус</div>
@@ -70,7 +79,9 @@
                                $keys = $dataProvider->getKeys();
                                $rows = [];
                                foreach ($models as $index => $model) {
+
                                    $user=User::find()->where(['id'=>$model['user_id']])->one();
+                                   if(empty($user)) continue;
                                    $useeInfo=new UserInfo($user->id);
                                    $pathToUser=Url::toRoute(['/account/view','id'=>$user->id]);
                                  $profite=  sprintf("%01.2f %%", $model['sume']);
@@ -80,7 +91,6 @@
 
                                    $lv= BalancestatisticsSearch::generateLastWeekParams();
                                    $roi=sprintf("%01.2f", BalancestatisticsSearch::newRoiCalk($model['user_id'],$lv['lastWeek'],$lv['lastLastWeek']));  ;
-                                   //$roi=sprintf("%01.2f", $model['ro']);
 
                                    $period=ConstantsHelper::STATTICTIC_FILTER_PREIOD_MONTH;
                                    if(Yii::$app->request->get('period')=='3m')$period=ConstantsHelper::STATTICTIC_FILTER_PREIOD_3_MONTH;

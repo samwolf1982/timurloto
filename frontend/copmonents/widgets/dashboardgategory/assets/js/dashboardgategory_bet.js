@@ -279,6 +279,9 @@ var DashboardCategory={
          });
 
          openBetWrapperInner.append('<div class="head-open-bet">\n' +
+             '                                                <div class="icon-open-bet closeLine">\n' +
+             '                                                    <span class="icon-close closeLine" ></span>\n' +
+             '                                                </div>\n' +
              '                                                <div class="icon-open-bet">\n' +
              '                                                    <span class="icon-football"></span>\n' +
              '                                                </div>\n' +

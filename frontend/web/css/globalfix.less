@@ -629,3 +629,55 @@ a:hover, a:focus {
   align-items: center;
   justify-content: space-evenly;
 }
+
+.userimge{
+  position: relative;
+  left: 10px;
+
+}
+
+.hidden-sm-own{
+  // Small devices (landscape phones, 576px and up)
+  @media (max-width: 576px) { display: none; }
+
+  // Medium devices (tablets, 768px and up)
+  @media (max-width: 768px) { display: none; }
+}
+
+.show-sm-own{
+  // Small devices (landscape phones, 576px and up)
+  @media (min-width: 576px) { display: none; }
+
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) { display: none; }
+}
+
+.right-side-inner{
+  @media (max-width: 768px) { padding-top: 0!important;}
+}
+.left-side-login{
+  @media (max-width: 768px) { padding-bottom: 0!important;}
+}
+
+@media screen and (max-width: 990px) {
+  .btn.btn-primary.btn-hover.mobilarge{
+    display: block;
+    font-size: 60%;
+    width: 100px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .btn.btn-primary.btn-hover.mobilarge i{
+    display: initial;
+  }
+  .faq-block_2 a{
+    padding-right: 7px;
+  }
+}
+.icon-open-bet.closeLine{
+  position: absolute;
+  top: 63px;
+}
+
+
+
