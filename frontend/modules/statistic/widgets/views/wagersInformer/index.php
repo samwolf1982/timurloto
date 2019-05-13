@@ -173,7 +173,15 @@ use yii\widgets\LinkPager;
                     </div>
                     <div class="right-head-tab">
                         <div class="for-mobile-drop">
-                            <a href="#" class="trig-filter">За месяц</a>
+
+                            <?php if($pageInfo->getPlayPeriod()==PageInfo::PERIOD_ONE_MONTH){ ?>
+                                <a href="#"  class="trig-filter">За месяц</a>
+                            <?php }elseif ($pageInfo->getPlayPeriod()==PageInfo::PERIOD_THREE_MONTH ){ ?>
+                                <a href="#" df="2" class="trig-filter">3 месяца</a>
+                            <?php }else{ ?>
+                                <a href="#" df="8" class="trig-filter">За все время</a>
+                            <?php } ?>
+
                             <ul class="head-tabs">
 
                                 <li class="<?= $pageInfo->getPlayPeriod()==PageInfo::PERIOD_ONE_MONTH ?'active':''; ?>">
@@ -861,6 +869,7 @@ use yii\widgets\LinkPager;
 
 
                     </div>
+
 
 
                     <div class="pagination hidden">
