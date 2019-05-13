@@ -22,6 +22,8 @@ use yii\helpers\Url;
                 <li><a href="<?=Url::toRoute(['/terms-of-use']) ?>">Условия использования сайта</a></li>
                 <li><a href="<?=Url::toRoute(['/help']) ?>">Помощь</a></li>
                 <li><a href="<?=Url::toRoute(['/contact']) ?>">Контакты</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#modal-faq" class="">FAQ</a></li>
+
             </ul>
         </div>
         <div class="btn-footer">
@@ -47,6 +49,7 @@ use yii\helpers\Url;
                                     <span class="icon-gp"></span>
                                 </a>
                             </li>
+
                         </ul>
                     </div>
                 </div>
@@ -66,7 +69,9 @@ use yii\helpers\Url;
                         </a>
                     </li>
                     <li>
-                        <a href="#" target="_blank">
+                        <a href="#" onclick="function () {
+                          return false;
+                        }" target="_blank">
                             <span class="icon-mail"></span>
                         </a>
                     </li>
@@ -75,7 +80,7 @@ use yii\helpers\Url;
             <div class="copy-footer">
                 <p>&copy; 2019 Look My Bet</p>
             </div>
-            <div class="media-block">
+            <div class="media-block hidden">
                 <a href="#" class="btn btn-primary btn-hover" data-toggle="modal" data-target="#modal-feedback">оставить отзыв <span></span></a>
                 <a href="#" class="btn btn-primary btn-hover">реклама <span></span></a>
             </div>

@@ -108,7 +108,9 @@
                     <a href="<?=Url::to(['/bet']) ?>" data-toggle="no-modal" data-target="#modal-faq"><i class="faq-icon"></i><span>Турниры</span></a>
                 </div>
                 <div class="faq-block v2">
-                    <a href="#" data-toggle="modal" data-target="#modal-faq"><i class="faq-icon"></i><span>FAQ</span></a>
+                    <a href="#" data-toggle="modal" data-target="#modal-faq">
+                        <i class="faq-icon hidden"></i>
+                        <span style="display: block; padding-top: 1px;">FAQ</span></a>
                 </div>
 
 

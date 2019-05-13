@@ -1,3 +1,9 @@
+a:hover {
+  text-decoration: none;
+}
+.faq-block_2:hover {
+  color: #EF0078;
+}
 div.preloader {
   opacity: 0.3;
 }
@@ -514,7 +520,6 @@ and also iPads specifically.
 a:hover,
 a:focus {
   color: white;
-  text-decoration: underline;
 }
 @media (max-width: 767px) {
   .head-open-bet .title-open-bet {
@@ -583,6 +588,11 @@ a:focus {
     padding-bottom: 0!important;
   }
 }
+@media (max-width: 500px) {
+  .faq-block a {
+    padding: 5px;
+  }
+}
 @media screen and (max-width: 990px) {
   .btn.btn-primary.btn-hover.mobilarge {
     display: block;
@@ -595,7 +605,10 @@ a:focus {
     display: initial;
   }
   .faq-block_2 a {
-    padding-right: 7px;
+    padding-right: 0px;
+  }
+  .user-inner .user-btn {
+    padding-left: 10px;
   }
 }
 .icon-open-bet.closeLine {

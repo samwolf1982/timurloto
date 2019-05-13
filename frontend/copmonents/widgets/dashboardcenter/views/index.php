@@ -36,7 +36,7 @@
 
 
 <!--   hideen -->
-   <div class="content-center-block open_line_center_block">
+   <div class="content-center-block open_line_center_block 456"> <a href="bet-dashboard.html" class="total show-all-bets closeLine"></a>
 
    </div>
 

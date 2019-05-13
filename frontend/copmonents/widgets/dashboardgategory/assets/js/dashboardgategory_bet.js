@@ -236,7 +236,9 @@ var DashboardCategory={
          $('.main_center_block').fadeOut(400);
         openline =  $('.open_line_center_block');
         openline.html('');
-        openline.append('<a href="bet-dashboard.html" class="head-pink"> <h3>'+data.meta.attr[0].attributes['league-user-locale-lng-name']+'</h3> </a>');
+        openline.append('<a href="bet-dashboard.html" class="head-pink closeLine" style="display: flex; align-items: center;">' +
+            '<img style="padding-right: 10px;" src="/images/close3min.png" alt="close" class="closeLine">' +
+            ' <h3>'+data.meta.attr[0].attributes['league-user-locale-lng-name']+'</h3> </a>');
 
 
 
@@ -279,9 +281,6 @@ var DashboardCategory={
          });
 
          openBetWrapperInner.append('<div class="head-open-bet">\n' +
-             '                                                <div class="icon-open-bet closeLine">\n' +
-             '                                                    <span class="icon-close closeLine" ></span>\n' +
-             '                                                </div>\n' +
              '                                                <div class="icon-open-bet">\n' +
              '                                                    <span class="icon-football"></span>\n' +
              '                                                </div>\n' +
