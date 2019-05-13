@@ -78,7 +78,7 @@ use yii\helpers\Url;
                 </ul>
             </div>
             <div class="copy-footer">
-                <p>&copy; 2019 Look My Bet</p>
+                <p>&copy; <?=date('Y')?> Look My Bet</p>
             </div>
             <div class="media-block hidden">
                 <a href="#" class="btn btn-primary btn-hover" data-toggle="modal" data-target="#modal-feedback">оставить отзыв <span></span></a>
