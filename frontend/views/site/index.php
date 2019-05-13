@@ -319,6 +319,8 @@ $showPointsEffect=false; // ефект для точек
 
             <!--            Отзывы Пользователей-->
             <?=CommentusersWidget::widget(); ?>
+
+
             <div class="section footer-section fp-auto-height">
                 <div class="footer-block">
                     <div class="content-container">
@@ -346,6 +348,7 @@ $showPointsEffect=false; // ефект для точек
                                 <li><a href="<?=Url::toRoute(['/terms-of-use']) ?>">Условия использования сайта</a></li>
                                 <li><a href="<?=Url::toRoute(['/help']) ?>">Помощь</a></li>
                                 <li><a href="<?=Url::toRoute(['/contact']) ?>">Контакты</a></li>
+                                <li><a href="#" data-toggle="modal" data-target="#modal-faq" class="">FAQ</a></li>
                             </ul>
                         </div>
                         <div class="btn-footer">
