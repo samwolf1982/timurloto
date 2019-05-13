@@ -11,7 +11,7 @@
    use yii\helpers\Url;
 
 
-   DashboardpopularAsset::register($this);
+  // DashboardpopularAsset::register($this);
    ?>
 
    <div class="inner-sidebar">

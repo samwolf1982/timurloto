@@ -31,3 +31,6 @@
     padding-top: 100%;
   }
 }
+#modal-faq > .modal-inner {
+  padding-top: 330px!important;
+}

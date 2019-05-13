@@ -435,4 +435,10 @@ $showPointsEffect=false; // ефект для точек
 
     ]) ?>
 </div>
+
+
+
+
+
+
 </body>

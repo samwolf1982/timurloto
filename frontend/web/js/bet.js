@@ -281,7 +281,13 @@ $(document).ready(function () { // 1раз
     });
 
     $('[data-toggle="modal-dismiss"]').on('click',function () {
+
+
         $(this).parents('.modal-wrapper').fadeOut(500).removeClass('active');
+        setTimeout(function () { // фикс для окон
+            $('body').removeClass('modal-open');
+            $('body').removeAttr( 'style' );
+        },600)
         $('body').removeClass('noScroll');
         return false;
     });

@@ -879,12 +879,13 @@ $this->title='Дать прогноз';
 
 
 
-
 <div class="hidden">
     <?= Connect::widget([
         'baseAuthUrl' => ['/user/security/auth'],
     ]) ?>
 </div>
+
+
 
 <!--<script src="js/script.min.js"></script>-->
 <!-- Клики на меню -->
