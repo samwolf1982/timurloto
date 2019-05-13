@@ -180,7 +180,7 @@ use yii\helpers\Url;
                                     <span>?</span>
                                 </a>
                                 <span class="list-stats-tbl-val up-val">
-                                                      <?=$search_result['profit']?><sup>%</sup>
+                                                      <?=$weekProfit?><sup>%</sup>
                                                 </span>
                                 <span class="list-stats-tbl-title">
                                                     Недельный профит

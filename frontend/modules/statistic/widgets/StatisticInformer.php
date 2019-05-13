@@ -5,6 +5,7 @@ use app\modules\statistic\assets\WidgetAsset;
 use common\models\helpers\ConstantsHelper;
 use common\models\Playlist;
 use common\models\search\BalancestatisticsSearch;
+use common\models\services\AccessInfo;
 use common\models\User;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -55,7 +56,14 @@ class StatisticInformer extends \yii\base\Widget
             $search_result= $search->searchCount($this->user_id);
             $newProfit=$this->getNewProfit();
         }
-        return $this->render('statisticInformer/index',['playlists'=>$playlists,'search_result'=>$search_result,'newProfit'=>$newProfit,'user_id'=>$this->user_id] );
+
+        $accessInfo=new  AccessInfo($this->user_id);
+//        $accessInfoAccount=$accessInfo->getData();
+//        $weekNum=$accessInfo->getWeekNum(Yii::$app->user->id);
+        $weekProfit=$accessInfo->getWeekProfit(Yii::$app->user->id);
+
+
+        return $this->render('statisticInformer/index',['playlists'=>$playlists,'search_result'=>$search_result,'newProfit'=>$newProfit,'user_id'=>$this->user_id,'weekProfit'=>$weekProfit] );
     }
         private function  setPeriodfield($params){
          $listAccessParams=[ ConstantsHelper::STATTICTIC_FILTER_PREIOD_WEEK,

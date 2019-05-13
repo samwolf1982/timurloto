@@ -51,7 +51,7 @@ class BetController extends Controller
         $model=new Typegamename();
         $model->name='some name';
         $model->line='line';
-        $model->save(false);
+//        $model->save(false);
 
         $id=0;
         $name='';
@@ -59,6 +59,7 @@ class BetController extends Controller
         $model_three= new DynamicModel(compact('id', 'name')); // hz
 
         $searchModel = new BalancestatisticsSearch();
+
         $dataProvider = $searchModel->search_custom_last_week_live(Yii::$app->request->queryParams);
 
         $searchModel2 = new BalancestatisticsSearch();

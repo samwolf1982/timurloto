@@ -68,11 +68,27 @@ class AccessInfo
     }
 
     /**
+     * профит за нелелю
+     */
+    public function getWeekProfit($baseUserId)
+    {
+
+        $lastWeek    = date('Y-m-d H:i:s');
+        $lastLastWeek= date('Y-m-d H:i:s',strtotime('last sunday'));
+        $sql="SELECT  sum(profit) as sume FROM `balancestatistics` WHERE  created_own BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' and user_id = {$baseUserId} ;";
+         $numberWeek=Yii::$app->db->createCommand($sql)->queryScalar();
+         if(empty($numberWeek)) $numberWeek=0;
+       return $numberWeek;
+
+
+    }
+
+
+    /**
      * номер в турнире за Top100
      */
     public function getTop100($baseUserId)
     {
-
         $lastLastWeek= date('Y-m-d H:i:s',strtotime('-90 days'));
         $lastWeek    = date('Y-m-d H:i:s');
         $sql="SELECT user_id, sum(profit) as sume FROM `balancestatistics` WHERE  created_own BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume DESC;";
@@ -80,9 +96,8 @@ class AccessInfo
         foreach (Yii::$app->db->createCommand($sql)->queryAll() as $i=>$el){
             if($el['user_id']==$baseUserId)  {$numberWeek=$i; $numberWeek++; break; }
         }
-
         return $numberWeek;
-//            return 23;
+
     }
 
 
