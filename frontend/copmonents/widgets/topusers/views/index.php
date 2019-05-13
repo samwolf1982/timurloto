@@ -71,7 +71,7 @@
                                  $profite=  sprintf("%01.2f %%", $model['sume']);
                                  $penet=  sprintf("%01.2f %%", $model['penet']);
                                  $coef=sprintf("%01.2f", $model['mdc']);
-                                   $roi=sprintf("%01.2f", $model['ro']);
+                                   $roi=sprintf("%01.2f", ($model['ro']*100));
                                    echo '         <div class="hr table-row">
                                    <div class="td table-cell td-count">'.($index+1).'</div>
                                    <div class="td table-cell td-user">

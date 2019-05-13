@@ -215,7 +215,7 @@ use yii\helpers\Url;
                             </li>
                             <li>
                                                 <span class="list-stats-tbl-val down-val">
-                                                    <?=($search_result['roi']*100) ?>  <sup>%</sup>
+                                                    <?=$search_result['roi'] ?>  <sup>%</sup>
                                                 </span>
                                 <span class="list-stats-tbl-title">
                                                     ROI
