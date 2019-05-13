@@ -163,11 +163,11 @@ return [
             'class'   => \yii\authclient\Collection::className(),
             'clients' => [
                 // here is the list of clients you want to use
-                'github' => [
-                    'class'        => 'dektrium\user\clients\GitHub',
-                    'clientId'     => ISLOCAL ? '2035d003b9cdf93aeeca' :  '3d5c6c9d7aefac8e63a4',
-                    'clientSecret' => ISLOCAL ? '7e5b6ab5b8eeab5261b7edde23cbe3b0a4be276b' :  '6ce246227883fd55b212cf76ab94b809eec178a7',
-                ],
+//                'github' => [
+//                    'class'        => 'dektrium\user\clients\GitHub',
+//                    'clientId'     => ISLOCAL ? '2035d003b9cdf93aeeca' :  '3d5c6c9d7aefac8e63a4',
+//                    'clientSecret' => ISLOCAL ? '7e5b6ab5b8eeab5261b7edde23cbe3b0a4be276b' :  '6ce246227883fd55b212cf76ab94b809eec178a7',
+//                ],
 
                 'facebook' => [
                     'class'        => 'dektrium\user\clients\Facebook',
