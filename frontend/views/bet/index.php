@@ -1154,12 +1154,12 @@ BetAsset::register($this);
                                 <div class="table-body-inner">
                                     <div class="text-table prizeplace" ">
                                         <p>У нас ты имеешь уникальную возможность заработать на ставках, при этом ничего не вложив.<p>
-                                        <p>    Каждую неделю ты можешь участвовать в турнирах и побороться за 25 000 руб. <p>
+                                        <p>    Каждую неделю ты можешь участвовать в турнирах и побороться за 15 000 руб. <p>
 
 
                                      
                                         <a href="#" data-toggle="modal" data-target="#modal-faq" class="btn btn-hover btn-primary no-before ">
-                                            <i class="text-show">+  правила участия</i>
+                                            <i class="text-show">+  Все о турнире</i>
                                             <i class="text-hide">Готово</i>
                                             <span></span>
                                         </a>

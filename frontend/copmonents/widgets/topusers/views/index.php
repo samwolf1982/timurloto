@@ -20,7 +20,7 @@
                            <img src="/images/champ.svg" alt="">
                        </div>
                        <div class="left-head-text">
-                           <div class="title-w-select">Еженедельный Турнир  25,000 ₽ </div>
+                           <div class="title-w-select">Еженедельный Турнир  15,000 ₽ </div>
                            <div class="select-type-block">
 
                                <div class="select-type-block-inner">

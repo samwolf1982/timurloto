@@ -77,7 +77,7 @@ use yii\helpers\Url;
                     </li>
                 </ul>
             </div>
-            <div class="copy-footer">
+            <div class="copy-footer" style="margin-right: 42%;">
                 <p>&copy; <?=date('Y')?> Look My Bet</p>
             </div>
             <div class="media-block hidden">

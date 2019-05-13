@@ -248,6 +248,9 @@ use yii\helpers\Url;
                                                 </span>
                             </li>
                             <li>
+                                <a class="question-btn" data-toggle="tooltip" data-placement="top" title="Sed ut perspiciatis unde omnisiste natus error sit">
+                                    <span>?</span>
+                                </a>
                                                 <span class="list-stats-tbl-val down-val">
                                                     <?=$search_result['roi'] ?>  <sup>%</sup>
                                                 </span>
@@ -256,6 +259,9 @@ use yii\helpers\Url;
                                                 </span>
                             </li>
                             <li>
+                                   <a class="question-btn" data-toggle="tooltip" data-placement="top" title="Sed ut perspiciatis unde omnisiste natus error sit">
+                                    <span>?</span>
+                                </a>
                                                 <span class="list-stats-tbl-val up-val">
                                                     <?=$search_result['plus']?>
                                                 </span>
@@ -264,6 +270,9 @@ use yii\helpers\Url;
                                                 </span>
                             </li>
                             <li>
+                                   <a class="question-btn" data-toggle="tooltip" data-placement="top" title="Sed ut perspiciatis unde omnisiste natus error sit">
+                                    <span>?</span>
+                                </a>
                                                 <span class="list-stats-tbl-val up-val">
                                                       <?=$search_result['minus']?>
                                                 </span>
