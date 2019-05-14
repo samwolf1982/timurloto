@@ -98,7 +98,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <section class="modal-s-wrap">
     <div class="modal-s-wrap-inner text-center">
 
-        <a href="#" class="btn btn-primary btn-hover" data-toggle="modal" data-target="#modal-reset-cong">
+        <a href="#" class="btn btn-primary btn-hover" data-toggle="modal" data-target="#modal-reset-password">
             Сбросить  пароль
             <span></span>
         </a>

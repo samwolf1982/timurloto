@@ -151,6 +151,7 @@ class ConstantsHelper
 
 
 
+
     // доступные маркеты ид ДОЛЖНЫ совпадать с confirm и на сайте-продакшн
     const AVELABLE_MAKRETS = ['12341',
         '12359',

@@ -130,18 +130,15 @@ class UrecoveryController  extends OverriddeneUrecoveryController
             // логиним пользователя
             $identity=User::find()->where(['id'=>$id])->one();
             Yii::$app->user->login($identity);
-            Yii::$app->response->redirect(Url::toRoute(['/success-recovery']));
 
+            //      пароль востановлен на главную и модалка
+            yii::$app->session->addFlash(ConstantsHelper::SHOW_MODAL_AFRER_LOAD_PAGE, ConstantsHelper::SHOW_MODAL_SUCCESS_RESET_MODAL, true);
 
+          return $this->redirect(Url::toRoute(['/']));
 
-            //            return $this->render('/message', [
-//                'title'  => \Yii::t('user', 'Password has been changed'),
-//                'module' => $this->module,
-//            ]);
         }
 
 //       открыть форму для нового пароля
-        // уведомление модальное что аккаунт подтверджен
         yii::$app->session->addFlash(ConstantsHelper::SHOW_MODAL_AFRER_LOAD_PAGE, ConstantsHelper::SHOW_MODAL_USER_LOGIN_INSERT_NEW_PASSWORD, true);
         return $this->render('@app/views/account/overriden/recovery/reset', [
             'model' => $model,
