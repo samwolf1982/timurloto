@@ -179,7 +179,7 @@ $this->params['breadcrumbs'][] = $this->title;
 </div>
 <?php } ?>
 
-
+<?= $this->render('@app/views/layouts/footer');?>
 <!--сброс пароля модалка-->
 <div class="modal-wrapper bet-modal modal-640" id="modal-reset-password">
     <div class="modal-inner">
@@ -229,6 +229,10 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 </div>
+
+
+
+<?php if(0){ ?>
 
 <footer class="main-footer front-footer">
     <div class="main-footer-inner">
@@ -306,6 +310,9 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 </footer>
+
+<?php } ?>
+
 
 
 <div class="modal-wrapper bet-modal modal-860" id="bet1">
