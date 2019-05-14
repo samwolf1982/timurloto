@@ -68,28 +68,41 @@ $this->params['breadcrumbs'][] = $this->title;
     }
 </style>
 
+
+<?php if(0){ ?>
+    <section class="modal-s-wrap">
+        <div class="modal-s-wrap-inner">
+            <a href="#" class="btn btn-primary btn-hover" data-toggle="modal" data-target="#modal-gracc">
+                модальное окно поздравляем
+                <span></span>
+            </a>
+            <a href="#" class="btn btn-primary btn-hover" data-toggle="modal" data-target="#modal-best">
+                модальное Все отлично!
+                <span></span>
+            </a>
+            <a href="#" class="btn btn-primary btn-hover" data-toggle="modal" data-target="#modal-reset-cong">
+                модальное Все отлично! Сброс пароля
+                <span></span>
+            </a>
+            <a href="#" class="btn btn-primary btn-hover" data-toggle="modal" data-target="#modal-reset-password">
+                Сбросить пароль
+                <span></span>
+            </a>
+            <a href="#" class="btn btn-primary btn-hover" data-toggle="modal" data-target="#modal-login">
+                модальное Логин
+                <span></span>
+            </a>
+        </div>
+    </section>
+<?php } ?>
 <section class="modal-s-wrap">
-    <div class="modal-s-wrap-inner">
-        <a href="#" class="btn btn-primary btn-hover" data-toggle="modal" data-target="#modal-gracc">
-            модальное окно поздравляем
-            <span></span>
-        </a>
-        <a href="#" class="btn btn-primary btn-hover" data-toggle="modal" data-target="#modal-best">
-            модальное Все отлично!
-            <span></span>
-        </a>
+    <div class="modal-s-wrap-inner text-center">
+
         <a href="#" class="btn btn-primary btn-hover" data-toggle="modal" data-target="#modal-reset-cong">
-            модальное Все отлично! Сброс пароля
+            Сбросить  пароль
             <span></span>
         </a>
-        <a href="#" class="btn btn-primary btn-hover" data-toggle="modal" data-target="#modal-reset-password">
-           Сбросить пароль
-            <span></span>
-        </a>
-        <a href="#" class="btn btn-primary btn-hover" data-toggle="modal" data-target="#modal-login">
-            модальное Логин
-            <span></span>
-        </a>
+
     </div>
 </section>
 
