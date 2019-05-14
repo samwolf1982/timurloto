@@ -132,7 +132,7 @@ class UrecoveryController  extends OverriddeneUrecoveryController
             Yii::$app->user->login($identity);
 
             //      пароль востановлен на главную и модалка
-            yii::$app->session->addFlash(ConstantsHelper::SHOW_MODAL_AFRER_LOAD_PAGE, ConstantsHelper::SHOW_MODAL_SUCCESS_RESET_MODAL, true);
+            yii::$app->session->addFlash(ConstantsHelper::SHOW_MODAL_AFRER_LOAD_PAGE, ConstantsHelper::SHOW_MODAL_SUCCESS_RESET_PASSWORD, true);
 
           return $this->redirect(Url::toRoute(['/']));
 
