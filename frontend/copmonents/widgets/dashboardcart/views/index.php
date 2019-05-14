@@ -385,7 +385,9 @@
                                        }
                                    </style>
                                    <button id="smartCartButton"  class="btn btn-primary send-bets" onclick="SmartCart.createBet(this);" >Сделать Ставку</button>
+                               <?php if(YII_ENV=='prod'){ ?>
                                    <button hidden   id="smartCartButtonModal22"  class="btn btn-primary send-bets hidden" data-toggle="modal" data-target="#modal-success-bet">Сделать Ставку Модальное</button>
+                               <?php } ?>
                                <?php } ?>
 
 
