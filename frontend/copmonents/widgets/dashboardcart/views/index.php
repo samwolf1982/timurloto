@@ -239,7 +239,7 @@
 
                                <?php }else{ ?>
                                    <button id="smartCartButton"  class="btn btn-primary send-bets" onclick="SmartCart.createBet(this);" >Сделать Ставку</button>
-                               <?php if(YII_ENV=='prod'){ ?>
+                               <?php if(YII_ENV=='dev'){ ?>
                                    <button    id="smartCartButtonModal"  class="btn btn-primary send-bets " data-toggle="modal" data-target="#modal-success-bet">Сделать Ставку Модальное</button>
                                <?php } ?>
                                <?php } ?>
@@ -385,7 +385,7 @@
                                        }
                                    </style>
                                    <button id="smartCartButton"  class="btn btn-primary send-bets" onclick="SmartCart.createBet(this);" >Сделать Ставку</button>
-                               <?php if(YII_ENV=='prod'){ ?>
+                               <?php if(YII_ENV=='dev'){ ?>
                                    <button hidden   id="smartCartButtonModal22"  class="btn btn-primary send-bets hidden" data-toggle="modal" data-target="#modal-success-bet">Сделать Ставку Модальное</button>
                                <?php } ?>
                                <?php } ?>
