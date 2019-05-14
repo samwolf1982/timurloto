@@ -119,6 +119,54 @@ class DefaultController extends Controller
 
     }
 
+    /**
+     * popular game center front даные из админки  http://admin.localhost35/populartoday/index
+     * step 5   http://localhost35/provider/tourneygame?tourneyId=131927
+     * @return array
+     */
+    public function actionPopularsportsupdate($tourneyId=0)
+    {
+
+
+        $cache=\Yii::$app->cache;
+        $key_is_live_site= "is_live_site_30_min";
+        $is_live_site = $cache->get($key_is_live_site);
+
+        if($is_live_site){
+            if(YII_ENV !='prod') $this->cacheLive=10;
+            if(YII_ENV !='prod') $this->cacheLive=100000; // todo delete here
+            // $cache->flush();
+            // Yii::error(['show env'=>YII_ENV]);
+            $data2=[];
+//        $listSportId=[12341,12348];
+            foreach (Centerturnire::find()->select(['sportid'])->where(['status'=>0])->orderBy(['sort'=>SORT_ASC])->all() as $kii=> $tourneyM) {
+                //$start = microtime(true);
+                //Yii::error(["start_{.$kii}"=>$start]);
+                $key="actionPopularsports_{$tourneyM->sportid}";
+                $data = $cache->get($key);
+                if ($data === false) {
+                    $dos=new ParserNodeDos();
+                    $data= $dos->getTabsTourneyGames($tourneyM->sportid);
+                    //  Yii::error($data);
+                    if(!empty($data)) $cache->set($key, $data,$this->cacheLive);
+
+                }
+                if(!empty($data)){
+                    $data2[]=$data;
+                }
+                // Yii::error(["end_{.$kii}"=>round(microtime(true) - $start, 4).' сек.']);
+
+            }
+
+
+            return  [ 'meta'=>['type'=>'popularsportsupdatecron'], 'data'=>$data2];
+        }else{
+            return  [ 'meta'=>['type'=>'popularsportsupdatecron'], 'data'=>['no user online']];
+        }
+
+
+    }
+
 
 
     /**

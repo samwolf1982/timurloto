@@ -41,6 +41,15 @@ class DashboardController extends Controller
     {
         // было
      //   Yii::$app->user->setReturnUrl(Yii::$app->request->url); // url для переадресации на текушую страничку для логина чекрез соц сети.
+
+        //запись в кеш значение что ктото есть на сайте 30 мин
+        // нужно для парсера крона  https://lookmybets.com/provider/popularsports
+
+        $cache=\Yii::$app->cache;
+        $key= "is_live_site_30_min";
+        $is_live_site = $cache->get($key);
+        if(empty($is_live_site)) $cache->set($key, true,30*60);
+
         return $this->render('index',[]);
 
     }
