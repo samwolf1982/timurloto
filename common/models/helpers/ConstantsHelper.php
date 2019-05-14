@@ -141,6 +141,7 @@ class ConstantsHelper
     const SHOW_MODAL_SUCCESS_NEW_USER_CONFIRM_MODAL='#modal-best'; // новый пользователь подтвердить из письма или соцсети
     const SHOW_MODAL_SUCCESS_NEW_USER_LOGIN_FORM_FILL_FIELDS_MODAL='#modal-login'; // новый пользователь первый раз зашел через соцсеть
     const SHOW_MODAL_USER_LOGIN_MAIN_FORM='#modal-auth'; // в случае ошыбочного доступа к аккаунту редирект и сразу открыть форму главную для входа
+    const SHOW_MODAL_USER_LOGIN_INSERT_NEW_PASSWORD='#modal-reset-password'; // новый пароль форма
 
 
 

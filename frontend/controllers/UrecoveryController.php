@@ -5,6 +5,7 @@ namespace frontend\controllers;
 
 
 
+use common\models\helpers\ConstantsHelper;
 use common\models\overiden\RegistrationForm;
 use common\models\services\DoSome;
 use common\models\User;
@@ -139,6 +140,9 @@ class UrecoveryController  extends OverriddeneUrecoveryController
 //            ]);
         }
 
+//       открыть форму для нового пароля
+        // уведомление модальное что аккаунт подтверджен
+        yii::$app->session->addFlash(ConstantsHelper::SHOW_MODAL_AFRER_LOAD_PAGE, ConstantsHelper::SHOW_MODAL_USER_LOGIN_INSERT_NEW_PASSWORD, true);
         return $this->render('@app/views/account/overriden/recovery/reset', [
             'model' => $model,
         ]);
