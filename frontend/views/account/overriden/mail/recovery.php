@@ -17,7 +17,8 @@ use yii\helpers\Html;
  */
      // смена урла для подтверждения для переопределения/ самый простой способ
     $rUrl=Html::a(Html::encode($token->url), $token->url);
-    $rUrl= str_replace('/user/recover/','/urecovery/reset/',$rUrl);
+//    $rUrl= str_replace('/user/recover/','/urecovery/reset/',$rUrl);
+    $rUrl= str_replace('/user/recover/','/urecovery/reset/',$token->url);
 
 ?>
 
