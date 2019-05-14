@@ -16,7 +16,7 @@ use yii\web\Response;
 class DefaultController extends Controller
 {
 
-    private  $cacheLive=120;
+    private  $cacheLive=240;
     /**
      * step 1
      * @return array
@@ -92,12 +92,12 @@ class DefaultController extends Controller
         if(YII_ENV !='prod') $this->cacheLive=10;
         if(YII_ENV !='prod') $this->cacheLive=100000; // todo delete here
        // $cache->flush();
-        Yii::error(['show env'=>YII_ENV]);
+       // Yii::error(['show env'=>YII_ENV]);
         $data2=[];
 //        $listSportId=[12341,12348];
         foreach (Centerturnire::find()->select(['sportid'])->where(['status'=>0])->orderBy(['sort'=>SORT_ASC])->all() as $kii=> $tourneyM) {
-            $start = microtime(true);
-           Yii::error(["start_{.$kii}"=>$start]);
+            //$start = microtime(true);
+           //Yii::error(["start_{.$kii}"=>$start]);
             $key="actionPopularsports_{$tourneyM->sportid}";
             $data = $cache->get($key);
             if ($data === false) {
@@ -110,7 +110,7 @@ class DefaultController extends Controller
             if(!empty($data)){
                 $data2[]=$data;
             }
-            Yii::error(["end_{.$kii}"=>round(microtime(true) - $start, 4).' сек.']);
+           // Yii::error(["end_{.$kii}"=>round(microtime(true) - $start, 4).' сек.']);
 
         }
 
