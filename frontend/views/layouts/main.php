@@ -9189,8 +9189,9 @@ EOT_JS_CODE
                         <div class="info-modal-inner">
                             <h2 class="h1">Поздравляем!</h2>
                             <div class="text-block-modal">Ваш аккаунт успешно зарегистрирован.</div>
+                            <div class="text-block-modal">Уведомление выслано на указаный вами адрес.</div>
                             <div class="muted-text-modal">
-                                <p>Для того, чтобы начать игру, подтвердите Вашу электронную почту. Уведомление выслано на указанный Вами адрес. Желаем Вам приятного времяпровождения! </p>
+                                <p>Для того, чтобы начать игру, подтвердите Вашу электронную почту. Желаем Вам приятного времяпровождения!  В случае если сообщение не пришло, проверяйте папку спам.</p>
                             </div>
                             <div class="btn-block-choose justify-center">
                                 <button class="btn btn-hover btn-primary" data-toggle="modal-dismiss">
@@ -9279,8 +9280,8 @@ EOT_JS_CODE
                                 <img src="images/check-symbol.svg" alt="">
                             </div>
                             <h2 class="h1">Все отлично!</h2>
-                            <div class="text-block-modal">Ваш аккаунт успешно востановлен.</div>
                             <div class="text-block-modal">Уведомление выслано на указаный вами адрес.</div>
+                            <div class="text-block-modal">В случае если сообщение не пришло, проверяйте папку спам.</div>
                             <div class="muted-text-modal">
                                 <p>Желаем Вам приятного времяпровождения! </p>
                             </div>
