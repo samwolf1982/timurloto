@@ -9255,7 +9255,7 @@ EOT_JS_CODE
                                 <p>Желаем Вам приятного времяпровождения! </p>
                             </div>
                             <div class="btn-block-choose justify-center">
-                                <button class="btn btn-hover btn-primary">
+                                <button data-toggle="modal-dismiss" class="btn btn-hover btn-primary">
                                     +  Продолжить
                                 </button>
                             </div>
