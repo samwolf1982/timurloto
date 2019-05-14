@@ -6,8 +6,19 @@ use common\models\ParserNodeDos;
 
 class ReaderParams extends \yii\base\BaseObject
 {
+    /**
+     * @return bool
+     */
+    public function isCurrentBetIdHandller()
+    {
+        return $this->currentBetIdHandller;
+    }
     private $post;
     private $bets;
+
+    // текуший обработчки для отлова ошыбок
+    // только ид
+    private $currentBetIdHandller=false;
 
 
     
@@ -31,15 +42,14 @@ class ReaderParams extends \yii\base\BaseObject
     }
 
 
-    private function getMarket_id()
-    {
-
-    }
-
     private function getInfoAboutGame($gameId)
     {
         $dos=new ParserNodeDos();
         $data= $dos->getEventsByGameId($gameId);
+        if($data['errorCurl']){
+            $this->currentBetIdHandller=$gameId;
+            return false;
+        }
         return $data['attr'][0];  //
 
 
@@ -53,8 +63,9 @@ class ReaderParams extends \yii\base\BaseObject
     public function getBetelements()
     {
 
-        if(count($this->bets) > 1) return $this->getMultiBet();
-        else  return $this->getSingleBet();
+        if(count($this->bets) > 1)return $this->getMultiBet();
+        else return $this->getSingleBet();
+
     }
 
     /**
@@ -83,8 +94,14 @@ class ReaderParams extends \yii\base\BaseObject
     $base=$this->getBaseInvariant($b['item_id']); // invariant
 
       $dataParser=$this->getInfoAboutGame($game_id);
-       // var_dump($dataParser); die();  // todo here
-      //  var_dump($dataParser->attributes->{'short-id'}); die();
+
+        if($this->currentBetIdHandller){ // ошыбка в обработке
+            // для совместимости с фронтом нужно выдавать полное ид
+            // делаю подмену
+            $this->currentBetIdHandller=$b['item_id'];
+            return false;
+        }
+
 
         $res= [
         "market_id"=> $market_id,
@@ -166,7 +183,17 @@ class ReaderParams extends \yii\base\BaseObject
             $game_id=$valueArr[0];
             $base=$valueArr[3]; // invariant
             $base=$this->getBaseInvariant($b['item_id']); // invariant
+
+
+
             $dataParser=$this->getInfoAboutGame($game_id);
+            if($this->currentBetIdHandller){ // ошыбка в обработке
+               // для совместимости с фронтом нужно выдавать полное ид
+                // делаю подмену
+                $this->currentBetIdHandller=$b['item_id'];
+                return false;
+            }
+
 
 
             $res[]=[

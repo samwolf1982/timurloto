@@ -338,12 +338,12 @@ class DefaultController extends Controller
             $clearPost=WagerManager::clearPost(Yii::$app->request->post());
 
             // здесь обрыв при ставке на прошлую игру
+
             $result=  WagerManager::makeBet(Yii::$app->user->identity->getId(),$clearPost,$total_sum);
 
          //   yii::error(['sss'=>$result]);
-//            'group_item_id' => '241476682', ???
-//                'item_id' => '241476683-1-12341-0',
             if(empty($result)) {   $e='Ошибка на сервере'; $errorLocalLog[]=$e; yii::error([$e, 'own post'=>Yii::$app->request->post(), 'uid'=>Yii::$app->user->identity->getId()]);  return ['status'=>0,'code'=>'text','message'=>$errorLocalLog];    }
+            if(!empty($result['error'])) {   $e='На игру ставки уже не принимаются'; $errorLocalLog[]=$e; yii::error([$e, 'own post'=>Yii::$app->request->post(), 'uid'=>Yii::$app->user->identity->getId()]);  return ['status'=>0,'code'=>'closeBet','id'=>$result['error']['id'],'message'=>$errorLocalLog];    }
 
             if($result->status===1){ // снятие баланса подтверждение
 

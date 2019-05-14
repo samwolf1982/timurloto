@@ -254,6 +254,10 @@ class ConstantsHelper
     const LOST_TIME_HOURS_NOT_CONFIRM = 4;
 
 
+//    // ошыбка в обработке парсера (время ставки уже вышло)
+//    const THIS_GAME_MAYBE_CLOSE_OR_ERROR = 'THIS_GAME_MAYBE_CLOSE_OR_ERROR';
+
+
 
 }
 

@@ -2,6 +2,7 @@
 namespace frontend\modules\wager\models;
 
 
+use Exception;
 use frontend\modules\statistic\models\PlaylistManager;
 use common\models\DTO\WagerInfo;
 use common\models\Eventsnames;
@@ -373,43 +374,17 @@ if(0){
 
 
         $reader=new ReaderParams($post);
-
-//        var_dump($reader->getSingleBet());
-//        var_dump($total_sum);
-//        die();
-
-
-
-
-
-
-
-//        if(0){ // single
-//            $betData =[
-//                "events"=>$reader->getSingleBet() // arr
-//                ,
-//                "user_id"=> $user_id,
-//                "type"=> "Single",
-//                "stake"=> $total_sum,
-////            "stake"=> 150,
-//                "option"=> null,
-//                "ApiKEY"=> "j_zaxscdvfq1w2e3t7",
-//            ];
-//        }
-
-
-
-
-
         $evento=$reader->getBetelements(); // arr
+        // во время парсинга произошла обшыбка
+        if($reader->isCurrentBetIdHandller()) return ['error'=>['id'=>$reader->isCurrentBetIdHandller()]];
+
 
 
 
         // Multiple
         $betData =[
            // "events"=>$reader->getMultiBet() // arr
-            "events"=>$evento
-            ,
+            "events"=>$evento,
             "user_id"=> $user_id,
            // "type"=> "Multiple",
             "type"=> $reader->getTypeBet(),

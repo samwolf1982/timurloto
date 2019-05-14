@@ -1,3 +1,7 @@
+// тестовая корзина прострочена
+//[{"CartElement":{"group_item_id":247495910,"item_id":"247495910-2-12341-0","gamersName":"Гуарани Кампинас - Витория Салвадор","name":"Х","mname":"1x2","status":true,"coef":3.02}},{"CartElement":{"group_item_id":247482546,"item_id":"247482546-1-12341-0","gamersName":"УРТ - Бразильенсе","name":"П1","mname":"1x2","status":true,"coef":2.13}}]
+
+
 var tottal_coeficient=1;
 
 $(document).ready(function () {
@@ -667,7 +671,7 @@ var SmartCart={
 
     },
     deleteSingle:function (el) {
-
+        showNotification('')
         var id_bet = $(el).parents('li').attr('class');
 
         var cartLS= JSON.parse ( localStorage.getItem('cartLS'));
@@ -717,7 +721,7 @@ var SmartCart={
 
     },
     deleteAll:function () {
-
+        showNotification('')
         localStorage.removeItem('cartLS');
         SmartCart.getFromCart(); // update cart
 
@@ -779,7 +783,6 @@ var SmartCart={
             cartLS=JSON.parse(localStorage.getItem( 'cartLS'));
         }
         data.CartElements = cartLS ;
-        // data.CartElements = cartLS ;
         data[this.csrf_param] = this.csrf;
         data['currentCooeficientDrop'] = SmartCart.currentCooeficientDrop;
         data['statusBet'] = SmartCart.statusBet;
@@ -791,15 +794,14 @@ var SmartCart={
             dataType: "json",
             beforeSend: function () {
 
-                if (0) {
-                    $('#ajax-button-confirm').addClass('preloader');
-                    $('#ordinator .coupon-tab-content').delay(1).fadeOut(function () {
-                        $('#ordinator .preloaderCart').show();
-                    });
-                }
-
+                // if (0) {
+                //     $('#ajax-button-confirm').addClass('preloader');
+                //     $('#ordinator .coupon-tab-content').delay(1).fadeOut(function () {
+                //         $('#ordinator .preloaderCart').show();
+                //     });
+                // }
+                showNotification('')
                 SmartCart.runPreloader();
-
             },
             complete: function () {
                 setTimeout(function () { // штучная задержка если очень быстрый ответ от сервера но еще не сработали фады на 400
@@ -816,15 +818,17 @@ var SmartCart={
                 console.log(json.message);
               showNotification(json.message);
                 if(json.status===0){ //error
-                    // code : 'change'    //cмена кооеф
+                    // code : 'change'    //cмена кооеф closeBet
                     if(json.code==='change'){
                         elChanged=$('#ordinator li.'+json.id);
                         console.log(elChanged);
                         $('#smb_'+json.id).remove();
                         elChanged.append('<button class="btn-xs btn-small btn-primary" id="smb_' + json.id + '" onclick="SmartCart.updateSingleBet(this);">Обновить ставку</button>')
-                    }else if('text'===json.code){
-                      //  $('#ajax-button-confirm').removeClass('preloader');
-                      // showNotification(json.message);
+                    }else if('closeBet'===json.code){
+                        elChanged=$('#ordinator li.'+json.id);
+                        console.log(elChanged);
+                        $('#smb_'+json.id).remove();
+                        elChanged.append('<button class="btn-xs btn-small btn-primary delete-item" id="smb_' + json.id + '" >Удалить</button>')
                     }
                 }else if(json.status===1){
                     if(!SmartCart.devStatus){
@@ -834,6 +838,7 @@ var SmartCart={
                 }
             }
         });
+
 
         //      stop bulk
         if (event.preventDefault) {
