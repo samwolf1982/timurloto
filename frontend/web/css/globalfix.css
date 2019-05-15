@@ -628,3 +628,13 @@ a:focus {
     z-index: 999999999999;
   }
 }
+.round-load.loadin-coupons .load-circle {
+  -webkit-animation: 2s loadAnimation infinite;
+  -moz-animation: 2s loadAnimation infinite;
+  -o-animation: 2s loadAnimation infinite;
+  animation: 2s loadAnimation infinite;
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
+  -o-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}

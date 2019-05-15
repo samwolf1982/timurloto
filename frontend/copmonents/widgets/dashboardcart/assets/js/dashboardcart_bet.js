@@ -753,7 +753,6 @@ var SmartCart={
 
 
     createBet:function (el) {
-        console.log('createBet 78');
 //--------------
         var data = {};
         data.CartElement = {};
@@ -773,25 +772,19 @@ var SmartCart={
             data:data,
             dataType: "json",
             beforeSend: function () {
-
-                // if (0) {
-                //     $('#ajax-button-confirm').addClass('preloader');
-                //     $('#ordinator .coupon-tab-content').delay(1).fadeOut(function () {
-                //         $('#ordinator .preloaderCart').show();
-                //     });
-                // }
                 showNotification('')
                 SmartCart.runPreloader();
             },
             complete: function () {
-                setTimeout(function () { // штучная задержка если очень быстрый ответ от сервера но еще не сработали фады на 400
-                    $('#ajax-button-confirm').removeClass('preloader');
-                    $('.load-coupon-wrapper').fadeOut();
-                    // $('#ordinator').removeClass('preloader');
-                    $('#ordinator .preloaderCart').delay(1).fadeOut(function () {
-                        $('#ordinator .coupon-tab-content').show();
-                    });
-                },500);
+                // todo uncoment
+                    setTimeout(function () { // штучная задержка если очень быстрый ответ от сервера но еще не сработали фады на 400
+                        $('#ajax-button-confirm').removeClass('preloader');
+                        $('.load-coupon-wrapper').fadeOut();
+                        // $('#ordinator').removeClass('preloader');
+                        $('#ordinator .preloaderCart').delay(1).fadeOut(function () {
+                            $('#ordinator .coupon-tab-content').show();
+                        });
+                    },500);
             },
             success: function (json) {
                 console.log(json);
@@ -812,7 +805,7 @@ var SmartCart={
                     }
                 }else if(json.status===1){
                     if(!SmartCart.devStatus){
-                        $('#smartCartButtonModal').trigger('click');// чистка корзыни
+                        $('#smartCartButtonModal').trigger('click');// чистка корзыни открытие модалки
                        // $('#smartCartButtonModal').trigger('click');// чистка корзыни
                     }
                 }
@@ -842,6 +835,7 @@ var SmartCart={
                 $('.load-coupon-wrapper').fadeIn();
                 $('.no-bet-selected-text').fadeOut(300);
                 $('.round-load').addClass('loadin-coupons');
+
                 setTimeout(function () {
                     $('.load-coupon-wrapper').fadeIn(300);
                     $('.coupon-tabs-wrapper-inner').fadeIn(300);
