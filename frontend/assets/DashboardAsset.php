@@ -24,6 +24,7 @@ class DashboardAsset extends AssetBundle
     public $js = [
 //         'dist/js/script.min.js',
         // 'dist/js/bet.js',
+
          'dist/js/select2.full.min.js',
     ];
 

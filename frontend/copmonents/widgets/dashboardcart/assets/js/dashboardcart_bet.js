@@ -7,6 +7,7 @@ var tottal_coeficient=1;
 $(document).ready(function () {
     SmartCart.init();
     SmartCart.getFromCart(); // update cart
+
 });
 statusBet=localStorage.getItem('statusBet'); // public  private
 if(statusBet === null) {statusBet='public'; localStorage.setItem('statusBet',statusBet);}
@@ -561,7 +562,7 @@ var SmartCart={
 //                     SmartCart.recalculateMaybeWin();
 //                     SmartCart.renderCalculate();
 
-
+                   // addBetFunc();
 
 
                 } else {
