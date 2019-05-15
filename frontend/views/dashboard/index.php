@@ -12,6 +12,8 @@ use dektrium\user\widgets\Connect;
 use dvizh\cart\widgets\BuyButton;
 use frontend\assets\BettabsAsset;
 use frontend\assets\DashboardAsset;
+use frontend\assets\MainAsset;
+
 
     DashboardAsset::register($this);
     WidgetAsset::register($this);
@@ -546,36 +548,7 @@ $this->title='Дать прогноз';
 </div>
 
 
-<div class="modal-wrapper bet-modal modal-640" id="modal-success-bet">
-    <div class="modal-inner">
-        <div class="modal-content">
-            <div class="modal-content-inner">
-                <div class="header-modal">
-                    <button class="close" data-toggle="modal-dismiss2"><span class="icon-close2"></span></button>
-                </div>
-                <div class="body-modal">
-                    <div class="choose-bet-wrapper">
-                        <div class="choose-bet-inner">
-                            <div class="success-bets">
-                                <h4>Твой прогноз принят</h4>
 
-                                <div class="shared-bet-social">
-                                    <h5>Поделитесь прогнозом</h5>
-                                    <ul class="social">
-                                        <li><a href="#"><span class="icon-fb"></span></a></li>
-                                        <li><a href="#"><span class="icon-gp"></span></a></li>
-                                        <li><a href="#"><span class="icon-tw"></span></a></li>
-                                        <li><a href="#"><span class="icon-vk"></span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!--Модальное окно Показать Экспресс-->
 

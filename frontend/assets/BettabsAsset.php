@@ -16,6 +16,7 @@ class BettabsAsset extends AssetBundle
         'css/fixMatches.css'
     ];
     public $js = [
+        'js/script.min.js',
         'js/bet.min.js',
     ];
     public $depends = ['frontend\assets\AppAsset',];

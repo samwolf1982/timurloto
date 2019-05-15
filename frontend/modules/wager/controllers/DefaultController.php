@@ -343,7 +343,7 @@ class DefaultController extends Controller
 
          //   yii::error(['sss'=>$result]);
             if(empty($result)) {   $e='Ошибка на сервере'; $errorLocalLog[]=$e; yii::error([$e, 'own post'=>Yii::$app->request->post(), 'uid'=>Yii::$app->user->identity->getId()]);  return ['status'=>0,'code'=>'text','message'=>$errorLocalLog];    }
-            if(!empty($result['error'])) {   $e='На игру ставки уже не принимаются'; $errorLocalLog[]=$e; yii::error([$e, 'own post'=>Yii::$app->request->post(), 'uid'=>Yii::$app->user->identity->getId()]);  return ['status'=>0,'code'=>'closeBet','id'=>$result['error']['id'],'message'=>$errorLocalLog];    }
+            if( is_array($result) and  !empty($result['error'])) {   $e='На игру ставки уже не принимаются'; $errorLocalLog[]=$e; yii::error([$e, 'own post'=>Yii::$app->request->post(), 'uid'=>Yii::$app->user->identity->getId()]);  return ['status'=>0,'code'=>'closeBet','id'=>$result['error']['id'],'message'=>$errorLocalLog];    }
 
             if($result->status===1){ // снятие баланса подтверждение
 

@@ -50,7 +50,7 @@ var SmartCart={
 
         // delete
        // $('.bet-coup-list').on('click','.delete-item',function () {
-        $(document).on('click','.delete-item',function (e) {
+        $(document).on('click','.bet-coup-list .delete-item',function (e) {
             SmartCart.deleteSingle(this);
             e.preventDefault();
             return false;
@@ -123,32 +123,11 @@ var SmartCart={
         $('#modal-success-bet .close').on('click', function (e) {
             console.log('Close modal');
            if(SmartCart.devStatus === false ) SmartCart.deleteAll();
-
-        // class="close" data-toggle="modal-dismiss"
-            // баг с закрытием
-           // $('body').removeClass('modal-open');
-           //   $(this).parents('.modal-wrapper').fadeOut(500).removeClass('active');
-           //  $(this).parents('.modal-wrapper').fadeOut().removeClass('active');
-
-          //  $('#modal-success-bet').fadeOut(500).removeClass('active');
-
+            // $(this).parents('.modal-wrapper').fadeOut(500).removeClass('active');
             // setTimeout(function () { // фикс для окон
-            //   //  $('#modal-success-bet').removeAttr( 'style' );
-            //     $('#modal-success-bet').css("display","none");
+            //     $('body').removeClass('modal-open');
+            //     $('body').removeAttr( 'style' );
             // },600)
-
-            // $('#modal-success-bet').removeAttr( 'style' );
-            // $('#modal-success-bet').fadeOut(500).removeClass('active');
-
-         //  $('body').removeClass('noScroll');
-
-
-            // $('.notification-calculate').text('');
-            $(this).parents('.modal-wrapper').fadeOut(500).removeClass('active');
-            setTimeout(function () { // фикс для окон
-                $('body').removeClass('modal-open');
-                $('body').removeAttr( 'style' );
-            },600)
            //$('body').removeClass('noScroll');
             SmartCart.backlight(); //
             return false;

@@ -46,7 +46,7 @@ class ReaderParams extends \yii\base\BaseObject
     {
         $dos=new ParserNodeDos();
         $data= $dos->getEventsByGameId($gameId);
-        if($data['errorCurl']){
+        if(!empty( $data['errorCurl'])){
             $this->currentBetIdHandller=$gameId;
             return false;
         }
@@ -92,9 +92,7 @@ class ReaderParams extends \yii\base\BaseObject
 
     $base=$valueArr[3]; // invariant
     $base=$this->getBaseInvariant($b['item_id']); // invariant
-
       $dataParser=$this->getInfoAboutGame($game_id);
-
         if($this->currentBetIdHandller){ // ошыбка в обработке
             // для совместимости с фронтом нужно выдавать полное ид
             // делаю подмену

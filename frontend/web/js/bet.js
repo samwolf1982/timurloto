@@ -195,7 +195,9 @@ $(document).ready(function () { // 1раз
         $(this).toggleClass('selected');
         return false;
     });
-    $('.bet-coup-list').on('click','.delete-item',function () {
+
+
+    $('.bet-coup-list_NOUSE').on('click','.delete-item',function () {
         var id_bet = $(this).parents('li').attr('class');
         var count_items = $('.bet-coup-list li').length-1;
         if(count_items >= 1){
@@ -224,6 +226,8 @@ $(document).ready(function () { // 1раз
         $(this).parents('li').remove();
 
     });
+
+
     $('.plus-minus-block .plus').on('click',function () {
         var val_perc = $('.plus-minus-block input').attr('data-val');
         var new_perc_val = parseInt(val_perc) + 1;
