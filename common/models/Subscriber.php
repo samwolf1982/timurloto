@@ -77,8 +77,8 @@ class Subscriber extends \yii\db\ActiveRecord
         if($dt_end > new DateTime()){
             $remain = $dt_end->diff(new DateTime());
 //             Бывает “1 отзыв”, “2 отзыва” и “12 отзывов”.
-
             if(!empty($remain->m)){
+                if($remain->m >= 3 )  return 'навсегда';
                 $textPadez=  HtmlGenerator::NumberEnd($remain->m,['месяц','месяца','месяца']);
                 return sprintf('%d %s осталось',$remain->m,$textPadez);
             }elseif(!empty($remain->d)){
