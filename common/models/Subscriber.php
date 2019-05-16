@@ -71,13 +71,44 @@ class Subscriber extends \yii\db\ActiveRecord
     {
 
 
+
+        $dt_end = new DateTime($this->expired_at);
+        $remain = $dt_end->diff(new DateTime());
+        if($dt_end > new DateTime()){
+            $remain = $dt_end->diff(new DateTime());
+//             Бывает “1 отзыв”, “2 отзыва” и “12 отзывов”.
+
+            if(!empty($remain->m)){
+                $textPadez=  HtmlGenerator::NumberEnd($remain->m,['месяц','месяца','месяца']);
+                return sprintf('%d %s осталось',$remain->m,$textPadez);
+            }elseif(!empty($remain->d)){
+                $textPadez=  HtmlGenerator::NumberEnd($remain->d,['день','дня','дней']);
+                return sprintf('%d %s осталось',$remain->d,$textPadez);
+            }elseif(!empty($remain->h)){
+                $textPadez=  HtmlGenerator::NumberEnd($remain->h,['час','часа','часов']);
+                return sprintf('%d %s осталось',$remain->h,$textPadez);
+            }elseif (!empty($remain->i)){
+                $textPadez=  HtmlGenerator::NumberEnd($remain->i,['минута','минуты','минут']);
+                return sprintf('%d %s осталось',$remain->i,$textPadez);
+            }
+        }
+
+
+        return  'Время доступа закончилось'.$remain->m;
+
+    }
+
+    public function getFormatedExpiredDEL()
+    {
+
+
+
         $dt_end = new DateTime($this->expired_at);
         $remain = $dt_end->diff(new DateTime());
         if($dt_end > new DateTime()){
             $remain = $dt_end->diff(new DateTime());
 //             Бывает “1 отзыв”, “2 отзыва” и “12 отзывов”.
             if(!empty($remain->d)){
-//                yii::error($remain);
                 $textPadez=  HtmlGenerator::NumberEnd($remain->d,['день','дня','дней']);
                 return sprintf('%d %s осталось',$remain->d,$textPadez);
             }elseif(!empty($remain->h)){
