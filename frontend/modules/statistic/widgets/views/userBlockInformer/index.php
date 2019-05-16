@@ -50,17 +50,9 @@ $userInfo;
                     </div>
                 </div>
                 <div class="user-acc-name">
-                    <h3><span><?=$userInfoAccount->getName();?>
-                             <?php if($isConfirmed){ ?>
-                                 <img style="" class="userimge" src="/images/checkOk1.png" alt="check ok">
-                             <?php } ?>
-                                </span>
 
-                        <?php if($userInfo->getisPro()) { ?>
-                            <span class="label-user-pro">pro</span>
-                        <?php  } ?>
+                    <h3><span><?= trim($userInfoAccount->getName());?> <?php if($isConfirmed){ ?><img style="" class="userimge" src="/images/checkOk1.png" alt="check ok"><?php } ?></span><?php if($userInfo->getisPro()) { ?><span class="label-user-pro">pro</span><?php  } ?></h3>
 
-                    </h3>
                     <div class="user-nik-name hidden">john.baklan</div>
                 </div>
                 <div class="user-acc-text">
