@@ -215,6 +215,8 @@ class AccountController extends Controller
     {
         $search=new   BalancestatisticsSearch();
         $search_result= $search->searchChart($id);
+
+
         return $search_result;
     }
 

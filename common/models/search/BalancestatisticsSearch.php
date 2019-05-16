@@ -190,11 +190,26 @@ class BalancestatisticsSearch extends Balancestatistics
 
 
             $tmp=[];
+
+
+            foreach (range(10,100) as $kii) {
+                // cумирование по дате . замыкание не работает в  ArrayHelper::getColumn
+                foreach ($result as $item) {
+                    $totalos+=$item[1];
+                    $tmp[]=[$item[0],$totalos];
+                }
+
+            }
+
             // cумирование по дате . замыкание не работает в  ArrayHelper::getColumn
             foreach ($result as $item) {
                 $totalos+=$item[1];
                 $tmp[]=[$item[0],$totalos];
             }
+
+
+
+
             $result=$tmp;
         }
 
