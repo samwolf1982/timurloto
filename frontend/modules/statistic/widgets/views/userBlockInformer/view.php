@@ -111,7 +111,7 @@ $userInfo;
 
                     <?php }else{  ?>
 
-                        <a href="#" class="btn btn-small btn-primary" id="openMadaInner" data-toggle="modal-reg" data-target="#modal-auth">
+                        <a href="#" class="btn btn-primary btn-hover" id="openMadaInner" data-toggle="modal-reg" data-target="#modal-auth">
                             <i class="icon-mail"></i>Сообщение
                             <span></span>
                         </a>
