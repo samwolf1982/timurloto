@@ -65,7 +65,7 @@ $accessInfoAccount;
             <li><a href="/account/my-subscribers" data-toggle="edit_bet" data-target="#edit_bet" class=""><span class="stat-title">Подписчики</span> <span class="stat-val"><?=$accessInfoAccount->getCountSubscribers()?></span></a></li>
             <li><a href="#my-bet" class="ancor"><span class="stat-title">Прогнозы</span> <span class="stat-val"><?=$accessInfoAccount->getCountWagers()?></span></a></li>
             <li><a href="<?=Url::toRoute(['/bet'])?>" class=""><span class="stat-title">Турниры </span> <span class="stat-val">#<?=$weekNum?> </span></a></li>
-            <li><a href="<?=Url::toRoute(['/bet'])?>" class="ancor"><span class="stat-title">РЕЙТИНГ</span> <span class="stat-val">#<?=$top100?></span></a></li>
+            <li><a href="<?=Url::toRoute(['/bet','#'=>'user-rating'])?>" class="ancor"><span class="stat-title">РЕЙТИНГ</span> <span class="stat-val">#<?=$top100?></span></a></li>
 
 
 
