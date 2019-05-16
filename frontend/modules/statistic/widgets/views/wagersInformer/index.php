@@ -33,11 +33,11 @@ use yii\widgets\LinkPager;
                     </div>
 
                     <div class="play-list-drop">
-                        <!--<button class="drop-trig-lay">Плейлист #A</button>-->
+                        <!--<button class="drop-trig-lay">Лист #A</button>-->
                         <!--<div class="drop-play">-->
                         <!--<ul class="drop-list">-->
                         <!--<li>-->
-                        <!--<a class="pl-item" href="#">Плейлист #A</a>-->
+                        <!--<a class="pl-item" href="#">Лист #A</a>-->
                         <!--<a class="pl-item" href="#">Плейлист #B</a>-->
                         <!--<a class="pl-item" href="#">Плейлист #C</a>-->
                         <!--</li>-->
@@ -72,8 +72,8 @@ use yii\widgets\LinkPager;
                                         <?php if(0){ // delete ?>
                                             <div class="drop-item">
                                                 <div class="check-drop">
-                                                    <input name="playlist" type="radio" id="playlist14" checked="checked" value="Плейлист #A">
-                                                    <label for="playlist14">Плейлист #A</label>
+                                                    <input name="playlist" type="radio" id="playlist14" checked="checked" value="Лист #A">
+                                                    <label for="playlist14">Лист #A</label>
                                                 </div>
                                             </div>
                                             <div class="drop-item">
@@ -920,11 +920,11 @@ use yii\widgets\LinkPager;
 
 
                         <div class="play-list-drop">
-                            <!--<button class="drop-trig-lay">Плейлист #A</button>-->
+                            <!--<button class="drop-trig-lay">Лист #A</button>-->
                             <!--<div class="drop-play">-->
                             <!--<ul class="drop-list">-->
                             <!--<li>-->
-                            <!--<a class="pl-item" href="#">Плейлист #A</a>-->
+                            <!--<a class="pl-item" href="#">Лист #A</a>-->
                             <!--<a class="pl-item" href="#">Плейлист #B</a>-->
                             <!--<a class="pl-item" href="#">Плейлист #C</a>-->
                             <!--</li>-->
@@ -959,8 +959,8 @@ use yii\widgets\LinkPager;
                                             <?php if(0){ // delete ?>
                                                 <div class="drop-item">
                                                     <div class="check-drop">
-                                                        <input name="playlist" type="radio" id="playlist14" checked="checked" value="Плейлист #A">
-                                                        <label for="playlist14">Плейлист #A</label>
+                                                        <input name="playlist" type="radio" id="playlist14" checked="checked" value="Лист #A">
+                                                        <label for="playlist14">Лист #A</label>
                                                     </div>
                                                 </div>
                                                 <div class="drop-item">

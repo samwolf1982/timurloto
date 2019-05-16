@@ -236,11 +236,11 @@ $accessInfoAccount
                                         <span class="text-head">Статистика</span>
                                     </div>
                                     <div class="play-list-drop">
-                                        <button class="drop-trig-lay">Плейлист #A</button>
+                                        <button class="drop-trig-lay">Лист #A</button>
                                         <div class="drop-play">
                                             <ul class="drop-list">
                                                 <li>
-                                                    <a class="pl-item" href="#">Плейлист #A</a>
+                                                    <a class="pl-item" href="#">Лист #A</a>
                                                     <a class="pl-item" href="#">Плейлист #B</a>
                                                     <a class="pl-item" href="#">Плейлист #C</a>
                                                 </li>
@@ -340,11 +340,11 @@ $accessInfoAccount
                                         <span class="text-head">Мои Ставки <sup>357</sup></span>
                                     </div>
                                     <div class="play-list-drop">
-                                        <button class="drop-trig-lay">Плейлист #A</button>
+                                        <button class="drop-trig-lay">Лист #A</button>
                                         <div class="drop-play">
                                             <ul class="drop-list">
                                                 <li>
-                                                    <a class="pl-item" href="#">Плейлист #A</a>
+                                                    <a class="pl-item" href="#">Лист #A</a>
                                                     <a class="pl-item" href="#">Плейлист #B</a>
                                                     <a class="pl-item" href="#">Плейлист #C</a>
                                                 </li>
@@ -8016,14 +8016,14 @@ $accessInfoAccount
                                                         <div class="custom-dropdown">
                                                             <div class="custom-dropdown-inner">
                                                                 <div class="val-drop">
-                                                                    <button class="val-drop-btn">Плейлист #A</button>
+                                                                    <button class="val-drop-btn">Лист #A</button>
                                                                 </div>
                                                                 <div class="dropdown-list">
                                                                     <div class="play-list">
                                                                         <div class="drop-item">
                                                                             <div class="check-drop">
-                                                                                <input name="playlist" type="radio" id="playlist1" checked="checked" value="Плейлист #A">
-                                                                                <label for="playlist1">Плейлист #A</label>
+                                                                                <input name="playlist" type="radio" id="playlist1" checked="checked" value="Лист #A">
+                                                                                <label for="playlist1">Лист #A</label>
                                                                             </div>
                                                                         </div>
                                                                         <div class="drop-item">

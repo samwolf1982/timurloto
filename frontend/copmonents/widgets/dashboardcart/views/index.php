@@ -172,14 +172,14 @@
                                    <!--<div class="custom-dropdown">-->
                                    <!--<div class="custom-dropdown-inner">-->
                                    <!--<div class="val-drop">-->
-                                   <!--<button class="val-drop-btn">Плейлист #A</button>-->
+                                   <!--<button class="val-drop-btn">Лист #A</button>-->
                                    <!--</div>-->
                                    <!--<div class="dropdown-list">-->
                                    <!--<div class="play-list">-->
                                    <!--<div class="drop-item">-->
                                    <!--<div class="check-drop">-->
-                                   <!--<input name="playlist" type="radio" id="playlist145" checked="checked" value="Плейлист #A">-->
-                                   <!--<label for="playlist145">Плейлист #A</label>-->
+                                   <!--<input name="playlist" type="radio" id="playlist145" checked="checked" value="Лист #A">-->
+                                   <!--<label for="playlist145">Лист #A</label>-->
                                    <!--</div>-->
                                    <!--</div>-->
                                    <!--<div class="drop-item">-->
@@ -295,8 +295,8 @@
                                                    <div class="play-list">
                                                        <div class="drop-item">
                                                            <div class="check-drop">
-                                                               <input name="playlist" type="radio" id="playlist145" checked="checked" value="Плейлист #A">
-                                                               <label for="playlist145">Плейлист #A</label>
+                                                               <input name="playlist" type="radio" id="playlist145" checked="checked" value="Лист #A">
+                                                               <label for="playlist145">Лист #A</label>
                                                            </div>
                                                        </div>
                                                        <div class="drop-item">
@@ -543,14 +543,14 @@
                                        <div class="custom-dropdown">
                                            <div class="custom-dropdown-inner">
                                                <div class="val-drop">
-                                                   <button class="val-drop-btn">Плейлист #A</button>
+                                                   <button class="val-drop-btn">Лист #A</button>
                                                </div>
                                                <div class="dropdown-list">
                                                    <div class="play-list">
                                                        <div class="drop-item">
                                                            <div class="check-drop">
-                                                               <input name="playlist" type="radio" id="playlist145" checked="checked" value="Плейлист #A">
-                                                               <label for="playlist145">Плейлист #A</label>
+                                                               <input name="playlist" type="radio" id="playlist145" checked="checked" value="Лист #A">
+                                                               <label for="playlist145">Лист #A</label>
                                                            </div>
                                                        </div>
                                                        <div class="drop-item">

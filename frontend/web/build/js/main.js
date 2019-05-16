@@ -449,14 +449,14 @@
                                 '<div class="custom-dropdown">\n' +
                                     '<div class="custom-dropdown-inner">\n' +
                                     '    <div class="val-drop">\n' +
-                                    '        <button class="val-drop-btn">Плейлист #A</button>\n' +
+                                    '        <button class="val-drop-btn">Лист #A</button>\n' +
                                     '    </div>\n' +
                                     '    <div class="dropdown-list">\n' +
                                     '        <div class="play-list">\n' +
                                     '            <div class="drop-item">\n' +
                                     '                <div class="check-drop">\n' +
-                                    '                    <input name="playlist" type="radio" id="playlist1'+count_tpl+'" checked="checked" value="Плейлист #A">\n' +
-                                    '                    <label for="playlist1'+count_tpl+'">Плейлист #A</label>\n' +
+                                    '                    <input name="playlist" type="radio" id="playlist1'+count_tpl+'" checked="checked" value="Лист #A">\n' +
+                                    '                    <label for="playlist1'+count_tpl+'">Лист #A</label>\n' +
                                     '                </div>\n' +
                                     '            </div>\n' +
                                     '            <div class="drop-item">\n' +

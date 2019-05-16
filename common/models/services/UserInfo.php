@@ -76,7 +76,8 @@ class UserInfo
 
     public function getBalance(){
         $bb=Score::find()->where(['user_id' => $this->user_id])->one();
-        return  $bb->balance;;
+        if($bb)  return  $bb->balance;;
+        return 0;
     }
 
     private function setUserLevel(){
