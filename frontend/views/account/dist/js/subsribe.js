@@ -69,14 +69,14 @@ var UserSubscriber={
         });
 
         $(document).on("click", ".trig-val", function(e) {
-
+            console.log('Init UserSubscriber 22');
             UserSubscriber.addSubscriber(this);
            UserSubscriber.showOpen(this);
             e.preventDefault();
             return false;
         });
 
-        console.log('Init UserSubscriber');
+        console.log('Init UserSubscriber 2');
     },
 
     addSubscriber: function (el) {
