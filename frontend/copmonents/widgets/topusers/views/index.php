@@ -69,14 +69,16 @@
                                    if(!empty($user)){
 
 
-
                                    $useeInfo=new UserInfo($user->id);
                                    $pathToUser=Url::toRoute(['/account/view','id'=>$user->id]);
                                  $profite=  sprintf("%01.2f %%", $model['sume']);
                                  $penet=  sprintf("%01.2f %%", $model['penet']);
                                  $coef=sprintf("%01.2f", $model['mdc']);
                                    $roi=sprintf("%01.2f", ($model['ro']*100));
-                                   $balaneuser= round( $useeInfo->getBalance());
+                                       // французский формат
+                                       $balaneuser = number_format($useeInfo->getBalance(), 0, '', ' ');
+// 1 234,56
+//                                   $balaneuser=sprintf("%01.2f", $useeInfo->getBalance()));
                                    echo '         <div class="hr table-row">
                                    <div class="td table-cell td-count">'.($index+1).'</div>
                                    <div class="td table-cell td-user">
