@@ -52,7 +52,7 @@ $userInfo;
                 <div class="user-acc-name">
                     <h3><span><?=$userInfoAccount->getName();?>
                              <?php if($isConfirmed){ ?>
-                                 <img style="bottom: 4px; top: 0px;" class="userimge" src="/images/checkOk1.png" alt="check ok">
+                                 <img style="" class="userimge" src="/images/checkOk1.png" alt="check ok">
                              <?php } ?>
                                 </span>
 
