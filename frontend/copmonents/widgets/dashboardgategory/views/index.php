@@ -16,7 +16,7 @@
 
    <div class="inner-sidebar" id="sportTypeSidebar">
        <div class="head-pink" >
-           <h3>Виды Спорта 2</h3>
+           <h3>Виды Спорта</h3>
        </div>
 
 
