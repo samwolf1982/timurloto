@@ -69,6 +69,7 @@
                                    if(!empty($user)){
 
 
+
                                    $useeInfo=new UserInfo($user->id);
                                    $pathToUser=Url::toRoute(['/account/view','id'=>$user->id]);
                                  $profite=  sprintf("%01.2f %%", $model['sume']);
