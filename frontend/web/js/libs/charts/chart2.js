@@ -64,15 +64,17 @@ $(function () {
         range.value = 0;
         range.endValue = -1000;
 
-        range.contents.stroke = 'red';
+        // range.contents.stroke = 'red';
         range.contents.fill = range.contents.stroke;
         range.contents.strokeOpacity = 0.7;
         range.contents.fillOpacity = 0.1;
         range.contents.fillOpacity = 0.7;  //bottom
-        // range.contents.stroke = chart.colors.getIndex(4);
-        // range.contents.fill = range.contents.stroke;
-        // range.contents.strokeOpacity = 0.7;
-        // range.contents.fillOpacity = 0.1;
+
+
+        range.contents.stroke = chart.colors.getIndex(4);
+        range.contents.fill = range.contents.stroke;
+        range.contents.strokeOpacity = 0.7;
+        range.contents.fillOpacity = 0.1;
 
 
 
@@ -112,9 +114,9 @@ function generatechartData(json) {
         chartData.push( {
             date: new Date(el[0]) ,
            // date: el[0] ,
-            visits: el[1],
-            lineColor:colore,
-            lineColorFill:coloreFill
+            visits: el[1]
+           // lineColor:colore,
+          //  lineColorFill:coloreFill
 
         } );
     }) ;
