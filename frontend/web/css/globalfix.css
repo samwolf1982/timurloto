@@ -638,3 +638,7 @@ a:focus {
   -o-animation-delay: 0.5s;
   animation-delay: 0.5s;
 }
+.page-404-wrapper {
+  padding-top: 150px;
+  height: 72vh;
+}

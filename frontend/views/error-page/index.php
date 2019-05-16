@@ -73,7 +73,7 @@ BetAsset::register($this);
                                 <?= Yii::$app->errorHandler->exception; ?>
                             </div>
                         <?php endif; ?>
-                        <div class="btn-404">
+                        <div class="btn-404 text-center">
                             <a href="/matches" class="btn btn-primary btn-hover">
                                 +  <i>Продолжить</i>
                                 <span ></span>
