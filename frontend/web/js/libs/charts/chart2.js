@@ -79,6 +79,7 @@ $(function () {
 
 
 
+
 // Add cursor
         chart.cursor = new am4charts.XYCursor();
         chart.cursor.xAxis = dateAxis;
