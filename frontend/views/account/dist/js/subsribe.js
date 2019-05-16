@@ -12,6 +12,7 @@ $(window).on('loadeModale', function (e) {
 
 $(function () {
     $('.tabs-nav a').on('click', function () {
+        console.log('sdfg')
         var id_tab_change = $(this).attr('href');
         $('.tabs-nav li').removeClass('active');
         $(this).parent().addClass('active');
@@ -21,7 +22,7 @@ $(function () {
                 $(id_tab_change).fadeIn(400).addClass('active');
             }, 401);
         }
-        return false;
+
     });
 });
 
