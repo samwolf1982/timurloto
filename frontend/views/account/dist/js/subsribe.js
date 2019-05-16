@@ -11,7 +11,8 @@ $(window).on('loadeModale', function (e) {
 });
 
 $(function () {
-    $('.tabs-nav a').on('click', function () {
+    // $('.tabs-nav a').on('click', function () {
+        $(document).on("click", ".tabs-nav a", function(e) {
         console.log('sdfg')
         var id_tab_change = $(this).attr('href');
         $('.tabs-nav li').removeClass('active');
