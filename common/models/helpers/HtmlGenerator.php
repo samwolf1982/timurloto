@@ -175,7 +175,26 @@ class HtmlGenerator
     public static function dashboardCountryByGroupFinBlockCenterWidget($data)
     {
 
-        if(empty($data)) return '<div class="tab-blocks" id="dashboard_center_block_tab_blocks"><div class="progresse_bare"></div></div>';
+        if(empty($data)) return '<div class="tab-blocks" id="dashboard_center_block_tab_blocks">
+<div class="load-coupon-wrapper" style="" id="secondWrapperLoad3">
+           <div class="load-coupon-inner">
+               <div class="round-load loadin-coupons">
+                   <div class="progress-load">
+                       <svg width="160" height="160">
+                           <circle r="75" cx="80" cy="80" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="5"></circle>
+                           <circle class="load-circle" r="75" cx="80" cy="80" fill="none" stroke="#d00069" stroke-width="5"></circle>
+                       </svg>
+                   </div>
+                   <div class="center-icon-clock">
+                       <span class="icon-sand-clock"></span>
+                   </div>
+               </div>
+           </div>
+       </div>
+
+<div class="progresse_bare hidden"></div>
+
+</div>';
 
         $res ='
 <div class="tab-blocks" id="dashboard_center_block_tab_blocks">

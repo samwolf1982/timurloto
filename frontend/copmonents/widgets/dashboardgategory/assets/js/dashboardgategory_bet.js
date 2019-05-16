@@ -147,6 +147,7 @@ var DashboardCategory={
                         });
 
                         $('#dashboard_center_block_tab_blocks .tab-block').hide();
+                        $('#secondWrapperLoad3').hide();
                         $('#dashboard_center_block_tab_blocks .tab-block:first').show();
 
                          // DashboardCategory.renderTabsGames(el, json.data2[0]);
@@ -170,7 +171,8 @@ var DashboardCategory={
     },
     // 1
     renderSport: function (el,data) {
-        if(data.length)  $('.preloaderSport').fadeOut(100, function() {
+      //  if(data.length)  $('.preloaderSport').fadeOut(100, function() {
+        if(data.length)  $('#secondWrapperLoad').fadeOut(100, function() {
             $.each(data, function( k, e ) {    // e.id e.name e.count
                 var sportIconCurrent='icon-football';
                 if(DashboardCategory.icons_sports[e.id]){

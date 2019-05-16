@@ -49,7 +49,7 @@
 
 
 <!--               загрузка корзина-->
-               <div class="load-coupon-wrapper" style="display: none;">
+               <div class="load-coupon-wrapper" id="cartLoadPreloader" style="display: none;">
                    <div class="load-coupon-inner">
                        <div class="round-load">
                            <div class="progress-load">

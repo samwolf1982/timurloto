@@ -23,6 +23,7 @@ class DefaultController extends Controller
      */
     public function actionSports()
     {
+
         if(YII_ENV !='prod') $this->cacheLive=10;
         $key='actionSports';
         $cache=\Yii::$app->cache;

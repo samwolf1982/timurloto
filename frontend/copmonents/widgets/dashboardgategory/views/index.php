@@ -16,11 +16,25 @@
 
    <div class="inner-sidebar" id="sportTypeSidebar">
        <div class="head-pink" >
-           <h3>Виды Спорта </h3>
+           <h3>Виды Спорта 2</h3>
        </div>
 
 
-
+       <div class="load-coupon-wrapper" style="" id="secondWrapperLoad">
+           <div class="load-coupon-inner">
+               <div class="round-load loadin-coupons">
+                   <div class="progress-load">
+                       <svg width="160" height="160">
+                           <circle r="75" cx="80" cy="80" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="5"></circle>
+                           <circle class="load-circle" r="75" cx="80" cy="80" fill="none" stroke="#d00069" stroke-width="5"></circle>
+                       </svg>
+                   </div>
+                   <div class="center-icon-clock">
+                       <span class="icon-sand-clock"></span>
+                   </div>
+               </div>
+           </div>
+       </div>
 
 
             <?php foreach ($sport_categories  as $id_sport=>$sport_name) { continue;  ?>
@@ -35,7 +49,7 @@
                 </div>
            <?php  }  ?>
 
-       <div class="preloaderSport"></div>
+
 
    </div>
 

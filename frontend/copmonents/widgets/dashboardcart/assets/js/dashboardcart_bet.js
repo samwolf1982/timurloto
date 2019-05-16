@@ -832,12 +832,12 @@ var SmartCart={
             var count_items = $('.bet-coup-list li').length;
             console.log(count_items)
             if (count_items >= 1) {
-                $('.load-coupon-wrapper').fadeIn();
+                $('#cartLoadPreloader.load-coupon-wrapper').fadeIn();
                 $('.no-bet-selected-text').fadeOut(300);
                 $('.round-load').addClass('loadin-coupons');
 
                 setTimeout(function () {
-                    $('.load-coupon-wrapper').fadeIn(300);
+                    $('#cartLoadPreloader.load-coupon-wrapper').fadeIn(300);
                     $('.coupon-tabs-wrapper-inner').fadeIn(300);
                 }, 310);
             } else {
