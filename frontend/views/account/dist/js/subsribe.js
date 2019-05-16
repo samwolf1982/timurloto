@@ -10,6 +10,22 @@ $(window).on('loadeModale', function (e) {
     }
 });
 
+$(function () {
+    $('.tabs-nav a').on('click', function () {
+        var id_tab_change = $(this).attr('href');
+        $('.tabs-nav li').removeClass('active');
+        $(this).parent().addClass('active');
+        if (!$(id_tab_change).hasClass('active')) {
+            $('.tabs-item').fadeOut(400).removeClass('active');
+            setTimeout(function () {
+                $(id_tab_change).fadeIn(400).addClass('active');
+            }, 401);
+        }
+        return false;
+    });
+});
+
+
 // aвтосохранялки
 var timeoutId;
 $(document.body).on('input propertychange change','textarea.add-notification',function (el) {
