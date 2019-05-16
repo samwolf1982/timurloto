@@ -7864,6 +7864,7 @@ EOT_JS_CODE
 
 
 
+
 <div class="modal-wrapper bet-modal modal-edit-subscriber modal-960" id="edit_subscriber">
     <div class="modal-inner">
         <div class="modal-content">
