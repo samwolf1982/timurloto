@@ -75,7 +75,7 @@
                                  $penet=  sprintf("%01.2f %%", $model['penet']);
                                  $coef=sprintf("%01.2f", $model['mdc']);
                                    $roi=sprintf("%01.2f", ($model['ro']*100));
-                                   $balaneuser=sprintf("%01.2f", ($useeInfo->getBalance()));
+                                   $balaneuser= round( $useeInfo->getBalance());
                                    echo '         <div class="hr table-row">
                                    <div class="td table-cell td-count">'.($index+1).'</div>
                                    <div class="td table-cell td-user">
