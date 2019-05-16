@@ -54,7 +54,10 @@
                                    <div class="td table-cell td-profit">Profit</div>
                                    <div class="td table-cell td-passability">Проходимость</div>
                                    <div class="td table-cell td-coeficient">Коэффициент</div>
-                                   <div class="td table-cell td-roi">ROI</div>
+                                   <?php if(0){ // прячем рои ?>
+                                       <div class="td table-cell td-roi">ROI</div>
+                                   <?php } ?>
+                                   <div class="td table-cell td-roi">Баланс</div>
                                </div>
 
                                <?php
@@ -72,6 +75,7 @@
                                  $penet=  sprintf("%01.2f %%", $model['penet']);
                                  $coef=sprintf("%01.2f", $model['mdc']);
                                    $roi=sprintf("%01.2f", ($model['ro']*100));
+                                   $balaneuser=sprintf("%01.2f", ($useeInfo->getBalance()));
                                    echo '         <div class="hr table-row">
                                    <div class="td table-cell td-count">'.($index+1).'</div>
                                    <div class="td table-cell td-user">
@@ -94,7 +98,7 @@
                                    <div class="td table-cell td-profit">'.$profite.'</div>
                                    <div class="td table-cell td-passability">'.$penet.'</div>
                                    <div class="td table-cell td-coeficient">'.$coef.'</div>
-                                   <div class="td table-cell td-roi">'.$roi.'</div>
+                                   <div class="td table-cell td-roi">'.$balaneuser.'</div>
                                </div>';
                                }
                                }

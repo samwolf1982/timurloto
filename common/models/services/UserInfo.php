@@ -73,6 +73,12 @@ class UserInfo
         return  Url::to('https://avatars0.githubusercontent.com/u/8706421?s=40&v=40');
     }
 
+
+    public function getBalance(){
+        $bb=Score::find()->where(['user_id' => $this->user_id])->one();
+        return  $bb->balance;;
+    }
+
     private function setUserLevel(){
         $key='ulevel_'.$this->user_id;
         $data = Yii::$app->cache->get($key);
