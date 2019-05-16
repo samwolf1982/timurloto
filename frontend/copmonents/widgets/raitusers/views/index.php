@@ -11,7 +11,7 @@
 
    ?>
 
-   <div class="row table-row">
+   <div class="row table-row" id="user-rating">
        <div class="column-12">
            <div class="table-wrapper top-user-table raite-table">
                <div class="table-inner">
