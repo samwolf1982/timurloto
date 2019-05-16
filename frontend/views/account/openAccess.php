@@ -707,6 +707,7 @@ use yii\helpers\Url;
                                             </div>
                                             <div class="avatar-user">
                                                 <img src="/<?=$sub->usersub->imguse->avatar?>" alt="">
+                                                <img src="/<?=$sub->imguse->avatar?>" alt="">
                                             </div>
                                         </div>
                                         <div class="name-block">
