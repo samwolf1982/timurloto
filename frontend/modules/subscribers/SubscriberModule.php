@@ -72,6 +72,7 @@ class SubscriberModule extends \yii\base\Module
 //            'created_at' => 'создан',
 
 
+//        yii::error($period);
         $expired_at=  $new_time = date("Y-m-d H:i:s", strtotime("+".$period));
         $parar=['user_own_id'=>Yii::$app->user->id,'user_sub_id'=>$user_sub_id,'status'=>1,'expired_at'=>$expired_at];
         $subscriber->attributes=$parar;

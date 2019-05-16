@@ -77,6 +77,7 @@ class Subscriber extends \yii\db\ActiveRecord
             $remain = $dt_end->diff(new DateTime());
 //             Бывает “1 отзыв”, “2 отзыва” и “12 отзывов”.
             if(!empty($remain->d)){
+//                yii::error($remain);
                 $textPadez=  HtmlGenerator::NumberEnd($remain->d,['день','дня','дней']);
                 return sprintf('%d %s осталось',$remain->d,$textPadez);
             }elseif(!empty($remain->h)){

@@ -435,7 +435,7 @@ use yii\helpers\Url;
                                                     <div class="name-block">
                                                         <div class="left-name-b">
                                                             <h5><a href="<?=Url::to(['/account/'.$sub->usersub->id]);?>"><?=$sub->usersub->username?></a></h5>
-                                                            <div class="date-b"><?=$sub->getFormatedExpired()?> </div>
+                                                            <div class="date-b"><?=$sub->getFormatedExpired()?>  </div>
                                                         </div>
                                                         <div class="right-name-b">
                                                             <textarea data-parent-id="<?=$sub->usersub->id?>" class="add-notification" placeholder="Добавить заметку до 100 символов"><?php if(!empty($sub->text)){ ?><?=$sub->text?><?php } ?></textarea>

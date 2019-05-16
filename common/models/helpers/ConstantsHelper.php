@@ -72,7 +72,7 @@ class ConstantsHelper
     const ACCESS_TO_WEEK='1 week'; //
     const ACCESS_TO_TWO_WEEKS='2 week'; //
     const ACCESS_TO_MONTH='1 month'; //
-    const ACCESS_TO_THREE_MONTHS='3 months'; //
+    const ACCESS_TO_THREE_MONTHS='3 month'; //
     const ACCESS_TO_25_YEARS='25 year'; //
 
 

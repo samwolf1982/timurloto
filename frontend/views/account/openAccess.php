@@ -714,7 +714,7 @@ use yii\helpers\Url;
                                                 <h5><a href="<?=Url::to(['/account/'.$sub->user_own_id]);?>">
                                                         <?=$sub->userown->username?>
                                                     </a></h5>
-                                                <div class="date-b"><?=$sub->getFormatedExpired()?></div>
+                                                <div class="date-b"><?=$sub->getFormatedExpired()?>  </div>
                                             </div>
                                             <div class="right-name-b">
                                                 <p></p>
