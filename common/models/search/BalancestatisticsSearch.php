@@ -183,23 +183,19 @@ class BalancestatisticsSearch extends Balancestatistics
         $totalos=0;
         $result=[];
         if($b){
+
+
             $result = ArrayHelper::getColumn($b, function  ($element)  {
                 // $totalos+=round( $element['profit'],2);
                 return [ (strtotime ($element['created_at']) *1000),round( $element['profit'],2)  ];
             });
 
 
+
             $tmp=[];
 
 
-            foreach (range(10,100) as $kii) {
-                // cумирование по дате . замыкание не работает в  ArrayHelper::getColumn
-                foreach ($result as $item) {
-                    $totalos+=$item[1];
-                    $tmp[]=[$item[0],$totalos];
-                }
 
-            }
 
             // cумирование по дате . замыкание не работает в  ArrayHelper::getColumn
             foreach ($result as $item) {
