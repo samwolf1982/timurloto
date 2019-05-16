@@ -63,7 +63,7 @@ BetAsset::register($this);
             <?php if(1){ ?>
                 <div class="content-404">
                     <div class="content-404-inner">
-                        <h3 style="font-size: large;" >Мы уже работаем над этим</h3>
+                        <h3 style="font-size: large; color: white;" class="text-center" >Мы уже работаем над этим</h3>
                         <div class="img-404">
                             <img class="img-responsive" style="display: initial;" src="/images/404.png" alt="404 error">
                         </div>

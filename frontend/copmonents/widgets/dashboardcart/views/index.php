@@ -239,7 +239,7 @@
 
                                <?php }else{ ?>
                                    <button id="smartCartButton"  class="btn btn-primary send-bets" onclick="SmartCart.createBet(this);" >Сделать Ставку</button>
-                               <?php $hideclass='hidden'; if(YII_ENV=='dev'){ $hideclass='';  ?> <?php    }   ?>
+                               <?php $hideclass='hidden'; if(YII_ENV=='dev'){ $hideclass='';  ?> <?php  }   ?>
                                    <button    id="smartCartButtonModal"  class="btn btn-primary send-bets <?=$hideclass?> " data-toggle="modal" data-target="#modal-success-bet">Сделать Ставку Модальное</button>
                                <?php } ?>
 

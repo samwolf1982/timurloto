@@ -263,7 +263,7 @@ use yii\helpers\Url;
                                     <span>?</span>
                                 </a>
                                                 <span class="list-stats-tbl-val up-val">
-                                                    <?=$search_result['plus']?>
+                                                    <?= empty($search_result['plus'])?0:$search_result['plus'] ?>
                                                 </span>
                                 <span class="list-stats-tbl-title">
                                                     Количество Плюсов
@@ -274,7 +274,7 @@ use yii\helpers\Url;
                                     <span>?</span>
                                 </a>
                                                 <span class="list-stats-tbl-val up-val">
-                                                      <?=$search_result['minus']?>
+                                                      <?=empty($search_result['minus'])?0:$search_result['minus'] ?>
                                                 </span>
                                 <span class="list-stats-tbl-title">
                                                     Количество Минусов
