@@ -25,6 +25,7 @@ class UserChartAssets extends AssetBundle
     '//www.amcharts.com/lib/4/core.js"',
 '//www.amcharts.com/lib/4/charts.js"',
 '//www.amcharts.com/lib/4/themes/dataviz.js"',
+'//www.amcharts.com/lib/4/themes/material.js',
 '//www.amcharts.com/lib/4/themes/animated.js"',
       //  'js/libs/charts/chart.min.js'
         'js/libs/charts/chart2.min.js',
