@@ -80,6 +80,46 @@ class UsecurityController  extends OverriddeneSecurityController
     }
 
 
+    public function authenticate(ClientInterface $client)
+    {
+
+        die('sssss');
+        $account = $this->finder->findAccount()->byClient($client)->one();
+
+        if (!$this->module->enableRegistration && ($account === null || $account->user === null)) {
+            \Yii::$app->session->setFlash('danger', \Yii::t('user', 'Registration on this website is disabled'));
+            $this->action->successUrl = Url::to(['/user/security/login']);
+            return;
+        }
+
+        if ($account === null) {
+            /** @var Account $account */
+            $accountObj = \Yii::createObject(Account::className());
+            $account = $accountObj::create($client);
+        }
+
+        $event = $this->getAuthEvent($account, $client);
+
+        $this->trigger(self::EVENT_BEFORE_AUTHENTICATE, $event);
+
+        if ($account->user instanceof User) {
+            if ($account->user->isBlocked) {
+                \Yii::$app->session->setFlash('danger', \Yii::t('user', 'Your account has been blocked.'));
+                $this->action->successUrl = Url::to(['/user/security/login']);
+            } else {
+                $account->user->updateAttributes(['last_login_at' => time()]);
+                \Yii::$app->user->login($account->user, $this->module->rememberFor);
+                $this->action->successUrl = \Yii::$app->getUser()->getReturnUrl();
+            }
+        } else {
+            $this->action->successUrl = $account->getConnectUrl();
+        }
+
+        $this->trigger(self::EVENT_AFTER_AUTHENTICATE, $event);
+    }
+
+
+
 
 
 }
