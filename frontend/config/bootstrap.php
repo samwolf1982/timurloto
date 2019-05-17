@@ -8,7 +8,7 @@ use dvizh\cart\models\CartElement;
 use komer45\balance\models\Score;
 use komer45\balance\models\Transaction;
 use yii\base\Event;
-
+use yii\helpers\Url;
 
 
 Event::on('dektrium\user\controllers\SecurityController', SecurityController::EVENT_BEFORE_AUTHENTICATE, function (\dektrium\user\events\AuthEvent $e) {
