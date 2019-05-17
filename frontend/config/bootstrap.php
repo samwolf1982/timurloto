@@ -110,7 +110,7 @@ Event::on('dektrium\user\controllers\SecurityController', SecurityController::EV
 
 
 //     redirect to cabinet
-    Yii::$app->response->redirect(Url::toRoute(['/account','id'=>77]));
+//    Yii::$app->response->redirect(Url::toRoute(['/account','id'=>77]));
 //    return $this->redirect(Url::toRoute(['/account','id'=>$model->id]));
     // after saving all user attributes will be stored under account model
     // Yii::$app->identity->user->accounts['facebook']->decodedData
