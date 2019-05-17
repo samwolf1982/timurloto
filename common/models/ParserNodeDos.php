@@ -121,12 +121,21 @@ class ParserNodeDos extends \yii\base\BaseObject
 
 //        Yii::error($this->initiator->getEventsTypeUrl($gameId));
         $data= $this->parse($this->initiator->getEventsTypeUrl($gameId));
-        if(empty($data->data[0]->attributes->{'additional-games'})){   //ничего из сервера не приехало
+        yii::error($data->data[0]->attributes);
+
+        if(empty($data->data[0]->attributes)){   //ничего из сервера не приехало
             $resulte['data']=[];
             $resulte['attr']=[];
             $resulte['errorCurl']=true;
             return $resulte;
         }
+
+//        if(empty($data->data[0]->attributes->{'additional-games'})){   //ничего из сервера не приехало
+//            $resulte['data']=[];
+//            $resulte['attr']=[];
+//            $resulte['errorCurl']=true;
+//            return $resulte;
+//        }
 
         $res=[];
         $ofsetPeriodo=Ofseroperiodo::find()->where(1)->asArray()->all();
