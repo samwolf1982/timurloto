@@ -52,6 +52,7 @@ class UsecurityController  extends OverriddeneSecurityController
 
         if ($model->load(\Yii::$app->getRequest()->post()) && $model->login()) {
             $this->trigger(self::EVENT_AFTER_LOGIN, $event);
+            return $this->redirect(Url::toRoute(['/account','id'=>Yii::$app->user->id]));
             return $this->goBack();
         }
 
@@ -66,7 +67,9 @@ class UsecurityController  extends OverriddeneSecurityController
             // redirect на главную с отображением формы для входа
             yii::$app->session->addFlash(ConstantsHelper::SHOW_MODAL_AFRER_LOAD_PAGE, ConstantsHelper::SHOW_MODAL_USER_LOGIN_MAIN_FORM, true);
 
- return $this->redirect(Url::to(['/']));
+
+            return $this->redirect(Url::toRoute(['/account','id'=>$model->id]));
+             return $this->redirect(Url::to(['/']));
 //            return $this->render('login', [
 //                'model'  => $model,
 //                'module' => $this->module,

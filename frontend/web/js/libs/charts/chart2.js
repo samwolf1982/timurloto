@@ -1,4 +1,4 @@
- // am4core.useTheme(am4themes_dataviz);
+ //am4core.useTheme(am4themes_dataviz);
 
 
  /* Define a custom theme */
