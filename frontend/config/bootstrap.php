@@ -88,7 +88,7 @@ Event::on('dektrium\user\controllers\SecurityController', SecurityController::EV
         return;
     }
 
-    yii::error('dektrium\user\controllers\SecurityController1111111111');
+  //  yii::error('dektrium\user\controllers\SecurityController1111111111');
 
     // we are using switch here, because all networks provide different sets of data
     switch ($e->client->getName()) {
@@ -107,6 +107,11 @@ Event::on('dektrium\user\controllers\SecurityController', SecurityController::EV
 //            yii::error(['some error EVENT',yii::$app->user->id,$session->get('tmp_user_id')]);
 
     }
+
+
+//     redirect to cabinet
+    Yii::$app->response->redirect(Url::toRoute(['/account','id'=>77]));
+//    return $this->redirect(Url::toRoute(['/account','id'=>$model->id]));
     // after saving all user attributes will be stored under account model
     // Yii::$app->identity->user->accounts['facebook']->decodedData
 });
