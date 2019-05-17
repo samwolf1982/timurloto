@@ -45,7 +45,11 @@ var am4lang_ru_RU={_decimalSeparator:",",_thousandSeparator:" ",_date_millisecon
 $(function () {
     $.getJSON(userChartUrl, function (data) {
 // Create chart instance
+     //    am4charts.XYChart
+     //    var chart = am4core.create("containerChart", am4charts.XYChart);
         var chart = am4core.create("containerChart", am4charts.XYChart);
+     //  console.log(  chart.XY);
+       console.log( am4charts.XYChart);
 
         chart.language.locale = am4lang_ru_RU;
 // Add data
@@ -62,7 +66,7 @@ $(function () {
         dateAxis.renderer.labels.template.fill = am4core.color("#6B5C90");
         dateAxis.renderer.labels.template.fontSize = 20;
 
-
+        dateAxis.renderer.labels.template.right=50;
 
 
 // Create value axis
@@ -71,6 +75,19 @@ $(function () {
         valueAxis.renderer.labels.template.fill = am4core.color("#6B5C90");
         valueAxis.renderer.labels.template.fontSize = 20;
         // valueAxis.renderer.labelColor=am4core.color("#8DB055");
+
+
+
+        valueAxis.renderer.grid.template.line = am4core.color("#A0CA92");
+        valueAxis.renderer.grid.template.stroke = am4core.color("#A0CA92");
+        valueAxis.renderer.grid.template.strokeWidth = 0.5;
+        valueAxis.renderer.grid.template.strokeOpacity = 1;
+
+        // valueAxis.renderer.line.stroke = am4core.color("#A0CA92");
+
+       /* categoryAxis.renderer.line.strokeOpacity = 1;
+        categoryAxis.renderer.line.strokeWidth = 2;
+        categoryAxis.renderer.line.stroke = am4core.color("#3787ac");*/
 
         // Create axes
         // var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
@@ -125,8 +142,11 @@ $(function () {
         chart.cursor = new am4charts.XYCursor();
         chart.cursor.xAxis = dateAxis;
         chart.scrollbarX = new am4core.Scrollbar();
+        chart.scrollbarX.dy= -15;
         // chart.dateFormatter.dateFormat
          chart.dateFormatter.dateFormat = "yyyy-MM-dd";
+
+
 
     });
 
