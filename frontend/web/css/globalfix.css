@@ -663,3 +663,8 @@ a:focus {
 .faq-block_2 {
   text-transform: uppercase;
 }
+@media (max-width: 400px) {
+  .faq-block_2 {
+    padding-right: 6px;
+  }
+}

@@ -49,7 +49,7 @@ $(function () {
      //    var chart = am4core.create("containerChart", am4charts.XYChart);
         var chart = am4core.create("containerChart", am4charts.XYChart);
      //  console.log(  chart.XY);
-       console.log( am4charts.XYChart);
+     //  console.log( am4charts.XYChart);
 
         chart.language.locale = am4lang_ru_RU;
 // Add data
@@ -71,14 +71,21 @@ $(function () {
         dateAxis.renderer.grid.template.strokeWidth = 0.5;
         dateAxis.renderer.grid.template.strokeOpacity = 1;
 
+
+        /* Configure axis tooltip  нижний тултип */
+      //   var axisTooltip = dateAxis.tooltip;
+        // axisTooltip.background.fill = am4core.color("#07BEB8");
+        // axisTooltip.background.strokeWidth = 0;
+        // axisTooltip.background.cornerRadius = 3;
+        // axisTooltip.background.pointerLength = 0;
+        // axisTooltip.dy = 5;
+
 // Create value axis
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         // Configure labels
         valueAxis.renderer.labels.template.fill = am4core.color("#6B5C90");
         valueAxis.renderer.labels.template.fontSize = 20;
         // valueAxis.renderer.labelColor=am4core.color("#8DB055");
-
-
 
 
         valueAxis.renderer.grid.template.stroke = am4core.color("#6B5C90");
@@ -110,6 +117,8 @@ $(function () {
         series.dataFields.valueY = "visits";
         // series.dataFields.dateX = "date";
         series.dataFields.dateX = "date";
+
+        // series.background.fill = am4core.color("#07BEB8");
         series.strokeWidth = 3;
         series.tooltipText = "Прибыль: {valueY.value}";
         series.fillOpacity = 0.08; // top
@@ -117,6 +126,17 @@ $(function () {
       //  series.propertyFields.stroke = "lineColor";
         series.propertyFields.stroke = "lineColor";
         series.propertyFields.fill = "lineColorFill";
+
+
+
+
+        // var axisTooltip = categoryAxis.tooltip;
+        // axisTooltip.background.fill = am4core.color("#07BEB8");
+        // axisTooltip.background.strokeWidth = 0;
+        // axisTooltip.background.cornerRadius = 3;
+        // axisTooltip.background.pointerLength = 0;
+        // axisTooltip.dy = 5;
+
 
 // Create a range to change stroke for values below 0
         var range = valueAxis.createSeriesRange(series);
@@ -130,7 +150,7 @@ $(function () {
         range.contents.fillOpacity = 1.0;  //bottom
 
 
-        range.contents.stroke = chart.colors.getIndex(4);
+      //  range.contents.stroke = chart.colors.getIndex(4);
         range.contents.stroke = '#EF0177';
         range.contents.fill = range.contents.stroke;
         range.contents.strokeOpacity = 1.0;
