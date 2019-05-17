@@ -8,7 +8,9 @@
      // }
      if (target instanceof am4core.ColorSet) {
          target.list = [
-             am4core.color("#b1e264")
+             am4core.color("#b1e264") // базовый цвет    series.fillOpacity = 0.08;  ниже
+             //am4core.color("blue"), // базовый цвет    series.fillOpacity = 0.08;  ниже
+           //  am4core.color("red") // базовый цвет    series.fillOpacity = 0.08;  ниже
          ];
 
      }
@@ -25,7 +27,7 @@
      // }
 
  }
- am4core.useTheme(am4themes_dataviz);
+ am4core.useTheme(am4themes_material);
  am4core.useTheme(am4themes_overwritr_theme);
 
 // am4core.useTheme(am4themes_material);
@@ -57,7 +59,7 @@ $(function () {
             "count": 1
         };
         dateAxis.tooltipDateFormat = "HH:mm, d MMMM";
-        dateAxis.renderer.labels.template.fill = am4core.color("white");
+        dateAxis.renderer.labels.template.fill = am4core.color("#6B5C90");
         dateAxis.renderer.labels.template.fontSize = 20;
 
 
@@ -66,7 +68,7 @@ $(function () {
 // Create value axis
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         // Configure labels
-        valueAxis.renderer.labels.template.fill = am4core.color("white");
+        valueAxis.renderer.labels.template.fill = am4core.color("#6B5C90");
         valueAxis.renderer.labels.template.fontSize = 20;
         // valueAxis.renderer.labelColor=am4core.color("#8DB055");
 
