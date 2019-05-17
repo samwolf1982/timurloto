@@ -67,7 +67,9 @@ $(function () {
         dateAxis.renderer.labels.template.fontSize = 20;
 
         dateAxis.renderer.labels.template.right=50;
-
+        dateAxis.renderer.grid.template.stroke = am4core.color("#6B5C90");
+        dateAxis.renderer.grid.template.strokeWidth = 0.5;
+        dateAxis.renderer.grid.template.strokeOpacity = 1;
 
 // Create value axis
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
@@ -78,8 +80,8 @@ $(function () {
 
 
 
-        valueAxis.renderer.grid.template.line = am4core.color("#A0CA92");
-        valueAxis.renderer.grid.template.stroke = am4core.color("#A0CA92");
+
+        valueAxis.renderer.grid.template.stroke = am4core.color("#6B5C90");
         valueAxis.renderer.grid.template.strokeWidth = 0.5;
         valueAxis.renderer.grid.template.strokeOpacity = 1;
 
