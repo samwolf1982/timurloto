@@ -172,7 +172,7 @@
        </div>
        <div class="column-12 block-bnr">
            <a href="#">
-               <img src="/images/ad@3x.jpg" alt="">
+               <img class="tournire_2" src="/images/commercical/tournire2.jpg" alt="tournire2">
            </a>
        </div>
    </div>

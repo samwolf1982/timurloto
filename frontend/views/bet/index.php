@@ -783,7 +783,7 @@ BetAsset::register($this);
                 </div>
                 <div class="column-12 block-bnr">
                     <a href="#">
-                        <img src="/images/ad@3x.jpg" alt="">
+                        <img src="/images/ad@3x.jpg" alt="777">
                     </a>
                 </div>
             </div>

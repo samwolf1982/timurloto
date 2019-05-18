@@ -121,7 +121,7 @@ class ParserNodeDos extends \yii\base\BaseObject
 
 //        Yii::error($this->initiator->getEventsTypeUrl($gameId));
         $data= $this->parse($this->initiator->getEventsTypeUrl($gameId));
-        yii::error($data->data[0]->attributes);
+//        yii::error($data->data[0]->attributes);
 
         if(empty($data->data[0]->attributes)){   //ничего из сервера не приехало
             $resulte['data']=[];

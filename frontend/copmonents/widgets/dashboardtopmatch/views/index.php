@@ -19,7 +19,7 @@
        <?php endif; ?>
        <div class="content-bg">
            <div class="top-carousel-wrapper">
-               <a href="/" target="_blank">   <img src="/images/error/fon.png" alt="comercical" class="img-responsive"></a>
+               <a href="/" target="_blank">   <img src="/images/commercical/matches.jpg" alt="comercical" class="img-responsive"></a>
            </div>
        </div>
    </div>
