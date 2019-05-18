@@ -26,26 +26,30 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140464149-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
 
-        gtag('config', 'UA-140464149-1');
-    </script>
+    <?php if(YII_ENV=='prod'){ ?>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140464149-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-    <!-- BEGIN JIVOSITE CODE {literal} -->
-    <script type='text/javascript'>
-        (function(){ var widget_id = 'ovrmZtgtLG';var d=document;var w=window;function l(){
-            var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
-            s.src = '//code.jivosite.com/script/widget/'+widget_id
-            ; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}
-            if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}
-            else{w.addEventListener('load',l,false);}}})();
-    </script>
-    <!-- {/literal} END JIVOSITE CODE -->
+            gtag('config', 'UA-140464149-1');
+        </script>
+
+        <!-- BEGIN JIVOSITE CODE {literal} -->
+        <script type='text/javascript'>
+            (function(){ var widget_id = 'ovrmZtgtLG';var d=document;var w=window;function l(){
+                var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
+                s.src = '//code.jivosite.com/script/widget/'+widget_id
+                ; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}
+                if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}
+                else{w.addEventListener('load',l,false);}}})();
+        </script>
+        <!-- {/literal} END JIVOSITE CODE -->
+    <?php }  ?>
+
 
 </head>
 

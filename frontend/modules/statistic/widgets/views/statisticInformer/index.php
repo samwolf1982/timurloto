@@ -183,7 +183,7 @@ use yii\helpers\Url;
                     <div class="stats-tbl-wrapper">
                         <ul class="list-stats-tbl">
                             <li>
-                                <a class="question-btn" data-toggle="tooltip" data-placement="top" title="Sed ut perspiciatis unde omnisiste natus error sit">
+                                <a class="question-btn" data-toggle="tooltip" data-placement="top" title="Показатель прибыли от общего баланса. Определяется по суммам ставок в bet coin.">
                                     <span>?</span>
                                 </a>
                                 <span class="list-stats-tbl-val up-val">
@@ -198,7 +198,8 @@ use yii\helpers\Url;
                                                 </span>
                             </li>
                             <li>
-                                <a class="question-btn" data-toggle="tooltip" data-placement="top" title="Sed ut perspiciatis unde omnisiste natus error sit">
+                                <a class="question-btn" data-toggle="tooltip" data-placement="top" title="Показатель прибыли от банка в 100%
+Определяется по суммам ставок в % от игрового банка. Основной показатель Рейтинга">
                                     <span>?</span>
                                 </a>
                                 <span class="list-stats-tbl-val up-val">
@@ -210,19 +211,20 @@ use yii\helpers\Url;
                             </li>
 
                             <li>
-                                <a class="question-btn" data-toggle="tooltip" data-placement="top" title="Sed ut perspiciatis unde omnisiste natus error sit">
+                                <a class="question-btn" data-toggle="tooltip" data-placement="top" title="Показатель прибыли от банка в 100%
+Определяется по суммам ставок в % от игрового банка. Обновляется каждую неделю, является основным пользователем в еженедельном турнире.">
                                     <span>?</span>
                                 </a>
                                 <span class="list-stats-tbl-val up-val">
                                                       <?=$weekProfit?><sup>%</sup>
                                                 </span>
                                 <span class="list-stats-tbl-title">
-                                                    Недельный профит
+                                                    Недельная прибыль
                                                 </span>
                             </li>
 
                             <li>
-                                <a class="question-btn" data-toggle="tooltip" data-placement="top" title="Sed ut perspiciatis unde omnisiste natus error sit">
+                                <a class="question-btn" data-toggle="tooltip" data-placement="top" title="Проходимость - это процент проходимости прогнозов пользователя">
                                     <span>?</span>
                                 </a>
                                 <span class="list-stats-tbl-val up-val">
@@ -237,7 +239,7 @@ use yii\helpers\Url;
 
 
                             <li>
-                                <a class="question-btn" data-toggle="tooltip" data-placement="top" title="Sed ut perspiciatis unde omnisiste natus error sit">
+                                <a class="question-btn" data-toggle="tooltip" data-placement="top" title="Средний коэффициент - это среднее значение коэффициента прогнозов пользователя">
                                     <span>?</span>
                                 </a>
                                 <span class="list-stats-tbl-val up-val">
@@ -248,7 +250,8 @@ use yii\helpers\Url;
                                                 </span>
                             </li>
                             <li>
-                                <a class="question-btn" data-toggle="tooltip" data-placement="top" title="Sed ut perspiciatis unde omnisiste natus error sit">
+                                <a class="question-btn" data-toggle="tooltip" data-placement="top" title="РОИ - это коэффициент возврата инвестиций в %
+Доход от вложений / Размер вложений * 100%">
                                     <span>?</span>
                                 </a>
                                                 <span class="list-stats-tbl-val down-val">
@@ -259,7 +262,7 @@ use yii\helpers\Url;
                                                 </span>
                             </li>
                             <li>
-                                   <a class="question-btn" data-toggle="tooltip" data-placement="top" title="Sed ut perspiciatis unde omnisiste natus error sit">
+                                   <a class="question-btn" data-toggle="tooltip" data-placement="top" title="Количество плюсов - это количество выигрышных ставок пользователя">
                                     <span>?</span>
                                 </a>
                                                 <span class="list-stats-tbl-val up-val">
@@ -270,7 +273,7 @@ use yii\helpers\Url;
                                                 </span>
                             </li>
                             <li>
-                                   <a class="question-btn" data-toggle="tooltip" data-placement="top" title="Sed ut perspiciatis unde omnisiste natus error sit">
+                                   <a class="question-btn" data-toggle="tooltip" data-placement="top" title="Количество минусов - это количество проигрышных ставок пользователя">
                                     <span>?</span>
                                 </a>
                                                 <span class="list-stats-tbl-val up-val">
