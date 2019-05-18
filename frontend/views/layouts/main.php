@@ -7577,6 +7577,87 @@ EOT_JS_CODE
     </div>
 </div>
 
+<div class="modal-wrapper bet-modal modal-945" id="modal-faq-tournire">
+    <div class="modal-inner">
+        <div class="modal-content">
+            <div class="modal-content-inner">
+                <div class="header-modal">
+                    <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
+                </div>
+                <div class="body-modal">
+                    <div class="choose-bet-wrapper">
+                        <div class="choose-bet-inner">
+                            <div class="head-choose faq-title">
+                                <h2>Все о турнире</h2>
+                            </div>
+                            <div class="faq-wrapper">
+                                <div class="faq-list collapse-wrapper">
+                                    <div class="collapse-item">
+                                        <div class="collapse-item-head">
+                                            <a href="#faq1-t" data-toggle="collap">Как я могу участвовать в турнире?</a>
+                                        </div>
+                                        <div class="collapse-item-body" id="faq1-t">
+                                            <p>
+                                                - Для того, что бы участвовать в турнире Вам нужно просто зарегестрироваться на сайте и подтвердить свой аккаунт на почте.
+                                            </p>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="collapse-item">
+                                        <div class="collapse-item-head">
+                                            <a href="#faq2-t" data-toggle="collap">Как часто проходят турниры?</a>
+                                        </div>
+                                        <div class="collapse-item-body" id="faq2-t">
+                                            <p>
+                                                - Турниры проходят каждую неделю. Обновление турнира происходит в понедельник.
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                    <div class="collapse-item">
+                                        <div class="collapse-item-head">
+                                            <a href="#faq3-t" data-toggle="collap">Какой куш и количество призовых мест?</a>
+                                        </div>
+                                        <div class="collapse-item-body" id="faq3-t">
+                                            <p>- Общий куш составляет 15 000 рублей в неделю.</p>
+                                            <p>5 призовых мест:</p>
+                                            <p>1 место 5 000 руб.</p>
+                                            <p>2 место 4 000 руб.</p>
+                                            <p>3 место 3 000 руб.</p>
+                                            <p>4 место 2 000 руб.</p>
+                                            <p>5 место 1 000 руб.</p>
+                                        </div>
+                                    </div>
+                                    <div class="collapse-item">
+                                        <div class="collapse-item-head">
+                                            <a href="#faq4-t" data-toggle="collap">Как и через сколько я могу получить приз?</a>
+                                        </div>
+                                        <div class="collapse-item-body" id="faq4-t">
+                                            <p>- В течении 48 часов с Вами свяжется менеджер и согласует отправку денежного приза. Метод оплаты QIWI кошелёк.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="collapse-item">
+                                        <div class="collapse-item-head">
+                                            <a href="#faq5-t" data-toggle="collap">Как проходит расчёт ставки?</a>
+                                        </div>
+                                        <div class="collapse-item-body" id="faq5-t">
+                                            <p>- Ставка рассчитывается в течении 24 часов после окончания матча. Расчёт идёт через MyScore</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 

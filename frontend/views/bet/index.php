@@ -1158,7 +1158,7 @@ BetAsset::register($this);
 
 
                                      
-                                        <a href="#" data-toggle="modal" data-target="#modal-faq" class="btn btn-hover btn-primary no-before ">
+                                        <a href="#" data-toggle="modal" data-target="#modal-faq-tournire" class="btn btn-hover btn-primary no-before ">
                                             <i class="text-show">+  Все о турнире</i>
                                             <i class="text-hide">Готово</i>
                                             <span></span>
