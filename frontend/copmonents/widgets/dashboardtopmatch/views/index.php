@@ -17,7 +17,7 @@
            <div class="arrows-carousel-nav" id="top-game"></div>
        </div>
        <?php endif; ?>
-       <div class="content-bg">
+       <div class="content-bg" style="padding: 0;">
            <div class="top-carousel-wrapper">
                <a href="/" target="_blank">   <img src="/images/commercical/matches.jpg" alt="comercical" class="img-responsive"></a>
            </div>
