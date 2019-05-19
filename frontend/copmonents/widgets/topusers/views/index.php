@@ -65,7 +65,7 @@
                                $keys = $dataProvider->getKeys();
                                $rows = [];
 
-                               var_dump($keys); die();
+//                               var_dump($dataProvider); die();
                                foreach ($models as $index => $model) {
                                    $user=User::find()->where(['id'=>$model['user_id']])->one();
                                    if(!empty($user)){
@@ -85,7 +85,7 @@
 
 //                                   $balaneuser=sprintf("%01.2f", $useeInfo->getBalance()));
                                    echo '         <div class="hr table-row">
-                                   <div class="td table-cell td-count">'.($index+1).'</div>
+                                   <div class="td table-cell td-count">#</div>
                                    <div class="td table-cell td-user">
                                       <div class="row-ava">
                                            <div class="rate-avatar">
