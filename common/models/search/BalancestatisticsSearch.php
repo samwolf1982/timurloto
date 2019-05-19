@@ -82,9 +82,21 @@ class BalancestatisticsSearch extends Balancestatistics
         $prepare_result=   ['profit'=> round($result['profit'],2),'penetration'=>round($result['penetration'],2),
             'middle_coef'=>round($result['middle_coef'],2),
             'roi'=>round($this->newRoiCalk($user_id),2),
-
-
             ];
+
+
+        $sql_2="SELECT  SUM(`plus`) as `plus`,SUM(`minus`) as `minus`  FROM `balancestatistics` WHERE user_id = :u_id and created_own  BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' ";
+        $resultProhod =   yii::$app->db->createCommand($sql_2, [
+            ':u_id' => $user_id,
+//        ])->execute();
+        ])->queryOne();
+
+        $prepare_result['penetration']=999;
+        //$result['penetration']=777;
+
+        // второй вариант проходимости
+
+
       return    array_merge($result,$prepare_result);   ;
     }
 
@@ -122,17 +134,17 @@ class BalancestatisticsSearch extends Balancestatistics
         ];
 
 
-        $sql_2="SELECT  SUM(`plus`) as `plus`,SUM(`minus`) as `minus`  FROM `balancestatistics` WHERE user_id = :u_id and created_own  BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' ";
-        $resultProhod =   yii::$app->db->createCommand($sql_2, [
-            ':u_id' => $user_id,
-//        ])->execute();
-        ])->queryOne();
+//        $sql_2="SELECT  SUM(`plus`) as `plus`,SUM(`minus`) as `minus`  FROM `balancestatistics` WHERE user_id = :u_id and created_own  BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' ";
+//        $resultProhod =   yii::$app->db->createCommand($sql_2, [
+//            ':u_id' => $user_id,
+////        ])->execute();
+//        ])->queryOne();
+//
+//        $prepare_result['penetration']=999;
+//        $result['penetration']=777;
+//
+//        // второй вариант проходимости
 
-        $prepare_result['penetration']=999;
-        $result['penetration']=777;
-
-        // второй вариант проходимости
-die();
 
 
         return    array_merge($result,$prepare_result);   ;
