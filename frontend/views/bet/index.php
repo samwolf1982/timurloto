@@ -2808,8 +2808,13 @@ BetAsset::register($this);
 
                     <div class="text-video-modal">
                         <h2>Первая социальная сеть в СНГ </h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto laborum libero ratione suscipit vitae? Amet dolores eaque minima, nesciunt optio quae quaerat rerum sit! Ab dolor eligendi illo ipsam tempore.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto laborum libero ratione suscipit vitae? Amet dolores eaque minima, nesciunt optio quae quaerat rerum sit! Ab dolor eligendi illo ipsam tempore.</p>
+
+                       <p>Look My Bet - первое и единственное сообщество в мире, созданное, как для новичков в мире ставок ,так  и для  профессионалов.</p>
+
+                       <p>    Наша идея  продуманна и реализована так , чтобы принести максимальную пользу , как  для людей для которых ставки и спортивный анализ занимает </p>
+
+                       <p>        внушительную часть их жизни , так и для людей для ,которых данный вид деятельности является хобби или же началом каперского пути.</p>
+
                     </div>
                 </div>
             </div>
@@ -2834,8 +2839,9 @@ BetAsset::register($this);
 
                                 <iframe width="100%" src="https://www.youtube.com/embed/Hbd8ghFICJk?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-                                <iframe width="1280" height="720" src="https://www.youtube.com/embed/BJC-aEdG9uA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <?php  } ?>
+                            <iframe width="1280" height="720" src="https://www.youtube.com/embed/BJC-aEdG9uA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
                         </div>
                     </div>
 
@@ -2843,8 +2849,10 @@ BetAsset::register($this);
 
                     <div class="text-video-modal">
                         <h2>Первая социальная сеть в СНГ </h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto laborum libero ratione suscipit vitae? Amet dolores eaque minima, nesciunt optio quae quaerat rerum sit! Ab dolor eligendi illo ipsam tempore.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto laborum libero ratione suscipit vitae? Amet dolores eaque minima, nesciunt optio quae quaerat rerum sit! Ab dolor eligendi illo ipsam tempore.</p>
+                        <p>Если же прогнозирование не вызывает у вас никакого интереса ,или же вам попросту не хватает знаний ,но просмотр спортивных событий без ранее сделанной</p>
+
+                          <p>  ставки не вызывает у вас эмоций,тогда наше  сообщество предоставляет Вам такую интересную возможность как мониторинг прогнозов самых  успешных капперов LMB.</p>
+                        <p>Желаем удачи в еженедельном турнире. Зарабатывай на ставках с умом, а с нами еще и без вложений.</p>
                     </div>
                 </div>
             </div>
