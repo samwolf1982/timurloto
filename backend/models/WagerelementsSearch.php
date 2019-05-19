@@ -149,9 +149,12 @@ class WagerelementsSearch extends Wagerelements
 
           // проверка
 
-        $nextWeek = time() - (ConstantsHelper::LOST_TIME_HOURS_NOT_CONFIRM * 60 * 60);   // 4*60*60    - 4 часа
+        if(0){
+            $nextWeek = time() - (ConstantsHelper::LOST_TIME_HOURS_NOT_CONFIRM * 60 * 60);   // 4*60*60    - 4 часа
 
-        $query->andFilterWhere(['<', 'startgame', $nextWeek]);
+            $query->andFilterWhere(['<', 'startgame', $nextWeek]);
+        }
+
  //      проверка
 
         //   $query->andFilterWhere(['=','wager.status', Wager::STATUS_OPEN]);
