@@ -91,6 +91,7 @@ class WagerelementsSearch extends Wagerelements
     }
 
     /**
+     * для обычных ставок
      * Creates data provider instance with search query applied
      * SELECT * FROM `wagerelements` INNER JOIN wager on wager.id=wagerelements.wager_id WHERE wager.status=1 GROUP by wagerelements.event_id
      *
@@ -132,6 +133,7 @@ class WagerelementsSearch extends Wagerelements
 //        $query->andFilterWhere(['like', 'event_id', $this->event_id])
 //            ->andFilterWhere(['like', 'outcome_id', $this->outcome_id])
           $query->andFilterWhere(['like', 'sport_name', $this->sport_name])
+           // ограничение на будущие игры что еше не начались.
 //            ->andFilterWhere(['like', 'country_id', $this->country_id])
             ->andFilterWhere(['like', 'country_name', $this->country_name])
             ->andFilterWhere(['like', 'category_id', $this->category_id])
@@ -144,7 +146,15 @@ class WagerelementsSearch extends Wagerelements
             ->andFilterWhere(['like', 'info_name_full', $this->info_name_full])
             ->andFilterWhere(['like', 'info_cat_name', $this->info_cat_name]);
 
-     //   $query->andFilterWhere(['=','wager.status', Wager::STATUS_OPEN]);
+
+          // проверка
+
+        $nextWeek = time() - (ConstantsHelper::LOST_TIME_HOURS_NOT_CONFIRM * 60 * 60);   // 4*60*60    - 4 часа
+
+        $query->andFilterWhere(['<', 'startgame', $nextWeek]);
+ //      проверка
+
+        //   $query->andFilterWhere(['=','wager.status', Wager::STATUS_OPEN]);
         $query->andFilterWhere(['=','wager.status', Wager::STATUS_MANUAL_BET]);
         $query->groupBy(['event_id']);
 
@@ -152,6 +162,9 @@ class WagerelementsSearch extends Wagerelements
         return $dataProvider;
     }
 
+
+
+    // для потеряных ставок
     public function searchGroupLost($params)
     {
         $query = Wagerelements::find();
