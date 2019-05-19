@@ -31,7 +31,7 @@ use yii\helpers\Url;
                         <div class="custom-dropdown">
                             <div class="custom-dropdown-inner">
                                 <div class="val-drop">
-                                    <button class="val-drop-btn">Плейлисты</button>
+                                    <button class="val-drop-btn">Лист</button>
                                 </div>
                                 <div class="dropdown-list">
                                     <div class="play-list">

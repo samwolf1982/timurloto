@@ -32,7 +32,7 @@ class StatisticInformer extends \yii\base\Widget
         }
         
         if ($this->text === NULL) {
-            $this->text = 'Плейлисты';
+            $this->text = 'Лист';
         }
         if ($this->user_id === NULL) {
             $this->user_id = -1;

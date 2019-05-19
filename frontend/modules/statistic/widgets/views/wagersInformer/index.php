@@ -49,7 +49,7 @@ use yii\widgets\LinkPager;
 
                                 <div class="val-drop">
                                     <?php foreach ($playlists as $playlist) {  //<?=$playlist->id //$playlist->name ?>
-                                        <?php  if($pageInfo->getPlayPeriodPlaylist() == PageInfo::PLAYLIST_NOT_SELECTED  ){  echo '<button class="val-drop-btn">Плейлисты</button>';   break;  } ?>
+                                        <?php  if($pageInfo->getPlayPeriodPlaylist() == PageInfo::PLAYLIST_NOT_SELECTED  ){  echo '<button class="val-drop-btn">Лист</button>';   break;  } ?>
                                         <?php  if($pageInfo->getPlayPeriodPlaylist() == $playlist->id  ){  echo '<button class="val-drop-btn">'.$playlist->name.'</button>';   break;  } ?>
 
                                     <?php  }  ?>
@@ -139,7 +139,7 @@ use yii\widgets\LinkPager;
                             <div class="custom-dropdown-inner">
                                 <div class="val-drop">
                                     <?php foreach ($playlists as $playlist) {  //<?=$playlist->id //$playlist->name ?>
-                                        <?php  if($pageInfo->getPlayPeriodPlaylist() == PageInfo::PLAYLIST_NOT_SELECTED  ){  echo '<button class="val-drop-btn">Плейлисты</button>';   break;  } ?>
+                                        <?php  if($pageInfo->getPlayPeriodPlaylist() == PageInfo::PLAYLIST_NOT_SELECTED  ){  echo '<button class="val-drop-btn">Лист</button>';   break;  } ?>
                                         <?php  if($pageInfo->getPlayPeriodPlaylist() == $playlist->id  ){  echo '<button class="val-drop-btn">'.$playlist->name.'</button>';   break;  } ?>
 
                                     <?php  }  ?>
@@ -936,7 +936,7 @@ use yii\widgets\LinkPager;
 
                                     <div class="val-drop">
                                         <?php foreach ($playlists as $playlist) {  //<?=$playlist->id //$playlist->name ?>
-                                            <?php  if($pageInfo->getPlayPeriodPlaylist() == PageInfo::PLAYLIST_NOT_SELECTED  ){  echo '<button class="val-drop-btn">Плейлисты</button>';   break;  } ?>
+                                            <?php  if($pageInfo->getPlayPeriodPlaylist() == PageInfo::PLAYLIST_NOT_SELECTED  ){  echo '<button class="val-drop-btn">Лист</button>';   break;  } ?>
                                             <?php  if($pageInfo->getPlayPeriodPlaylist() == $playlist->id  ){  echo '<button class="val-drop-btn">'.$playlist->name.'</button>';   break;  } ?>
 
                                         <?php  }  ?>
