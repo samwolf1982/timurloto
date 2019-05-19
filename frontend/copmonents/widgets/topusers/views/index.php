@@ -64,6 +64,8 @@
                                $models = array_values($dataProvider->getModels());
                                $keys = $dataProvider->getKeys();
                                $rows = [];
+
+                               var_dump($keys); die();
                                foreach ($models as $index => $model) {
                                    $user=User::find()->where(['id'=>$model['user_id']])->one();
                                    if(!empty($user)){
@@ -78,6 +80,9 @@
                                        // французский формат
                                        $balaneuser = number_format($useeInfo->getBalance(), 0, '', ' ');
 // 1 234,56
+
+
+
 //                                   $balaneuser=sprintf("%01.2f", $useeInfo->getBalance()));
                                    echo '         <div class="hr table-row">
                                    <div class="td table-cell td-count">'.($index+1).'</div>
