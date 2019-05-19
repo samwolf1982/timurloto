@@ -132,7 +132,7 @@ class BalancestatisticsSearch extends Balancestatistics
         $result['penetration']=777;
 
         // второй вариант проходимости
-
+die();
 
 
         return    array_merge($result,$prepare_result);   ;
