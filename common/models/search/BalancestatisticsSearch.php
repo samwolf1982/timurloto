@@ -86,18 +86,18 @@ class BalancestatisticsSearch extends Balancestatistics
 
 //        die();
 
+        // второй вариант проходимости
         $sql_2="SELECT  SUM(`plus`) as `plus`,SUM(`minus`) as `minus`  FROM `balancestatistics` WHERE user_id = :u_id  ";
         $resultProhod =   yii::$app->db->createCommand($sql_2, [
             ':u_id' => $user_id,
 //        ])->execute();
         ])->queryOne();
-
         $cbg=( $resultProhod['plus']+$resultProhod['minus'] );
         if($cbg <= 0 )$cbg=1;
-        $prepare_result['penetration']= ($resultProhod['plus'] / $cbg ) *100;
+        $prepare_result['penetration']=round(  (($resultProhod['plus'] / $cbg ) *100),2);
         //$result['penetration']=777;
+        // второй вариант проходимости end
 
-        // второй вариант проходимости
 
 
       return    array_merge($result,$prepare_result);   ;
