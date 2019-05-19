@@ -86,14 +86,16 @@ class BalancestatisticsSearch extends Balancestatistics
 
 //        die();
 
-        $sql_2="SELECT  SUM(`plus`) as `plus`,SUM(`minus`) as `minus`  FROM `balancestatistics` WHERE user_id = :u_id and created_own  BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' ";
+        $sql_2="SELECT  SUM(`plus`) as `plus`,SUM(`minus`) as `minus`  FROM `balancestatistics` WHERE user_id = :u_id  ";
         $resultProhod =   yii::$app->db->createCommand($sql_2, [
             ':u_id' => $user_id,
 //        ])->execute();
         ])->queryOne();
 
-        $prepare_result['penetration']=999;
-        $result['penetration']=777;
+        $cbg=( $resultProhod['plus']+$resultProhod['minus'] );
+        if($cbg <= 0 )$cbg=1;
+        $prepare_result['penetration']= ($resultProhod['plus'] / $cbg ) *100;
+        //$result['penetration']=777;
 
         // второй вариант проходимости
 
