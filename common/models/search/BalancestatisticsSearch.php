@@ -129,6 +129,7 @@ class BalancestatisticsSearch extends Balancestatistics
         ])->queryOne();
 
         $prepare_result['penetration']=999;
+        $result['penetration']=777;
 
         // второй вариант проходимости
 
