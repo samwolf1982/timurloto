@@ -120,6 +120,20 @@ class BalancestatisticsSearch extends Balancestatistics
             'middle_coef'=>round($result['middle_coef'],2),
             'roi'=>round(self::newRoiCalk($user_id,$lastWeek,$lastLastWeek),2),
         ];
+
+
+        $sql_2="SELECT  SUM(`plus`) as `plus`,SUM(`minus`) as `minus`  FROM `balancestatistics` WHERE user_id = :u_id and created_own  BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' ";
+        $resultProhod =   yii::$app->db->createCommand($sql_2, [
+            ':u_id' => $user_id,
+//        ])->execute();
+        ])->queryOne();
+
+        $prepare_result['penetration']=999;
+
+        // второй вариант проходимости
+
+
+
         return    array_merge($result,$prepare_result);   ;
     }
 
