@@ -84,7 +84,7 @@ class BalancestatisticsSearch extends Balancestatistics
             'roi'=>round($this->newRoiCalk($user_id),2),
             ];
 
-        die();
+//        die();
 
         $sql_2="SELECT  SUM(`plus`) as `plus`,SUM(`minus`) as `minus`  FROM `balancestatistics` WHERE user_id = :u_id and created_own  BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' ";
         $resultProhod =   yii::$app->db->createCommand($sql_2, [
