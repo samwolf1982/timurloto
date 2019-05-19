@@ -9423,7 +9423,7 @@ EOT_JS_CODE
 
 
                                 <div class="shared-bet-social">
-                                    <h5>modal-success-betЖелаем удачи в еженедельном турнире. Зарабатывай на ставках с умом, а с нами еще и без вложений</h5>
+                                    <h5>Желаем удачи в еженедельном турнире. Зарабатывай на ставках с умом, а с нами еще и без вложений</h5>
                                     <ul class="social">
                                         <li><a href="#"><span class="icon-fb"></span></a></li>
                                         <li><a href="#"><span class="icon-gp"></span></a></li>
