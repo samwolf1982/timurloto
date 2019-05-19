@@ -169,16 +169,32 @@ class StatisticsManagerCommon
             return 0;
         }
     }
+
+    // cтарый код
     private function setMinusWager($status){
         if($status==Wager::STATUS_ENTERED){
             return 0;
         }elseif ($status==Wager::STATUS_NOT_ENTERD){
             return 1;
-        }
-        else{
+        }elseif ($status==Wager::STATUS_RETURN_BET){
+            return 0;
+        } else{
             return 1;
         }
     }
+
+
+//    // cтарый код
+//    private function setMinusWager($status){
+//        if($status==Wager::STATUS_ENTERED){
+//            return 0;
+//        }elseif ($status==Wager::STATUS_NOT_ENTERD){
+//            return 1;
+//        }
+//        else{
+//            return 1;
+//        }
+//    }
 
 
 
