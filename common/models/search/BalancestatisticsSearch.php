@@ -84,7 +84,6 @@ class BalancestatisticsSearch extends Balancestatistics
             'roi'=>round($this->newRoiCalk($user_id),2),
             ];
 
-//        die();
 
         // второй вариант проходимости
         $sql_2="SELECT  SUM(`plus`) as `plus`,SUM(`minus`) as `minus`  FROM `balancestatistics` WHERE user_id = :u_id  ";
@@ -95,7 +94,6 @@ class BalancestatisticsSearch extends Balancestatistics
         $cbg=( $resultProhod['plus']+$resultProhod['minus'] );
         if($cbg <= 0 )$cbg=1;
         $prepare_result['penetration']=round(  (($resultProhod['plus'] / $cbg ) *100),2);
-        //$result['penetration']=777;
         // второй вариант проходимости end
 
 
@@ -135,6 +133,19 @@ class BalancestatisticsSearch extends Balancestatistics
             'middle_coef'=>round($result['middle_coef'],2),
             'roi'=>round(self::newRoiCalk($user_id,$lastWeek,$lastLastWeek),2),
         ];
+
+
+
+        // второй вариант проходимости
+        $sql_2="SELECT  SUM(`plus`) as `plus`,SUM(`minus`) as `minus`  FROM `balancestatistics` WHERE user_id = :u_id and created_own  BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' ";
+        $resultProhod =   yii::$app->db->createCommand($sql_2, [
+            ':u_id' => $user_id,
+//        ])->execute();
+        ])->queryOne();
+        $cbg=( $resultProhod['plus']+$resultProhod['minus'] );
+        if($cbg <= 0 )$cbg=1;
+        $prepare_result['penetration']=round(  (($resultProhod['plus'] / $cbg ) *100),2);
+        // второй вариант проходимости end
 
 
 //        $sql_2="SELECT  SUM(`plus`) as `plus`,SUM(`minus`) as `minus`  FROM `balancestatistics` WHERE user_id = :u_id and created_own  BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' ";
