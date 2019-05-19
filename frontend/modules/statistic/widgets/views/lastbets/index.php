@@ -281,26 +281,26 @@ use yii\helpers\Url;
                                 <iframe width="560" height="315" src="https://www.youtube.com/embed/k-29x5iI8dA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
                             <?php } ?>
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/TxsqgQJLyi0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <div class="cover-video__t" style="background-image: url(/images/video-1@2x.png)">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/85U_YOKFgVM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="cover-video__t" style="background-image: url(/images/video-1@2x.jpg)">
                                 <a href="#" class="round-play" data-toggle="modal" data-target="#main-video">
                                     <span class="icon-play"></span>
                                 </a>
                                 <div class="title-cover__t">
-                                    Барселона - Реал (06.05.2018)
+                                    Прогнозы. 19 мая
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="video-item__t">
                         <div class="video-inner__t">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/KrqeZ43Q65U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <div class="cover-video__t" style="background-image: url(/images/video-2@2x.png)">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/BJC-aEdG9uA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="cover-video__t" style="background-image: url(/images/video-2@2x.jpg)">
                                 <a href="#" class="round-play" data-toggle="modal" data-target="#main-video">
                                     <span class="icon-play"></span>
                                 </a>
                                 <div class="title-cover__t">
-                                    Барселона - Реал (06.05.2018)
+                                    Прогнозы. 18 мая
                                 </div>
                             </div>
                         </div>
