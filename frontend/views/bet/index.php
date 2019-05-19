@@ -2160,7 +2160,7 @@ BetAsset::register($this);
                                         <div class="video-inner__t">
                                             <iframe width="560" height="315" src="https://www.youtube.com/embed/k-29x5iI8dA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                                             <div class="cover-video__t" style="background-image: url(images/video-2@2x.png)">
-                                                <a href="#" class="round-play" data-toggle="modal" data-target="#main-video">
+                                                <a href="#" class="round-play" data-toggle="modal" data-target="#main-video_1">
                                                     <span class="icon-play"></span>
                                                 </a>
                                                 <div class="title-cover__t">
@@ -2797,7 +2797,44 @@ BetAsset::register($this);
 
                                 <iframe width="100%" src="https://www.youtube.com/embed/Hbd8ghFICJk?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-                            <iframe width="1280" height="720" src="https://www.youtube.com/embed/TxsqgQJLyi0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <?php  } ?>
+
+                            <iframe width="1280" height="720" src="https://www.youtube.com/embed/85U_YOKFgVM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="text-video-modal">
+                        <h2>Первая социальная сеть в СНГ </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto laborum libero ratione suscipit vitae? Amet dolores eaque minima, nesciunt optio quae quaerat rerum sit! Ab dolor eligendi illo ipsam tempore.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto laborum libero ratione suscipit vitae? Amet dolores eaque minima, nesciunt optio quae quaerat rerum sit! Ab dolor eligendi illo ipsam tempore.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal-wrapper video-modal" id="main-video_1">
+    <div class="modal-inner">
+        <button class="close" data-toggle="modal-dismiss"><span class="icon-close2"></span></button>
+        <div class="modal-content">
+            <div class="modal-content-inner">
+                <div class="body-modal">
+                    <div class="video-wrapper">
+                        <div class="video-wrapper-border">
+                            <span class="left-top"></span>
+                            <span class="left-bottom"></span>
+                            <span class="right-bottom"></span>
+                            <span class="right-top"></span>
+                            <?php if(0){ // for example ?>
+
+                                <iframe width="100%" src="https://www.youtube.com/embed/Hbd8ghFICJk?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+                                <iframe width="1280" height="720" src="https://www.youtube.com/embed/BJC-aEdG9uA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <?php  } ?>
                         </div>
                     </div>
@@ -2814,6 +2851,11 @@ BetAsset::register($this);
         </div>
     </div>
 </div>
+
+
+
+
+
 <div class="modal-wrapper bet-modal modal-640" id="modal-feedback">
     <div class="modal-inner">
         <div class="modal-content">
