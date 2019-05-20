@@ -59,201 +59,208 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                 <br />
 
                 <!-- sidebar menu -->
-                <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
 
-                    <div class="menu_section">
-                        <h3>Настройки</h3>
-                        <?=
-                        \yiister\gentelella\widgets\Menu::widget(
-                            [
-                                "items" => [
-                                    ["label" => "Home", "url" => "/", "icon" => "home"],
 
-                                    [
-                                        "label" => "Ставки",
-                                        "url" => "#",
-                                        "icon" => "table",
-                                        "items" => [
-                                            [
-                                                "label" => "Исходы -4ч.",
-                                                "url" => "/wagerelementslost",
-                                                "badge" => Wagerelements::getCounteventsActiveLost(ConstantsHelper::LOST_TIME_HOURS_NOT_CONFIRM)  ,
+                <?php if(!Yii::$app->user->isGuest){ ?>
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+
+                        <div class="menu_section">
+                            <h3>Настройки</h3>
+                            <?=
+                            \yiister\gentelella\widgets\Menu::widget(
+                                [
+                                    "items" => [
+                                        ["label" => "Home", "url" => "/", "icon" => "home"],
+
+                                        [
+                                            "label" => "Ставки",
+                                            "url" => "#",
+                                            "icon" => "table",
+                                            "items" => [
+                                                [
+                                                    "label" => "Исходы -4ч.",
+                                                    "url" => "/wagerelementslost",
+                                                    "badge" => Wagerelements::getCounteventsActiveLost(ConstantsHelper::LOST_TIME_HOURS_NOT_CONFIRM)  ,
+                                                ],
+                                                [
+                                                    "label" => "Исходы",
+                                                    "url" => "/wagerelements",
+                                                    "badge" => Wagerelements::getCounteventsActive()  ,
+                                                ],
+
+
                                             ],
-                                            [
-                                                "label" => "Исходы",
-                                                "url" => "/wagerelements",
-                                                "badge" => Wagerelements::getCounteventsActive()  ,
-                                            ],
-
-
                                         ],
-                                    ],
 
-                                    [
-                                        // "label" => "Баланс пользователей",
-                                        "label" => "Модули",
-                                        "icon" => "microchip",
-                                        "url" => "#",
-                                        "items" => [
-                                            ["label" => "Главная", "url" => "#", "items"=>[
+                                        [
+                                            // "label" => "Баланс пользователей",
+                                            "label" => "Модули",
+                                            "icon" => "microchip",
+                                            "url" => "#",
+                                            "items" => [
+                                                ["label" => "Главная", "url" => "#", "items"=>[
                                                     ['label'=>'Популярные ставки',"url"=>'#','items'=>[
-                                                            ['label'=>'Вид спорта','url'=>['/popularsport/index']],
-                                                            ['label'=>'Cтрана','url'=>['/popularcountry/index']],
-                                                            ['label'=>'Турниры','url'=>['/popularturnire/index']],
+                                                        ['label'=>'Вид спорта','url'=>['/popularsport/index']],
+                                                        ['label'=>'Cтрана','url'=>['/popularcountry/index']],
+                                                        ['label'=>'Турниры','url'=>['/popularturnire/index']],
                                                     ]],
                                                     ['label'=>'Популярные ставки',"url"=>['/popularsport/index']],
                                                     ['label'=>'Популярное',"url"=>['/popular/index']]
-                                            ] ],
+                                                ] ],
 
-                                            ["label" => "Матчи", "url" => "#", "items"=>[
-                                                ['label'=>'ПОПУЛЯРНЫЕ СТАВКИ НА СЕГОДНЯ (низ)',"url"=>['/populartoday/index']],
-                                                ['label'=>'ПОПУЛЯРНОЕ (лево)',"url"=>['/popularwiget/index']],
-                                                ['label'=>'ТОП МАТЧИ (верх)',"url"=>['/topmatch/index']],
-
-                                            ]
-                                            ] ,
-                                            ["label" => "Турниры", "url" => "#", "items"=>[
-                                                ['label'=>'победители предыдущих недель',"url"=>['/lastweekwinner/index']],
+                                                ["label" => "Матчи", "url" => "#", "items"=>[
+                                                    ['label'=>'ПОПУЛЯРНЫЕ СТАВКИ НА СЕГОДНЯ (низ)',"url"=>['/populartoday/index']],
+                                                    ['label'=>'ПОПУЛЯРНОЕ (лево)',"url"=>['/popularwiget/index']],
+                                                    ['label'=>'ТОП МАТЧИ (верх)',"url"=>['/topmatch/index']],
 
                                                 ]
-                                            ] ,
+                                                ] ,
+                                                ["label" => "Турниры", "url" => "#", "items"=>[
+                                                    ['label'=>'победители предыдущих недель',"url"=>['/lastweekwinner/index']],
+
+                                                ]
+                                                ] ,
 //                                            ["label" => "Транзакции", "url" => [Url::to(['/balance/transaction/index','sort'=>'-id'])]],
 //                                            ["label" => "DEV", "url" => ["/balance"]],
+                                            ],
                                         ],
-                                    ],
 
-                                    [
-                                        // "label" => "Баланс пользователей",
-                                        "label" => "Новости",
-                                        "icon" => "microchip",
-                                        "url" => "#",
-                                        "items" => [
+                                        [
+                                            // "label" => "Баланс пользователей",
+                                            "label" => "Новости",
+                                            "icon" => "microchip",
+                                            "url" => "#",
+                                            "items" => [
 
-                                            ["label" => "Новости", "url" => "#", "items"=>[
-                                                ['label'=>'Категории новостей',"url"=>['/newsb/admin-news-category']],
-                                                ['label'=>'Новости',"url"=>['/newsb/admin-news']],
+                                                ["label" => "Новости", "url" => "#", "items"=>[
+                                                    ['label'=>'Категории новостей',"url"=>['/newsb/admin-news-category']],
+                                                    ['label'=>'Новости',"url"=>['/newsb/admin-news']],
 //                                                ['label'=>'Категории',"url"=>['/news/admin-news-category']],
 
-                                            ]
-                                            ] ,
+                                                ]
+                                                ] ,
 //                                            ["label" => "Транзакции", "url" => [Url::to(['/balance/transaction/index','sort'=>'-id'])]],
 //                                            ["label" => "DEV", "url" => ["/balance"]],
-                                        ],
-                                    ],
-
-
-
-                                    [
-                                       // "label" => "Баланс пользователей",
-                                        "label" => "Баланс пользователя",
-                                        "icon" => "usd",
-                                        "url" => "#",
-                                        "items" => [
-                                            ["label" => "Кошельки", "url" => ["/balance/score"]],
-                                            ["label" => "Транзакции", "url" => [Url::to(['/balance/transaction/index','sort'=>'-id'])]],
-                                            ["label" => "DEV", "url" => ["/balance"]],
-                                        ],
-                                    ],
-
-
-                                    ["label" => "Layout", "url" => ["site/layout"], "icon" => "files-o"],
-                                    ["label" => "Error page", "url" => ["site/error-page"], "icon" => "close"],
-                                    [
-                                        "label" => "Widgets",
-                                        "icon" => "th",
-                                        "url" => "#",
-                                        "items" => [
-                                            ["label" => "Menu", "url" => ["site/menu"]],
-                                            ["label" => "Panel", "url" => ["site/panel"]],
-                                        ],
-                                    ],
-                                    [
-                                        "label" => "Badges",
-                                        "url" => "#",
-                                        "icon" => "table",
-                                        "items" => [
-                                            [
-                                                "label" => "Default",
-                                                "url" => "#",
-                                                "badge" => "123",
-                                            ],
-                                            [
-                                                "label" => "Success",
-                                                "url" => "#",
-                                                "badge" => "new",
-                                                "badgeOptions" => ["class" => "label-success"],
-                                            ],
-                                            [
-                                                "label" => "Danger",
-                                                "url" => "#",
-                                                "badge" => "!",
-                                                "badgeOptions" => ["class" => "label-danger"],
                                             ],
                                         ],
-                                    ],
-                                    [
-                                        "label" => "Пользователи",
-                                        "url" => "#",
-                                        "icon" => "users",
-                                        "items" => [
-                                            [
-                                                "label" => "Second level 1",
-                                                "url" => "#",
-                                            ],
-                                            [
-                                                "label" => "RBAC",
-                                                "url" => "#",
-                                                "items" => [
-                                                    [
-                                                        "label" => "users",
-                                                        "url" => "/user/admin/index",
-                                                    ],
-                                                    [
-                                                        "label" => "role",
-                                                        "url" => "/rbac/role/index",
-                                                    ],
-                                                    [
-                                                        "label" => "permission",
-                                                        "url" => "/rbac/permission/index",
-                                                    ],
-                                                    [
-                                                        "label" => "rule",
-                                                        "url" => "/rbac/rule/index",
-                                                    ],
-                                                    [
-                                                        "label" => "ADD",
-                                                        "url" => "#",
-                                                        "items"=>[
-                                                            [
-                                                                "label" => "add user",
-                                                                "url" => "/user/admin/create",
-                                                            ],
-                                                            [
-                                                                "label" => "add role",
-                                                                "url" => "/rbac/role/create",
-                                                            ],
-                                                            [
-                                                                "label" => "add permission",
-                                                                "url" => "/rbac/permission/create",
-                                                            ],
-                                                            [
-                                                                "label" => "add rule",
-                                                                "url" => "/rbac/rule/create",
-                                                            ],
-                                                        ]
-                                                    ],
 
+
+
+                                        [
+                                            // "label" => "Баланс пользователей",
+                                            "label" => "Баланс пользователя",
+                                            "icon" => "usd",
+                                            "url" => "#",
+                                            "items" => [
+                                                ["label" => "Кошельки", "url" => ["/balance/score"]],
+                                                ["label" => "Транзакции", "url" => [Url::to(['/balance/transaction/index','sort'=>'-id'])]],
+                                                ["label" => "DEV", "url" => ["/balance"]],
+                                            ],
+                                        ],
+
+
+                                        ["label" => "Layout", "url" => ["site/layout"], "icon" => "files-o"],
+                                        ["label" => "Error page", "url" => ["site/error-page"], "icon" => "close"],
+                                        [
+                                            "label" => "Widgets",
+                                            "icon" => "th",
+                                            "url" => "#",
+                                            "items" => [
+                                                ["label" => "Menu", "url" => ["site/menu"]],
+                                                ["label" => "Panel", "url" => ["site/panel"]],
+                                            ],
+                                        ],
+                                        [
+                                            "label" => "Badges",
+                                            "url" => "#",
+                                            "icon" => "table",
+                                            "items" => [
+                                                [
+                                                    "label" => "Default",
+                                                    "url" => "#",
+                                                    "badge" => "123",
+                                                ],
+                                                [
+                                                    "label" => "Success",
+                                                    "url" => "#",
+                                                    "badge" => "new",
+                                                    "badgeOptions" => ["class" => "label-success"],
+                                                ],
+                                                [
+                                                    "label" => "Danger",
+                                                    "url" => "#",
+                                                    "badge" => "!",
+                                                    "badgeOptions" => ["class" => "label-danger"],
+                                                ],
+                                            ],
+                                        ],
+                                        [
+                                            "label" => "Пользователи",
+                                            "url" => "#",
+                                            "icon" => "users",
+                                            "items" => [
+                                                [
+                                                    "label" => "Second level 1",
+                                                    "url" => "#",
+                                                ],
+                                                [
+                                                    "label" => "RBAC",
+                                                    "url" => "#",
+                                                    "items" => [
+                                                        [
+                                                            "label" => "users",
+                                                            "url" => "/user/admin/index",
+                                                        ],
+                                                        [
+                                                            "label" => "role",
+                                                            "url" => "/rbac/role/index",
+                                                        ],
+                                                        [
+                                                            "label" => "permission",
+                                                            "url" => "/rbac/permission/index",
+                                                        ],
+                                                        [
+                                                            "label" => "rule",
+                                                            "url" => "/rbac/rule/index",
+                                                        ],
+                                                        [
+                                                            "label" => "ADD",
+                                                            "url" => "#",
+                                                            "items"=>[
+                                                                [
+                                                                    "label" => "add user",
+                                                                    "url" => "/user/admin/create",
+                                                                ],
+                                                                [
+                                                                    "label" => "add role",
+                                                                    "url" => "/rbac/role/create",
+                                                                ],
+                                                                [
+                                                                    "label" => "add permission",
+                                                                    "url" => "/rbac/permission/create",
+                                                                ],
+                                                                [
+                                                                    "label" => "add rule",
+                                                                    "url" => "/rbac/rule/create",
+                                                                ],
+                                                            ]
+                                                        ],
+
+                                                    ],
                                                 ],
                                             ],
                                         ],
                                     ],
-                                ],
-                            ]
-                        )
-                        ?>
-                    </div>
+                                ]
+                            )
+                            ?>
+                        </div>
 
-                </div>
+                    </div>
+                <?php } ?>
+
+
+
                 <!-- /sidebar menu -->
 
                 <!-- /menu footer buttons -->
