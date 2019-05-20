@@ -60,6 +60,7 @@ class BetController extends Controller
 
         $searchModel = new BalancestatisticsSearch();
 
+        // идет в виджет Topusers
         $dataProvider = $searchModel->search_custom_last_week_live(Yii::$app->request->queryParams);
 
         $searchModel2 = new BalancestatisticsSearch();
