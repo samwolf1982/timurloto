@@ -73,8 +73,7 @@ return [
             'enableUnconfirmedLogin' => true,
             'confirmWithin' => 21600,
             'cost' => 12,
-
-            'admins' => ['admin']
+            'admins' => ['admin','admin-lmb']
         ],
         'balance' => [
             'class' => 'komer45\balance\Module',
