@@ -75,7 +75,10 @@ class AccessInfo
 
         $lastWeek    = date('Y-m-d H:i:s');
       //  $lastLastWeek= date('Y-m-d H:i:s',strtotime('last sunday + 1 day')); // бы
-        $lastLastWeek= date('Y-m-d H:i:s',strtotime('last sunday'));
+        if('Mon' != date('D')) $lastLastWeek= date('Y-m-d H:i:s',strtotime('last sunday'));
+           else $lastLastWeek= date('Y-m-d H:i:s',strtotime('last sunday + 1 day')); // бы
+
+      //  $lastLastWeek= date('Y-m-d H:i:s',strtotime('last sunday'));
         $userId=$this->user->id;
         $sql="SELECT  sum(profit) as sume FROM `balancestatistics` WHERE  created_own BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' and user_id = {$userId} ;";
 
