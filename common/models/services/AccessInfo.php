@@ -84,7 +84,8 @@ class AccessInfo
         $lastLastWeek= date('Y-m-d H:i:s',strtotime('last sunday'));
         if(date('w')==='1')  $lastLastWeek= date("Y-m-d 00:00:00");
         $userId=$this->user->id;
-        $sql="SELECT  sum(profit) as sume FROM `balancestatistics` WHERE  created_own BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' and user_id = {$userId} ;";
+      //  $sql="SELECT  sum(profit) as sume FROM `balancestatistics` WHERE  created_own BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' and user_id = {$userId} ;";
+        $sql="SELECT  sum(profit) as sume FROM `balancestatistics` WHERE  created_at BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' and user_id = {$userId} ;";
 
        // var_dump($sql); die();     //SELECT  sum(profit) as sume FROM `balancestatistics` WHERE  created_own BETWEEN '2019-05-20 00:00:00' AND '2019-05-20 09:41:24' and user_id = 187 ;
         $numberWeek=Yii::$app->db->createCommand($sql)->queryScalar();
