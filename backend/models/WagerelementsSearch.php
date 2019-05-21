@@ -123,7 +123,7 @@ class WagerelementsSearch extends Wagerelements
         $query->andFilterWhere([
             'id' => $this->id,
             'wager_id' => $this->wager_id,
-            'coef' => $this->coef,
+           // 'coef' => $this->coef,
             'sport_id' => $this->sport_id,
             'status' => $this->status,
             'created_at' => $this->created_at,
@@ -147,18 +147,28 @@ class WagerelementsSearch extends Wagerelements
             ->andFilterWhere(['like', 'info_cat_name', $this->info_cat_name]);
 
 
+          if(!empty($this->coef)){
+              $query->andFilterWhere(['like', 'wagerelements.coef', $this->coef]);
+          }else{
+
+                  $nextWeek = time() - (ConstantsHelper::LOST_TIME_HOURS_NOT_CONFIRM * 60 * 60);   // 4*60*60    - 4 часа
+                  $query->andFilterWhere(['<', 'startgame', $nextWeek]);
+              $query->andFilterWhere(['=','wager.status', Wager::STATUS_MANUAL_BET]);
+
+          }
+
           // проверка
 
-        if(0){
-            $nextWeek = time() - (ConstantsHelper::LOST_TIME_HOURS_NOT_CONFIRM * 60 * 60);   // 4*60*60    - 4 часа
-
-            $query->andFilterWhere(['<', 'startgame', $nextWeek]);
-        }
 
  //      проверка
 
         //   $query->andFilterWhere(['=','wager.status', Wager::STATUS_OPEN]);
-        $query->andFilterWhere(['=','wager.status', Wager::STATUS_MANUAL_BET]);
+        if(1){
+           // $query->andFilterWhere(['=','wager.status', Wager::STATUS_NOT_ENTERD]);
+
+        }
+//        $query->andFilterWhere(['=','wager.status', Wager::STATUS_MANUAL_BET]);
+
         $query->groupBy(['event_id']);
 
 
