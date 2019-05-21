@@ -149,7 +149,7 @@ class WagerelementsSearch extends Wagerelements
 
           // проверка
 
-        if(1){
+        if(0){
             $nextWeek = time() - (ConstantsHelper::LOST_TIME_HOURS_NOT_CONFIRM * 60 * 60);   // 4*60*60    - 4 часа
 
             $query->andFilterWhere(['<', 'startgame', $nextWeek]);
