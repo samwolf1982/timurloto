@@ -39,7 +39,6 @@
                                <div class="placeholder"><?=$model->sportname?></div>
                                <div class="value-title"><?=$model->turnirename?></div>
                            </div>
-
                            <span class="count-item-link hidden">27</span>
                        </a>
                    </li>
