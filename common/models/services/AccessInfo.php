@@ -81,6 +81,7 @@ class AccessInfo
             else $lastLastWeek= date('Y-m-d H:i:s',strtotime('last sunday + 1 day')); // бы
         }
 
+
         $lastLastWeek= date('Y-m-d H:i:s',strtotime('last sunday'));
         if(date('w')==='1')  $lastLastWeek= date("Y-m-d 00:00:00");
         $userId=$this->user->id;
