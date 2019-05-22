@@ -131,6 +131,7 @@ class UserInfo
 //    21 от 2000,001% до бесконечности
         $lv=0;
 
+
         if(!empty($balance) and  $balance>0){
           $curentPecent=$balance*100/ ConstantsHelper::DEFAULT_USER_CALCULATE_BALANCE_FOR_LEVEL;
           $curentPecent-=100;
