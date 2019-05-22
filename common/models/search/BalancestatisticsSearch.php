@@ -136,12 +136,17 @@ class BalancestatisticsSearch extends Balancestatistics
 
 
 
+
         // второй вариант проходимости
         $sql_2="SELECT  SUM(`plus`) as `plus`,SUM(`minus`) as `minus`  FROM `balancestatistics` WHERE user_id = :u_id and created_own  BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' ";
         $resultProhod =   yii::$app->db->createCommand($sql_2, [
             ':u_id' => $user_id,
 //        ])->execute();
         ])->queryOne();
+
+
+
+
         $cbg=( $resultProhod['plus']+$resultProhod['minus'] );
         if($cbg <= 0 )$cbg=1;
         $prepare_result['penetration']=round(  (($resultProhod['plus'] / $cbg ) *100),2);
@@ -736,7 +741,6 @@ $count=Yii::$app->db->createCommand("select COUNT(subquery.user_id) FROM
 
         $notEntered=Wager::STATUS_NOT_ENTERD;
          $r= Yii::$app->db->createCommand("SELECT count(id) FROM `wager` WHERE `user_id`={$uid}  AND `status` = {$notEntered};")->queryScalar();
-
          return $r;
 //         ConstantsHelper::LOST_TIME_HOURS_NOT_CONFIRM;
 //        return 77;

@@ -179,7 +179,7 @@ class StatisticsManagerCommon
         }elseif ($status==Wager::STATUS_RETURN_BET){
             return 0;
         } else{
-            return 1;
+            return 0;
         }
     }
 
