@@ -125,7 +125,7 @@ class WagerelementsSearch extends Wagerelements
             'wager_id' => $this->wager_id,
            // 'coef' => $this->coef,
             'sport_id' => $this->sport_id,
-            'status' => $this->status,
+        //  'status' => $this->status,
             'created_at' => $this->created_at,
         ]);
 
@@ -147,8 +147,27 @@ class WagerelementsSearch extends Wagerelements
             ->andFilterWhere(['like', 'info_cat_name', $this->info_cat_name]);
 
 
+          if(!empty($this->status)){
+//              const  STATUS_CREATE=-1;
+//              const  STATUS_NEW=0;
+//              const  STATUS_OPEN=1;
+//              const  STATUS_CLOSE=2;
+//              const  STATUS_C0NFIRM=3;
+//              const  STATUS_EXPIRED=4;
+//              const  STATUS_BLOCKED=5;
+//              const  STATUS_ENTERED=6;
+//              const  STATUS_NOT_ENTERD=7;
+//              const  STATUS_RETURN=8;    // NOT USE select STATUS_RETURN_BET
+//              // const  STATUS_PAID_FOR=9;  //  уже насчитано конечный статус // всем начитало пофиксить
+//              const  STATUS_RETURN_BET=10;  //  возврат
+//              const  STATUS_MANUAL_BET=11;  //  'Ручное подтверждение',
+              $query->andFilterWhere(['like', 'wagerelements.status', $this->status]);
+          }
+
+
           if(!empty($this->coef)){
               $query->andFilterWhere(['like', 'wagerelements.coef', $this->coef]);
+
           }else{
 
                   $nextWeek = time() - (ConstantsHelper::LOST_TIME_HOURS_NOT_CONFIRM * 60 * 60);   // 4*60*60    - 4 часа

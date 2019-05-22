@@ -55,12 +55,17 @@ class StatisticInformer extends \yii\base\Widget
         }else{
             $search_result= $search->searchCount($this->user_id);
             $newProfit=$this->getNewProfit();
+
         }
 
         $accessInfo=new  AccessInfo($this->user_id);
 //        $accessInfoAccount=$accessInfo->getData();
 //        $weekNum=$accessInfo->getWeekNum(Yii::$app->user->id);
         $weekProfit=$accessInfo->getWeekProfit(Yii::$app->user->id);
+
+
+        // перезапись минусов баг в паралельных записях
+        $search_result['minus']=$search->getCountminusperiod($this->user_id);
 
 
         return $this->render('statisticInformer/index',['playlists'=>$playlists,'search_result'=>$search_result,'newProfit'=>$newProfit,'user_id'=>$this->user_id,'weekProfit'=>$weekProfit] );

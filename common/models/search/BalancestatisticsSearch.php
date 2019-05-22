@@ -730,4 +730,17 @@ $count=Yii::$app->db->createCommand("select COUNT(subquery.user_id) FROM
     }
 
 
+    public function getCountminusperiod($uid)
+    {
+
+
+        $notEntered=Wager::STATUS_NOT_ENTERD;
+         $r= Yii::$app->db->createCommand("SELECT count(id) FROM `wager` WHERE `user_id`={$uid}  AND `status` = {$notEntered};")->queryScalar();
+
+         return $r;
+//         ConstantsHelper::LOST_TIME_HOURS_NOT_CONFIRM;
+//        return 77;
+    }
+
+
 }
