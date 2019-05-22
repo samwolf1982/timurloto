@@ -86,13 +86,21 @@ class AccessInfo
         if(date('w')==='1')  $lastLastWeek= date("Y-m-d 00:00:00");
         $userId=$this->user->id;
       //  $sql="SELECT  sum(profit) as sume FROM `balancestatistics` WHERE  created_own BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' and user_id = {$userId} ;";
-        $sql="SELECT  sum(profit) as sume FROM `balancestatistics` WHERE  created_at BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' and user_id = {$userId} ;";
+        $sql="SELECT  sum(profit) as sume FROM `balancestatistics` WHERE  created_own BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' and user_id = {$userId} ;";
 
        // var_dump($sql); die();     //SELECT  sum(profit) as sume FROM `balancestatistics` WHERE  created_own BETWEEN '2019-05-20 00:00:00' AND '2019-05-20 09:41:24' and user_id = 187 ;
         $numberWeek=Yii::$app->db->createCommand($sql)->queryScalar();
          if(empty($numberWeek)) $numberWeek=0;
         return  round( $numberWeek,2)  ;
 
+//        $sql1="select COUNT(subquery.user_id) FROM
+//( SELECT user_id, sum(profit) as sume, created_own  FROM `balancestatistics`  WHERE created_own BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume) AS subquery  WHERE 1";
+//        $count=Yii::$app->db->createCommand($sql1,[':status' => 1])->queryScalar();
+//        $sql2= "SELECT user_id, sum(profit) as sume, (SUM(`penetration`)/ COUNT(`penetration`)*100) as penet, ( SUM(`middle_coef`) / COUNT(`middle_coef`))    as mdc, (SUM(`roi`) / COUNT(`roi`)) as ro, created_own
+//                        FROM `balancestatistics`  WHERE created_at BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume DESC ";
+//
+//        $sql2= "SELECT user_id, sum(profit) as sume, (SUM(`penetration`)/ COUNT(`penetration`)*100) as penet, ( SUM(`middle_coef`) / COUNT(`middle_coef`))    as mdc, (SUM(`roi`) / COUNT(`roi`)) as ro, created_own
+//                        FROM `balancestatistics`  WHERE created_own BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume DESC ";
 
     }
 
