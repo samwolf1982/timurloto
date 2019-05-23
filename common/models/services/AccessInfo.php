@@ -70,7 +70,7 @@ class AccessInfo
     /**
      * профит за нелелю
      */
-    public function getWeekProfit($baseUserId)
+    public  function getWeekProfit($baseUserId)
     {
 
         $lastWeek    = date('Y-m-d H:i:s');

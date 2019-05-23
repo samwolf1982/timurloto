@@ -145,7 +145,7 @@ class BetController extends Controller
     public function actionNextload()
     {
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-        $user_id = yii::$app->user->identity->id;
+        $user_id = !empty(yii::$app->user->identity->id)?yii::$app->user->identity->id:-1 ;
         if ($user_id === NULL)  $user_id = -1;
 
         $offset=Yii::$app->request->post('offset');

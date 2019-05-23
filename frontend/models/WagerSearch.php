@@ -183,7 +183,9 @@ class WagerSearch extends Wager
         $post_level=Yii::$app->request->post('level');
         if (!empty($post_level) &&$post_level=='pro' ) {  // for PRO
             $query->innerJoin('balance_score','wager.user_id =balance_score.user_id');
-            $query->andFilterWhere(['>', 'balance_score.balance', ((2*ConstantsHelper::DEFAULT_USER_CALCULATE_BALANCE_FOR_LEVEL)-1) ]); // balance_score.balance > 180000
+            //  $proBalance=140*100000/100;
+            $proBalance=140000;
+            $query->andFilterWhere(['>', 'balance_score.balance', $proBalance ]); // balance_score.balance > 180000
         }
 
 

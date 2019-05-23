@@ -9,7 +9,7 @@ use yii\helpers\Url;
 
 ?>
 
-<div class="row table-row">
+<div class="row table-row" id="pro">
     <div class="column-8">
         <div class="table-wrapper last-bet">
             <div class="table-inner table-transparent">
@@ -39,7 +39,7 @@ use yii\helpers\Url;
                                 </li>
 
                                 <li class="<?= ($proLevel?'active':'');?>" >
-                                    <a onclick="window.location='<?=Url::to(['/bet','level'=>'pro']);?>'" href="<?=Url::toRoute(['/bet','level'=>'pro'])?>">Только PRO</a>
+                                    <a onclick="window.location='<?=Url::to(['/bet','level'=>'pro','#'=>'pro']);?>'" href="<?=Url::toRoute(['/bet','level'=>'pro','#'=>'pro'])?>">Только PRO</a>
                                 </li>
 
                             </ul>

@@ -2,6 +2,7 @@
 
    use common\models\helpers\HtmlGenerator;
    use common\models\overiden\User;
+   use common\models\services\AccessInfo;
    use common\models\services\UserInfo;
    use yii\helpers\Html;
    use yii\helpers\Url;
@@ -73,6 +74,7 @@
 
                                    $useeInfo=new UserInfo($user->id);
                                    $pathToUser=Url::toRoute(['/account/view','id'=>$user->id]);
+
                                  $profite=  sprintf("%01.2f %%", $model['sume']);
                                  $penet=  sprintf("%01.2f %%", $model['penet']);
                                  $coef=sprintf("%01.2f", $model['mdc']);
@@ -80,10 +82,13 @@
                                        // французский формат
                                        $balaneuser = number_format($useeInfo->getBalance(), 0, '', ' ');
 // 1 234,56
+                                       // перезапись профит иначе не совпадает
+                                       if(!Yii::$app->request->get('dtop')){
+                                           $accesInfo=new AccessInfo($user->id);
+                                           $profite=$accesInfo->getWeekProfit($user->id);
+                                       }
 
 
-
-//                                   $balaneuser=sprintf("%01.2f", $useeInfo->getBalance()));
                                    echo '         <div class="hr table-row">
                                    <div class="td table-cell td-count">#</div>
                                    <div class="td table-cell td-user">
