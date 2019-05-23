@@ -73,7 +73,8 @@ use yii\helpers\Html;
                                                             <td esdev-links-color="#757575" align="center" style="Margin:0;padding-top:10px;padding-bottom:20px;padding-left:30px;padding-right:30px;"> <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;line-height:24px;color:#696969;">Чтобы активировать свой аккаунт необходимо кликнуть на кнопку ниже</p> </td>
                                                         </tr>
                                                         <tr style="border-collapse:collapse;">
-                                                            <td align="center" style="padding:0;Margin:0;padding-top:10px;padding-bottom:20px;"> <span class="es-button-border es-button-border-2" style="border-style:solid;border-color:#26A4D3;background:#CD0F6A;border-width:0px;display:inline-block;border-radius:50px;width:auto;">
+                                                            <td align="center" style="padding:0;Margin:0;padding-top:10px;padding-bottom:20px;">
+                                                                <p class="es-button-border es-button-border-2" style="border-style:solid;border-color:#26A4D3;background:#CD0F6A;border-width:0px;display:inline-block;border-radius:50px;width:auto;">
 
 <?php if ($token !== null): ?>
 
@@ -92,7 +93,7 @@ use yii\helpers\Html;
 
 
 
-                      </span> </td>
+                      </p> </td>
                                                         </tr>
                                                         <tr style="border-collapse:collapse;">
                                                             <td align="center" style="Margin:0;padding-bottom:15px;padding-top:20px;padding-left:20px;padding-right:20px;">
