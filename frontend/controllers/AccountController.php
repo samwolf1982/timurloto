@@ -81,6 +81,7 @@ class AccountController extends Controller
      */
     public function actionIndex()
     {
+
         // todo убрать возможно (g)
         // сюда можно попасть и без кошелька fix если нету тогда создаем
         if(!empty( Yii::$app->user->id)) DoSome::createBalance( Yii::$app->user->id);
