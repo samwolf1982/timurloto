@@ -219,6 +219,8 @@ class User extends ActiveRecord implements IdentityInterface
     public function getNewprofitPeriod($period)
     {
        // todo  пока за основу берем баланс невозомжно высчтитать профит за период.
+        // Дима сказал не надо
+
         //yii::error(['ji'=>$this->userbalance->id]);
         //SELECT * FROM `balance_transaction` WHERE `id` = ( SELECT max(r2.id) FROM balance_transaction r2 WHERE r2.balance_id = 68 and r2.date < '2019-04-02 00:00:00' );
       //  $sql="SELECT  SUM(profit) as `profit`,SUM(`penetration`)/ COUNT(`penetration`)*100 as `penetration`, SUM(`middle_coef`) / COUNT(`middle_coef`)  as `middle_coef`, SUM(`roi`) / COUNT(`roi`) * 100 as `roi` ,SUM(`plus`) as `plus`,SUM(`minus`) as `minus`  FROM `balancestatistics` WHERE user_id = :u_id";

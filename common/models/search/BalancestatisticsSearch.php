@@ -121,7 +121,7 @@ class BalancestatisticsSearch extends Balancestatistics
 
 //        WHERE created_own BETWEEN '{$lastLastWeek}' AND '{$lastWeek}'
       //  $sql="SELECT  SUM(profit) as `profit`,SUM(`penetration`)/ COUNT(`penetration`)*100 as `penetration`, SUM(`middle_coef`) / COUNT(`middle_coef`)  as `middle_coef`, SUM(`roi`) / COUNT(`roi`) * 100 as `roi` ,SUM(`plus`) as `plus`,SUM(`minus`) as `minus`  FROM `balancestatistics` WHERE user_id = :u_id ";
-        $sql="SELECT  SUM(profit) as `profit`,SUM(`penetration`)/ COUNT(`penetration`)*100 as `penetration`, SUM(`middle_coef`) / COUNT(`middle_coef`)  as `middle_coef`, SUM(`roi`) / COUNT(`roi`) * 100 as `roi` ,SUM(`plus`) as `plus`,SUM(`minus`) as `minus`  FROM `balancestatistics` WHERE user_id = :u_id and created_own  BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' ";
+        $sql="SELECT  SUM(profit) as `profit`,SUM(`penetration`)/ COUNT(`penetration`)*100 as `penetration`, SUM(`middle_coef`) / COUNT(`middle_coef`)  as `middle_coef`, SUM(`roi`) / COUNT(`roi`) * 100 as `roi` ,SUM(`plus`) as `plus`,SUM(`minus`) as `minus`  FROM `balancestatistics` WHERE user_id = :u_id and created_at  BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' ";
         $result =   yii::$app->db->createCommand($sql, [
             ':u_id' => $user_id,
 //        ])->execute();
