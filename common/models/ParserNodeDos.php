@@ -163,19 +163,36 @@ class ParserNodeDos extends \yii\base\BaseObject
 
         }
 
-        foreach ($eventsCollector as $item) {
-            foreach ($item as $event) {
+
+//         var_dump($gameId); die();
+        if('247027603' == $gameId ){ // если нужно что-то поднять  после 1.06 убрать
+            foreach ($eventsCollector as $item) {
+                foreach ($item as $event) {
+                    if(in_array($event->attributes->{'market-id'},ConstantsHelper::AVELABLE_MAKRETS)) {
+
+                        if($event->attributes->{'market-id'} == '15323' ){
+                            array_unshift($res,['id' => $event->id, 'marketId' => $event->attributes->{'market-id'}, 'marketName' => $event->attributes->{'market-name'}, 'eventName' => $event->attributes->{'event-name'}, 'cf' => $event->attributes->{'odd'}]);
+                        }else{
+                            $res[] = ['id' => $event->id, 'marketId' => $event->attributes->{'market-id'}, 'marketName' => $event->attributes->{'market-name'}, 'eventName' => $event->attributes->{'event-name'}, 'cf' => $event->attributes->{'odd'}];
+                        }
+
+
+                             }
+                }
+            }
+        }else{
+            foreach ($eventsCollector as $item) {
+                foreach ($item as $event) {
 //                var_dump($event);
 //                die();
-                if(in_array($event->attributes->{'market-id'},ConstantsHelper::AVELABLE_MAKRETS)) {
-                    $res[] = ['id' => $event->id, 'marketId' => $event->attributes->{'market-id'}, 'marketName' => $event->attributes->{'market-name'}, 'eventName' => $event->attributes->{'event-name'}, 'cf' => $event->attributes->{'odd'}];
+                    if(in_array($event->attributes->{'market-id'},ConstantsHelper::AVELABLE_MAKRETS)) {
+                        $res[] = ['id' => $event->id, 'marketId' => $event->attributes->{'market-id'}, 'marketName' => $event->attributes->{'market-name'}, 'eventName' => $event->attributes->{'event-name'}, 'cf' => $event->attributes->{'odd'}];
+                    }
                 }
-
-
             }
-
-
         }
+
+
 
 
         $resulte['data']=$res;
