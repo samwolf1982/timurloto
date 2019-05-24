@@ -50,6 +50,7 @@ class StatisticInformer extends \yii\base\Widget
         $search=new   BalancestatisticsSearch();
 
         if(!empty($this->period)){ // для смещения по времени
+
             $search_result= $search->searchCountPeroiod($this->user_id,$this->period);
             $newProfit=$this->getNewProfitPeriod($this->period);
         }else{

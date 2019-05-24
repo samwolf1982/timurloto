@@ -82,11 +82,11 @@
                                        // французский формат
                                        $balaneuser = number_format($useeInfo->getBalance(), 0, '', ' ');
 // 1 234,56
-                                       // перезапись профит иначе не совпадает
-                                       if(!Yii::$app->request->get('dtop')){
-                                           $accesInfo=new AccessInfo($user->id);
-                                           $profite=$accesInfo->getWeekProfit($user->id);
-                                       }
+                                       // перезапись профит иначе не совпадает // берем профит из кабинета
+//                                       if(!Yii::$app->request->get('dtop')){
+//                                           $accesInfo=new AccessInfo($user->id);
+//                                           $profite=$accesInfo->getWeekProfit($user->id);
+//                                       }
 
 
                                    echo '         <div class="hr table-row">

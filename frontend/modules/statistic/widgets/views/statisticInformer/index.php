@@ -190,7 +190,7 @@ use yii\helpers\Url;
                                                     <?php if(0){ //старый профит относительно ставки НЕ баланса ?>
                                                         <?=$search_result['profit']?> <sup>%</sup>
                                                     <?php } ?>
-                                    <?=$newProfit?> <sup>%</sup>
+                                    <?= $newProfit ?> <sup>%</sup>
 
                                                 </span>
                                 <span class="list-stats-tbl-title">
