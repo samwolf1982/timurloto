@@ -139,6 +139,7 @@ class ParserNodeDos extends \yii\base\BaseObject
 
         $res=[];
         $ofsetPeriodo=Ofseroperiodo::find()->where(1)->asArray()->all();
+//        var_dump($ofsetPeriodo); die();
         if(!empty($ofsetPeriodo)){
             $ofsetPeriodo = ArrayHelper::getColumn($ofsetPeriodo, 'period_name');
         }

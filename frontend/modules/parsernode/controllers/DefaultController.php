@@ -16,7 +16,7 @@ use yii\web\Response;
 class DefaultController extends Controller
 {
 
-    private  $cacheLive=240;
+    private  $cacheLive=300;
     /**
      * step 1
      * @return array
@@ -175,6 +175,7 @@ class DefaultController extends Controller
      */
     public function actionEvents($gameId=0)
     {
+
         if (!empty($_POST['id'])) $gameId = $_POST['id'];
         $dos = new ParserNodeDos();
         $data = $dos->getEventsByGameId($gameId);
