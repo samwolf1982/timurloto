@@ -59,7 +59,7 @@ class AccessInfo
         $lastLastWeek= date('Y-m-d H:i:s',strtotime('last monday'));
         if(date('w')==='1')  $lastLastWeek= date("Y-m-d 00:00:00"); // если понедельник тогда берем текущий день с 00:00:00
 
-        $sql="SELECT user_id, sum(profit) as sume FROM `balancestatistics` WHERE  created_own BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume DESC;";
+        $sql="SELECT user_id, sum(profit) as sume FROM `balancestatistics` WHERE  created_at BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume DESC;";
               $numberWeek=0;
               foreach (Yii::$app->db->createCommand($sql)->queryAll() as $i=>$el){
                          if($el['user_id']==$baseUserId)  {$numberWeek=$i; $numberWeek++; break; }
@@ -88,7 +88,7 @@ class AccessInfo
         if(date('w')==='1')  $lastLastWeek= date("Y-m-d 00:00:00"); // если понедельник тогда берем текущий день с 00:00:00
         $userId=$this->user->id;
       //  $sql="SELECT  sum(profit) as sume FROM `balancestatistics` WHERE  created_own BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' and user_id = {$userId} ;";
-        $sql="SELECT  sum(profit) as sume FROM `balancestatistics` WHERE  created_own BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' and user_id = {$userId} ;";
+        $sql="SELECT  sum(profit) as sume FROM `balancestatistics` WHERE  created_at BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' and user_id = {$userId} ;";
 
       //  var_dump($sql); die();     //SELECT  sum(profit) as sume FROM `balancestatistics` WHERE  created_own BETWEEN '2019-05-20 00:00:00' AND '2019-05-20 09:41:24' and user_id = 187 ;
         $numberWeek=Yii::$app->db->createCommand($sql)->queryScalar();
@@ -114,7 +114,7 @@ class AccessInfo
     {
         $lastLastWeek= date('Y-m-d H:i:s',strtotime('-90 days'));
         $lastWeek    = date('Y-m-d H:i:s');
-        $sql="SELECT user_id, sum(profit) as sume FROM `balancestatistics` WHERE  created_own BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume DESC;";
+        $sql="SELECT user_id, sum(profit) as sume FROM `balancestatistics` WHERE  created_at BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume DESC;";
         $numberWeek=0;
         foreach (Yii::$app->db->createCommand($sql)->queryAll() as $i=>$el){
             if($el['user_id']==$baseUserId)  {$numberWeek=$i; $numberWeek++; break; }

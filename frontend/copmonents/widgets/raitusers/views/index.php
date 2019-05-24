@@ -77,6 +77,7 @@
                                <?php
                                $models = array_values($dataProvider->getModels());
                                $keys = $dataProvider->getKeys();
+
                                $rows = [];
                                foreach ($models as $index => $model) {
 

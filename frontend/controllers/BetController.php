@@ -59,10 +59,10 @@ class BetController extends Controller
         $model_three= new DynamicModel(compact('id', 'name')); // hz
 
         $searchModel = new BalancestatisticsSearch();
-
         // идет в виджет Topusers
         $dataProvider = $searchModel->search_custom_last_week_live(Yii::$app->request->queryParams);
 
+        // идет в РЕЙТИНГ ПОЛЬЗОВАТЕЛЕЙ месяц ,,,
         $searchModel2 = new BalancestatisticsSearch();
         $dataProvider2 = $searchModel2->search_custom_last_week_with_plus(Yii::$app->request->queryParams);  // top 100
 
