@@ -149,7 +149,7 @@ class WagerInfoFront
      */
     public function getStartGame()
     {
-         return gmdate("Y-m-d H:i", ( $this->startGame + 7200) );
+         return gmdate("Y-m-d H:i", ( $this->startGame + 10800) );
 
 
     }

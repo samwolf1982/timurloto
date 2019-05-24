@@ -58,6 +58,9 @@ class WagerInfoFrontSingle
       $this->created_at=  date_format($date,"d-m-Y") ;
 
       //$this->start_at=   $this->wager->s date_format($date,"d-m-Y") ;
+      //$this->start_at=   $this->wager->getStartGame();// date_format($date,"d-m-Y") ;
+     // var_dump(get_class($this->wager)); die();
+
       $this->start_at=   $this->wager->getStartGame();// date_format($date,"d-m-Y") ;
       $this->type_extend=$type_extend;
       $this->bank_percent=$bank_percent;
