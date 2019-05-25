@@ -375,18 +375,18 @@ $showPointsEffect=false; // ефект для точек
         <div class="social-block">
             <ul class="social-list">
                 <li>
-                    <a href="#" target="_blank">
+                    <a href="https://www.youtube.com/channel/UCw9BOXOTaRzoMAZVBpkzBvA?view_as=subscriber" target="_blank">
                         <span class="icon-youtube"></span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" target="_blank">
+                    <a href="https://tglink.ru/footballlmb" target="_blank">
                         <span class="icon-telegram"></span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" target="_blank">
-                        <span class="icon-mail"></span>
+                    <a href="https://www.instagram.com/lookmybet/" target="_blank">
+                        <span class="icon-insta"></span>
                     </a>
                 </li>
             </ul>

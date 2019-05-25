@@ -149,9 +149,7 @@ EOT_JS_CODE
 
                                 <div class="form-wrapper" id="formWrapperRegister"></div>
 
-
-
-
+                                
                             </div>
                             <div class="left-side-inner login-inner">
                                 <h2>Авторизируйтесь</h2>
