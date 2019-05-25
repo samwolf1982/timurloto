@@ -7515,7 +7515,7 @@ $accessInfoAccount;
                     <div class="choose-bet-wrapper">
                         <div class="choose-bet-inner">
                             <div class="head-choose">
-                                <h2>Букмекерские конторы</h2>
+                                <h2>Отправить жалобу</h2>
                                 <p>Выбери до 3х букмекерских контор, в которых играешь</p>
                             </div>
                             <div class="complain-form">
