@@ -62,24 +62,16 @@
                                </div>
 
                                <?php
-
-                              // var_dump($dataProvider->getKeys()); die();
-//                               var_dump($dataProvider->keys); die();
-//                               var_dump($dataProvider->getModels()); die();
-
                                $models = array_values($dataProvider->getModels());
-
-
                                // индекс (номер в турнире) первого игрока потом инкремент
                                $startCount=1;
                                if(isset($models[0]['user_id'])){
                                    $accessInfo=new AccessInfo($models[0]['user_id']);
                                    $startCount=  $accessInfo->getWeekNum($models[0]['user_id'],Yii::$app->request->queryParams);
                                }
+                             //  var_dump($startCount); die();
                             //   $keys = $dataProvider->getKeys();
                                $rows = [];
-
-//                               var_dump($dataProvider); die();
                                foreach ($models as $index => $model) {
                                    $user=User::find()->where(['id'=>$model['user_id']])->one();
                                    if(!empty($user)){
@@ -95,6 +87,7 @@
                                        // французский формат
                                        $balaneuser = number_format($useeInfo->getBalance(), 0, '', ' ');
 // 1 234,56
+                                     //  yii::error($startCount);
                                        // перезапись профит иначе не совпадает // берем профит из кабинета
 //                                       if(!Yii::$app->request->get('dtop')){
 //                                           $accesInfo=new AccessInfo($user->id);

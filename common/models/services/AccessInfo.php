@@ -68,13 +68,59 @@ class AccessInfo
 //
 
         // todo cache add here
-        $sql="SELECT user_id, sum(profit) as sume FROM `balancestatistics` WHERE  created_at BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume DESC;";
+
+        $sql="SELECT user_id, sum(profit) as sume FROM `balancestatistics` INNER JOIN `user` ON balancestatistics.user_id = user.id WHERE  balancestatistics.created_at BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume DESC;";
               $numberWeek=0;
               foreach (Yii::$app->db->createCommand($sql)->queryAll() as $i=>$el){
                          if($el['user_id']==$baseUserId)  {$numberWeek=$i; $numberWeek++; break; }
                      }
                      return $numberWeek;
     }
+
+    /**
+     * номер в Рейтинге  низ таб за месяц
+     */
+    public function getRaitNum($baseUserId,$params=[])
+    {
+//        $lastWeek    = date('Y-m-d H:i:s',strtotime('last monday'));
+//        $lastLastWeek= date('Y-m-d H:i:s',strtotime('last monday -7 days'));
+        $offcet_time='-31 days';
+        $lastWeek    = date('Y-m-d H:i:s');
+        if(!empty($params['period']) and  ($params['period']==ConstantsHelper::PERIOD_3_M or $params['period']==ConstantsHelper::PERIOD_ALL) ){
+            if($params['period']==ConstantsHelper::PERIOD_3_M){
+                $offcet_time='-93 days';
+            }elseif ($params['period']==ConstantsHelper::PERIOD_ALL) {
+                $offcet_time='-36000 days';
+            }
+        }
+        $lastLastWeek= date('Y-m-d H:i:s',strtotime($offcet_time));
+
+        ////////////////
+        //    return 23;
+      //  $lastWeek    = date('Y-m-d H:i:s');
+        //$lastLastWeek= date('Y-m-d H:i:s',strtotime('last monday'));
+       // if(date('w')==='1')  $lastLastWeek= date("Y-m-d 00:00:00"); // если понедельник тогда берем текущий день с 00:00:00
+
+
+//        if(isset($params['dtop'])){
+//            $lastWeek = $params['dtop'];
+//            $lastLastWeek =  date('Y-m-d H:i:s', (strtotime($params['dtop']) - 7*24*60*60) );
+//        }
+//
+        // todo cache add here
+        //SELECT user_id, sum(profit) as sume FROM `balancestatistics` INNER JOIN `user` ON balancestatistics.user_id = user.id WHERE  balancestatistics.created_at BETWEEN '2019-04-24 18:56:44' AND '2019-05-25 18:56:44' GROUP BY user_id ORDER BY sume DESC;
+        $sql="SELECT user_id, sum(profit) as sume FROM `balancestatistics`  INNER JOIN `user` ON balancestatistics.user_id = user.id WHERE  balancestatistics.created_at BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume DESC;";
+//        var_dump($sql); die();
+        $numberWeek=0;
+        foreach (Yii::$app->db->createCommand($sql)->queryAll() as $i=>$el){
+            if($el['user_id']==$baseUserId)  {$numberWeek=$i; $numberWeek++; break; }
+        }
+
+      //  var_dump($numberWeek); die();
+        return $numberWeek;
+    }
+
+
 
     /**
      * профит за нелелю

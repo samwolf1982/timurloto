@@ -4,6 +4,7 @@
    use common\models\helpers\HtmlGenerator;
    use common\models\overiden\User;
    use common\models\search\BalancestatisticsSearch;
+   use common\models\services\AccessInfo;
    use common\models\services\UserInfo;
    use yii\helpers\Html;
    use yii\helpers\Url;
@@ -78,8 +79,17 @@
                                $models = array_values($dataProvider->getModels());
                                $keys = $dataProvider->getKeys();
 
+                               // индекс (номер в турнире) первого игрока потом инкремент
+                               $startCount=1;
+                               if(isset($models[0]['user_id'])){
+                                   $accessInfo=new AccessInfo($models[0]['user_id']);
+                                   $startCount=  $accessInfo->getRaitNum($models[0]['user_id'],Yii::$app->request->queryParams);
+                               }
+                                 //  var_dump( $dataProvider->keys);die();
+
                                $rows = [];
                                foreach ($models as $index => $model) {
+
 
                                    $user=User::find()->where(['id'=>$model['user_id']])->one();
                                    if(empty($user)) continue;
@@ -107,7 +117,7 @@
                                    $lv_minus=  $lv['minus'];
 
                                    echo '         <div class="hr table-row">
-                                   <div class="td table-cell td-count">#</div>
+                                   <div class="td table-cell td-count">'.$startCount++.'</div>
                                    <div class="td table-cell td-user">
                                       <div class="row-ava">
                                            <div class="rate-avatar">
