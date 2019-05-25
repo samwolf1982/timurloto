@@ -35,7 +35,7 @@ use yii\helpers\Url;
                             <ul class="head-tabs">
 
                                 <li class="<?= (!$proLevel?'active':'');?>">
-                                    <a onclick="window.location='<?=Url::to(['/bet']);?>'" href="<?=Url::toRoute(['/bet'])?>">Все Прогнозы</a>
+                                    <a onclick="window.location='<?=Url::to(['/bet','#'=>'pro']);?>'" href="<?=Url::toRoute(['/bet','#'=>'pro'])?>">Все Прогнозы</a>
                                 </li>
 
                                 <li class="<?= ($proLevel?'active':'');?>" >
