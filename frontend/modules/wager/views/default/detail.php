@@ -59,7 +59,7 @@ use common\models\Wagerelements;
                                     </div>
                                     <div class="item-tbl-row-bts">
                                         <div class="title__t"><?= $item->getFormantedStartGame(); ?></div>
-                                        <div class="value__t" style=" display: flex; align-items: center;">
+                                        <div class="value__t" style=" display: flex; align-items: center; justify-content: space-between;">
                                        <span>     <?=$item->getFormantedNameAndPercent() ?></span>
 
                                             <?php if($item->status==6 || $item->status==7){ ?>
