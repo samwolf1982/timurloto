@@ -68,7 +68,6 @@ class AccessInfo
 //
 
         // todo cache add here
-
         $sql="SELECT user_id, sum(profit) as sume FROM `balancestatistics` INNER JOIN `user` ON balancestatistics.user_id = user.id WHERE  balancestatistics.created_at BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume DESC;";
               $numberWeek=0;
               foreach (Yii::$app->db->createCommand($sql)->queryAll() as $i=>$el){
