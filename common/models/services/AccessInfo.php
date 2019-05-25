@@ -25,7 +25,8 @@ class AccessInfo
 
     public function __construct($u_id)
     {
-      $this->user=User::find()->where(['id'=>$u_id])->one();
+//      $this->user=User::find()->where(['id'=>$u_id])->one();
+      $this->user=User::find()->where(['id'=>$u_id])->cache(ConstantsHelper::USER_FIND_CACHE_TIME)->one();
 //      $this->params=$params;
 //      $this->period=$this->setPeriodfield($params);
 //        yii::error($this->period);
@@ -52,12 +53,19 @@ class AccessInfo
     /**
      * номер в турнире за неделю
      */
-    public function getWeekNum($baseUserId)
+    public function getWeekNum($baseUserId,$params=[])
     {
     //    return 23;
         $lastWeek    = date('Y-m-d H:i:s');
         $lastLastWeek= date('Y-m-d H:i:s',strtotime('last monday'));
         if(date('w')==='1')  $lastLastWeek= date("Y-m-d 00:00:00"); // если понедельник тогда берем текущий день с 00:00:00
+
+
+        if(isset($params['dtop'])){
+            $lastWeek = $params['dtop'];
+            $lastLastWeek =  date('Y-m-d H:i:s', (strtotime($params['dtop']) - 7*24*60*60) );
+        }
+//
 
         // todo cache add here
         $sql="SELECT user_id, sum(profit) as sume FROM `balancestatistics` WHERE  created_at BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume DESC;";

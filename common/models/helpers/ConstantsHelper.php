@@ -267,6 +267,9 @@ class ConstantsHelper
 //    const THIS_GAME_MAYBE_CLOSE_OR_ERROR = 'THIS_GAME_MAYBE_CLOSE_OR_ERROR';
 
 
+// кеширование активрекорд
+   const  USER_FIND_CACHE_TIME=3600;
+
 
 }
 

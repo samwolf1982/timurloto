@@ -74,7 +74,7 @@
                                $startCount=1;
                                if(isset($models[0]['user_id'])){
                                    $accessInfo=new AccessInfo($models[0]['user_id']);
-                                   $startCount=  $accessInfo->getWeekNum($models[0]['user_id']);
+                                   $startCount=  $accessInfo->getWeekNum($models[0]['user_id'],Yii::$app->request->queryParams);
                                }
                             //   $keys = $dataProvider->getKeys();
                                $rows = [];
