@@ -52,7 +52,7 @@ use common\models\Wagerelements;
                                     <div class="table-bets-row">
                                     <div class="count-row__t"><?=$k+1?></div>
                                     <div class="item-tbl-row-bts">
-                                        <div class="title__t"><?=$item->sport_name ?></div>
+                                        <div class="title__t 789"><?=$item->sport_name ?>  <?=$item->category_name ?>    </div>
                                         <div class="value__t"><?=$item->name ?></div>
                                     </div>
                                     <div class="item-tbl-row-bts">
