@@ -62,7 +62,8 @@ use common\models\Wagerelements;
                                         <div class="value__t" style=" display: flex; align-items: center; justify-content: space-between;">
                                        <span>     <?=$item->getFormantedNameAndPercent() ?></span>
 
-                                            <?php if($item->status==6 || $item->status==7){ ?>
+                                            <?php if(    0   ){ ?>
+                                            <?php //if(    $item->status==6 || $item->status==7   ){ ?>
                                             <img class="resultoEventImage "
                                                  src="<?=$item->statuswageritemimagelogo;?>"
                                                  alt="status ok">
