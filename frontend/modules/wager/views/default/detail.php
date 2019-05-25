@@ -53,7 +53,10 @@ use common\models\Wagerelements;
                                     <div class="count-row__t"><?=$k+1?></div>
                                     <div class="item-tbl-row-bts">
                                         <div class="title__t 789"><?=$item->sport_name ?> - <?=$item->category_name ?>    </div>
-                                        <div class="value__t"><?=$item->name ?>  <span style="color: #D00269;">( Не прошла )</span></div>
+                                        <div class="value__t"><?=$item->name ?>
+                                            <img src="/images/avatar/oksm.png" alt="status ok">
+
+                                        </div>
                                     </div>
                                     <div class="item-tbl-row-bts">
                                         <div class="title__t"><?= $item->getFormantedStartGame(); ?></div>
