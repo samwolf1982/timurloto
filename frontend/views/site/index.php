@@ -174,28 +174,28 @@ $showPointsEffect=false; // ефект для точек
                                             <li>
                                                 <a href="#" data-target="#tab2" class="btn-tab btn-hover">
                                                     <i class="icon-arrow_right"></i>
-                                                    Бесплатные прогнозы
+                                                    ШИРОКАЯ ЛИНИЯ
                                                     <span></span>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#" data-target="#tab3" class="btn-tab btn-hover">
                                                     <i class="icon-arrow_right"></i>
-                                                    Прозрачная статистика
+                                                    КАК ЗАРАБОТАТЬ
                                                     <span></span>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#" data-target="#tab4" class="btn-tab btn-hover">
                                                     <i class="icon-arrow_right"></i>
-                                                    Простота и удобство
+                                                    АНАЛИЗ ИГРЫ
                                                     <span></span>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#" data-target="#tab5" class="btn-tab btn-hover">
                                                     <i class="icon-arrow_right"></i>
-                                                    Широкие возможности
+                                                    БЕЗОПАСНОСТЬ
                                                     <span></span>
                                                 </a>
                                             </li>
