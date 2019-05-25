@@ -62,8 +62,21 @@
                                </div>
 
                                <?php
+
+                              // var_dump($dataProvider->getKeys()); die();
+//                               var_dump($dataProvider->keys); die();
+//                               var_dump($dataProvider->getModels()); die();
+
                                $models = array_values($dataProvider->getModels());
-                               $keys = $dataProvider->getKeys();
+
+
+                               // индекс (номер в турнире) первого игрока потом инкремент
+                               $startCount=1;
+                               if(isset($models[0]['user_id'])){
+                                   $accessInfo=new AccessInfo($models[0]['user_id']);
+                                   $startCount=  $accessInfo->getWeekNum($models[0]['user_id']);
+                               }
+                            //   $keys = $dataProvider->getKeys();
                                $rows = [];
 
 //                               var_dump($dataProvider); die();
@@ -90,7 +103,7 @@
 
 
                                    echo '         <div class="hr table-row">
-                                   <div class="td table-cell td-count">#</div>
+                                   <div class="td table-cell td-count">'.$startCount++.'</div>
                                    <div class="td table-cell td-user">
                                       <div class="row-ava">
                                            <div class="rate-avatar">

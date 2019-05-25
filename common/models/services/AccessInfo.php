@@ -59,14 +59,13 @@ class AccessInfo
         $lastLastWeek= date('Y-m-d H:i:s',strtotime('last monday'));
         if(date('w')==='1')  $lastLastWeek= date("Y-m-d 00:00:00"); // если понедельник тогда берем текущий день с 00:00:00
 
+        // todo cache add here
         $sql="SELECT user_id, sum(profit) as sume FROM `balancestatistics` WHERE  created_at BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume DESC;";
               $numberWeek=0;
               foreach (Yii::$app->db->createCommand($sql)->queryAll() as $i=>$el){
                          if($el['user_id']==$baseUserId)  {$numberWeek=$i; $numberWeek++; break; }
                      }
-
                      return $numberWeek;
-//            return 23;
     }
 
     /**
