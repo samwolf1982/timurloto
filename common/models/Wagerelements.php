@@ -156,6 +156,17 @@ class Wagerelements extends \yii\db\ActiveRecord
     }
 
 
+    public function getStatuswageritemimagelogo()
+    {
+
+        if($this->status == 6) return '/images/statuslogo/ok.png';
+        if($this->status == 7) return '/images/statuslogo/no.png';
+
+
+       // return $this->status;
+    }
+
+
 
 
 

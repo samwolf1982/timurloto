@@ -53,16 +53,29 @@ use common\models\Wagerelements;
                                     <div class="count-row__t"><?=$k+1?></div>
                                     <div class="item-tbl-row-bts">
                                         <div class="title__t 789"><?=$item->sport_name ?> - <?=$item->category_name ?>    </div>
-                                        <div class="value__t"><?=$item->name ?>
-                                            <img src="/images/avatar/oksm.png" alt="status ok">
-
+                                        <div class="value__t" style="">
+                                            <?=$item->name ?>
                                         </div>
                                     </div>
                                     <div class="item-tbl-row-bts">
                                         <div class="title__t"><?= $item->getFormantedStartGame(); ?></div>
-                                        <div class="value__t">  <?=$item->getFormantedNameAndPercent() ?></div>
+                                        <div class="value__t" style=" display: flex; align-items: center;">
+                                       <span>     <?=$item->getFormantedNameAndPercent() ?></span>
+
+                                            <?php if($item->status==6 || $item->status==7){ ?>
+                                            <img class="resultoEventImage "
+                                                 src="<?=$item->statuswageritemimagelogo;?>"
+                                                 alt="status ok">
+                                            <?php } ?>
+                                        </div>
+
 
                                     </div>
+
+
+
+
+
                                 </div>
                               <?php   } ?>
                                 <?php if(0){  // delete ?>
