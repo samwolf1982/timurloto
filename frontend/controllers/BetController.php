@@ -48,6 +48,9 @@ class BetController extends Controller
     public function actionIndex()
     {
 
+            var_dump(  date("Y-m-d H:i:s")); die();
+     var_dump($sql2); die();
+
         $model=new Typegamename();
         $model->name='some name';
         $model->line='line';
