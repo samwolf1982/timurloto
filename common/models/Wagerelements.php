@@ -127,12 +127,12 @@ class Wagerelements extends \yii\db\ActiveRecord
         return Wagerelements::find()->where(['event_id' => $this->event_id])->count();
 
     }
-    public function getCounteventsActive()
+    public static function getCounteventsActive()
     {
         return Wagerelements::find()->where(['status' => Wager::STATUS_NEW])->count();
 
     }
-    public function getCounteventsActiveLost($hour=4)
+    public static function getCounteventsActiveLost($hour=4)
     {
         $nextWeek = time() - (ConstantsHelper::LOST_TIME_HOURS_NOT_CONFIRM * 60 * 60);   // 4*60*60    - 4 часа
         return '-';
