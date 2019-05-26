@@ -54,6 +54,8 @@ class BetController extends Controller
 
 
 
+
+
             var_dump(  date("Y-m-d H:i:s")); die();
      var_dump($sql2); die();
 
