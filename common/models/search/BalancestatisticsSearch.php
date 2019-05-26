@@ -415,7 +415,9 @@ $count=Yii::$app->db->createCommand("select COUNT(subquery.user_id) FROM
                         FROM `balancestatistics`  WHERE created_at BETWEEN '{$lastLastWeek}' AND '{$lastWeek}' GROUP BY user_id ORDER BY sume DESC ";
     }
 
-     var_dump($sql2); die();
+
+    var_dump(  date("Y-m-d H:i:s")); die();
+   //  var_dump($sql2); die();
         $dataProvider = new SqlDataProvider([
             'sql' =>$sql2,
             //'params' => [':status' => 1],
