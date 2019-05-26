@@ -416,7 +416,7 @@ $count=Yii::$app->db->createCommand("select COUNT(subquery.user_id) FROM
     }
 
 
-    var_dump(  date("Y-m-d H:i:s")); die();
+  //  var_dump(  date("Y-m-d H:i:s")); die();
    //  var_dump($sql2); die();
         $dataProvider = new SqlDataProvider([
             'sql' =>$sql2,
