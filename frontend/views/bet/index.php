@@ -1163,6 +1163,13 @@ BetAsset::register($this);
                                             <i class="text-hide">Готово</i>
                                             <span></span>
                                         </a>
+
+
+                                        <a href="#"  style="" class="btn btn-hover btn-primary no-before ">
+                                            <i class="text-show">+ Выплаты 27.05</i>
+                                            <span></span>
+                                        </a>
+                                    
                                     </div>
                                 </div>
                             </div>
