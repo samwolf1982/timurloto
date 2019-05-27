@@ -1165,11 +1165,11 @@ BetAsset::register($this);
                                         </a>
 
 
-                                        <a href="#"  style="" class="btn btn-hover btn-primary no-before ">
+                                        <a href="https://www.youtube.com/watch?v=mdTRJWxL4rM&feature=youtu.be" target="_blank"  style="" class="btn btn-hover btn-primary no-before ">
                                             <i class="text-show">+ Выплаты 27.05</i>
                                             <span></span>
                                         </a>
-                                    
+
                                     </div>
                                 </div>
                             </div>
