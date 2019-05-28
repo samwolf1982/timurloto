@@ -59,6 +59,7 @@ BetAsset::register($this);
     </div>
 </header>
 
+<?php    if ( $this->beginCache('__bete_',$cache_params)) { ?>
 <div class="main-background">
     <div id="scene">
         <div data-depth="0.2" class="background-image" style="background-image: url(/images/back-body.jpg)"></div>
@@ -9979,3 +9980,4 @@ BetAsset::register($this);
 <script src="/js/script.min.js"></script>
 </body>
 
+    <?php $this->endCache();} ?>

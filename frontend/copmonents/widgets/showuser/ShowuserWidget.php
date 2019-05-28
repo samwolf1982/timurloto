@@ -39,9 +39,7 @@ class ShowuserWidget extends Widget
 
 
         }
-
         return       $this->render($this->view, ['username' => $username,'userimage'=>$userimage,'isGuest'=>Yii::$app->user->isGuest,'useremail'=>$useremail]);
-      //  return       $this->render('index', array('username' => $username,'userimage'=>$userimage));
     }
     public function init(){
         parent::init();

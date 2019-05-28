@@ -87,9 +87,7 @@ class AccountController extends Controller
 //                    'class' => 'yii\caching\DbDependency',
 //                    'sql' => 'SELECT COUNT(id) FROM `wager` WHERE user_id = '.Yii::$app->request->get('id').';',
 //                ],
-//
 //             ],
-
 
         ];
     }
@@ -124,10 +122,9 @@ class AccountController extends Controller
      */
     public function actionView($id)
     {
-// todo для несуществующего сюда попадать не должны
 
-
-
+        $cache_params=['duration' => YII_ENV=='prod'? 3600:15, 'dependency' => ['class' => 'yii\caching\DbDependency', 'sql' => 'SELECT COUNT(id) FROM `wager` WHERE user_id = '.$id.';',]
+            ,  'variations'=>[Yii::$app->request->get('id'),Yii::$app->request->get('stat-period'),Yii::$app->request->get('play-period')]];
 
         if($id==Yii::$app->user->id){
             // сюда можно попасть и без кошелька fix если нету тогда создаем
@@ -138,7 +135,7 @@ class AccountController extends Controller
             $accessInfoAccount=$accessInfo->getData();
             $weekNum=$accessInfo->getWeekNum(Yii::$app->user->id);
             $top100=$accessInfo->getTop100(Yii::$app->user->id);
-            return $this->render('index',['balance'=>$balance,'accessInfoAccount'=>$accessInfoAccount,'weekNum'=>$weekNum,'top100'=>$top100] );
+            return $this->render('index',['balance'=>$balance,'accessInfoAccount'=>$accessInfoAccount,'weekNum'=>$weekNum,'top100'=>$top100,'cache_params'=>$cache_params] );
         }else{
             $b= Score::find()->where(['user_id' => $id])->one()->balance;
             $balance  = number_format($b, 0, '', ',');
@@ -146,7 +143,9 @@ class AccountController extends Controller
             $accessInfoAccount=$accessInfo->getData();
             $weekNum=$accessInfo->getWeekNum($id);
             $top100=$accessInfo->getTop100($id);
-            return $this->render('view',['balance'=>$balance,'accessInfoAccount'=>$accessInfoAccount,'weekNum'=>$weekNum,'top100'=>$top100]);
+
+              return $this->render('view', ['balance' => $balance, 'accessInfoAccount' => $accessInfoAccount, 'weekNum' => $weekNum, 'top100' => $top100,'cache_params'=>$cache_params]);
+
         }
 
 

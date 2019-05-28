@@ -19,8 +19,23 @@ AccountViewAsset::register($this);
 
 
 /**@var  AccessInfoAccount $accessInfoAccount **/
-$accessInfoAccount
+$accessInfoAccount;
 ?>
+
+<!--https://www.yiiframework.com/doc/guide/2.0/en/caching-fragment-->
+<!--оболочка для кешырования кабинета -->
+
+
+
+
+
+
+
+
+
+
+
+
 
 <body class="footer-login-page front-page">
 
@@ -49,11 +64,25 @@ $accessInfoAccount
         <?php  if(Yii::$app->user->isGuest){   ?>
             <?= ShowuserWidget::widget(['userdata' => [],'view'=>'index']) ?>
         <?php }else{ ?>
-            <?= ShowuserWidget::widget(['userdata' => [],'view'=>'other']) ?>
+
+        <?php
+       //  $this->renderDynamic (ShowuserWidget::widget(['userdata' => [],'view'=>'other']) );
+         //   echo $this->renderDynamic("dfghj");
+           // $ppp=ShowuserWidget::widget(['userdata' => [],'view'=>'other']);
+           
+         //   var_dump($ppp); die();
+            ///echo  $ppp;
+
+           // echo $this->renderDynamic ( quotemeta(  $ppp) );
+//              echo $this->renderDynamic ( 'return ' . htmlspecialchars(  $ppp) );
+               echo ShowuserWidget::widget(['userdata' => [],'view'=>'other']);
+            ?>
         <?php }  ?>
 
     </div>
 </header>
+
+ <?php    if ( $this->beginCache('__accounte_'. Yii::$app->request->get('id'),$cache_params)) { ?>
 <div class="account-statistic">
     <div class="content-container">
         <ul class="list-static two-row-list-table">
@@ -8997,3 +9026,5 @@ $accessInfoAccount
 <script src="/js/script.min.js"></script>
 </body>
 
+
+    <?php $this->endCache();} ?>
