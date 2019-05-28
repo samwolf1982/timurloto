@@ -1392,7 +1392,7 @@ BetAsset::register($this);
         <?php } ?>
 
 
-
+        <?php $this->endCache();}      //  конец кеша для таблиц ?>
 
 
         <?php if(0){ // Рейтинг букмекерских контор ?>
@@ -1451,13 +1451,11 @@ BetAsset::register($this);
         <?php } ?>
 
 
-            <?php if(1){ // верстка для посл ставок  ?>
-
+<!--             верстка для посл ставок -->
+        <?php    if ( $this->beginCache('__last_bets_',$cache_params_lastbets)) { ?>
                 <?=LastBets::widget(['user_id'=>( empty(yii::$app->user->identity)?null: yii::$app->user->identity->id) ]); ?>
 
-
-            <?php } ?>
-
+        <?php $this->endCache();}      //  конец кеша для таблиц ?>
             <?php if(0){ // верстка для посл ставок  ?>
                 <div class="row table-row">
                     <div class="column-8">
@@ -9980,4 +9978,3 @@ BetAsset::register($this);
 <script src="/js/script.min.js"></script>
 </body>
 
-    <?php $this->endCache();} ?>

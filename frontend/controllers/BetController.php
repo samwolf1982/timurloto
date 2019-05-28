@@ -49,15 +49,18 @@ class BetController extends Controller
     public function actionIndex()
     {
 
-//        $cache_params=['duration' => YII_ENV=='prod'? 3600:15, 'dependency' => ['class' => 'yii\caching\DbDependency', 'sql' => 'SELECT COUNT(id) FROM `wager` WHERE user_id = '.$id.';',]
-//            ,  'variations'=>[Yii::$app->request->get('id'),Yii::$app->request->get('stat-period'),Yii::$app->request->get('play-period')]];
 
-          //  var_dump(  date("Y-m-d H:i:s")); die();
-            //*****************
-           // var_dump($sql2); die();
         $cache_params=['duration' => YII_ENV=='prod'? 3600:15,
             'variations'=>[Yii::$app->request->get('dtop'),Yii::$app->request->get('period'),Yii::$app->request->get('level')],
             ];
+
+        $cache_params_lastbets=['duration' => YII_ENV=='prod'? 3600:30,
+            'variations'=>[Yii::$app->request->get('level')],
+                    'dependency' => [
+                    'class' => 'yii\caching\DbDependency',
+                    'sql' => 'SELECT COUNT(id) FROM `wager` WHERE 1;',
+                ],
+        ];
         $model=new Typegamename();
         $model->name='some name';
         $model->line='line';
@@ -86,7 +89,7 @@ class BetController extends Controller
 
 
         return $this->render('index',compact('type_game','model','model_two','model_three','dataProvider','dataProvider2',
-            'periodOne','period3m','periodAll','cache_params'));
+            'periodOne','period3m','periodAll','cache_params','cache_params_lastbets'));
 
     }
 
