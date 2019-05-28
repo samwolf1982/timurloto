@@ -43,7 +43,6 @@ $showPointsEffect=false; // ефект для точек
             <?= ShowuserWidget::widget(['userdata' => [],'view'=>'other']) ?>
         <?php }  ?>
 
-
     </div>
 </header>
 
