@@ -82,7 +82,7 @@ $accessInfoAccount;
     </div>
 </header>
 
- <?php    if ( $this->beginCache('__accounte_'. Yii::$app->request->get('id'),$cache_params)) { ?>
+
 <div class="account-statistic">
     <div class="content-container">
         <ul class="list-static two-row-list-table">
@@ -115,6 +115,8 @@ $accessInfoAccount;
                 </div>
 
             </div>
+
+<?php    if ( $this->beginCache('__accounte_'. Yii::$app->request->get('id'),$cache_params)) { ?>
 
             <?php if(YII_ENV=='dev'){  ?>
             <div class="row table-row">
