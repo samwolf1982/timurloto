@@ -41,6 +41,7 @@ class BetController extends Controller
 
 
 
+
     /**
      * index page видит только пользователь своя
      * @return mixed

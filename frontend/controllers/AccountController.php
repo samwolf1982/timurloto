@@ -32,9 +32,14 @@ use yii\web\Response;
 class AccountController extends Controller
 {
 
+
+
+
     private  $actionJsonList=['addsubscriber','remove-subscriber','chart','add-mail-subscriber','remove-mail-subscriber','autocomplete-comment'];
     public function behaviors()
     {
+
+
         // index  -- only user
         // view   -- all user
         // todo if(view id is current user)  redirect
@@ -71,6 +76,21 @@ class AccountController extends Controller
                     ],
                 ],
             ],
+
+             [
+                 'class' => 'yii\filters\PageCache',
+                 'only' => ['view'],
+                 'variations'=>[Yii::$app->request->get('id')],
+                 'duration' => YII_ENV=='prod'? 3600:15,
+//                'duration' => YII_ENV=='prod'? 1:1,
+                'dependency' => [
+                    'class' => 'yii\caching\DbDependency',
+                    'sql' => 'SELECT COUNT(id) FROM `wager` WHERE user_id = '.Yii::$app->request->get('id').';',
+                ],
+
+             ],
+
+
         ];
     }
 
