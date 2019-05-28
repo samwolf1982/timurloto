@@ -78,18 +78,17 @@ class AccountController extends Controller
             ],
 
 
-             [
-                 'class' => 'yii\filters\PageCache',
-                 'only' => ['view'],
-                 'variations'=>[Yii::$app->request->get('id'),Yii::$app->request->get('stat-period'),Yii::$app->request->get('play-period')],
-                 'duration' => YII_ENV=='prod'? 3600:15,
-//                'duration' => YII_ENV=='prod'? 1:1,
-                'dependency' => [
-                    'class' => 'yii\caching\DbDependency',
-                    'sql' => 'SELECT COUNT(id) FROM `wager` WHERE user_id = '.Yii::$app->request->get('id').';',
-                ],
-
-             ],
+//             [
+//                 'class' => 'yii\filters\PageCache',
+//                 'only' => ['view'],
+//                 'variations'=>[Yii::$app->request->get('id'),Yii::$app->request->get('stat-period'),Yii::$app->request->get('play-period')],
+//                 'duration' => YII_ENV=='prod'? 3600:15,
+//                'dependency' => [
+//                    'class' => 'yii\caching\DbDependency',
+//                    'sql' => 'SELECT COUNT(id) FROM `wager` WHERE user_id = '.Yii::$app->request->get('id').';',
+//                ],
+//
+//             ],
 
 
         ];
