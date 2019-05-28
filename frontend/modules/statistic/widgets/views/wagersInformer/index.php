@@ -120,13 +120,13 @@ use yii\widgets\LinkPager;
 
                             <ul class="head-tabs">
                                 <li class="<?= $pageInfo->getPlayPeriod()==PageInfo::PERIOD_ONE_MONTH ?'active':''; ?>">
-                                    <a href="<?=Url::to(['/account','id'=>$userId,'play-period'=>1,'#'=>'bets'])?>">За месяц</a>
+                                    <a href="<?=Url::to(['/account/view','id'=>$userId,'play-period'=>PageInfo::PERIOD_ONE_MONTH,'#'=>'bets'])?>">За месяц</a>
                                 </li>
                                 <li class="<?= $pageInfo->getPlayPeriod()==PageInfo::PERIOD_THREE_MONTH ?'active':''; ?>">
-                                    <a href="<?=Url::to(['/account','id'=>$userId,'play-period'=>3,'#'=>'bets'])?>">3 месяца</a>
+                                    <a href="<?=Url::to(['/account/view','id'=>$userId,'play-period'=>PageInfo::PERIOD_THREE_MONTH,'#'=>'bets'])?>">3 месяца</a>
                                 </li>
                                 <li class="<?= $pageInfo->getPlayPeriod()==PageInfo::PERIOD_ALL_MONTH ? 'active':''; ?>">
-                                    <a href="<?=Url::to(['/account','id'=>$userId,'#'=>'bets'])?>">За все время</a>
+                                    <a href="<?=Url::to(['/account/view','id'=>$userId,'#'=>'bets'])?>">За все время</a>
                                 </li>
                             </ul>
 
@@ -185,13 +185,13 @@ use yii\widgets\LinkPager;
                             <ul class="head-tabs">
 
                                 <li class="<?= $pageInfo->getPlayPeriod()==PageInfo::PERIOD_ONE_MONTH ?'active':''; ?>">
-                                    <a onclick="window.location='<?=Url::to(['/account','id'=>$userId,'play-period'=>1,'#'=>'bets'])?>'"  href="<?=Url::to(['/account','id'=>$userId,'play-period'=>1,'#'=>'bets'])?>">За месяц</a>
+                                    <a onclick="window.location='<?=Url::to(['/account/view','id'=>$userId,'play-period'=>1,'#'=>'bets'])?>'"  href="<?=Url::to(['/account/view','id'=>$userId,'play-period'=>1,'#'=>'bets'])?>">За месяц</a>
                                 </li>
                                 <li class="<?= $pageInfo->getPlayPeriod()==PageInfo::PERIOD_THREE_MONTH ?'active':''; ?>">
-                                    <a onclick="window.location='<?=Url::to(['/account','id'=>$userId,'play-period'=>3,'#'=>'bets'])?>'" href="<?=Url::to(['/account','id'=>$userId,'play-period'=>3,'#'=>'bets'])?>">3 месяца</a>
+                                    <a onclick="window.location='<?=Url::to(['/account/view','id'=>$userId,'play-period'=>3,'#'=>'bets'])?>'" href="<?=Url::to(['/account/view','id'=>$userId,'play-period'=>3,'#'=>'bets'])?>">3 месяца</a>
                                 </li>
                                 <li class="<?= $pageInfo->getPlayPeriod()==PageInfo::PERIOD_ALL_MONTH ? 'active':''; ?>">
-                                    <a onclick="window.location='<?=Url::to(['/account','id'=>$userId,'#'=>'bets'])?>'" href="<?=Url::to(['/account','id'=>$userId,'#'=>'bets'])?>">За все время</a>
+                                    <a onclick="window.location='<?=Url::to(['/account/view','id'=>$userId,'#'=>'bets'])?>'" href="<?=Url::to(['/account/view','id'=>$userId,'#'=>'bets'])?>">За все время</a>
                                 </li>
 
                             </ul>

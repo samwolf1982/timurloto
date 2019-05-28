@@ -77,10 +77,11 @@ class AccountController extends Controller
                 ],
             ],
 
+
              [
                  'class' => 'yii\filters\PageCache',
                  'only' => ['view'],
-                 'variations'=>[Yii::$app->request->get('id')],
+                 'variations'=>[Yii::$app->request->get('id'),Yii::$app->request->get('stat-period'),Yii::$app->request->get('play-period')],
                  'duration' => YII_ENV=='prod'? 3600:15,
 //                'duration' => YII_ENV=='prod'? 1:1,
                 'dependency' => [
@@ -125,6 +126,9 @@ class AccountController extends Controller
     public function actionView($id)
     {
 // todo для несуществующего сюда попадать не должны
+
+
+
 
         if($id==Yii::$app->user->id){
             // сюда можно попасть и без кошелька fix если нету тогда создаем
