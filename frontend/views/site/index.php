@@ -46,6 +46,8 @@ $showPointsEffect=false; // ефект для точек
 
     </div>
 </header>
+
+<?php    if ( $this->beginCache('__sitepage_',$cache_params)) { ?>
 <div class="home-page-wrapper">
     <div class="main-background">
         <div id="scene">
@@ -428,9 +430,6 @@ $showPointsEffect=false; // ефект для точек
     ]) ?>
 </div>
 
-
-
-
-
-
 </body>
+
+<?php $this->endCache(); } ?>

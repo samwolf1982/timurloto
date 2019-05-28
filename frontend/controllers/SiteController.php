@@ -93,8 +93,11 @@ class SiteController extends Controller
 //        }
 
         $test=123;
-
-        return $this->render('index',compact('test') );
+        $cache_params=['duration' => YII_ENV=='prod'? 3600:15,
+//            'variations'=>[Yii::$app->request->get('dtop'),Yii::$app->request->get('period'),
+//                Yii::$app->request->get('level')],
+            ];
+        return $this->render('index',compact('test','cache_params') );
     }
 
     /**
