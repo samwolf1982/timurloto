@@ -48,6 +48,7 @@ class ParserNodeDos extends \yii\base\BaseObject
     }
 
 
+
     public function getSportType()
     {
         $data= $this->parse($this->initiator->getSportTypeUrl());
