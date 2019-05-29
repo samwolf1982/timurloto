@@ -115,6 +115,7 @@ return [
 
                 // cтавки  http://localhost35/bet/index
                 'bet/index'=>'bet',
+                'clear/mail'=>'clear/mail',
                 '/bet/nextload'=>'/bet/nextload',
 
                 // регистрации

@@ -40,6 +40,7 @@ class ClearController extends Controller
     }
     public function actionMail()
     {
+
         $message='Отправлено';
 
         return $this->render('mail',['message'=>$message] );
