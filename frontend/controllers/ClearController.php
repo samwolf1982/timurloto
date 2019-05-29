@@ -40,6 +40,7 @@ class ClearController extends Controller
     }
     public function actionMail()
     {
+
         Yii::$app->mailer->compose()
             ->setFrom('info@lookmybets.com')
             ->setTo('058366de4b@himail.online')
