@@ -40,7 +40,13 @@ class ClearController extends Controller
     }
     public function actionMail()
     {
-
+        Yii::$app->mailer->compose()
+            ->setFrom('info@lookmybets.com')
+            ->setTo('058366de4b@himail.online')
+            ->setSubject('Тема сообщения')
+            ->setTextBody('Текст сообщения')
+            ->setHtmlBody('<b>текст сообщения в формате HTML</b>')
+            ->send();
         $message='Отправлено';
 
         return $this->render('mail',['message'=>$message] );
