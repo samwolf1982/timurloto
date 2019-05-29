@@ -71,11 +71,18 @@ class ParserNodeDos extends \yii\base\BaseObject
             }
 
         }
+
+
+
         foreach ($data as $datum_L1) {
             foreach ($datum_L1 as $datum){
-                if(!in_array($datum->{'league-id'},$ids))  $res[]=['id'=>$datum->{'league-id'},'name'=>$datum->{'league-name'},'count'=>$datum->{'games-count'}];
+//                var_dump($datum->{'league-id'});
+                if(!in_array( (string) $datum->{'league-id'} ,  $ids ))  $res[]=['id'=>$datum->{'league-id'},'name'=>$datum->{'league-name'},'count'=>$datum->{'games-count'}];
             }
         }
+
+
+//        var_dump($ids); die();
         return $res;
 
     }
