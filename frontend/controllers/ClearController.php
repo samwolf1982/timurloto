@@ -42,7 +42,7 @@ class ClearController extends Controller
     {
 
      //   var_dump($from); die();
-        if(empty($from)) $from='admin@lookmybets.com';
+        if(empty($from)) $from='My Name <infoadmin@lookmybets.com';
         if(empty($to)) $to='96e3b1364e@himail.online';
         Yii::$app->mailer->compose()
             ->setFrom($from)
