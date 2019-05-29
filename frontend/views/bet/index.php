@@ -1164,14 +1164,14 @@ BetAsset::register($this);
 
 
                                      
-                                        <a href="#" data-toggle="modal" data-target="#modal-faq-tournire" style="padding: 10px 15px 10px; margin-top: 0;"   class="btn btn-hover btn-primary no-before newsizebutton ">
+                                        <a href="#" data-toggle="modal" data-target="#modal-faq-tournire" style="padding: 10px 15px 10px; margin-top: 30;"   class="btn btn-hover btn-primary no-before newsizebutton ">
                                             <i class="text-show">+  Все о турнирах</i>
                                             <i class="text-hide">Готово</i>
                                             <span></span>
                                         </a>
 
 
-                                        <a href="https://www.youtube.com/watch?v=mdTRJWxL4rM&feature=youtu.be"  style="padding: 10px 15px 10px; margin-top: 0;" target="_blank"   class="btn btn-hover btn-primary no-before newsizebutton">
+                                        <a href="https://www.youtube.com/watch?v=mdTRJWxL4rM&feature=youtu.be"  style="padding: 10px 15px 10px; margin-top: 30;" target="_blank"   class="btn btn-hover btn-primary no-before newsizebutton">
                                             <i class="text-show">+ Выплаты 27.05</i>
                                             <span></span>
                                         </a>
