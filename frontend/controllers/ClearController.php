@@ -42,7 +42,7 @@ class ClearController extends Controller
     {
         $message='Отправлено';
 
-        return $this->render('index',['message'=>$message] );
+        return $this->render('mail',['message'=>$message] );
     }
 
 
