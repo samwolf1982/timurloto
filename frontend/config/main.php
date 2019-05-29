@@ -267,15 +267,15 @@ return [
 
             'mailer' => [
                 'viewPath' => '@frontend//views/account/overriden/mail',
-                'class' => 'yii\swiftmailer\Mailer',
-                'transport' => [
-                    'class' => 'Swift_SmtpTransport',
-                    'host' => 'localhost',
-                    'username' => 'info',
-                    'password' => 'n1Rh$q#%!K5d',
-                    'port' => '587',
-                    'encryption' => 'tls',
-                ],
+//                'class' => 'yii\swiftmailer\Mailer',
+//                'transport' => [
+//                    'class' => 'Swift_SmtpTransport',
+//                    'host' => 'localhost',
+//                    'username' => 'info',
+//                    'password' => 'n1Rh$q#%!K5d',
+//                    'port' => '587',
+//                    'encryption' => 'tls',
+//                ],
             ],
 
 
