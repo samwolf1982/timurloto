@@ -1137,7 +1137,11 @@ BetAsset::register($this);
             <?= TopusersWidget::widget(['dataProvider'=>$dataProvider]); ?>
 
 
-
+            <style>
+                .table-body .text-table p+p{
+                    margin-top: 11px;
+                }
+            </style>
 
             <div class="row table-row">
                 <div class="column-4">
