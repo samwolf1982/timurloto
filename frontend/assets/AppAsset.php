@@ -25,7 +25,7 @@ class AppAsset extends AssetBundle
         'js/libs/loadModalAjax.js',
         '//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js',
         'js/loadmodallikemessage.js', // модалки после загрузки как флеш сообщения
-        'js/some.js',
+          'js/some.js'
         ];
     public $depends = [
         'yii\web\YiiAsset',

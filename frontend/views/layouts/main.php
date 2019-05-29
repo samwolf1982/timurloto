@@ -5,6 +5,7 @@
 
 use common\models\helpers\ConstantsHelper;
 use dektrium\user\widgets\Connect;
+use frontend\assets\OnlyprodAsset;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
@@ -12,6 +13,10 @@ use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
 AppAsset::register($this);
+if(YII_ENV=='prod'){
+    OnlyprodAsset::register($this);
+}
+
 
 ?>
 <?php $this->beginPage() ?>

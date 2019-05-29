@@ -82,7 +82,10 @@ class ParserNodeDos extends \yii\base\BaseObject
         }
 
 
-//        var_dump($ids); die();
+//        var_dump($ids);
+//        var_dump($res);
+//
+//        die();
         return $res;
 
     }
