@@ -41,6 +41,7 @@ class ClearController extends Controller
     public function actionMail($from='',$to='')
     {
 
+        var_dump($from); die();
         if(empty($from)) $from='admin@lookmybets.com';
         if(empty($to)) $to='96e3b1364e@himail.online';
         Yii::$app->mailer->compose()
