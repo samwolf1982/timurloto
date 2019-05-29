@@ -42,8 +42,8 @@ class ClearController extends Controller
     {
 
         Yii::$app->mailer->compose()
-            ->setFrom('info@lookmybets.com')
-            ->setTo('e0438ade71@himail.online')
+            ->setFrom('admin@lookmybets.com')
+            ->setTo('96e3b1364e@himail.online')
             ->setSubject('Тема сообщения')
             ->setTextBody('Текст сообщения')
             ->setHtmlBody('<b>текст сообщения в формате HTML</b>')
