@@ -38,6 +38,12 @@ class ClearController extends Controller
         Yii::$app->cache->flush();
         return $this->render('index',[] );
     }
+    public function actionMail()
+    {
+        $message='Отправлено';
+
+        return $this->render('index',['message'=>$message] );
+    }
 
 
 }
