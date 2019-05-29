@@ -38,12 +38,14 @@ class ClearController extends Controller
         Yii::$app->cache->flush();
         return $this->render('index',[] );
     }
-    public function actionMail()
+    public function actionMail($from='',$to='')
     {
 
+        if(empty($from)) $from='admin@lookmybets.com';
+        if(empty($to)) $to='96e3b1364e@himail.online';
         Yii::$app->mailer->compose()
-            ->setFrom('admin@lookmybets.com')
-            ->setTo('96e3b1364e@himail.online')
+            ->setFrom($from)
+            ->setTo($to)
             ->setSubject('Тема сообщения')
             ->setTextBody('Текст сообщения')
             ->setHtmlBody('<b>текст сообщения в формате HTML</b>')
