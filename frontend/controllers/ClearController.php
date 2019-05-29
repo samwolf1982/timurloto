@@ -46,8 +46,8 @@ class ClearController extends Controller
         Yii::$app->mailer->compose()
             ->setFrom($from)
             ->setTo($to)
-            ->setSubject('Тема сообщения')
-            ->setTextBody('Текст сообщения')
+            ->setSubject('tema message')
+            ->setTextBody('text mesage')
             ->setHtmlBody('<b>текст сообщения в формате HTML</b>')
             ->send();
         $message='Отправлено';
