@@ -7614,27 +7614,38 @@ EOT_JS_CODE
                                         <div class="collapse-item-head">
                                             <a href="#faq3-t" data-toggle="collap">Какой куш и количество призовых мест?</a>
                                         </div>
+
+                                        <style>
+                                            .wtext{
+                                                margin-bottom: 0;
+                                                font-weight: 400;
+                                                font-size: 14px;
+                                                color: #32303A;
+                                                letter-spacing: 0;
+                                                line-height: 24px;
+                                            }
+                                        </style>
                                         <div class="collapse-item-body" id="faq3-t">
                                             <p>- Общий куш составляет 15 000 рублей в неделю.</p>
-                                            5 призовых мест: <br>
-                                            1 место 5 000 руб. <br>
-                                            2 место 4 000 руб. <br>
-                                            3 место 3 000 руб. <br>
-                                            4 место 2 000 руб. <br>
-                                            5 место 1 000 руб. <br>
+                                          <span class="wtext">  5 призовых мест: </span> <br>
+                                          <span class="wtext">  1 место 5 000 руб. </span> <br>
+                                          <span class="wtext">  2 место 4 000 руб. </span> <br>
+                                          <span class="wtext">  3 место 3 000 руб. </span> <br>
+                                          <span class="wtext">  4 место 2 000 руб. </span> <br>
+                                          <span class="wtext">  5 место 1 000 руб. </span> <br>
 
-                                          <p>  Общий куш годового турнира составляет 100 000 рублей.</p>
-                                            10 призовых мест: <br>
-                                            1 место - 35 000 руб. <br>
-                                            2 место - 20 000 руб. <br>
-                                            3 место - 15 000 руб. <br>
-                                            4 место - 10 000 руб. <br>
-                                            5 место - 6 000 руб. <br>
-                                            6 место - 5 000 руб. <br>
-                                            7 место - 4 000 руб. <br>
-                                            8 место - 2 500 руб. <br>
-                                            9 место - 1 500 руб. <br>
-                                            10 место - 1 000 руб. <br>
+                                          <p>- Общий куш годового турнира составляет 100 000 рублей.</p>
+                                          <span class="wtext">  10 призовых мест: </span> <br>
+                                          <span class="wtext">  1 место - 35 000 руб. </span> <br>
+                                          <span class="wtext">  2 место - 20 000 руб. </span> <br>
+                                          <span class="wtext">  3 место - 15 000 руб. </span> <br>
+                                         <span class="wtext">   4 место - 10 000 руб. </span> <br>
+                                         <span class="wtext">   5 место - 6 000 руб. </span> <br>
+                                          <span class="wtext">  6 место - 5 000 руб. </span> <br>
+                                          <span class="wtext">  7 место - 4 000 руб. </span> <br>
+                                          <span class="wtext">  8 место - 2 500 руб. </span> <br>
+                                          <span class="wtext">  9 место - 1 500 руб. </span> <br>
+                                          <span class="wtext">  10 место - 1 000 руб. </span> <br>
                                         </div>
                                     </div>
                                     <div class="collapse-item">
