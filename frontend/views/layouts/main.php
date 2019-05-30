@@ -7582,7 +7582,7 @@ EOT_JS_CODE
                     <div class="choose-bet-wrapper">
                         <div class="choose-bet-inner">
                             <div class="head-choose faq-title">
-                                <h2>Все о турнире</h2>
+                                <h2>Все о турнирах</h2>
                             </div>
                             <div class="faq-wrapper">
                                 <div class="faq-list collapse-wrapper">
