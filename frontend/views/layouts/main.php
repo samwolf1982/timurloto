@@ -7599,6 +7599,7 @@ EOT_JS_CODE
 
 
 
+                                    
                                     <div class="collapse-item">
                                         <div class="collapse-item-head">
                                             <a href="#faq2-t" data-toggle="collap">Как часто проходят турниры?</a>
