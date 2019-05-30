@@ -51,9 +51,11 @@ class BetController extends Controller
 
 
         $cache_params=['duration' => YII_ENV=='prod'? 3600:15,
-            'variations'=>[Yii::$app->request->get('dtop'),Yii::$app->request->get('period'),Yii::$app->request->get('level'),Yii::$app->request->get('tournament')],
+            'variations'=>[Yii::$app->request->get('dtop'),Yii::$app->request->get('period'),Yii::$app->request->get('level'),Yii::$app->request->get('tournament'),
+                ,Yii::$app->request->get('top'),Yii::$app->request->get('per-page'),],
             ];
 
+//        top=2&per-page
         $cache_params_lastbets=['duration' => YII_ENV=='prod'? 3600:30,
             'variations'=>[Yii::$app->request->get('level')],
                     'dependency' => [
