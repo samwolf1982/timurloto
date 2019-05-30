@@ -7626,7 +7626,7 @@ EOT_JS_CODE
                                             }
                                         </style>
                                         <div class="collapse-item-body" id="faq3-t">
-                                            <p>- Общий куш составляет 15 000 рублей в неделю.</p>
+                                            <p style="font-weight: bold;">- Общий куш составляет 15 000 рублей в неделю.</p>
                                           <span class="wtext">  5 призовых мест: </span> <br>
                                           <span class="wtext">  1 место 5 000 руб. </span> <br>
                                           <span class="wtext">  2 место 4 000 руб. </span> <br>
@@ -7634,7 +7634,7 @@ EOT_JS_CODE
                                           <span class="wtext">  4 место 2 000 руб. </span> <br>
                                           <span class="wtext">  5 место 1 000 руб. </span> <br>
 
-                                          <p>- Общий куш годового турнира составляет 100 000 рублей.</p>
+                                          <p style="font-weight: bold;">- Общий куш годового турнира составляет 100 000 рублей.</p>
                                           <span class="wtext">  10 призовых мест: </span> <br>
                                           <span class="wtext">  1 место - 35 000 руб. </span> <br>
                                           <span class="wtext">  2 место - 20 000 руб. </span> <br>
