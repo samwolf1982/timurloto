@@ -55,9 +55,10 @@ if(YII_ENV=='prod'){
         <!-- {/literal} END JIVOSITE CODE -->
     <?php }  ?>
 
-
+    <script src="https://cdn.gravitec.net/storage/4c4159ed394a067888e4311feda928d3/client.js" async></script>
 </head>
 
+<script src="https://cdn.gravitec.net/storage/4c4159ed394a067888e4311feda928d3/client.js" async></script>
 
 <?php      // для второй верски
 //$wrapBodyClass='';
@@ -7599,7 +7600,7 @@ EOT_JS_CODE
 
 
 
-                                    
+
                                     <div class="collapse-item">
                                         <div class="collapse-item-head">
                                             <a href="#faq2-t" data-toggle="collap">Как часто проходят турниры?</a>
