@@ -21,7 +21,7 @@
                            <img src="/images/champ.svg" alt="">
                        </div>
                        <div class="left-head-text">
-                           <div class="title-w-select"> ГОДОВОЙ ТУРНИР 100 000Р. 10 ПОБЕДИТЕЛЕЙ</div>
+                           <div class="title-w-select"> ГОДОВОЙ ТУРНИР 100 000₽. 10 ПОБЕДИТЕЛЕЙ</div>
 
 
                            
